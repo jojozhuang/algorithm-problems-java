@@ -1,0 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Johnny
+ */
+public class Solution089Test {
+    
+    public Solution089Test() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of grayCode method, of class Solution089.
+     */
+    @Test
+    public void testGrayCode() {
+        System.out.println("grayCode");
+        int n = 0;
+        Solution089 instance = new Solution089();
+        List<Integer> expResult = new ArrayList<Integer>();
+        expResult.add(0);
+        List<Integer> result = instance.grayCode(n);
+        assertEquals(expResult, result);
+        
+        List<Integer> expResult2 = new ArrayList<Integer>();
+        expResult2.add(0);
+        expResult2.add(1);
+        assertEquals(expResult2, instance.grayCode(1));
+        
+        List<Integer> expResult3 = new ArrayList<Integer>();
+        expResult3.add(0);
+        expResult3.add(1);
+        expResult3.add(3);
+        expResult3.add(2);
+        assertEquals(expResult3, instance.grayCode(2));
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+}
