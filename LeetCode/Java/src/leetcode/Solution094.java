@@ -7,6 +7,8 @@ package leetcode;
 
 import leetcode.common.TreeNode;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * Binary Tree Inorder Traversal.
@@ -29,6 +31,64 @@ import java.util.List;
  */
 public class Solution094 {
     public List<Integer> inorderTraversal(TreeNode root) {
-        return null;
+        // divide and conquer
+        //return inorderDivideConquer(root);
+        
+        // Recursion
+        //List<Integer> result = new ArrayList<Integer>();
+        //inorderIterate(root, result);
+        //return result;
+        
+        // No recursion, use stack
+        return inorderStack(root);
+    }
+    
+    private List<Integer> inorderStack(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        
+        if (root == null) {
+            return result;
+        }
+        
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode curr = root;
+        
+        while(curr != null || !stack.empty()) {
+            while(curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            result.add(curr.val);
+            curr = curr.right;
+        }
+        return result;
+    }
+    
+    private void inorderIterate(TreeNode root, List<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        
+        inorderIterate(root.left, list);
+        list.add(root.val);
+        inorderIterate(root.right, list);
+    }
+    private List<Integer> inorderDivideConquer(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        
+        if (root == null) {
+            return result;
+        }
+        
+        List<Integer> left = inorderDivideConquer(root.left);
+        List<Integer> right = inorderDivideConquer(root.right);
+        
+        result.addAll(left);
+        result.add(root.val);
+        result.addAll(right);
+        
+        return result;
+        
     }
 }

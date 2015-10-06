@@ -17,6 +17,21 @@ import leetcode.common.TreeNode;
  */
 public class Solution104 {
     public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        
+        int left = maxDepth(root.left) + 1;
+        int right = maxDepth(root.right) + 1;
+        if (left > right) {
+            return left;
+        }
+        else {
+            return right;
+        }
+    }
+    /*
+    public int maxDepth(TreeNode root) {
         if (root == null)
             return 0;
         
@@ -28,5 +43,5 @@ public class Solution104 {
             return 1 + maxDepth(root.left);
         
         return 1+ Math.max(maxDepth(root.left), maxDepth(root.right));
-    }
+    }*/
 }

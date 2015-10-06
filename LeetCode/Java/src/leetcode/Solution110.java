@@ -19,36 +19,22 @@ import leetcode.common.TreeNode;
  */
 public class Solution110 {
     public boolean isBalanced(TreeNode root) {
-        if (root == null)
-            return true;
-        if (root.left==null&&root.right==null)
-            return true;
-        if (root.left==null&&root.right!=null) {
-            if (maxDepth(root.right)>1)
-                return false;
-        }
-        if (root.left!=null&&root.right==null) {
-            if (maxDepth(root.left)>1)
-                return false;
-        }
-        
-        if(Math.abs(maxDepth(root.left)-maxDepth(root.right))>1)
-            return false;
-        else
-            return true;
-    }
+        return (maxDepth(root) != -1);
+    }  
     
     private int maxDepth(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
         
-        if (root.left == null && root.right == null)
-            return 1;
-        if (root.left == null && root.right != null)
-            return 1 + maxDepth(root.right);
-        if (root.left != null && root.right == null)
-            return 1 + maxDepth(root.left);
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
         
-        return 1+ Math.max(maxDepth(root.left), maxDepth(root.right));
-    }
+        if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
+            return -1;
+        }
+        else {
+            return Math.max(left, right) + 1;
+        }
+    }    
 }
