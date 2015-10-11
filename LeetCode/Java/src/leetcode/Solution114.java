@@ -19,6 +19,7 @@ import leetcode.common.TreeNode;
  *        2   5
  *       / \   \
  *      3   4   6
+ * 
  * The flattened tree should look like:
  *    1
  *     \
@@ -34,8 +35,26 @@ import leetcode.common.TreeNode;
  * 
  * @author Johnny
  */
-public class Solution114 {
+public class Solution114 {    
     public void flatten(TreeNode root) {
+        if (root == null) {
+            return;
+        }
         
+        // flatten left
+        flatten(root.left);
+        // flatten right
+        flatten(root.right);
+        
+        if (root.left != null) {
+            TreeNode tail = root.left;
+            while(tail.right != null) {
+                tail = tail.right;
+            }
+            TreeNode right = root.right;
+            root.right = root.left;
+            tail.right = right;
+            root.left = null;
+        }        
     }
 }
