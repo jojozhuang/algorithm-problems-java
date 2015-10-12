@@ -7,7 +7,10 @@ package leetcode;
 
 import leetcode.common.TreeNode;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Binary Tree Level Order Traversal II.
@@ -32,6 +35,42 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution107 {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        
+        if (root == null) {
+            return result;
+        }
+        
+        Stack<List<Integer>> stack = new Stack<List<Integer>>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        
+        while(!queue.isEmpty()) {
+            List<Integer> level = new ArrayList<Integer>();
+            int size = queue.size();
+            
+            for(int ix = 0; ix < size; ix++) {
+                TreeNode node = queue.poll();
+                level.add(node.val);
+                
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            stack.push(level);
+        }
+        
+        while(!stack.isEmpty()) {
+            result.add(stack.pop());
+        }
+        
+        return result;
+    }
+    /*
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> ret = new ArrayList();        
         
@@ -89,5 +128,5 @@ public class Solution107 {
         ret.add(list);
         
         return ret;
-    }
+    }*/
 }

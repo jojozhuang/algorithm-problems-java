@@ -47,17 +47,17 @@ public class Solution062Test {
         int n = 0;
         Solution062 instance = new Solution062();
         int expResult = 0;
-        int result = instance.uniquePaths2(m, n);
+        int result = instance.uniquePaths(m, n);
         assertEquals(expResult, result);
         
-        assertEquals(1, instance.uniquePaths2(1, 1));
-        assertEquals(1, instance.uniquePaths2(3, 1));
-        assertEquals(1, instance.uniquePaths2(1, 4));
-        assertEquals(2, instance.uniquePaths2(2, 2));
-        assertEquals(3, instance.uniquePaths2(3, 2));
-        assertEquals(3, instance.uniquePaths2(2, 3));
-        assertEquals(6, instance.uniquePaths2(3, 3));
-        assertEquals(86493225, instance.uniquePaths2(19, 13));
+        assertEquals(1, instance.uniquePaths(1, 1));
+        assertEquals(1, instance.uniquePaths(3, 1));
+        assertEquals(1, instance.uniquePaths(1, 4));
+        assertEquals(2, instance.uniquePaths(2, 2));
+        assertEquals(3, instance.uniquePaths(3, 2));
+        assertEquals(3, instance.uniquePaths(2, 3));
+        assertEquals(6, instance.uniquePaths(3, 3));
+        assertEquals(86493225, instance.uniquePaths(19, 13));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

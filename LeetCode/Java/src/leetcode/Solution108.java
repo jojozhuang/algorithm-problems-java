@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.Arrays;
 import leetcode.common.TreeNode;
 
 /**
@@ -15,7 +16,20 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution108 {
-    public TreeNode sortedArrayToBST(int[] num) {
-        return null;
+    public TreeNode sortedArrayToBST(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+                
+        int mid = nums.length / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+        
+        int[] left = Arrays.copyOfRange(nums, 0, mid);
+        int[] right = Arrays.copyOfRange(nums, mid + 1, nums.length);
+        
+        root.left = sortedArrayToBST(left);
+        root.right = sortedArrayToBST(right);
+        
+        return root;
     }
 }

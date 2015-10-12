@@ -5,9 +5,9 @@
  */
 package leetcode;
 
-import leetcode.common.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
+import leetcode.common.TreeNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,9 +19,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution102Test {
+public class Solution103Test {
     
-    public Solution102Test() {
+    public Solution103Test() {
     }
     
     @BeforeClass
@@ -41,15 +41,15 @@ public class Solution102Test {
     }
 
     /**
-     * Test of levelOrder method, of class Solution102.
+     * Test of zigzagLevelOrder method, of class Solution103.
      */
     @Test
-    public void testLevelOrder() {
-        System.out.println("levelOrder");
+    public void testZigzagLevelOrder() {
+        System.out.println("zigzagLevelOrder");
         TreeNode root = null;
-        Solution102 instance = new Solution102();
-        List<List<Integer>> expResult = new ArrayList();
-        List<List<Integer>> result = instance.levelOrder(root);
+        Solution103 instance = new Solution103();
+        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = instance.zigzagLevelOrder(root);
         assertEquals(expResult, result);
         
         TreeNode p2 = new TreeNode(1);
@@ -57,7 +57,7 @@ public class Solution102Test {
         List<Integer> sub2 = new ArrayList();
         sub2.add(1);
         ret2.add(sub2);
-        assertEquals(ret2, instance.levelOrder(p2));
+        assertEquals(ret2, instance.zigzagLevelOrder(p2));
 
         TreeNode p3 = TreeNode.CreateInstance(new String[] {"1","2", "#"});
         List<List<Integer>> ret3 = new ArrayList();
@@ -67,7 +67,7 @@ public class Solution102Test {
         List<Integer> sub32 = new ArrayList();
         sub32.add(2);
         ret3.add(sub32);
-        assertEquals(ret3, instance.levelOrder(p3));
+        assertEquals(ret3, instance.zigzagLevelOrder(p3));
 
         TreeNode p4 = TreeNode.CreateInstance(new String[] {"1","2", "3"});
         List<List<Integer>> ret4 = new ArrayList();
@@ -75,10 +75,10 @@ public class Solution102Test {
         sub41.add(1);
         ret4.add(sub41);
         List<Integer> sub42 = new ArrayList();
-        sub42.add(2);
         sub42.add(3);
+        sub42.add(2);
         ret4.add(sub42);
-        assertEquals(ret4, instance.levelOrder(p4));        
+        assertEquals(ret4, instance.zigzagLevelOrder(p4));        
 
         TreeNode p5 = TreeNode.CreateInstance(new String[] {"1","#", "3", "#","5"});
         List<List<Integer>> ret5 = new ArrayList();
@@ -91,7 +91,7 @@ public class Solution102Test {
         List<Integer> sub53 = new ArrayList();
         sub53.add(5);
         ret5.add(sub53);
-        assertEquals(ret5, instance.levelOrder(p5));
+        assertEquals(ret5, instance.zigzagLevelOrder(p5));
 
         TreeNode p6 = TreeNode.CreateInstance(new String[] {"3","9", "20", "#","#","15","7"});
         List<List<Integer>> ret6 = new ArrayList();
@@ -99,15 +99,29 @@ public class Solution102Test {
         sub61.add(3);
         ret6.add(sub61);
         List<Integer> sub62 = new ArrayList();
-        sub62.add(9);
         sub62.add(20);
+        sub62.add(9);
         ret6.add(sub62);
         List<Integer> sub63 = new ArrayList();
         sub63.add(15);
         sub63.add(7);
         ret6.add(sub63);
-        assertEquals(ret6, instance.levelOrder(p6));
+        assertEquals(ret6, instance.zigzagLevelOrder(p6));
         
+        TreeNode p7 = TreeNode.CreateInstance(new String[] {"1","2", "3", "4","#","#","5"});
+        List<List<Integer>> ret7 = new ArrayList();
+        List<Integer> sub71 = new ArrayList();
+        sub71.add(1);
+        ret7.add(sub71);
+        List<Integer> sub72 = new ArrayList();
+        sub72.add(3);
+        sub72.add(2);
+        ret7.add(sub72);
+        List<Integer> sub73 = new ArrayList();
+        sub73.add(4);
+        sub73.add(5);
+        ret7.add(sub73);
+        assertEquals(ret7, instance.zigzagLevelOrder(p7));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

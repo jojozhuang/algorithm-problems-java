@@ -26,53 +26,27 @@ import java.util.HashMap;
  */
 public class Solution062 {
     public int uniquePaths(int m, int n) {
-        if (m<1||n<1)
+        if (m <= 0 || n <= 0) {
             return 0;
-        if (m==1||n==1)
-            return 1;
-        
-        return uniquePaths(m-1,n) + uniquePaths(m,n-1);
-    }  
-    
-    public int uniquePaths2(int m, int n) {
-        if (m<1||n<1)
-            return 0;
-        if (m==1||n==1)
-            return 1;
-        
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
-        map.put(getKey(0,1), 0);
-        int i=1;
-        int j=1;
-        int ret=0;
-        String key;
-        while(i<=m) {
-            j=1;
-            while(j<=n) {
-                key = getKey(i,j);
-                if(!map.containsKey(key)) {
-                    if (i==1||j==1)
-                        ret = 1;
-                    else
-                        ret = map.get(getKey(i-1,j)) + map.get(getKey(i,j-1));
-                    if (i>=m&&j>=n)
-                        break;
-                    else
-                        map.put(key, ret);
-                }               
-                j++;
-            }
-            if (i>=m&&j>=n)
-                break;
-            i++;
         }
-        return ret;
-    }
-    
-    private String getKey(int i, int j) {
-        if (i<=j)
-            return i+","+j;
-        else
-            return j+","+i;
+        
+        // Define function, f[i][j] if the count of possible path from start point
+        // to point [i][j], f[i][j] = f[i][j-1] + f[i-1][j]
+        int[][] f = new int[m][n];
+        // Initial
+        for (int i = 0; i < m; i++) {
+            f[i][0] = 1;
+        }
+        for (int j = 0; j < n; j++) {
+            f[0][j] = 1;
+        }
+        // Calculate f[i][j]
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                f[i][j] = f[i][j - 1] + f[i - 1][j];
+            }
+        }
+        
+        return f[m - 1][n - 1];
     }
 }

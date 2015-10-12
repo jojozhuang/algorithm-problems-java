@@ -21,6 +21,55 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution098 {
+    class BSTResult {
+        public int Min = Integer.MIN_VALUE;
+        public int Max = Integer.MAX_VALUE;
+        public boolean isBST = true;
+        public BSTResult(){}
+    }
+    public boolean isValidBST(TreeNode root) {
+        return validateBST(root).isBST;
+    }
+    private BSTResult validateBST(TreeNode root) {
+        BSTResult result = new BSTResult();
+        if (root == null) {
+            return result;
+        }
+        if (root.left == null) {
+            result.Min = root.val;            
+        }
+        else {
+            BSTResult left = validateBST(root.left);
+            if (!left.isBST) {
+                result.isBST = false;
+                return result;
+            }
+            if (left.Max >= root.val) {
+                result.isBST = false;
+                return result;
+            }
+            result.Min = left.Min;
+        }
+        
+        if (root.right == null) {
+            result.Max = root.val;
+        }
+        else {
+            BSTResult right = validateBST(root.right);
+            if (!right.isBST) {
+                result.isBST = false;
+                return result;
+            }
+            if (right.Min <= root.val) {
+                result.isBST = false;
+                return result;
+            }
+            result.Max = right.Max;
+        }       
+        result.isBST = true;        
+        return result;        
+    }
+    /*
     public boolean isValidBST(TreeNode root) {
         if (root==null)
             return true;
@@ -76,5 +125,5 @@ public class Solution098 {
             return false;
             
         return true;
-    }   
+    }   */
 }

@@ -16,6 +16,29 @@ package leetcode;
  */
 public class Solution070 {
     public int climbStairs(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        // Define function, f[i] is the count of ways to climb to level i. 
+        // f[i] = f[i-1] + f[i-2]
+        int[] f = new int[n];
+        // Initial
+        f[0] = 1;
+        f[1] = 2;
+        // Calculate f[i]
+        int i = 2;
+        while(i < n) {
+            f[i] = f[i-1] + f[i-2];
+            i++;
+        }
+        // Get result;
+        return f[n - 1];        
+    }
+    /*
+    public int climbStairs(int n) {
         if (n<=0)
             return 0;
         if (n==1)
@@ -43,5 +66,5 @@ public class Solution070 {
             ret[i] = ret[i-1] + ret[i-2];
         }
         return ret[n];
-    }
+    }*/
 }

@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.Stack;
 import leetcode.common.TreeNode;
 
 /**
@@ -20,18 +21,28 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution173 {
+    private Stack<TreeNode> stack = new Stack<>();
+    private TreeNode curt;
     public Solution173(TreeNode root) {
-        
+        curt = root;
     }
 
     /** @return whether we have a next smallest number */
     public boolean hasNext() {
-        return true;
+        return (curt != null || !stack.isEmpty());
     }
 
     /** @return the next smallest number */
     public int next() {
-        return 0;
+        while(curt != null) {
+            stack.push(curt);
+            curt = curt.left;
+        }
+        
+        curt = stack.pop();
+        TreeNode node = curt;
+        curt = curt.right;
+        return node.val;
     }
 }
 /**

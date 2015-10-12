@@ -24,6 +24,26 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution055 {
+    public boolean canJump(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        
+        boolean[] states = new boolean[nums.length];
+        states[0] = true;
+        
+        for(int i = 1; i < nums.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (states[j] && nums[j] + j >= i) {
+                    states[i] = true;
+                    break;
+                }
+            }
+        }
+        
+        return states[states.length - 1];
+    }
+    /*
     public boolean canJump(int[] A) {
         if (A==null||A.length<2)
             return false;
@@ -45,5 +65,5 @@ public class Solution055 {
             }
             return false;
         }
-    }
+    }*/
 }

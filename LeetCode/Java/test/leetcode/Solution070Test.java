@@ -46,14 +46,14 @@ public class Solution070Test {
         int n = 0;
         Solution070 instance = new Solution070();
         int expResult = 0;
-        int result = instance.climbStairs2(n);
+        int result = instance.climbStairs(n);
         assertEquals(expResult, result);
         
-        assertEquals(1, instance.climbStairs2(1));
-        assertEquals(2, instance.climbStairs2(2));
-        assertEquals(3, instance.climbStairs2(3));
-        assertEquals(5, instance.climbStairs2(4));
-        assertEquals(8, instance.climbStairs2(5));
+        assertEquals(1, instance.climbStairs(1));
+        assertEquals(2, instance.climbStairs(2));
+        assertEquals(3, instance.climbStairs(3));
+        assertEquals(5, instance.climbStairs(4));
+        assertEquals(8, instance.climbStairs(5));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

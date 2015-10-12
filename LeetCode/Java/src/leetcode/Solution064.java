@@ -16,6 +16,32 @@ package leetcode;
  */
 public class Solution064 {
     public int minPathSum(int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
+        // Define function, f[i][j] is the sum of minimum from top left.
+        int[][] f = new int[grid.length][grid[0].length];
+        // Initial
+        f[0][0] = grid[0][0];
+        for(int i = 1; i < grid.length; i++) {
+            f[i][0] = f[i - 1][0] + grid[i][0];
+        }
+        for (int j = 1; j < grid[0].length; j++) {
+            f[0][j] = f[0][j - 1] + grid[0][j];
+        }
+        
+        // Calculate f[i][j];
+        for(int i = 1; i < grid.length; i++) {
+            for (int j = 1; j < grid[0].length; j++) {
+                f[i][j] = Math.min(f[i - 1][j], f[i][j - 1]) + grid[i][j];
+            }
+        }
+        // Get result
+        return f[grid.length - 1][grid[0].length - 1];
+    }
+    /*
+    public int minPathSum(int[][] grid) {
         if (grid==null||grid.length==0||grid[0].length==0)
             return 0;
         
@@ -49,5 +75,5 @@ public class Solution064 {
         
         return grid[i-1][j-1];
         
-    }
+    }*/
 }
