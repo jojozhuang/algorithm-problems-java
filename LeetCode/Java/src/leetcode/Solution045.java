@@ -22,7 +22,50 @@ package leetcode;
  * @author Johnny
  */
 public class Solution045 {
-    public int jump(int[] A) {
-        return 0;
+    // Greedy
+    public int jump(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return Integer.MAX_VALUE;
+        }
+        
+        int farthest = nums[0];
+        int steps = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (i <= farthest && nums[i] + i > farthest) {
+                farthest = nums[i] + i;
+                steps++;
+            }
+            if (farthest >= nums.length - 1) {
+                return steps;
+            }
+        }
+        
+        if (farthest >= nums.length - 1) {
+            return steps;
+        }
+        else {
+            return Integer.MAX_VALUE;
+        }
     }
+    /*
+    public int jump(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return Integer.MAX_VALUE;
+        }
+        
+        int[] minSteps = new int[nums.length];
+        minSteps[0] = 0;
+        for (int i = 1; i < nums.length; i++) {
+            minSteps[i] = Integer.MAX_VALUE;
+            for (int j = 0; j < i; j++) {
+                if (minSteps[j] != Integer.MAX_VALUE && nums[j] + j >= i) {
+                    minSteps[i] = minSteps[j] + 1;
+                    break;
+                }
+            }
+        }
+        
+        return minSteps[minSteps.length - 1];
+    }
+    */
 }

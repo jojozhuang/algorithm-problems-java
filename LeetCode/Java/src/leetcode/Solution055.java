@@ -24,6 +24,26 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution055 {
+    // Greedy
+    public boolean canJump(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }       
+       
+        int farthest = nums[0];
+        for(int i = 1; i < nums.length; i++) {
+            if (i <= farthest && nums[i] + i > farthest) {
+                farthest = nums[i] + i;
+            }
+            if (farthest >= nums.length - 1) {
+                return true;
+            }
+        }
+        return farthest >= nums.length - 1;
+    }
+    /*
+    DP
+    
     public boolean canJump(int[] nums) {
         if (nums == null || nums.length == 0) {
             return false;
@@ -42,7 +62,7 @@ public class Solution055 {
         }
         
         return states[states.length - 1];
-    }
+    }*/
     /*
     public boolean canJump(int[] A) {
         if (A==null||A.length<2)
