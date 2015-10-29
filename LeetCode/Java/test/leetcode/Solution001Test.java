@@ -56,6 +56,7 @@ public class Solution001Test {
         int[] expResult2 = {5100,5101};
         int[] result2 = instance2.twoSum1(numbers2, target2);
         assertArrayEquals(expResult2, result2);
+        assertArrayEquals(new int[] {2, 3}, instance.twoSum2(new int[] { 1, 0, -1 }, -1));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
