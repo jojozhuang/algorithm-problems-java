@@ -11,8 +11,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /LeetCode/Java/build
+/LeetCode/Java/dist/
 /LeetCode/Java/nbproject/private/
 /LintCode/Java/build
+/LintCode/Java/dist/
 /LintCode/Java/nbproject/private/
 /CC150/nbproject/private/
 /CC150/build/
+/CC150/dist/
