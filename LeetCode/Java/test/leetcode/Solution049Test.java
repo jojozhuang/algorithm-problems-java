@@ -65,5 +65,43 @@ public class Solution049Test {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of groupAnagrams method, of class Solution049.
+     */
+    @Test
+    public void testGroupAnagrams() {
+        System.out.println("groupAnagrams");
+        String[] strs = null;
+        Solution049 instance = new Solution049();
+        List<List<String>> expResult = new ArrayList<List<String>>();
+        List<List<String>> result = instance.groupAnagrams(strs);
+        assertEquals(expResult, result);
+        
+        
+        
+        //List<List<String>> result2 = instance.groupAnagrams(new String[]{""});
+        //assertEquals(1, result2.size());
+        
+        assertThat(instance.groupAnagrams(new String[]{""}).get(0), is(Arrays.asList("")));
+        assertThat(instance.groupAnagrams(new String[]{"abc"}).get(0), is(Arrays.asList("abc")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","cba"}).get(0), is(Arrays.asList("abc","cba")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","cba"}).get(0), is(Arrays.asList("abc","cba")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","cba"}).get(1), is(Arrays.asList("def")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","eba"}).get(0), is(Arrays.asList("abc")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","eba"}).get(1), is(Arrays.asList("def")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","eba"}).get(2), is(Arrays.asList("eba")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","cba","fed","cy"}).get(0), is(Arrays.asList("abc","cba")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","cba","fed","cy"}).get(1), is(Arrays.asList("def", "fed")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","cba","fed","cy"}).get(2), is(Arrays.asList("cy")));
+        assertThat(instance.groupAnagrams(new String[]{"ant","ant"}).get(0), is(Arrays.asList("ant","ant")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","cba","fed","cy"}).get(0), is(Arrays.asList("abc","cba")));
+        assertThat(instance.groupAnagrams(new String[]{"abc","def","cba","fed","cy"}).get(1), is(Arrays.asList("def", "fed")));
+        assertThat(instance.groupAnagrams(new String[]{"tea","and","ate","eat","den"}).get(0), is(Arrays.asList("tea", "ate", "eat")));
+        assertThat(instance.groupAnagrams(new String[]{"tea","and","ate","eat","den"}).get(1), is(Arrays.asList("and")));
+        assertThat(instance.groupAnagrams(new String[]{"tea","and","ate","eat","den"}).get(2), is(Arrays.asList("den")));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }

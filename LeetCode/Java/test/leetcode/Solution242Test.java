@@ -56,5 +56,25 @@ public class Solution242Test {
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of isAnagram2 method, of class Solution242.
+     */
+    @Test
+    public void testIsAnagram2() {
+        System.out.println("isAnagram2");
+        String s = "";
+        String t = "";
+        Solution242 instance = new Solution242();
+        boolean expResult = false;
+        boolean result = instance.isAnagram2(s, t);
+        assertEquals(expResult, result);
+        assertEquals(false, instance.isAnagram2("bc", "ab"));
+        assertEquals(true, instance.isAnagram2("ba", "ab"));
+        assertEquals(true, instance.isAnagram2("anagram", "nagaram"));
+        assertEquals(false, instance.isAnagram2("car", "rat"));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }
