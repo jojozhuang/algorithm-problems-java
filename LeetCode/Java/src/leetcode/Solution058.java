@@ -49,5 +49,53 @@ public class Solution058 {
             else
                 return 0;
         }
-    }  
+    }
+    
+    // Two pointers
+    public int lengthOfLastWord2(String s) {
+        if (s == null || s.isEmpty())
+            return 0;        
+      
+        char[] arr_c = s.toCharArray();
+        // trim the tail space
+        int end = arr_c.length;
+        for(int i = end - 1; i >=0; i--) {
+            if (arr_c[i] == ' ') {
+                end--;
+            }
+            else {
+                break;
+            }
+        }
+        
+        int begin = 0;
+        for(int j = 0; j < end; j++) {
+            if(arr_c[j] == ' ') {
+                begin = j + 1;
+            }
+        }
+
+        return end - begin;
+    }
+    
+    // scan from tail to head
+    public int lengthOfLastWord3(String s) {
+        if (s == null || s.isEmpty())
+            return 0;        
+      
+        int count = 0;
+
+        for(int i = s.length() - 1; i >=0; i--) {
+            if (s.charAt(i) == ' ') {
+                if (count > 0) {
+                    return count;
+                }                
+            }
+            else {
+                count++;
+            }
+        }
+        
+        return count;
+    }
 }

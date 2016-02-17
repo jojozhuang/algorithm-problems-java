@@ -45,4 +45,33 @@ public class Solution038 {
         }
         return strSay;
     }    
+    
+    public String countAndSay2(int n) {
+        if (n <= 0) {
+            return "";
+        }
+        
+        String str = "1";  
+        for (int i = 1; i < n; i++) {
+            int count = 1;
+            StringBuilder sb = new StringBuilder();       
+            char c = str.charAt(0);
+            for(int j = 1; j < str.length(); j++) {
+                if (c != str.charAt(j)){
+                    sb.append(count);
+                    sb.append(c);
+                    c = str.charAt(j);
+                    count = 1;
+                }
+                else {
+                    count++;
+                }
+            }
+            sb.append(count);
+            sb.append(c);
+            str = sb.toString();
+        }
+        
+        return str;
+    }
 }
