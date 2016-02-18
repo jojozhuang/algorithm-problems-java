@@ -74,6 +74,6 @@ public class Solution088 {
                 nums1[end] = nums2[p];
                 end--;
             }
-        }               
+        }             
     }
 }
