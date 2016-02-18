@@ -42,7 +42,7 @@ public class AllSorting {
         ret = nums;
         
         return ret;
-    }
+    }  
     
     public int[] InsertSort(int[] nums) {
         if (nums==null||nums.length<2)
@@ -64,61 +64,6 @@ public class AllSorting {
         
         ret=nums;
         
-        return ret;
-    }
-    
-    public int[] MergeSort(int[] nums, int from, int to) {
-        if (nums==null||nums.length<2)
-            return nums;
-        
-        if (from == to)
-            return nums;
-        
-        int[] ret;
-        int mid = 0;
-        
-        if (from < to) {
-            mid = (from + to) / 2;
-            nums = MergeSort(nums, from, mid);
-            nums = MergeSort(nums, mid+1, to);
-            nums = Merge(nums, from, mid, to);
-        }
-        
-        ret = nums;
-        return ret;
-    }
-    
-    private int[] Merge(int[] nums, int from, int mid, int to) {
-        int left = mid - from + 1;
-        int right = to - mid;
-        
-        int[] ret;
-        int[] leftNums = Arrays.copyOfRange(nums, from, mid+1);
-        int[] rightNums = Arrays.copyOfRange(nums, mid+1, to+1);
-        
-        int i=0;
-        int j=0;
-        int k=0;
-        for (k=from; k<=to; k++) {
-            if (i>=left) {
-                nums[k] = rightNums[j];
-                j++;
-            }
-            else if(j>=right) {
-                nums[k] = leftNums[i];
-                i++;
-            }
-            else if (leftNums[i]<=rightNums[j]) {
-                nums[k] = leftNums[i];
-                i++;
-            }
-            else{
-                nums[k] = rightNums[j];
-                j++;
-            }                
-        }
-        
-        ret = nums;
         return ret;
     }
     
@@ -148,42 +93,83 @@ public class AllSorting {
         return ret;        
     }
     
-    public int[] QuickSort(int[] nums, int from, int to) {
-        if (nums==null||nums.length<2)
+    public int[] MergeSort(int[] nums, int start, int end) {
+        if (nums == null || nums.length < 2 || start >= end) {
             return nums;
+        }
         
-        if (from>=to)
-            return nums;
+        int mid = 0;
+        
+        mid = start + (end - start) / 2;
+        nums = MergeSort(nums, start, mid);
+        nums = MergeSort(nums, mid + 1, end);
+        nums = Merge(nums, start, mid, end);
+        
+        return nums;
+    }
+    
+    private int[] Merge(int[] nums, int start, int mid, int end) {
+        int left = mid - start + 1;
+        int right = end - mid;
         
         int[] ret;
-        int q;
-        if (from<to) {
-            q = Partition(nums, from, to);
-            nums = QuickSort(nums, from, q-1);
-            nums = QuickSort(nums, q+1, to);
+        int[] leftNums = Arrays.copyOfRange(nums, start, mid+1);
+        int[] rightNums = Arrays.copyOfRange(nums, mid+1, end+1);
+        
+        int i=0;
+        int j=0;
+        for (int k = start; k <= end; k++) {
+            if (i >= left) {
+                nums[k] = rightNums[j];
+                j++;
+            }
+            else if(j >= right) {
+                nums[k] = leftNums[i];
+                i++;
+            }
+            else if (leftNums[i] <= rightNums[j]) {
+                nums[k] = leftNums[i];
+                i++;
+            }
+            else{
+                nums[k] = rightNums[j];
+                j++;
+            }                
         }
         
         ret = nums;
         return ret;
+    }    
+    
+    public int[] QuickSort(int[] nums, int start, int end) {
+        if (nums == null || nums.length < 2 || start >= end) {
+            return nums;
+        }
+        
+        int pivot = Partition(nums, start, end);
+        nums = QuickSort(nums, start, pivot - 1);
+        nums = QuickSort(nums, pivot + 1, end);
+
+        return nums;
     }   
     
-    private int Partition(int[] nums, int from, int to) {
-        int pivot = nums[to];
+    private int Partition(int[] nums, int start, int end) {
+        int pivot = nums[end];
         
-        int i=from-1;
+        int i = start - 1;
         int j;
         int temp;
-        for (j=from; j<to; j++) {
-            if (nums[j]<=pivot) {
-                i=i+1;
+        for (j = start; j < end; j++) {
+            if (nums[j] <= pivot) {
+                i = i + 1;
                 temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
             }
         }
-        temp = nums[i+1];
-        nums[i+1] = pivot;
-        nums[to] = temp;
-        return i+1;
+        temp = nums[i + 1];
+        nums[i + 1] = pivot;
+        nums[end] = temp;
+        return i + 1;
     }    
 }

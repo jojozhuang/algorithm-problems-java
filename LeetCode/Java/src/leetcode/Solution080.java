@@ -18,7 +18,31 @@ package leetcode;
  * @author Johnny
  */
 public class Solution080 {
-    public int removeDuplicates(int[] A) {
-        return 0;
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int fast = 1;
+        int slow = 0;
+        int duplicate = 1;
+        
+        while(fast < nums.length) {
+            if (nums[fast] == nums[slow]) {
+                if (duplicate < 2) {  
+                    slow++;
+                    nums[slow] = nums[fast];                    
+                }
+                duplicate++;
+            }
+            else {
+                slow++;
+                nums[slow] = nums[fast];               
+                duplicate = 1;                
+            }
+            fast++;
+        }
+        
+        return slow + 1;
     }
 }

@@ -20,24 +20,24 @@ package leetcode;
  * @author Johnny
  */
 public class Solution026 {
-    public int removeDuplicates(int[] A) {
-        if (A==null||A.length==0)
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0)
             return 0;
         
-        if (A.length==1)
+        if (nums.length == 1)
             return 1;
         
         int i=1;
         int j=0;
         
-        while(i<A.length) {
-            if (A[i]!=A[j]) {
+        while(i < nums.length) {
+            if (nums[i] != nums[j]) {
                 j++;
-                A[j]=A[i];                                
+                nums[j] = nums[i];                                
             }
             i++;
         }
         
-        return j+1;
+        return j + 1;
     }
 }

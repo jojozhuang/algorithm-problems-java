@@ -17,64 +17,63 @@ package leetcode;
  * @author Johnny
  */
 public class Solution088 {
-    public int[] merge2(int A[], int m, int B[], int n) {
-        if(A == null || A.length == 0)
-            return B;
-        if(B == null || B.length == 0)
-            return A;
+    public int[] merge2(int nums1[], int m, int nums2[], int n) {
+        if(nums1 == null || nums1.length == 0)
+            return nums2;
+        if(nums2 == null || nums2.length == 0)
+            return nums1;
         
-        int i = m-1;
-        int j = B.length-1;
-        int k = m + n - 1;
-        while(k>=0&&i>=0&&j>=0) {
-            if (A[i]>B[j]) {
-                A[k] = A[i];
+        int i = m - 1;
+        int j = n - 1;
+        int end = m + n - 1;
+        while(i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[end] = nums1[i];
                 i--;
-                if (k==i-1)
-                    break;
             }
             else {
-                A[k] = B[j];
+                nums1[end] = nums2[j];
                 j--;
             }
-            k--;
+            end--;
         }
         
-        if (i<0&&j>=0) {
-            for (int p = j; p>=0; p--) {
-                A[k]=B[p];
-                k--;
+        if (j >= 0) {
+            for (int p = j; p >= 0; p--) {
+                nums1[end] = nums2[p];
+                end--;
             }
         }
         
-        return A;
+        return nums1;
     }
     
-    public void merge(int A[], int m, int B[], int n) {
+    public void merge(int nums1[], int m, int nums2[], int n) {
+        if(nums1 == null || nums1.length == 0)
+            return;
+        if(nums2 == null || nums2.length == 0)
+            return;
         
-        int i = m-1;
-        int j = B.length-1;
-        int k = m + n - 1;
-        while(k>=0&&i>=0&&j>=0) {
-            if (A[i]>B[j]) {
-                A[k] = A[i];
+        int i = m - 1;
+        int j = n - 1;
+        int end = m + n - 1;
+        while(i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[end] = nums1[i];
                 i--;
-                if (k==i-1)
-                    break;
             }
             else {
-                A[k] = B[j];
+                nums1[end] = nums2[j];
                 j--;
             }
-            k--;
+            end--;
         }
         
-        if (i<0&&j>=0) {
-            for (int p = j; p>=0; p--) {
-                A[k]=B[p];
-                k--;
+        if (j >= 0) {
+            for (int p = j; p >= 0; p--) {
+                nums1[end] = nums2[p];
+                end--;
             }
-        }
-               
+        }               
     }
 }

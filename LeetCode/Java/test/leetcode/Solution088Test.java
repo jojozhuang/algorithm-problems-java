@@ -43,27 +43,28 @@ public class Solution088Test {
     @Test
     public void testMerge() {
         System.out.println("merge");
-        int[] A = {1};
+        int[] num1 = {1};
         int m = 1;
-        int[] B = {};
+        int[] num2 = {};
         int n = 0;
         Solution088 instance = new Solution088();
         int[] expResult = {1};
-        int[] result = instance.merge2(A, m, B, n);
+        int[] result = instance.merge2(num1, m, num2, n);
         assertArrayEquals(expResult, result);
-        int[] A2 = new int[2];
-        A2[0] = 1;
-        assertArrayEquals(new int[]{1,2}, instance.merge2(A2, 1, new int[]{2}, 1));
         
-        int[] A3 = new int[2];
-        A3[0] = 2;
-        assertArrayEquals(new int[]{1,2}, instance.merge2(A3, 1, new int[]{1}, 1));
+        int[] num12 = new int[2];
+        num12[0] = 1;
+        assertArrayEquals(new int[]{1,2}, instance.merge2(num12, 1, new int[]{2}, 1));
         
-        int[] A4 = new int[6];
-        A4[0] = 4;
-        A4[1] = 5;
-        A4[2] = 6;
-        assertArrayEquals(new int[]{1,2,3,4,5,6}, instance.merge2(A4, 3, new int[]{1,2,3}, 3));
+        int[] num13 = new int[2];
+        num13[0] = 2;
+        assertArrayEquals(new int[]{1,2}, instance.merge2(num13, 1, new int[]{1}, 1));
+        
+        int[] num14 = new int[6];
+        num14[0] = 4;
+        num14[1] = 5;
+        num14[2] = 6;
+        assertArrayEquals(new int[]{1,2,3,4,5,6}, instance.merge2(num14, 3, new int[]{1,2,3}, 3));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
