@@ -17,7 +17,15 @@ package leetcode;
  * @author Johnny
  */
 public class Solution136 {
-    public int singleNumber(int[] A) {
-        return 0;
+    public int singleNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int ret = 0;
+        for(int i = 0; i < nums.length; i++) {
+            ret = ret ^ nums[i];
+        }
+        return ret;
     }
 }

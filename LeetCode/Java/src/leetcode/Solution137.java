@@ -17,7 +17,20 @@ package leetcode;
  * @author Johnny
  */
 public class Solution137 {
-    public int singleNumber(int[] A) {
-        return 0;
+    public int singleNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int[] count = new int[32];
+        int result = 0;
+        for (int i = 0; i < 32; i++) {
+            for(int j = 0; j < nums.length; j++) {
+                count[i] += (nums[j] >> i) & 1;
+            }
+            result |= (count[i] % 3) << i;
+        }
+        
+        return result;
     }
 }
