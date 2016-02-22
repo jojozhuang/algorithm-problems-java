@@ -94,5 +94,60 @@ public class Solution019Test {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of removeNthFromEnd2 method, of class Solution019.
+     */
+    @Test
+    public void testRemoveNthFromEnd2() {
+        System.out.println("removeNthFromEnd2");        
+        Solution019 instance = new Solution019();
+       
+        // 1 , 1
+        ListNode result1 = instance.removeNthFromEnd2(new ListNode(1), 1);
+        assertEquals(null, result1);
+        
+        //Input:	{1,2}, 1
+        ListNode head2 = new ListNode(1);
+        head2.next  = new ListNode(2); 
+        ListNode result2 = instance.removeNthFromEnd2(head2, 1);
+        assertEquals(1, result2.val);
+        assertEquals(null, result2.next);
+        
+        //Input:	{1,2,3}, 1
+        ListNode head3 = new ListNode(1);
+        head3.next  = new ListNode(2); 
+        head3.next.next  = new ListNode(3); 
+        ListNode result3 = instance.removeNthFromEnd2(head3, 2);
+        assertEquals(1, result3.val);
+        assertEquals(3, result3.next.val);
+        
+        //1->2->3->4->5, 2
+        ListNode head4 = new ListNode(1);
+        head4.next  = new ListNode(2); 
+        head4.next.next  = new ListNode(3); 
+        head4.next.next.next  = new ListNode(4); 
+        head4.next.next.next.next  = new ListNode(5);        
+        ListNode result4 = instance.removeNthFromEnd2(head4, 2);
+        assertEquals(1, result4.val);
+        assertEquals(2, result4.next.val);
+        assertEquals(3, result4.next.next.val);
+        assertEquals(5, result4.next.next.next.val);       
+        
+        //1->2->3->4->5, 1
+        ListNode head5 = new ListNode(1);
+        head5.next  = new ListNode(2); 
+        head5.next.next  = new ListNode(3); 
+        head5.next.next.next  = new ListNode(4); 
+        head5.next.next.next.next  = new ListNode(5); 
+        ListNode result5 = instance.removeNthFromEnd2(head5, 1);
+        assertEquals(1, result5.val);
+        assertEquals(2, result5.next.val);
+        assertEquals(3, result5.next.next.val);
+        assertEquals(4, result5.next.next.next.val);         
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }

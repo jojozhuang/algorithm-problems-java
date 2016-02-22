@@ -75,4 +75,32 @@ public class Solution019 {
             return node;
         }
     }
+    
+    // fast and slow pointer
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
+        if (head == null || n < 1) {
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        
+        ListNode predel = dummy;
+        ListNode curr = head;
+        
+        for (int i = 0; i < n; i++) {
+            if (curr == null) {
+                return null;
+            }
+            curr = curr.next;
+        }
+        
+        //move the window(which has length = n)
+        while(curr != null) {
+            curr = curr.next;
+            predel = predel.next;
+        }
+        
+        predel.next = predel.next.next;
+        return dummy.next;      
+    }
 }

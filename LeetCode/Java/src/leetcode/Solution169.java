@@ -18,26 +18,26 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution169 {
-    public int majorityElement(int[] num) {
-        if (num==null || num.length==0)
+    public int majorityElement(int[] nums) {
+        if (nums==null || nums.length==0)
             return Integer.MIN_VALUE;
        
-        if (num.length==1)
-            return num[0];
+        if (nums.length==1)
+            return nums[0];
         
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int element;
         int count;
         
-        for(int i=0; i<num.length; i++) {
-            element = num[i];
+        for(int i=0; i<nums.length; i++) {
+            element = nums[i];
             if(!map.containsKey(element)) {
                 map.put(element, 1);
             }
             else {
                 count = map.get(element);
                 count++;
-                if (count>num.length/2)
+                if (count>nums.length/2)
                     return element;
                 else
                     map.replace(element, count);
@@ -45,5 +45,28 @@ public class Solution169 {
         }
         
         return Integer.MIN_VALUE;
+    }
+        
+    public int majorityNumber(int[] nums) {
+        if (nums == null || nums.length == 0) return Integer.MIN_VALUE;
+
+        // pair<key, count>
+        int key = -1, count = 0;
+        for (int num : nums) {
+            // re-initialize
+            if (count == 0) {
+                key = num;
+                count = 1;
+                continue;
+            }
+            // increment/decrement count
+            if (key == num) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+
+        return key;
     }
 }

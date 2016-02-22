@@ -79,6 +79,13 @@ public class Solution083Test {
         assertEquals(head41.val, result4.val);
         assertEquals(head43.val, result4.next.val);
         assertEquals(head44.val, result4.next.next.val);
+        
+        ListNode head5 = new ListNode(1);       
+        head5.next = new ListNode(1);  
+        head5.next.next =  new ListNode(1);  
+        ListNode result5 = instance.deleteDuplicates(head5);
+        assertEquals(head5.val, result5.val);
+        assertEquals(null, result5.next);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

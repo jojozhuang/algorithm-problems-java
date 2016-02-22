@@ -23,6 +23,27 @@ import leetcode.common.ListNode;
  */
 public class Solution086 {
     public ListNode partition(ListNode head, int x) {
-        return null;
+        ListNode leftDummy = new ListNode(0);
+        ListNode leftCurr = leftDummy;
+        ListNode rightDummy = new ListNode(0);
+        ListNode rightCurr = rightDummy;
+        
+        ListNode current = head;
+        while(current != null) {
+            if (current.val < x) {
+                leftCurr.next = current;
+                leftCurr = leftCurr.next;
+            }
+            else {
+                rightCurr.next = current;
+                rightCurr = rightCurr.next;
+            }
+            current = current.next;
+        }
+        
+        rightCurr.next = null;
+        leftCurr.next = rightDummy.next;
+        
+        return leftDummy.next;
     }
 }

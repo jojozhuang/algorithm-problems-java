@@ -19,20 +19,12 @@ import leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution083 {        
-    public ListNode deleteDuplicates(ListNode head) {
-        if (head == null)
-            return null;
-        
-        if (head.next == null)
-            return head;
-        
-        ListNode previous = head;
-        ListNode current = head.next;
-        while(current!=null) {
-            if (previous.val==current.val)
-                previous.next = current.next;
-            else
-                previous = current;
+    public ListNode deleteDuplicates(ListNode head) {      
+        ListNode current = head;
+        while(current != null) {
+            while (current.next != null && current.val == current.next.val) {
+                current.next = current.next.next;
+            }
             current = current.next;
         }
         
