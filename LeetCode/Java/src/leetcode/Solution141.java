@@ -18,6 +18,28 @@ import leetcode.common.ListNode;
  */
 public class Solution141 {
     public boolean hasCycle(ListNode head) {
-        return true;
+        if (head == null) {
+            return false;
+        }
+        
+        ListNode fast = new ListNode(0);
+        fast.next = head;
+        ListNode slow = new ListNode(1);
+        slow.next = head;
+        
+        while(fast != null) {
+            if (fast.next == null) {
+                return false;
+            }
+            else {
+                fast = fast.next.next;
+                slow = slow.next;
+                if (fast == slow) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
     }
 }
