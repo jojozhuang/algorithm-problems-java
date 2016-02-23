@@ -86,5 +86,76 @@ public class Solution021Test {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of mergeTwoLists2 method, of class Solution021.
+     */
+    @Test
+    public void testMergeTwoLists2() {
+        System.out.println("mergeTwoLists2");
+        ListNode l1 = null;
+        ListNode l2 = null;
+        Solution021 instance = new Solution021();
+        ListNode expResult = null;
+        ListNode result = instance.mergeTwoLists2(l1, l2);
+        assertEquals(expResult, result);
+        
+        //{1,3,8,11},{2}
+        ListNode l21 = new ListNode(1);
+        l21.next = new ListNode(3);
+        l21.next.next = new ListNode(8);
+        l21.next.next.next = new ListNode(11);
+        ListNode l22 = new ListNode(2);
+        ListNode l23 = new ListNode(1);
+        l23.next = new ListNode(2);
+        l23.next.next = new ListNode(3);
+        l23.next.next.next = new ListNode(8);
+        l23.next.next.next.next = new ListNode(11);
+        ListNode result2 = instance.mergeTwoLists2(l21, l22);
+        assertEquals(1, result2.val);
+        assertEquals(2, result2.next.val);
+        assertEquals(3, result2.next.next.val);
+        assertEquals(8, result2.next.next.next.val);
+        assertEquals(11, result2.next.next.next.next.val);
+        assertEquals(null, result2.next.next.next.next.next);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of mergeTwoLists3 method, of class Solution021.
+     */
+    @Test
+    public void testMergeTwoLists3() {
+        System.out.println("mergeTwoLists3");
+        ListNode l1 = null;
+        ListNode l2 = null;
+        Solution021 instance = new Solution021();
+        ListNode expResult = null;
+        ListNode result = instance.mergeTwoLists3(l1, l2);
+        assertEquals(expResult, result);
+        
+        //{1,3,8,11},{2}
+        ListNode l21 = new ListNode(1);
+        l21.next = new ListNode(3);
+        l21.next.next = new ListNode(8);
+        l21.next.next.next = new ListNode(11);
+        ListNode l22 = new ListNode(2);
+        ListNode l23 = new ListNode(1);
+        l23.next = new ListNode(2);
+        l23.next.next = new ListNode(3);
+        l23.next.next.next = new ListNode(8);
+        l23.next.next.next.next = new ListNode(11);
+        ListNode result2 = instance.mergeTwoLists3(l21, l22);
+        assertEquals(1, result2.val);
+        assertEquals(2, result2.next.val);
+        assertEquals(3, result2.next.next.val);
+        assertEquals(8, result2.next.next.next.val);
+        assertEquals(11, result2.next.next.next.next.val);
+        assertEquals(null, result2.next.next.next.next.next);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }

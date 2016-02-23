@@ -66,4 +66,52 @@ public class Solution021 {
         
         return ret;
     }
+    
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);        
+        ListNode curr = new ListNode(0);  
+        dummy.next = curr;
+        while(l1 != null && l2 != null) {            
+            ListNode newnode;
+            if (l1.val <= l2.val) {
+                newnode = new ListNode(l1.val);
+                l1 = l1.next;
+            } else {
+                newnode = new ListNode(l2.val); 
+                l2 = l2.next;
+            }            
+            curr.next = newnode;
+            curr = curr.next;
+        }
+        if (l1 != null) {
+            curr.next = l1;
+        }
+        if (l2 != null) {
+            curr.next = l2;
+        }
+        return dummy.next.next;
+    }
+    
+    // in place
+    public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy; 
+        while(l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                curr.next = l1;
+                l1 = l1.next;
+            } else {
+                curr.next = l2;
+                l2 = l2.next;
+            }            
+            curr = curr.next;
+        }
+        if (l1 != null) {
+            curr.next = l1;
+        }
+        if (l2 != null) {
+            curr.next = l2;
+        }
+        return dummy.next;
+    }
 }
