@@ -15,6 +15,23 @@ import leetcode.common.ListNode;
  */
 public class Solution147 {
     public ListNode insertionSortList(ListNode head) {
-        return null;
-    }
+        if (head == null || head.next == null) {
+            return head;
+        }
+        
+        ListNode dummy = new ListNode(0);
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode pre = dummy;
+            while (pre.next != null && pre.next.val < cur.val) {
+                pre = pre.next;
+            }
+            ListNode temp = cur.next;
+            cur.next = pre.next;
+            pre.next = cur;
+            cur = temp;
+        }
+
+        return dummy.next;
+    }    
 }
