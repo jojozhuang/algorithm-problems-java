@@ -20,7 +20,7 @@ import leetcode.common.TreeNode;
 public class Solution110 {
     public boolean isBalanced(TreeNode root) {
         return (maxDepth(root) != -1);
-    }  
+    }
     
     private int maxDepth(TreeNode root) {
         if (root == null) {

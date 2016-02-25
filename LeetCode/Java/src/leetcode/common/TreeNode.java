@@ -20,7 +20,7 @@ import java.util.Queue;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
      
-     public static TreeNode CreateInstance(String[] arr) {  
+    public static TreeNode CreateInstance(String[] arr) {  
         List<String> serial = Arrays.asList(arr);
         if(serial == null || serial.size() == 0) {
             return null;         

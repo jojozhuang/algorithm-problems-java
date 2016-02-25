@@ -46,60 +46,20 @@ public class Solution102 {
         
         while(!queue.isEmpty()) {
             List<Integer> level = new ArrayList<Integer>();
-            int size = queue.size();
-            for (int ix = 0; ix < size; ix++) {
-                TreeNode head = queue.poll();
-                level.add(head.val);
-                if (head.left != null) {
-                    queue.offer(head.left);
+            int size = queue.size(); 
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                level.add(node.val);
+                if (node.left != null) {
+                    queue.offer(node.left);
                 }
-                if (head.right != null) {
-                    queue.offer(head.right);
-                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }                
             }
             result.add(level);
         }
         
         return result;
-    }
-    /*
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> ret = new ArrayList();
-        List<Integer> list = new ArrayList();
-        
-        if (root==null)
-            return ret;
-        
-        list.add(root.val);
-        ret.add(list);
-        
-        List<List<Integer>> left = levelOrder(root.left);
-        List<List<Integer>> right = levelOrder(root.right);
-        
-        if (left.size()==0&&right.size()==0)
-            return ret;
-        else if (left.size()==0&&right.size()!=0)
-            ret.addAll(right);
-        else if (left.size()!=0&&right.size()==0)
-            ret.addAll(left);
-        else {        
-            
-            int i = 0;
-
-            //merge
-            while(i<left.size()) {
-                if(i<right.size())
-                    left.get(i).addAll(right.get(i));
-                i++;
-            }
-            ret.addAll(left);
-            while(i<right.size()) {
-                ret.add(right.get(i));
-                i++;
-            }
-        }
-        
-        return ret;
-        
-    }*/
+    }   
 }

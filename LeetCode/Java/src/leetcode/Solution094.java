@@ -30,20 +30,55 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution094 {
+    //divide and conquer
     public List<Integer> inorderTraversal(TreeNode root) {
-        // divide and conquer
-        //return inorderDivideConquer(root);
+        List<Integer> result = new ArrayList<Integer>();
         
-        // Recursion
-        //List<Integer> result = new ArrayList<Integer>();
-        //inorderIterate(root, result);
-        //return result;
+        if (root == null) {
+            return result;
+        }
         
-        // No recursion, use stack
-        return inorderStack(root);
+        List<Integer> left = inorderTraversal(root.left);
+        List<Integer> right = inorderTraversal(root.right);
+        
+        result.addAll(left);
+        result.add(root.val);
+        result.addAll(right);
+        
+        return result;        
     }
     
-    private List<Integer> inorderStack(TreeNode root) {
+     public List<Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        
+        if (root == null) {
+            return result;
+        }
+        
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        
+        while(!stack.isEmpty()) {
+            TreeNode node = stack.peek();
+            if (node.left == null) {
+                result.add(node.val);
+                stack.pop();
+                if (node.right != null) {
+                    stack.push(node.right);
+                    node.right = null;
+                }
+            }
+             else {
+                stack.push(node.left);
+                node.left = null;
+            }
+        }
+        
+        return result;
+     }    
+ 
+    // stack
+    private List<Integer> inorderTraversal3(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         
         if (root == null) {
@@ -63,32 +98,5 @@ public class Solution094 {
             curr = curr.right;
         }
         return result;
-    }
-    
-    private void inorderIterate(TreeNode root, List<Integer> list) {
-        if (root == null) {
-            return;
-        }
-        
-        inorderIterate(root.left, list);
-        list.add(root.val);
-        inorderIterate(root.right, list);
-    }
-    private List<Integer> inorderDivideConquer(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        
-        if (root == null) {
-            return result;
-        }
-        
-        List<Integer> left = inorderDivideConquer(root.left);
-        List<Integer> right = inorderDivideConquer(root.right);
-        
-        result.addAll(left);
-        result.add(root.val);
-        result.addAll(right);
-        
-        return result;
-        
-    }
+    }    
 }

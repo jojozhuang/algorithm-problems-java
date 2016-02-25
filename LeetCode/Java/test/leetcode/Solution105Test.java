@@ -73,6 +73,11 @@ public class Solution105Test {
         assertEquals(3, result4.right.val);
         assertEquals(6, result4.right.left.val);
         assertEquals(7, result4.right.right.val);
+        
+        TreeNode result5 = instance.buildTree(new int[] {1, 2, 3}, new int[] {3, 2, 1});
+        assertEquals(1, result5.val);
+        assertEquals(2, result5.left.val);
+        assertEquals(3, result5.left.left.val);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

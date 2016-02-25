@@ -20,16 +20,13 @@ import leetcode.common.ListNode;
  */
 public class Solution024 {    
     public ListNode swapPairs(ListNode head) {
-        if (head == null||head.next == null)
+        if (head == null || head.next == null)
             return head;        
 
-        ListNode newHead = new ListNode(head.next.val);
-        head.next = head.next.next;
-        newHead.next = head;
-
-        if (newHead.next.next!=null)
-            newHead.next.next = swapPairs(newHead.next.next);        
+        ListNode after = head.next;
+        head.next = swapPairs(after.next);
+        after.next = head;
         
-        return newHead;
+        return after;
     }
 }

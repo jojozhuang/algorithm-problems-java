@@ -28,20 +28,24 @@ import java.util.ArrayList;
  * @author Johnny
  */
 public class Solution144 {
+    // Divide and conquer (recursion)
     public List<Integer> preorderTraversal(TreeNode root) {
-        //Divide and conquer
-        //return preorderDivideConquer(root);
+        List<Integer> result = new ArrayList<Integer>();
+        if (root == null) {
+            return result;
+        }
         
-        //Recursion
-        //List<Integer> result = new ArrayList<Integer>();
-        //preorderIterate(root, result);
-        //return result;   
+        List<Integer> left = preorderTraversal(root.left);
+        List<Integer> right = preorderTraversal(root.right);
         
-        //No recursion, use stack
-        return preorderStack(root);
+        result.add(root.val);
+        result.addAll(left);
+        result.addAll(right);
+        return result;
     }
     
-    private List<Integer> preorderStack(TreeNode root) {        
+    // create stack
+    public List<Integer> preorderTraversal2(TreeNode root) {        
         List<Integer> result = new ArrayList<Integer>();
         
         if (root == null) {
@@ -62,30 +66,6 @@ public class Solution144 {
             }
         }
         
-        return result;
-    }
-    private void preorderIterate(TreeNode root, List<Integer> list) {
-        if (root == null) {
-            return;
-        }
-        
-        list.add(root.val);
-        preorderIterate(root.left, list);
-        preorderIterate(root.right, list);        
-    }
-    
-    private List<Integer> preorderDivideConquer(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        if (root == null) {
-            return result;
-        }
-        
-        List<Integer> left = preorderDivideConquer(root.left);
-        List<Integer> right = preorderDivideConquer(root.right);
-        
-        result.add(root.val);
-        result.addAll(left);
-        result.addAll(right);
         return result;
     }
 }

@@ -69,61 +69,27 @@ public class Solution098 {
         result.isBST = true;        
         return result;        
     }
-    /*
-    public boolean isValidBST(TreeNode root) {
-        if (root==null)
+    
+    public boolean isValidBST2(TreeNode root) {
+        if (root == null) {
             return true;
-        
-        //special case
-        if(root.val==Integer.MAX_VALUE) {
-            if(root.right!=null)
-                return false;
-            else if (root.left!=null&&root.left.val==Integer.MAX_VALUE)
-                return false;
         }
-        if(root.val==Integer.MIN_VALUE) {
-            if(root.left!=null)
-                return false;
-            else if (root.right!=null&&root.right.val==Integer.MIN_VALUE)
-                return false;
-        }            
         
-        //general case
-        if (!isValidBSTNode(root.left, root.val, Integer.MIN_VALUE))
-            return false;
-        if (!isValidBSTNode(root.right, Integer.MAX_VALUE, root.val))
-            return false;
-        
-        return true;
+        return isValidBSTHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
     
-    private boolean isValidBSTNode(TreeNode node, int ceiling, int floor) {
-        if (node==null)
+    private boolean isValidBSTHelper(TreeNode root, long min, long max) {
+        if (root == null) {
             return true;
-        
-        if(node.val==Integer.MAX_VALUE) {
-            if(node.right!=null)
-                return false;
-            else if (node.left!=null&&node.left.val==Integer.MAX_VALUE)
-                return false;
         }
-        if(node.val==Integer.MIN_VALUE) {
-            if(node.left!=null)
-                return false;
-            else if (node.right!=null&&node.right.val==Integer.MIN_VALUE)
-                return false;
-        }  
         
-        if(node.val>=ceiling&&ceiling!=Integer.MAX_VALUE)
+        if (root.val >= max || root.val <= min) {
             return false;
-        if(node.val<=floor&&floor!=Integer.MIN_VALUE)
-            return false;
+        }
         
-        if (!isValidBSTNode(node.left, node.val, floor))
-            return false;
-        if (!isValidBSTNode(node.right, ceiling, node.val))
-            return false;
-            
-        return true;
-    }   */
+        boolean left = isValidBSTHelper(root.left, min, root.val);
+        boolean right = isValidBSTHelper(root.right, root.val, max);
+        
+        return left && right;
+    }    
 }

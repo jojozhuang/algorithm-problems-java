@@ -6,6 +6,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import leetcode.common.TreeNode;
 
 /**
@@ -19,6 +20,61 @@ import leetcode.common.TreeNode;
  */
 public class Solution105 {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
+        if(preorder == null || preorder.length == 0 || inorder == null ||
+                inorder.length == 0 || preorder.length != inorder.length) {
+            return null;
+        }
+        
+        TreeNode root = new TreeNode(preorder[0]);
+        
+        if (preorder.length == 1) { //no left and no right
+            return root;
+        }
+        
+        int indexRoot = findIndex(inorder, root.val);
+        
+        int[] leftIn = new int[0];
+        int[] rightIn = new int[0];
+        int[] leftPre = new int[0];
+        int[] rightPre = new int[0];
+            
+        if (indexRoot == 0) { // no left
+            rightIn = Arrays.copyOfRange(inorder, 1, inorder.length);            
+            rightPre = Arrays.copyOfRange(preorder, 1, preorder.length);            
+        }
+        else if (indexRoot < preorder.length - 1) { // left + right
+            leftIn = Arrays.copyOfRange(inorder, 0, indexRoot);
+            rightIn = Arrays.copyOfRange(inorder, indexRoot + 1, inorder.length);
+            leftPre = Arrays.copyOfRange(preorder, 1, leftIn.length + 1);
+            rightPre = Arrays.copyOfRange(preorder, leftIn.length + 1, preorder.length);            
+        } else { // indexRoot == inorder.length - 1, no right
+            leftIn = Arrays.copyOfRange(inorder, 0, indexRoot);
+            leftPre = Arrays.copyOfRange(preorder, 1, leftIn.length + 1);
+        }
+        root.left = buildTree(leftPre, leftIn);
+        root.right = buildTree(rightPre, rightIn); 
+        
+        return root;
+    }
+    
+    private int findIndex(int[] order, int val) {
+        if (order == null || order.length == 0) {
+            return -1;
+        }
+        
+        for(int i = 0; i < order.length; i++) {
+            if (order[i] == val) {
+                return i;
+            }
+        }
+        
+        return -1;
+    }
+    
+    
+    
+    
+    private TreeNode buildTree2(int[] preorder, int[] inorder) {
         if(preorder == null || preorder.length == 0 ||
            inorder == null || inorder.length == 0) {
             return null;

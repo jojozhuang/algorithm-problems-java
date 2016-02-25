@@ -50,7 +50,7 @@ public class Solution107 {
             List<Integer> level = new ArrayList<Integer>();
             int size = queue.size();
             
-            for(int ix = 0; ix < size; ix++) {
+            for(int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 level.add(node.val);
                 
@@ -69,64 +69,5 @@ public class Solution107 {
         }
         
         return result;
-    }
-    /*
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<Integer>> ret = new ArrayList();        
-        
-        if (root==null)
-            return ret;
-        
-        if (root.left==null&&root.right==null) {
-            List<Integer> list = new ArrayList();
-            list.add(root.val);
-            ret.add(list);
-
-            return ret;
-        }
-        else if (root.left==null&&root.right!=null)
-            ret.addAll(levelOrderBottom(root.right));
-        else if (root.left!=null&&root.right==null)
-            ret.addAll(levelOrderBottom(root.left));
-        else {
-            
-            List<List<Integer>> left = levelOrderBottom(root.left);
-            List<List<Integer>> right = levelOrderBottom(root.right);
-            
-            int i = 0;
-
-            //merge
-            if(left.size()>right.size()) {
-                i = right.size() - 1;
-                while(i>=0) {                    
-                    left.get(left.size()-right.size()+i).addAll(right.get(i));
-                    i--;                    
-                }
-                ret.addAll(left);
-            }
-            else if(left.size()<right.size()) {
-                i = left.size() - 1;
-                while(i>=0) {                    
-                    left.get(i).addAll(right.get(right.size()-left.size()+i));                   
-                    right.set(right.size()-left.size()+i, left.get(i));
-                    i--;
-                }
-                ret.addAll(right);
-            }
-            else {
-                i = left.size() - 1;
-                while(i>=0) {                    
-                    left.get(i).addAll(right.get(i));
-                    i--;                    
-                }
-                ret.addAll(left);
-            }
-        }        
-        
-        List<Integer> list = new ArrayList();
-        list.add(root.val);
-        ret.add(list);
-        
-        return ret;
-    }*/
+    }    
 }

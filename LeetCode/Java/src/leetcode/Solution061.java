@@ -49,4 +49,35 @@ public class Solution061 {
                         
         return newhead;
     }
+    
+    public ListNode rotateRight2(ListNode head, int k) {
+        if (head == null || k <= 0) {
+            return head;
+        }
+        
+        ListNode fast = head;
+        int len = 1;
+        while(fast != null && fast.next != null) {
+            fast = fast.next;
+            len++;
+        }
+                
+        int step = Math.abs(len - k % len);
+        if (step == 0 || step == len) {
+            return head;
+        }
+        
+        ListNode prev = head;
+        ListNode rhead = head.next;
+        while(rhead != null && step > 1) {
+            rhead = rhead.next;
+            prev = prev.next;
+            step--;
+        }
+        
+        prev.next = null;
+        fast.next = head;
+        
+        return rhead;
+    }
 }
