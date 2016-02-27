@@ -21,103 +21,29 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution046 {
-    public List<List<Integer>> permute(int[] num) {
-        List<Integer> permutation = new ArrayList<Integer>();
-        List<List<Integer>> list = new ArrayList<List<Integer>>();
-        
-        if (num==null||num.length==0)
-            return list;
-        
-        Map<String, List<Integer>> map = new HashMap<String, List<Integer>>();        
-        int[] next = num;
-        boolean hasnext = true;
-        
-        permutation = convert(next);
-        map.put(getName(permutation), permutation);
-        list.add(permutation);
-        while(hasnext) {
-            next = nextPermutation(next);
-            permutation = convert(next);
-            if (!map.containsKey(getName(permutation))) {
-                map.put(getName(permutation), permutation);
-                list.add(permutation);
-            }
-            else
-                hasnext = false;
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        if (nums == null || nums.length == 0) {
+            return ret;
         }
-   
-        return list;
         
-    }
-    
-    private String getName(List<Integer> list) {
-        StringBuilder sb = new StringBuilder();
-        for(int i=0; i<list.size(); i++) {
-            sb.append(String.valueOf(list.get(i)));
-            sb.append(",");
-        }
-        return sb.toString();                
-    }
-    
-    private List<Integer> convert(int[] num) {
         List<Integer> list = new ArrayList<Integer>();
-        for (int i=0; i<num.length; i++) {
-            list.add(num[i]);
-        }
-        return list;
+        helper(ret, list, nums);
+        return ret;
     }
     
-    private int[] nextPermutation(int[] num) {
-        //http://fisherlei.blogspot.com/2012/12/leetcode-next-permutation.html
-        if (num==null||num.length==0)
-            return num;
+    private void helper(List<List<Integer>> ret, List<Integer> list, int[] nums) {
+        if (list.size() == nums.length) {
+            ret.add(new ArrayList<Integer>(list));
+        }
         
-        int partitionindex = -1;
-        int changeindex = -1;
-        int i = num.length - 1;
-        //find partition number which is the first descending number
-        while(i>0) {
-            if (num[i]>num[i-1]) {
-                partitionindex = i-1;
-                break;
+        for (int i = 0; i < nums.length; i++) {
+            if (list.contains(nums[i])) {
+                continue;
             }
-            i--;
+            list.add(nums[i]);
+            helper(ret, list, nums);
+            list.remove(list.size() - 1);
         }
-        if (partitionindex==-1) {
-            return reverse(num, 0, num.length - 1);
-        }
-        //find the first number which is bigger than partition number
-        i = num.length - 1;
-        while(i>0) {
-            if (num[i]>num[partitionindex]) {
-                changeindex = i;
-                break;
-            }
-            i--;
-        }
-        //swap
-        swap(num, partitionindex, changeindex);
-        //int[] leftpart = Arrays.copyOfRange(num, 0, partitionindex);
-        //int[] rightpart = Arrays.copyOfRange(num, partitionindex+1, num.length - 1);
-        
-        return reverse(num, partitionindex+1, num.length - 1);
-    }
-    
-    private void swap (int[] num, int i, int j) {
-        int t = num[i];
-        num[i] = num[j];
-        num[j] = t;
-      }
-    
-    private int[] reverse(int[] nums, int start, int end) {
-        if (nums==null||nums.length==0)
-            return nums;       
-        
-        while(start<=end) {
-            swap(nums, start, end);
-            start++;
-            end--;
-        }
-        return nums;
     }
 }

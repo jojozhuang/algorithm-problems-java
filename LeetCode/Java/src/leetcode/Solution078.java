@@ -32,53 +32,27 @@ import java.util.List;
  * 
  * @author Johnny
  */
-public class Solution078 {     
-    public List<List<Integer>> subsets(int[] nums) {   
-        if (nums == null) {
-            return new ArrayList<List<Integer>>();
-        }
-        Arrays.sort(nums);
+public class Solution078 {
+    public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        if (nums == null) {
+            return ret;
+        }
+
+        Arrays.sort(nums);// not necessary, just for unit test
+        
         List<Integer> list = new ArrayList<Integer>();
-        subsetHelper(ret, list, nums, 0);
+        helper(ret, list, nums, 0);
         return ret;
     }
-    private void subsetHelper(List<List<Integer>> ret, List<Integer> list, int[] nums, int pos) {
+    
+    private void helper(List<List<Integer>> ret, List<Integer> list, int[] nums, int pos) {
         ret.add(new ArrayList<Integer>(list));
         
-        for(int i = pos; i < nums.length; i++) {
+        for (int i = pos; i < nums.length; i++) {
             list.add(nums[i]);
-            subsetHelper(ret, list, nums, i + 1);
+            helper(ret, list, nums, i + 1);
             list.remove(list.size() - 1);
         }
-    }
-    
-    /*
-    public List<List<Integer>> subsets(int[] S) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
-        if (S==null||S.length==0)
-            return ret;
-        else if (S.length==1) {
-            List<Integer> item = new ArrayList<Integer>();
-            ret.add(item);
-            item = new ArrayList<Integer>();
-            item.add(S[0]);
-            ret.add(item);
-            return ret;
-        }
-        else {
-            Arrays.sort(S);
-            int[] subS = Arrays.copyOf(S, S.length-1);
-            List<List<Integer>> list = subsets(subS);
-            ret.addAll(list);
-            for (int i=0; i<list.size(); i++) {
-                List<Integer> item = new ArrayList<Integer>();
-                item.addAll(list.get(i));
-                item.add(S[S.length-1]);
-                ret.add(item);
-            }
-
-            return ret;
-        }
-    }*/
+    }    
 }

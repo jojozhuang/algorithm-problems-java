@@ -45,10 +45,10 @@ public class Solution046Test {
     @Test
     public void testPermute() {
         System.out.println("permute");
-        int[] num = null;
+        int[] nums = null;
         Solution046 instance = new Solution046();
         List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.permute(num);
+        List<List<Integer>> result = instance.permute(nums);
         assertEquals(expResult, result);
         
         List<Integer> result11 = new ArrayList<Integer>();
@@ -111,27 +111,7 @@ public class Solution046Test {
         expResult4.add(result45);
         expResult4.add(result46);
         assertEquals(expResult4, instance.permute(new int[]{1,2,3}));
-        
-        List<Integer> result51 = new ArrayList<Integer>();
-        result51.add(1);
-        result51.add(1);
-        result51.add(5);
-        List<Integer> result52 = new ArrayList<Integer>();
-        result52.add(1);
-        result52.add(5);
-        result52.add(1);
-        List<Integer> result53 = new ArrayList<Integer>();
-        result53.add(5);
-        result53.add(1);
-        result53.add(1);        
-        List<List<Integer>> expResult5 = new ArrayList<List<Integer>>();
-        expResult5.add(result51);
-        expResult5.add(result52);
-        expResult5.add(result53);        
-        assertEquals(expResult5, instance.permute(new int[]{1,1,5}));
-        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
 }

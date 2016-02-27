@@ -27,57 +27,55 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution031 {
-    public int[] nextPermutation(int[] num) {
+    public void nextPermutation(int[] nums) {
         //http://fisherlei.blogspot.com/2012/12/leetcode-next-permutation.html
-        if (num==null||num.length==0)
-            return num;
+        if (nums == null || nums.length == 0) {
+            return;
+        }
         
-        int partitionindex = -1;
-        int changeindex = -1;
-        int i = num.length - 1;
-        //find partition number which is the first descending number
-        while(i>0) {
-            if (num[i]>num[i-1]) {
-                partitionindex = i-1;
+        // find the partition number from right to left
+        int partition = -1;
+        for (int i = nums.length - 1; i > 0; i--) {
+            if (nums[i - 1] < nums[i]) {
+                partition = i - 1;
                 break;
             }
-            i--;
         }
-        if (partitionindex==-1) {
-            return reverse(num, 0, num.length - 1);
+        
+        // swap
+        if (partition == -1) {
+            reverse(nums, 0, nums.length - 1);
+            return;
         }
-        //find the first number which is bigger than partition number
-        i = num.length - 1;
-        while(i>0) {
-            if (num[i]>num[partitionindex]) {
-                changeindex = i;
+            
+        int firstbig = -1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] > nums[partition]) {
+                firstbig = i;
                 break;
             }
-            i--;
         }
         //swap
-        swap(num, partitionindex, changeindex);
-        //int[] leftpart = Arrays.copyOfRange(num, 0, partitionindex);
-        //int[] rightpart = Arrays.copyOfRange(num, partitionindex+1, num.length - 1);
-        
-        return reverse(num, partitionindex+1, num.length - 1);
+        swap(nums, partition, firstbig);
+            
+        reverse(nums, partition + 1, nums.length - 1);
     }
     
-    private void swap (int[] num, int i, int j) {
-        int t = num[i];
-        num[i] = num[j];
-        num[j] = t;
-      }
-    
-    private int[] reverse(int[] nums, int start, int end) {
-        if (nums==null||nums.length==0)
-            return nums;       
+    private void reverse(int[] nums, int start, int end) {
+        if (nums == null || nums.length == 0 || end <= start) {
+            return;
+        }
         
-        while(start<=end) {
+        while(start < end) {
             swap(nums, start, end);
             start++;
             end--;
         }
-        return nums;
+    }
+    
+    private void swap(int[] nums, int first, int second) {
+        int temp = nums[first];
+        nums[first] = nums[second];
+        nums[second] = temp;
     }
 }

@@ -33,12 +33,14 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution090 {
-    public List<List<Integer>> subsetsWithDup(int[] nums) {   
-        if (nums == null) {
-            return new ArrayList<List<Integer>>();
-        }
-        Arrays.sort(nums);
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        if (nums == null) {
+            return ret;
+        }
+        
+        Arrays.sort(nums);
+        
         List<Integer> list = new ArrayList<Integer>();
         subsetHelper(ret, list, nums, 0);
         return ret;
@@ -54,51 +56,5 @@ public class Solution090 {
             subsetHelper(ret, list, nums, i + 1);
             list.remove(list.size() - 1);
         }
-    }   
-    
-    /*
-    public List<List<Integer>> subsetsWithDup(int[] num) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
-        if (num==null||num.length==0)
-            return ret;
-        else if (num.length==1) {
-            List<Integer> item = new ArrayList<Integer>();
-            ret.add(item);
-            item = new ArrayList<Integer>();
-            item.add(num[0]);
-            ret.add(item);
-            return ret;
-        }
-        else {
-            Arrays.sort(num);
-            int[] subS = Arrays.copyOf(num, num.length-1);
-            List<List<Integer>> list = subsetsWithDup(subS);
-            ret.addAll(list);
-            HashMap map = new HashMap();
-            for (int i=0; i<list.size(); i++) {
-                map.put(buildName(list.get(i)), list.get(i));
-            }
-            for (int i=0; i<list.size(); i++) {
-                List<Integer> item = new ArrayList<Integer>();
-                item.addAll(list.get(i));
-                item.add(num[num.length-1]);
-                if (!map.containsKey(buildName(item)))
-                    ret.add(item);
-            }
-
-            return ret;
-        }
-    }
-    
-    private String buildName(List<Integer> nums) {
-        if (nums==null||nums.size()==0)
-            return "";
-        
-        StringBuilder sb = new StringBuilder();
-        for (int i=0; i<nums.size(); i++) {
-            sb.append(nums.get(i));
-            sb.append(",");
-        }
-        return sb.toString();
-    }*/
+    }    
 }

@@ -46,10 +46,10 @@ public class Solution078Test {
     public void testSubsets() {
         System.out.println("subsets");
         
-        int[] S = null;
+        int[] nums = null;
         Solution078 instance = new Solution078();
         List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.subsets(S);
+        List<List<Integer>> result = instance.subsets(nums);
         assertEquals(expResult, result);
         
         List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();

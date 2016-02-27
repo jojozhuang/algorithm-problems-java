@@ -26,7 +26,7 @@ public class Solution109 {
             curr = curr.next;
             len++;
         }
-        return helper (head, len);
+        return helper(head, len);
     }
     
     private TreeNode helper(ListNode head, int len) {

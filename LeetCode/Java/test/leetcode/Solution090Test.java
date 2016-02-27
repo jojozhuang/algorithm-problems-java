@@ -45,10 +45,10 @@ public class Solution090Test {
     @Test
     public void testSubsetsWithDup() {
         System.out.println("subsetsWithDup");
-        int[] num = null;
+        int[] nums = null;
         Solution090 instance = new Solution090();
         List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.subsetsWithDup(num);
+        List<List<Integer>> result = instance.subsetsWithDup(nums);
         assertEquals(expResult, result);
         
         List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
