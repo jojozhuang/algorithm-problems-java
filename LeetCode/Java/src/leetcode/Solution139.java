@@ -21,7 +21,23 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution139 {
-    public boolean wordBreak(String s, Set<String> dict) {
-        return true;
+    public boolean wordBreak(String s, Set<String> wordDict) {
+        if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0){
+            return false;
+        }
+        
+        boolean[] breakable = new boolean[s.length() + 1];
+        breakable[0] = true;
+        
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = i - 1; j >=0; j--) {
+                String word = s.substring(j, i);
+                if (breakable[j] && wordDict.contains(word)) {
+                    breakable[i] = true;
+                }
+            }
+        }
+        
+        return breakable[s.length()];
     }
 }

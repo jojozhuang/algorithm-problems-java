@@ -29,31 +29,28 @@ import java.util.List;
  */
 public class Solution077 {
     public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (n <= 0 || k <= 0 || n < k) {
+            return result;
+        }
+
         List<Integer> list = new ArrayList<Integer>();
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
-        
-        if (n<1||k<1||k>n)
-            return ret;
-               
-        int count;
-        for (int i=1; i<=n; i++) {
-            if (n-i+1>=k) {
-                list = new ArrayList<Integer>();
-                list.add(i);
-                count = 1;
-                for (int j=i+1; j<=n; j++) {
-                    if (count<k) {
-                        list.add(j+1);                
-                        count++;
-                    }
-                    else {
-                        break;
-                    }
-                }
-                ret.add(list);
-            }
+        dfs(n, k, 1, list, result);
+
+        return result;
+    }
+    
+    private void dfs(int n, int k, int pos, List<Integer> list,
+                     List<List<Integer>> result) {
+        if (list.size() == k) {
+            result.add(new ArrayList<Integer>(list));
+            return;
         }
         
-        return ret;
+        for(int i = pos; i <= n; i++) {
+            list.add(i);
+            dfs(n, k, i + 1, list, result);
+            list.remove(list.size() - 1);
+        }
     }
 }

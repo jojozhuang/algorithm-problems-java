@@ -24,7 +24,7 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution055 {
-    // Greedy
+    // Greedy, top to bottom    
     public boolean canJump(int[] nums) {
         if (nums == null || nums.length == 0) {
             return false;

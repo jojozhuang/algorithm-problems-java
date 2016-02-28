@@ -19,6 +19,46 @@ package leetcode;
  */
 public class Solution132 {
     public int minCut(String s) {
-        return 0;
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        
+        int[] f = new int[s.length()];
+        f[0] = 0;
+        
+        for (int i = 1; i < s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                String word = s.substring(j, i + 1);
+                if (isPalindrome(word)) {
+                    f[i] = f[j];
+                } else {
+                    f[i] = f[j] + 1;
+                }
+            }
+        }
+        
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < f.length; i++) {
+            if (min > f[i]) {
+                min = f[i];
+            }
+        }
+        
+        return min;
+    }
+    
+    private boolean isPalindrome(String s) {
+        int start = 0;
+        int end = s.length() - 1;
+        
+        while(start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        
+        return true;
     }
 }

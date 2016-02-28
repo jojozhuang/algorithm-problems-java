@@ -49,7 +49,7 @@ public class Solution077Test {
         int k = 0;
         Solution077 instance = new Solution077();
         List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        /*List<List<Integer>> result = instance.combine(n, k);
+        List<List<Integer>> result = instance.combine(n, k);
         assertEquals(expResult, result);
         
         assertEquals(expResult,  instance.combine(-1, k));
@@ -74,9 +74,9 @@ public class Solution077Test {
         List<Integer> list41 = new ArrayList<Integer>();
         list41.add(1);
         list41.add(2);       
-         List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
+        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
         expResult4.add(list41);
-        assertEquals(expResult4,  instance.combine(2, 2));*/
+        assertEquals(expResult4,  instance.combine(2, 2));
         
         List<Integer> list51 = new ArrayList<Integer>();
         list51.add(1);
