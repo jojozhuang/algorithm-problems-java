@@ -49,6 +49,7 @@ public class Solution121Test {
         int result = instance.maxProfit(prices);
         assertEquals(expResult, result);
         
+        assertEquals(1, instance.maxProfit(new int[]{3,2,3,1,2}));
         assertEquals(11, instance.maxProfit(new int[]{8,4,5,1,3,7,9,10,3,12}));
         assertEquals(8, instance.maxProfit(new int[]{8,4,5,12,3,7,9,10,3,1}));
         assertEquals(0, instance.maxProfit(new int[]{8,7,6,5,4,3,2,1}));

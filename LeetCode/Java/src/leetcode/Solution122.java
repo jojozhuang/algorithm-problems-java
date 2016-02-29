@@ -19,39 +19,19 @@ package leetcode;
  */
 public class Solution122 {
     public int maxProfit(int[] prices) {
-        if (prices==null||prices.length<=1)
+        if (prices == null || prices.length <= 1) {
             return 0;
-        
-        int min=0;
-        int max=-1;
-        int profit=0;
-        
-         for(int i=1; i<prices.length; i++) {
-            if (max==-1) {
-                if(prices[i]==prices[min])
-                    continue;
-                else if (prices[i]<prices[min])
-                    min = i;
-                else {
-                    max = i;
-                }
-            }
-            else {
-                if(prices[i]==prices[max])
-                    continue;
-                else if(prices[i]>prices[max]) {
-                    max = i;
-                }
-                else {
-                    profit = profit + prices[max]-prices[min];
-                    min = i;
-                    max = -1;
-                }                
-            }            
         }
         
-        if (max>-1)
-            profit = profit + prices[max]-prices[min];
+        int profit = 0;
+        
+        for (int i = 1; i < prices.length; i++) {
+            int diff = prices[i] - prices[i - 1];
+            if (diff > 0) {
+                profit += diff;
+            }
+        }
+        
         return profit;
     }  
 }

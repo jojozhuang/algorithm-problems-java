@@ -24,54 +24,65 @@ import java.util.Arrays;
  */
 public class Solution123 {
     public int maxProfit(int[] prices) {
-        if (prices==null||prices.length<=1)
+        if (prices == null || prices.length <= 1) {
             return 0;
-        
-        int min=0;
-        int max=-1;
-        ArrayList<Integer> profits = new ArrayList<Integer>();
-
-         for(int i=1; i<prices.length; i++) {
-            if (max==-1) {
-                if(prices[i]==prices[min])
-                    continue;
-                else if (prices[i]<prices[min])
-                    min = i;
-                else {
-                    max = i;
-                }
-            }
-            else {
-                if(prices[i]==prices[max])
-                    continue;
-                else if(prices[i]>prices[max]) {
-                    max = i;
-                }
-                else {
-                    profits.add(prices[max]-prices[min]);
-                    min = i;
-                    max = -1;
-                }                
-            }            
         }
         
-        if (max>-1)
-            profits.add(prices[max]-prices[min]);
-        
-        //find the largest two
-        int[] nums = new int[profits.size()];
-        int i =0;
-        for(Integer num: profits) {
-            nums[i] = num;
-            i++;
+        // divide into two parts
+        // front part
+        int[] frontProfits = new int[prices.length];
+        int valley = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            frontProfits[i] = Math.max(frontProfits[i - 1], prices[i] - valley);
+            valley = Math.min(prices[i], valley);
         }
-        
-        Arrays.sort(nums);
-        if (nums.length==0)
-            return 0;
-        else if (nums.length==1)
-            return nums[nums.length-1];
-        else
-            return nums[nums.length-1] +  nums[nums.length-2];
+        // back part
+        int[] endProfits = new int[prices.length];
+        int peek = prices[prices.length - 1];
+        for (int i = prices.length - 2; i >= 0; i--) {
+            endProfits[i] = Math.max(endProfits[i + 1], peek - prices[i]);
+            peek = Math.max(prices[i], peek);
+        }
+        // cal
+        int profit = 0;
+        for (int i = 0; i < prices.length - 1; i++) {
+            profit = Math.max(profit, frontProfits[i] + endProfits[i]);
+        }
+        return profit;
     }
+    
+    /*
+    // time out
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length <= 1) {
+            return 0;
+        }
+        
+        int profit = helper(prices);
+        if (prices.length <= 3) {
+            return profit;
+        }
+        
+        // divide prices to two parts        
+        for (int i = 0; i < prices.length - 1; i++) {
+            profit = Math.max(profit, helper(Arrays.copyOfRange(prices, 0, i + 1)) + helper(Arrays.copyOfRange(prices, i + 1, prices.length)));
+        }
+        return profit;
+    }
+    
+    private int helper(int[] prices) {
+        if (prices == null || prices.length <= 1) {
+            return 0;
+        }
+        
+        int minPrice = Integer.MAX_VALUE;
+        int profit = 0;
+        
+        for (int i = 0; i < prices.length; i++) {
+            profit = Math.max(profit, prices[i] - minPrice);
+            minPrice = Math.min(prices[i], minPrice);
+        }
+        
+        return profit;
+    }*/
 }

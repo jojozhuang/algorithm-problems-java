@@ -18,56 +18,16 @@ package leetcode;
  */
 public class Solution121 {
     public int maxProfit(int[] prices) {
-        if (prices==null||prices.length<=1)
+        if (prices == null || prices.length <= 1) {
             return 0;
+        }
         
-        int min=0;
-        int max=0;
-        int newmin=-1;
-        int profit=0;
+        int minPrice = Integer.MAX_VALUE;
+        int profit = 0;
         
-        for(int i=1; i<prices.length; i++) {
-            if (profit==0)
-            {
-                if(prices[i]==prices[min])
-                    continue;
-                else if (prices[i]<prices[min])
-                    min = i;
-                else {
-                    profit = prices[i]-prices[min];
-                    max = i;
-                }
-            }
-            else {
-                if (newmin==-1) {
-                    if(prices[i]==prices[min])
-                        continue;
-                    else if (prices[i]<prices[min])
-                        newmin = i;
-                    else {
-                       if (prices[i]>prices[max]) {
-                            max = i;
-                            if (prices[max]-prices[min]>profit) {
-                                profit = prices[max]-prices[min];
-                            }
-                        }
-                    }
-                }
-                else {
-                    if(prices[i]==prices[newmin])
-                        continue;
-                    else if (prices[i]<prices[newmin])
-                        newmin = i;
-                    else {
-                        if (prices[i]-prices[newmin]>profit) {
-                            profit =prices[i]-prices[newmin];
-                            min = newmin;
-                            newmin=-1;
-                            max = i;
-                        }
-                    }
-                }                
-            }                            
+        for (int i = 0; i < prices.length; i++) {
+            profit = Math.max(profit, prices[i] - minPrice);
+            minPrice = Math.min(prices[i], minPrice);
         }
         
         return profit;

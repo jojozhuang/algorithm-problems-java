@@ -23,7 +23,25 @@ package leetcode;
  * @author Johnny
  */
 public class Solution115 {
-    public int numDistinct(String S, String T) {
-        return 0;
+    //time out
+    public int numDistinct(String s, String t) {
+        if (s == null || t == null) {
+            return 0;
+        }
+        if (s.length() < t.length()) {
+            return 0;
+        }
+        if (t.length() == 0) {
+            return 1;
+        }
+        
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == t.charAt(0)) {
+                count += numDistinct(s.substring(i + 1), t.substring(1));
+            }
+        }
+        
+        return count;
     }
 }

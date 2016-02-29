@@ -23,42 +23,41 @@ public class Solution132 {
             return 0;
         }
         
-        int[] f = new int[s.length()];
-        f[0] = 0;
+        int len = s.length();
+        int[] cut = new int[len + 1];                
+        for(int i = 0; i < len + 1; i++) {
+            cut[i] = i - 1;
+        }
         
-        for (int i = 1; i < s.length(); i++) {
-            for (int j = 0; j < i; j++) {
-                String word = s.substring(j, i + 1);
-                if (isPalindrome(word)) {
-                    f[i] = f[j];
-                } else {
-                    f[i] = f[j] + 1;
+        boolean[][] mt = paMat(s);
+        
+        for(int i = 1; i < len + 1; i++) {
+            for(int j = 0; j < i; j++) {
+                if (mt[j][i - 1]) {
+                    cut[i] = Math.min(cut[i], cut[j] + 1);
                 }
             }
         }
         
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < f.length; i++) {
-            if (min > f[i]) {
-                min = f[i];
-            }
-        }
-        
-        return min;
+        return cut[len];
     }
     
-    private boolean isPalindrome(String s) {
-        int start = 0;
-        int end = s.length() - 1;
+    private boolean[][] paMat(String s) {
+        int len = s.length();
+        boolean[][] ret = new boolean[len][len];
         
-        while(start < end) {
-            if (s.charAt(start) != s.charAt(end)) {
-                return false;
+        for (int i = len - 1; i >= 0; i--) {
+            for (int j = i; j < len; j++) {
+                if (i == j) {
+                    ret[i][j] = true;
+                } else if (j == i + 1) {
+                    ret[i][j] = s.charAt(i) == s.charAt(j);
+                } else {
+                    ret[i][j] = (s.charAt(i) == s.charAt(j)) && ret[i + 1][j - 1];
+                }
             }
-            start++;
-            end--;
         }
         
-        return true;
+        return ret;
     }
 }

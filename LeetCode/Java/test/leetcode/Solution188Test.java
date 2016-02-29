@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution123Test {
+public class Solution188Test {
     
-    public Solution123Test() {
+    public Solution188Test() {
     }
     
     @BeforeClass
@@ -38,24 +38,27 @@ public class Solution123Test {
     }
 
     /**
-     * Test of maxProfit method, of class Solution123.
+     * Test of maxProfit method, of class Solution188.
      */
     @Test
     public void testMaxProfit() {
         System.out.println("maxProfit");
+        int k = 0;
         int[] prices = null;
-        Solution123 instance = new Solution123();
+        Solution188 instance = new Solution188();
         int expResult = 0;
-        int result = instance.maxProfit(prices);
+        int result = instance.maxProfit(k, prices);
         assertEquals(expResult, result);
         
-        assertEquals(2, instance.maxProfit(new int[]{2,1,2,0,1}));
-        assertEquals(2, instance.maxProfit(new int[]{3,2,3,1,2}));
-        assertEquals(18, instance.maxProfit(new int[]{8,4,5,1,3,7,9,10,3,12}));
-        assertEquals(15, instance.maxProfit(new int[]{8,4,5,12,3,7,9,10,3,1}));
-        assertEquals(0, instance.maxProfit(new int[]{8,7,6,5,4,3,2,1}));
-        assertEquals(12, instance.maxProfit(new int[]{1,3,5,6,7,8,9,13}));
-        assertEquals(13, instance.maxProfit(new int[]{1,2,4,2,5,7,2,4,9,0}));
+        assertEquals(1, instance.maxProfit(1, new int[]{2,1,2,0,1}));
+        assertEquals(2, instance.maxProfit(2, new int[]{2,1,2,0,1}));
+        assertEquals(2, instance.maxProfit(3, new int[]{2,1,2,0,1}));
+        assertEquals(1, instance.maxProfit(1, new int[]{3,2,3,1,2}));
+        assertEquals(18, instance.maxProfit(2, new int[]{8,4,5,1,3,7,9,10,3,12}));
+        assertEquals(15, instance.maxProfit(2, new int[]{8,4,5,12,3,7,9,10,3,1}));
+        assertEquals(0, instance.maxProfit(2, new int[]{8,7,6,5,4,3,2,1}));
+        assertEquals(12, instance.maxProfit(2, new int[]{1,3,5,6,7,8,9,13}));
+        assertEquals(13, instance.maxProfit(2, new int[]{1,2,4,2,5,7,2,4,9,0}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
