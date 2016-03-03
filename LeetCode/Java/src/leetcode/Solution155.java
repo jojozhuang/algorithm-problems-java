@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * Min Stack.
  * Design a stack that supports push, pop, top, and retrieving the minimum 
@@ -18,19 +20,27 @@ package leetcode;
  * @author Johnny
  */
 public class Solution155 {
+    private Stack<Integer> stack1 = new Stack<Integer>();
+    private Stack<Integer> stack2 = new Stack<Integer>();
     public void push(int x) {
-        
+        stack1.push(x);
+        if (stack2.isEmpty()) {
+            stack2.push(x);
+        } else {
+            stack2.push(Math.min(x, stack2.peek()));
+        }
     }
 
     public void pop() {
-        
+        stack2.pop();
+        stack1.pop();
     }
 
     public int top() {
-        return 0;
+        return stack1.peek();
     }
 
     public int getMin() {
-        return 0;
+        return stack2.peek();
     }
 }
