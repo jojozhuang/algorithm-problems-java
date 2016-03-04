@@ -64,26 +64,25 @@ public class Solution036Test {
         assertEquals(true, instance.isValidSudoku(board2));
         
         String[] input3 = {"..4...63.",".........","5......9.","...56....","4.3.....1","...7.....","...5.....",".........","........."};
-        char[][] board3 = new char[9][9];
-        for (int i=0; i<input3.length; i++) {
-            char[] row = input3[i].toCharArray();
-            for (int j=0; j<row.length; j++) {
-                board3[i][j] = row[j];                
-            }
-        }
-        assertEquals(false, instance.isValidSudoku(board3));
+        assertEquals(false, instance.isValidSudoku(createMatrix(input3)));
         
         String[] input4 = {"..5.....6","....14...",".........",".....92..","5....2...",".......3.","...54....","3.....42.","...27.6.."};
-        char[][] board4 = new char[9][9];
-        for (int i=0; i<input4.length; i++) {
-            char[] row = input4[i].toCharArray();
-            for (int j=0; j<row.length; j++) {
-                board4[i][j] = row[j];                
-            }
-        }
-        assertEquals(true, instance.isValidSudoku(board4));
+        assertEquals(true, instance.isValidSudoku(createMatrix(input4)));
+        
+        String[] input5 = {"....5..1.",".4.3.....",".....3..1","8......2.","..2.7....",".15......",".....2...",".2.9.....","..4......"};
+        assertEquals(false, instance.isValidSudoku(createMatrix(input5)));
         //TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
     
+    private char[][] createMatrix(String[] input) {
+        char[][] board = new char[9][9];
+        for (int i=0; i<input.length; i++) {
+            char[] row = input[i].toCharArray();
+            for (int j=0; j<row.length; j++) {
+                board[i][j] = row[j];                
+            }
+        }
+        return board;
+    }
 }
