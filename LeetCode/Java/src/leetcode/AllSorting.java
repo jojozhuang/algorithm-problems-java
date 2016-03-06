@@ -20,63 +20,51 @@ import java.util.Arrays;
  */
 public class AllSorting {
     public int[] BubbleSort(int[] nums) {
-        if (nums==null||nums.length==0)
+        if (nums == null || nums.length == 0) {
             return nums;
-        
-        int[] ret;
-        int i;
-        int j;
-        int temp;
-        
+        }        
+       
         //small to big
-        for(i=0; i<nums.length; i++) {
-            for (j=nums.length-1; j>i; j--) { //find the smallest one
-                if (nums[j]<nums[j-1]) {
-                    temp = nums[j];
+        for(int i = 0; i < nums.length; i++) {
+            for (int j = nums.length -1 ; j > i; j--) { //find the smallest one
+                if (nums[j] < nums[j-1]) {
+                    int temp = nums[j];
                     nums[j] = nums[j-1];
                     nums[j-1] = temp;
                 }
             }
         }
         
-        ret = nums;
-        
-        return ret;
+        return nums;
     }  
     
     public int[] InsertSort(int[] nums) {
-        if (nums==null||nums.length<2)
+        if (nums == null || nums.length < 2) {
             return nums;
+        } 
         
-        int[] ret;
-        int i;
-        int j;
-        int key;
-        for (i=1; i<nums.length; i++) {
-            key = nums[i];
-            j = i;
-            while(j>0&&nums[j-1]>key) {
+        for (int i = 1; i < nums.length; i++) {
+            int key = nums[i];
+            int j = i;
+            while(j > 0 && nums[j-1] > key) {
                 nums[j] = nums[j-1];
                 j--;
             }
-            nums[j]=key;
+            nums[j] = key;
         }
-        
-        ret=nums;
-        
-        return ret;
+       
+        return nums;
     }
     
     public int[] SelectionSort(int[] nums) {
-        if (nums==null||nums.length<2)
+        if (nums == null || nums.length < 2) {
             return nums;
+        }
         
-        int[] ret;
-        int min;
-        for(int i=0; i<nums.length; i++) {
-            min = i;
-            for (int j=i+1; j<nums.length; j++) {
-                if (nums[j]<nums[min]) {
+        for(int i = 0; i < nums.length; i++) {
+            int min = i;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] < nums[min]) {
                     min = j;
                 }
             }
@@ -87,10 +75,8 @@ public class AllSorting {
                 nums[min] = temp;
             }
         }
-        
-        ret = nums;
-        
-        return ret;        
+      
+        return nums;        
     }
     
     public int[] MergeSort(int[] nums, int start, int end) {
@@ -109,36 +95,31 @@ public class AllSorting {
     }
     
     private int[] Merge(int[] nums, int start, int mid, int end) {
-        int left = mid - start + 1;
-        int right = end - mid;
+
+        int[] copy = Arrays.copyOf(nums, nums.length);
         
-        int[] ret;
-        int[] leftNums = Arrays.copyOfRange(nums, start, mid+1);
-        int[] rightNums = Arrays.copyOfRange(nums, mid+1, end+1);
-        
-        int i=0;
-        int j=0;
+        int i = start;
+        int j = mid + 1;
         for (int k = start; k <= end; k++) {
-            if (i >= left) {
-                nums[k] = rightNums[j];
+            if (i > mid) { // no item in left
+                nums[k] = copy[j];
                 j++;
             }
-            else if(j >= right) {
-                nums[k] = leftNums[i];
+            else if(j > end) { // no item in right
+                nums[k] = copy[i];
                 i++;
             }
-            else if (leftNums[i] <= rightNums[j]) {
-                nums[k] = leftNums[i];
+            else if (copy[i] <= copy[j]) {
+                nums[k] = copy[i];
                 i++;
             }
             else{
-                nums[k] = rightNums[j];
+                nums[k] = copy[j];
                 j++;
             }                
         }
         
-        ret = nums;
-        return ret;
+        return nums;
     }    
     
     public int[] QuickSort(int[] nums, int start, int end) {
@@ -146,30 +127,54 @@ public class AllSorting {
             return nums;
         }
         
-        int pivot = Partition(nums, start, end);
+        int pivot = Partition2(nums, start, end);
         nums = QuickSort(nums, start, pivot - 1);
         nums = QuickSort(nums, pivot + 1, end);
 
         return nums;
     }   
     
-    private int Partition(int[] nums, int start, int end) {
-        int pivot = nums[end];
+    // one way
+    private int Partition(int[] nums, int start, int end) {       
+        int m = start; //index of the last less value
         
-        int i = start - 1;
-        int j;
-        int temp;
-        for (j = start; j < end; j++) {
-            if (nums[j] <= pivot) {
-                i = i + 1;
-                temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
+        for (int i = start + 1; i <= end; i++) {
+            if (nums[i] < nums[start]) {
+                m++;
+                int temp = nums[m];
+                nums[m] = nums[i];
+                nums[i] = temp;
             }
         }
-        temp = nums[i + 1];
-        nums[i + 1] = pivot;
-        nums[end] = temp;
-        return i + 1;
+        
+        int temp = nums[m];
+        nums[m] = nums[start];
+        nums[start] = temp;
+        return m;
     }    
+    
+    // two ways
+    private int Partition2(int[] nums, int start, int end) {
+        int left = start + 1;
+        int right = end;
+       
+        while(left < right) {
+            while(left <= right && nums[left] < nums[start]) {
+                left++;
+            }
+            while(left <= right && nums[right] > nums[start]) {
+                right--;
+            }
+            if (left < right) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+            }            
+        }
+        
+        int temp = nums[right];
+        nums[right] = nums[start];
+        nums[start] = temp;
+        return right;
+    }  
 }
