@@ -10,25 +10,7 @@ package hackerrank;
  * @author RZHUANG
  */
 public class Rotate {    
-    public void rotate(int n, int[][] matrix, int left, int top, int right, int buttom) {
-        if (matrix == null || matrix.length != n || matrix[0].length != n) {
-            System.out.println("ERROR");
-            return;
-        }
-        
-        int len = matrix.length;
-        int temp = matrix[left][top];
-        for (int i = 0; i < len - 1; i++) {
-            for (int j = 1; j < len - 1; j++) { 
-                if (i == top) {
-                    matrix[i][j] = matrix[i][j - 1];                
-                }
-                
-                swap(matrix, i, j, len - 1 - j, len - 1 - i);
-            }
-        }
-    }
-    public void rotate2(int n, int[][] matrix) {
+    public void rotate(int n, int[][] matrix) {
         if (matrix == null || matrix.length != n || matrix[0].length != n) {
             System.out.println("ERROR");
             return;
