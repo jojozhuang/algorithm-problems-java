@@ -1,0 +1,59 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package leetcode;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Johnny
+ */
+public class Solution318Test {
+    
+    public Solution318Test() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of maxProduct method, of class Solution318.
+     */
+    @Test
+    public void testMaxProduct() {
+        System.out.println("maxProduct");
+        String[] words = null;
+        Solution318 instance = new Solution318();
+        int expResult = 0;
+        int result = instance.maxProduct(words);
+        assertEquals(expResult, result);
+        
+        assertEquals(16, instance.maxProduct(new String[]{"abcw", "baz", "foo", "bar", "xtfn", "abcdef"}));
+        assertEquals(4, instance.maxProduct(new String[]{"a", "ab", "abc", "d", "cd", "bcd", "abcd"}));
+        assertEquals(0, instance.maxProduct(new String[]{"a", "aa", "aaa", "aaaa"}));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+}

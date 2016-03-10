@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * Rotate Array.
  * Rotate an array of n elements to the right by k steps.
@@ -18,60 +20,35 @@ package leetcode;
  * 
  * @author Johnny
  */
-public class Solution189 {
-    public int[] rotate(int[] nums, int k) {
-        if (nums==null||nums.length==0)
-            return nums;
+public class Solution189 { 
+    public void rotate(int[] nums, int k) { 
+        if (nums == null || nums.length == 0 || nums.length == 1) {
+            return;
+        }
         
-        if (k<=0 || k>=nums.length)
-            return nums;
+        if (k >= nums.length) {
+            k = k % nums.length;
+        }
         
-        int[] ret = new int[nums.length];
+        if (k <= 0) {
+            return;
+        }
         
-        int i=0;
-        int j=k;
-        while(j>0) {
-            ret[i] = nums[nums.length-j];
+        int[] arr = Arrays.copyOf(nums, nums.length);
+        
+        int i = 0;
+        int j = k;
+        while(j > 0) {
+            nums[i] = arr[arr.length-j];
             i++;
             j--;
         }
         
-        j= 0;
-        while(j<nums.length-k) {
-            ret[i] = nums[j];
+        j = 0;
+        while(j < nums.length-k) {
+            nums[i] = arr[j];
             i++;
             j++;
         }
-        
-        return ret;        
-        
-    }
-    
-    public void rotate2(int[] nums, int k) {
-        if (nums==null||nums.length==0)
-            return;
-        
-        if (k<=0 || k>=nums.length)
-            return;
-        
-        int[] ret = new int[nums.length];
-        
-        int i=0;
-        int j=k;
-        while(j>0) {
-            ret[i] = nums[nums.length-j];
-            i++;
-            j--;
-        }
-        
-        j= 0;
-        while(j<nums.length-k) {
-            ret[i] = nums[j];
-            i++;
-            j++;
-        }
-        
-        nums = ret;        
-        
     }
 }
