@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.List;
+
 /**
  * Ugly Number II.
  * Write a program to find the n-th ugly number.
@@ -17,7 +19,37 @@ package leetcode;
  * @author Johnny
  */
 public class Solution264 {
+    //http://www.cnblogs.com/grandyang/p/4743837.html
     public int nthUglyNumber(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        
+        int[] arr = new int[n];
+        arr[0] = 1;
+        int i2 = 0, i3 = 0, i5 = 0;
+        int i = 1;
+        while(i < n) {
+            int ugly2 = arr[i2] * 2;
+            int ugly3 = arr[i3] * 3;
+            int ugly5 = arr[i5] * 5;
+            arr[i] = Math.min(Math.min(ugly2, ugly3), ugly5);
+            if (arr[i] == ugly2) {
+                i2++;
+            }
+            if (arr[i] == ugly3) {
+                i3++;
+            }
+            if (arr[i] == ugly5) {
+                i5++;
+            }
+            i++;
+        }
+        
+        return arr[n - 1];
+    }
+    
+    public int nthUglyNumber2(int n) {
         int kth = 0;
         int i = 0;
         while(kth < n) {

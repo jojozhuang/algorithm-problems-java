@@ -58,6 +58,7 @@ public class Solution264Test {
         assertEquals(9, instance.nthUglyNumber(8));
         assertEquals(10, instance.nthUglyNumber(9));
         assertEquals(12, instance.nthUglyNumber(10));
+        assertEquals(15, instance.nthUglyNumber(11));
         assertEquals(402653184, instance.nthUglyNumber(1352));
         
         // TODO review the generated test code and remove the default call to fail.
