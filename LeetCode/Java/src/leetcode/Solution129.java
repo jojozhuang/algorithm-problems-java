@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
 import leetcode.common.TreeNode;
 
 /**
@@ -30,6 +32,39 @@ import leetcode.common.TreeNode;
  */
 public class Solution129 {
     public int sumNumbers(TreeNode root) {
-        return 0;
+        if (root == null) {
+            return 0;
+        }
+        
+        List<String> list = helper(root);
+        
+        int sum = 0;
+        for(String item : list) {
+            sum += Integer.parseInt(item);
+        }
+        return sum;
+    }
+    
+    private List<String> helper(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<String>();
+        }
+        
+        List<String> ret = new ArrayList<String>();
+        String str = String.valueOf(root.val);
+        List<String> left = helper(root.left);
+        List<String> right = helper(root.right);
+        
+        if (left.size() > 0 || right.size() > 0) {
+            for (String item : left) {
+                ret.add(str + item);
+            }
+            for (String item : right) {
+                ret.add(str + item);
+            }
+        } else {
+            ret.add(str);
+        }
+        return ret;
     }
 }

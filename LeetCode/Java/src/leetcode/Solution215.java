@@ -28,6 +28,42 @@ package leetcode;
  */
 public class Solution215 {
     public int findKthLargest(int[] nums, int k) {
-        return 0;
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        return helper(nums, 0, nums.length - 1, k);
+    }
+    
+    private int helper(int[] nums, int start, int end, int k) {
+         // quick sort partition
+        int index = partition(nums, start, end);
+        if (end - k + 1 == index) {
+            return nums[index];
+        } else if (end - k + 1 > index) {
+            return helper(nums, index + 1, end, k);
+        } else {
+            return helper(nums, start, index - 1, k - (end - index + 1));
+        }
+    }
+    
+    private int partition(int[] nums, int start, int end) {
+        int index = start;
+        int pivot = nums[index];
+
+        for (int i = start; i <= end; i++) {
+            if (nums[i] < pivot) {
+                index++;
+                int temp = nums[i];
+                nums[i] = nums[index];
+                nums[index] = temp;
+              }
+        }
+
+        int temp = nums[index];
+        nums[index] = nums[start];
+        nums[start] = temp;
+        
+        return index;
     }
 }
