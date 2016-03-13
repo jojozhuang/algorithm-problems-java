@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import leetcode.common.TreeNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution069Test {
+public class Solution222Test {
     
-    public Solution069Test() {
+    public Solution222Test() {
     }
     
     @BeforeClass
@@ -38,29 +39,26 @@ public class Solution069Test {
     }
 
     /**
-     * Test of sqrt method, of class Solution069.
+     * Test of countNodes method, of class Solution222.
      */
     @Test
-    public void testSqrt() {
-        System.out.println("sqrt");
-        int x = 0;
-        Solution069 instance = new Solution069();
+    public void testCountNodes() {
+        System.out.println("countNodes");
+        TreeNode root = null;
+        Solution222 instance = new Solution222();
         int expResult = 0;
-        int result = instance.sqrt(x);
+        int result = instance.countNodes(root);
         assertEquals(expResult, result);
         
-        assertEquals(0, instance.sqrt(-1));
-        assertEquals(1, instance.sqrt(1));
-        assertEquals(2, instance.sqrt(4));
-        assertEquals(1, instance.sqrt(3));
-        assertEquals(3, instance.sqrt(9));
-        assertEquals(3, instance.sqrt(10));
-        assertEquals(3, instance.sqrt(15));
-        assertEquals(4, instance.sqrt(16));
-        assertEquals(10, instance.sqrt(100));
-        assertEquals(15, instance.sqrt(255));
-        assertEquals(16, instance.sqrt(256));
-        assertEquals(46339, instance.sqrt(2147395599));
+        TreeNode root2 = TreeNode.CreateInstance(new String[] {"1","2", "#"});
+        assertEquals(2, instance.countNodes(root2));
+        
+        TreeNode root3 = TreeNode.CreateInstance(new String[] {"1","2", "3"});
+        assertEquals(3, instance.countNodes(root3));
+      
+        TreeNode root4 = TreeNode.CreateInstance(new String[] {"1","2", "3","4","#","#","#"});
+        assertEquals(4, instance.countNodes(root4));
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

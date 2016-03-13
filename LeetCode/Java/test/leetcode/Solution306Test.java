@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution069Test {
+public class Solution306Test {
     
-    public Solution069Test() {
+    public Solution306Test() {
     }
     
     @BeforeClass
@@ -38,29 +38,21 @@ public class Solution069Test {
     }
 
     /**
-     * Test of sqrt method, of class Solution069.
+     * Test of isAdditiveNumber method, of class Solution306.
      */
     @Test
-    public void testSqrt() {
-        System.out.println("sqrt");
-        int x = 0;
-        Solution069 instance = new Solution069();
-        int expResult = 0;
-        int result = instance.sqrt(x);
+    public void testIsAdditiveNumber() {
+        System.out.println("isAdditiveNumber");
+        String num = "";
+        Solution306 instance = new Solution306();
+        boolean expResult = false;
+        boolean result = instance.isAdditiveNumber(num);
         assertEquals(expResult, result);
         
-        assertEquals(0, instance.sqrt(-1));
-        assertEquals(1, instance.sqrt(1));
-        assertEquals(2, instance.sqrt(4));
-        assertEquals(1, instance.sqrt(3));
-        assertEquals(3, instance.sqrt(9));
-        assertEquals(3, instance.sqrt(10));
-        assertEquals(3, instance.sqrt(15));
-        assertEquals(4, instance.sqrt(16));
-        assertEquals(10, instance.sqrt(100));
-        assertEquals(15, instance.sqrt(255));
-        assertEquals(16, instance.sqrt(256));
-        assertEquals(46339, instance.sqrt(2147395599));
+        assertEquals(true, instance.isAdditiveNumber("112358"));
+        assertEquals(true, instance.isAdditiveNumber("199100199"));
+        assertEquals(false, instance.isAdditiveNumber("1233456"));
+        assertEquals(true, instance.isAdditiveNumber("198019823962"));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

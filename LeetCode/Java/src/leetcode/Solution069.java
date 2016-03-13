@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.math.BigInteger;
+
 /**
  * Sqrt(x).
  * Implement int sqrt(int x).
@@ -26,10 +28,13 @@ public class Solution069 {
         
         while(start + 1 < end) {
             mid = start + (end - start) / 2;
-            long mul = mid * mid;
-            if (mul == x) {
+            BigInteger mul = BigInteger.valueOf(mid);
+            mul = mul.multiply(mul);
+            
+            int compare = mul.compareTo(BigInteger.valueOf(x));
+            if (compare == 0) {
                 return mid;
-            } else if (mul > x){
+            } else if (compare == 1){
                 end = mid;
             } else {
                 start = mid;

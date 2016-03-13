@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * Evaluate Reverse Polish Notation.
  * Evaluate the value of an arithmetic expression in Reverse Polish Notation.
@@ -20,6 +22,44 @@ package leetcode;
  */
 public class Solution150 {
     public int evalRPN(String[] tokens) {
-        return 0;
+        if (tokens == null || tokens.length == 0) {
+            return 0;
+        }
+        
+        Stack<String> stack = new Stack<String>();
+        int index = 0;
+        while(index  < tokens.length) {
+            String str = tokens[index];            
+            if (isOperator(str)) {
+                int val1 = Integer.parseInt(stack.pop());
+                int val2 = Integer.parseInt(stack.pop());
+                int result = 0;
+                switch (str) {
+                    case "+":
+                        result = val2 + val1;
+                        break;
+                    case "-":
+                        result = val2 - val1;
+                        break;
+                    case "*":
+                        result = val2 * val1;
+                        break;
+                    case "/":
+                        result = val2 / val1;
+                        break;
+                }
+                stack.push(String.valueOf(result));
+            } else {
+                stack.push(str);
+            }
+            index++;
+        }
+        
+        String ret = stack.pop();
+        return Integer.parseInt(ret);
+    }
+    
+    private boolean isOperator(String str) {
+        return str.equals("+") || str.equals("-") || str.equals("*") || str.equals("/");
     }
 }

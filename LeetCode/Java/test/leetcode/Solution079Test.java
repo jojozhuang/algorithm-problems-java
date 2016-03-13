@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution069Test {
+public class Solution079Test {
     
-    public Solution069Test() {
+    public Solution079Test() {
     }
     
     @BeforeClass
@@ -38,29 +38,26 @@ public class Solution069Test {
     }
 
     /**
-     * Test of sqrt method, of class Solution069.
+     * Test of exist method, of class Solution079.
      */
     @Test
-    public void testSqrt() {
-        System.out.println("sqrt");
-        int x = 0;
-        Solution069 instance = new Solution069();
-        int expResult = 0;
-        int result = instance.sqrt(x);
+    public void testExist() {
+        System.out.println("exist");
+        char[][] board = null;
+        String word = "";
+        Solution079 instance = new Solution079();
+        boolean expResult = false;
+        boolean result = instance.exist(board, word);
         assertEquals(expResult, result);
         
-        assertEquals(0, instance.sqrt(-1));
-        assertEquals(1, instance.sqrt(1));
-        assertEquals(2, instance.sqrt(4));
-        assertEquals(1, instance.sqrt(3));
-        assertEquals(3, instance.sqrt(9));
-        assertEquals(3, instance.sqrt(10));
-        assertEquals(3, instance.sqrt(15));
-        assertEquals(4, instance.sqrt(16));
-        assertEquals(10, instance.sqrt(100));
-        assertEquals(15, instance.sqrt(255));
-        assertEquals(16, instance.sqrt(256));
-        assertEquals(46339, instance.sqrt(2147395599));
+        char[][] board2 = new char[][] {
+            {'A','B','C','E'},
+            {'S','F','C','S'},
+            {'A','D','E','E'}
+        };
+        assertEquals(true, instance.exist(board2, "ABCCED"));
+        assertEquals(true, instance.exist(board2, "SEE"));
+        assertEquals(false, instance.exist(board2, "ABCB"));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

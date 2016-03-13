@@ -5,6 +5,11 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Decode Ways.
  * A message containing letters from A-Z is being encoded to numbers using the 
@@ -26,6 +31,82 @@ package leetcode;
  */
 public class Solution091 {
     public int numDecodings(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        
+        int[] dp = new int[s.length() + 1];
+        dp[0] = 1;
+        
+        if (isValid(s.substring(0, 1))) {
+            dp[1] = 1;
+        } else {
+            dp[1] = 0;
+        }
+        for (int i = 2; i <= s.length(); i++) {
+            if (isValid(s.substring(i - 1, i))) {
+                dp[i] += dp[i - 1];
+            }
+            if (isValid(s.substring(i - 2, i))) {
+                dp[i] += dp[i - 2];
+            }           
+        }
+        
+        return dp[dp.length - 1];
+    }
+    
+    private boolean isValid(String s) {
+        if (s.charAt(0) == '0') {
+            return false;
+        }
+        int val = Integer.parseInt(s);
+        return val >= 1 && val <= 26;
+    }
+    
+    public int numDecodings2(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }        
+        
+        Map<String, Character> map = new HashMap<String, Character>();
+        char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+        for (int i = 0; i < alphabet.length; i++) {
+            map.put(String.valueOf(i + 1), alphabet[i]);
+        }
+        
+        List<Character> list = new ArrayList<Character>();
+        List<List<Character>> ret = new ArrayList<List<Character>>();
+        helper(s, 0, list, ret, map);
+        
+        return ret.size();
+    }
+    
+    private void helper(String s, int index, List<Character> list, List<List<Character>> ret, Map<String, Character> map) {
+        if (index >= s.length()) {
+            ret.add(new ArrayList(list));
+            return;
+        }
+        int len = s.length();
+        if (len - index > 1) {
+            String str = s.substring(index, index + 2);
+            if (map.containsKey(str)) {
+                list.add(map.get(str));
+                helper(s, index + 2, list, ret, map);
+                list.remove(list.size() - 1);
+            }
+        }
+        if (len - index > 0) {
+            String str = s.substring(index, index + 1);
+            if (map.containsKey(str)) {
+                list.add(map.get(str));
+                helper(s, index + 1, list, ret, map);
+                list.remove(list.size() - 1);
+            }
+        }
+    }
+    
+    
+    public int numDecodings3(String s) {
         if (s==null||s.length()==0)
             return 0;
         else if (s.length()==1) {
