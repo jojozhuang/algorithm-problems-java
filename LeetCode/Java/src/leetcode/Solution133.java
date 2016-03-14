@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.HashMap;
 import leetcode.common.UndirectedGraphNode;
 
 /**
@@ -41,6 +42,30 @@ import leetcode.common.UndirectedGraphNode;
  */
 public class Solution133 {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        return null;
+        if(node == null) {
+            return null;
+        }
+              
+        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        UndirectedGraphNode head = new UndirectedGraphNode(node.label);
+        map.put(node, head);
+
+        DFS(map, node);//DFS
+        return head;
+    }
+
+    private void DFS(HashMap<UndirectedGraphNode, UndirectedGraphNode> map, UndirectedGraphNode node){
+        if(node == null) {
+            return;
+        }
+            
+        for(UndirectedGraphNode neighbor: node.neighbors){ 
+            if(!map.containsKey(neighbor)){
+                UndirectedGraphNode newneighbor = new UndirectedGraphNode(neighbor.label);
+                map.put(neighbor, newneighbor);
+                DFS(map, neighbor);//DFS
+            }
+            map.get(node).neighbors.add(map.get(neighbor));
+        }
     }
 }

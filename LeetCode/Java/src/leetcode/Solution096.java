@@ -22,6 +22,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution096 {
+    //https://siddontang.gitbooks.io/leetcode-solution/content/dynamic_programming/unique_binary_search_trees.html
     public int numTrees(int n) {
         if (n < 1) {
             return 0;
@@ -33,7 +34,7 @@ public class Solution096 {
         
         for (int i = 2; i <= n; i++) {
             for (int j = 0; j < i; j++) {
-                count[i] = count[i] + count[j] * count[i - j - 1];                
+                count[i] += count[j] * count[i - j - 1];                
             }
         }
         

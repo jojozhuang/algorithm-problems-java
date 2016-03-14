@@ -6,45 +6,60 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
- * Coin Change.
+ * Reconstruct Itinerary.
  * 
- * You are given coins of different denominations and a total amount of money 
- * amount. Write a function to compute the fewest number of coins that you need 
- * to make up that amount. If that amount of money cannot be made up by any 
- * combination of the coins, return -1.
- * 
- * Example 1:
- * coins = [1, 2, 5], amount = 11
- * return 3 (11 = 5 + 5 + 1)
- * 
- * Example 2:
- * coins = [2], amount = 3
- * return -1.
+ * Given a list of airline tickets represented by pairs of departure and arrival
+ * airports [from, to], reconstruct the itinerary in order. All of the tickets 
+ * belong to a man who departs from JFK. Thus, the itinerary must begin with JFK.
  * 
  * Note:
- * You may assume that you have an infinite number of each kind of coin.
+ * If there are multiple valid itineraries, you should return the itinerary that
+ * has the smallest lexical order when read as a single string. For example, 
+ * the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK", "LGB"].
+ * 
+ * All airports are represented by three capital letters (IATA code).
+ * You may assume all tickets form at least one valid itinerary.
+ * Example 1:
+ * tickets = [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]
+ * Return ["JFK", "MUC", "LHR", "SFO", "SJC"].
+ * Example 2:
+ * tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+ * Return ["JFK","ATL","JFK","SFO","ATL","SFO"].
+ * Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"]. 
+ * But it is larger in lexical order.
  *  
  * @author Johnny
  */
 public class Solution332 {
-    public int coinChange(int[] coins, int amount) {
-        if (coins == null || coins.length == 0 || amount <= 0) {
-            return 0;
+    public List<String> findItinerary(String[][] tickets) {
+         LinkedList<String> ret = new LinkedList<String>();
+        if (tickets == null || tickets.length == 0 || tickets[0].length == 0) {
+            return ret;
         }
         
-        int dp[] = new int[amount + 1];
-        for (int i = 1; i <= amount; i++) {
-            dp[i] = Integer.MAX_VALUE - 1;
+        Map<String, PriorityQueue<String>> map = new HashMap<String, PriorityQueue<String>>();
+        for (String[] ticket: tickets) {
+            if (!map.containsKey(ticket[0])) {
+                map.put(ticket[0], new PriorityQueue<String>());
+            } 
+            map.get(ticket[0]).offer(ticket[1]);
         }
-        for (int i = 0; i <= amount; i++) {
-            for (int j = 0; j < coins.length; j++) {
-                if (i + coins[j] <= amount) {
-                    dp[i + coins[j]] = Math.min(dp[i + coins[j]], dp[i] + 1);
-                }
-            }
+        dfs("JFK", ret, map);
+        return ret;
+    }
+    
+    private void dfs(String airport, LinkedList<String> list, Map<String, PriorityQueue<String>> map) {
+        while (map.containsKey(airport) && !map.get(airport).isEmpty()) {
+           dfs(map.get(airport).poll(), list, map);
         }
-        return dp[amount] == Integer.MAX_VALUE - 1 ? -1 : dp[amount];
+        list.addFirst(airport);
     }
 }

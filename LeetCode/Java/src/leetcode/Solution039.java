@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,6 +30,32 @@ import java.util.List;
  */
 public class Solution039 {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        return null;
+        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        if (candidates == null || candidates.length == 0) {
+            return ret;
+        }
+        
+        Arrays.sort(candidates);
+        List<Integer> list = new ArrayList<Integer>();
+        helper(candidates, target, 0, list, ret);        
+        return ret;
+    }
+    
+    private void helper(int[] candidates, int target, int pos, List<Integer> list, List<List<Integer>> ret) {
+        if (target == 0) {
+            ret.add(new ArrayList(list));
+            return;
+        }
+        
+        for (int i = pos; i < candidates.length; i++) {
+            if (candidates[i] > target) {
+                return;
+            }
+            else {
+                list.add(candidates[i]);
+                helper(candidates, target - candidates[i], i, list, ret);
+                list.remove(list.size() - 1);
+            }
+        }
     }
 }

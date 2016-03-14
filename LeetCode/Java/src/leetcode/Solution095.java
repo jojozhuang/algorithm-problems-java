@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
 import leetcode.common.TreeNode;
 import java.util.List;
 
@@ -27,6 +28,33 @@ import java.util.List;
  */
 public class Solution095 {
     public List<TreeNode> generateTrees(int n) {
-        return null;
+        if (n <= 0) {
+            return new ArrayList<TreeNode>();
+        }
+        
+        return helper(1, n);
+    }
+    
+    private List<TreeNode> helper(int start, int end) {
+        List<TreeNode> ret = new ArrayList<TreeNode>();
+        if (start > end) {
+            ret.add(null);
+            return ret;
+        }
+        
+        for (int i = start; i <= end; i++) {
+            List<TreeNode> lefts = helper(start, i - 1);
+            List<TreeNode> rights = helper(i + 1, end);
+            for (TreeNode left : lefts) {
+                for (TreeNode right : rights) {
+                    TreeNode node = new TreeNode(i);
+                    node.left = left;
+                    node.right = right;
+                    ret.add(node);
+                }
+            }
+        }
+        
+        return ret;
     }
 }

@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.LinkedList;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -38,26 +40,33 @@ public class Solution332Test {
     }
 
     /**
-     * Test of coinChange method, of class Solution332.
+     * Test of findItinerary method, of class Solution332.
      */
     @Test
-    public void testCoinChange() {
-        System.out.println("coinChange");
-        int[] coins = null;
-        int amount = 0;
+    public void testFindItinerary() {
+        System.out.println("findItinerary");
+        String[][] tickets = null;
         Solution332 instance = new Solution332();
-        int expResult = 0;
-        int result = instance.coinChange(coins, amount);
+        List<String> expResult = new LinkedList<String>();
+        List<String> result = instance.findItinerary(tickets);
         assertEquals(expResult, result);
         
-        assertEquals(0, instance.coinChange(new int[]{1}, 0));
-        assertEquals(-1, instance.coinChange(new int[]{2}, 3));
-        assertEquals(-1, instance.coinChange(new int[]{2}, 1));
-        assertEquals(1, instance.coinChange(new int[]{2}, 2));
-        assertEquals(3, instance.coinChange(new int[]{1, 2, 5}, 11));
-        assertEquals(3, instance.coinChange(new int[]{1, 2, 5}, 12));
-        assertEquals(4, instance.coinChange(new int[]{1, 2, 5}, 14));
-        assertEquals(20, instance.coinChange(new int[]{186,419,83,408}, 6249));
+        List<String> expResult2 = new LinkedList<String>();
+        expResult2.add("JFK");
+        expResult2.add("MUC");
+        expResult2.add("LHR");
+        expResult2.add("SFO");
+        expResult2.add("SJC");
+        assertEquals(expResult2, instance.findItinerary(new String[][]{{"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}}));
+        
+        List<String> expResult3 = new LinkedList<String>();
+        expResult3.add("JFK");
+        expResult3.add("ATL");
+        expResult3.add("JFK");
+        expResult3.add("SFO");
+        expResult3.add("ATL");
+        expResult3.add("SFO");
+        assertEquals(expResult3, instance.findItinerary(new String[][]{{"JFK","SFO"},{"JFK","ATL"}, {"SFO","ATL"},{"ATL","JFK"},{"ATL","SFO"}}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
