@@ -1,0 +1,85 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author RZHUANG
+ */
+public class Solution126Test {
+    
+    public Solution126Test() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of findLadders method, of class Solution126.
+     */
+    @Test
+    public void testFindLadders() {
+        System.out.println("findLadders");
+        String beginWord = "";
+        String endWord = "";
+        Set<String> wordList = null;
+        Solution126 instance = new Solution126();
+        List<List<String>> expResult = new ArrayList<List<String>>();
+        List<List<String>> result = instance.findLadders(beginWord, endWord, wordList);
+        assertEquals(expResult, result);
+        
+        Set<String> wordList2 = new HashSet<String>();
+        wordList2.add("hot");
+        wordList2.add("dot");
+        wordList2.add("dog");
+        wordList2.add("lot");
+        wordList2.add("log");
+        List<String> list21 = new ArrayList<String>();
+        list21.add("hit");
+        list21.add("hot");
+        list21.add("dot");
+        list21.add("dog");
+        list21.add("cog");
+        List<String> list22 = new ArrayList<String>();
+        list22.add("hit");
+        list22.add("hot");
+        list22.add("lot");
+        list22.add("log");
+        list22.add("cog");
+        List<List<String>> expResult2 = new ArrayList<List<String>>();
+        expResult2.add(list21);
+        expResult2.add(list22);
+        assertEquals(expResult2, instance.findLadders("hit", "cog", wordList2));
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+}
