@@ -20,7 +20,32 @@ package leetcode;
  * @author Johnny
  */
 public class Solution042 {
-    public int trap(int[] A) {
-        return 0;
+    //http://bangbingsyb.blogspot.com/2014/11/leetcode-trapping-rain-water.html
+    public int trap(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        
+        int n = height.length;
+        int[] left = new int[n];
+        int[] right = new int[n];
+        
+        //scan from left to right to find the maximum left height
+        for (int i = 1; i < n; i++) {
+            left[i] = Math.max(left[i - 1], height[i - 1]);
+        }
+        
+        int water = 0;
+        //scan from right to left to find the maximum right height
+        for (int i = n - 2; i >= 0; i--) {
+            right[i] = Math.max(right[i + 1], height[i + 1]);
+            // water for each position
+            int min = Math.min(left[i], right[i]); // the highest water level depends on the lower height
+            if (min > height[i]) { // it must higher than the current height.
+                water += min - height[i];
+            }
+        }
+        
+        return water;
     }
 }
