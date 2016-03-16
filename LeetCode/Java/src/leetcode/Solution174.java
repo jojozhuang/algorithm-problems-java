@@ -42,6 +42,35 @@ package leetcode;
  */
 public class Solution174 {
     public int calculateMinimumHP(int[][] dungeon) {
-        return 0;
+        if (dungeon == null || dungeon.length == 0 || dungeon[0].length == 0) {
+            return 0;
+        }
+        
+        int n = dungeon.length;
+        int m = dungeon[0].length;
+        // from P to K, calculate the minimum health value.
+        int[][] health = new int[n][m];
+        health[n - 1][m - 1] = 1 - dungeon[n - 1][m - 1];
+        health[n - 1][m - 1]= Math.max(1, health[n - 1][m - 1]);
+        // calculate the boarder first
+        for(int i = n - 2; i >=0; i--) { // right board, bottom to top
+            health[i][m - 1] = health[i + 1][m - 1] - dungeon[i][m - 1];
+            health[i][m - 1] = Math.max(1, health[i][m - 1]);
+        }
+
+        for(int j = m - 2; j >=0; j--) { // bottom board, right to left
+            health[n - 1][j] = health[n - 1][j + 1]- dungeon[n - 1][j];
+            health[n - 1][j] = Math.max(1, health[n - 1][j]);
+        }
+        
+        // from right bottom corner to left top corner
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = m - 2; j >= 0; j--) {
+                health[i][j] = Math.min(health[i + 1][j], health[i][j + 1]) - dungeon[i][j];
+                health[i][j] = Math.max(1, health[i][j]);
+            }
+        }
+        
+        return health[0][0];
     }
 }
