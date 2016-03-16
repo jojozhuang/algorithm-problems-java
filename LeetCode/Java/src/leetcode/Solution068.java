@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,7 +40,82 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution068 {
-    public List<String> fullJustify(String[] words, int L) {
-        return null;
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> ret = new ArrayList<String>();
+        if (words == null || words.length == 0) {
+            return ret;
+        }
+        
+        int i = 0;
+        int len = 0;
+        List<String> list = new ArrayList<String>();
+        while(i < words.length) {
+            if (len + words[i].length() <= maxWidth) {
+                len += words[i].length() + 1; // at least one space between words in the same line
+                list.add(words[i]);
+                i++;
+            } else {
+                String line = helper(list, maxWidth);
+                ret.add(line);
+                list.clear();
+                len = 0;
+            }           
+        }
+        
+        if (!list.isEmpty()) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < list.size(); j++) {
+                sb.append(list.get(j));
+                if (j != list.size() - 1) {
+                    sb.append(" ");
+                }
+            }
+            int length = sb.toString().length();
+            if (length < maxWidth) {
+                for (int k = 0; k < maxWidth - length; k++) {
+                    sb.append(" ");
+                }
+            }
+            ret.add(sb.toString());
+        }
+        
+        return ret;
+    }
+    
+    private String helper(List<String> list, int maxWidth) {
+        int slot = list.size() - 1;
+        int space = 0;
+        for(String s: list) {
+            space += s.length();
+        }
+        space = maxWidth - space;
+        StringBuilder sb = new StringBuilder();
+        if (slot == 0) {
+            sb.append(list.get(0));
+            for (int i = 0; i < space; i++) {
+                sb.append(" ");
+            }
+        } else {
+            int unit = space / slot;
+            int remainder = space % slot;
+
+            String unitSpace = "";
+            for (int i = 0; i < unit; i++) {
+                unitSpace += " ";
+            }
+            
+            for (int i = 0; i < list.size(); i++) {
+                sb.append(list.get(i));
+                if (i != list.size() - 1) {
+                    sb.append(unitSpace);
+                    if (remainder > 0) {
+                        sb.append(" ");
+                        remainder--;
+                    }
+                }
+            }
+        }
+        
+        return sb.toString();
     }
 }
