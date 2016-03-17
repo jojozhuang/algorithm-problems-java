@@ -29,15 +29,57 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution076 {
-    private int min = -1;
-    private int max = -1;
+    //http://www.cnblogs.com/TenosDoIt/p/3461301.html
     public String minWindow(String s, String t) {
+        if (s == null || s.isEmpty() || t == null || t.isEmpty()) {
+            return "";
+        }
+        int lens = s.length(), lent = t.length();
+        int srcCnt[] = new int[256];
+        int foundCnt[] = new int[256];
+        for(int i = 0; i < lent; i++)
+            srcCnt[t.charAt(i)]++;
+        int hasFound = 0;
+        int winStart = -1, winEnd = lens;
+
+        for(int i = 0, start = 0; i < lens; i++)
+            if(srcCnt[s.charAt(i)] != 0)
+            {
+                foundCnt[s.charAt(i)]++;
+                if(foundCnt[s.charAt(i)] <= srcCnt[s.charAt(i)]) {
+                    hasFound++;
+                }
+                if(hasFound == lent)
+                {
+                    while(srcCnt[s.charAt(start)] == 0 ||
+                          foundCnt[s.charAt(start)] > srcCnt[s.charAt(start)])
+                    {
+                        if(srcCnt[s.charAt(start)] != 0)
+                            foundCnt[s.charAt(start)]--;
+                        start++;
+                    }
+                    if(winEnd - winStart > i - start)
+                    {
+                        winStart = start;
+                        winEnd = i;
+                    }
+                    foundCnt[s.charAt(start)]--;
+                    start++;
+                    hasFound--;
+                }
+            }
+        return winStart != -1 ? s.substring(winStart, winEnd +1) : "";
+    }
+
+    private int min = 0;
+    private int max = 0;
+    public String minWindow2(String s, String t) {
         if (s == null || s.isEmpty() || t == null || t.isEmpty()) {
             return "";
         }
         
         List<Integer> previous = null;
-        int premax = -1, premin = -1;
+        int premax = 0, premin = 0;
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < t.length(); i++) {
             list.add(-1);
@@ -79,12 +121,12 @@ public class Solution076 {
         }
         
         if (!isFull(list)) {
-            return s.substring(premin, premin + premax + 1);
+            return s.substring(premin, premax + 1);
         } else {
             if (max - min < premax - premin) {
-                previous = list;
-                premax = max;
-                premin = min;
+                return s.substring(min, + max + 1);
+            } else {
+                return s.substring(premin, premax + 1);
             }
         }
     }
