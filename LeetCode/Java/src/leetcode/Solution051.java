@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,7 +37,50 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution051 {
-    public List<String[]> solveNQueens(int n) {
-        return null;
+    //http://www.cnblogs.com/springfor/p/3870944.html
+    public List<List<String>> solveNQueens(int n) {
+        List<List<String>> res = new ArrayList<List<String>>();
+        if(n <= 0) {
+            return res;
+        }
+            
+        int [] columnVal = new int[n];
+        
+        dfs(n,res,0,columnVal);
+        return res;
+    }
+    
+    private void dfs(int n, List<List<String>> res, int row, int[] columnVal){
+        if(row == n){
+            List<String> list = new ArrayList<String>();
+            for(int i = 0; i < n; i++){
+                StringBuilder s = new StringBuilder();
+                for(int j = 0; j < n; j++){
+                    if(j == columnVal[i])
+                        s.append("Q");
+                    else
+                        s.append(".");
+                }
+                
+                list.add(s.toString());
+            }
+            
+            res.add(list);
+        }else{
+            for(int i = 0; i < n; i++){
+                columnVal[row] = i;
+                
+                if(isValid(row, columnVal))
+                    dfs(n, res, row+1, columnVal);
+            }
+        }
+    }
+    
+    private boolean isValid(int row, int [] columnVal){
+        for(int i = 0; i < row; i++){
+            if(columnVal[row] == columnVal[i] || Math.abs(columnVal[row]-columnVal[i]) == row-i)
+               return false;
+        }
+        return true;
     }
 }

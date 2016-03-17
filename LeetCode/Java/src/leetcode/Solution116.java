@@ -45,8 +45,9 @@ import leetcode.common.TreeLinkNode;
  */
 public class Solution116 {
     public void connect(TreeLinkNode root) {
-        if (root==null||root.left==null)
+        if (root == null || root.left == null) {
             return;
+        }
         
         //current level
         root.left.next = root.right;
@@ -54,8 +55,8 @@ public class Solution116 {
         //silbing
         TreeLinkNode currentNode = root;
         TreeLinkNode nextNode = root.next;
-        while(nextNode!=null) {
-            currentNode.right.next=nextNode.left;
+        while (nextNode != null) {
+            currentNode.right.next = nextNode.left;
             nextNode.left.next = nextNode.right;
             currentNode = nextNode;
             nextNode = nextNode.next;
