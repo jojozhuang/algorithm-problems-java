@@ -30,6 +30,44 @@ import leetcode.common.ListNode;
  */
 public class Solution025 {
     public ListNode reverseKGroup(ListNode head, int k) {
-        return new ListNode(2);
+        if (head == null || k <= 1) {
+            return head;
+        }
+        
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode left = dummy;
+        ListNode curr = head;
+        
+        int i = 1;        
+        while(curr != null) {
+            curr = curr.next;
+            if (curr != null) {
+                i++;
+            }
+            if (i == k) {
+                ListNode right = curr.next;
+                curr.next = null;
+                ListNode newleft = left.next;
+                left.next = reverse(left.next);
+                left = newleft;
+                left.next = right;
+                curr = right;
+                i = 1;
+            }
+        }
+        
+        return dummy.next;
+    }
+    
+    private ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        while(head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
     }
 }

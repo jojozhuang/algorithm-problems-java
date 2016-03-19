@@ -5,6 +5,9 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import leetcode.common.Interval;
 import java.util.List;
 
@@ -20,6 +23,33 @@ import java.util.List;
  */
 public class Solution056 {
     public List<Interval> merge(List<Interval> inervals) {
-        return null;
+        if (inervals == null || inervals.size() == 0) {
+            return inervals;
+        }
+        
+        Collections.sort(inervals, new IntervalComparator());
+        
+        List<Interval> res = new ArrayList<Interval>();
+        Interval prev = inervals.get(0);
+        
+        for (int i = 1; i < inervals.size(); i++) {
+            Interval curr = inervals.get(i);
+            if (prev.end < curr.start) {
+                res.add(prev);
+                prev = curr;
+            } else {
+                Interval merge = new Interval(prev.start, Math.max(prev.end, curr.end));
+                prev = merge;
+            }
+        }
+        res.add(prev);
+        
+        return res;
+    }
+    
+    private class IntervalComparator implements Comparator<Interval> {
+        public int compare(Interval i1, Interval i2) {
+                return i1.start - i2.start;
+        }
     }
 }

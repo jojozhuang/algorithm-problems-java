@@ -34,24 +34,41 @@ import leetcode.common.TreeLinkNode;
  */
 public class Solution117 {
     public void connect(TreeLinkNode root) {
-        if (root == null || root.left == null) {
+        if (root == null) {
             return;
         }
-        
-        //current level
-        root.left.next = root.right;
-        
-        //silbing
-        TreeLinkNode currentNode = root;
-        TreeLinkNode nextNode = root.next;
-        while (nextNode != null) {
-            currentNode.right.next = nextNode.left;
-            nextNode.left.next = nextNode.right;
-            currentNode = nextNode;
-            nextNode = nextNode.next;
-        }
-        
-        //next level
-        connect(root.left);
+
+        TreeLinkNode parent = root;
+        TreeLinkNode pre;
+        TreeLinkNode next;
+        while (parent != null) {
+            pre = null;
+            next = null;
+            while (parent != null) {
+                if (next == null){
+                    next = (parent.left != null) ? parent.left: parent.right;
+                }
+
+                if (parent.left != null){
+                    if (pre != null) {
+                        pre.next = parent.left;
+                        pre = pre.next;
+                    } else {
+                        pre = parent.left;
+                    }
+                }
+
+                if (parent.right != null) {
+                    if (pre != null) {
+                        pre.next = parent.right;
+                        pre = pre.next;
+                    } else {
+                        pre = parent.right;
+                    }
+                }
+                parent = parent.next;
+            }
+            parent = next;
+        }    
     }
 }

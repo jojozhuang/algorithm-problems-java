@@ -5,6 +5,9 @@
  */
 package leetcode;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * Sliding Window Maximum.
  * 
@@ -32,6 +35,34 @@ package leetcode;
  */
 public class Solution239 {
     public int[] maxSlidingWindow(int[] nums, int k) {
-        return new int[0];
+        if (nums == null || nums.length == 0 || k < 1 || k > nums.length) {
+            return new int[]{};
+        }        
+        
+        int[] res = new int[nums.length - k + 1];
+        
+        Deque<Integer> deque = new LinkedList<Integer>();
+        // initial deque
+        for (int i = 0; i < k; i++) {
+            while(!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+                deque.pollLast();
+            }
+            deque.add(i);
+        }
+        
+        res[0] = nums[deque.peekFirst()];
+        
+        for (int i = k; i < nums.length; i++) {
+            while(!deque.isEmpty() && nums[deque.peekLast()] <= nums[i]) {
+                deque.pollLast();
+            }
+            deque.add(i);
+            if (i - deque.peekFirst() >= k) {
+                deque.pollFirst();
+            }
+            res[i - k + 1] = nums[deque.peekFirst()];
+        }
+        
+        return res;
     }
 }

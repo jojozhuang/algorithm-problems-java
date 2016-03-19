@@ -6,7 +6,10 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  * Count of Smaller Numbers After Self.
@@ -30,6 +33,26 @@ import java.util.List;
  */
 public class Solution315 {
     public List<Integer> countSmaller(int[] nums) {
-        return new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
+        if (nums == null || nums.length == 0) {
+            return res;
+        }
+        
+        SortedSet<Integer> set = new TreeSet<Integer>();
+        int min = Integer.MAX_VALUE;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] < min) {
+                res.add(0);                
+            } else {
+                SortedSet<Integer> subSet = set.subSet(min, nums[i]);
+                res.add(subSet.size());
+            }
+            set.add(nums[i]);
+            min = Math.min(min, nums[i]);
+        }
+        
+        Collections.reverse(res);
+        
+        return res;        
     }
 }

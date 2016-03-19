@@ -5,8 +5,11 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import leetcode.common.Interval;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Insert Interval.
@@ -28,6 +31,42 @@ import java.util.List;
  */
 public class Solution057 {
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
-        return null;
+        if (newInterval == null) {
+            return intervals;
+        }
+        List<Interval> res = new ArrayList<Interval>();
+        
+        Queue<Interval> queue = new LinkedList<Interval>();
+        for(Interval item: intervals) {
+            queue.offer(item);
+        }
+        
+        boolean newadded = false;
+        while(!queue.isEmpty()) {
+            Interval curr = queue.poll();
+            if (newInterval.end < curr.start) {
+                res.add(newInterval);
+                res.add(curr);
+                newadded = true;
+                break;
+            }
+            if (curr.end < newInterval.start) {
+                res.add(curr);
+                continue;
+            }
+            
+            newInterval = new Interval(Math.min(curr.start, newInterval.start), 
+                    Math.max(curr.end, newInterval.end));
+        }    
+        
+        if (!newadded) {
+            res.add(newInterval);
+        } else {
+             while(!queue.isEmpty()) {
+                res.add(queue.poll());
+            }
+        }
+        
+        return res;        
     }   
 }
