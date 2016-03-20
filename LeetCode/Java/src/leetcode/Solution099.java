@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.Stack;
 import leetcode.common.TreeNode;
 
 /**
@@ -21,7 +22,35 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution099 {
+    //https://leetcode.com/discuss/90848/java-easy-iterative-o-n-space-and-time-solution
     public void recoverTree(TreeNode root) {
-        
+        if (root == null) {
+            return;
+        }
+        TreeNode first, second, prev;
+        first = second = prev = null;//initialized to null to check if has been assigned value before
+        Stack<TreeNode> stack = new Stack<>();
+        pushLeft(stack, root);
+        while (!stack.isEmpty()) {
+            root = stack.pop();//root is current node
+            pushLeft(stack, root.right);
+            if (prev != null && prev.val > root.val) {
+                if (first == null) {
+                    first = prev;//first gets updated for the first time only
+                }
+                second = root;// second gets updated every time prev>root
+            }
+            prev = root;
+        }
+        int tmp = first.val;
+        first.val = second.val;
+        second.val = tmp;
+    }
+
+    private void pushLeft(Stack<TreeNode> stack, TreeNode root) {
+        while (root != null) {
+            stack.push(root);
+            root = root.left;
+        }
     }
 }

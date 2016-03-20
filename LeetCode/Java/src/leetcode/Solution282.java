@@ -25,7 +25,35 @@ import java.util.List;
  * @author RZHUANG
  */
 public class Solution282 {
+    //http://www.cnblogs.com/grandyang/p/4814506.html
     public List<String> addOperators(String num, int target) {
-        return new ArrayList<String>();
+        List<String> res = new ArrayList<String>();
+        if (num == null || num.isEmpty()) {
+            return res;
+        }
+        
+        List<String> list = new ArrayList<String>();
+        helper(num, target, 0, 0, "", list);
+        return list;
+    }
+    
+    private void helper(String num, int target, long diff, long curVal, String prefix, List<String> list) {
+        if (num.length()== 0 && curVal == target) {
+            list.add(prefix);
+        }
+        for (int i = 1; i <= num.length(); i++) {
+            String cur = num.substring(0, i);
+            if (cur.length() > 1 && cur.charAt(0) == '0') {
+                return;
+            }
+            String next = num.substring(i);
+            if (prefix.length() > 0) {
+                helper(next, target, Long.parseLong(cur), curVal + Long.parseLong(cur), prefix + "+" + cur, list);
+                helper(next, target, -Long.parseLong(cur), curVal - Long.parseLong(cur), prefix + "-" + cur, list);
+                helper(next, target, diff * Long.parseLong(cur), (curVal - diff) + diff * Long.parseLong(cur), prefix + "*" + cur, list);
+            } else {
+                helper(next, target, Long.parseLong(cur), Long.parseLong(cur), cur, list);
+            }
+        }
     }
 }
