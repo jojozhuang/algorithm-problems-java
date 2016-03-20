@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * Longest Valid Parentheses.
  * Given a string containing just the characters '(' and ')', find the length 
@@ -19,7 +21,33 @@ package leetcode;
  * @author Johnny
  */
 public class Solution032 {
-    public int longestValidParentheses(String s) {
-        return 0;
-    }
+    //http://www.geeksforgeeks.org/length-of-the-longest-valid-substring/
+     public int longestValidParentheses(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        
+        // Create stack to store the position of character
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(-1);
+        
+        int i = 0;
+        int max = 0;
+        while(i < s.length()) {
+            char c = s.charAt(i);
+            if (c == '(') {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if(!stack.isEmpty()) {
+                    max = Math.max(max, i - stack.peek());
+                } else {
+                    stack.push(i);
+                }
+            } 
+            i++;
+        }
+        
+        return max;
+     } 
 }

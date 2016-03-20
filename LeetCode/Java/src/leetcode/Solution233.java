@@ -19,7 +19,22 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution233 {
+    //http://www.cnblogs.com/grandyang/p/4629032.html
     public int countDigitOne(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        
+        int res = 0, a = 1, b = 1;
+        while (n > 0) {
+            res += (n + 8) / 10 * a + (n % 10 == 1? 1 : 0) * b;
+            b += n % 10 * a;
+            a *= 10;
+            n /= 10;
+        }
+        return res;
+    }
+    public int countDigitOne2(int n) {
         if (n <= 0) {
             return 0;
         }
@@ -37,7 +52,7 @@ public class Solution233 {
         return count;
     }
     
-    public int countDigitOne2(int n) {
+    public int countDigitOne3(int n) {
         if (n <= 0) {
             return 0;
         }

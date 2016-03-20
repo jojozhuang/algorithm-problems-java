@@ -124,5 +124,23 @@ public class AllSortingTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of BucketSort method, of class AllSorting.
+     */
+    @Test
+    public void testBucketSort() {
+        System.out.println("BucketSort");
+        int[] nums = null;
+        int maxVal = 0;
+        AllSorting instance = new AllSorting();
+        int[] expResult = null;
+        int[] result = instance.BucketSort(nums, maxVal);
+        assertArrayEquals(expResult, result);
+       
+        assertArrayEquals(new int[]{0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5}, instance.BucketSort(new int[]{5,3,0,2,4,1,0,5,2,3,1,4}, 5));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }

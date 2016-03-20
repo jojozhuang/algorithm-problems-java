@@ -19,23 +19,27 @@ import java.util.Stack;
  */
 public class Solution020 {
     public boolean isValid(String s) {
-        if (s==null||s.isEmpty())
+        if (s == null || s.isEmpty()) {
             return false;
+        }
         
-        if (s.length() % 2 != 0)
+        if (s.length() % 2 != 0) {
             return false;
+        }
         
         char[] chars = s.toCharArray();
         char current;
-        Stack stack = new Stack();
+        Stack<Character> stack = new Stack<Character>();
         for (int i=0; i<chars.length; i++) {
             current = chars[i];
-            if (current == '(' || current == '{' || current == '[')
+            if (current == '(' || current == '{' || current == '[') {
                 stack.push(current);
+            }
             else if (current == ')' || current == '}' || current == ']') {
-                if (stack.empty())
+                if (stack.empty()) {
                     return false;
-                char pop = (char)stack.pop();
+                }
+                char pop = stack.pop();
                 if (current== ')' && pop=='(') 
                     continue;
                 else if (current== '}' && pop=='{') 
@@ -47,9 +51,6 @@ public class Solution020 {
             }
         }
         
-        if (stack.empty())
-            return true;
-        else
-            return false;
+       return stack.isEmpty();
     }
 }

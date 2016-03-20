@@ -26,6 +26,61 @@ package leetcode;
  */
 public class Solution327 {
     public int countRangeSum(int[] nums, int lower, int upper) {
-        return 0;        
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int n = nums.length;
+        int[] BITree = new int[n + 1];
+        // Store the actual values in BITree[] using update()
+        for (int i = 0; i < n; i++) {
+            updateBIT(BITree, n, i, nums[i]);
+        }
+        
+        int count = 0;
+        int sum = 0;
+        for(int i = 0; i < n; i++) {
+            for(int j = i; j < n; j++) {
+                sum = getSum(BITree, i, j);
+                if (sum >= lower && sum <= upper) {
+                    count++;
+                }
+            }
+        }
+        
+        return count;
+    }
+    
+    private void updateBIT(int[] BITree, int n, int index, int val)
+    {
+        index = index + 1;
+        while (index <= n)
+        {
+           BITree[index] += val;
+           index += index & (-index);
+        }
+    }
+    
+    private int getSum(int[] BITree, int index)
+    {
+        int sum = 0;
+        index = index + 1;
+        while (index>0)
+        {
+            sum += BITree[index];
+
+            // Move index to parent node in getSum View
+            index -= index & (-index);
+        }
+        return sum;
+    }
+    
+    private int getSum(int[] BITree, int from, int to)
+    {
+        if (from >= 0 && to >= 0 && to >= from) {
+            return getSum(BITree, to) - getSum(BITree, from - 1);
+        } else {
+            return -1;
+        }
     }
 }

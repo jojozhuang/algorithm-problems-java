@@ -3,14 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode.common;
+package advanced;
 
 /**
  *
  * @author Johnny
  */
-public class RandomListNode {
-    public int label;
-    public RandomListNode next, random;
-    public RandomListNode(int x) { this.label = x; }
+public class Advanced {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
+    
 }

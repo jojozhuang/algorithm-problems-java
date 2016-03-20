@@ -5,6 +5,9 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Find Median from Data Stream.
  * 
@@ -32,13 +35,21 @@ package leetcode;
  * @author RZHUANG
  */
 public class Solution295 {
+    List<Integer> list = new ArrayList<Integer>();
     // Adds a number into the data structure.
     public void addNum(int num) {
-        
+        list.add(num);
     }
 
     // Returns the median of current data stream
     public double findMedian() {
-        return 0.0;
+        int len = list.size();
+        if (len % 2 == 1) {
+            return list.get(len / 2);
+        } else {
+            int num1 = list.get(len / 2 - 1);
+            int num2 = list.get(len / 2);
+            return num1 + (double)(num2 - num1) / 2;
+        }
     }
 }

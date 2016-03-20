@@ -57,6 +57,27 @@ public class Solution315Test {
         expResult2.add(1);
         expResult2.add(0);
         assertEquals(expResult2, instance.countSmaller(new int[] {5,2,6,1}));
+        
+        List<Integer> expResult3 = new ArrayList<Integer>();
+        expResult3.add(3);
+        expResult3.add(2);
+        expResult3.add(1);
+        expResult3.add(0);
+        assertEquals(expResult3, instance.countSmaller(new int[] {5,4,3,1}));
+        
+        List<Integer> expResult4 = new ArrayList<Integer>();
+        expResult4.add(0);
+        expResult4.add(0);
+        expResult4.add(0);
+        expResult4.add(0);
+        assertEquals(expResult4, instance.countSmaller(new int[] {1,4,6,7}));
+        
+        List<Integer> expResult5 = new ArrayList<Integer>();
+        expResult5.add(0);
+        expResult5.add(2);
+        expResult5.add(0);
+        expResult5.add(0);
+        assertEquals(expResult5, instance.countSmaller(new int[] {5,6,5,5}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

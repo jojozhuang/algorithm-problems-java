@@ -32,7 +32,35 @@ import java.util.TreeSet;
  * @author RZHUANG
  */
 public class Solution315 {
+    //http://www.cnblogs.com/grandyang/p/5078490.html
     public List<Integer> countSmaller(int[] nums) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (nums == null || nums.length == 0) {
+            return res;
+        }
+        // Binary insert, the position of the new array is the count
+        int n = nums.length;
+        //int[] sorted = new int[n];
+        List<Integer> sorted = new ArrayList<Integer>();
+        
+        for (int i = n - 1; i >= 0; i--) {
+            int start = 0;
+            int end = sorted.size();
+            while(start < end) {
+                int mid = start + (end - start) / 2;
+                if (sorted.get(mid) >= nums[i]) {
+                    end = mid;
+                } else {
+                    start = mid + 1;
+                }
+            }
+            res.add(0, end);
+            sorted.add(end, nums[i]);            
+        }
+        
+        return res;
+    }
+    public List<Integer> countSmaller2(int[] nums) {
         List<Integer> res = new ArrayList<Integer>();
         if (nums == null || nums.length == 0) {
             return res;
