@@ -18,8 +18,8 @@ import java.util.Map;
 public class Solution013 {
     public int romanToInt(String s) {
         if (s == null || s.isEmpty()) {
-                return 0;
-	}
+            return 0;
+        }
         
         Map<Character, Integer> map = new HashMap<Character, Integer>();
         map.put('I', 1);
