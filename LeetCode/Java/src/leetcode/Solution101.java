@@ -29,40 +29,36 @@ import leetcode.common.TreeNode;
  */
 public class Solution101 {
     public boolean isSymmetric(TreeNode root) {
-        if (root==null)
+        if (root == null) {
             return true;
-        
-        if (root.left==null&&root.right==null)
-            return true;
-        if (root.left==null&&root.right!=null)
-            return false;
-        if (root.left!=null&&root.right==null)
-            return false;  
-        
-        if (!isSymmetricNode(root.left, root.right))
-            return false;
-        
-        return true;
+        }
+       
+        return helper(root.left, root.right);
     }
     
-    public boolean isSymmetricNode(TreeNode p, TreeNode q) {
-        if (p==null&&q==null)
+    public boolean helper(TreeNode left, TreeNode right) {
+        if (left == null && right == null) {
             return true;
-        if (p==null&&q!=null)
+        }
+        if (left == null && right != null) {
             return false;
-        if (p!=null&&q==null)
+        }
+        if (left != null && right == null) {
             return false;
+        }
         
-        if (p.val != q.val)
+        if (left.val != right.val) {
             return false;
+        }
         
-        if (!isSymmetricNode(p.left, q.right))
+        if (!helper(left.left, right.right)) {
             return false;
+        }
 
-        if (!isSymmetricNode(p.right, q.left))
+        if (!helper(left.right, right.left)) {
             return false;
+        }
         
         return true;
-
     } 
 }

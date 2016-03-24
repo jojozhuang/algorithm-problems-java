@@ -26,32 +26,29 @@ import java.util.List;
  */
 public class Solution118 {
     public List<List<Integer>> generate(int numRows) {
-        if (numRows<=0)
-            return new ArrayList();
+        List<List<Integer>> res = new ArrayList();
+        if (numRows <= 0) {
+            return res;
+        }        
         
-        List<List<Integer>> listpath = new ArrayList();
-        List<Integer> list = new ArrayList();
-
-        for (int i = 1; i<=numRows; i++) {
-            list = new ArrayList();
-            if (i==1) {
+        for (int i = 1; i <= numRows; i++) {
+            List<Integer> list = new ArrayList();
+            if (i == 1) {
                 list.add(1);
-            }
-            else if(i==2) {
+            } else if(i == 2) {
                 list.add(1);
                 list.add(1);
-            }
-            else {
+            } else {
                 list.add(1);
-                List<Integer> previous = listpath.get(i-2);
-                for(int j=0; j<previous.size()-1;j++) {
-                    list.add((previous.get(j) + previous.get(j+1)));
+                List<Integer> previous = res.get(i - 2);
+                for(int j = 0; j < previous.size() - 1; j++) {
+                    list.add((previous.get(j) + previous.get(j + 1)));
                 }
                 list.add(1);
             }
-            listpath.add(list);
+            res.add(list);
         }
         
-        return listpath;
+        return res;
     }
 }

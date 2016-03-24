@@ -35,10 +35,10 @@ import java.util.Queue;
  */
 public class Solution102 {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         
         if (root == null) {
-            return result;
+            return res;
         }
         
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
@@ -57,9 +57,9 @@ public class Solution102 {
                     queue.offer(node.right);
                 }                
             }
-            result.add(level);
+            res.add(level);
         }
         
-        return result;
+        return res;
     }   
 }

@@ -26,21 +26,20 @@ import leetcode.common.TreeNode;
  */
 public class Solution112 {
     public boolean hasPathSum(TreeNode root, int sum) {
-        if (root == null)
+        if (root == null) {
             return false;
-        if (root.left==null&&root.right==null) {
-            if (root.val == sum)
-                return true;
-            else
-                return false;
         }
-        if (root.left!=null) {
-            if(hasPathSum(root.left, sum - root.val))
-                return true;
-        }        
-        if (root.right!=null) {
-            if(hasPathSum(root.right, sum - root.val))
-                return true;
+        
+        if (root.left == null && root.right == null) {
+            return root.val == sum;
+        }
+
+        if(root.left != null && hasPathSum(root.left, sum - root.val)) {
+            return true;
+        }
+
+        if(root.right != null && hasPathSum(root.right, sum - root.val)) {
+            return true;
         }
         
         return false;

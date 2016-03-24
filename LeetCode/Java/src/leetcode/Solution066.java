@@ -16,31 +16,33 @@ package leetcode;
  */
 public class Solution066 {
     public int[] plusOne(int[] digits) {
-        if (digits == null)
+        if (digits == null || digits.length == 0) {
             return null;
+        }
         
         int carry = 0;
         int sum = 0;
-        for (int i= digits.length-1; i>=0; i--) {
-            if (i==digits.length-1)
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (i == digits.length - 1) {
                 sum = digits[i] + 1 + carry;
-            else
+            } else {
                 sum = digits[i] + carry;
+            }
             
-            if (sum>=10) {
+            if (sum >= 10) {
                 carry = 1;
                 digits[i] = sum - 10;
-            }
-            else {
+            } else {
                 digits[i] = sum;
                 return digits;
             }
         }
         
-        int[] ret = new int[digits.length+1];
-        ret[0]=1;
-        for(int i=1; i<ret.length; i++)
+        int[] ret = new int[digits.length + 1];
+        ret[0] = 1;
+        /*for (int i = 1; i < ret.length; i++) {
             ret[i] = 0;
+        }*/
         
         return ret;                
     }

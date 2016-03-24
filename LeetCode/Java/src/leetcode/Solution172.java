@@ -16,15 +16,16 @@ package leetcode;
  */
 public class Solution172 {
     public int trailingZeroes(int n) {
-        if (n<=0)
+        if (n <= 0) {
             return 0;
+        }
 
         int ret = 0;
         int exponent = 1;
         double quotient = 1;
-        while(quotient>=1) {
-            quotient = n/Math.pow(5, exponent);
-            ret = ret+(int)Math.floor(quotient);
+        while(quotient >= 1) {
+            quotient = n / Math.pow(5, exponent);
+            ret += (int)Math.floor(quotient);
             exponent++;
         }
         

@@ -21,14 +21,12 @@ package leetcode;
  */
 public class Solution026 {
     public int removeDuplicates(int[] nums) {
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return 0;
-        
-        if (nums.length == 1)
-            return 1;
-        
-        int i=1;
-        int j=0;
+        }        
+       
+        int i = 1;
+        int j = 0;
         
         while(i < nums.length) {
             if (nums[i] != nums[j]) {

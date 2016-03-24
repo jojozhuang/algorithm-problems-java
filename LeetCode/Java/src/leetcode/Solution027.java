@@ -15,18 +15,19 @@ package leetcode;
  * @author Johnny
  */
 public class Solution027 {
-    public int removeElement(int[] A, int elem) {
-        if (A==null || A.length==0)
+    public int removeElement(int[] nums, int val) {
+        if (nums == null || nums.length == 0) {
             return 0;
+        }
         
-        int i=0;
-        int j=0;
-        while(i<A.length) {
-            if(A[i]!=elem) {
-                A[j]=A[i];
+        int i = 0;
+        int j = 0;
+        while(i < nums.length) {
+            if (nums[i] != val) {
+                nums[j] = nums[i];
                 j++;
             }
-            i++;                
+            i++;
         }
         return j;
     }
