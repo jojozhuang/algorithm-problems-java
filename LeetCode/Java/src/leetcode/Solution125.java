@@ -24,35 +24,33 @@ package leetcode;
  */
 public class Solution125 {
     public boolean isPalindrome(String s) {
-        if(s==null||s.isEmpty())
+        if(s == null || s.isEmpty()) {
             return true;
+        }
         
-        char[] list = s.toUpperCase().toCharArray();
+        s = s.toUpperCase();
         
-        int i = 0;
-        int j = list.length - 1;
-        char left;
-        char right;
-        while(i<=j && i<=list.length-1&& j>=0) {
-            left = list[i];
-            right = list[j];
+        int start = 0;
+        int end = s.length() - 1;
+        while(start <= end) {
+            char left = s.charAt(start);
+            char right = s.charAt(end);
             if (!Character.isLetterOrDigit(left)) {
-                i++;
+                start++;
                 continue;
             }
             if (!Character.isLetterOrDigit(right)) {
-                j--;
+                end--;
                 continue;
             }
-            if (left!=right)
+            if (left != right) {
                 return false;
-            else {
-                i++;
-                j--;
+            } else {
+                start++;
+                end--;
             }
         }
             
         return true;
-
     }
 }

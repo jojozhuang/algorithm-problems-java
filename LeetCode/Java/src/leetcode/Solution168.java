@@ -25,6 +25,23 @@ import java.util.Stack;
  */
 public class Solution168 {
     public String convertToTitle(int n) {
+        if (n <= 0) {
+            return "";
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        while(n != 0) {
+            n--;
+            sb.append(Character.toChars(n % 26 + 65)); // 65 is 'A'
+            n = n / 26;
+        }
+        
+        sb.reverse();
+        return sb.toString();
+    }
+    
+    
+    public String convertToTitle2(int n) {
         if (n<=0)
             return "";
 

@@ -50,6 +50,7 @@ public class Solution125Test {
         assertEquals(expResult, result);
         
         assertEquals(false, instance.isPalindrome("he"));
+        assertEquals(false, instance.isPalindrome("0P"));
         assertEquals(false, instance.isPalindrome("he!234"));
         assertEquals(true, instance.isPalindrome("he! eh"));
         assertEquals(true, instance.isPalindrome("he! a Eh"));

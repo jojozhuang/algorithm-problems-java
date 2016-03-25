@@ -56,27 +56,5 @@ public class Solution038Test {
         assertEquals("111221", instance.countAndSay(5));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of countAndSay2 method, of class Solution038.
-     */
-    @Test
-    public void testCountAndSay2() {
-        System.out.println("countAndSay2");
-        int n = 0;
-        Solution038 instance = new Solution038();
-        String expResult = "";
-        String result = instance.countAndSay2(n);
-        assertEquals(expResult, result);
-        
-        assertEquals("1", instance.countAndSay2(1));
-        assertEquals("11", instance.countAndSay2(2));
-        assertEquals("21", instance.countAndSay2(3));
-        assertEquals("1211", instance.countAndSay2(4));
-        assertEquals("111221", instance.countAndSay2(5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
+    }    
 }

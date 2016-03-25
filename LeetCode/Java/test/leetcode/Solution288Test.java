@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution190Test {
+public class Solution288Test {
     
-    public Solution190Test() {
+    public Solution288Test() {
     }
     
     @BeforeClass
@@ -38,20 +38,16 @@ public class Solution190Test {
     }
 
     /**
-     * Test of reverseBits method, of class Solution190.
+     * Test of isUnique method, of class Solution288.
      */
     @Test
-    public void testReverseBits() {
-        System.out.println("reverseBits");
-        int n = 0;
-        Solution190 instance = new Solution190();
-        int expResult = 0;
-        long result = instance.reverseBits(n);
-        assertEquals(expResult, result);
-        
-        assertEquals(964176192, instance.reverseBits(43261596));
-        assertEquals(-2, instance.reverseBits(2147483647));
-        assertEquals(1, instance.reverseBits((int)2147483648l));
+    public void testIsUnique() {
+        System.out.println("isUnique");
+        Solution288 instance = new Solution288(new String[]{"deer", "door", "cake", "card"});
+        assertEquals(false, instance.isUnique("dear"));
+        assertEquals(true, instance.isUnique("cart"));
+        assertEquals(false, instance.isUnique("cane"));
+        assertEquals(true, instance.isUnique("make"));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

@@ -43,13 +43,7 @@ public class Solution165Test {
     @Test
     public void testCompareVersion() {
         System.out.println("compareVersion");
-        String version1 = "";
-        String version2 = "";
         Solution165 instance = new Solution165();
-        int expResult = 0;
-        //int result = instance.compareVersion(version1, version2);
-        //assertEquals(expResult, result);
-        
         assertEquals(0, instance.compareVersion("1.0", "1"));
         assertEquals(0, instance.compareVersion("1.1", "1.1.0.00."));
         assertEquals(-1, instance.compareVersion("0.1", "0.11"));

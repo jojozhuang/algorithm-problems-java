@@ -13,49 +13,32 @@ package leetcode;
  * @author Johnny
  */
 public class Solution014 {
+    //http://www.programcreek.com/2014/02/leetcode-longest-common-prefix-java/
     public String longestCommonPrefix(String[] strs) {
-        if (strs == null)
+        if(strs == null || strs.length == 0) {
             return "";
-        if (strs.length == 1)
-            return strs[0];
-        
-        String prefix = "";
-        String str1 = "";
-        String str2 = "";
-        char[] chars1;
-        char[] chars2;
-        
-        for (int i=0; i<strs.length; i++) {
-            str1 = strs[i];
-            if (prefix.isEmpty())
-                str2 = strs[i+1];
-            else
-                str2 = prefix;
-            
-            if (str1.isEmpty() || str2.isEmpty())
-                return "";
-            
-            if (str1.equals(str2)) {
-                prefix = str1;
-                continue;
-            }
+        }
 
-            prefix = "";
-            chars1 = str1.toCharArray();
-            chars2 = str2.toCharArray();
-            for(int j = 0; j < chars1.length; j++) {
-                if (j >= chars2.length)
-                    break;
-                if (chars1[j] == chars2[j])
-                    prefix = prefix + chars1[j];
-                else
-                    break;                    
+        int minLen = Integer.MAX_VALUE;
+        for(String str: strs){
+            if(minLen > str.length()) {
+                minLen = str.length();
             }
-            
-            if (prefix.isEmpty())
-                return "";
         }
         
-        return prefix;
+        if (minLen == 0) {
+            return "";
+        }
+
+        for(int j = 0; j < minLen; j++){
+            char prev = strs[0].charAt(j);
+            for(int i = 0; i < strs.length; i++){
+                if(strs[i].charAt(j) != prev){
+                    return strs[i].substring(0, j);
+                }
+            }
+        }
+
+        return strs[0].substring(0, minLen);
     }
 }

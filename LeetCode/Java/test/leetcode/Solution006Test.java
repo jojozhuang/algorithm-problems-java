@@ -50,7 +50,7 @@ public class Solution006Test {
         String result = instance.convert(s, nRows);
         assertEquals(expResult, result);
         
-        assertEquals(null, instance.convert(null, nRows));
+        assertEquals("", instance.convert(null, nRows));
         assertEquals("A", instance.convert("A", 0));
         assertEquals("AB", instance.convert("AB", -1));
         assertEquals("ABC", instance.convert("ABC", 1));

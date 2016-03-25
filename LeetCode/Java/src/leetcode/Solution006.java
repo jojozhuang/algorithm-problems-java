@@ -25,58 +25,28 @@ package leetcode;
  * @author Johnny
  */
 public class Solution006 {
-    public String convert(String s, int nRows) {
-        if (s==null||s.isEmpty())
+    //http://www.cnblogs.com/springfor/p/3889414.html
+    public String convert(String s, int nRows) {  
+        if(s == null || s.length() == 0) {
+            return "";
+        }
+        if(nRows <= 1) {
             return s;
-        
-        if (nRows<=1 || nRows>=s.length())
-            return s;
-        
-        int nums = nRows+nRows-2; //3+3-2=4
-        int block = s.length() / (nRows+nRows-2); //14 / 4 = 3
-        int cols = block * (nRows-1); // 3*2 = 6
-        int remains = s.length() - block*nums; //14-3*(3+3-2) = 2
-        
-        if (remains<=nRows) {
-            if (remains>0)
-                cols = cols + 1; //6 + 1
         }
-        else
-            cols = cols + 1 + (remains - nRows);
-        
-        char[][] tb = new char[nRows][cols];
-        
-        int i = 0;
-        int row = 0;
-        int col= 0;
-        int remainder= 0;
-        while(i<s.length()) {
-            if (i==0) {
-                //do nothing
-            }
-            else {
-                remainder = i%nums;            
-                if(remainder>0&&remainder<=nRows-1) {
-                    row++;
+            
+        StringBuilder res = new StringBuilder();  
+        int size = 2 * nRows - 2;  
+        for(int i = 0; i < nRows; i++){  
+            for(int j = i; j < s.length(); j += size){  
+                res.append(s.charAt(j));  
+                if(i != 0 && i != nRows - 1){//except the first row and the last row
+                    int temp = j + size - 2 * i;
+                    if(temp < s.length()) {
+                        res.append(s.charAt(temp));
+                    }
                 }
-                else if (remainder>nRows-1||remainder==0) {
-                    row--;
-                    col++;
-                }
-            }
-
-            tb[row][col] = s.charAt(i);
-            i++;
-        }
-        
-        StringBuilder sb = new StringBuilder();
-        for(row=0; row<tb.length; row++) {
-            for(col=0; col<tb[row].length; col++) {
-                if (tb[row][col]!='\u0000') {
-                    sb.append(String.valueOf(tb[row][col]));
-                }
-            }            
-        }
-        return sb.toString();
+            }                  
+        }  
+        return res.toString();  
     }
 }

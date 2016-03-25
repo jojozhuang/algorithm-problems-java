@@ -27,24 +27,21 @@ public class Solution020 {
             return false;
         }
         
-        char[] chars = s.toCharArray();
-        char current;
         Stack<Character> stack = new Stack<Character>();
-        for (int i=0; i<chars.length; i++) {
-            current = chars[i];
+        for (int i = 0; i < s.length(); i++) {
+            char current = s.charAt(i);
             if (current == '(' || current == '{' || current == '[') {
                 stack.push(current);
-            }
-            else if (current == ')' || current == '}' || current == ']') {
+            } else if (current == ')' || current == '}' || current == ']') {
                 if (stack.empty()) {
                     return false;
                 }
                 char pop = stack.pop();
-                if (current== ')' && pop=='(') 
+                if (current == ')' && pop == '(') 
                     continue;
-                else if (current== '}' && pop=='{') 
+                else if (current == '}' && pop == '{') 
                     continue;
-                else if (current== ']' && pop=='[') 
+                else if (current == ']' && pop == '[') 
                     continue;
                 else
                     return false;

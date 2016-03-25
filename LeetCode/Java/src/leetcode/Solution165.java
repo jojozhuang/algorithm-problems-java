@@ -26,22 +26,20 @@ package leetcode;
  */
 public class Solution165 {
     public int compareVersion(String version1, String version2) {
-        if (version1==null||version1.isEmpty()||version2==null||version2.isEmpty())
+        if (version1 == null || version1.isEmpty() || version2 == null || version2.isEmpty()) {
             return 0;
+        }
         
         String[] list1 = version1.split("\\.");
         String[] list2 = version2.split("\\.");
-        int i=0;
-        int j=0;
-        int v1 = 0;
-        int v2 = 0;
         
-        while(i<list1.length&&j<list2.length) {
-            v1 = Integer.parseInt(list1[i]);
-            v2 = Integer.parseInt(list2[j]);
-            if (v1>v2)
+        int i = 0, j = 0;
+        while(i < list1.length && j < list2.length) {
+            int v1 = Integer.parseInt(list1[i]);
+            int v2 = Integer.parseInt(list2[j]);
+            if (v1 > v2)
                 return 1;
-            else if (v1<v2)
+            else if (v1 < v2)
                 return -1;
             else {
                 i++;
@@ -49,18 +47,17 @@ public class Solution165 {
             }
         }
         
-        if (i<list1.length&&j==list2.length) {
-            for (int k=i; k<list1.length; k++) {
+        if (i < list1.length && j == list2.length) {
+            for (int k = i; k < list1.length; k++) {
                 int temp = Integer.parseInt(list1[k]);
-                if (temp!=0)
+                if (temp != 0)
                     return 1;
             }
             return 0;
-        }
-        else if (i==list1.length&&j<list2.length) {
-            for (int k=i; k<list2.length; k++) {
+        } else if (i == list1.length && j < list2.length) {
+            for (int k = i; k < list2.length; k++) {
                 int temp = Integer.parseInt(list2[k]);
-                if (temp!=0)
+                if (temp != 0)
                     return -1;
             }
             return 0;

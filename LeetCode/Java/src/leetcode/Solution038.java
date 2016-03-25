@@ -19,34 +19,6 @@ package leetcode;
  */
 public class Solution038 {
     public String countAndSay(int n) {
-        if (n<=0)
-            return "";
-        
-        int index = 1;
-        String strSay = "1";
-        StringBuilder sb = new StringBuilder();
-        int count = 1;
-        int i;
-        while(index<n) {       
-            for(i=1; i<strSay.length(); i++) {
-                if (strSay.charAt(i)==strSay.charAt(i-1)) {
-                    count++;
-                }
-                else {
-                    sb.append(count).append(strSay.charAt(i-1));                    
-                    count = 1;
-                }
-            }
-            sb.append(count).append(strSay.charAt(i-1));
-            strSay = sb.toString();
-            sb.setLength(0);
-            count = 1;
-            index++;
-        }
-        return strSay;
-    }    
-    
-    public String countAndSay2(int n) {
         if (n <= 0) {
             return "";
         }
@@ -62,8 +34,7 @@ public class Solution038 {
                     sb.append(c);
                     c = str.charAt(j);
                     count = 1;
-                }
-                else {
+                } else {
                     count++;
                 }
             }

@@ -35,22 +35,17 @@ public class Solution257 {
         
         if (left.size() == 0 && right.size() == 0) {
             result.add(String.valueOf(root.val));
-        }
-        else {
+        } else {
             String path = "";
-            if (left.size()> 0) {
-                for(String item: left) {
-                    path = String.valueOf(root.val) + "->";
-                    path = path + item;
-                    result.add(path);
-                }
+            for(String item: left) {
+                path = String.valueOf(root.val) + "->";
+                path = path + item;
+                result.add(path);
             }
-            if (right.size() > 0) {
-                for(String item: right) {
-                    path = String.valueOf(root.val) + "->";
-                    path = path + item;
-                    result.add(path);
-                }
+            for(String item: right) {
+                path = String.valueOf(root.val) + "->";
+                path = path + item;
+                result.add(path);
             }
         }       
         
