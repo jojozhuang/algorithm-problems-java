@@ -30,8 +30,7 @@ public class Solution141 {
         while(fast != null) {
             if (fast.next == null) {
                 return false;
-            }
-            else {
+            } else {
                 fast = fast.next.next;
                 slow = slow.next;
                 if (fast == slow) {

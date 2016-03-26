@@ -50,8 +50,7 @@ public class Solution039 {
         for (int i = pos; i < candidates.length; i++) {
             if (candidates[i] > target) {
                 return;
-            }
-            else {
+            } else {
                 list.add(candidates[i]);
                 helper(candidates, target - candidates[i], i, list, ret);
                 list.remove(list.size() - 1);

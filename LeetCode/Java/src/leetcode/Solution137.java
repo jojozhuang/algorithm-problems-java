@@ -17,6 +17,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution137 {
+    //http://fisherlei.blogspot.com/2013/11/leetcode-single-number-ii-solution.html
     public int singleNumber(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;

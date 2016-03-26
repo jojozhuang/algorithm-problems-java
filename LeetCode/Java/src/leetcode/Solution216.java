@@ -48,8 +48,7 @@ public class Solution216 {
         for (int i = pos; i <= 9; i++) {
             if (i > n) {
                 return;
-            }
-            else {
+            } else {
                 list.add(i);
                 helper(k, n - i, i + 1, list, ret);
                 list.remove(list.size() - 1);

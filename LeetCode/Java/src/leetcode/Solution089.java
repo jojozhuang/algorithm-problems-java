@@ -34,63 +34,27 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution089 {
+    //http://fisherlei.blogspot.com/2012/12/leetcode-gray-code.html
     public List<Integer> grayCode(int n) {
-        List<List<Integer>> codeList = grayCodeList(n);
-        List<Integer> ret = new ArrayList<Integer>();
-        //Binary to decimal
-        for(List<Integer> item: codeList) {
-            ret.add(binaryToDecimal(item));
-        }
-        return ret;
-    }
-    
-    private List<List<Integer>> grayCodeList(int n) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
-        if (n<=0){
-            List<Integer> item = new ArrayList<Integer>();
-            item.add(0);
-            ret.add(item);
-        }            
-        else if(n==1) {
-            List<Integer> item = new ArrayList<Integer>();
-            item.add(0);
-            ret.add(item);
-            item = new ArrayList<Integer>();
-            item.add(1);
-            ret.add(item);
-        }
-        else {
-            List<List<Integer>> list = grayCodeList(n-1);
-            
-            int i;
-            List<Integer> item;
-            //build the first part
-            for(i=0; i<list.size(); i++) {
-                item = new ArrayList<Integer>(); 
-                item.add(0);
-                item.addAll(list.get(i));
-                ret.add(item);
-            }
-            //build the second part by reverse
-            for(i=list.size()-1; i>=0; i--) {
-                item = new ArrayList<Integer>(); 
-                item.add(1);
-                item.addAll(list.get(i));
-                ret.add(item);
-            }            
+        List<Integer> res = new ArrayList();
+        if (n <= 0) {
+            res.add(0);
+            return res;
         }
         
-        return ret;
-    }
-    
-    private int binaryToDecimal(List<Integer> list) {
-        int ret = 0;
-        
-        for (int i=0; i<list.size(); i++) {
-            if (list.get(i)==1)
-                ret = ret + (int)(Math.pow(2, (list.size()-i-1)));
+        if (n == 1) {
+            res.add(0);
+            res.add(1);
+            return res;
         }
         
-        return ret;
+        List<Integer> list = grayCode(n - 1);
+        res.addAll(list);
+        for (int i = list.size() - 1; i >= 0; i--) {
+            int num = (1 << n - 1) + list.get(i);
+            res.add(num);
+        }
+        
+        return res;
     }
 }

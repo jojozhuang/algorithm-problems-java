@@ -23,6 +23,7 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution123 {
+    //http://www.programcreek.com/2014/02/leetcode-best-time-to-buy-and-sell-stock-iii-java/
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length <= 1) {
             return 0;

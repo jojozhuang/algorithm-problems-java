@@ -25,22 +25,19 @@ public class Solution153 {
         
         int start = 0;
         int end = num.length - 1;
-        int mid = 0;
         
         while (start + 1 < end) {
-            mid = start + (end - start) / 2;
+            int mid = start + (end - start) / 2;
             if (num[mid] > num[end]) {
                 start = mid;
-            }
-            else {
+            } else {
                 end = mid;
             }
         }
         
         if (num[start] > num[end]) {
             return num[end];
-        }
-        else {
+        } else {
             return num[start];
         }        
     }

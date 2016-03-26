@@ -31,7 +31,7 @@ public class Solution260 {
             xor = xor ^ nums[i];
         }
         
-        int last1Bit = xor & (-xor); // last bit 1
+        int last1Bit = xor & (-xor); // last bit which is equals to '1'
         int first = 0;
         int second = 0;
         

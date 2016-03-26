@@ -27,22 +27,23 @@ import java.util.List;
  */
 public class Solution059 {
     public int[][] generateMatrix(int n) {
-        if (n<1)
+        if (n < 1) {
             return new int[][]{};
+        }
         
         int[][] matrix = new int[n][n];
         
-        int top=0;
-        int bottom=matrix.length-1;
+        int top=0;        
         int left=0;
+        int bottom=matrix.length-1;
         int right=matrix[0].length-1;
-        int i;
+        int i = 0;
         int index=1;
 
-        while(top<=bottom&&left<=right) {
+        while(top <= bottom && left <= right) {
             //left->right
             i = left;
-            while(i<=right) {
+            while(i <= right) {
                 matrix[top][i] = index;
                 index++;
                 i++;                
@@ -50,18 +51,19 @@ public class Solution059 {
             top++;
             //top->bottom
             i = top;
-            while(i<=bottom) {
+            while(i <= bottom) {
                 matrix[i][right] = index;
                 index++;
                 i++;
             }
             right--;
             //check
-            if(top>bottom||left>right)
+            if(top > bottom || left > right) {
                 break;
+            }
             //right->left
             i = right;
-            while(i>=left) {
+            while(i >= left) {
                 matrix[bottom][i] = index;
                 index++;
                 i--;
@@ -69,7 +71,7 @@ public class Solution059 {
             bottom--;
             //bottom->top
             i = bottom;
-            while(i>=top) {
+            while(i >= top) {
                 matrix[i][left] = index;
                 index++;
                 i--;

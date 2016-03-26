@@ -22,21 +22,20 @@ package leetcode;
  * @author Johnny
  */
 public class Solution035 {
-    public int searchInsert(int[] A, int target) {
-        if (A == null || A.length == 0) {
+    public int searchInsert(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         
         int start = 0;
-        int end = A.length - 1;
-        int mid = 0;
+        int end = nums.length - 1;
         
-        while(start + 1 < end) {
-            mid = start + (end - start) / 2;
-            if (A[mid] == target) {
+        while (start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
                 return mid;
             }
-            else if (A[mid] < target) {
+            else if (nums[mid] < target) {
                 start = mid;
             }
             else {
@@ -44,55 +43,14 @@ public class Solution035 {
             }
         }
         
-        if (A[start] >= target){
+        if (nums[start] >= target){
             return 0;
         }
         
-        if (A[end] < target){
+        if (nums[end] < target){
             return end + 1;
-        }
-        else{
+        } else {
             return end;
         }
     }
-    /*
-    public int searchInsert(int[] A, int target) {
-        if (A==null||A.length==0)
-            return 0;
-        
-        int left = 0;
-        int right = A.length - 1;
-        int mid;
-        int ret = 0;
-        boolean frombig=false; //false:small->big; true:big->small
-        
-        if(A[0]>target)
-            return 0;
-        else if (A[A.length-1]<target)
-            return A.length;
-        else {        
-            while(left<=right) {
-                mid = (left+right)/2;
-                if (A[mid]<target) {
-                    left = mid + 1;                   
-                    ret = left;
-                    frombig = false;
-                }
-                else if(A[mid]>target) {
-                    right = mid - 1;
-                    if (!frombig)
-                        ret = left;
-                    else
-                        ret = right;
-                    frombig = true;
-                }
-                else {
-                    ret = mid;
-                    break;
-                }
-            }
-        }
-        
-        return ret;
-    }*/
 }
