@@ -27,8 +27,7 @@ package leetcode;
  */
 public class Solution240 {
     public boolean searchMatrix(int[][] matrix, int target) {
-        if (matrix == null || matrix.length == 0 || 
-            matrix[0] == null || matrix[0].length == 0) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }
         
@@ -39,11 +38,9 @@ public class Solution240 {
         while(row >= 0 && col <= matrix[0].length - 1) {
             if (matrix[row][col] == target) {
                 return true;
-            }
-            else if (matrix[row][col] > target) {
+            } else if (matrix[row][col] > target) {
                 row--;
-            }
-            else {
+            } else {
                 col++;
             }
         }

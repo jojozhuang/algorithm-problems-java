@@ -21,8 +21,37 @@ package leetcode;
  * @author Johnny
  */
 public class Solution313 {
-    // Similar logic with Ugly Number 2
     public int nthSuperUglyNumber(int n, int[] primes) {
+        if (n <= 0 || primes == null || primes.length == 0) {
+            return 0;
+        }
+        
+        int[] res = new int[n];
+        res[0] = 1;
+        int[] index = new int[primes.length];
+        int count = 1;
+        while (count < n) {
+            int min = Integer.MAX_VALUE;
+            int pos = -1;
+            for (int i = 0; i < primes.length; i++) {
+                int next = res[index[i]] * primes[i];
+                if (next < min) {
+                    min = next;                    
+                    pos = i;
+                }
+            }
+            index[pos]++;
+            if (res[count - 1] != min) {
+                res[count] = min;
+                count++;
+            }
+        }
+        
+        return res[n - 1];
+    }
+    
+    // Similar logic with Ugly Number 2
+    public int nthSuperUglyNumber2(int n, int[] primes) {
         if (n <= 0 || primes == null || primes.length == 0) {
             return 0;
         }

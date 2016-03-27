@@ -34,8 +34,7 @@ public class Solution080 {
                     nums[slow] = nums[fast];                    
                 }
                 duplicate++;
-            }
-            else {
+            } else {
                 slow++;
                 nums[slow] = nums[fast];               
                 duplicate = 1;                

@@ -36,7 +36,7 @@ public class Solution215 {
     }
     
     private int helper(int[] nums, int start, int end, int k) {
-         // quick sort partition
+        // quick sort partition
         int index = partition(nums, start, end);
         if (end - k + 1 == index) {
             return nums[index];
@@ -57,7 +57,7 @@ public class Solution215 {
                 int temp = nums[i];
                 nums[i] = nums[index];
                 nums[index] = temp;
-              }
+            }
         }
 
         int temp = nums[index];

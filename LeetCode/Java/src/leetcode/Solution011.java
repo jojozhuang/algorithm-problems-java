@@ -14,40 +14,28 @@ package leetcode;
     Note: You may not slant the container.
  * @author Johnny
  */
-public class Solution011 {
-    //Brute force solution, O(N2)
-    public int maxArea1(int[] height) {
-        int area = 0;
-        int current = 0;
-        for (int i=0; i<height.length; i++) {
-            for (int j=i+1; j<height.length; j++) {
-                current = (j-i)*Math.min(height[i], height[j]);
-                if (current > area)
-                    area = current;
+public class Solution011 {        
+    //Shrink from both sides, O(N2)
+    //http://www.programcreek.com/2014/03/leetcode-container-with-most-water-java/
+    public int maxArea(int[] height) {
+        if (height == null || height.length < 2) {
+            return 0;
+        }
+        
+        int left = 0;
+        int right = height.length - 1;
+        int max = 0;
+        
+        while (left < right) {
+            max = Math.max(max, (right - left) * Math.min(height[left], height[right]));
+           
+            if(height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
             }
         }
             
-        return area;
-    }
-    
-    //Shrink from both sides, O(N2)
-    public int maxArea2(int[] height) {
-        int area = 0;
-        int left = 0;
-        int right = height.length - 1;
-        int current = 0;
-        
-        while(left<right) {
-            current = (right-left)*Math.min(height[left], height[right]);
-            if (current>area)
-                area = current;
-            
-            if(height[left]<height[right])
-                left++;
-            else
-                right--;                       
-        }
-            
-        return area;
+        return max;
     }
 }

@@ -32,9 +32,9 @@ public class Solution334 {
         int a = Integer.MAX_VALUE;
         int b = Integer.MAX_VALUE;
         for(int i = 0; i < nums.length; i++) {
-            if (a == Integer.MAX_VALUE || a >= nums[i]) {
+            if (a >= nums[i]) { // minimum
                 a = nums[i];
-            } else if (b == Integer.MAX_VALUE || b >= nums[i]) {
+            } else if (b >= nums[i]) { // second minimum
                 b = nums[i];
             } else {
                 return true;

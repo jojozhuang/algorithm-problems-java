@@ -22,37 +22,37 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution016 {
-    public int threeSumClosest(int[] num, int target) {
-
-        if (num==null||num.length<3)
+    public int threeSumClosest(int[] nums, int target) {
+        if (nums == null || nums.length < 3) {
             return 0;
+        }
         
         int min = Integer.MAX_VALUE;
-        int ret = 0;
+        int res = 0;
  
-        Arrays.sort(num);
+        Arrays.sort(nums);
 
-        for (int i = 0; i < num.length; i++) {
-            int j = i + 1;
-            int k = num.length - 1;
-            while (j < k) {
-                int sum = num[i] + num[j] + num[k];
+        for (int i = 0; i < nums.length; i++) {
+            int start = i + 1;
+            int end = nums.length - 1;
+            while (start < end) {
+                int sum = nums[i] + nums[start] + nums[end];
+                if (sum == target) {
+                    return sum;
+                } else if (sum < target) {
+                    start++;
+                } else {
+                    end--;
+                }
+                
                 int diff = Math.abs(sum - target);
-
-                if(diff == 0) return sum;
-
                 if (diff < min) {
                     min = diff;
-                    ret = sum;
-                }
-                if (sum <= target) {
-                    j++;
-                } else {
-                    k--;
+                    res = sum;
                 }
             }
         }
         
-        return ret;
+        return res;
     }
 }

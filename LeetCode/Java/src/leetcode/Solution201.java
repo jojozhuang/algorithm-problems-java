@@ -16,6 +16,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution201 {
+    //http://www.cnblogs.com/grandyang/p/4431646.html
     public int rangeBitwiseAnd(int m, int n) {
         int i = 0;
         while (m != n) {

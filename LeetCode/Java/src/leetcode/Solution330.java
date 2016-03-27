@@ -33,22 +33,41 @@ package leetcode;
  * @author Johnny
  */
 public class Solution330 {
-    public int minPatches(int[] nums, int n) {
+    //https://www.hrwhisper.me/leetcode-patching-array/
+    //http://www.cnblogs.com/grandyang/p/5165821.html
+    public int minPatches2(int[] nums, int n) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
         
-        int ret = 0;
-        int miss = 1;
+        int res = 0;
+        int i = 0;
+        for(long known_sum = 1; known_sum <= n;){
+            if(i < nums.length && known_sum >= nums[i]){
+                known_sum += nums[i++];
+            }else{
+                known_sum <<= 1;
+                res++;
+            }
+        }
+        return res;
+    }
+    public int minPatches(int[] nums, int n) {
+        if (nums == null) {
+            return 0;
+        }
+        
+        int res = 0;
+        long miss = 1; //must be long, overflow
         int i = 0;
         while (miss <= n) {
             if (i < nums.length && nums[i] <= miss) {
                 miss += nums[i++];
             } else {
-                miss += miss;
-                ret++;
+                miss <<= 1;
+                res++;
             }
         }
-        return ret;
+        return res;
     }
 }

@@ -43,18 +43,15 @@ public class Solution011Test {
     @Test
     public void testMaxArea() {
         System.out.println("maxArea");
-        int[] height = {2,3,4};
         Solution011 instance = new Solution011();
-        int expResult = 4;
-        int result = instance.maxArea1(height);
-        assertEquals(expResult, result);
-        assertEquals(6, instance.maxArea1(new int[]{1,2,3,4,5}));
+        assertEquals(0, instance.maxArea(new int[]{}));
+        assertEquals(4, instance.maxArea(new int[]{2,3,4}));
+        assertEquals(6, instance.maxArea(new int[]{1,2,3,4,5}));
         int[] height2 = new int[15000];
         for(int i=0; i<15000; i++) {
             height2[i] = i+1;
         }
-        //assertEquals(56250000, instance.maxArea1(height2));
-        assertEquals(56250000, instance.maxArea2(height2));
+        assertEquals(56250000, instance.maxArea(height2));
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

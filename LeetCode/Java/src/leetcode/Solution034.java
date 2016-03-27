@@ -22,12 +22,11 @@ package leetcode;
  */
 public class Solution034 {
     public int[] searchRange(int[] nums, int target) {
+        int[] res = new int[]{-1, -1};
         if (nums == null || nums.length == 0) {
-            return new int[] {-1, -1};
+            return res;
         }
         
-        int startIndex = -1;
-        int endIndex = -1;
         int start = 0;
         int end = nums.length - 1;
         int mid = 0;
@@ -35,111 +34,42 @@ public class Solution034 {
         while(start + 1 < end) {
             mid = start + (end - start) / 2;
             if (nums[mid] == target) {
-                startIndex = mid;
-                endIndex = mid;
+                res[0] = mid;
+                res[1] = mid;
                 // find the same value on the left side
-                while(startIndex > 0) {
-                    if (nums[startIndex - 1] == nums[startIndex]) {
-                        startIndex--;
-                    }
-                    else {
+                while(res[0] > 0) {
+                    if (nums[res[0] - 1] != nums[res[0]]) {
                         break;
                     }
+                    res[0]--;                    
                 }
                 // find the same value on the right side
-                while(endIndex < nums.length - 1) {
-                    if (nums[endIndex] == nums[endIndex + 1]) {
-                        endIndex++;
-                    }
-                    else {
+                while(res[1] < nums.length - 1) {
+                    if (nums[res[1]] != nums[res[1] + 1]) {
                         break;
                     }
+                    res[1]++;
                 }
-                return new int[] { startIndex, endIndex };
-            }
-            else if (nums[mid] < target) {
+                return res;
+            } else if (nums[mid] < target) {
                 start = mid;
-            }
-            else {
+            } else {
                 end = mid;
             }
         }
         
         if (nums[start] == target) {
-            startIndex = start;
-            endIndex = start;
+            res[0] = start;
+            res[1] = start;
         }
         
         if (nums[end] == target) {
-            endIndex = end;
-            if (startIndex == -1) {
-                startIndex = end;
+            res[1] = end;
+            if (res[0] == -1) {
+                res[0] = end;
             }
         }
         
-        return new int[] { startIndex, endIndex };
-        
+        return res;
     }
-    /*
-    public int[] searchRange(int[] A, int target) {
-        int start = -1;
-        int end = -1;
-        
-        if (A==null||A.length==0)
-            return new int[]{start,end};
-        
-        if (A.length == 1) {
-            if (A[0]==target)
-                return new int[]{0,0};
-            else
-                return new int[]{start,end};
-        }
-        
-        int left=0;
-        int right=A.length-1;
-        int mid;
-        int i;
-        
-        while(left<=right) {
-            mid = (left+right)/2;
-            if (A[mid]<target) {
-                left = mid + 1;
-            }
-            else if(A[mid]>target) {
-                right = mid - 1;
-            }
-            else {                
-                start = mid;
-                end = mid;
-                i = mid-1;
-                while(i>=0) {
-                    if (A[i]==target) {
-                        start = i;
-                        i--;
-                    }
-                    else
-                        break;
-                }
-                i = mid + 1;
-                while(i<A.length) {
-                    if (A[i]==target) {
-                        end = i;
-                        i++;
-                    }
-                    else
-                        break;
-                }
-                break;
-            }
-        }
-        
-        if (start>-1 && end >-1)
-            return new int[]{start,end};
-        else if (start>-1 && end ==-1)
-            return new int[]{start,start};
-        else if (start==-1 && end >-1)
-            return new int[]{end,end};
-        else
-            return new int[]{start,end};
-    }*/
 }

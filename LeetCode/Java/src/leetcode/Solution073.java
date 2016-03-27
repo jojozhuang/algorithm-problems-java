@@ -23,96 +23,68 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution073 {
-    public int[][] setZeroes(int[][] matrix) {
-        if (matrix==null||matrix.length==0||matrix[0].length==0)
-            return matrix;
-        
-        int i=0;
-        int j=0;
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        
-        while(i<matrix.length) {
-            j=0;
-            while(j<matrix[0].length) {
-                if (matrix[i][j]==0&&!map.containsKey(j)) {                    
-                    for(int k=0; k<matrix[0].length; k++)
-                        matrix[i][k] = 0;
-                    for(int k=0; k<matrix.length; k++)
-                        matrix[k][j] = 0;
-                    map.put(j, j);
-                    break;
-                }
-                j++;
-            }
-            i++;
-        }
-        
-        return matrix;
-    }
-    
-    public int[][] setZeroes2(int[][] matrix) {
+    //http://www.programcreek.com/2012/12/leetcode-set-matrix-zeroes-java/
+    public void setZeroes(int[][] matrix) {
         //use first row and first column to store status, O(m+n)
-        if (matrix==null||matrix.length==0||matrix[0].length==0)
-            return matrix;
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return;
+        }
         
-        int i=0;
-        int j=0;
-        boolean firstrow=false;
-        boolean firstcolumn=false;
-        for(i=0; i<matrix.length; i++) {
-            if (matrix[i][0]==0) {
-                firstcolumn=true;
+        int m = matrix.length;
+        int n = matrix[0].length;
+        boolean firstrow = false;
+        boolean firstcolumn = false;
+        
+        //set first row and column zero or not
+        for(int i = 0; i < m; i++) {
+            if (matrix[i][0] == 0) {
+                firstcolumn = true;
                 break;
             }
         }
-        for(j=0; j<matrix[0].length; j++) {
+        for(int j = 0; j < n; j++) {
             if (matrix[0][j]==0) {
-                firstrow=true;
+                firstrow = true;
                 break;
             }
         }
-        for(i=1; i<matrix.length; i++) {
-            for(j=1; j<matrix[0].length; j++) {
-                if (matrix[i][j]==0) {
-                    matrix[i][0]=0;
-                    matrix[0][j]=0;
+        
+        //mark zeros on first row and column
+        for(int i = 1; i < m; i++) {
+            for(int j = 1; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
                 }
             }
         }
+        
         //set zero
-        for(i=1; i<matrix.length; i++) {
+        for(int i = 1; i < m; i++) {
             if (matrix[i][0]==0) {
-                for(j=1; j<matrix[0].length; j++) {                
+                for(int j = 1; j < n; j++) {                
                     matrix[i][j]=0;
                 }
             }
         }
-        for(j=1; j<matrix[0].length; j++) {
+        for(int j = 1; j < n; j++) {
             if (matrix[0][j]==0) {
-                for(i=1; i<matrix.length; i++) {                
+                for(int i = 1; i < m; i++) {                
                     matrix[i][j]=0;
                 }
             }
         }
         //first row
-        if (firstrow==true) {
-            for(j=0; j<matrix[0].length; j++) {
+        if (firstrow == true) {
+            for(int j = 0; j < n; j++) {
                 matrix[0][j]=0;
             }
         }
         //first column
-        if (firstcolumn==true) {
-            for(i=0; i<matrix.length; i++) {
+        if (firstcolumn == true) {
+            for(int i = 0; i < m; i++) {
                 matrix[i][0]=0;
             }
         }
-        
-        int[][] ret = new int[matrix.length][matrix[0].length];
-        for(i=0; i<matrix.length; i++) {
-            for(j=0; j<matrix[0].length; j++) {
-                ret[i][j] = matrix[i][j];
-            }
-        }
-        return ret;
     }
 }

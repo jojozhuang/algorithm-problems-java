@@ -46,15 +46,28 @@ public class Solution048Test {
         int[][] matrix = null;
         Solution048 instance = new Solution048();
         int[][] expResult = null;
-        int[][] result = instance.rotate2(matrix);
-        assertArrayEquals(expResult, result);
+        instance.rotate(matrix);
+        assertArrayEquals(expResult, matrix);
         
-        assertArrayEquals(new int[][]{}, instance.rotate2(new int[][]{}));
-        assertArrayEquals(new int[][]{{1}}, instance.rotate2(new int[][]{{1}}));
-        assertArrayEquals(new int[][]{{1},{2}}, instance.rotate2(new int[][]{{1,2}}));
-        assertArrayEquals(new int[][]{{1},{2},{3}}, instance.rotate2(new int[][]{{1,2,3}}));
-        assertArrayEquals(new int[][]{{4,1},{5,2},{6,3}}, instance.rotate2(new int[][]{{1,2,3},{4,5,6}}));
-        assertArrayEquals(new int[][]{{3,1},{4,2}}, instance.rotate2(new int[][]{{1,2},{3,4}}));
+        int[][] matrix2 = new int[][]{};
+        instance.rotate(matrix2);
+        assertArrayEquals(new int[][]{},matrix2);
+        
+        int[][] matrix3 = new int[][]{{1}};
+        instance.rotate(matrix3);
+        assertArrayEquals(new int[][]{{1}},matrix3);
+        
+        int[][] matrix4 = new int[][]{{1,2},{3,4}};
+        instance.rotate(matrix4);
+        assertArrayEquals(new int[][]{{3,1},{4,2}},matrix4);
+        
+        int[][] matrix5 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+        instance.rotate(matrix5);
+        assertArrayEquals(new int[][]{{7,4,1},{8,5,2},{9,6,3}},matrix5);
+        
+        int[][] matrix6 = new int[][]{{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        instance.rotate(matrix6);
+        assertArrayEquals(new int[][]{{13,9,5,1},{14,10,6,2},{15,11,7,3},{16,12,8,4}},matrix6);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

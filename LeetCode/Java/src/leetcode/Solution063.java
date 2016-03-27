@@ -34,36 +34,38 @@ public class Solution063 {
             return 0;
         }
         
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+        
         // Define function, f[i][j] is the count of possible path from start
         // point obstacleGrid[i][j], f[i][j] = f[i-1][j] + f[i][j-1];
-        int[][] f = new int[obstacleGrid.length][obstacleGrid[0].length];
+        int[][] f = new int[m][n];
         // Initial
         boolean obs = false;
-        for(int i = 0; i < obstacleGrid.length; i++) {
+        for(int i = 0; i < m; i++) {
             if (obstacleGrid[i][0] == 1) {
                 obs = true;
             }
             f[i][0] = obs ? 0 : 1;            
         }
         obs = false;
-        for(int j = 0; j < obstacleGrid[0].length; j++) {
+        for(int j = 0; j < n; j++) {
             if (obstacleGrid[0][j] == 1) {
                 obs = true;
             }
             f[0][j] = obs ? 0 : 1;          
         }
         // Calculate f[i][j]
-        for(int i = 1; i < obstacleGrid.length; i++) {
-            for(int j = 1; j < obstacleGrid[0].length; j++) {
+        for(int i = 1; i < m; i++) {
+            for(int j = 1; j < n; j++) {
                 if (obstacleGrid[i][j] == 1) {
                     f[i][j] = 0;
-                }
-                else {
+                } else {
                     f[i][j] = f[i - 1][j] + f[i][j - 1];
                 }
             }
         }
         
-        return f[obstacleGrid.length - 1][obstacleGrid[0].length - 1];
+        return f[m - 1][n - 1];
     }
 }

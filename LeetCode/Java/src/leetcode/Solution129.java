@@ -50,21 +50,21 @@ public class Solution129 {
             return new ArrayList<String>();
         }
         
-        List<String> ret = new ArrayList<String>();
+        List<String> res = new ArrayList<String>();
         String str = String.valueOf(root.val);
         List<String> left = helper(root.left);
         List<String> right = helper(root.right);
         
         if (left.size() > 0 || right.size() > 0) {
             for (String item : left) {
-                ret.add(str + item);
+                res.add(str + item);
             }
             for (String item : right) {
-                ret.add(str + item);
+                res.add(str + item);
             }
         } else {
-            ret.add(str);
+            res.add(str);
         }
-        return ret;
+        return res;
     }
 }

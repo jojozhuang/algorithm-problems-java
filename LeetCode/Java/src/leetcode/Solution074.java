@@ -27,25 +27,24 @@ package leetcode;
  */
 public class Solution074 {
     public boolean searchMatrix(int[][] matrix, int target) {
-        if (matrix == null || matrix.length == 0 || 
-            matrix[0] == null || matrix[0].length == 0) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }
         
-        int start = 0;
-        int end = matrix.length * matrix[0].length - 1;
-        int mid = 0;
+        int m = matrix.length;
+        int n = matrix[0].length;
         
-        int row = 0;
-        int col = 0;
+        int start = 0;
+        int end = m * n - 1;
+        int[] pos = new int[2];
+        
         while (start + 1 < end) {
-            mid = start + (end - start) / 2;
-            row = mid / matrix[0].length;
-            col = mid % matrix[0].length;
-            if (matrix[row][col] == target) {
+            int mid = start + (end - start) / 2;
+            pos = getPos(mid, n);
+            if (matrix[pos[0]][pos[1]] == target) {
                 return true;
             }
-            else if (matrix[row][col] < target) {
+            else if (matrix[pos[0]][pos[1]] < target) {
                 start = mid;
             }
             else {
@@ -53,59 +52,23 @@ public class Solution074 {
             }
         }
         
-        row = start / matrix[0].length;
-        col = start % matrix[0].length;
-        if (matrix[row][col] == target) {
+        pos = getPos(start, n);
+        if (matrix[pos[0]][pos[1]] == target) {
             return true;
         }
         
-        row = end / matrix[0].length;
-        col = end % matrix[0].length;
-        if (matrix[row][col] == target) {
+        pos = getPos(end, n);
+        if (matrix[pos[0]][pos[1]] == target) {
             return true;
         }
         
         return false;
     }
-    /*
-    public boolean searchMatrix(int[][] matrix, int target) {
-        if (matrix==null||matrix.length==0||matrix[0].length==0)
-            return false;
-        
-        int top=0;
-        int bottom=matrix.length-1;
-        int row=0;
-        int last;
-        while(top<=bottom) {
-            row = (top + bottom)/2;
-            if (matrix[row][0]==target)
-                return true;
-            else if (matrix[row][0]>target) 
-                bottom--;
-            else {
-                last = matrix[row][matrix[0].length-1];
-                if (last==target)
-                    return true;
-                if (last>target)
-                    break;
-                else
-                    top++;
-            }
-        }
-        int left=0;
-        int right=matrix[0].length-1;
-        int column;
-        while(left<=right) {
-            column = (left + right)/2;
-            if (matrix[row][column]==target)
-                return true;
-            else if (matrix[row][column]>target)
-                right--;
-            else
-                left++;
-        }
-        
-        return false;
-    }    
-    */
+    
+    private int[] getPos(int index, int columns) {
+        int[] pos = new int[2];
+        pos[0] = index / columns;
+        pos[1] = index % columns;
+        return pos;
+    }
 }

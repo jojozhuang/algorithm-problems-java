@@ -34,18 +34,15 @@ public class Solution033 {
                 return mid;
             }
             if (nums[mid] >= nums[start]) {
-                if (target >= nums[start] && target < nums[mid] ) {
+                if (target >= nums[start] && target < nums[mid]) {
                     end = mid;
-                }
-                else {
+                } else {
                     start = mid;
                 }
-            }
-            else {
-                if (target > nums[mid] && target <= nums[end] ) {
+            } else {
+                if (target > nums[mid] && target <= nums[end]) {
                     start = mid;
-                }
-                else {
+                } else {
                     end = mid;
                 }
             }

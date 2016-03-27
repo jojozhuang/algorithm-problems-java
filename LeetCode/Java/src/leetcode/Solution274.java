@@ -28,23 +28,30 @@ import java.util.Collections;
  * @author Johnny
  */
 public class Solution274 {
+    //http://blog.welkinlan.com/2015/11/05/h-index-i-ii-leetcode-java/
     public int hIndex(int[] citations) {
         if (citations == null || citations.length == 0) {
             return 0;
         }       
         
-        Integer[] nums = new Integer[citations.length];
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = citations[i];
-        }
-        Arrays.sort(nums, Collections.reverseOrder());  
+        int n = citations.length;
+        int[] count = new int[n + 1];
         
-        for (int i = 0; i < nums.length; i++) {
-            if (i >= nums[i]) {
-                return i;
+        // count sort
+        for (int i = 0; i < n; i++) {
+            if (citations[i] > n) {
+                count[n]++;
+            } else {
+                count[citations[i]]++;
             }
         }
-        
-        return nums.length;
+        // compare in reverse order
+        for (int i = n; i > 0; i--) {
+            if (count[i] >= i) {
+                return i;
+            }
+            count[i - 1] += count[i];
+        }
+        return 0;
     }
 }

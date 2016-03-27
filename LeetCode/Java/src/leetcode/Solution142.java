@@ -18,6 +18,7 @@ import leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution142 {
+    //http://www.cnblogs.com/hiddenfox/p/3408931.html
     public ListNode detectCycle(ListNode head) {        
         ListNode fast = head;
         ListNode slow = head;

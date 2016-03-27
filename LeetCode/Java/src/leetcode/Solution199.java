@@ -25,25 +25,25 @@ import java.util.*;
  */
 public class Solution199 {
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         if (root == null) {
-            return result;
+            return res;
         }
         
         List<Integer> left = rightSideView(root.left);
         List<Integer> right = rightSideView(root.right);
         
-        result.add(root.val);
+        res.add(root.val);
         if (right.size() > 0) {
-            result.addAll(right);
+            res.addAll(right);
         }
         
         if (left.size() > right.size()) {
-            for(int ix = right.size(); ix < left.size(); ix++) {
-                result.add(left.get(ix));
+            for(int i = right.size(); i < left.size(); i++) {
+                res.add(left.get(i));
             }
         }
         
-        return result;
+        return res;
     }
 }
