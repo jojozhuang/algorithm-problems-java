@@ -49,6 +49,8 @@ public class Solution287Test {
         int result = instance.findDuplicate(nums);
         assertEquals(expResult, result);
         
+        assertEquals(5, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,5}));
+        assertEquals(1, instance.findDuplicate(new int[]{1,1,2}));
         assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));
         assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3}));
         // TODO review the generated test code and remove the default call to fail.

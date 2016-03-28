@@ -63,27 +63,4 @@ public class Solution055 {
         
         return states[states.length - 1];
     }*/
-    /*
-    public boolean canJump(int[] A) {
-        if (A==null||A.length<2)
-            return false;
-        
-        int steps = A[0];
-        
-        if (steps==0)
-            return false;
-        else if (steps>=A.length-1)
-            return true;
-        else {
-            int i=1;
-            boolean ret;
-            while(i<=steps) {
-                ret = canJump(Arrays.copyOfRange(A, i, A.length));
-                if (ret==true)
-                    return true;
-                i++;
-            }
-            return false;
-        }
-    }*/
 }

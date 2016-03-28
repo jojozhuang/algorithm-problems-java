@@ -48,7 +48,7 @@ public class Solution094 {
         return result;        
     }
     
-     public List<Integer> inorderTraversal2(TreeNode root) {
+    public List<Integer> inorderTraversal2(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         
         if (root == null) {
@@ -67,15 +67,14 @@ public class Solution094 {
                     stack.push(node.right);
                     node.right = null;
                 }
-            }
-             else {
+            } else {
                 stack.push(node.left);
                 node.left = null;
             }
         }
         
         return result;
-     }    
+    }    
  
     // stack
     private List<Integer> inorderTraversal3(TreeNode root) {

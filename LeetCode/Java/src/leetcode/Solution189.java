@@ -34,21 +34,23 @@ public class Solution189 {
             return;
         }
         
-        int[] arr = Arrays.copyOf(nums, nums.length);
-        
-        int i = 0;
-        int j = k;
-        while(j > 0) {
-            nums[i] = arr[arr.length-j];
-            i++;
-            j--;
+        //reverse in 3-steps
+        reverse(nums, 0, nums.length - k - 1);
+        reverse(nums, nums.length - k, nums.length - 1);
+        reverse(nums, 0, nums.length - 1);
+    }
+    
+    private void reverse(int[] nums, int start, int end) {
+        while(start < end) {
+            swap(nums, start, end);
+            start++;
+            end--;
         }
-        
-        j = 0;
-        while(j < nums.length-k) {
-            nums[i] = arr[j];
-            i++;
-            j++;
-        }
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }

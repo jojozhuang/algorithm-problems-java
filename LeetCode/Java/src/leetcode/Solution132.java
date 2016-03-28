@@ -29,7 +29,7 @@ public class Solution132 {
             cut[i] = i - 1;
         }
         
-        boolean[][] mt = paMat(s);
+        boolean[][] mt = getMatrix(s);
         
         for(int i = 1; i < len + 1; i++) {
             for(int j = 0; j < i; j++) {
@@ -42,22 +42,22 @@ public class Solution132 {
         return cut[len];
     }
     
-    private boolean[][] paMat(String s) {
+    private boolean[][] getMatrix(String s) {
         int len = s.length();
-        boolean[][] ret = new boolean[len][len];
+        boolean[][] res = new boolean[len][len];
         
-        for (int i = len - 1; i >= 0; i--) {
-            for (int j = i; j < len; j++) {
+        for (int j = 0; j < len; j++) {
+            for (int i = 0; i <= j; i++) {
                 if (i == j) {
-                    ret[i][j] = true;
+                    res[i][j] = true;
                 } else if (j == i + 1) {
-                    ret[i][j] = s.charAt(i) == s.charAt(j);
+                    res[i][j] = s.charAt(i) == s.charAt(j);
                 } else {
-                    ret[i][j] = (s.charAt(i) == s.charAt(j)) && ret[i + 1][j - 1];
+                    res[i][j] = (s.charAt(i) == s.charAt(j)) && res[i + 1][j - 1];
                 }
             }
         }
         
-        return ret;
+        return res;
     }
 }

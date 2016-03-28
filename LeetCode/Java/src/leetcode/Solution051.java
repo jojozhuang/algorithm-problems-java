@@ -54,24 +54,26 @@ public class Solution051 {
         if(row == n){
             List<String> list = new ArrayList<String>();
             for(int i = 0; i < n; i++){
-                StringBuilder s = new StringBuilder();
+                StringBuilder sb = new StringBuilder();
                 for(int j = 0; j < n; j++){
-                    if(j == columnVal[i])
-                        s.append("Q");
-                    else
-                        s.append(".");
+                    if(j == columnVal[i]) {
+                        sb.append("Q");
+                    } else {
+                        sb.append(".");
+                    }
                 }
                 
-                list.add(s.toString());
+                list.add(sb.toString());
             }
             
             res.add(list);
-        }else{
+        } else{
             for(int i = 0; i < n; i++){
                 columnVal[row] = i;
                 
-                if(isValid(row, columnVal))
-                    dfs(n, res, row+1, columnVal);
+                if(isValid(row, columnVal)) {
+                    dfs(n, res, row + 1, columnVal);
+                }
             }
         }
     }

@@ -24,13 +24,6 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution124 {
-    class ResultType {
-        int singlePath, maxPath;
-        ResultType(int singlePath, int maxPath) {
-            this.singlePath = singlePath;
-            this.maxPath = maxPath;
-        }
-    }
     public int maxPathSum(TreeNode root) {
         return maxPathHelper(root).maxPath;
     }
@@ -50,5 +43,13 @@ public class Solution124 {
         maxPath = Math.max(maxPath, left.singlePath + right.singlePath + root.val);
         
         return new ResultType(singlePath, maxPath);
+    }
+    
+    private class ResultType {
+        int singlePath, maxPath;
+        ResultType(int singlePath, int maxPath) {
+            this.singlePath = singlePath;
+            this.maxPath = maxPath;
+        }
     }
 }
