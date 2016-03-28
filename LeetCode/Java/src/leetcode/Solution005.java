@@ -19,43 +19,39 @@ public class Solution005 {
             return s;
         }
         
-        String ret = "";
-        String temp = "";
+        String res = "";
         for (int i = 0; i < s.length(); i++) {
-            temp = palindrome(s, i, i);
-            if (temp.length() > ret.length()) {
-                ret = temp;
+            String temp = palindrome(s, i, i);
+            if (temp.length() > res.length()) {
+                res = temp;
             }
             
             temp = palindrome(s, i, i + 1);
-            if (temp.length() > ret.length()) {
-                ret = temp;
+            if (temp.length() > res.length()) {
+                res = temp;
             }
         }
         
-        return ret;
+        return res;
     }
     
     private String palindrome(String s, int start, int end) {
         int i = start;
         int j = end;
-        char[] c_arr = s.toCharArray();
         
         while(i >= 0 && j < s.length()) {
-            if (c_arr[i] == c_arr[j]) {
+            if (s.charAt(i) == s.charAt(j)) {
                 i--;
                 j++;
-            }
-            else {
+            } else {
                 break;
             }
         }
         
-        if (i+1>j) {
+        if (i + 1 > j) {
             return "";
-        }
-        else {
-            return s.substring(i+1, j);
+        } else {
+            return s.substring(i + 1, j);
         }            
     }
 }

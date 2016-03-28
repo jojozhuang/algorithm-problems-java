@@ -36,10 +36,8 @@ package leetcode;
  */
 public class Solution304 {
     //http://buttercola.blogspot.com/2015/12/leetcode-range-sum-query-2d-immutable.html
-    private int[][] matrix;
     private int[][] sum;
     public Solution304(int[][] matrix) {
-        this.matrix = matrix;
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return;
         }

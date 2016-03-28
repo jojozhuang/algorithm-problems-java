@@ -27,20 +27,20 @@ import java.util.List;
  */
 public class Solution131 {
     public List<List<String>> partition(String s) {
-        List<List<String>> result = new ArrayList<List<String>>();
-        if (s == null || s.isEmpty()) return result;
+        List<List<String>> res = new ArrayList<List<String>>();
+        if (s == null || s.isEmpty()) {
+            return res;
+        }
 
         List<String> palindromes = new ArrayList<String>();
-        dfs(s, 0, palindromes, result);
+        dfs(s, 0, palindromes, res);
 
-        return result;
+        return res;
     }
     
-    private void dfs(String s, int pos, List<String> palindromes, 
-                     List<List<String>> ret) {
-
+    private void dfs(String s, int pos, List<String> list, List<List<String>> res) {
         if (pos == s.length()) {
-            ret.add(new ArrayList<String>(palindromes));
+            res.add(new ArrayList<String>(list));
             return;
         }
 
@@ -50,18 +50,22 @@ public class Solution131 {
                 continue;
             }
 
-            palindromes.add(substr);
-            dfs(s, i, palindromes, ret);
-            palindromes.remove(palindromes.size() - 1);
+            list.add(substr);
+            dfs(s, i, list, res);
+            list.remove(list.size() - 1);
         }
     }
 
     private boolean isPalindrome(String s) {
-        if (s == null || s.isEmpty()) return false;
+        if (s == null || s.isEmpty()) {
+            return false;
+        }
 
         int n = s.length();
         for (int i = 0; i < n; i++) {
-            if (s.charAt(i) != s.charAt(n - i - 1)) return false;
+            if (s.charAt(i) != s.charAt(n - i - 1)) {
+                return false;
+            }
         }
 
         return true;

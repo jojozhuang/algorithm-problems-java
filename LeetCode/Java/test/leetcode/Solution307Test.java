@@ -38,20 +38,6 @@ public class Solution307Test {
     }
 
     /**
-     * Test of update method, of class Solution307.
-     */
-    @Test
-    public void testUpdate() {
-        System.out.println("update");
-        int i = 0;
-        int val = 0;
-        Solution307 instance = new Solution307(new int[]{});
-        instance.update(i, val);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of sumRange method, of class Solution307.
      */
     @Test

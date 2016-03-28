@@ -48,26 +48,26 @@ public class Solution050Test {
         int n = 0;
         Solution050 instance = new Solution050();
         double expResult = 0;
-        double result = instance.pow(x, n);
+        double result = instance.myPow(x, n);
         assertEquals(expResult, result, 0.0);
         
-        assertEquals(1, instance.pow(1, 0), 0.0);
-        assertEquals(0, instance.pow(0, 2323), 0.0);
-        assertEquals(3.0, instance.pow(3.0, 1), delta);
-        assertEquals(4.0, instance.pow(2.0, 2), delta);
-        assertEquals(1024.0, instance.pow(2.0, 10), delta);
-        assertEquals(128.0, instance.pow(2.0, 7), delta);        
-        assertEquals(-1, instance.pow(-1, 1), delta);
-        assertEquals(9, instance.pow(-3, 2), delta);
-        assertEquals(-27, instance.pow(-3, 3), delta);
-        assertEquals(815730721, instance.pow(13, 8), delta);
-        assertEquals(867302034.69006241, instance.pow(13.1, 8), delta);
-        assertEquals(1053516680.9040651066863722160949, instance.pow(13.4224, 8), delta);
-        assertEquals(0.0, instance.pow(0.00001, 2147483647), delta);
-        assertEquals(1, instance.pow(1, 2147483647), delta);
-        assertEquals(-1, instance.pow(-1, 2147483647), delta);
-        assertEquals(1, instance.pow(-1, 2147483646), delta);
-        assertEquals(0.00003, instance.pow(34.00515, -3), delta);
+        assertEquals(1, instance.myPow(1, 0), 0.0);
+        assertEquals(0, instance.myPow(0, 2323), 0.0);
+        assertEquals(3.0, instance.myPow(3.0, 1), delta);
+        assertEquals(4.0, instance.myPow(2.0, 2), delta);
+        assertEquals(1024.0, instance.myPow(2.0, 10), delta);
+        assertEquals(128.0, instance.myPow(2.0, 7), delta);        
+        assertEquals(-1, instance.myPow(-1, 1), delta);
+        assertEquals(9, instance.myPow(-3, 2), delta);
+        assertEquals(-27, instance.myPow(-3, 3), delta);
+        assertEquals(815730721, instance.myPow(13, 8), delta);
+        assertEquals(867302034.69006241, instance.myPow(13.1, 8), delta);
+        assertEquals(1053516680.9040651066863722160949, instance.myPow(13.4224, 8), delta);
+        assertEquals(0.0, instance.myPow(0.00001, 2147483647), delta);
+        assertEquals(1, instance.myPow(1, 2147483647), delta);
+        assertEquals(-1, instance.myPow(-1, 2147483647), delta);
+        assertEquals(1, instance.myPow(-1, 2147483646), delta);
+        assertEquals(0.00003, instance.myPow(34.00515, -3), delta);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

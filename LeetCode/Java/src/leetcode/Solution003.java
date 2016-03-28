@@ -17,55 +17,18 @@ import java.util.HashMap;
  * 
  * @author Johnny
  */
-public class Solution003 {
-    public int lengthOfLongestSubstring1(String s) {
-        int currentlength=0, maxlength =0;
-        int i=0, j=0;
-
-        char[] chars = s.toCharArray();
-        ArrayList<Character> currentCharList = new ArrayList<Character>();
-        
-        if (s.length()==0)
-            return 0;
-        
-        if (s.length()==1)
-            return 1;
-
-        for(i = 0; i<chars.length; i++)
-        {
-            currentCharList.clear();
-            currentCharList.add(chars[i]);
-            currentlength = currentCharList.size();
-            for(j = i + 1; j<chars.length; j++)
-            {               
-                if(currentCharList.contains(chars[j]))
-                {
-                    break;
-                }
-                else
-                {
-                     currentCharList.add(chars[j]);
-                     currentlength = currentCharList.size();
-                }                
-            }            
-            
-            if (currentlength > maxlength)
-                maxlength = currentlength;            
-                       
-        }
-        return maxlength;
-    }
-    
-    public int lengthOfLongestSubstring2(String s) {
-        
+public class Solution003 {    
+    public int lengthOfLongestSubstring(String s) {        
         if (s == null || s.length() == 0){
             return 0;
         }
-        int max = 1;
-        int start = 0;
-        int end = 1;
+   
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         map.put(s.charAt(0), 0);
+        
+        int start = 0, end = 1;
+        int max = 1;
+        
         while (end < s.length()){
             char c = s.charAt(end);
             if (map.containsKey(c) && map.get(c) >= start){

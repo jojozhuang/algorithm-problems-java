@@ -53,6 +53,7 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution310 {
+    //http://www.cnblogs.com/grandyang/p/5000291.html
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
         if (n == 0) {
             return new ArrayList<>();

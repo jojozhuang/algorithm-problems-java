@@ -5,6 +5,9 @@
  */
 package leetcode;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -25,36 +28,33 @@ import java.util.Stack;
  */
 public class Solution071 {
     public String simplifyPath(String path) {
-        if (path==null||path.length()==0)
+        if (path == null || path.length() == 0) {
             return "";
+        }
         
-        Stack st = new Stack();
+        Deque<String> deque = new LinkedList<String>();
         String[] list = path.split("/");
         for(String item: list) {
-            if (item.equals(".")||item.isEmpty())
+            if (item.equals(".") || item.isEmpty()) {
                 continue;
-            else if (item.equals("..")) {
-                if (!st.empty())
-                    st.pop();
-            }
-            else {
-                st.push(item);
+            } else if (item.equals("..")) {
+                if (!deque.isEmpty()) {
+                    deque.pollLast();
+                }
+            } else {
+                deque.offerLast(item);
             }                
         }
         
-        if (st.empty())
+        if (deque.isEmpty()) {
             return "/";
-        else {
-            Stack st2 = new Stack();
-            while(!st.empty()) {
-                st2.push(st.pop());
-            }
-            StringBuilder sb = new StringBuilder();
-            while(!st2.empty()) {
-                sb.append("/");
-                sb.append(st2.pop());
-            }
-            return sb.toString();
+        } 
+        
+        StringBuilder sb = new StringBuilder();
+        while(!deque.isEmpty()) {
+            sb.append("/");
+            sb.append(deque.pollFirst());
         }
+        return sb.toString();
     }
 }

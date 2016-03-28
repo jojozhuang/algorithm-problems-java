@@ -33,41 +33,34 @@ import java.util.List;
  */
 public class Solution113 {
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        if (root == null)
-            return new ArrayList();
-        
-        List<List<Integer>> listpath = new ArrayList();
-        List<List<Integer>> nextpath = new ArrayList();
-        List<Integer> list = new ArrayList();
-        
-        if (root.left==null&&root.right==null) {
-            if (root.val == sum) {
-                list.add(sum);
-                listpath.add(list);
-                return listpath;
-            }
-            else
-                return new ArrayList();
-        }
-        if (root.left!=null) {
-            nextpath = pathSum(root.left, sum - root.val);
-            if(nextpath!=null&&nextpath.size()>0) {
-                for(int i=0; i<nextpath.size(); i++) {
-                    nextpath.get(i).add(0, root.val);                    
-                }
-                listpath.addAll(nextpath);
-            }
-        }        
-        if (root.right!=null) {
-            nextpath = pathSum(root.right, sum - root.val);
-            if(nextpath!=null&&nextpath.size()>0) {
-                for(int i=0; i<nextpath.size(); i++) {
-                    nextpath.get(i).add(0, root.val);                    
-                }
-                listpath.addAll(nextpath);
-            }
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return res;
         }
         
-        return listpath;
+        List<Integer> list = new ArrayList<Integer>();
+        helper(root, sum, list, res);
+        
+        return res;
     }
+    
+    private void helper(TreeNode root, int sum, List<Integer> list, List<List<Integer>> res) {
+        if (root == null) {
+            return;
+        }
+        
+        if (root.val == sum) {
+            if (root.left == null && root.right == null) {
+                list.add(root.val);
+                res.add(new ArrayList<Integer>(list));
+                list.remove(list.size() - 1);
+                return;
+            }
+        }
+        
+        list.add(root.val);
+        helper(root.left, sum - root.val, list, res);
+        helper(root.right, sum - root.val, list, res);
+        list.remove(list.size() - 1);
+    }    
 }

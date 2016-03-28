@@ -47,15 +47,11 @@ public class Solution207 {
         Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
         for (int i = 0; i < prerequisites.length; i++) {
             int[] pre = prerequisites[i];
-            if (map.containsKey(pre[1])) {
-                List<Integer> list = map.get(pre[1]);
-                list.add(pre[0]);
-                map.put(pre[1], list);
-            } else {
+            if (!map.containsKey(pre[1])) {
                 List<Integer> list = new ArrayList<Integer>();
-                list.add(pre[0]);
-                map.put(pre[1], list);
+                map.put(pre[1], list);                
             }
+            map.get(pre[1]).add(pre[0]);
         }
         
         int[] visited = new int[numCourses];

@@ -18,6 +18,7 @@ import java.util.TreeSet;
  * @author Johnny
  */
 public class Solution220 {
+    //http://www.programcreek.com/2014/06/leetcode-contains-duplicate-iii-java/
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         if (k < 1 || t < 0) {
             return false;

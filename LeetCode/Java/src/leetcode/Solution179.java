@@ -21,19 +21,20 @@ import java.util.Comparator;
  * @author Johnny
  */
 public class Solution179 {
+    //http://www.programcreek.com/2014/02/leetcode-largest-number-java/
     public String largestNumber(int[] nums) {
         if (nums == null || nums.length == 0) {
             return "";
         }
         String[] strs = new String[nums.length];
-        for(int i=0; i<nums.length; i++){
+        for(int i=0; i < nums.length; i++){
             strs[i] = String.valueOf(nums[i]);
         }
 
         Arrays.sort(strs, new Comparator<String>(){
             public int compare(String s1, String s2){
-                String leftRight = s1+s2;
-                String rightLeft = s2+s1;
+                String leftRight = s1 + s2;
+                String rightLeft = s2 + s1;
                 return -leftRight.compareTo(rightLeft);
             }
         });
@@ -43,7 +44,7 @@ public class Solution179 {
             sb.append(s);
         }
 
-        while(sb.charAt(0)=='0' && sb.length()>1){
+        while(sb.charAt(0) == '0' && sb.length() > 1){
             sb.deleteCharAt(0);
         }
 

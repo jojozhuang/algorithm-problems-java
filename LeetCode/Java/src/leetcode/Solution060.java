@@ -30,6 +30,7 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution060 {
+    //http://fisherlei.blogspot.com/2013/04/leetcode-permutation-sequence-solution.html
     public String getPermutation(int n, int k) {
         if (n <= 0 || k <= 0) {
             return "";

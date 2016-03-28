@@ -35,35 +35,37 @@ public class Solution200 {
             return 0;
         }
         
-        int n = grid.length;
-        int m = grid[0].length;
-        int ret = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        int res = 0;
         
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (grid[i][j] != '1') {
                     continue;
                 }
-                ret++;
-                dfs(grid, i, j, n, m);
+                res++;
+                dfs(grid, i, j);
             }
         }  
         
-        return ret;
+        return res;
     }
     
     // set adjacent cell to 0
-    private void dfs(char[][] grid, int i, int j, int n, int m) {
-        if (i < 0 || i >= n || j < 0 || j >= m) {
+    private void dfs(char[][] grid, int i, int j) {
+        int m = grid.length;
+        int n = grid[0].length;
+        if (i < 0 || i >= m || j < 0 || j >= n) {
             return;
         }
         
         if (grid[i][j] == '1') {
             grid[i][j] = '0';
-            dfs(grid, i - 1, j, n, m); // up
-            dfs(grid, i + 1, j, n, m); // down
-            dfs(grid, i, j - 1, n, m); // left
-            dfs(grid, i, j + 1, n, m); // right            
+            dfs(grid, i - 1, j); // up
+            dfs(grid, i + 1, j); // down
+            dfs(grid, i, j - 1); // left
+            dfs(grid, i, j + 1); // right            
         }
     }
 }

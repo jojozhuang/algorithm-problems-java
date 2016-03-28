@@ -30,39 +30,39 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution018 {
-    public List<List<Integer>> fourSum(int[] num, int target) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         
-        if (num==null||num.length<3)
-            return ret;
+        if (nums == null || nums.length < 3) {
+            return res;
+        }
         
-        Arrays.sort(num);
+        Arrays.sort(nums);
 
         HashSet<List<Integer>> hashSet = new HashSet<List<Integer>>();        
 
-        for (int i = 0; i < num.length; i++) {
-            for (int j = i + 1; j < num.length; j++) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
                 int k = j + 1;
-                int l = num.length - 1;
+                int l = nums.length - 1;
 
                 while (k < l) {
-                    int sum = num[i] + num[j] + num[k] + num[l];
+                    int sum = nums[i] + nums[j] + nums[k] + nums[l];
                     if (sum == target) {
                         ArrayList<Integer> item = new ArrayList<Integer>();
-                        item.add(num[i]);
-                        item.add(num[j]);
-                        item.add(num[k]);
-                        item.add(num[l]);
+                        item.add(nums[i]);
+                        item.add(nums[j]);
+                        item.add(nums[k]);
+                        item.add(nums[l]);
 
                         if (!hashSet.contains(item)) {
                             hashSet.add(item);
-                            ret.add(item);
+                            res.add(item);
                         }
 
                         k++;
                         l--;
-                    }
-                    else if (sum > target) {
+                    } else if (sum > target) {
                         l--;
                     } else if (sum < target) {
                         k++;
@@ -71,6 +71,6 @@ public class Solution018 {
             }
         }
 
-        return ret;
+        return res;
     }
 }

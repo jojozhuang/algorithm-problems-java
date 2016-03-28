@@ -50,7 +50,7 @@ public class Solution029Test {
         int result = instance.divide(dividend, divisor);
         assertEquals(expResult, result);
         
-        assertEquals(expResult, instance.divide(13, 0));
+        assertEquals(Integer.MAX_VALUE, instance.divide(13, 0));
         assertEquals(6, instance.divide(13, 2));
         assertEquals(0, instance.divide(1, 2));
         assertEquals(1, instance.divide(4, 4));

@@ -48,11 +48,10 @@ public class Solution017Test {
         String digits = "";
         Solution017 instance = new Solution017();
         List<String> expResult = new ArrayList<String>();
-        expResult.add("");
         List<String> result = instance.letterCombinations(digits);
         assertEquals(expResult, result);
         
-        assertEquals(null, instance.letterCombinations("1"));
+        assertEquals(expResult, instance.letterCombinations("1"));
         
         List<String> expResult2 = new ArrayList<String>();        
         expResult2.add("a");

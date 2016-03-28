@@ -47,7 +47,7 @@ public class Solution134 {
  
 	if (total >= 0){
             return start;
-	}else{
+	} else{
             return -1;
 	}
     }

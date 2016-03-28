@@ -17,93 +17,46 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution043 {
+    //http://www.programcreek.com/2014/05/leetcode-multiply-strings-java/
     public String multiply(String num1, String num2) {
-        if (num1==null||num2==null)
+        if (num1 == null || num2 == null) {
             return null;
-        if (num1.isEmpty()||num2.isEmpty())
+        }
+        if (num1.isEmpty() || num2.isEmpty()) {
             return "";
-        if (num1.equals("0")||num2.equals("0"))
-            return "0";
-        
-        char[] cl1;
-        char[] cl2;
-        if (num1.length()>=num2.length()) {
-            cl1=num1.toCharArray();
-            cl2=num2.toCharArray();
         }
-        else{
-            cl2=num1.toCharArray();
-            cl1=num2.toCharArray();
+       
+        int len1 = num1.length();
+        int len2 = num2.length();
+        String n1 = new StringBuilder(num1).reverse().toString();
+        String n2 = new StringBuilder(num2).reverse().toString();
+
+        int[] d = new int[len1 + len2];
+
+        //multiply each digit and sum at the corresponding positions
+        for(int i = 0; i < n1.length(); i++){
+            for(int j = 0; j < n2.length(); j++){
+                d[i+j] += (n1.charAt(i) - '0') * (n2.charAt(j) - '0');
+            }
         }
-        int i=cl2.length-1;
-        int j=0;
-        int addition=0;
 
         StringBuilder sb = new StringBuilder();
-        Stack<Integer> stk = new Stack<Integer>();
-        
-        int[][] sum = new int[cl2.length][cl1.length];
-        int row=0;
-        while(i>=0) {
-            j=0;
-            while(j<cl1.length) {
-                sum[row][j] = Integer.valueOf(String.valueOf(cl1[j])) 
-                            * Integer.valueOf(String.valueOf(cl2[i]));
-                j++;
+
+        //calculate each digit
+        for(int i = 0; i < d .length; i++){
+            int mod = d[i] % 10;
+            int carry = d[i] / 10;
+            if(i + 1 < d.length){
+                d[i+1] += carry;
             }
-            row++;
-            i--;
+            sb.insert(0, mod);
         }
-        
-        i=0; //row
-        j=cl1.length; //column
-        int m =0;
-        int n = 0;
-        int temp=0;
-        while(i<sum.length){
-            if (i==0) {
-                j=cl1.length-1;
-                while(j>=0) {               
-                    m = 0;//row
-                    n = j;//column
-                    temp = 0;
-                    while(m<cl2.length) {
-                        temp = temp + sum[m][n];
-                        n++;
-                        if (n>=cl1.length)
-                            break;
-                        m++;
-                    }
-                    temp = temp + addition;                    
-                    stk.push(temp%10);
-                    addition = temp / 10;
-                    j--;                        
-                }                   
-            }
-            else {
-                j = 0;
-                m = i;//row
-                n = j;//column
-                temp = 0;
-                while(m<cl2.length&&n<cl1.length) {
-                    temp = temp + sum[m][n];
-                    m++;
-                    n++;                    
-                }
-                temp = temp + addition;
-                stk.push(temp%10);
-                addition = temp / 10;
-            }
-            i++;
+
+        //remove front 0's
+        while(sb.charAt(0) == '0' && sb.length() > 1){
+            sb.deleteCharAt(0);
         }
-        
-        if (addition!=0)
-            stk.push(addition);
-        
-        while(!stk.empty()) {
-            sb.append(stk.pop());
-        }
-        
+
         return sb.toString();
     } 
 }

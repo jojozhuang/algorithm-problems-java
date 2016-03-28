@@ -45,29 +45,32 @@ package leetcode;
  */
 public class Solution335 {
     public boolean isSelfCrossing(int[] x) {
-        // two cases that do not cross, inner helix, outer helix
-        if (x == null || x.length < 4) {
+        if (x == null) {
+            return false;
+        }
+        int n = x.length;
+        if (n < 4) {
             return false;
         }
         
-        boolean inner = false;
-        
-        for (int i = 2; i < x.length; i++) {
-            if (x[i] <= x[i - 2]) {
-                inner = true;
-            } else {                
-                if (inner) {
+        int t1 = 0, t2 = x[0], t3 = x[1], t4 = x[2], t5;
+        boolean increase = t4 > t2 ? true : false;
+        for (int i = 3; i < n; i++) {
+            t5 = x[i];
+            if (increase && t3 >= t5) {
+                if (t5 + t1 < t3 || i + 1 < n && x[i + 1] + t2 < t4) {
+                    increase = false;
+                } else if (i + 1 < n) {
                     return true;
-                } else {
-                    if (x[i] >= x[i - 2]) {
-                        inner = false;
-                    } else {
-                        inner = true;
-                    }
-                }                
+                }
+            } else if (!increase && t3 <= t5) {
+                return true;
             }
+            t1 = t2;
+            t2 = t3;
+            t3 = t4;
+            t4 = t5;
         }
-        
         return false;
     }
 }

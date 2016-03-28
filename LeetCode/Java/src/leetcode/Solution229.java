@@ -17,9 +17,9 @@ import java.util.List;
  */
 public class Solution229 {
     public List<Integer> majorityElement(int[] nums) {
-        List<Integer> ret = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         if (nums == null || nums.length == 0) {
-            return ret;
+            return res;
         }
         
         int maj1 = 0, maj2 = 0;
@@ -56,12 +56,12 @@ public class Solution229 {
             }
         }
         if (count1 > nums.length/3) {
-            ret.add(maj1);
+            res.add(maj1);
         }
         if (count2 > nums.length/3) {
-            ret.add(maj2);
+            res.add(maj2);
         }
 
-        return ret;
+        return res;
     }
 }

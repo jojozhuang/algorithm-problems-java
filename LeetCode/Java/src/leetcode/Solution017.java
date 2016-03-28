@@ -7,6 +7,8 @@ package leetcode;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 /**
  * Letter Combinations of a Phone Number .
  * Given a digit string, return all possible letter combinations that the number
@@ -21,68 +23,38 @@ import java.util.ArrayList;
  */
 public class Solution017 {
     public List<String> letterCombinations(String digits) {
-        if (digits==null)
-            return null;
-        if(digits.isEmpty()) {
-            List<String> empty = new ArrayList<String>();
-            empty.add("");
-            return empty;
+        List<String> res = new ArrayList<String>();
+        if (digits == null || digits.isEmpty()) {
+            return res;
         }
-            
         
-        char[] charlist = digits.toCharArray();
+        Map<Integer, String> map = new HashMap<Integer, String>();
+        map.put(2, "abc");
+        map.put(3, "def");
+        map.put(4, "ghi");
+        map.put(5, "jkl");
+        map.put(6, "mno");
+        map.put(7, "pqrs");
+        map.put(8, "tuv");
+        map.put(9, "wxyz");
         
-        List<String> ret = new ArrayList<String>();
-        String letters = getLetter(charlist[0]);
-        if (letters.isEmpty())
-            return null;
+        helper(digits, 0, map, "", res);
         
-        char[] charLetters = letters.toCharArray();
-
-        
-        List<String> next;
-        if (digits.length()>1)
-            next = letterCombinations(digits.substring(1,digits.length()));
-        else
-            next = null;
-        
-        if (next!=null&&next.size()>0) {
-            for(int i=0; i< charLetters.length;i++) {
-                for(int j=0; j< next.size();j++) {
-                    String combine = String.valueOf(charLetters[i]) + next.get(j);
-                    ret.add(combine);
-                }
-            }
-        }
-        else{
-            for(int i=0; i< charLetters.length;i++) {
-                ret.add(String.valueOf(charLetters[i]));
-            }
-        }       
-        
-        return ret;
+        return res;
     }
     
-    private String getLetter(char num) {
-        switch(num) {
-            case '2':
-                return "abc";
-            case '3':
-                return "def";
-            case '4':
-                return "ghi";
-            case '5':
-                return "jkl";
-            case '6':
-                return "mno";
-            case '7':
-                return "pqrs";
-            case '8':
-                return "tuv";
-            case '9':
-                return "wxyz";
-            default:
-                return "";
+    private void helper(String digits, int pos, Map<Integer, String> map, String str, List<String> res) {
+        if (pos == digits.length()) {
+            res.add(str);
+            return;
         }
-    }            
+        
+        int num = Integer.parseInt(String.valueOf(digits.charAt(pos)));
+        if (map.containsKey(num)) {
+            String chars = map.get(num);
+            for (int i = 0; i < chars.length(); i++) {
+                helper(digits, pos + 1, map, str + chars.charAt(i), res);
+            }
+        }
+    } 
 }

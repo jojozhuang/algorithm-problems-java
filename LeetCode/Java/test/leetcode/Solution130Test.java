@@ -84,6 +84,21 @@ public class Solution130Test {
         };
         instance.solve(board31);
         assertArrayEquals(board32, board31);
+        
+        char[][] board41 = new char[][] {
+            {'X','O','X','O','X','O'},
+            {'O','X','O','X','O','X'},
+            {'X','O','X','O','X','O'},
+            {'O','X','O','X','O','X'}
+        };
+        char[][] board42 = new char[][] {
+            {'X','O','X','O','X','O'},
+            {'O','X','X','X','X','X'},
+            {'X','X','X','X','X','O'},
+            {'O','X','O','X','O','X'}
+        };
+        instance.solve(board41);
+        assertArrayEquals(board42, board41);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

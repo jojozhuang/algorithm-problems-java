@@ -32,36 +32,36 @@ public class Solution151 {
             return s;
         }
         
-        char[] s_char = s.toCharArray();
+        char[] arr = s.toCharArray();
         StringBuilder sb = new StringBuilder();
         
         int end = -1;
         for (int i = s.length() - 1; i >= 0; i--) {
-            if (s_char[i] == ' ') {
+            if (arr[i] == ' ') {
                 if (end > -1) {
-                    sb.append(getWord(s_char, i + 1, end));
+                    sb.append(getWord(arr, i + 1, end));
                     sb.append(' ');
                     end = -1;
                 }
-            }
-            else {
-                if (end == -1)
+            } else {
+                if (end == -1) {
                     end = i;
+                }
             }
         }
         
         if (end > -1) {
-            sb.append(getWord(s_char, 0, end));
+            sb.append(getWord(arr, 0, end));
             sb.append(' ');
         }
         
         return sb.toString().trim();
     }
     
-    private char[] getWord(char[] arrc, int start, int end) {
+    private char[] getWord(char[] arr, int start, int end) {
         char[] word = new char[end - start + 1];
         for (int i = 0; i <= end - start; i++) {
-            word[i] = arrc[start+i];
+            word[i] = arr[start + i];
         }
         
         return word;
