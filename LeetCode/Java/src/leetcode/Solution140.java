@@ -27,6 +27,52 @@ import java.util.Set;
  */
 public class Solution140 {
     //http://www.programcreek.com/2014/03/leetcode-word-break-ii-java/
+    /*public List<String> wordBreak(String s, Set<String> dict) {
+        List<String> res = new ArrayList<String>();
+        if (s == null || s.isEmpty()) {
+            return res;
+        }
+        
+        List<String> list = new ArrayList();
+        helper(s, dict, 0, list, res);
+        
+        return res;
+    }
+    
+    private void helper(String s, Set<String> dict, int pos, List<String> list, List<String> res) {
+        if (pos >= s.length()) {
+            StringBuilder sb = new StringBuilder();
+            for (String str: list) {
+                sb.append(str);
+                sb.append(" ");
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            res.add(sb.toString());
+            return;
+        } 
+        
+        for (int i = pos; i < s.length(); i++) {
+            int j = 1;
+            boolean newword = false;
+            String str = "";
+            while(i + j <= s.length()) {
+                str = s.substring(i, i + j);
+                if (dict.contains(str)) {
+                    newword = true;                    
+                    break;
+                }
+                j++;
+            }
+            if (newword) {
+                list.add(str);
+                helper(s, dict, pos + j, list, res);
+                list.remove(list.size() - 1);
+                pos -= j;
+            }        
+        }
+    }*/
+    
+    
     public List<String> wordBreak(String s, Set<String> dict) {
         List<String> result = new LinkedList<String>();
         if (s == null || s.isEmpty()) {
