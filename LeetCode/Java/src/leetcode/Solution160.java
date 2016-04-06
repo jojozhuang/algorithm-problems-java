@@ -31,7 +31,7 @@ import java.util.Stack;
  *  
  * @author Johnny
  */
-public class Solution160 {
+public class Solution160 {    
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
             return null;
