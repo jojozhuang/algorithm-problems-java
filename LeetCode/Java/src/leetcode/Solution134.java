@@ -23,6 +23,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution134 {
+    //http://www.programcreek.com/2014/03/leetcode-gas-station-java/
     public int canCompleteCircuit(int[] gas, int[] cost) {
         if (gas == null || gas.length == 0 || cost == null || cost.length == 0) {
             return -1;

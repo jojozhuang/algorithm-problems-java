@@ -12,6 +12,38 @@ package lintcode;
 public class DecodeWays {
     public int numDecodings(String s) {
         // Write your code here
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        int n = s.length();
+        if (n == 1) {
+            return isValid(s) ? 1 : 0;
+        }
+        
+        int[] dp = new int[n];
+        dp[0] = isValid(s.substring(0, 1)) ? 1 : 0;
+        dp[1] = isValid(s.substring(1, 2)) ? dp[0] : 0;
+        dp[1] += isValid(s.substring(0, 2)) ? 1 : 0;
+        for (int i = 2; i < n; i++) {
+            boolean onebit = isValid(s.substring(i, i + 1));
+            boolean twobits = isValid(s.substring(i - 1, i + 1));
+            if (!onebit && !twobits) {
+                return 0;
+            }
+            if (onebit) {
+                dp[i] = dp[i - 1];
+            }
+            if (twobits) {
+                dp[i] += dp[i - 2];
+            }
+        }
+        
+        return dp[n - 1];
+    }    
+    
+    public int numDecodings2(String s) {
+        // Write your code here
         int res = helper(s);
         return res == -1 ? 0 : res;
     }
