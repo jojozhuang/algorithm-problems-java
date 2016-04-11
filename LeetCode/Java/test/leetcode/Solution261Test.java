@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution079Test {
+public class Solution261Test {
     
-    public Solution079Test() {
+    public Solution261Test() {
     }
     
     @BeforeClass
@@ -38,29 +38,28 @@ public class Solution079Test {
     }
 
     /**
-     * Test of exist method, of class Solution079.
+     * Test of validTree method, of class Solution261.
      */
     @Test
-    public void testExist() {
-        System.out.println("exist");
-        char[][] board = null;
-        String word = "";
-        Solution079 instance = new Solution079();
+    public void testValidTree() {
+        System.out.println("validTree");
+        int n = 0;
+        int[][] edges = null;
+        Solution261 instance = new Solution261();
         boolean expResult = false;
-        boolean result = instance.exist(board, word);
+        boolean result = instance.validTree(n, edges);
         assertEquals(expResult, result);
         
-        char[][] board2 = new char[][] {
-            "ABCE".toCharArray(),"SFCS".toCharArray(), "ADEE".toCharArray()
-        };        
-        assertEquals(true, instance.exist(board2, "ABCCED"));
-        assertEquals(true, instance.exist(board2, "SEE"));
-        assertEquals(false, instance.exist(board2, "ABCB"));
-        
-        char[][] board3 = new char[][] {
-            "ABCE".toCharArray(),"SFES".toCharArray(), "ADEE".toCharArray()
-        };        
-        assertEquals(true, instance.exist(board3, "ABCESEEEFS"));
+        int[][] edges2 = new int[][] {
+            {0, 1}, {0, 2}, {0, 3}, {1, 4}
+        };
+        assertEquals(true, instance.validTree(5, edges2));
+        int[][] edges3 = new int[][] {
+            {0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}
+        };
+        assertEquals(false, instance.validTree(5, edges3));
+
+        assertEquals(true, instance.validTree(1, new int[][] {}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

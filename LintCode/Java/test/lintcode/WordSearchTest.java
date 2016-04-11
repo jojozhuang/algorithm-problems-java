@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode;
+package lintcode;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution079Test {
+public class WordSearchTest {
     
-    public Solution079Test() {
+    public WordSearchTest() {
     }
     
     @BeforeClass
@@ -38,14 +38,14 @@ public class Solution079Test {
     }
 
     /**
-     * Test of exist method, of class Solution079.
+     * Test of exist method, of class WordSearch.
      */
     @Test
     public void testExist() {
         System.out.println("exist");
         char[][] board = null;
         String word = "";
-        Solution079 instance = new Solution079();
+        WordSearch instance = new WordSearch();
         boolean expResult = false;
         boolean result = instance.exist(board, word);
         assertEquals(expResult, result);

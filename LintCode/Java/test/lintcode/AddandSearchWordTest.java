@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode;
+package lintcode;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author RZHUANG
+ * @author Johnny
  */
-public class Solution211Test {
+public class AddandSearchWordTest {
     
-    public Solution211Test() {
+    public AddandSearchWordTest() {
     }
     
     @BeforeClass
@@ -38,25 +38,27 @@ public class Solution211Test {
     }
 
     /**
-     * Test of addWord method, of class Solution211.
+     * Test of addWord method, of class AddandSearchWord.
      */
     @Test
     public void testAddWord() {
         System.out.println("addWord");
         String word = "";
-        Solution211 instance = new Solution211();
+        AddandSearchWord instance = new AddandSearchWord();
         instance.addWord(word);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
 
     /**
-     * Test of search method, of class Solution211.
+     * Test of search method, of class AddandSearchWord.
      */
     @Test
     public void testSearch() {
-        System.out.println("search");        
-        Solution211 instance = new Solution211();
+        System.out.println("search");
+        String word = "";
+       
+        AddandSearchWord instance = new AddandSearchWord();
         instance.addWord("bad");
         instance.addWord("dad");
         instance.addWord("mad");
@@ -68,14 +70,14 @@ public class Solution211Test {
         assertEquals(false, instance.search("ba"));
         assertEquals(false, instance.search("m."));
         
-        Solution211 instance2 = new Solution211();
-        assertEquals(false, instance2.search("."));
+        AddandSearchWord instance2 = new AddandSearchWord();
+        instance2.addWord("a");
+        assertEquals(true, instance2.search("."));
         
-        Solution211 instance3 = new Solution211();
-        instance3.addWord("a");
-        assertEquals(true, instance3.search("."));
+        AddandSearchWord instance3 = new AddandSearchWord();
+        assertEquals(false, instance3.search("."));
         
-        Solution211 instance4 = new Solution211();
+        AddandSearchWord instance4 = new AddandSearchWord();
         instance4.addWord("a");
         instance4.addWord("a");
         assertEquals(true, instance4.search("."));

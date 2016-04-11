@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode;
+package lintcode;
 
 /**
  * Word Search.
@@ -13,13 +13,13 @@ package leetcode;
  * where "adjacent" cells are those horizontally or vertically neighboring. 
  * The same letter cell may not be used more than once.
  * 
- * For example,
+ * Example
  * Given board =
  * 
  * [
- *   ["ABCE"],
- *   ["SFCS"],
- *   ["ADEE"]
+ *   "ABCE",
+ *   "SFCS",
+ *   "ADEE"
  * ]
  * word = "ABCCED", -> returns true,
  * word = "SEE", -> returns true,
@@ -27,15 +27,13 @@ package leetcode;
  * 
  * @author Johnny
  */
-public class Solution079 {
+public class WordSearch {
     public boolean exist(char[][] board, String word) {
+        // write your code here
         if (board == null || board.length == 0 || board[0].length == 0) {
             return false;
         }
-        if (word == null || word.isEmpty()) {
-            return true;
-        }
-        
+
         int m = board.length;
         int n = board[0].length;
 
@@ -49,9 +47,10 @@ public class Solution079 {
                 }
             }
         }
+
         return false;
     }
-    
+
     private boolean dfs(char[][] board, String word, int i, int j, boolean[][] visited) {
         int m = board.length;
         int n = board[0].length;
