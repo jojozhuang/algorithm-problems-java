@@ -28,46 +28,45 @@ public class Solution221 {
         }
         
         int max = 0;
-        int n = matrix.length;
-        int m = matrix[0].length;
+        int m = matrix.length;
+        int n = matrix[0].length;
         
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (matrix[i][j] == '1') {
                     max = Math.max(max, 1);
                     int k = i + 1;
                     int l = j + 1;
-                    while (k < n && l < m && matrix[k][l] == '1') {
+                    while (k < m && l < n && matrix[k][l] == '1') {
                         boolean allone = true;
-                        //check row                        
-                        for(int p = j; p < l; p++) {
+                        //check row
+                        for (int p = j; p < l; p++) {
                             if (matrix[k][p] == '0') {
                                 allone = false;
                                 break;
                             }
                         }
-                        if (allone) {
-                            //check column
-                            for(int q = i; q < k; q++) {
-                                if (matrix[q][l] == '0') {
-                                    allone = false;
-                                    break;
-                                }
-                            }
-                        } 
-                        
-                        if (allone) {
-                            max = Math.max(max, (k - i + 1) * (l - j + 1));
-                            k++;
-                            l++;
-                        } else {
+                        if (!allone) {
                             break;
                         }
+                        //check column
+                        for (int q = i; q < k; q++) {
+                            if (matrix[q][l] == '0') {
+                                allone = false;
+                                break;
+                            }
+                        }
+                        if (!allone) {
+                            break;
+                        }
+                        max = Math.max(max, (k - i + 1) * (l - j + 1));
+                        k++;
+                        l++;
                     }
                 }
             }
         }
-        
+
         return max;
     }
 }
