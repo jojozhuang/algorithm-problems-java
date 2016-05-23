@@ -16,31 +16,25 @@ public class Rotate {
             return;
         }
         
-        int len = matrix.length;
-        for (int i = 0; i < len - 1; i++) {
-            for (int j = 0; j < len - 1; j++) {
-                swap(matrix, i, j, len - 1 - j, len - 1 - i);
+        for (int i = 0; i < n / 2; i++) {
+            int topleft = matrix[i][i];
+            //left
+            for (int j = i; j < n - i - 1; j++) {
+                matrix[j][i] = matrix[j + 1][i];
             }
-        }
-        
-        for (int i = 0; i < len / 2; i++) {
-            for (int j = 0; j < len; j++) {
-                swap(matrix, i, j, len - 1 - i, j);
+            //bottom
+            for (int j = i; j < n - i - 1; j++) {
+                matrix[n - i - 1][j] = matrix[n - i - 1][j + 1];
             }
-        }
-        
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(matrix[i][j]);
-                System.out.print(" ");                
+            //right
+            for (int j = n - i - 1; j > i; j--) {
+                matrix[j][n - i - 1] = matrix[j - 1][n - i - 1];
             }
-            System.out.println();
-        }
-    }
-    
-    private void swap(int[][] matrix, int row1, int col1, int row2, int col2) {
-        int temp = matrix[row1][col1];
-        matrix[row1][col1] = matrix[row2][col2];
-        matrix[row2][col2] = temp;
+            //top
+            for (int j = n - i - 1; j > i + 1; j--) {
+                matrix[i][j] = matrix[i][j - 1];
+            }
+            matrix[i][i + 1] = topleft;
+        }        
     }
 }
