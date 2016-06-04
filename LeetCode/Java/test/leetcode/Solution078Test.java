@@ -105,6 +105,9 @@ public class Solution078Test {
         item4.add(8);
         expResult4.add(item4);
         assertEquals(expResult4, instance.subsets(new int[]{1,3,8}));
+        
+        List<List<Integer>> res = instance.subsets(new int[]{1,2,3,4,5,6,7,8,10,0});
+        int a = 1;
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

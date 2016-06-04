@@ -29,30 +29,31 @@ import java.util.List;
  */
 public class Solution216 {
     public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (k <= 0 || n <= 0) {
-            return ret;
+            return res;
         }
-
+        
+        int[] candidates = new int[]{1,2,3,4,5,6,7,8,9};
+        Arrays.sort(candidates);
+        
         List<Integer> list = new ArrayList<Integer>();
-        helper(k, n, 1, list, ret);        
-        return ret;
+        helper(candidates, 0, k, n, list, res);  
+        return res;
     }
     
-    private void helper(int k, int n, int pos, List<Integer> list, List<List<Integer>> ret) {
-        if (k == list.size() && n == 0) {
-            ret.add(new ArrayList(list));
+    private void helper(int[] candidates, int pos, int k, int n, List<Integer> list, List<List<Integer>> res) {
+        if (n <= 0 || k <= 0) {
+            if (n == 0 && k == 0) {
+                res.add(new ArrayList<Integer>(list));
+            }
             return;
         }
         
-        for (int i = pos; i <= 9; i++) {
-            if (i > n) {
-                return;
-            } else {
-                list.add(i);
-                helper(k, n - i, i + 1, list, ret);
-                list.remove(list.size() - 1);
-            }
+        for (int i = pos; i < candidates.length; i++) {
+            list.add(candidates[i]);
+            helper(candidates, i + 1, k - 1, n - candidates[i], list, res);
+            list.remove(list.size() - 1);
         }
     }
 }

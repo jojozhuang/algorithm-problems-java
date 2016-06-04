@@ -23,25 +23,28 @@ public class Solution080 {
             return 0;
         }
         
-        int fast = 1;
-        int slow = 0;
-        int duplicate = 1;
-        
-        while(fast < nums.length) {
-            if (nums[fast] == nums[slow]) {
-                if (duplicate < 2) {  
-                    slow++;
-                    nums[slow] = nums[fast];                    
-                }
-                duplicate++;
-            } else {
-                slow++;
-                nums[slow] = nums[fast];               
-                duplicate = 1;                
-            }
-            fast++;
+        if (nums.length == 1) {
+            return 1;
         }
         
-        return slow + 1;
+        int i = 1;
+        int j = 0;
+        int count = 0;
+        while (i < nums.length) {
+            if (nums[i] != nums[j]) {
+                j++;
+                nums[j] = nums[i];
+                count = 0;
+            } else {
+                if (count == 0) {
+                    count++;
+                    j++;
+                    nums[j] = nums[i];
+                } 
+            }
+            i++;
+        }
+        
+        return j + 1;
     }
 }

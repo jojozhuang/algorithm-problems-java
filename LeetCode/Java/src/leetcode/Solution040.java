@@ -42,7 +42,7 @@ public class Solution040 {
         
         Arrays.sort(candidates);
         List<Integer> list = new ArrayList<Integer>();
-        helper(candidates, target, 0, list, res);
+        helper(candidates, 0, target, list, res);
         
         HashSet<List<Integer>> set = new HashSet<List<Integer>>(res); 
         //remove duplicate lists
@@ -52,19 +52,17 @@ public class Solution040 {
         return res;
     }
     
-    private void helper(int[] candidates, int target, int pos, List<Integer> list, List<List<Integer>> res) {
-        if (target == 0) {
-            res.add(new ArrayList(list));
+    private void helper(int[] candidates, int pos, int target, List<Integer> list, List<List<Integer>> res) {
+        if (target <= 0) {
+            if (target == 0) {
+                res.add(new ArrayList<Integer>(list));
+            }
             return;
         }
         
         for (int i = pos; i < candidates.length; i++) {
-            if (candidates[i] > target) {
-                return;
-            }
-            
             list.add(candidates[i]);
-            helper(candidates, target - candidates[i], i + 1, list, res);
+            helper(candidates, i + 1, target - candidates[i], list, res);
             list.remove(list.size() - 1);
         }
     }
