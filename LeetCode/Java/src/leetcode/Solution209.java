@@ -23,6 +23,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution209 {
+    //http://www.cnblogs.com/grandyang/p/4501934.html
     public int minSubArrayLen(int s, int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
