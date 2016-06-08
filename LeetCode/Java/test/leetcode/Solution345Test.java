@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution202Test {
+public class Solution345Test {
     
-    public Solution202Test() {
+    public Solution345Test() {
     }
     
     @BeforeClass
@@ -38,22 +38,20 @@ public class Solution202Test {
     }
 
     /**
-     * Test of isHappy method, of class Solution202.
+     * Test of reverseVowels method, of class Solution345.
      */
     @Test
-    public void testIsHappy() {
-        System.out.println("isHappy");
-        int n = 0;
-        Solution202 instance = new Solution202();
-        boolean expResult = false;
-        boolean result = instance.isHappy(n);
+    public void testReverseVowels() {
+        System.out.println("reverseVowels");
+        String s = "";
+        Solution345 instance = new Solution345();
+        String expResult = "";
+        String result = instance.reverseVowels(s);
         assertEquals(expResult, result);
         
-        assertEquals(true, instance.isHappy(7));
-        assertEquals(true, instance.isHappy(10));
-        assertEquals(true, instance.isHappy(19));
-        assertEquals(false, instance.isHappy(33));
-        assertEquals(false, instance.isHappy(11));
+        assertEquals("holle", instance.reverseVowels("hello"));
+        assertEquals("leotcede", instance.reverseVowels("leetcode"));
+        assertEquals("a.b,.", instance.reverseVowels("a.b,."));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

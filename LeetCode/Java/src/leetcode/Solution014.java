@@ -15,30 +15,31 @@ package leetcode;
 public class Solution014 {
     //http://www.programcreek.com/2014/02/leetcode-longest-common-prefix-java/
     public String longestCommonPrefix(String[] strs) {
-        if(strs == null || strs.length == 0) {
+        if (strs == null || strs.length == 0) {
             return "";
         }
-
-        int minLen = Integer.MAX_VALUE;
-        for(String str: strs){
-            if(minLen > str.length()) {
-                minLen = str.length();
+  
+        int minlen = Integer.MAX_VALUE;
+        String str = "";
+        for (int i = 0; i < strs.length; i++) {
+            if (strs[i].length() < minlen) {
+                minlen = strs[i].length();
+                str = strs[i];
             }
         }
         
-        if (minLen == 0) {
+        if (minlen == 0) {
             return "";
         }
-
-        for(int j = 0; j < minLen; j++){
-            char prev = strs[0].charAt(j);
-            for(int i = 0; i < strs.length; i++){
-                if(strs[i].charAt(j) != prev){
-                    return strs[i].substring(0, j);
+        
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = 0; j < strs.length; j++) {
+                if (strs[j].charAt(i) != str.charAt(i)) {
+                    return str.substring(0, i);
                 }
             }
         }
-
-        return strs[0].substring(0, minLen);
+        
+        return str;
     }
 }
