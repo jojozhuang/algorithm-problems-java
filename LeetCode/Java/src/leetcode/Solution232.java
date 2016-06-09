@@ -28,68 +28,36 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution232 {
-    Stack stack1 = new Stack();
-    Stack stack2 = new Stack();
-    // Push element x to the back of queue.
+    private Stack<Integer> stack1 = new Stack<Integer>();
+    private Stack<Integer> stack2 = new Stack<Integer>();
+    
     public void push(int x) {
-        if (!stack2.isEmpty()) {
-            stack2.push(x);
-        } else {
-            stack1.push(x);
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+        }
+        stack2.push(x);
+        while (!stack2.isEmpty()) {
+            stack1.push(stack2.pop());
         }
     }
 
     // Removes the element from in front of queue.
     public void pop() {
         if (!stack1.isEmpty()) {
-            while(!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
-            }
-            stack2.pop();
-            while(!stack2.isEmpty()) {
-                stack1.push(stack2.pop());
-            }
-        } else {
-            while(!stack2.isEmpty()) {
-                stack1.push(stack2.pop());
-            }
             stack1.pop();
-            while(!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
-            }
         }
     }
 
     // Get the front element.
     public int peek() {
-        int ret;
         if (!stack1.isEmpty()) {
-            while(!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
-            }
-            ret = (int)stack2.peek();
-            while(!stack2.isEmpty()) {
-                stack1.push(stack2.pop());
-            }
-        } else {
-            while(!stack2.isEmpty()) {
-                stack1.push(stack2.pop());
-            }
-            ret = (int)stack1.peek();
-            while(!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
-            }
+            return stack1.peek();
         }
-        
-        return ret;
+        return -1;
     }
 
     // Return whether the queue is empty.
     public boolean empty() {
-        if (stack1.isEmpty() && stack2.isEmpty()) {
-            return true;
-        } else {
-            return false;
-        }
+        return stack1.isEmpty();
     }
 }
