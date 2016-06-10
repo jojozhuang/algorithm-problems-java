@@ -203,5 +203,91 @@ public class AllSorting {
         }
         
         return nums;
-   }
+    }
+    
+    public void QuickSort2(int[] nums) {
+        if (nums == null || nums.length < 2) {
+            return;
+        }
+        
+        helper(nums, 0, nums.length - 1);        
+    }
+    
+    private void helper(int[] nums, int start, int end) {
+        if (start >= end) {
+            return;
+        }
+        int pivot = Partition3(nums, start, end);
+        helper(nums, start, pivot - 1);
+        helper(nums, pivot + 1, end);
+    }
+    
+    private int Partition3(int[] nums, int start, int end) {
+        int pivot = start;
+        for (int i = start; i <= end; i++) {
+            if (nums[i] < nums[start]) {
+                pivot++;
+                int temp = nums[i];
+                nums[i] = nums[pivot];
+                nums[pivot] = temp;
+            }
+        }
+        
+        int temp = nums[start];
+        nums[start] = nums[pivot];
+        nums[pivot] = temp;
+        
+        return pivot;
+    }
+    
+    public void MergeSort(int[] nums) {
+        if (nums == null || nums.length < 2) {
+            return;
+        }
+        
+        mergeHelper(nums, 0, nums.length - 1);
+    }
+    
+    private void mergeHelper(int[] nums, int start, int end) {
+        if (start >= end) {
+            return;
+        }
+        
+        int mid = start + (end - start) / 2;
+        mergeHelper(nums, start, mid);
+        mergeHelper(nums, mid + 1, end);
+        merge(nums, start, mid, end);
+    }
+    
+    private void merge(int[] nums, int start, int mid, int end) {
+        int[] mergeArr = new int[nums.length];
+        for (int i = start; i <= end; i++) {
+            mergeArr[i] = nums[i];
+        }
+        
+        int i = start;
+        int j = mid + 1;
+        int k = start;
+        while (i <= mid && j <= end) {
+            if (mergeArr[i] <= mergeArr[j]) {
+                nums[k] = mergeArr[i];
+                i++;
+            } else {
+                nums[k] = mergeArr[j];
+                j++;
+            }
+            k++;
+        }
+        while (i <= mid) {
+            nums[k] = mergeArr[i];
+            k++;
+            i++;
+        }
+        
+        while (j <= end) {
+            nums[k] = mergeArr[j];
+            k++;
+            j++;
+        }
+    }
 }

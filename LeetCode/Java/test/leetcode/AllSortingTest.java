@@ -143,4 +143,42 @@ public class AllSortingTest {
         //fail("The test case is a prototype.");
     }
     
+    /**
+     * Test of QuickSort2 method, of class AllSorting.
+     */
+    @Test
+    public void testQuickSort2() {
+        System.out.println("QuickSort2");
+        int[] nums = null;
+        AllSorting instance = new AllSorting();
+        int[] expResult = null;
+        instance.QuickSort2(nums);
+        assertArrayEquals(expResult, nums);
+        
+        int[] nums2 = new int[]{2,4,5,7,1,2,3,6};
+        instance.QuickSort2(nums2);
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, nums2);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of MergeSort method, of class AllSorting.
+     */
+    @Test
+    public void MergeSort() {
+        System.out.println("MergeSort");
+        int[] nums = null;
+        AllSorting instance = new AllSorting();
+        int[] expResult = null;
+        instance.MergeSort(nums);
+        assertArrayEquals(expResult, nums);
+        
+        int[] nums2 = new int[]{2,4,5,7,1,2,3,6};
+        instance.MergeSort(nums2);
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, nums2);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
 }
