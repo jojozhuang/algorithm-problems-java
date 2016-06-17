@@ -30,8 +30,35 @@ public class Solution199 {
             return res;
         }
         
-        List<Integer> left = rightSideView(root.left);
-        List<Integer> right = rightSideView(root.right);
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (i == size - 1) {
+                    res.add(node.val);
+                }
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+        }
+        
+        return res;
+    }
+    
+    public List<Integer> rightSideView2(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (root == null) {
+            return res;
+        }
+        
+        List<Integer> left = rightSideView2(root.left);
+        List<Integer> right = rightSideView2(root.right);
         
         res.add(root.val);
         if (right.size() > 0) {
@@ -45,5 +72,5 @@ public class Solution199 {
         }
         
         return res;
-    }
+    }    
 }

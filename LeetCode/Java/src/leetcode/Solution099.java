@@ -22,8 +22,44 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution099 {
-    //https://leetcode.com/discuss/90848/java-easy-iterative-o-n-space-and-time-solution
+    TreeNode first = null;
+    TreeNode second = null;
+    TreeNode prev = null;
     public void recoverTree(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        
+        inorder(root);
+        if (first != null && second != null) {
+            int temp = first.val;
+            first.val = second.val;
+            second.val = temp;
+        }
+    }
+    
+    private void inorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        
+        inorder(root.left);
+        if (prev == null) {
+            prev = root;
+        } else {
+            if (root.val < prev.val) {
+                if (first == null) {
+                    first = prev;
+                }
+                second = root;
+            }
+            prev = root;
+        }
+        
+        inorder(root.right);
+    }
+    //https://leetcode.com/discuss/90848/java-easy-iterative-o-n-space-and-time-solution
+    public void recoverTree2(TreeNode root) {
         if (root == null) {
             return;
         }

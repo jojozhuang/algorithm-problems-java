@@ -7,6 +7,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.LinkedList;
 import leetcode.common.TreeNode;
 import java.util.List;
@@ -38,6 +39,44 @@ import java.util.Stack;
  */
 public class Solution103 {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return res;
+        }
+        
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        boolean odd = false;
+        
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            Deque<Integer> deque = new LinkedList<Integer>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                deque.offerLast(node.val);
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            List<Integer> list = new ArrayList<Integer>();
+            while (!deque.isEmpty()) {
+                if (!odd) {
+                    list.add(deque.pollFirst());
+                } else {
+                    list.add(deque.pollLast());
+                }
+            }
+            res.add(list);
+            odd = !odd;
+        }
+        
+        return res;
+    }
+    
+    public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (root == null) {
             return result;
@@ -71,7 +110,7 @@ public class Solution103 {
         return result;
     }
     
-    public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder3(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (root == null) {
             return result;

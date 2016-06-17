@@ -21,9 +21,36 @@ import leetcode.common.TreeNode;
  * 
  * @author Johnny
  */
-public class Solution222 {
-    //timeout
+public class Solution222 {    
+    // left is complete tree or right is complete tree
+    // https://leetcode.com/discuss/101234/java-concise-solution
     public int countNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = leftHeight(root.left);
+        int right = leftHeight(root.right);
+        
+        if (left == right) {
+            return countNodes(root.right) + (1 << left);
+        } else {
+            return countNodes(root.left) + (1 << right);
+        }
+    }
+
+    private int leftHeight(TreeNode node) {
+        int height = 0;
+
+        while (node != null) {
+            height++;
+            node = node.left;
+        }
+
+        return height;
+    }
+    //timeout
+    public int countNodes3(TreeNode root) {
         if (root == null) {
             return 0;
         }

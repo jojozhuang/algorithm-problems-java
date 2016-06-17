@@ -24,9 +24,39 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution230 {
+    //inorder
+    public int kthSmallest2(TreeNode root, int k) {
+        if (root == null) {
+            return Integer.MIN_VALUE;
+        }
+        
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        int count = 0;
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.peek();
+            if (node.left == null) {
+                count++;
+                stack.pop();
+                if (count == k) {
+                    return node.val;
+                }
+                if (node.right != null) {
+                    stack.push(node.right);
+                    node.right = null;
+                }
+            } else {
+                stack.push(node.left);
+                node.left = null;
+            }
+        }
+        
+        return Integer.MIN_VALUE;
+    }
+    
     public int kthSmallest(TreeNode root, int k) {
         if (root == null) {
-            return 0;
+            return Integer.MIN_VALUE;
         }
         // inorder
         Stack<TreeNode> stack = new Stack<TreeNode>();

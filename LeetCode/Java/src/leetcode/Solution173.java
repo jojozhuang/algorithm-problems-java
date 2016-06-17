@@ -40,9 +40,9 @@ public class Solution173 {
         }
         
         curt = stack.pop();
-        TreeNode node = curt;
+        int res = curt.val;
         curt = curt.right;
-        return node.val;
+        return res;
     }
 }
 /**
