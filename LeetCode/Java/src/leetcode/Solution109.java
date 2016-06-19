@@ -16,7 +16,7 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution109 {    
-    public TreeNode sortedListToBST2(ListNode head) {
+    public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
             return null;
         }

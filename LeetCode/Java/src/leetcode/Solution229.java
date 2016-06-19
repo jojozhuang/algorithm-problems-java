@@ -38,13 +38,13 @@ public class Solution229 {
             
             if (maj1 == nums[i]) {
                 count1++;
-            } else if(maj2 == nums[i]) {
+            } else if (maj2 == nums[i]) {
                 count2++;
             } else {
                 count1--;
                 count2--;
             }
-        }        
+        }
         
         count1 = 0;
         count2 = 0;
@@ -55,13 +55,13 @@ public class Solution229 {
                 count2++;
             }
         }
-        if (count1 > nums.length/3) {
+        
+        if (count1 > nums.length / 3) {
             res.add(maj1);
-        }
-        if (count2 > nums.length/3) {
+        } 
+        if (count2 > nums.length / 3) {
             res.add(maj2);
-        }
-
+        } 
         return res;
     }
 }

@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution326Test {
+public class Solution346Test {
     
-    public Solution326Test() {
+    public Solution346Test() {
     }
     
     @BeforeClass
@@ -38,22 +38,20 @@ public class Solution326Test {
     }
 
     /**
-     * Test of isPowerOfThree method, of class Solution326.
+     * Test of next method, of class Solution346.
      */
     @Test
-    public void testIsPowerOfThree() {
-        System.out.println("isPowerOfThree");
-        int n = 0;
-        Solution326 instance = new Solution326();
-        boolean expResult = false;
-        boolean result = instance.isPowerOfThree(n);
-        assertEquals(expResult, result);
-        
-        assertEquals(true, instance.isPowerOfThree(3));
-        assertEquals(false, instance.isPowerOfThree(8));
-        assertEquals(true, instance.isPowerOfThree(81));
-        assertEquals(false, instance.isPowerOfThree(101));
-        assertEquals(false, instance.isPowerOfThree(Integer.MAX_VALUE));
+    public void testNext() {
+        System.out.println("next");
+        int val = 0;
+        Solution346 instance = new Solution346(3);
+        double expResult = 0.0;
+        double result = instance.next(val);
+        assertEquals(expResult, result, 0.0);
+        assertEquals(1.5, instance.next(3), 0.001);
+        assertEquals(1, instance.next(0), 0.001);
+        assertEquals(2, instance.next(3), 0.001);
+        assertEquals(1, instance.next(0), 0.001);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

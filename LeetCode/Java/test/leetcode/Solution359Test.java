@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution326Test {
+public class Solution359Test {
     
-    public Solution326Test() {
+    public Solution359Test() {
     }
     
     @BeforeClass
@@ -38,22 +38,21 @@ public class Solution326Test {
     }
 
     /**
-     * Test of isPowerOfThree method, of class Solution326.
+     * Test of shouldPrintMessage method, of class Solution359.
      */
     @Test
-    public void testIsPowerOfThree() {
-        System.out.println("isPowerOfThree");
-        int n = 0;
-        Solution326 instance = new Solution326();
-        boolean expResult = false;
-        boolean result = instance.isPowerOfThree(n);
-        assertEquals(expResult, result);
-        
-        assertEquals(true, instance.isPowerOfThree(3));
-        assertEquals(false, instance.isPowerOfThree(8));
-        assertEquals(true, instance.isPowerOfThree(81));
-        assertEquals(false, instance.isPowerOfThree(101));
-        assertEquals(false, instance.isPowerOfThree(Integer.MAX_VALUE));
+    public void testShouldPrintMessage() {
+        System.out.println("shouldPrintMessage");
+        int timestamp = 0;
+        String message = "";
+        Solution359 instance = new Solution359();
+
+        assertEquals(true, instance.shouldPrintMessage(1, "foo"));
+        assertEquals(true, instance.shouldPrintMessage(2, "bar"));
+        assertEquals(false, instance.shouldPrintMessage(3, "foo"));
+        assertEquals(false, instance.shouldPrintMessage(8, "bar"));
+        assertEquals(false, instance.shouldPrintMessage(10, "foo"));
+        assertEquals(true, instance.shouldPrintMessage(11, "foo"));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

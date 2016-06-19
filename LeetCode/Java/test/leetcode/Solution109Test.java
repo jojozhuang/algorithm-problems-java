@@ -54,9 +54,9 @@ public class Solution109Test {
         ListNode node2 = new ListNode(1);
         node2.next = new ListNode(2);
         TreeNode result2 = instance.sortedListToBST(node2);
-        TreeNode expResult2 = TreeNode.CreateInstance(new String[] {"1","#","2"});
+        TreeNode expResult2 = TreeNode.CreateInstance(new String[] {"2","1","#"});
         assertEquals(expResult2.val, result2.val);
-        assertEquals(expResult2.right.val, result2.right.val);
+        assertEquals(expResult2.left.val, result2.left.val);
         
         ListNode node3 = new ListNode(1);
         node3.next = new ListNode(2);

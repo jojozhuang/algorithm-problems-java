@@ -68,6 +68,12 @@ public class Solution229Test {
         List<Integer> result4 = instance.majorityElement(new int[]{1,2,2,3,2,1,1,3});
         assertTrue(expResult4.containsAll(result4) && result4.containsAll(expResult4));
         
+        List<Integer> expResult5 = new ArrayList<Integer>();
+        expResult5.add(1);
+        expResult5.add(2);
+        List<Integer> result5 = instance.majorityElement(new int[]{1, 2});
+        assertTrue(expResult5.containsAll(result5) && result5.containsAll(expResult5));
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

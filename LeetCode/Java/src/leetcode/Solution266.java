@@ -5,6 +5,9 @@
  */
 package leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Palindrome Permutation.
  * 
@@ -24,6 +27,33 @@ package leetcode;
  */
 public class Solution266 {
     public boolean canPermutePalindrome(String s) {
+        if (s == null || s.isEmpty()) {
+            return false;
+        }
+        
+        HashMap<Character, Integer> map = new HashMap();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!map.containsKey(c)) {
+                map.put(c, 0);
+            }
+            map.put(c, map.get(c) + 1);
+        }
+        
+        boolean odd = false;
+        for(Integer val: map.values()) {
+            if (val % 2 == 1) {
+                if (odd == true) {
+                    return false;
+                } else {
+                    odd = true;
+                }
+            }
+        }
+        
+        return true;
+    }
+    public boolean canPermutePalindrome2(String s) {
         if (s == null || s.isEmpty()) {
             return false;
         }
