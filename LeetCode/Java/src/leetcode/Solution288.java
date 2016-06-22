@@ -49,8 +49,6 @@ public class Solution288 {
             String abbr = toAbbr(item);
             if (!map.containsKey(abbr)) {
                 map.put(abbr, item);
-            } else {
-                map.put(abbr, "");
             }
         }            
     }

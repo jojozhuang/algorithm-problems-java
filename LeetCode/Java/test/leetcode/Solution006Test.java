@@ -60,6 +60,7 @@ public class Solution006Test {
         assertEquals("AEBDFC", instance.convert("ABCDEF", 3));
         assertEquals("PAHNAPLSIIGYIR", instance.convert("PAYPALISHIRING", 3));
         assertEquals("AGBFHCEIKDJ", instance.convert("ABCDEFGHIJK", 4));
+        assertEquals("0481357926A", instance.convert("0123456789A", 3));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

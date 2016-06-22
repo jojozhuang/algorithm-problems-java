@@ -6,7 +6,9 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Majority Element II.
@@ -16,7 +18,7 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution229 {
-    public List<Integer> majorityElement(int[] nums) {
+    public List<Integer> majorityElement2(int[] nums) {
         List<Integer> res = new ArrayList<Integer>();
         if (nums == null || nums.length == 0) {
             return res;
@@ -62,6 +64,31 @@ public class Solution229 {
         if (count2 > nums.length / 3) {
             res.add(maj2);
         } 
+        return res;
+    }
+    
+    public List<Integer> majorityElement(int[] nums) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (nums == null || nums.length == 0) {
+            return res;
+        }
+        
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+       
+        for(int i = 0; i < nums.length; i++) {
+            if(!map.containsKey(nums[i])) {
+                map.put(nums[i], 1);
+            } else {
+                map.put(nums[i], map.get(nums[i]) + 1);
+            }
+        }
+        
+        for (Map.Entry<Integer, Integer> item: map.entrySet()) {
+            if (item.getValue() > nums.length / 3) {
+                res.add(item.getKey());
+            }
+        }
+        
         return res;
     }
 }

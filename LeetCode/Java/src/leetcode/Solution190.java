@@ -20,8 +20,16 @@ package leetcode;
  * 
  * @author Johnny
  */
-public class Solution190 {    
+public class Solution190 {
     public int reverseBits(int n) {
+        int res = 0;
+        for (int i = 0; i < 32; i++) {
+            res += ((n >> i) & 1) << (31 - i);
+        }
+        return res;
+    }
+    
+    public int reverseBits2(int n) {
         int res = 0; 
         for (int i = 0; i < 32; ++i) {
             if ((n & 1) == 1) {

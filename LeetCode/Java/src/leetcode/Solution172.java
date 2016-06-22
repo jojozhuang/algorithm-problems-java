@@ -16,6 +16,9 @@ package leetcode;
  */
 public class Solution172 {
     public int trailingZeroes(int n) {
+        return n <= 0 ? 0 : n / 5 + trailingZeroes(n / 5);
+    }
+    public int trailingZeroes2(int n) {
         if (n <= 0) {
             return 0;
         }
@@ -32,14 +35,14 @@ public class Solution172 {
         return ret;
     }   
     
-    public int trailingZeroes2(int n) {
+    public int trailingZeroes3(int n) {
         if (n < 0) {
             return -1;
         }
         
         int count = 0;
-        while(n > 0) {
-            count = count + n / 5;
+        while (n > 0) {
+            count += n / 5;
             n = n / 5;
         }
         

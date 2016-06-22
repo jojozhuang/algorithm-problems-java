@@ -39,8 +39,7 @@ public class Solution246 {
             if (!map.containsKey(num.charAt(left))) {
                 return false;
             }
-            char c = map.get(num.charAt(left));
-            if (c != num.charAt(right)) {
+            if (map.get(num.charAt(left)) != num.charAt(right)) {
                 return false;
             }
             left++;
@@ -50,7 +49,8 @@ public class Solution246 {
         if (num.length() % 2 == 0) {
             return true;
         } else {
-            if (num.charAt(left) == '0' || num.charAt(left) == '1' || num.charAt(left) == '8') {
+            char c = num.charAt(num.length() / 2);
+            if (c == '0' || c == '1' || c == '8') {
                 return true;
             } else {
                 return false;

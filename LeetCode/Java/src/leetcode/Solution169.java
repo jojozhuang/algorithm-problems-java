@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -18,26 +19,29 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution169 {
-    public int majorityElement(int[] nums) {
-        if (nums==null || nums.length==0)
+    //http://www.programcreek.com/2014/02/leetcode-majority-element-java/
+    //hashmap
+    public int majorityElement2(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return Integer.MIN_VALUE;
+        }
        
-        if (nums.length==1)
+        if (nums.length == 1) {
             return nums[0];
+        }
         
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int element;
         int count;
         
-        for(int i=0; i<nums.length; i++) {
+        for(int i = 0; i < nums.length; i++) {
             element = nums[i];
             if(!map.containsKey(element)) {
                 map.put(element, 1);
-            }
-            else {
+            } else {
                 count = map.get(element);
                 count++;
-                if (count>nums.length/2)
+                if (count > nums.length / 2)
                     return element;
                 else
                     map.replace(element, count);
@@ -46,22 +50,33 @@ public class Solution169 {
         
         return Integer.MIN_VALUE;
     }
+    
+    //sort
+    public int majorityElement(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return Integer.MIN_VALUE;
+        }
         
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
+    
+    //vote
     public int majorityNumber(int[] nums) {
-        if (nums == null || nums.length == 0) return Integer.MIN_VALUE;
+        if (nums == null || nums.length == 0) {
+            return Integer.MIN_VALUE;
+        }
 
-        // pair<key, count>
-        int key = -1, count = 0;
+        int key = 0, count = 0;
         for (int num : nums) {
-            // re-initialize
             if (count == 0) {
                 key = num;
                 count = 1;
-                continue;
-            }
-            // increment/decrement count
-            if (key == num) {
+            } else if (key == num) {
                 count++;
+                if (count > nums.length / 2) {
+                    return key;
+                }
             } else {
                 count--;
             }

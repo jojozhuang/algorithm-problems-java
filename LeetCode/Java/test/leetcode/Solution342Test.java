@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution299Test {
+public class Solution342Test {
     
-    public Solution299Test() {
+    public Solution342Test() {
     }
     
     @BeforeClass
@@ -38,24 +38,23 @@ public class Solution299Test {
     }
 
     /**
-     * Test of getHint method, of class Solution299.
+     * Test of isPowerOfFour method, of class Solution342.
      */
     @Test
-    public void testGetHint() {
-        System.out.println("getHint");
-        String secret = "";
-        String guess = "";
-        Solution299 instance = new Solution299();
-        String expResult = "0A0B";
-        String result = instance.getHint(secret, guess);
+    public void testIsPowerOfFour() {
+        System.out.println("isPowerOfFour");
+        int num = 0;
+        Solution342 instance = new Solution342();
+        boolean expResult = false;
+        boolean result = instance.isPowerOfFour(num);
         assertEquals(expResult, result);
         
-        assertEquals("1A0B", instance.getHint("12", "13"));
-        assertEquals("0A2B", instance.getHint("12", "21"));
-        assertEquals("2A0B", instance.getHint("123", "113"));
-        assertEquals("2A2B", instance.getHint("1234", "1432"));
-        assertEquals("1A3B", instance.getHint("1807", "7810"));
-        assertEquals("1A1B", instance.getHint("1123", "0111"));
+        assertEquals(false, instance.isPowerOfFour(2));
+        assertEquals(true, instance.isPowerOfFour(4));
+        assertEquals(false, instance.isPowerOfFour(5));
+        assertEquals(false, instance.isPowerOfFour(8));
+        assertEquals(true, instance.isPowerOfFour(16));
+        assertEquals(true, instance.isPowerOfFour(64));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

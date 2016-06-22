@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution299Test {
+public class Solution248Test {
     
-    public Solution299Test() {
+    public Solution248Test() {
     }
     
     @BeforeClass
@@ -38,24 +38,23 @@ public class Solution299Test {
     }
 
     /**
-     * Test of getHint method, of class Solution299.
+     * Test of strobogrammaticInRange method, of class Solution248.
      */
     @Test
-    public void testGetHint() {
-        System.out.println("getHint");
-        String secret = "";
-        String guess = "";
-        Solution299 instance = new Solution299();
-        String expResult = "0A0B";
-        String result = instance.getHint(secret, guess);
+    public void testStrobogrammaticInRange() {
+        System.out.println("strobogrammaticInRange");
+        String low = "";
+        String high = "";
+        Solution248 instance = new Solution248();
+        int expResult = 0;
+        int result = instance.strobogrammaticInRange(low, high);
         assertEquals(expResult, result);
         
-        assertEquals("1A0B", instance.getHint("12", "13"));
-        assertEquals("0A2B", instance.getHint("12", "21"));
-        assertEquals("2A0B", instance.getHint("123", "113"));
-        assertEquals("2A2B", instance.getHint("1234", "1432"));
-        assertEquals("1A3B", instance.getHint("1807", "7810"));
-        assertEquals("1A1B", instance.getHint("1123", "0111"));
+        assertEquals(2, instance.strobogrammaticInRange("1", "8"));
+        assertEquals(3, instance.strobogrammaticInRange("2", "70"));
+        assertEquals(1, instance.strobogrammaticInRange("88", "88"));
+        assertEquals(39, instance.strobogrammaticInRange("0", "10000"));
+
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
