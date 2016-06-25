@@ -43,10 +43,10 @@ public class Solution260 {
             }
         }
         
-        int[] ret = new int[2];
-        ret[0] = first;
-        ret[1] = second;
+        int[] res = new int[2];
+        res[0] = first;
+        res[1] = second;
         
-        return ret;
+        return res;
     }
 }

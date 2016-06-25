@@ -22,10 +22,10 @@ public class Solution136 {
             return 0;
         }
         
-        int ret = 0;
+        int res = 0;
         for(int i = 0; i < nums.length; i++) {
-            ret = ret ^ nums[i];
+            res = res ^ nums[i];
         }
-        return ret;
+        return res;
     }
 }
