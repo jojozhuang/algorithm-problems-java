@@ -43,6 +43,74 @@ public class Solution323 {
         if (n <= 0 || edges == null || edges.length == 0) {
             return 0;
         }
+        
+        // make set
+        Node[] nodes = new Node[n];
+        for (int i = 0; i < n; i++) {
+            Node node = new Node();
+            node.Rank = 0;
+            node.Val = i;
+            node.Parent = node;
+            nodes[i] = node;
+        }
+        
+        // union
+        for (int i = 0; i < edges.length; i++) {
+            int[] edge = edges[i];
+            union(nodes[edge[0]], nodes[edge[1]]);
+        }
+        // find root
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (nodes[i].Parent == nodes[i]){
+                count++;
+            }
+        }
+        
+        return count;
+    }   
+    
+    private void union(Node node1, Node node2) {
+        if (node1 == null || node2 == null) {
+            return;
+        }
+        Node root1 = find(node1);
+        Node root2 = find(node2);
+        if (root1.Rank > root2.Rank) {
+            root2.Parent = root1;
+        } else if (root1.Rank < root2.Rank) {
+            root1.Parent = root2;
+        } else {
+            root2.Parent = root1;
+            root1.Rank++;
+        }
+    }
+    
+    private Node find(Node node) {
+        if (node == null) {
+            return null;
+        }
+        Node root = node;
+        while (root.Parent != root) {
+            root = root.Parent;
+        }
+        return root;
+    }
+    
+    class Node {
+        public int Rank;
+        public int Val;
+        public Node Parent;
+        /*public Node(int rank, int val, Node parent) {
+            Rank = rank;
+            Val = val;
+            Parent = parent;
+        }*/
+    }
+    public int countComponents3(int n, int[][] edges) {
+        if (n <= 0 || edges == null || edges.length == 0) {
+            return 0;
+        }
         // make set, initial
         int[] parent = new int[n];
         for (int i = 0; i < n; i++) {

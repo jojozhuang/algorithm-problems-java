@@ -28,6 +28,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution319 {
+    //https://leetcode.com/discuss/91371/share-my-o-1-solution-with-explanation
     public int bulbSwitch(int n) {
         return (int)Math.sqrt(n); 
     }
