@@ -38,6 +38,7 @@ public class Solution318 {
         int[] elements = new int[n];
         for (int i = 0; i < n; i++){
             for(int j = 0; j < words[i].length(); j++){
+                // Convert to int which has 26 bits
                 elements[i] |= 1 << (words[i].charAt(j) - 'a');
             }
         }
