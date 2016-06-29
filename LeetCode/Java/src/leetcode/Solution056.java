@@ -38,8 +38,7 @@ public class Solution056 {
                 res.add(prev);
                 prev = curr;
             } else {
-                Interval merge = new Interval(prev.start, Math.max(prev.end, curr.end));
-                prev = merge;
+                prev.end = Math.max(prev.end, curr.end);
             }
         }
         res.add(prev);

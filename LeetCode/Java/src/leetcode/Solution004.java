@@ -16,7 +16,7 @@ package leetcode;
 public class Solution004 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if ((nums1 == null || nums1.length == 0) && (nums2 == null || nums2.length == 0)) {
-            return -1;
+            return 0;
         }
 
         int len1 = (nums1 == null) ? 0 : nums1.length;

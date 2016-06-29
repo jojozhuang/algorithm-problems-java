@@ -46,11 +46,11 @@ public class Solution004Test {
         int[] nums1 = null;
         int[] nums2 = null;
         Solution004 instance = new Solution004();
-        double expResult = -1;
+        double expResult = 0;
         double result = instance.findMedianSortedArrays(nums1, nums2);
         assertEquals(expResult, result, 0.0);
         
-        assertEquals(0, instance.findMedianSortedArrays(new int[] {0}, null), 0.0);
+        assertEquals(0, instance.findMedianSortedArrays(new int[]{}, null), 0.0);
         assertEquals(1, instance.findMedianSortedArrays(null, new int[] {1}), 0.0);
         assertEquals(1.5, instance.findMedianSortedArrays(new int[] {1}, new int[] {2}), 0.0);
         assertEquals(2, instance.findMedianSortedArrays(new int[] {1,2}, new int[] {3}), 0.0);
