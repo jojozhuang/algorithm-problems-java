@@ -29,7 +29,89 @@ package leetcode;
  * @author Johnny
  */
 public class Solution044 {
+    //https://leetcode.com/discuss/89337/java-dp-accepted
     public boolean isMatch(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        
+        char[] arrs = s.toCharArray();
+        char[] arrp = p.toCharArray();
+        int m = arrs.length;
+        int n = arrp.length;
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        dp[0][0] = true;
+        
+        for (int j = 1; j <= n; j++) {
+            dp[0][j] = dp[0][j - 1] && arrp[j - 1] == '*';
+        }
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (arrs[i - 1] == arrp[j - 1] || arrp[j - 1] == '?') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if (arrp[j - 1] == '*') {
+                    dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
+                } 
+            }
+        }
+
+        return dp[m][n];
+    }
+    //dp
+    //https://www.youtube.com/watch?v=3ZDZ-N0EPV0
+    public boolean isMatch3(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        
+        char[] arrs = s.toCharArray();
+        char[] arrp = p.toCharArray();        
+        //remove duplicated *       
+        int index = 0;
+        boolean first = true;
+        for (int i = 0; i < arrp.length; i++) {
+            if (arrp[i] == '*') {
+                if (first) {
+                    arrp[index++] = arrp[i];
+                    first = false;
+                }
+            } else {
+                arrp[index++] = arrp[i];
+                first = true;
+            }
+        }
+
+        int m = s.length();
+        int n = index;
+        if (m == 0 && n == 0) {
+            return true;
+        } else if (m != 0 && n == 0) {
+            return false;
+        }
+        
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        dp[0][0] = true;
+        if (p.charAt(0) == '*') {
+            dp[0][1] = true;
+        }
+        //first row = false and first column = false;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (arrs[i] == arrp[j] || arrp[j] == '?') {
+                    dp[i + 1][j + 1] = dp[i][j];
+                } else if (arrp[j] == '*') {
+                    dp[i + 1][j + 1] = dp[i][j + 1] || dp[i + 1][j];
+                } else {
+                    dp[i + 1][j + 1] = false;
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+    
+    public boolean isMatch2(String s, String p) {
         if (s == null || p == null) {
             return false;
         }

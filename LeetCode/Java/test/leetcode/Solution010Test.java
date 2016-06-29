@@ -56,7 +56,8 @@ public class Solution010Test {
         assertEquals(true, instance.isMatch("aa",".*"));
         assertEquals(true, instance.isMatch("ab",".*"));
         assertEquals(true, instance.isMatch("aab","c*a*b"));
-        assertEquals(true, instance.isMatch("abcd","d*"));
+        assertEquals(true, instance.isMatch("aaa","ab*ac*a"));
+        //assertEquals(true, instance.isMatch("abcd","d*"));
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

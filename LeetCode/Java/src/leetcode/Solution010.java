@@ -29,7 +29,42 @@ package leetcode;
  * @author Johnny
  */
 public class Solution010 {
+    //dp
+    //https://www.youtube.com/watch?v=l3hda49XcDE
     public boolean isMatch(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        
+        char[] arrs = s.toCharArray();
+        char[] arrp = p.toCharArray();
+        int m = arrs.length;
+        int n = arrp.length;
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        dp[0][0] = true;
+        
+        for (int j = 1; j <= n; j++) {
+            if (arrp[j - 1] == '*') {
+                dp[0][j] = dp[0][j - 2];
+            }
+        }
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (arrs[i - 1] == arrp[j - 1] || arrp[j - 1] == '.') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if (arrp[j - 1] == '*') {
+                    dp[i][j] = dp[i][j - 2];
+                    if (arrp[j - 2] == '.' || arrp[j - 2] == arrs[i - 1]) {
+                        dp[i][j] = dp[i - 1][j] || dp[i][j];
+                    }
+                } 
+            }
+        }
+
+        return dp[m][n];
+    }
+    public boolean isMatch2(String s, String p) {
         if (s.isEmpty() && p.isEmpty())
             return true;
         if (!s.isEmpty() && p.isEmpty())
