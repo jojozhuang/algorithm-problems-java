@@ -34,8 +34,35 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution089 {
-    //http://fisherlei.blogspot.com/2012/12/leetcode-gray-code.html
+    //loop
     public List<Integer> grayCode(int n) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (n <= 0) {
+            res.add(0);
+            return res;
+        }
+        
+        res.add(0);
+        res.add(1);
+        if (n == 1) {
+            return res;
+        }
+        
+        int i = 2;
+        while (i <= n) {
+            List<Integer> list = new ArrayList<Integer>();
+            for (int j = res.size() - 1; j >= 0; j--) {
+                list.add(res.get(j) + (1 << (i - 1)));
+            }
+            res.addAll(list);
+            i++;
+        }
+        
+        return res;
+    }
+    //recursion
+    //http://fisherlei.blogspot.com/2012/12/leetcode-gray-code.html
+    public List<Integer> grayCode2(int n) {
         List<Integer> res = new ArrayList();
         if (n <= 0) {
             res.add(0);
