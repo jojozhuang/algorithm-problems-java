@@ -67,7 +67,6 @@ public class Solution331 {
             }
         }
         
-        return diff == 0;
-        
-    }
+        return diff == 0;        
+    }    
 }

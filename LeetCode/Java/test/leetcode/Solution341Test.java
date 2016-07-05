@@ -19,9 +19,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution364Test {
+public class Solution341Test {
     
-    public Solution364Test() {
+    public Solution341Test() {
     }
     
     @BeforeClass
@@ -41,24 +41,65 @@ public class Solution364Test {
     }
 
     /**
-     * Test of depthSumInverse method, of class Solution364.
+     * Test of next method, of class Solution341.
      */
     @Test
-    public void testDepthSumInverse() {
-        System.out.println("depthSumInverse");
-        List<NestedInteger> nestedList = null;
-        Solution364 instance = new Solution364();
-        int expResult = 0;
-        int result = instance.depthSumInverse(nestedList);
-        assertEquals(expResult, result);
+    public void testNext() {
+        System.out.println("next");
         
-        assertEquals(6, instance.depthSumInverse(getExample1()));
-        assertEquals(15, instance.depthSumInverse(getExample2()));
-        assertEquals(8, instance.depthSumInverse(getExample3()));
+        Solution341 instance0 = new Solution341(getExampleEmpty());
+        assertEquals(false, instance0.hasNext());
+        assertEquals(null, instance0.next());
+        
+        //[1,2,3]
+        Solution341 instance1 = new Solution341(getExample1());
+        assertEquals(true, instance1.hasNext());
+        assertEquals(Integer.valueOf(1), instance1.next());
+        assertEquals(true, instance1.hasNext());
+        assertEquals(Integer.valueOf(2), instance1.next());
+        assertEquals(true, instance1.hasNext());
+        assertEquals(Integer.valueOf(3), instance1.next());
+        assertEquals(false, instance1.hasNext());
+        assertEquals(null, instance1.next());
+        
+         //[[4],[5],[6]]
+        Solution341 instance2 = new Solution341(getExample2());
+        assertEquals(true, instance2.hasNext());
+        assertEquals(Integer.valueOf(4), instance2.next());
+        assertEquals(true, instance2.hasNext());
+        assertEquals(Integer.valueOf(5), instance2.next());
+        assertEquals(true, instance2.hasNext());
+        assertEquals(Integer.valueOf(6), instance2.next());
+        assertEquals(false, instance2.hasNext());
+        assertEquals(null, instance2.next());
+        
+        //[[1,2],3,[4,5]]
+        Solution341 instance3 = new Solution341(getExample3());
+        assertEquals(true, instance3.hasNext());
+        assertEquals(Integer.valueOf(1), instance3.next());
+        assertEquals(true, instance3.hasNext());
+        assertEquals(Integer.valueOf(2), instance3.next());
+        assertEquals(true, instance3.hasNext());
+        assertEquals(Integer.valueOf(3), instance3.next());
+        assertEquals(true, instance3.hasNext());
+        assertEquals(Integer.valueOf(4), instance3.next());
+        assertEquals(true, instance3.hasNext());
+        assertEquals(Integer.valueOf(5), instance3.next());
+        assertEquals(false, instance3.hasNext());
+        assertEquals(null, instance3.next());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    //[[]]
+    public static List<NestedInteger> getExampleEmpty() {
+        NestedInteger empty = new NestedInteger();
+        List<NestedInteger> input = new ArrayList<NestedInteger>();
+        input.add(empty);
+        return input;
+    }
     
+    //[1,2,3]
     public static List<NestedInteger> getExample1() {
         NestedInteger one = new NestedInteger();
         one.i = 1;
@@ -74,6 +115,7 @@ public class Solution364Test {
 
         return input;
     }
+    //[[4],[5],[6]]
     public static List<NestedInteger> getExample2() {
         NestedInteger four = new NestedInteger();
         four.i = 4;
@@ -103,25 +145,26 @@ public class Solution364Test {
 
         return input;
     }
+    //[[1,2],3,[4,5]]
     public static List<NestedInteger> getExample3() {
         NestedInteger one_1 = new NestedInteger();
         one_1.i = 1;
 
         NestedInteger one_2 = new NestedInteger();
-        one_2.i = 1;
+        one_2.i = 2;
 
         List<NestedInteger> firstElement = new ArrayList<NestedInteger>();
         firstElement.add(one_1);
         firstElement.add(one_2);
 
         NestedInteger two = new NestedInteger();
-        two.i = 2;
+        two.i = 3;
 
         NestedInteger one_3 = new NestedInteger();
-        one_3.i = 1;
+        one_3.i = 4;
 
         NestedInteger one_4 = new NestedInteger();
-        one_4.i = 1;
+        one_4.i = 5;
 
         List<NestedInteger> thirdElement = new ArrayList<NestedInteger>();
         thirdElement.add(one_3);

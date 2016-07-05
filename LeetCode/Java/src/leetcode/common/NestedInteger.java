@@ -5,6 +5,7 @@
  */
 package leetcode.common;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /** 
@@ -27,27 +28,31 @@ public interface NestedInteger
 }*/
 
 public class NestedInteger {
-    public Object self;
+    public List<NestedInteger> list = new ArrayList();
+    public Integer i;
 
     // Returns true if this com.sada.linkedin.NestedInteger holds a single integer, rather than a nested list
     public boolean isInteger() {
-        if (self instanceof String) {
-            return true;
+        if (i == null) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     // Returns the single integer that this NestedInteger holds, if it holds a single integer
     // Returns null if this holds a nested list
     public Integer getInteger() {
-        return Integer.valueOf(self.toString());
+        if (isInteger()) {
+            return i;
+        } 
+        return null;
     }
 
     // Returns the nested list that this NestedInteger holds, if it holds a nested list
     // Returns null if this NestedInteger holds a single integer
     public List<NestedInteger> getList() {
         if (!isInteger()) {
-            return (List<NestedInteger>) self;
+            return list;
         }
 
         return null;

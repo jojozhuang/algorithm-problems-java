@@ -42,17 +42,18 @@ public class Solution337 {
             return 0;
         }
         
-        return dfs(root)[0];
+        return helper(root)[0];
     }
     
-    private int[] dfs(TreeNode root) {
-        int dp[] = {0, 0}; //d[0]: max, d[1]: max without root
-        if(root != null){
-            int[] dp_L = dfs(root.left);
-            int[] dp_R = dfs(root.right);
-            dp[1] = dp_L[0] + dp_R[0];
-            dp[0] = Math.max(dp[1] ,dp_L[1] + dp_R[1] + root.val);
+    private int[] helper(TreeNode root) {
+        int[] res = {0, 0}; // 0: max, 1: max without root
+        if (root != null) {
+            int[] left = helper(root.left);
+            int[] right = helper(root.right);
+            res[1] = left[0] + right[0];
+            res[0] = Math.max(res[1], left[1] + right[1] + root.val);
         }
-        return dp;
+        
+        return res;
     }
 }

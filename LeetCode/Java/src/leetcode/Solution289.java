@@ -26,7 +26,64 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution289 {
+    //https://segmentfault.com/a/1190000003819277
+    //http://www.cnblogs.com/grandyang/p/4854466.html
+    //http://www.programcreek.com/2014/05/leetcode-game-of-life-java/
     public void gameOfLife(int[][] board) {
+        if (board == null || board.length == 0 || board[0].length == 0) {
+            return;
+        }
+        
+        int[] dx = new int[] {-1,-1,-1,0,1,1,1,0};
+        int[] dy = new int[] {-1,0,1,1,1,0,-1,-1};
+        int m = board.length;
+        int n = board[0].length;
+        
+        // 0: 0->0
+        // 1: 1->1
+        // 2: 0->1
+        // 3: 1->0
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int count = 0;
+                for (int k = 0; k < 8; k++) {
+                    count += getNeighbors(board, i + dx[k], j + dy[k]);
+                }
+                
+                if ((board[i][j] & 1) == 1 && count < 2) {
+                    board[i][j] = 3;
+                } else if ((board[i][j] & 1) == 1 && (count == 2 || count == 3)) {
+                    board[i][j] = 1;
+                } else if ((board[i][j] & 1) == 1 && count > 3) {
+                    board[i][j] = 3;
+                } else if ((board[i][j] & 1) == 0 && count == 3){
+                    board[i][j] = 2;
+                }
+            }
+        }
+        
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 3) {
+                    board[i][j] = 0;
+                } else if (board[i][j] == 2) {
+                    board[i][j] = 1;
+                }
+            }
+        }
+    }
+    
+    private int getNeighbors(int[][] board, int i, int j) {
+        int m = board.length;
+        int n = board[0].length;
+        if (i < 0 || i >= m || j < 0 || j >= n) {
+            return 0;
+        }
+        
+        return board[i][j] & 1;
+    }
+    
+    public void gameOfLife2(int[][] board) {
         if (board == null || board.length == 0 || board[0].length == 0) {
             return;
         }

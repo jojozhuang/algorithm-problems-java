@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution279Test {
+public class Solution186Test {
     
-    public Solution279Test() {
+    public Solution186Test() {
     }
     
     @BeforeClass
@@ -38,20 +38,27 @@ public class Solution279Test {
     }
 
     /**
-     * Test of numSquares method, of class Solution279.
+     * Test of reverseWords method, of class Solution186.
      */
     @Test
-    public void testNumSquares() {
-        System.out.println("numSquares");
-        int n = 0;
-        Solution279 instance = new Solution279();
-        int expResult = 0;
-        int result = instance.numSquares(n);
-        assertEquals(expResult, result);
+    public void testReverseWords() {
+        System.out.println("reverseWords");
+        char[] s = null;
+        Solution186 instance = new Solution186();
+        instance.reverseWords(s);
         
-        assertEquals(1, instance.numSquares(4));
-        assertEquals(3, instance.numSquares(12));
-        assertEquals(2, instance.numSquares(13));
+        char[] s2 = "vc".toCharArray();
+        instance.reverseWords(s2);
+        assertArrayEquals("vc".toCharArray(), s2);
+        
+        char[] s3 = "blue the".toCharArray();
+        instance.reverseWords(s3);
+        assertArrayEquals("the blue".toCharArray(), s3);
+        
+        char[] s4 = "blue is sky the".toCharArray();
+        instance.reverseWords(s4);
+        assertArrayEquals("the sky is blue".toCharArray(), s4);
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

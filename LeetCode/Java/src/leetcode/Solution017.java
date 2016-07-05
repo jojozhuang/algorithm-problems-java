@@ -49,7 +49,7 @@ public class Solution017 {
             return;
         }
         
-        int num = Integer.parseInt(String.valueOf(digits.charAt(pos)));
+        int num = digits.charAt(pos) - '0';
         if (map.containsKey(num)) {
             String chars = map.get(num);
             for (int i = 0; i < chars.length(); i++) {

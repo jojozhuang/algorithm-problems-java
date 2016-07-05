@@ -61,11 +61,11 @@ public class Solution339Test {
     
     public static List<NestedInteger> getExample1() {
         NestedInteger one = new NestedInteger();
-        one.self = "1";
+        one.i = 1;
         NestedInteger two = new NestedInteger();
-        two.self = "2";
+        two.i = 2;
         NestedInteger three = new NestedInteger();
-        three.self = "3";        
+        three.i = 3;        
 
         List<NestedInteger> input = new ArrayList<NestedInteger>();
         input.add(one);
@@ -76,25 +76,25 @@ public class Solution339Test {
     }
     public static List<NestedInteger> getExample2() {
         NestedInteger four = new NestedInteger();
-        four.self = "4";
+        four.i = 4;
         List<NestedInteger> fourList = new ArrayList<NestedInteger>();
         fourList.add(four);
         NestedInteger fourElement = new NestedInteger();
-        fourElement.self = fourList;
+        fourElement.list = fourList;
         
         NestedInteger five = new NestedInteger();
-        five.self = "5";
+        five.i = 5;
         List<NestedInteger> fiveList = new ArrayList<NestedInteger>();
         fiveList.add(five);
         NestedInteger fiveElement = new NestedInteger();
-        fiveElement.self = fiveList;
+        fiveElement.list = fiveList;
         
         NestedInteger six = new NestedInteger();
-        six.self = "6";
+        six.i = 6;
         List<NestedInteger> sixList = new ArrayList<NestedInteger>();
         sixList.add(six);
         NestedInteger sixElement = new NestedInteger();
-        sixElement.self = sixList;
+        sixElement.list = sixList;
 
         List<NestedInteger> input = new ArrayList<NestedInteger>();
         input.add(fourElement);
@@ -105,33 +105,33 @@ public class Solution339Test {
     }
     public static List<NestedInteger> getExample3() {
         NestedInteger one_1 = new NestedInteger();
-        one_1.self = "1";
+        one_1.i = 1;
 
         NestedInteger one_2 = new NestedInteger();
-        one_2.self = "1";
+        one_2.i = 1;
 
         List<NestedInteger> firstElement = new ArrayList<NestedInteger>();
         firstElement.add(one_1);
         firstElement.add(one_2);
 
         NestedInteger two = new NestedInteger();
-        two.self = "2";
+        two.i = 2;
 
         NestedInteger one_3 = new NestedInteger();
-        one_3.self = "1";
+        one_3.i = 1;
 
         NestedInteger one_4 = new NestedInteger();
-        one_4.self = "1";
+        one_4.i = 1;
 
         List<NestedInteger> thirdElement = new ArrayList<NestedInteger>();
         thirdElement.add(one_3);
         thirdElement.add(one_4);
 
         NestedInteger firstElementObject = new NestedInteger();
-        firstElementObject.self = firstElement;
+        firstElementObject.list = firstElement;
 
         NestedInteger thirdElementObject = new NestedInteger();
-        thirdElementObject.self = thirdElement;
+        thirdElementObject.list = thirdElement;
 
         List<NestedInteger> input = new ArrayList<NestedInteger>();
         input.add(firstElementObject);

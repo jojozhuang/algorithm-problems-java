@@ -7,6 +7,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 import leetcode.common.TreeNode;
 
 /**
@@ -32,6 +33,49 @@ import leetcode.common.TreeNode;
  */
 public class Solution129 {
     public int sumNumbers(TreeNode root) {
+        if(root == null){
+            return 0;
+        }
+        
+        int sum = 0;
+        TreeNode curr;
+        Stack<TreeNode> ws = new Stack<TreeNode>();
+        ws.push(root);
+
+        while(!ws.empty()){
+            curr = ws.pop();
+            if(curr.right != null){
+                curr.right.val = curr.val*10 + curr.right.val;
+                ws.push(curr.right);
+            }
+
+            if(curr.left != null){
+                curr.left.val = curr.val*10 + curr.left.val;
+                ws.push(curr.left);
+            }
+
+            if(curr.left == null && curr.right == null){ // leaf node
+                sum += curr.val;
+            }
+        }
+        return sum;
+    }
+    public int sumNumbers3(TreeNode root) {
+        return dfs(root, 0);    
+    }
+    private int dfs(TreeNode root, int num){
+        if(root == null){
+            return 0;
+        }
+
+        num = num*10 + root.val;
+        if(root.left == null && root.right == null) {
+            return num;
+        }
+
+        return dfs(root.left, num) + dfs(root.right,num);
+    }
+    public int sumNumbers2(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -46,25 +90,27 @@ public class Solution129 {
     }
     
     private List<String> helper(TreeNode root) {
+        List<String> res = new ArrayList<String>();
         if (root == null) {
-            return new ArrayList<String>();
+            return res;
         }
         
-        List<String> res = new ArrayList<String>();
-        String str = String.valueOf(root.val);
         List<String> left = helper(root.left);
         List<String> right = helper(root.right);
         
-        if (left.size() > 0 || right.size() > 0) {
-            for (String item : left) {
-                res.add(str + item);
-            }
-            for (String item : right) {
-                res.add(str + item);
-            }
-        } else {
-            res.add(str);
+        if (left.size() == 0 && right.size() == 0) {
+            res.add(String.valueOf(root.val));
+            return res;
         }
+        
+        for (int i = 0; i < left.size(); i++) {
+            res.add(String.valueOf(root.val) + left.get(i));
+        }
+        
+        for (int i = 0; i < right.size(); i++) {
+            res.add(String.valueOf(root.val) + right.get(i));
+        }
+        
         return res;
     }
 }

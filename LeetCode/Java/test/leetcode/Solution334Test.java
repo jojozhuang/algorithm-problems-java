@@ -55,6 +55,8 @@ public class Solution334Test {
         assertEquals(true, instance.increasingTriplet(new int[]{1,2,1,4,3,2,1}));
         assertEquals(true, instance.increasingTriplet(new int[]{1,2,0,4,5,6,7}));
         assertEquals(true, instance.increasingTriplet(new int[]{5,1,5,5,2,5,4}));
+        assertEquals(false, instance.increasingTriplet(new int[]{4,2,1,3}));
+        assertEquals(false, instance.increasingTriplet(new int[]{1,1,1,1,2}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * Reverse Words in a String.
  * Given an input string, reverse the string word by word.
@@ -28,6 +30,58 @@ package leetcode;
  */
 public class Solution151 {
     public String reverseWords(String s) {
+        if (s == null || s.isEmpty()) {
+            return s;
+        }
+        
+        s = s.trim();
+        if (s.indexOf(" ") == -1) { // only one word
+            return s;
+        }
+        char[] chs = s.trim().toCharArray();
+        reverse(chs, 0, chs.length - 1);
+        
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        int start = -1;
+        while (i < chs.length) {
+            if (chs[i] == ' ') {
+                if (start == -1) {
+                    i++;
+                    continue;
+                }
+                reverse(chs, start, i - 1);
+                sb.append(new String(Arrays.copyOfRange(chs, start, i)));
+                sb.append(" ");
+                start = -1;
+            } else {
+                if (start == -1) {
+                    start = i;
+                }
+            }
+            i++;
+        }
+        reverse(chs, start, chs.length - 1);
+        sb.append(new String(Arrays.copyOfRange(chs, start, chs.length)));
+        
+        return sb.toString();
+    }
+    
+    private void reverse(char[] arr, int start, int end) {
+        if (start > end) {
+            return;
+        }
+        
+        while (start < end) {
+            char c = arr[start];
+            arr[start] = arr[end];
+            arr[end] = c;
+            start++;
+            end--;
+        }
+    }
+    
+    public String reverseWords2(String s) {
         if (s == null || s.length() == 0) {
             return s;
         }

@@ -29,6 +29,7 @@ import java.util.Collections;
  */
 public class Solution274 {
     //http://blog.welkinlan.com/2015/11/05/h-index-i-ii-leetcode-java/
+    //https://segmentfault.com/a/1190000003794831
     public int hIndex(int[] citations) {
         if (citations == null || citations.length == 0) {
             return 0;
