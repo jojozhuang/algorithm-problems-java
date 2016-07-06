@@ -22,23 +22,23 @@ import java.util.List;
  */
 public class Solution093 {
     public List<String> restoreIpAddresses(String s) {  
-        List<String> ret = new ArrayList<String>();  
+        List<String> res = new ArrayList<String>();  
         if (s.length() < 4 || s.length() > 12) {
-            return ret;
+            return res;
         }  
-        dfs(s, "", ret, 0);  
-        return ret;  
+        dfs(s, "", 0, res);  
+        return res;  
     }  
       
-    private void dfs(String s, String tmp, List<String> ret, int count){  
+    private void dfs(String s, String tmp, int count, List<String> res){  
         if (count == 3 && isValid(s)) {  
-            ret.add(tmp + s);  
+            res.add(tmp + s);  
             return;  
         }  
         for(int i = 1; i < 4 && i < s.length(); i++){  
             String substr = s.substring(0, i);  
             if (isValid(substr)){  
-                dfs(s.substring(i), tmp + substr + '.', ret, count + 1);  
+                dfs(s.substring(i), tmp + substr + '.', count + 1, res);  
             }  
         }  
     }  

@@ -42,16 +42,16 @@ import java.util.Queue;
  */
 public class Solution210 {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        int[] ret = new int[numCourses];
+        int[] res = new int[numCourses];
         
         if (numCourses <= 0) {
-            return ret;
+            return res;
         }
         if (prerequisites == null || prerequisites.length == 0) {              
             for(int i = 0; i < numCourses; i++){
-                ret[i] = i;
+                res[i] = i;
             }
-            return ret;
+            return res;
         }
         
         int len = prerequisites.length;
@@ -72,7 +72,7 @@ public class Solution210 {
         int j = 0;
         while(!queue.isEmpty()) {
             int course =  queue.poll();            
-            ret[j] = course;
+            res[j] = course;
             j++;
             // find our any other course depends on it
             for (int i = 0; i < len; i++) {
@@ -87,7 +87,7 @@ public class Solution210 {
         }
         
         if (j == numCourses) {
-            return ret;
+            return res;
         } else {
             return new int[0];
         }

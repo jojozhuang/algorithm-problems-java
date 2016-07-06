@@ -24,21 +24,21 @@ import java.util.Map;
  */
 public class Solution047 {
     public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (nums == null || nums.length == 0) {
-            return ret;
+            return res;
         }
         
         Arrays.sort(nums);
         List<Integer> list = new ArrayList<Integer>();
         boolean[] visited = new boolean[nums.length];
-        helper(ret, list, nums, visited);
-        return ret;
+        helper(nums, visited, list, res);
+        return res;
     }
     
-    private void helper(List<List<Integer>> ret, List<Integer> list, int[] nums, boolean[] visited) {
+    private void helper(int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> res) {
         if (list.size() == nums.length) {
-            ret.add(new ArrayList<Integer>(list));
+            res.add(new ArrayList<Integer>(list));
         }
         
         for (int i = 0; i < nums.length; i++) {
@@ -47,7 +47,7 @@ public class Solution047 {
             }
             visited[i] = true;
             list.add(nums[i]);
-            helper(ret, list, nums, visited);
+            helper(nums, visited, list, res);
             list.remove(list.size() - 1);
             visited[i] = false;
         }

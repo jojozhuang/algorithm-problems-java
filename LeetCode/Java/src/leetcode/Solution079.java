@@ -42,8 +42,8 @@ public class Solution079 {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == word.charAt(0)) {
-                    boolean[][] visisted = new boolean[m][n];
-                    if (dfs(board, word, i, j, visisted)){
+                    boolean[][] visited = new boolean[m][n];
+                    if (dfs(board, word, i, j, visited)){
                         return true;
                     }
                 }

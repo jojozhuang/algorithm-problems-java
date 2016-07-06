@@ -27,8 +27,8 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution031 {
-    public void nextPermutation(int[] nums) {
-        //http://fisherlei.blogspot.com/2012/12/leetcode-next-permutation.html
+    //http://fisherlei.blogspot.com/2012/12/leetcode-next-permutation.html
+    public void nextPermutation(int[] nums) {        
         if (nums == null || nums.length == 0) {
             return;
         }

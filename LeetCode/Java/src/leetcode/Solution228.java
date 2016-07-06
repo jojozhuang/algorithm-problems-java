@@ -19,14 +19,14 @@ import java.util.List;
  */
 public class Solution228 {
     public List<String> summaryRanges(int[] nums) {
-        List<String> ret = new ArrayList<String>();
+        List<String> res = new ArrayList<String>();
         if (nums == null || nums.length == 0) {
-            return ret;
+            return res;
         }
         
         if (nums.length == 1) {
-            ret.add(String.valueOf(nums[0]));
-            return ret;
+            res.add(String.valueOf(nums[0]));
+            return res;
         }
         
         int head = 1;
@@ -34,9 +34,9 @@ public class Solution228 {
         while(head < nums.length) {            
             if (nums[head - 1] + 1 < nums[head]) {
                 if (head - 1 - tail == 0) {
-                    ret.add(String.valueOf(nums[tail]));
+                    res.add(String.valueOf(nums[tail]));
                 } else {
-                    ret.add(String.valueOf(nums[tail]) + "->" + String.valueOf(nums[head - 1]));
+                    res.add(String.valueOf(nums[tail]) + "->" + String.valueOf(nums[head - 1]));
                 }
                 tail = head;
             }
@@ -44,11 +44,11 @@ public class Solution228 {
         }
         
         if (nums.length - 1 == tail) {
-            ret.add(String.valueOf(nums[tail]));
+            res.add(String.valueOf(nums[tail]));
         } else {
-            ret.add(String.valueOf(nums[tail]) + "->" + String.valueOf(nums[nums.length - 1]));
+            res.add(String.valueOf(nums[tail]) + "->" + String.valueOf(nums[nums.length - 1]));
         }
         
-        return ret;
+        return res;
     }
 }

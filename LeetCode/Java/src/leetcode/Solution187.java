@@ -31,34 +31,34 @@ import java.util.Map;
 public class Solution187 {
     //http://yuanhsh.iteye.com/blog/2185976
     public List<String> findRepeatedDnaSequences(String s) {
-        List<String> result = new ArrayList<>();  
-        if(s == null || s.length() < 10) {
-            return result;
+        List<String> res = new ArrayList<String>();
+        if (s == null || s.length() == 0) {
+            return res;
         }
         
-        Map<Character, Integer> map = new HashMap<>();  
-        map.put('A', 0);  
-        map.put('C', 1);  
-        map.put('G', 2);  
-        map.put('T', 3);  
-        Map<Integer, Integer> sumMap = new HashMap<>();  
-       
-        int sum = 0;  
-        for(int i = 0; i < s.length(); i++) {  
-            sum = ((sum << 2) + map.get(s.charAt(i))) & 0xFFFFF;  
+        HashMap<Character, Integer> map = new HashMap();
+        map.put('A', 0);
+        map.put('C', 1);
+        map.put('G', 2);
+        map.put('T', 3);
+        
+        HashMap<Integer, Integer> sumMap = new HashMap();
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            sum = ((sum << 2) + map.get(s.charAt(i))) & 0xFFFFF;
             if (i < 9) {
                 continue;
             }
-            Integer cnt = sumMap.get(sum);
-            if (cnt == null) {
-                sumMap.put(sum, 1);  
+            if (!sumMap.containsKey(sum)) {
+                sumMap.put(sum, 1);
             } else {
-                sumMap.put(sum, cnt + 1); 
-                if (cnt == 1) {
-                    result.add(s.substring(i - 9,i + 1));  
+                sumMap.put(sum, sumMap.get(sum) + 1);
+                if (sumMap.get(sum) == 2) {
+                    res.add(s.substring(i - 9, i + 1));
                 }
-            }           
-        }  
-        return result;  
+            }
+        }
+        
+        return res;
     }
 }

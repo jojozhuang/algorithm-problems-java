@@ -35,7 +35,7 @@ public class Solution179 {
             public int compare(String s1, String s2){
                 String leftRight = s1 + s2;
                 String rightLeft = s2 + s1;
-                return -leftRight.compareTo(rightLeft);
+                return rightLeft.compareTo(leftRight); // big to small
             }
         });
 

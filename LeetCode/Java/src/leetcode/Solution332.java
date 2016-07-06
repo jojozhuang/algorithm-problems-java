@@ -40,9 +40,9 @@ import java.util.Queue;
  */
 public class Solution332 {
     public List<String> findItinerary(String[][] tickets) {
-         LinkedList<String> ret = new LinkedList<String>();
+        List<String> res = new LinkedList<String>();
         if (tickets == null || tickets.length == 0 || tickets[0].length == 0) {
-            return ret;
+            return res;
         }
         
         Map<String, PriorityQueue<String>> map = new HashMap<String, PriorityQueue<String>>();
@@ -52,14 +52,14 @@ public class Solution332 {
             } 
             map.get(ticket[0]).offer(ticket[1]);
         }
-        dfs("JFK", ret, map);
-        return ret;
+        dfs("JFK", res, map);
+        return res;
     }
     
-    private void dfs(String airport, LinkedList<String> list, Map<String, PriorityQueue<String>> map) {
+    private void dfs(String airport, List<String> res, Map<String, PriorityQueue<String>> map) {
         while (map.containsKey(airport) && !map.get(airport).isEmpty()) {
-           dfs(map.get(airport).poll(), list, map);
+           dfs(map.get(airport).poll(), res, map);
         }
-        list.addFirst(airport);
+        res.add(0, airport);
     }
 }
