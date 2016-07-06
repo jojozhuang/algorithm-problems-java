@@ -73,6 +73,16 @@ public class Solution015Test {
         zerolist3.add(0);
         expResult3.add(zerolist3);
         assertEquals(expResult3, result3);
+        
+        int[] num4 = {1,Integer.MAX_VALUE,Integer.MIN_VALUE,-1,0};
+        List<List<Integer>> result4 = instance.threeSum(num4);
+        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
+        List<Integer> zerolist4 = new ArrayList<Integer>();
+        zerolist4.add(Integer.MIN_VALUE);
+        zerolist4.add(0);
+        zerolist4.add(Integer.MAX_VALUE);
+        expResult3.add(zerolist4);
+        assertEquals(expResult4, result4);
         //assertEquals(expResult, result2);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

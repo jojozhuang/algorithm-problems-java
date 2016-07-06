@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution287Test {
+public class Solution292Test {
     
-    public Solution287Test() {
+    public Solution292Test() {
     }
     
     @BeforeClass
@@ -38,22 +38,17 @@ public class Solution287Test {
     }
 
     /**
-     * Test of findDuplicate method, of class Solution287.
+     * Test of canWinNim method, of class Solution292.
      */
     @Test
-    public void testFindDuplicate() {
-        System.out.println("findDuplicate");
-        int[] nums = null;
-        Solution287 instance = new Solution287();
-        int expResult = 0;
-        int result = instance.findDuplicate(nums);
-        assertEquals(expResult, result);
-        
-        assertEquals(5, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,5}));
-        assertEquals(1, instance.findDuplicate(new int[]{1,1,2}));
-        assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3,3}));
+    public void testCanWinNim() {
+        System.out.println("canWinNim");
+        int n = 0;
+        Solution292 instance = new Solution292();
+        boolean expResult = false;
+        boolean result = instance.canWinNim(n);
+        assertEquals(false, instance.canWinNim(4));
+        assertEquals(true, instance.canWinNim(3));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

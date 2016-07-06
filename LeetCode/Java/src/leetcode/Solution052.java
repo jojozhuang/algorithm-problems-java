@@ -19,18 +19,18 @@ import java.util.List;
  */
 public class Solution052 {    
     public int totalNQueens(int n) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         if(n <= 0) {
             return 0;
         }
             
         int [] columnVal = new int[n];
         
-        dfs(n,list,0,columnVal);
-        return list.size();
+        dfs(n, 0, columnVal, res);
+        return res.size();
     }
     
-    private void dfs(int n, List<Integer> res, int row, int[] columnVal){
+    private void dfs(int n, int row, int[] columnVal, List<Integer> res){
         if(row == n){            
             res.add(res.size() + 1);
         }else{
@@ -38,14 +38,15 @@ public class Solution052 {
                 columnVal[row] = i;
                 
                 if(isValid(row, columnVal))
-                    dfs(n, res, row+1, columnVal);
+                    dfs(n, row + 1, columnVal, res);
             }
         }
     }
     
     private boolean isValid(int row, int [] columnVal){
         for(int i = 0; i < row; i++){
-            if(columnVal[row] == columnVal[i] || Math.abs(columnVal[row]-columnVal[i]) == row-i)
+            if(columnVal[row] == columnVal[i] ||
+               Math.abs(columnVal[row] - columnVal[i]) == row - i)
                return false;
         }
         return true;

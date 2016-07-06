@@ -44,13 +44,13 @@ public class Solution051 {
             return res;
         }
             
-        int [] columnVal = new int[n];
+        int[] columnVal = new int[n];        
+        dfs(n, 0, columnVal, res);
         
-        dfs(n,res,0,columnVal);
         return res;
     }
     
-    private void dfs(int n, List<List<String>> res, int row, int[] columnVal){
+    private void dfs(int n, int row, int[] columnVal, List<List<String>> res){
         if(row == n){
             List<String> list = new ArrayList<String>();
             for(int i = 0; i < n; i++){
@@ -69,18 +69,18 @@ public class Solution051 {
             res.add(list);
         } else{
             for(int i = 0; i < n; i++){
-                columnVal[row] = i;
-                
+                columnVal[row] = i;                
                 if(isValid(row, columnVal)) {
-                    dfs(n, res, row + 1, columnVal);
+                    dfs(n, row + 1, columnVal, res);
                 }
             }
         }
     }
     
-    private boolean isValid(int row, int [] columnVal){
+    private boolean isValid(int row, int[] columnVal){
         for(int i = 0; i < row; i++){
-            if(columnVal[row] == columnVal[i] || Math.abs(columnVal[row]-columnVal[i]) == row-i)
+            if(columnVal[row] == columnVal[i] || 
+               Math.abs(columnVal[row]-columnVal[i]) == row - i)
                return false;
         }
         return true;

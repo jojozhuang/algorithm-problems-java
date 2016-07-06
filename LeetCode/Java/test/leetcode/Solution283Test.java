@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution287Test {
+public class Solution283Test {
     
-    public Solution287Test() {
+    public Solution283Test() {
     }
     
     @BeforeClass
@@ -38,22 +38,19 @@ public class Solution287Test {
     }
 
     /**
-     * Test of findDuplicate method, of class Solution287.
+     * Test of moveZeroes method, of class Solution283.
      */
     @Test
-    public void testFindDuplicate() {
-        System.out.println("findDuplicate");
+    public void testMoveZeroes() {
+        System.out.println("moveZeroes");
         int[] nums = null;
-        Solution287 instance = new Solution287();
-        int expResult = 0;
-        int result = instance.findDuplicate(nums);
-        assertEquals(expResult, result);
+        Solution283 instance = new Solution283();
+        instance.moveZeroes(nums);
         
-        assertEquals(5, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,5}));
-        assertEquals(1, instance.findDuplicate(new int[]{1,1,2}));
-        assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3,3}));
+        int[] nums2 = new int[]{0, 1, 0, 3, 12};
+        instance.moveZeroes(nums2);
+        int[] expResult2 = new int[]{1, 3, 12, 0, 0};
+        assertArrayEquals(nums2, expResult2);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

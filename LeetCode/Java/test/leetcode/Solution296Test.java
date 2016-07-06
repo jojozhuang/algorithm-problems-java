@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution287Test {
+public class Solution296Test {
     
-    public Solution287Test() {
+    public Solution296Test() {
     }
     
     @BeforeClass
@@ -38,22 +38,23 @@ public class Solution287Test {
     }
 
     /**
-     * Test of findDuplicate method, of class Solution287.
+     * Test of minTotalDistance method, of class Solution296.
      */
     @Test
-    public void testFindDuplicate() {
-        System.out.println("findDuplicate");
-        int[] nums = null;
-        Solution287 instance = new Solution287();
+    public void testMinTotalDistance() {
+        System.out.println("minTotalDistance");
+        int[][] grid = null;
+        Solution296 instance = new Solution296();
         int expResult = 0;
-        int result = instance.findDuplicate(nums);
+        int result = instance.minTotalDistance(grid);
         assertEquals(expResult, result);
         
-        assertEquals(5, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,5}));
-        assertEquals(1, instance.findDuplicate(new int[]{1,1,2}));
-        assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3,3}));
+        int[][] grid2 = new int[][] {
+            {1,0,0,0,1},
+            {0,0,0,0,0},
+            {0,0,1,0,0}            
+        };
+        assertEquals(6, instance.minTotalDistance(grid2));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

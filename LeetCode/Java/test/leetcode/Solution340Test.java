@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution287Test {
+public class Solution340Test {
     
-    public Solution287Test() {
+    public Solution340Test() {
     }
     
     @BeforeClass
@@ -38,22 +38,19 @@ public class Solution287Test {
     }
 
     /**
-     * Test of findDuplicate method, of class Solution287.
+     * Test of lengthOfLongestSubstringKDistinct method, of class Solution340.
      */
     @Test
-    public void testFindDuplicate() {
-        System.out.println("findDuplicate");
-        int[] nums = null;
-        Solution287 instance = new Solution287();
+    public void testLengthOfLongestSubstringKDistinct() {
+        System.out.println("lengthOfLongestSubstringKDistinct");
+        String s = "";
+        int k = 0;
+        Solution340 instance = new Solution340();
         int expResult = 0;
-        int result = instance.findDuplicate(nums);
+        int result = instance.lengthOfLongestSubstringKDistinct(s, k);
         assertEquals(expResult, result);
         
-        assertEquals(5, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,5}));
-        assertEquals(1, instance.findDuplicate(new int[]{1,1,2}));
-        assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3}));
-        assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3,3}));
+        assertEquals(3, instance.lengthOfLongestSubstringKDistinct("eceba", 2));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
