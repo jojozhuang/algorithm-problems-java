@@ -43,10 +43,10 @@ public class Solution156 {
         }
         TreeNode parent = root, left = root.left, right = root.right;  
         if (left != null) {  
-            TreeNode ret = upsideDownBinaryTree(left);  
+            TreeNode res = upsideDownBinaryTree(left);  
             left.left = right;  
             left.right = parent;  
-            return ret;  
+            return res;  
         }  
         return root;  
     }

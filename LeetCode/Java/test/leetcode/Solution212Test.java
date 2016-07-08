@@ -64,6 +64,25 @@ public class Solution212Test {
         List<String> result2 = instance.findWords(board2, new String[]{"oath","pea","eat","rain"});
         //assertEquals(expResult2, result2);
         assertTrue(expResult2.containsAll(result2) && result2.containsAll(expResult2));
+        
+        char[][] board3 = new char[][] {
+            {'a','a'}
+        };
+        List<String> expResult3 = new ArrayList<String>();
+        expResult3.add("a");
+        List<String> result3 = instance.findWords(board3, new String[]{"a"});
+        //assertEquals(expResult2, result2);
+        assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
+        
+        char[][] board4 = new char[][] {
+            {'a'}
+        };
+        List<String> expResult4 = new ArrayList<String>();
+        expResult4.add("a");
+        expResult4.add("a");
+        List<String> result4 = instance.findWords(board4, new String[]{"a", "a"});
+        //assertEquals(expResult2, result2);
+        assertTrue(expResult4.containsAll(result4) && result4.containsAll(expResult4));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

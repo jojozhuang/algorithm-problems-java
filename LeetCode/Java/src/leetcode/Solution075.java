@@ -29,7 +29,63 @@ package leetcode;
  * @author Johnny
  */
 public class Solution075 {
+    // one pass
     public void sortColors(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        
+        int zero = 0;
+        int two = nums.length - 1;
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] == 2 && i < two) {
+                swap(nums, i, two);
+                two--;
+            }
+            while (nums[i] == 0 && i > zero) {
+                swap(nums, zero, i);
+                zero++;
+            }
+        }
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+    //counting sort
+    public void sortColors2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        
+        int count0 = 0;
+        int count1 = 0;
+        //int count2 = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                count0++;
+            } else if (nums[i] == 1) {
+                count1++;
+            } else {
+                //count2++;
+            }
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (i < count0) {
+                nums[i] = 0;
+            } else if (i < count0 + count1) {
+                nums[i] = 1;
+            } else {
+                nums[i] = 2;
+            }
+        }
+    }
+    
+    //counting sort
+    public void sortColors3(int[] nums) {
         if (nums == null || nums.length == 0) {
             return;
         }

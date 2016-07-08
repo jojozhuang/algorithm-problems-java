@@ -50,6 +50,51 @@ public class Solution297Test {
         String result = instance.serialize(root);
         assertEquals(expResult, result);
         
+        // bfs , level order
+        TreeNode root2 = new TreeNode(1);
+        String result2 = instance.serialize(root2);
+        assertEquals("1,#,#", result2);
+        
+        TreeNode root3 = new TreeNode(1);
+        root3.left = new TreeNode(2);
+        root3.right = new TreeNode(3);
+        String result3 = instance.serialize(root3);
+        assertEquals("1,2,3,#,#,#,#", result3);
+        
+        TreeNode root4 = new TreeNode(1);
+        root4.left = new TreeNode(2);
+        root4.right = new TreeNode(3);
+        root4.right.left = new TreeNode(4);
+        String result4 = instance.serialize(root4);
+        assertEquals("1,2,3,#,#,4,#,#,#", result4);
+        
+        TreeNode root5 = new TreeNode(1);
+        root5.left = new TreeNode(2);
+        root5.right = new TreeNode(3);
+        root5.right.left = new TreeNode(4);
+        root5.right.right = new TreeNode(5);
+        String result5 = instance.serialize(root5);
+        assertEquals("1,2,3,#,#,4,5,#,#,#,#", result5);
+        
+        TreeNode root6 = new TreeNode(1);
+        root6.left = new TreeNode(2);
+        root6.left.left = new TreeNode(4);
+        root6.left.right = new TreeNode(5);        
+        root6.right = new TreeNode(3);
+        root6.right.left = new TreeNode(6);
+        root6.right.right = new TreeNode(7);
+        String result6= instance.serialize(root6);
+        assertEquals("1,2,3,4,5,6,7,#,#,#,#,#,#,#,#", result6);
+
+        TreeNode root7 = new TreeNode(3);
+        root7.left = new TreeNode(9);
+        root7.right = new TreeNode(20);
+        root7.right.left = new TreeNode(15);
+        root7.right.right = new TreeNode(7);
+        String result7 = instance.serialize(root7);
+        assertEquals("3,9,20,#,#,15,7,#,#,#,#", result7);
+        
+        /* recurion, preorder
         TreeNode root2 = new TreeNode(1);
         String result2 = instance.serialize(root2);
         assertEquals("1,#,#", result2);
@@ -91,7 +136,7 @@ public class Solution297Test {
         root7.right.left = new TreeNode(15);
         root7.right.right = new TreeNode(7);
         String result7 = instance.serialize(root7);
-        assertEquals("3,9,#,#,20,15,#,#,7,#,#", result7);
+        assertEquals("3,9,#,#,20,15,#,#,7,#,#", result7);*/
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

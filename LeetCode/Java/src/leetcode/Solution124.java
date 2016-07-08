@@ -25,6 +25,31 @@ import leetcode.common.TreeNode;
  */
 public class Solution124 {
     public int maxPathSum(TreeNode root) {
+        if (root == null) {
+            return Integer.MIN_VALUE;
+        }
+        return helper(root)[1];
+    }
+    
+    // [0]: single path, [1] max path
+    private int[] helper(TreeNode root) {
+        if (root == null) {
+            return new int[]{0,Integer.MIN_VALUE};
+        }
+        
+        int[] left = helper(root.left);
+        int[] right = helper(root.right);
+        
+        int singlePath = Math.max(left[0], right[0]) + root.val;
+        singlePath = Math.max(singlePath, 0);
+        
+        int maxPath = Math.max(left[1], right[1]);
+        maxPath = Math.max(maxPath, left[0] + right[0] + root.val);
+        
+        return new int[] { singlePath, maxPath};
+    }
+    
+    public int maxPathSum2(TreeNode root) {
         return maxPathHelper(root).maxPath;
     }
     

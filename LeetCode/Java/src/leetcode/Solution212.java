@@ -35,7 +35,121 @@ import java.util.List;
  */
 public class Solution212 {
     //http://www.programcreek.com/2014/06/leetcode-word-search-ii-java/
-    public List<String> findWords(char[][] board, String[] words) {        
+    //https://discuss.leetcode.com/topic/33246/java-15ms-easiest-solution-100-00/2
+    public List<String> findWords(char[][] board, String[] words) {
+        List<String> res = new ArrayList<String>();
+        if (board == null || board.length == 0 || board[0].length == 0) {
+            return res;
+        }
+        if (words == null || words.length == 0) {
+            return res;
+        }
+        TrieNode root = buildTrie(words);
+        for(int i = 0; i < board.length; i++) {
+            for(int j = 0; j < board[0].length; j++) {
+                dfs(board, i, j, root, res);
+            }
+        }
+        return res;
+    }
+
+    public void dfs(char[][] board, int i, int j, TrieNode p, List<String> res) {
+        char c = board[i][j];
+        if(c == '#' || p.next[c - 'a'] == null) return;
+        p = p.next[c - 'a'];
+        if(p.word != null) {   // found one
+            res.add(p.word);
+            p.word = null;     // de-duplicate
+        }
+
+        board[i][j] = '#';
+        if(i > 0) dfs(board, i - 1, j ,p, res); 
+        if(j > 0) dfs(board, i, j - 1, p, res);
+        if(i < board.length - 1) dfs(board, i + 1, j, p, res); 
+        if(j < board[0].length - 1) dfs(board, i, j + 1, p, res); 
+        board[i][j] = c;
+    }
+
+    public TrieNode buildTrie(String[] words) {
+        TrieNode root = new TrieNode();
+        for(String w : words) {
+            TrieNode p = root;
+            for(char c : w.toCharArray()) {
+                int i = c - 'a';
+                if(p.next[i] == null) p.next[i] = new TrieNode();
+                p = p.next[i];
+           }
+           p.word = w;
+        }
+        return root;
+    }
+
+    class TrieNode {
+        TrieNode[] next = new TrieNode[26];
+        String word;
+    }
+
+    //dfs
+    public List<String> findWords3(char[][] board, String[] words) {
+        List<String> res = new ArrayList<String>();
+        if (board == null || board.length == 0 || board[0].length == 0) {
+            return res;
+        }
+        if (words == null || words.length == 0) {
+            return res;
+        }
+        
+        int m = board.length;
+        int n = board[0].length;
+        
+        for (String word : words) {
+            char[] w = word.toCharArray();
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (board[i][j] == word.charAt(0)) {
+                        boolean[][] visited = new boolean[m][n];
+                        if (dfs(board, i, j, w, 0, visited)){
+                            res.add(word);
+                        }
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    
+    private boolean dfs(char[][] board, int i, int j, char[] word, int pos, boolean[][] visited) {
+        if (pos == word.length) {
+            return true;
+        }
+        int m = board.length;
+        int n = board[0].length;
+        if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j]) {
+            return false;
+        }
+
+        if (board[i][j] != word[pos]) {
+            return false;
+        }
+
+        visited[i][j] = true;
+        if (dfs(board, i + 1, j, word, pos + 1, visited)){
+            return true;
+        }
+        if (dfs(board, i - 1, j, word, pos + 1, visited)){
+            return true;
+        }
+        if (dfs(board, i, j + 1, word, pos + 1, visited)){
+            return true;
+        }
+        if (dfs(board, i, j - 1, word, pos + 1, visited)){
+            return true;
+        }
+        visited[i][j] = false;
+        return false;
+    }
+    
+    public List<String> findWords2(char[][] board, String[] words) {        
 	ArrayList<String> result = new ArrayList<String>();
         if (board == null || board.length == 0 || board[0].length == 0) {
             return result;
