@@ -77,11 +77,16 @@ public class Solution015Test {
         int[] num4 = {1,Integer.MAX_VALUE,Integer.MIN_VALUE,-1,0};
         List<List<Integer>> result4 = instance.threeSum(num4);
         List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
-        List<Integer> zerolist4 = new ArrayList<Integer>();
-        zerolist4.add(Integer.MIN_VALUE);
-        zerolist4.add(0);
-        zerolist4.add(Integer.MAX_VALUE);
-        expResult3.add(zerolist4);
+        List<Integer> zerolist41 = new ArrayList<Integer>();
+        zerolist41.add(Integer.MIN_VALUE);
+        zerolist41.add(1);
+        zerolist41.add(Integer.MAX_VALUE);
+        expResult4.add(zerolist41);
+        List<Integer> zerolist42 = new ArrayList<Integer>();
+        zerolist42.add(-1);
+        zerolist42.add(0);
+        zerolist42.add(1);
+        expResult4.add(zerolist42);
         assertEquals(expResult4, result4);
         //assertEquals(expResult, result2);
         // TODO review the generated test code and remove the default call to fail.

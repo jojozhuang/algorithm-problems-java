@@ -30,33 +30,102 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution057 {
+    //https://discuss.leetcode.com/topic/7808/short-and-straight-forward-java-solution/2
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         if (newInterval == null) {
             return intervals;
         }
+        
         List<Interval> res = new ArrayList<Interval>();
+        if (intervals == null || intervals.size() == 0) {
+            res.add(newInterval);
+            return res;
+        }
+        
+        int i = 0;
+        // add all the intervals ending before newInterval starts
+        while (i < intervals.size() && intervals.get(i).end < newInterval.start) {
+            res.add(intervals.get(i++));
+        }
+        // merge all overlapping intervals to one considering newInterval
+        while (i < intervals.size() && intervals.get(i).start <= newInterval.end) {
+            newInterval.start = Math.min(newInterval.start, intervals.get(i).start);
+            newInterval.end = Math.max(newInterval.end, intervals.get(i).end);
+            i++;
+        }
+        res.add(newInterval); // add the union of intervals we got
+        // add all the rest
+        while (i < intervals.size()) {
+            res.add(intervals.get(i++));
+        } 
+        return res;
+    }
+    
+    public List<Interval> insert3(List<Interval> intervals, Interval newInterval) {
+        if (newInterval == null) {
+            return intervals;
+        }
+        
+        List<Interval> res = new ArrayList<Interval>();
+        if (intervals == null || intervals.size() == 0) {
+            res.add(newInterval);
+            return res;
+        }
+
+        for (int i = 0; i < intervals.size(); i++) {
+            Interval curr = intervals.get(i);
+            if (newInterval == null) {
+                res.add(curr);
+                continue;
+            }
+            if (curr.start > newInterval.end) {
+                res.add(newInterval);
+                res.add(curr);
+                newInterval = null;
+            } else if (curr.end < newInterval.start) {
+                res.add(curr);
+            } else {
+                newInterval.start = Math.min(newInterval.start, curr.start);
+                newInterval.end = Math.max(newInterval.end, curr.end);
+            }
+        }
+        
+        if (newInterval != null) {
+            res.add(newInterval);
+        }
+        return res;
+    }
+    
+    public List<Interval> insert2(List<Interval> intervals, Interval newInterval) {
+        if (newInterval == null) {
+            return intervals;
+        }
+        
+        List<Interval> res = new ArrayList<Interval>();
+        if (intervals == null || intervals.size() == 0) {
+            res.add(newInterval);
+            return res;
+        }
         
         Queue<Interval> queue = new LinkedList<Interval>();
-        for(Interval item: intervals) {
+        for (Interval item: intervals) {
             queue.offer(item);
         }
         
         boolean newadded = false;
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Interval curr = queue.poll();
             if (newInterval.end < curr.start) {
                 res.add(newInterval);
                 res.add(curr);
                 newadded = true;
                 break;
-            }
-            if (curr.end < newInterval.start) {
+            } else if (curr.end < newInterval.start) {
                 res.add(curr);
-                continue;
+            } else {
+                newInterval.start = Math.min(newInterval.start, curr.start);
+                newInterval.end = Math.max(newInterval.end, curr.end);
             }
-            
-            newInterval = new Interval(Math.min(curr.start, newInterval.start), 
-                    Math.max(curr.end, newInterval.end));
         }    
         
         if (!newadded) {

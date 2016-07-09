@@ -49,6 +49,7 @@ public class Solution041Test {
         int result = instance.firstMissingPositive(nums);
         assertEquals(expResult, result);
         
+        assertEquals(2, instance.firstMissingPositive(new int[] {1,1}));
         assertEquals(3, instance.firstMissingPositive(new int[] {1,2,0}));
         assertEquals(2, instance.firstMissingPositive(new int[] {3,4,-1,1}));
         

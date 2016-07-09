@@ -58,13 +58,12 @@ public class Solution056Test {
         inervals2.add(new Interval(8,10));
         inervals2.add(new Interval(15,18));
         List<Interval> result2 = instance.merge(inervals2);
-        assertEquals(3, result2.size());
-        assertEquals(1, result2.get(0).start);
-        assertEquals(6, result2.get(0).end);
-        assertEquals(8, result2.get(1).start);
-        assertEquals(10, result2.get(1).end);
-        assertEquals(15, result2.get(2).start);
-        assertEquals(18, result2.get(2).end);
+        
+        List<Interval> expResult2 = new ArrayList<Interval>();
+        expResult2.add(new Interval(1,6));
+        expResult2.add(new Interval(8,10));
+        expResult2.add(new Interval(15,18));
+        assertTrue(expResult2.containsAll(result2));
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

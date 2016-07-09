@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 import leetcode.common.Interval;
 
@@ -29,15 +30,62 @@ import leetcode.common.Interval;
  */
 public class Solution352 {
      /** Initialize your data structure here. */
+    List<Interval> intervals;
     public Solution352() {
-        
+        intervals = new ArrayList<Interval>();
     }
     
     public void addNum(int val) {
-        
+        if (intervals.size() == 0) {
+            intervals.add(new Interval(val, val));
+        } else {
+            if (intervals.get(0).start >= val) {
+                if (intervals.get(0).start == val) {
+                    return;
+                } else if (intervals.get(0).start == val + 1) {
+                    intervals.get(0).start--;
+                } else {
+                    intervals.add(0, new Interval(val, val));
+                }
+            } else if (intervals.get(intervals.size() - 1).end <= val) {
+                if (intervals.get(intervals.size() - 1).end == val) {
+                    return;
+                } else if (intervals.get(intervals.size() - 1).end == val - 1) {
+                    intervals.get(intervals.size() - 1).end++;
+                } else {
+                    intervals.add(new Interval(val, val));
+                }
+            } else {
+                int start = 0;
+                int end = intervals.size() - 1;
+                while (start + 1 < end) {
+                    int mid = start + (end - start) / 2;
+                    Interval itv = intervals.get(mid);
+                    if (val >= itv.start && val <= itv.end) {
+                        break; //ignore
+                    } else if (val < itv.start) {
+                        end = mid;
+                    } else if (val > itv.end) {
+                        start = mid;
+                    }
+                }
+                // merge
+                if (intervals.get(start).end == val - 1) {
+                    intervals.get(start).end++;
+                    if (intervals.get(start).end == intervals.get(end).start - 1) {
+                        intervals.get(start).end = intervals.get(end).end;
+                        intervals.remove(end);
+                    }
+                } else if (val + 1 == intervals.get(end).start) {
+                    intervals.get(end).start--;
+                } else {
+                    intervals.add(end, new Interval(val, val));
+                }
+            }
+        }        
     }
     
     public List<Interval> getIntervals() {
-        return null;
+        return intervals;
     }
 }

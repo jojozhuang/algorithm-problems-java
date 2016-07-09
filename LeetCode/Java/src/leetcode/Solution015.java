@@ -44,35 +44,36 @@ public class Solution015 {
 
         for (int i = 0; i < nums.length - 2; i++) {
             //avoid duplicate solutions
-            if (i == 0 || nums[i] > nums[i - 1]) {
-                int negative = -nums[i];
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
 
-                int start = i + 1;
-                int end = nums.length - 1;
+            int start = i + 1;
+            int end = nums.length - 1;
 
-                while (start < end) {
-                    if (nums[start] + nums[end] == negative) {
-                        ArrayList<Integer> list = new ArrayList<Integer>();
-                        list.add(nums[i]);
-                        list.add(nums[start]);
-                        list.add(nums[end]);
-                        res.add(list);
+            while (start < end) {
+                long sum = (long)nums[start] + (long)nums[end] + (long)nums[i];
+                if (sum == 0) {
+                    ArrayList<Integer> list = new ArrayList<Integer>();
+                    list.add(nums[i]);
+                    list.add(nums[start]);
+                    list.add(nums[end]);
+                    res.add(list);
 
-                        start++;
-                        end--;
-                        //avoid duplicate solutions
-                        while (start < end && nums[end] == nums[end + 1]) {
-                            end--;
-                        }
-                        while (start < end && nums[start] == nums[start - 1]) {
-                            start++;
-                        }
-                    } else if (nums[start] + nums[end] < negative) {
-                        start++;
-                    } else {
+                    start++;
+                    end--;
+                    //avoid duplicate solutions
+                    while (start < end && nums[end] == nums[end + 1]) {
                         end--;
                     }
-                }      
+                    while (start < end && nums[start] == nums[start - 1]) {
+                        start++;
+                    }
+                } else if (sum < 0) {
+                    start++;
+                } else {
+                    end--;
+                }
             }
         }
 

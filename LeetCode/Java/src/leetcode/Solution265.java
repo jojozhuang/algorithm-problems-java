@@ -25,7 +25,7 @@ package leetcode;
 public class Solution265 {
     //https://segmentfault.com/a/1190000003903965
     public int minCostII(int[][] costs) {
-        if(costs != null && costs.length == 0) {
+        if(costs == null || costs.length == 0) {
             return 0;
         }
         int prevMin = 0, prevSec = 0, prevIdx = -1;

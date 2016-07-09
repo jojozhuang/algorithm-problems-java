@@ -23,29 +23,26 @@ package leetcode;
  */
 public class Solution045 {
     // Greedy
+    //https://discuss.leetcode.com/category/53/jump-game-ii
     public int jump(int[] nums) {
         if (nums == null || nums.length == 0) {
             return Integer.MAX_VALUE;
         }
         
-        int farthest = nums[0];
-        int steps = 0;
-        for (int i = 1; i < nums.length; i++) {
-            if (i <= farthest && nums[i] + i > farthest) {
-                farthest = nums[i] + i;
-                steps++;
-            }
-            if (farthest >= nums.length - 1) {
-                return steps;
-            }
+        int step_count = 0;
+        int last_jump_max = 0;
+        int current_jump_max = 0;
+        for(int i = 0; i < nums.length - 1; i++) {
+            current_jump_max = Math.max(current_jump_max, i + nums[i]);
+            if(i == last_jump_max) {
+                step_count++;
+                last_jump_max = current_jump_max;
+            } 
         }
-        
-        if (farthest >= nums.length - 1) {
-            return steps;
-        }
-        else {
+        if (last_jump_max < nums.length - 1) {
             return Integer.MAX_VALUE;
         }
+        return step_count;
     }
     /*
     public int jump(int[] nums) {

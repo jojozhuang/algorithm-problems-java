@@ -6,7 +6,10 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * Find Median from Data Stream.
@@ -35,21 +38,49 @@ import java.util.List;
  * @author RZHUANG
  */
 public class Solution295 {
-    List<Integer> list = new ArrayList<Integer>();
+    //http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
+    //https://segmentfault.com/a/1190000003709954
+    //left: maxHeap, right: minHeap
+    PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(new MedianComparator());
+
     // Adds a number into the data structure.
     public void addNum(int num) {
-        list.add(num);
+        if(maxHeap.isEmpty() || num <= maxHeap.peek()){
+            if(maxHeap.size() > minHeap.size()){
+                minHeap.offer(maxHeap.poll());
+            }
+            maxHeap.offer(num);
+        } else if (minHeap.isEmpty() || num > minHeap.peek()){
+            if(minHeap.size() > maxHeap.size()){
+                maxHeap.offer(minHeap.poll());
+            }
+            minHeap.offer(num);
+        } else {
+            if(maxHeap.size() <= minHeap.size()){
+                maxHeap.offer(num);
+            } else {
+                minHeap.offer(num);
+            }
+        }
     }
 
     // Returns the median of current data stream
     public double findMedian() {
-        int len = list.size();
-        if (len % 2 == 1) {
-            return list.get(len / 2);
+        if(maxHeap.size() > minHeap.size()){
+            return maxHeap.peek();
+        } else if (maxHeap.size() < minHeap.size()){
+            return minHeap.peek();
+        } else if (maxHeap.isEmpty() && minHeap.isEmpty()){
+            return 0;
         } else {
-            int num1 = list.get(len / 2 - 1);
-            int num2 = list.get(len / 2);
-            return num1 + (double)(num2 - num1) / 2;
+            return (maxHeap.peek() + minHeap.peek()) / 2.0;
+        }
+    }
+    
+    private class MedianComparator implements Comparator<Integer> {
+        public int compare(Integer i1, Integer i2) {
+            return i2 - i1;
         }
     }
 }
