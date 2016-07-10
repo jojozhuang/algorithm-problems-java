@@ -20,8 +20,35 @@ package leetcode;
  * @author Johnny
  */
 public class Solution042 {
-    //http://bangbingsyb.blogspot.com/2014/11/leetcode-trapping-rain-water.html
+    // two points
+    // http://www.jiuzhang.com/solutions/trapping-rain-water/
     public int trap(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        int start = 0;
+        int end = height.length - 1;
+        int smaller = 0;
+        int water = 0;
+        while (start < end) {
+            if (height[start] < height[end]) {
+                smaller = height[start];
+                while (start < end && height[start] <= smaller) {
+                    water += smaller - height[start];
+                    start++;
+                }
+            } else {
+                smaller = height[end];
+                while (start < end && height[end] <= smaller) {
+                    water += smaller - height[end];
+                    end--;
+                }
+            }
+        }
+        return water;
+    }
+    //http://bangbingsyb.blogspot.com/2014/11/leetcode-trapping-rain-water.html
+    public int trap2(int[] height) {
         if (height == null || height.length == 0) {
             return 0;
         }

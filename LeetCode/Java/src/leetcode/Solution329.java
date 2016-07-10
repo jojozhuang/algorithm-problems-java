@@ -45,13 +45,13 @@ public class Solution329 {
             return 0;
         }
         
-        int n = matrix.length;
-        int m = matrix[0].length;
+        int m = matrix.length;
+        int n = matrix[0].length;
         
         int max = 0;
-        int[][] cache = new int[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+        int[][] cache = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 max = Math.max(max, dfs(matrix, i, j, cache));
             }
         }
@@ -64,20 +64,20 @@ public class Solution329 {
             return cache[i][j];
         } 
         
-        int n = matrix.length;
-        int m = matrix[0].length;               
+        int m = matrix.length;
+        int n = matrix[0].length;               
         
         int longest = 0;
         if (i > 0 && matrix[i - 1][j] > matrix[i][j]) {
             longest = Math.max(longest, dfs(matrix, i - 1, j, cache)); //up
         }
-        if (i < n - 1 && matrix[i + 1][j] > matrix[i][j]) {
+        if (i < m - 1 && matrix[i + 1][j] > matrix[i][j]) {
             longest = Math.max(longest, dfs(matrix, i + 1, j, cache)); //down
         }
         if (j > 0 && matrix[i][j - 1] > matrix[i][j]) {
             longest = Math.max(longest, dfs(matrix, i, j - 1, cache)); //left            
         }
-        if (j < m - 1 && matrix[i][j + 1] > matrix[i][j]) {
+        if (j < n - 1 && matrix[i][j + 1] > matrix[i][j]) {
             longest = Math.max(longest, dfs(matrix, i, j + 1, cache)); //right
         }
         cache[i][j] = longest + 1;

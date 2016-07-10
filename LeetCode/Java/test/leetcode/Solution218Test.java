@@ -88,6 +88,19 @@ public class Solution218Test {
         assertArrayEquals(expResult3.get(0), result3.get(0));
         assertArrayEquals(expResult3.get(1), result3.get(1));
         
+        int[][] buildings4 = new int[][] {
+            {1, 2, 1},
+            {1, 2, 2},
+            {1, 2, 3}
+        };
+        List<int[]> expResult4 = new ArrayList<int[]>();
+        expResult4.add(new int[]{1, 3});
+        expResult4.add(new int[]{2, 0});
+        List<int[]> result4 = instance.getSkyline(buildings4);
+        assertEquals(expResult4.size(), result4.size());
+        assertArrayEquals(expResult4.get(0), result4.get(0));
+        assertArrayEquals(expResult4.get(1), result4.get(1));
+        
     
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

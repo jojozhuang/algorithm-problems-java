@@ -5,6 +5,11 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
 import leetcode.common.TreeNode;
 
 /**
@@ -41,7 +46,39 @@ import leetcode.common.TreeNode;
 public class Solution272 {
     //http://www.cnblogs.com/jcliBlogger/p/4771342.html
     //https://segmentfault.com/a/1190000003797291
-    public int closestValue(TreeNode root, double target) {
-        return 0;
+    public List<Integer> closestKValues(TreeNode root, double target, int k) {
+        if (root == null) {
+            return new ArrayList<Integer>();
+        }
+        Queue<Integer> queue = new LinkedList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while(root != null){
+            stack.push(root);
+            root = root.left;
+        }
+        while (!stack.isEmpty()){
+            TreeNode curr = stack.pop();
+            if(queue.size() < k){
+                queue.offer(curr.val);
+            } else {
+                int first = queue.peek();
+                if(Math.abs(first - target) > Math.abs(curr.val - target)){
+                    queue.poll();
+                    queue.offer(curr.val);
+                } else {
+                    break;
+                }
+            }
+
+            if(curr.right != null){
+                curr = curr.right;
+                while(curr != null){
+                    stack.push(curr);
+                    curr = curr.left;
+                }
+            }
+        }
+
+        return (List<Integer>)queue;
     }
 }

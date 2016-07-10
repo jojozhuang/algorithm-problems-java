@@ -22,7 +22,35 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution270 {
+    //https://segmentfault.com/a/1190000003797291
+    // no recursion
     public int closestValue(TreeNode root, double target) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        int closest = root.val;
+        while(root != null){            
+            closest = Math.abs(closest - target) < Math.abs(root.val - target) ? closest : root.val;
+            root = target < root.val ? root.left : root.right;
+        }
+        return closest;
+    }
+    
+    // recursion, use the feature of BST
+    public int closestValue3(TreeNode root, double target) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        
+        TreeNode kid = target < root.val ? root.left : root.right;
+        if(kid == null) {
+            return root.val;
+        }
+        int closest = closestValue(kid, target);
+        return Math.abs(root.val - target) < Math.abs(closest - target) ? root.val : closest;
+    }
+    // recursion, also valid for Binary Search, not only for BST
+    public int closestValue2(TreeNode root, double target) {
         if (root == null) {
             return Integer.MAX_VALUE;
         }
