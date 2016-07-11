@@ -29,23 +29,23 @@ public class Solution115 {
             return 0;
         }
         
-        int n = s.length();
-        int m = t.length();
-        int[][] dp = new int[n + 1][m + 1];
+        int m = s.length();
+        int n = t.length();
+        int[][] dp = new int[m + 1][n + 1];
         dp[0][0] = 1;
         
-        // s is empty
-        for(int j = 1; j <= m; j++) {
-            dp[0][j] = 0;
-        }
-        
         // t is empty
-        for(int i = 1; i <= n; i++) {
+        for(int i = 1; i <= m; i++) {
             dp[i][0] = 1;
         }
         
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= m; j++) {
+        // s is empty
+        for(int j = 1; j <= n; j++) {
+            dp[0][j] = 0;
+        }        
+        
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
                 if (s.charAt(i - 1) == t.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1];
                 } else {
@@ -54,7 +54,7 @@ public class Solution115 {
             }
         }
         
-        return dp[n][m];
+        return dp[m][n];
     }
     //time out
     public int numDistinct2(String s, String t) {
@@ -76,5 +76,5 @@ public class Solution115 {
         }
         
         return count;
-    }
+    }    
 }

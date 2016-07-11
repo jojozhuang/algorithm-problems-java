@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution084Test {
+public class Solution354Test {
     
-    public Solution084Test() {
+    public Solution354Test() {
     }
     
     @BeforeClass
@@ -38,19 +38,21 @@ public class Solution084Test {
     }
 
     /**
-     * Test of largestRectangleArea method, of class Solution084.
+     * Test of maxEnvelopes method, of class Solution354.
      */
     @Test
-    public void testLargestRectangleArea() {
-        System.out.println("largestRectangleArea");
-        int[] heights = null;
-        Solution084 instance = new Solution084();
+    public void testMaxEnvelopes() {
+        System.out.println("maxEnvelopes");
+        int[][] envelopes = null;
+        Solution354 instance = new Solution354();
         int expResult = 0;
-        int result = instance.largestRectangleArea(heights);
+        int result = instance.maxEnvelopes(envelopes);
         assertEquals(expResult, result);
         
-        assertEquals(6, instance.largestRectangleArea(new int[]{4,3}));
-        assertEquals(10, instance.largestRectangleArea(new int[]{2,1,5,6,2,3}));
+        int[][] envelopes2 = new int[][] {
+            {5,4},{6,4},{6,7},{2,3}
+        };
+        assertEquals(3, instance.maxEnvelopes(envelopes2));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

@@ -86,6 +86,12 @@ public class Solution138Test {
         assertEquals(-7, result5.label);
         assertEquals(8, result5.next.label);
         assertEquals(8, result5.random.label);
+        
+        RandomListNode head6 = new RandomListNode(-1);
+        RandomListNode result6 = instance.copyRandomList(head6);
+        assertEquals(-1, result6.label);
+        assertNull(result6.next);
+        assertNull(result6.random);
        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

@@ -19,6 +19,7 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution233 {
+    //https://discuss.leetcode.com/topic/18054/4-lines-o-log-n-c-java-python/2
     //http://www.cnblogs.com/grandyang/p/4629032.html
     public int countDigitOne(int n) {
         if (n <= 0) {

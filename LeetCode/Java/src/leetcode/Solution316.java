@@ -36,15 +36,16 @@ public class Solution316 {
         
         Stack<Character> stack = new Stack<Character>();
         stack.push(s.charAt(0));
+        counter[s.charAt(0) - 'a']--;
         for (int i = 1; i < s.length(); i++) {
             char c = s.charAt(i);
             if(stack.contains(c)) {
                 counter[c - 'a']--;
             } else {
                 char top = stack.peek();
-                while (top > c && counter[top - 'a'] > 1) {
+                while (top > c && counter[top - 'a'] > 0) {
                     stack.pop();
-                    counter[top - 'a']--;
+                    //counter[top - 'a']--;
                     if (stack.isEmpty()) {
                         break;
                     } else {
@@ -52,14 +53,15 @@ public class Solution316 {
                     }
                 }
                 stack.push(c);
+                counter[c - 'a']--;
             }
         }
-        Character[] arr = new Character[stack.size()];
-        stack.toArray(arr);
+
         StringBuilder sb = new StringBuilder();
-        for (Character c: arr) {
-            sb.append(c);
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
         }
+        sb.reverse();
         
         return sb.toString();
     }

@@ -25,30 +25,37 @@ public class Solution138 {
         RandomListNode curr = head;
         // create each new node behind its old node
         while(curr != null) {
-            RandomListNode newnode = new RandomListNode(curr.label);
-            newnode.next = curr.next;
-            curr.next = newnode;
-            curr = newnode.next;
+            RandomListNode copy = new RandomListNode(curr.label);
+            copy.next = curr.next;
+            curr.next = copy;
+            curr = copy.next;
         }
         // copy random node for new node
-        RandomListNode oldnode = head;
-        while(oldnode != null) {
-            if (oldnode.random != null) {
-                oldnode.next.random = oldnode.random.next;
+        curr = head;
+        while(curr != null) {
+            if (curr.random != null) {
+                curr.next.random = curr.random.next;
             }
-            oldnode = oldnode.next.next;
+            curr = curr.next.next;
         }
-        // split out the new list from the current list
-        RandomListNode newnode = head.next;
-        while(newnode != null) {
-            if (newnode.next != null) {
-                newnode.next = newnode.next.next;
-                newnode = newnode.next.next;
-            } else {
-                break;
-            }
+        // restore and split out the new list from the current list
+        RandomListNode dummy = new RandomListNode(0);
+        curr = head;
+        RandomListNode copy, next, copyIter = dummy;
+        while (curr != null) {
+            next = curr.next.next;
+
+            // extract the copy
+            copy = curr.next;
+            copyIter.next = copy;
+            copyIter = copy;
+
+            // restore the original list
+            curr.next = next;
+
+            curr = next;
         }
-        
-        return head.next;
+
+        return dummy.next;
     }
 }
