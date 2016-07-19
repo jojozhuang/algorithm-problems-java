@@ -26,6 +26,67 @@ public class Solution214 {
             return "";
         }
         
+        String tail;
+        int mid = s.length() / 2;
+        for (int i = mid; i >= 0; i--) {
+            int mode = isPalindrome(s, i);
+            if (mode == 0) {
+                continue;
+            }
+            if (mode == 1) {
+                tail = s.substring((i + 1) * 2 - 1);
+            } else {
+                tail = s.substring((i + 1) * 2);
+            }
+            StringBuilder sb = new StringBuilder(tail);
+            return sb.reverse() + s;
+        }
+        
+        tail = s.substring(1);
+        StringBuilder sb = new StringBuilder(tail);
+        return sb.reverse() + s;
+    }
+    
+    // 2: palindrome(even), 1: palindrome(odd), 0: not palindrome
+    private int isPalindrome(String s, int i) {
+        // even
+        int left = i;
+        int right = i + 1;
+        while (left < right && left >= 0 && right < s.length()) {
+            if (s.charAt(left) != s.charAt(right)) {
+                break;
+            }
+            left--;
+            right++;
+        }
+
+        if (left == -1) {
+            return 2;
+        }
+        
+        // odd
+        left = i - 1;
+        right = i + 1;
+        while (left < right && left >= 0 && right < s.length()) {
+            if (s.charAt(left) != s.charAt(right)) {
+                break;
+            }
+            left--;
+            right++;
+        }
+        
+        if (left == -1) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    
+    public String shortestPalindrome2(String s) {
+        if (s == null || s.isEmpty()) {
+            return "";
+        }
+        
         // the pivot must be in the left n/2 part
         int mid = s.length() / 2;
         for (int i = mid; i >= 0; i--) {

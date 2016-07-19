@@ -6,6 +6,8 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -40,7 +42,68 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution068 {
+    //https://discuss.leetcode.com/topic/4189/share-my-concise-c-solution-less-than-20-lines/3
     public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> res = new ArrayList<String>();
+        if (words == null || words.length == 0) {
+            return res;
+        }
+        for(int i = 0, k, l; i < words.length; i += k) {
+            for(k = l = 0; i + k < words.length && l + words[i+k].length() <= maxWidth - k; k++) {
+                l += words[i+k].length();
+            }
+            String tmp = words[i];
+            for(int j = 0; j < k - 1; j++) {
+                if(i + k >= words.length) {
+                    tmp += " ";
+                }
+                else {
+                    int len = (maxWidth - l) / (k - 1);
+                    if (j < (maxWidth - l) % (k - 1)){
+                        len++;
+                    }
+                    char[] spaceArr = new char[len];
+                    Arrays.fill(spaceArr, ' ');
+                    tmp += new String(spaceArr);
+                }
+                tmp += words[i+j+1];
+            }
+            char[] spaceArr = new char[maxWidth - tmp.length()];
+            Arrays.fill(spaceArr, ' ');
+            tmp += new String(spaceArr);
+            res.add(tmp);
+        }
+        return res;
+    }
+    public List<String> fullJustify3(String[] words, int L) {
+        List<String> list = new LinkedList<String>();
+        
+        for (int i = 0, w; i < words.length; i = w) {
+            int len = -1;
+            for (w = i; w < words.length && len + words[w].length() + 1 <= L; w++) {
+                len += words[w].length() + 1;
+            }
+            
+            StringBuilder strBuilder = new StringBuilder(words[i]);
+            int space = 1, extra = 0;
+            if (w != i + 1 && w != words.length) { // not 1 char, not last line
+                space = (L - len) / (w - i - 1) + 1;
+                extra = (L - len) % (w - i - 1);
+            }
+            for (int j = i + 1; j < w; j++) {
+                for (int s = space; s > 0; s--) strBuilder.append(' ');
+                if (extra-- > 0) strBuilder.append(' ');
+                strBuilder.append(words[j]);
+            }
+            int strLen = L - strBuilder.length();
+            while (strLen-- > 0) strBuilder.append(' ');
+            list.add(strBuilder.toString());
+        }
+        
+        return list;
+    }
+    
+    public List<String> fullJustify2(String[] words, int maxWidth) {
         List<String> ret = new ArrayList<String>();
         if (words == null || words.length == 0) {
             return ret;

@@ -44,6 +44,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution335 {
+    //https://discuss.leetcode.com/topic/38014/java-oms-with-explanation/2
     public boolean isSelfCrossing(int[] x) {
         if (x == null) {
             return false;
@@ -53,24 +54,21 @@ public class Solution335 {
             return false;
         }
         
-        int t1 = 0, t2 = x[0], t3 = x[1], t4 = x[2], t5;
-        boolean increase = t4 > t2 ? true : false;
         for (int i = 3; i < n; i++) {
-            t5 = x[i];
-            if (increase && t3 >= t5) {
-                if (t5 + t1 < t3 || i + 1 < n && x[i + 1] + t2 < t4) {
-                    increase = false;
-                } else if (i + 1 < n) {
-                    return true;
-                }
-            } else if (!increase && t3 <= t5) {
+            //Fourth line crosses first line and onward
+            if (x[i] >= x[i - 2] && x[i - 1] <= x[i - 3]) {
                 return true;
             }
-            t1 = t2;
-            t2 = t3;
-            t3 = t4;
-            t4 = t5;
+            // Fifth line meets first line and onward
+            if (i >= 4 && x[i - 1] == x[i - 3] && (x[i] + x[i - 4]) >= x[i - 2]) {
+                return true;
+            }
+            // Sixth line crosses first line and onward
+            if (i >= 5 && x[i - 2] >= x[i - 4] && (x[i] + x[i - 4]) >= x[i - 2] && x[i - 1] <= x[i - 3] && x[i - 1] + x[i - 5] >= x[i - 3]) {
+                return true;
+            }
         }
+        
         return false;
     }
 }

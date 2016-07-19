@@ -58,6 +58,7 @@ public class Solution273Test {
         assertEquals("One Billion", instance.numberToWords(1000000000));
         assertEquals("One Hundred Twenty Three", instance.numberToWords(123));
         assertEquals("Twelve Thousand Three Hundred Forty Five", instance.numberToWords(12345));
+        assertEquals("Fifty Thousand Eight Hundred Sixty Eight", instance.numberToWords(50868));
         assertEquals("One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven", instance.numberToWords(1234567));
         assertEquals("One Million Two Hundred Thirty Four Thousand Five Hundred", instance.numberToWords(1234500));
         assertEquals("One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand One", instance.numberToWords(1234567001));

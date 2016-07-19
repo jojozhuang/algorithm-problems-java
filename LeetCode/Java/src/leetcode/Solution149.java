@@ -22,29 +22,21 @@ public class Solution149 {
             return 0;
         }
         
-        if (points.length == 1) {
-            return 1;
-        }
-        
-        HashMap<Float, Integer> map = new HashMap<>();
         int max = 0;
         
         for(int i = 0; i < points.length; i++) {
-            map.clear();
             int duplicated = 1;
-            for (int j = 0; j < points.length; j++) {
-                if (i == j) {
-                    continue;
-                }
+            HashMap<Double, Integer> map = new HashMap<>();
+            for (int j = i + 1; j < points.length; j++) {
                 if (points[i].x == points[j].x && points[i].y == points[j].y) {
                     duplicated++;
                     continue;
                 }
-                float slope = 0;
+                double slope = 0;
                 if (points[i].x == points[j].x) {
-                    slope = Float.MAX_VALUE;
+                    slope = Integer.MAX_VALUE;
                 } else {
-                    slope = (float)(points[i].y - points[j].y) / (points[i].x - points[j].x);
+                    slope = (double)(points[i].y - points[j].y) / (points[i].x - points[j].x) + 0.0;
                 }
                 if (!map.containsKey(slope)) {
                     map.put(slope, 1);
@@ -52,12 +44,12 @@ public class Solution149 {
                     map.put(slope, map.get(slope) + 1);
                 }
             }
+            int localMax = 0;
             for (Integer count : map.values()) {
-                if (count + duplicated > max) {
-                    max = count + duplicated;
-                }
+                localMax = Math.max(localMax, count);
             }
-            max = Math.max(max, duplicated);
+            localMax += duplicated;
+            max = Math.max(max, localMax);
         }
         
         return max;

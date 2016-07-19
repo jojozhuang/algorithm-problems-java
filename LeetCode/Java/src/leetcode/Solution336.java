@@ -6,6 +6,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,44 +28,118 @@ import java.util.List;
  * @author RZHUANG
  */
 public class Solution336 {
+    //https://discuss.leetcode.com/category/420/palindrome-pairs
+    class TrieNode {
+        TrieNode[] next;
+        int index;
+        List<Integer> list;
+
+        TrieNode() {
+            next = new TrieNode[26];
+            index = -1;
+            list = new ArrayList<>();
+        }
+    }
+
     public List<List<Integer>> palindromePairs(String[] words) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<>();
+        if (words == null || words.length == 0) {
+            return res;            
+        }
+        TrieNode root = new TrieNode();
+
+        for (int i = 0; i < words.length; i++) {
+            addWord(root, words[i], i);
+        }
+
+        for (int i = 0; i < words.length; i++) {
+            search(words, i, root, res);
+        }
+
+        return res;
+    }
+
+    private void addWord(TrieNode root, String word, int index) {
+	for (int i = word.length() - 1; i >= 0; i--) {
+            if (root.next[word.charAt(i) - 'a'] == null) {
+                root.next[word.charAt(i) - 'a'] = new TrieNode();
+            }
+
+            if (isPalindrome(word, 0, i)) {
+                root.list.add(index);
+            }
+
+            root = root.next[word.charAt(i) - 'a'];
+	}
+	
+	root.list.add(index);
+	root.index = index;
+    }
+
+    private void search(String[] words, int i, TrieNode root, List<List<Integer>> list) {
+	for (int j = 0; j < words[i].length(); j++) {	
+            if (root.index >= 0 && root.index != i && isPalindrome(words[i], j, words[i].length() - 1)) {
+                list.add(Arrays.asList(i, root.index));
+            }
+
+            root = root.next[words[i].charAt(j) - 'a'];
+            if (root == null) return;
+	}
+	
+	for (int j : root.list) {
+            if (i == j) continue;
+            list.add(Arrays.asList(i, j));
+	}
+    }
+
+    private boolean isPalindrome(String word, int i, int j) {
+	while (i < j) {
+            if (word.charAt(i++) != word.charAt(j--)) {
+                return false;
+            }
+	}
+	
+	return true;
+    }
+    // naive, O(n^2 * k)
+    public List<List<Integer>> palindromePairs2(String[] words) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
 
         if (words == null || words.length == 0) {
-            return ret;            
+            return res;            
         }
         
         for (int i = 0; i < words.length; i++) {
             for (int j = i + 1; j < words.length; j++) {
                 List<List<Integer>> list = isPair(i, j, words[i], words[j]);
-                ret.addAll(list);
+                res.addAll(list);
             }
         }
         
-        return ret;        
+        return res;        
     }
     
     private List<List<Integer>> isPair(int i, int j, String s1, String s2) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (s1.isEmpty() && s2.isEmpty()) {
-            return ret;
+            return res;
         }
         
-        if (isPalindrome(s1+s2)) {
+        if (isPalindrome(s1 + s2)) {
             List<Integer> list = new ArrayList<Integer>();
             list.add(i);
             list.add(j);
-            ret.add(list);
+            res.add(list);
         }
         
-        if (isPalindrome(s2+s1)) {
+        if (isPalindrome(s2 + s1)) {
             List<Integer> list = new ArrayList<Integer>();
             list.add(j);
             list.add(i);
-            ret.add(list);
+            res.add(list);
         }
         
-        return ret;
+        return res;
     }
     
     private boolean isPalindrome(String s) {
