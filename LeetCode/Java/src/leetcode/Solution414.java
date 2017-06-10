@@ -36,7 +36,7 @@ package leetcode;
  * @author Johnny
  */
 public class Solution414 {
-  public int thirdMax(int[] nums) {
+    public int thirdMax(int[] nums) {
         return 0;   
     }  
 }
