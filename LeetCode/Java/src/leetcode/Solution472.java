@@ -36,6 +36,6 @@ import java.util.List;
  */
 public class Solution472 {
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
-       return null; 
+        return null; 
     }  
 }
