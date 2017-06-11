@@ -6,7 +6,8 @@
 package leetcode;
 
 /**
- * Insert Delete GetRandom O(1)   
+ * Insert Delete GetRandom O(1)
+ * 
  * Design a data structure that supports all following operations in average O(1) time.
  * 
  * insert(val): Inserts an item val to the set if not already present.

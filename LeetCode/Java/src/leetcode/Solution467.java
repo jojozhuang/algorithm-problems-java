@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *Consider the string s to be the infinite wraparound string of 
+ * Unique Substrings in Wraparound String
+ * 
+ * Consider the string s to be the infinite wraparound string of 
  * "abcdefghijklmnopqrstuvwxyz", so s will look like this: "...
  * zabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd....".
  * 
@@ -34,10 +36,11 @@ package leetcode;
  * Output: 6
  * Explanation: There are six substrings "z", "a", "b", "za", "ab", "zab" of 
  * string "zab" in the string s.
+ * 
  * @author Johnny
  */
 public class Solution467 {
     public int findSubstringInWraproundString(String p) {
-       return 0; 
+        return 0; 
     }  
 }

@@ -7,10 +7,10 @@ package leetcode;
 
 /**
  * Sort Characters By Frequency
+ * 
  * Given a string, sort it in decreasing order based on the frequency of characters.
  * 
  * Example 1:
- * 
  * Input:
  * "tree"
  * 
@@ -22,7 +22,6 @@ package leetcode;
  * So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
  * 
  * Example 2:
- * 
  * Input:
  * "cccaaa"
  * 
@@ -34,7 +33,6 @@ package leetcode;
  * Note that "cacaca" is incorrect, as the same characters must be together.
  * 
  * Example 3:
- * 
  * Input:
  * "Aabb"
  * 

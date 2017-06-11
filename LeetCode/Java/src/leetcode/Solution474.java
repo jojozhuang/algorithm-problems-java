@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *In the computer world, use restricted resource you have to generate maximum 
+ * Ones and Zeroes
+ * 
+ * In the computer world, use restricted resource you have to generate maximum 
  * benefit is what we always want to pursue.
  * 
  * For now, suppose you are a dominator of m 0s and n 1s respectively. On the 
@@ -32,6 +34,7 @@ package leetcode;
  * 
  * Explanation: You could form "10", but then you'd have nothing left. Better 
  * form "0" and "1".
+ * 
  * @author Johnny
  */
 public class Solution474 {

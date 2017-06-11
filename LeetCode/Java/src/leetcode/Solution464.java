@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *In the "100 game," two players take turns adding, to a running total, any 
+ * Can I Win
+ * 
+ * In the "100 game," two players take turns adding, to a running total, any 
  * integer from 1..10. The player who first causes the running total to reach 
  * or exceed 100 wins.
  * 
@@ -40,10 +42,11 @@ package leetcode;
  * which is >= desiredTotal.
  * Same with other integers chosen by the first player, the second player will
  * always win.
+ * 
  * @author Johnny
  */
 public class Solution464 {
     public boolean canIWin(int maxChoosableInteger, int desiredTotal) {
-    return false;    
+        return false;    
     } 
 }

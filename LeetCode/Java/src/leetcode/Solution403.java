@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *A frog is crossing a river. The river is divided into x units and at each unit
+ * Frog Jump
+ * 
+ * A frog is crossing a river. The river is divided into x units and at each unit
  * there may or may not exist a stone. The frog can jump on a stone, but it must
  * not jump into the water.
  * Given a list of stones' positions (in units) in sorted ascending order, 
@@ -16,6 +18,7 @@ package leetcode;
  * unit.
  * If the frog's last jump was k units, then its next jump must be either k - 1,
  * k,or k + 1 units. Note that the frog can only jump in the forward direction.
+ * 
  * Note:
  * The number of stones is ≥ 2 and is < 1,100.
  * Each stone's position will be a non-negative integer < 231.
@@ -36,6 +39,7 @@ package leetcode;
  * [0,1,2,3,4,8,9,11]
  * Return false. There is no way to jump to the last stone as 
  * the gap between the 5th and 6th stone is too large.
+ * 
  * @author Johnny
  */
 public class Solution403 {

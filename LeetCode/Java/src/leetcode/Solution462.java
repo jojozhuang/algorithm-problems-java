@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *Given a non-empty integer array, find the minimum number of moves required 
+ * Minimum Moves to Equal Array Elements II
+ * 
+ * Given a non-empty integer array, find the minimum number of moves required 
  * to make all array elements equal, where a move is incrementing a selected 
  * element by 1 or decrementing a selected element by 1.
  * 
@@ -25,6 +27,7 @@ package leetcode;
  * element):
  * 
  * [1,2,3]  =>  [2,2,3]  =>  [2,2,2]
+ * 
  * @author Johnny
  */
 public class Solution462 {

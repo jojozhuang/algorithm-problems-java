@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *Shuffle a set of numbers without duplicates.
+ * Shuffle an Array
+ * 
+ * Shuffle a set of numbers without duplicates.
  * 
  * Example:
  * // Init an array with set 1, 2, and 3.

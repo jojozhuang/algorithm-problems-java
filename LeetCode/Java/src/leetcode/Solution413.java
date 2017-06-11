@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *A sequence of number is called arithmetic if it consists of at least three
+ * Arithmetic Slices
+ * 
+ * A sequence of number is called arithmetic if it consists of at least three
  * elements and if the difference between any two consecutive elements is the 
  * same.
  * 
@@ -29,11 +31,11 @@ package leetcode;
  * The function should return the number of arithmetic slices in the array A.
  * 
  * Example:
- * 
  * A = [1, 2, 3, 4]
  * 
  * return: 3, for 3 arithmetic slices in A: [1, 2, 3], [2, 3, 4] and [1, 2, 3, 
  * 4] itself.
+ * 
  * @author Johnny
  */
 public class Solution413 {

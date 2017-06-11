@@ -8,7 +8,9 @@ package leetcode;
 import java.util.List;
 
 /**
- *Given a list of words (without duplicates), please write a program that 
+ * Concatenated Words
+ * 
+ * Given a list of words (without duplicates), please write a program that 
  * returns all concatenated words in the given list of words.
  * 
  * A concatenated word is defined as a string that is comprised entirely of at 
@@ -29,6 +31,7 @@ import java.util.List;
  * The length sum of elements in the given array will not exceed 600,000.
  * All the input string will only include lower case letters.
  * The returned elements order does not matter.
+ * 
  * @author Johnny
  */
 public class Solution472 {

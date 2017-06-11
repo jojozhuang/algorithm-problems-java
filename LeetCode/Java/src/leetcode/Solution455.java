@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *Assume you are an awesome parent and want to give your children some cookies.
+ * Assign Cookies
+ * 
+ * Assume you are an awesome parent and want to give your children some cookies.
  * But, you should give each child at most one cookie. Each child i has a greed 
  * factor gi, which is the minimum size of a cookie that the child will be 
  * content with; and each cookie j has a size sj. If sj >= gi, we can assign 
@@ -29,6 +31,7 @@ package leetcode;
  * only make the child whose greed factor is 1 content.
  * 
  * You need to output 1.
+ * 
  * Example 2:
  * Input: [1,2], [1,2,3]
  * 
@@ -38,8 +41,9 @@ package leetcode;
  * children are 1, 2. 
  * 
  * You have 3 cookies and their sizes are big enough to gratify all of the
- * children, 
+ * children.
  * You need to output 2.
+ * 
  * @author Johnny
  */
 public class Solution455 {

@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *Design and implement a data structure for Least Frequently Used (LFU) cache.
+ * LFU Cache
+ * 
+ * Design and implement a data structure for Least Frequently Used (LFU) cache.
  * It should support the following operations: get and put.
  * 
  * get(key) - Get the value (will always be positive) of the key if the key
@@ -22,7 +24,7 @@ package leetcode;
  * 
  * Example:
  * 
- * LFUCache cache = new LFUCache( 2 capacity  )
+ * LFUCache cache = new LFUCache( 2 //capacity)
  * cache.put(1, 1);
  * cache.put(2, 2);
  * cache.get(1);       // returns 1
@@ -36,12 +38,12 @@ package leetcode;
  * @author Johnny
  */
 public class Solution460 {
-      public LFUCache(int capacity) {
+    public Solution460(int capacity) {
         
     }
     
     public int get(int key) {
-        
+        return 0;
     }
     
     public void put(int key, int value) {

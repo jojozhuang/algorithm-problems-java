@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *Define S = [s,n] as the string S which consists of n connected strings s. For 
+ * Count The Repetitions
+ * 
+ * Define S = [s,n] as the string S which consists of n connected strings s. For 
  * example, ["abc", 3] ="abcabcabc".
  * 
  * On the other hand, we define that string s1 can be obtained from string s2 
@@ -28,10 +30,11 @@ package leetcode;
  * 
  * Return:
  * 2
+ * 
  * @author Johnny
  */
 public class Solution466 {
-  public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
-       return 0; 
+    public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
+        return 0; 
     }   
 }

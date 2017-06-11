@@ -6,7 +6,9 @@
 package leetcode;
 
 /**
- *Given a non-empty array of integers, return the third maximum number in this 
+ * Third Maximum Number
+ * 
+ * Given a non-empty array of integers, return the third maximum number in this 
  * array. If it does not exist, return the maximum number. The time complexity
  * must be in O(n).
  * 
@@ -33,6 +35,7 @@ package leetcode;
  * Explanation: Note that the third maximum here means the third maximum 
  * distinct number.
  * Both numbers with value 2 are both considered as second maximum.
+ * 
  * @author Johnny
  */
 public class Solution414 {
