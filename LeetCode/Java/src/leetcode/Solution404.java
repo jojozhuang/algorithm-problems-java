@@ -25,6 +25,25 @@ import leetcode.common.TreeNode;
  */
 public class Solution404 {
     public int sumOfLeftLeaves(TreeNode root) {
-        return 0;   
+        if (root == null) {
+            return 0;
+        }
+        
+        int leftSum = 0;
+        int rightSum = sumOfLeftLeaves(root.right);
+        TreeNode left = root.left;
+        while(left != null && left.left != null) {
+            rightSum += sumOfLeftLeaves(left.right);
+            left = left.left;
+        }
+        if (left != null) {
+            if (left.right == null) {
+                leftSum = left.val;
+            } else {
+                rightSum += sumOfLeftLeaves(left.right);
+            }
+        }
+        
+        return leftSum + rightSum;   
     } 
 }

@@ -48,6 +48,35 @@ import java.util.List;
  */
 public class Solution438 {
     public List<Integer> findAnagrams(String s, String p) {
-        return new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
+        if (s == null || s.isEmpty() || p.length() > s.length()) {
+            return res;
+        }
+        
+        int[] counts = new int[26];
+        for (int i = 0; i < p.length(); i++) {
+            counts[p.charAt(i) - 'a']++;
+        }
+        
+        for (int i = 0; i <= s.length() - p.length(); i++) {
+            int[] countsCopy = counts.clone();
+            for (int j = 0; j < p.length(); j++) {
+                countsCopy[s.charAt(j + i) - 'a']--;
+            }
+            
+            boolean isAnagrams = true;
+            for (int k = 0; k < countsCopy.length; k++) {
+                if (countsCopy[k] != 0) {
+                    isAnagrams = false;
+                    break;
+                }
+            }
+            
+            if (isAnagrams) {
+                res.add(i);
+            }
+        }
+        
+        return res;
     }
 }

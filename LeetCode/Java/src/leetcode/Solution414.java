@@ -40,6 +40,31 @@ package leetcode;
  */
 public class Solution414 {
     public int thirdMax(int[] nums) {
-        return 0;   
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        long first = Long.MIN_VALUE;
+        long second = Long.MIN_VALUE;
+        long third = Long.MIN_VALUE;
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > first) {
+                third = second;
+                second = first;
+                first = nums[i];
+            } else if (nums[i] != first && nums[i] > second){
+                third = second;
+                second = nums[i];               
+            } else if (nums[i] != first && nums[i] != second && nums[i] > third){
+                third = nums[i];
+            }
+        }
+        
+        if (third != Long.MIN_VALUE) {
+            return (int)third;
+        } else {
+            return (int)first;
+        }
     }  
 }

@@ -42,6 +42,25 @@ package leetcode;
  */
 public class Solution441 {
     public int arrangeCoins(int n) {
-        return 0;
+        if (n == 0) {
+            return 0;
+        }
+        
+        int start = 0;
+        int end = n;
+        
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            double sum = (0.5 * mid * mid + 0.5 * mid);
+            if (sum == n) {
+                return mid;
+            } else if (sum > n) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        
+        return start - 1; 
     }
 }

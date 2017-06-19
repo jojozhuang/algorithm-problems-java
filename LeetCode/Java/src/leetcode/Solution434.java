@@ -22,6 +22,17 @@ package leetcode;
  */
 public class Solution434 {
     public int countSegments(String s) {
-        return 0;
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        
+        int count = 0;
+        for(int i= 0; i < s.length(); i++) {
+            if (s.charAt(i) != ' ' && (i == 0 || s.charAt(i - 1) == ' ')) {
+                count++;
+            }
+        }
+        
+        return count;
     }
 }

@@ -5,6 +5,9 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import leetcode.common.TreeNode;
 
 /**
@@ -41,6 +44,35 @@ import leetcode.common.TreeNode;
  */
 public class Solution437 {
     public int pathSum(TreeNode root, int sum) {
-        return 0;
+        if (root == null) {
+            return 0;
+        }
+        
+        return helper(root, sum, sum);
     }
+    
+    private int helper(TreeNode root, int sum, int originalSum) {
+        if (root == null) {
+            return 0;
+        }
+        
+        if ((originalSum >= 0 && sum < 0) ||
+            (originalSum < 0 && sum >= 0)) {
+            return helper(root, originalSum, originalSum);
+        }
+        
+        int count = 0;
+        if (root.val == sum) {
+            count++;
+        }
+        
+        if (root.val == originalSum && sum != originalSum) {
+            count++;
+        }
+        
+        int left = helper(root.left, sum - root.val, originalSum);
+        int right = helper(root.right, sum - root.val, originalSum);
+        
+        return left + right + count;
+    }  
 }

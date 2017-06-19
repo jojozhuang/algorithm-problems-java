@@ -31,6 +31,36 @@ package leetcode;
  */
 public class Solution409 {
     public int longestPalindrome(String s) {
-        return 0; 
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        
+        int[] counts = new int[52];
+        
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c >= 'A' && c <= 'Z') {
+                counts[s.charAt(i) - 'A']++;
+            } else {
+                counts[s.charAt(i) - 'a' + 26]++;
+            }
+        }
+        
+        int result = 0;
+        boolean odd = false;
+        for (int i = 0; i < counts.length; i++) {
+            if (counts[i] % 2 == 0) {
+                result += counts[i];
+            } else {
+                result += counts[i] - 1;
+                odd = true;
+            }
+        }
+        
+        if (odd) {
+            return result + 1;
+        } else {
+            return result;
+        }
     }  
 }
