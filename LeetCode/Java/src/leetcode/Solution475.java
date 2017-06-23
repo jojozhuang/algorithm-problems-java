@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * Heaters
  * 
@@ -42,6 +44,55 @@ package leetcode;
  */
 public class Solution475 {
     public int findRadius(int[] houses, int[] heaters) {
-        return 0;
+        if (houses == null || houses.length == 0 ||
+                heaters == null || heaters.length == 0) {
+            
+        }
+        
+        int[] distances = new int[houses.length];
+        Arrays.sort(heaters);
+        for (int i = 0; i < houses.length; i++) {
+            distances[i] = findDistance(houses[i], heaters);
+        }
+        
+        int res = 0;
+        
+        for (int i = 0; i < distances.length; i++) {
+            res = Math.max(res, distances[i]);
+        }
+        
+        return res;
+    }
+    
+    private int findDistance(int house, int[] heaters) {
+        int start = 0;
+        int end = heaters.length - 1;
+        
+        while (start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if (house == heaters[mid]) {
+                return 0;
+            } else if (house < heaters[mid]) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        
+        if (house < heaters[start]) {
+            if (start - 1 >= 0) {
+                return Math.min(house - heaters[start - 1], heaters[start] - house);
+            } else {
+                return heaters[start] - house;
+            }
+        } else if (house > heaters[end]) {
+            if (end + 1 <= heaters.length - 1) {
+                return Math.min(heaters[end + 1] - house, house - heaters[end]);
+            } else {
+                return house - heaters[start];
+            }
+        } else {
+            return Math.min(house - heaters[start], heaters[end] - house);
+        }
     }
 }

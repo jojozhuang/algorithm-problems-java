@@ -31,6 +31,9 @@ package leetcode;
  */
 public class Solution476 {
     public int findComplement(int num) {
-        return 0;
+        int highest = Integer.highestOneBit(num);
+        int mask = highest - 1;
+        num = ~num;
+        return num & mask;
     }
 }

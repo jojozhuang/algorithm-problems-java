@@ -31,6 +31,25 @@ package leetcode;
  */
 public class Solution520 {
     public boolean detectCapitalUse(String word) {
-        return false;  
+        if (word == null || word.isEmpty()) {
+            return true;
+        }
+        
+        boolean first = false;
+        int count = 0;
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) >= 'A' && word.charAt(i) <= 'Z') {
+                if (i == 0) {
+                    first = true;
+                } else {
+                    if (first == false) {
+                        return false;
+                    }
+                }
+                count++;
+            }
+        }
+        
+        return count == 0 || (first && count == 1) || count == word.length();
     }  
 }

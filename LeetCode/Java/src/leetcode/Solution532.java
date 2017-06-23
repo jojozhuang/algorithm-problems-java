@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * K-diff Pairs in an Array
  * 
@@ -39,6 +41,40 @@ package leetcode;
  */
 public class Solution532 {
     public int findPairs(int[] nums, int k) {
-        return 0;
+        if (nums == null || nums.length <= 1) {
+            return 0;
+        }
+        
+        Arrays.sort(nums);
+        
+        int fast = 1;
+        int slow = 0;
+        
+        int res = 0;
+        while (fast < nums.length && slow < nums.length - 1) {
+            if (fast == slow) {
+                fast++;
+                continue;
+            }
+     
+            int diff = nums[fast] - nums[slow];
+            if (diff == k) {
+                res++;
+                while(fast + 1 < nums.length && nums[fast] == nums[fast + 1]) {
+                    fast++;
+                }
+                while(slow + 1 < nums.length && nums[slow] == nums[slow + 1] && slow + 1 != fast) {
+                    slow++;
+                }
+                fast++;
+                slow++;
+            } else if (diff > k) {
+                slow++;
+            } else {
+                fast++;
+            }
+        }
+        
+        return res;
     }   
 }

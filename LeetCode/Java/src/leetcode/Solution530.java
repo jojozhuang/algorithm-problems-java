@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
 import leetcode.common.TreeNode;
 
 /**
@@ -36,6 +38,36 @@ import leetcode.common.TreeNode;
  */
 public class Solution530 {
     public int getMinimumDifference(TreeNode root) {
-        return 0;
-    } 
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        
+        int diff = Integer.MAX_VALUE;
+        
+        List<Integer> list = inorderTraversal(root);
+        Integer[] array = new Integer[list.size()];
+        array = list.toArray(array);
+        for (int i = 1; i < array.length; i++) {
+            diff = Math.min(array[i] - array[i - 1], diff);
+        }
+        
+        return diff;        
+    }
+    
+    private List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        
+        if (root == null) {
+            return result;
+        }
+        
+        List<Integer> left = inorderTraversal(root.left);
+        List<Integer> right = inorderTraversal(root.right);
+        
+        result.addAll(left);
+        result.add(root.val);
+        result.addAll(right);
+        
+        return result;        
+    }
 }

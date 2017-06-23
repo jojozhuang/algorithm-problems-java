@@ -5,6 +5,10 @@
  */
 package leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 /**
  * Next Greater Element I
  * 
@@ -37,7 +41,34 @@ package leetcode;
  * @author Johnny
  */
 public class Solution496 {
-    public int nextGreaterElement(int[] findNums, int[] nums) {
-        return 0; 
+    public int[] nextGreaterElement(int[] findNums, int[] nums) {
+        if (findNums == null || findNums.length == 0 ||
+            nums == null || nums.length == 0 || findNums.length > nums.length) {
+            return new int[]{};
+        }
+        
+        Map<Integer, Integer> greaterMap = new HashMap<Integer, Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
+        
+        for (int i = nums.length - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && nums[i] > stack.peek()) {
+                stack.pop();
+            }
+            
+            if (stack.isEmpty()) {
+                greaterMap.put(nums[i], -1);
+            } else {
+                greaterMap.put(nums[i], stack.peek());
+            }
+            
+            stack.push(nums[i]);
+        }
+        
+        int[] res = new int[findNums.length];
+        for (int i = 0; i < findNums.length; i++) {
+            res[i] = greaterMap.get(findNums[i]);
+        }
+        
+        return res; 
     }  
 }

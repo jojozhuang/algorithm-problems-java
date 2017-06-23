@@ -32,6 +32,25 @@ package leetcode;
  */
 public class Solution551 {
     public boolean checkRecord(String s) {
-        return false;    
+        if (s == null || s.isEmpty()) {
+            return false;
+        }
+        
+        int countAbsent = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char state = s.charAt(i);
+            if (state == 'A') {
+                countAbsent++;
+                if (countAbsent > 1) {
+                    return false;
+                }
+            } else if (state == 'L') {
+                if (i + 2 < s.length() && s.charAt(i + 1) == 'L' && s.charAt(i + 2) == 'L') {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
     }   
 }

@@ -40,7 +40,16 @@ package leetcode;
  * @author Johnny
  */
 public class Solution492 {
-    public int constructRectangle(int area) {
-        return 0; 
+    public int[] constructRectangle(int area) {
+        if (area <= 0) {
+            return new int[]{};
+        }
+        
+        int w = (int)Math.sqrt(area);
+        while (area % w != 0) {
+            w--;
+        }
+        
+        return new int[]{area / w, w}; 
     }  
 }

@@ -26,6 +26,33 @@ package leetcode;
  */
 public class Solution541 {
     public String reverseStr(String s, int k) {
-        return "";
-    }  
+        if (s == null || s.isEmpty()) {
+            return "";
+        }
+        if (k < 2) {
+            return s;
+        }
+        
+        char[] letters = s.toCharArray();
+        
+        for (int i = 0; i < letters.length; i += 2*k) {
+            reverseHelper(letters, i, Math.min(letters.length - 1,  i + k - 1));
+        }
+        
+        return String.valueOf(letters);
+    }
+    
+    private void reverseHelper(char[] arr, int start, int end) {
+        if (start >= arr.length || end > arr.length) {
+            return;
+        }
+        
+        while (start < end) {
+            char temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
 }
