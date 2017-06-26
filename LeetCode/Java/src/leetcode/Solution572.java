@@ -51,6 +51,42 @@ import leetcode.common.TreeNode;
  */
 public class Solution572 {
     public boolean isSubtree(TreeNode s, TreeNode t) {
+        if (s == null) {
+            return false;
+        }
+
+        if (isSame(s, t)) {
+            return true;
+        }
+        
+        if (isSubtree(s.left, t)) {
+            return true;
+        }
+
+        if (isSubtree(s.right, t)) {
+            return true;
+        }
+        
         return false;
+    }
+    
+    private boolean isSame(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 != null) {
+            return false;
+        }
+        
+        if (t1 != null && t2 == null) {
+            return false;
+        }
+        
+        if (t1 == null && t2 == null) {
+            return true;
+        }
+        
+        if (t1.val != t2.val) {
+            return false;
+        }
+        
+        return isSame(t1.left, t2.left) && isSame(t1.right, t2.right);        
     }
 }

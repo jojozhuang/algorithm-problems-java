@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.HashSet;
+
 /**
  * Distribute Candies
  * 
@@ -36,6 +38,17 @@ package leetcode;
  */
 public class Solution575 {
     public int distributeCandies(int[] candies) {
-        return 0;
+        if (candies == null || candies.length == 0 || candies.length % 2 != 0) {
+            return 0;
+        }
+        
+        HashSet<Integer> kinds = new HashSet<Integer>();
+        for (int i = 0; i < candies.length; i++) {
+            if (!kinds.contains(candies[i])) {
+                kinds.add(candies[i]);
+            }
+        }
+        
+        return Math.min(candies.length / 2, kinds.size());
     }    
 }
