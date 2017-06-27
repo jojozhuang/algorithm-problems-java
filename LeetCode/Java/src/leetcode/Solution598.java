@@ -50,6 +50,40 @@ package leetcode;
  */
 public class Solution598 {
     public int maxCount(int m, int n, int[][] ops) {
-        return 0;
+        if (ops== null || ops.length == 0 || ops[0].length == 0) {
+            return m * n;
+        }
+        if (m <= 0 || n <= 0 || ops[0].length != 2) {
+            return 0;
+        }
+        
+        int[] rows = new int[m];
+        int[] cols = new int[n];
+        for (int i = 0; i < ops.length; i++) {
+            rows[0]++;
+            cols[0]++;
+            for (int j = 1; j < ops[i][0]; j++) {
+                rows[j]++;
+            }
+            for (int k = 1; k < ops[i][1]; k++) {
+                cols[k]++;
+            }
+        }
+        
+        int rowLen = 1;
+        for (int i = 1; i < rows.length; i++) {
+            if (rows[i] == rows[0]) {
+                rowLen++;
+            }
+        }
+        
+        int colLen = 1;
+        for (int i = 1; i < cols.length; i++) {
+            if (cols[i] == cols[0]) {
+                colLen++;
+            }
+        }
+        
+        return rowLen * colLen;
     }
 }

@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * Shortest Unsorted Continuous Subarray
  * 
@@ -27,6 +29,30 @@ package leetcode;
  */
 public class Solution581 {
     public int findUnsortedSubarray(int[] nums) {
-        return 0;
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int[] clone = nums.clone();
+        Arrays.sort(clone);
+        
+        int start = 0;
+        int end = nums.length - 1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == clone[i]) {
+                start++;                
+            } else {
+                break;
+            }
+        }
+        for (int i = nums.length - 1; i > start; i--) {
+            if (nums[i] == clone[i]) {
+                end--;
+            } else{
+                break;
+            }
+        }
+        
+        return end - start + 1;
     }
 }

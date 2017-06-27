@@ -51,6 +51,23 @@ import leetcode.common.TreeNode;
  */
 public class Solution606 {
     public String tree2str(TreeNode t) {
-        return "";
+        if (t == null) {
+            return "";
+        }
+        
+        String res = String.valueOf(t.val);
+        
+        String left = tree2str(t.left);
+        String right = tree2str(t.right);
+
+        if (!left.isEmpty() || !right.isEmpty()) {
+            res = res + "(" + left + ")";
+        }
+        
+        if (!right.isEmpty()) {
+            res = res + "(" + right + ")";
+        }
+
+        return res;
     }
 }

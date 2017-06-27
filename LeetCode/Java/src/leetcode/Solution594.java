@@ -5,6 +5,9 @@
  */
 package leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Longest Harmonious Subsequence
  * 
@@ -25,6 +28,22 @@ package leetcode;
  */
 public class Solution594 {
     public int findLHS(int[] nums) {
-        return 0;
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+        }
+        
+        int res = 0;
+        for (Integer num: map.keySet()) {
+            if (map.containsKey(num + 1)) {
+                res = Math.max(res, map.get(num) + map.get(num + 1));
+            }
+        }
+        
+        return res;
     }
 }

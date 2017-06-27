@@ -51,5 +51,22 @@ import java.util.Queue;
         }
         
         return root;
-     }
+    }
+    
+    public static boolean isSameValueTree(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 == null) {
+            return true;
+        }
+        if (t1 == null && t2 != null) {
+            return false;
+        }
+        if (t1 != null && t2 == null) {
+            return false;
+        }
+        if (t1.val != t2.val) {
+            return false;
+        }
+        
+        return isSameValueTree(t1.left, t2.left) && isSameValueTree(t1.right, t2.right);
+    }
  }
