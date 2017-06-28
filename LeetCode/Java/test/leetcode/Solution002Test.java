@@ -48,49 +48,24 @@ public class Solution002Test {
 
         //Input: (5) + (5)
         //Output: 0 -> 1
-        ListNode nodeOne1 = new ListNode(5);
-        ListNode nodeOne2 = new ListNode(5);
-        ListNode expResultOne= new ListNode(0);
-        ListNode expResultOne2 = new ListNode(1);
-        ListNode resultOne = instance.addTwoNumbers(nodeOne1, nodeOne2);
-        assertEquals(expResultOne.val, resultOne.val);
-        assertEquals(expResultOne2.val, resultOne.next.val);
+        ListNode l11 = ListNode.createInstance(new int[]{5});
+        ListNode l12 = ListNode.createInstance(new int[]{5});
+        ListNode expect1 = ListNode.createInstance(new int[]{0,1});
+        assertTrue(ListNode.isSame(expect1, instance.addTwoNumbers(l11,l12)));
         
         //Input: (2) + (8 -> 9)
         //Output: 0 -> 0 -> 1
-        ListNode nodeTwo1 = new ListNode(2);
-        ListNode nodeTwo2 = new ListNode(8);
-        ListNode nodeTwo3 = new ListNode(9);
-        nodeTwo2.next = nodeTwo3;
-        ListNode expResultTwo= new ListNode(0);
-        ListNode expResultTwo2 = new ListNode(0);
-        ListNode expResultTwo3 = new ListNode(1);
-        ListNode resultTwo = instance.addTwoNumbers(nodeTwo1, nodeTwo2);
-        assertEquals(expResultTwo.val, resultTwo.val);
-        assertEquals(expResultTwo2.val, resultTwo.next.val);
-        assertEquals(expResultTwo3.val, resultTwo.next.next.val);
+        ListNode l21 = ListNode.createInstance(new int[]{2});
+        ListNode l22 = ListNode.createInstance(new int[]{8,9});
+        ListNode expect2 = ListNode.createInstance(new int[]{0,0,1});
+        assertTrue(ListNode.isSame(expect2, instance.addTwoNumbers(l21,l22)));
         
         //Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
         //Output: 7 -> 0 -> 8
-        ListNode l1 = new ListNode(2);
-        ListNode l12 = new ListNode(4);
-        ListNode l13 = new ListNode(3);
-        l1.next = l12;
-        l12.next = l13;
-        ListNode l2 = new ListNode(5);
-        ListNode l22 = new ListNode(6);
-        ListNode l23 = new ListNode(4);
-        l2.next = l22;
-        l22.next = l23;
-        ListNode expResult = new ListNode(7);
-        ListNode expResult2 = new ListNode(0);
-        ListNode expResult3 = new ListNode(8);
-        expResult.next = expResult2;
-        expResult2.next = expResult3;
-        ListNode result = instance.addTwoNumbers(l1, l2);
-        assertEquals(expResult.val, result.val);
-        assertEquals(expResult2.val, result.next.val);
-        assertEquals(expResult3.val, result.next.next.val);        
+        ListNode l31 = ListNode.createInstance(new int[]{2,4,3});
+        ListNode l32 = ListNode.createInstance(new int[]{5,6,4});
+        ListNode expect3 = ListNode.createInstance(new int[]{7,0,8});
+        assertTrue(ListNode.isSame(expect3, instance.addTwoNumbers(l31,l32)));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

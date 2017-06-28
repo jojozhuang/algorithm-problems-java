@@ -44,28 +44,14 @@ public class Solution206Test {
     @Test
     public void testReverseList() {
         System.out.println("reverseList");
-        ListNode head = null;
         Solution206 instance = new Solution206();
-        ListNode expResult = null;
-        ListNode result = instance.reverseList(head);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.reverseList(null));
         
         //1->2->3->4->5
-        ListNode head2 = new ListNode(1);
-        head2.next  = new ListNode(2); 
-        head2.next.next  = new ListNode(3); 
-        head2.next.next.next  = new ListNode(4); 
-        head2.next.next.next.next  = new ListNode(5); 
-        ListNode result2 = instance.reverseList(head2);
-        ListNode expResult2 = new ListNode(5);
-        expResult2.next  = new ListNode(4); 
-        expResult2.next.next  = new ListNode(3); 
-        expResult2.next.next.next  = new ListNode(2); 
-        expResult2.next.next.next.next  = new ListNode(1);  
-        assertEquals(expResult2.val, result2.val);
-        assertEquals(expResult2.next.val, result2.next.val);
-        assertEquals(expResult2.next.next.val, result2.next.next.val);
-        assertEquals(expResult2.next.next.next.val, result2.next.next.next.val);       
+        ListNode head2 = ListNode.createInstance(new int[]{1,2,3,4,5});
+        ListNode expect2 = ListNode.createInstance(new int[]{5,4,3,2,1});
+        assertTrue(ListNode.isSame(expect2, instance.reverseList(head2)));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

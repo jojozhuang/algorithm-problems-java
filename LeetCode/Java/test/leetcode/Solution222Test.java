@@ -50,13 +50,13 @@ public class Solution222Test {
         int result = instance.countNodes(root);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[] {"1","2", "#"});
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2", "#"});
         assertEquals(2, instance.countNodes(root2));
         
-        TreeNode root3 = TreeNode.CreateInstance(new String[] {"1","2", "3"});
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2", "3"});
         assertEquals(3, instance.countNodes(root3));
       
-        TreeNode root4 = TreeNode.CreateInstance(new String[] {"1","2", "3","4","#","#","#"});
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2", "3","4","#","#","#"});
         assertEquals(4, instance.countNodes(root4));
         
         // TODO review the generated test code and remove the default call to fail.

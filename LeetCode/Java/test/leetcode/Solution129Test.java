@@ -50,13 +50,13 @@ public class Solution129Test {
         int result = instance.sumNumbers(root);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[] {"1","2", "#"});
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2", "#"});
         assertEquals(12, instance.sumNumbers(root2));
-        TreeNode root3 = TreeNode.CreateInstance(new String[] {"1","2", "3"});
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2", "3"});
         assertEquals(25, instance.sumNumbers(root3));
-        TreeNode root4 = TreeNode.CreateInstance(new String[] {"1","2", "3", "#","#","#","5"});
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2", "3", "#","#","#","5"});
         assertEquals(147, instance.sumNumbers(root4));
-        TreeNode root5 = TreeNode.CreateInstance(new String[] {"1","2", "3", "#","#","4","5"});
+        TreeNode root5 = TreeNode.createInstance(new String[] {"1","2", "3", "#","#","4","5"});
         assertEquals(281, instance.sumNumbers(root5));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

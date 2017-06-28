@@ -20,7 +20,7 @@ import java.util.Queue;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
      
-    public static TreeNode CreateInstance(String[] arr) {  
+    public static TreeNode createInstance(String[] arr) {  
         List<String> serial = Arrays.asList(arr);
         if(serial == null || serial.size() == 0) {
             return null;         
@@ -53,7 +53,7 @@ import java.util.Queue;
         return root;
     }
     
-    public static boolean isSameValueTree(TreeNode t1, TreeNode t2) {
+    public static boolean isSame(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null) {
             return true;
         }
@@ -67,6 +67,6 @@ import java.util.Queue;
             return false;
         }
         
-        return isSameValueTree(t1.left, t2.left) && isSameValueTree(t1.right, t2.right);
+        return isSame(t1.left, t2.left) && isSame(t1.right, t2.right);
     }
  }

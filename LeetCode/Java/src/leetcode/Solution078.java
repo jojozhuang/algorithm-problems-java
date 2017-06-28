@@ -34,24 +34,24 @@ import java.util.List;
  */
 public class Solution078 {
     public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (nums == null) {
-            return ret;
+            return res;
         }
 
         Arrays.sort(nums);// not necessary, just for unit test
         
         List<Integer> list = new ArrayList<Integer>();
-        helper(ret, list, nums, 0);
-        return ret;
+        helper(nums, 0, list, res);
+        return res;
     }
     
-    private void helper(List<List<Integer>> ret, List<Integer> list, int[] nums, int pos) {
-        ret.add(new ArrayList<Integer>(list));
+    private void helper(int[] nums, int pos, List<Integer> list, List<List<Integer>> res) {
+        res.add(new ArrayList<Integer>(list));
         
         for (int i = pos; i < nums.length; i++) {
             list.add(nums[i]);
-            helper(ret, list, nums, i + 1);
+            helper(nums, i + 1, list, res);
             list.remove(list.size() - 1);
         }
     }    

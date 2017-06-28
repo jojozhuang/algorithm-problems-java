@@ -46,13 +46,13 @@ public class Solution563Test {
         System.out.println("findTilt");
         Solution563 instance = new Solution563();
         
-        TreeNode r1 = TreeNode.CreateInstance(new String[] {"1"});
+        TreeNode r1 = TreeNode.createInstance(new String[] {"1"});
         assertEquals(0, instance.findTilt(r1));
         
-        TreeNode r2 = TreeNode.CreateInstance(new String[] {"1","#", "3"});
+        TreeNode r2 = TreeNode.createInstance(new String[] {"1","#", "3"});
         assertEquals(3, instance.findTilt(r2));
         
-        TreeNode r3 = TreeNode.CreateInstance(new String[] {"1","2", "3"});
+        TreeNode r3 = TreeNode.createInstance(new String[] {"1","2", "3"});
         assertEquals(1, instance.findTilt(r3));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

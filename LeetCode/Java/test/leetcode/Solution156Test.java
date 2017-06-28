@@ -50,7 +50,7 @@ public class Solution156Test {
         TreeNode result = instance.upsideDownBinaryTree(root);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[] {"1","2", "3","4","5"});
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2", "3","4","5"});
         TreeNode result2 = instance.upsideDownBinaryTree(root2);
         assertEquals(4, result2.val);
         assertEquals(5, result2.left.val);

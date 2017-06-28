@@ -54,13 +54,13 @@ public class Solution272Test {
         List<Integer> result = instance.closestKValues(root, target, k);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[] {"4"});
+        TreeNode root2 = TreeNode.createInstance(new String[] {"4"});
         List<Integer> result2 = instance.closestKValues(root2, 4, 1);
         List<Integer> expResult2 = new ArrayList<Integer>();
         expResult2.add(4);
         assertTrue(expResult2.containsAll(result2)&&result2.containsAll(expResult2));
         
-        TreeNode root3 = TreeNode.CreateInstance(new String[] {"4","1","7"});
+        TreeNode root3 = TreeNode.createInstance(new String[] {"4","1","7"});
         List<Integer> result31 = instance.closestKValues(root3, 6, 1);
         List<Integer> expResult31 = new ArrayList<Integer>();
         expResult31.add(7);

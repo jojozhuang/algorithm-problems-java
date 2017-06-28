@@ -52,7 +52,7 @@ public class Solution314Test {
         List<List<Integer>> result = instance.verticalOrder(root);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[]{"1"});
+        TreeNode root2 = TreeNode.createInstance(new String[]{"1"});
         List<List<Integer>> expResult2 = new ArrayList();
         List<Integer> list21 = new ArrayList<Integer>();
         list21.add(1);
@@ -60,7 +60,7 @@ public class Solution314Test {
         List<List<Integer>> result2 = instance.verticalOrder(root2);
         assertEquals(expResult2, result2);
         
-        TreeNode root3 = TreeNode.CreateInstance(new String[]{"1","2","3"});
+        TreeNode root3 = TreeNode.createInstance(new String[]{"1","2","3"});
         List<List<Integer>> expResult3 = new ArrayList();
         List<Integer> list31 = new ArrayList<Integer>();
         list31.add(2);
@@ -74,7 +74,7 @@ public class Solution314Test {
         List<List<Integer>> result3 = instance.verticalOrder(root3);
         assertEquals(expResult3, result3);
         
-        TreeNode root4 = TreeNode.CreateInstance(new String[]{"3","9","20", "#","#","15","7"});
+        TreeNode root4 = TreeNode.createInstance(new String[]{"3","9","20", "#","#","15","7"});
         List<List<Integer>> expResult4 = new ArrayList();
         List<Integer> list41 = new ArrayList<Integer>();
         list41.add(9);
@@ -92,7 +92,7 @@ public class Solution314Test {
         List<List<Integer>> result4 = instance.verticalOrder(root4);
         assertEquals(expResult4, result4);
         
-        TreeNode root5 = TreeNode.CreateInstance(new String[]{"3","9","20", "4","5","2","7"});
+        TreeNode root5 = TreeNode.createInstance(new String[]{"3","9","20", "4","5","2","7"});
         List<List<Integer>> expResult5 = new ArrayList();
         List<Integer> list51 = new ArrayList<Integer>();
         list51.add(4);

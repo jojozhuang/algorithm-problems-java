@@ -51,11 +51,11 @@ public class Solution270Test {
         int result = instance.closestValue(root, target);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[] {"4"});
+        TreeNode root2 = TreeNode.createInstance(new String[] {"4"});
         assertEquals(4, instance.closestValue(root2, 3));
         assertEquals(4, instance.closestValue(root2, 5));
         
-        TreeNode root3 = TreeNode.CreateInstance(new String[] {"4","1","7"});
+        TreeNode root3 = TreeNode.createInstance(new String[] {"4","1","7"});
         assertEquals(7, instance.closestValue(root3, 6));
         assertEquals(1, instance.closestValue(root3, 2));
         assertEquals(4, instance.closestValue(root3, 3));

@@ -51,13 +51,13 @@ public class Solution108Test {
         assertEquals(expResult, result);
         
         TreeNode result1 = instance.sortedArrayToBST(new int[] {1,2,3});
-        TreeNode expResult1 = TreeNode.CreateInstance(new String[] {"2","1","3"});
+        TreeNode expResult1 = TreeNode.createInstance(new String[] {"2","1","3"});
         assertEquals(expResult1.val, result1.val);
         assertEquals(expResult1.left.val, result1.left.val);
         assertEquals(expResult1.right.val, result1.right.val);
         
         TreeNode result2 = instance.sortedArrayToBST(new int[] {1,2,3,4,5,6,7,8,9});
-        TreeNode expResult2 = TreeNode.CreateInstance(new String[] {"5","3","8","2","4","7","9","1","#","#","#","6","#"});
+        TreeNode expResult2 = TreeNode.createInstance(new String[] {"5","3","8","2","4","7","9","1","#","#","#","6","#"});
         assertEquals(expResult2.val, result2.val);
         assertEquals(expResult2.left.val, result2.left.val);
         assertEquals(expResult2.left.left.val, result2.left.left.val);

@@ -26,11 +26,11 @@ public class AllSorting {
        
         //small to big
         for(int i = 0; i < nums.length; i++) {
-            for (int j = nums.length -1 ; j > i; j--) { //find the smallest one
-                if (nums[j] < nums[j-1]) {
+            for (int j = nums.length - 1 ; j > i; j--) { //find the smallest one
+                if (nums[j] < nums[j - 1]) {
                     int temp = nums[j];
-                    nums[j] = nums[j-1];
-                    nums[j-1] = temp;
+                    nums[j] = nums[j - 1];
+                    nums[j - 1] = temp;
                 }
             }
         }
@@ -46,8 +46,8 @@ public class AllSorting {
         for (int i = 1; i < nums.length; i++) {
             int key = nums[i];
             int j = i;
-            while(j > 0 && nums[j-1] > key) {
-                nums[j] = nums[j-1];
+            while(j > 0 && nums[j - 1] > key) {
+                nums[j] = nums[j - 1];
                 j--;
             }
             nums[j] = key;

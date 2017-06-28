@@ -48,10 +48,10 @@ public class Solution404Test {
         TreeNode r1 = new TreeNode(1);
         assertEquals(0, instance.sumOfLeftLeaves(r1));
         
-        TreeNode r2 = TreeNode.CreateInstance(new String[] {"3","9", "20"});
+        TreeNode r2 = TreeNode.createInstance(new String[] {"3","9", "20"});
         assertEquals(9, instance.sumOfLeftLeaves(r2));
         
-        TreeNode r3 = TreeNode.CreateInstance(new String[] {"3","9", "20", "#","#","15","7"});
+        TreeNode r3 = TreeNode.createInstance(new String[] {"3","9", "20", "#","#","15","7"});
         assertEquals(24, instance.sumOfLeftLeaves(r3));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

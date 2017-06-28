@@ -48,22 +48,22 @@ public class Solution606Test {
 
         assertEquals("", instance.tree2str(null));
         
-        TreeNode t1 = TreeNode.CreateInstance(new String[] {"1"});
+        TreeNode t1 = TreeNode.createInstance(new String[] {"1"});
         assertEquals("1", instance.tree2str(t1));
         
-        TreeNode t2 = TreeNode.CreateInstance(new String[] {"1","2","3"});
+        TreeNode t2 = TreeNode.createInstance(new String[] {"1","2","3"});
         assertEquals("1(2)(3)", instance.tree2str(t2));
         
-        TreeNode t3 = TreeNode.CreateInstance(new String[] {"1","#","3"});
+        TreeNode t3 = TreeNode.createInstance(new String[] {"1","#","3"});
         assertEquals("1()(3)", instance.tree2str(t3));
         
-        TreeNode t4 = TreeNode.CreateInstance(new String[] {"1","2","#"});
+        TreeNode t4 = TreeNode.createInstance(new String[] {"1","2","#"});
         assertEquals("1(2)", instance.tree2str(t4));
         
-        TreeNode t5 = TreeNode.CreateInstance(new String[] {"1","2","3","4","#"});
+        TreeNode t5 = TreeNode.createInstance(new String[] {"1","2","3","4","#"});
         assertEquals("1(2(4))(3)", instance.tree2str(t5));
         
-        TreeNode t6 = TreeNode.CreateInstance(new String[] {"1","2","3","#","4"});
+        TreeNode t6 = TreeNode.createInstance(new String[] {"1","2","3","#","4"});
         assertEquals("1(2()(4))(3)", instance.tree2str(t6));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

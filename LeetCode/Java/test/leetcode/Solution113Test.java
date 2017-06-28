@@ -105,7 +105,7 @@ public class Solution113Test {
         expResult7.add(list71);
         assertEquals(expResult7, instance.pathSum(root7, -5));
         
-        TreeNode root8 = TreeNode.CreateInstance(new String[]{"5","4","8","11","#","13","4","7","2","#","#","5","1","#","#","#","#","#","#","#","#"});        
+        TreeNode root8 = TreeNode.createInstance(new String[]{"5","4","8","11","#","13","4","7","2","#","#","5","1","#","#","#","#","#","#","#","#"});        
         List<Integer> list81 = new ArrayList();
         list81.add(5);
         list81.add(4);
@@ -121,7 +121,7 @@ public class Solution113Test {
         expResult8.add(list82);
         assertEquals(expResult8, instance.pathSum(root8, 22));
         
-        TreeNode root9 = TreeNode.CreateInstance(new String[]{"1","-2","-3","1","3","-2","#","-1","#","#","#","#","#"});
+        TreeNode root9 = TreeNode.createInstance(new String[]{"1","-2","-3","1","3","-2","#","-1","#","#","#","#","#"});
         List<Integer> list91 = new ArrayList();
         list91.add(1);
         list91.add(-2);

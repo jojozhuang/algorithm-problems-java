@@ -50,7 +50,7 @@ public class Solution250Test {
         int result = instance.countUnivalSubtrees(root);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[]{"5","1","5","5","5", "#","5"});
+        TreeNode root2 = TreeNode.createInstance(new String[]{"5","1","5","5","5", "#","5"});
         assertEquals(4, instance.countUnivalSubtrees(root2));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

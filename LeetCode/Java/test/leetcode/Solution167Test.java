@@ -50,7 +50,7 @@ public class Solution167Test {
         int[] result = instance.twoSum(nums, target);
         assertArrayEquals(expResult, result);
         
-        assertArrayEquals(new int[]{0,1}, instance.twoSum(new int[]{2, 7, 11, 15}, 9));
+        assertArrayEquals(new int[]{1,2}, instance.twoSum(new int[]{2, 7, 11, 15}, 9));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

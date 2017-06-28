@@ -50,7 +50,7 @@ public class Solution333Test {
         int result = instance.largestBSTSubtree(root);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.CreateInstance(new String[]{"10","5","15","1","8","#","7"});
+        TreeNode root2 = TreeNode.createInstance(new String[]{"10","5","15","1","8","#","7"});
         assertEquals(3, instance.largestBSTSubtree(root2));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

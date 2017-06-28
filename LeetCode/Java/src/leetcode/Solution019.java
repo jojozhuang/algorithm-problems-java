@@ -20,64 +20,8 @@ import leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution019 {  
-    private ListNode tail;
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head==null)
-            return null;
-        
-        ListNode ret;
-        ListNode reverse = reverseNode(head);
-        reverse = tail;
-        
-        if (n==1) {
-            ret = reverse.next;
-            ret = reverseNode(ret);
-            ret = tail;
-            return ret;
-        } 
-        
-        int index = 1;
-        ret = reverse;
-        do {
-            //ret = new ListNode(reverse.val);
-            if (index == n - 1) {
-                if (ret.next!=null)
-                    ret.next = ret.next.next;
-                else
-                    ret.next = null;
-                break;
-            }
-            else
-                ret = ret.next;
-            index++;
-        }while(index<=n);        
-        
-        ret = reverseNode(reverse);
-        ret = tail;
-        return ret;
-    }
-    
-    private ListNode reverseNode(ListNode head) {
-        
-        tail = null;
-        
-        if (head==null)
-            return null;        
-        
-        ListNode node = new ListNode(head.val);
-        if (head.next == null){
-            tail = node;
-            return node;
-        }            
-        else {
-            ListNode previous = reverseNode(head.next);
-            previous.next = node;
-            return node;
-        }
-    }
-    
     // fast and slow pointer
-    public ListNode removeNthFromEnd2(ListNode head, int n) {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null || n < 1) {
             return head;
         }

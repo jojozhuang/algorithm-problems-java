@@ -95,20 +95,20 @@ public class Solution114Test {
         assertEquals(1, root5.right.val);
         assertEquals(4, root5.right.right.val);
         assertEquals(3, root5.right.right.right.val);*/
-        TreeNode root2 = TreeNode.CreateInstance(new String[] {"1","2","#"});
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
         instance = new Solution114();
         instance.flatten(root2);
         assertEquals(1, root2.val);
         assertEquals(2, root2.right.val);
         
-        TreeNode root3 = TreeNode.CreateInstance(new String[] {"1","2","3"});
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","3"});
         instance = new Solution114();
         instance.flatten(root3);
         assertEquals(1, root3.val);
         assertEquals(2, root3.right.val);
         assertEquals(3, root3.right.right.val);
         
-        TreeNode root4 = TreeNode.CreateInstance(new String[] {"1","2","5","3","4","6","#"});
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","5","3","4","6","#"});
         instance = new Solution114();
         instance.flatten(root4);
         assertEquals(1, root4.val);
@@ -118,7 +118,7 @@ public class Solution114Test {
         assertEquals(5, root4.right.right.right.right.val);
         assertEquals(6, root4.right.right.right.right.right.val);
         
-        TreeNode root5 = TreeNode.CreateInstance(new String[] {"2","1","4","#","#","3","#"});
+        TreeNode root5 = TreeNode.createInstance(new String[] {"2","1","4","#","#","3","#"});
         instance = new Solution114();
         instance.flatten(root5);
         assertEquals(2, root5.val);

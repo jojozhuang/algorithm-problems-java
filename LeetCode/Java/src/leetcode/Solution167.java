@@ -22,23 +22,23 @@ package leetcode;
  * @author Johnny
  */
 public class Solution167 {
-    public int[] twoSum(int[] nums, int target) {
+    public int[] twoSum(int[] numbers, int target) {
         int[] res = new int[2];
         res[0] = -1;
         res[1] = -1;
-        if (nums == null || nums.length == 0) {
+        if (numbers == null || numbers.length == 0) {
             return res;
         }
         
         int start = 0;
-        int end = nums.length - 1;        
+        int end = numbers.length - 1;        
         int sum = 0;
         
         while(start < end) {
-            sum = nums[start] + nums[end];
+            sum = numbers[start] + numbers[end];
             if (sum == target) {
-                res[0] = start;
-                res[1] = end;
+                res[0] = start + 1;
+                res[1] = end + 1;
                 break;
             } else if (sum < target){
                 start++;
