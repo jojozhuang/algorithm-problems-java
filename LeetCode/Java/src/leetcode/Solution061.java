@@ -19,38 +19,6 @@ import leetcode.common.ListNode;
  */
 public class Solution061 {
     public ListNode rotateRight(ListNode head, int k) {
-        if (head==null)
-            return null;
-        if (head.next==null)
-            return head;
-        
-        int slow=1;
-        int fast=1;
-        ListNode fastNode = head;        
-        //find the lengh and the tail
-        while(fastNode.next!=null) {            
-            fastNode = fastNode.next;
-            fast++;
-        }
-        fastNode.next = head;
-        
-        //check if the required position is bigger than total length
-        if (fast<=k)
-            return head;
-        
-        //find the position for rotate
-        ListNode slowNode = head;
-        while(fast-slow>k) {
-            slowNode = slowNode.next;
-            slow++;
-        }        
-        ListNode newhead = slowNode.next;
-        slowNode.next = null;
-                        
-        return newhead;
-    }
-    
-    public ListNode rotateRight2(ListNode head, int k) {
         if (head == null || k <= 0) {
             return head;
         }

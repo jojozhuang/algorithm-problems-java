@@ -44,34 +44,23 @@ public class Solution234Test {
     @Test
     public void testIsPalindrome() {
         System.out.println("isPalindrome");
-        ListNode head = null;
         Solution234 instance = new Solution234();
-        boolean expResult = true;
-        boolean result = instance.isPalindrome(head);
-        assertEquals(expResult, result);
+        assertEquals(true, instance.isPalindrome(null));
         
-        ListNode node2 = new ListNode(1);
-        assertEquals(true, instance.isPalindrome(node2));
-
-        ListNode node3 = new ListNode(3);
-        node3.next = new ListNode(1);
-        assertEquals(false, instance.isPalindrome(node3));
+        ListNode head2 = ListNode.createInstance(new int[]{1});
+        assertEquals(true, instance.isPalindrome(head2));
         
-        ListNode node4 = new ListNode(3);
-        node4.next = new ListNode(1);
-        node4.next.next = new ListNode(2);
-        assertEquals(false, instance.isPalindrome(node4));
+        ListNode head3 = ListNode.createInstance(new int[]{3,1});
+        assertEquals(false, instance.isPalindrome(head3));
         
-        ListNode node5 = new ListNode(4);
-        node5.next = new ListNode(3);
-        node5.next.next = new ListNode(4);
-        assertEquals(true, instance.isPalindrome(node5));
+        ListNode head4 = ListNode.createInstance(new int[]{3,1,2});
+        assertEquals(false, instance.isPalindrome(head4));
         
-        ListNode node6 = new ListNode(1);
-        node6.next = new ListNode(1);
-        node6.next.next = new ListNode(2);
-        node6.next.next.next = new ListNode(1);
-        assertEquals(false, instance.isPalindrome(node6));
+        ListNode head5 = ListNode.createInstance(new int[]{4,3,4});
+        assertEquals(true, instance.isPalindrome(head5));
+        
+        ListNode head6 = ListNode.createInstance(new int[]{1,1,2,1});
+        assertEquals(false, instance.isPalindrome(head6));
 
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

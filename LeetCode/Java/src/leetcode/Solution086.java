@@ -32,16 +32,16 @@ public class Solution086 {
         ListNode rightDummy = new ListNode(0);
         ListNode rightCurr = rightDummy;
         
-        ListNode current = head;
-        while(current != null) {
-            if (current.val < x) {
-                leftCurr.next = current;
+        ListNode curr = head;
+        while(curr != null) {
+            if (curr.val < x) {
+                leftCurr.next = curr;
                 leftCurr = leftCurr.next;
             } else {
-                rightCurr.next = current;
+                rightCurr.next = curr;
                 rightCurr = rightCurr.next;
             }
-            current = current.next;
+            curr = curr.next;
         }
         
         rightCurr.next = null;

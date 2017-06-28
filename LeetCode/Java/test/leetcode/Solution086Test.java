@@ -44,36 +44,18 @@ public class Solution086Test {
     @Test
     public void testPartition() {
         System.out.println("partition");
-        ListNode head = null;
-        int x = 0;
         Solution086 instance = new Solution086();
-        ListNode expResult = null;
-        ListNode result = instance.partition(head, x);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.partition(null, 0));
         
-        ListNode head2 = new ListNode(1);       
-        head2.next = new ListNode(3);  
-        head2.next.next =  new ListNode(2);  
-        ListNode result2 = instance.partition(head2, 2);
-        assertEquals(1, result2.val);
-        assertEquals(3, result2.next.val);
-        assertEquals(2, result2.next.next.val);
-        assertEquals(null, result2.next.next.next);
+        ListNode head2 = ListNode.createInstance(new int[]{1,3,2});
+        ListNode expect2 = ListNode.createInstance(new int[]{1,3,2});
+        assertTrue(ListNode.isSame(expect2, instance.partition(head2,2)));
         
-        ListNode head3 = new ListNode(1);       
-        head3.next = new ListNode(4);          
-        head3.next.next =  new ListNode(3);  
-        head3.next.next.next =  new ListNode(2);  
-        head3.next.next.next.next =  new ListNode(5);  
-        head3.next.next.next.next.next =  new ListNode(2);  
-        ListNode result3 = instance.partition(head3, 3);
-        assertEquals(1, result3.val);
-        assertEquals(2, result3.next.val);
-        assertEquals(2, result3.next.next.val);
-        assertEquals(4, result3.next.next.next.val);
-        assertEquals(3, result3.next.next.next.next.val);
-        assertEquals(5, result3.next.next.next.next.next.val);
-        assertEquals(null, result3.next.next.next.next.next.next);
+        ListNode head3 = ListNode.createInstance(new int[]{1,4,3,2,5,2});
+        ListNode expect3 = ListNode.createInstance(new int[]{1,2,2,4,3,5});
+        assertTrue(ListNode.isSame(expect3, instance.partition(head3,3)));
+       
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

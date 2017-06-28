@@ -26,16 +26,16 @@ public class Solution082 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         
-        ListNode current = dummy;        
-        while(current.next != null && current.next.next != null) {
-            if (current.next.val == current.next.next.val) {
-                int pre_value = current.next.val;
-                while (current.next != null && current.next.val == pre_value) {
-                    current.next = current.next.next;
+        ListNode curr = dummy;        
+        while(curr.next != null && curr.next.next != null) {
+            if (curr.next.val == curr.next.next.val) {
+                int pre_value = curr.next.val;
+                while (curr.next != null && curr.next.val == pre_value) {
+                    curr.next = curr.next.next;
                 }
             }
             else {
-                current = current.next;
+                curr = curr.next;
             }
         }
         

@@ -44,44 +44,26 @@ public class Solution024Test {
     @Test
     public void testSwapPairs() {
         System.out.println("swapPairs");
-        ListNode head = null;
         Solution024 instance = new Solution024();
-        ListNode expResult = null;
-        ListNode result = instance.swapPairs(head);
-        assertEquals(expResult, result);
-        
-        ListNode head2 = new ListNode(1);
-        ListNode result2 = instance.swapPairs(head2);
-        assertEquals(head2.val, result2.val);
-        
-        ListNode head3 = new ListNode(1);
-        head3.next = new ListNode(2);
-        ListNode result3 = instance.swapPairs(head3);
-        assertEquals(2, result3.val);
-        assertEquals(1, result3.next.val);
-        
-        ListNode head4 = new ListNode(1);
-        head4.next = new ListNode(2);
-        head4.next.next = new ListNode(3);         
-        ListNode result4 = instance.swapPairs(head4);
-        assertEquals(2, result4.val);
-        assertEquals(1, result4.next.val);
-        assertEquals(3, result4.next.next.val);
 
-        ListNode head5 = new ListNode(1);
-        head5.next = new ListNode(2);
-        head5.next.next = new ListNode(3);
-        head5.next.next.next = new ListNode(4);
-        head5.next.next.next.next = new ListNode(5);
-        head5.next.next.next.next.next = new ListNode(6);
-        ListNode result5 = instance.swapPairs(head5);
-        assertEquals(2, result5.val);
-        assertEquals(1, result5.next.val);
-        assertEquals(4, result5.next.next.val);
-        assertEquals(3, result5.next.next.next.val);
-        assertEquals(6, result5.next.next.next.next.val);
-        assertEquals(5, result5.next.next.next.next.next.val);
+        assertEquals(null, instance.swapPairs(null));
         
+        ListNode head2 = ListNode.createInstance(new int[]{1});
+        ListNode expect2 = ListNode.createInstance(new int[]{1});
+        assertTrue(ListNode.isSame(expect2, instance.swapPairs(head2)));
+        
+        ListNode head3 = ListNode.createInstance(new int[]{1,2});
+        ListNode expect3 = ListNode.createInstance(new int[]{2,1});
+        assertTrue(ListNode.isSame(expect3, instance.swapPairs(head3)));
+        
+        ListNode head4 = ListNode.createInstance(new int[]{1,2,3});
+        ListNode expect4 = ListNode.createInstance(new int[]{2,1,3});
+        assertTrue(ListNode.isSame(expect4, instance.swapPairs(head4)));
+        
+        ListNode head5 = ListNode.createInstance(new int[]{1,2,3,4,5,6});
+        ListNode expect5 = ListNode.createInstance(new int[]{2,1,4,3,6,5});
+        assertTrue(ListNode.isSame(expect5, instance.swapPairs(head5)));
+                
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

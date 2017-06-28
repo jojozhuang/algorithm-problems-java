@@ -40,7 +40,7 @@ public class Solution234 {
        
         right = reverse(right);
         
-        while(head != null) {
+        while (head != null) {
             if (right == null) {
                 return true;
             }
@@ -56,11 +56,7 @@ public class Solution234 {
         return true;        
     }
     
-    private ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        
+    private ListNode reverse(ListNode head) {        
         ListNode prev = null;
         while(head != null) {
             ListNode next = head.next;

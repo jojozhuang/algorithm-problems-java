@@ -44,26 +44,22 @@ public class Solution092Test {
     @Test
     public void testReverseBetween() {
         System.out.println("reverseBetween");
-        ListNode head = null;
-        int m = 0;
-        int n = 0;
         Solution092 instance = new Solution092();
-        ListNode expResult = null;
-        ListNode result = instance.reverseBetween(head, m, n);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.reverseBetween(null, 0, 0));
         
-        //1->2->3->4->5
-        ListNode head2 = new ListNode(1);
-        head2.next  = new ListNode(2); 
-        head2.next.next  = new ListNode(3); 
-        head2.next.next.next  = new ListNode(4); 
-        head2.next.next.next.next  = new ListNode(5); 
-        ListNode result2 = instance.reverseBetween(head2, 2, 4);
-        assertEquals(1, result2.val);
-        assertEquals(4, result2.next.val);
-        assertEquals(3, result2.next.next.val);
-        assertEquals(2, result2.next.next.next.val);  
-        assertEquals(5, result2.next.next.next.next.val);  
+        ListNode head2 = ListNode.createInstance(new int[]{1});
+        ListNode expect2 = ListNode.createInstance(new int[]{1});
+        assertTrue(ListNode.isSame(expect2, instance.reverseBetween(head2,1,1)));
+        
+        ListNode head3 = ListNode.createInstance(new int[]{1,2});
+        ListNode expect3 = ListNode.createInstance(new int[]{2,1});
+        assertTrue(ListNode.isSame(expect3, instance.reverseBetween(head3,1,2)));
+        
+        ListNode head4 = ListNode.createInstance(new int[]{1,2,3,4,5});
+        ListNode expect4 = ListNode.createInstance(new int[]{1,4,3,2,5});
+        assertTrue(ListNode.isSame(expect4, instance.reverseBetween(head4,2,4)));
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

@@ -47,17 +47,13 @@ public class Solution142Test {
         Solution142 instance = new Solution142();
         
         //Input: 1 -> 2 -> 3
-        ListNode head1 = new ListNode(1);
-        head1.next = new ListNode(2);
-        head1.next.next = new ListNode(3);
-        assertEquals(null, instance.detectCycle(head1));
+        ListNode head2 = ListNode.createInstance(new int[]{1,2,3});
+        assertEquals(null, instance.detectCycle(head2));
 
         //Input: 1 -> 2 -> 3, 3 -> head 1
-        ListNode head2 = new ListNode(1);
-        head2.next = new ListNode(2);
-        head2.next.next = new ListNode(3);
-        head2.next.next.next = head2;
-        assertEquals(head2, instance.detectCycle(head2));
+        ListNode head3 = ListNode.createInstance(new int[]{1,2,3});
+        head3.next.next.next = head3;
+        assertEquals(head3, instance.detectCycle(head3));
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

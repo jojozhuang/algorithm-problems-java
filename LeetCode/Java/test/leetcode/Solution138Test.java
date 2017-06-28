@@ -44,54 +44,29 @@ public class Solution138Test {
     @Test
     public void testCopyRandomList() {
         System.out.println("copyRandomList");
-        RandomListNode head = null;
         Solution138 instance = new Solution138();
-        RandomListNode expResult = null;
-        RandomListNode result = instance.copyRandomList(head);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.copyRandomList(null));
         
-        RandomListNode head2 = new RandomListNode(1);
-        head2.next = new RandomListNode(2);
-        head2.next.next = new RandomListNode(3);
-        head2.next.next.next = new RandomListNode(4);        
-        head2.random = head2.next.next;
-        head2.next.next.next.random = head2.next;
-        RandomListNode result2 = instance.copyRandomList(head2);
-        assertEquals(1, result2.label);
-        assertEquals(2, result2.next.label);
-        assertEquals(3, result2.next.next.label);
-        assertEquals(4, result2.next.next.next.label);
-        assertEquals(3, result2.random.label);
-        assertEquals(2, result2.next.next.next.random.label);
-        assertEquals(null, result2.next.random);
-        assertEquals(null, result2.next.next.random);
+        RandomListNode head2 = RandomListNode.createInstance(new int[]{6},new int[]{-1});
+        RandomListNode expect2 = RandomListNode.createInstance(new int[]{6},new int[]{-1});
+        assertTrue(RandomListNode.isSame(expect2, instance.copyRandomList(head2)));
         
-        RandomListNode head3 = new RandomListNode(6);
-        RandomListNode result3 = instance.copyRandomList(head3);
-        assertEquals(6, result3.label);
-        assertEquals(null, result3.next);
+        RandomListNode head3 = RandomListNode.createInstance(new int[]{7,8},new int[]{1,-1});
+        RandomListNode expect3 = RandomListNode.createInstance(new int[]{7,8},new int[]{1,-1});
+        assertTrue(RandomListNode.isSame(expect3, instance.copyRandomList(head3)));
         
-        RandomListNode head4 = new RandomListNode(7);
-        head4.next = new RandomListNode(8);
-        head4.random = head4.next;
-        RandomListNode result4 = instance.copyRandomList(head4);
-        assertEquals(7, result4.label);
-        assertEquals(8, result4.next.label);
-        assertEquals(8, result4.random.label);
+        RandomListNode head4 = RandomListNode.createInstance(new int[]{-7,8},new int[]{1,-1});
+        RandomListNode expect4 = RandomListNode.createInstance(new int[]{-7,8},new int[]{1,-1});
+        assertTrue(RandomListNode.isSame(expect4, instance.copyRandomList(head4)));
         
-        RandomListNode head5 = new RandomListNode(-7);
-        head5.next = new RandomListNode(8);
-        head5.random = head5.next;
-        RandomListNode result5 = instance.copyRandomList(head5);
-        assertEquals(-7, result5.label);
-        assertEquals(8, result5.next.label);
-        assertEquals(8, result5.random.label);
-        
-        RandomListNode head6 = new RandomListNode(-1);
-        RandomListNode result6 = instance.copyRandomList(head6);
-        assertEquals(-1, result6.label);
-        assertNull(result6.next);
-        assertNull(result6.random);
+        RandomListNode head5 = RandomListNode.createInstance(new int[]{-1},new int[]{-1});
+        RandomListNode expect5 = RandomListNode.createInstance(new int[]{-1},new int[]{-1});
+        assertTrue(RandomListNode.isSame(expect5, instance.copyRandomList(head5)));
+                
+        RandomListNode head6 = RandomListNode.createInstance(new int[]{1,2,3,4},new int[]{2,-1,-1,1});
+        RandomListNode expect6 = RandomListNode.createInstance(new int[]{1,2,3,4},new int[]{2,-1,-1,1});
+        assertTrue(RandomListNode.isSame(expect6, instance.copyRandomList(head6)));
        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

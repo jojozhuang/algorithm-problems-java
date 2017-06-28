@@ -44,42 +44,26 @@ public class Solution147Test {
     @Test
     public void testInsertionSortList() {
         System.out.println("insertionSortList");
-        ListNode head = null;
         Solution147 instance = new Solution147();
-        ListNode expResult = null;
-        ListNode result = instance.insertionSortList(head);
-        assertEquals(expResult, result);
-        
-        ListNode node2 = new ListNode(1);
-        ListNode result2 = instance.insertionSortList(node2);
-        assertEquals(1, result2.val);
-        assertEquals(null, result2.next);
 
-        ListNode node3 = new ListNode(3);
-        node3.next = new ListNode(1);
-        ListNode result3 = instance.insertionSortList(node3);
-        assertEquals(1, result3.val);
-        assertEquals(3, result3.next.val);
-        assertEquals(null, result3.next.next);
+        assertEquals(null, instance.insertionSortList(null));
         
-        ListNode node4 = new ListNode(3);
-        node4.next = new ListNode(1);
-        node4.next.next = new ListNode(2);
-        ListNode result4 = instance.insertionSortList(node4);
-        assertEquals(1, result4.val);
-        assertEquals(2, result4.next.val);
-        assertEquals(3, result4.next.next.val);
-        assertEquals(null, result4.next.next.next);
+        ListNode head2 = ListNode.createInstance(new int[]{1});
+        ListNode expect2 = ListNode.createInstance(new int[]{1});
+        assertTrue(ListNode.isSame(expect2, instance.insertionSortList(head2)));
         
-        ListNode node5 = new ListNode(3);
-        node5.next = new ListNode(4);
-        node5.next.next = new ListNode(1);
-        ListNode result5 = instance.insertionSortList(node5);
-        assertEquals(1, result5.val);
-        assertEquals(3, result5.next.val);
-        assertEquals(4, result5.next.next.val);
-        assertEquals(null, result5.next.next.next);
-        
+        ListNode head3 = ListNode.createInstance(new int[]{3,1});
+        ListNode expect3 = ListNode.createInstance(new int[]{1,3});
+        assertTrue(ListNode.isSame(expect3, instance.insertionSortList(head3)));
+
+        ListNode head4 = ListNode.createInstance(new int[]{3,1,2});
+        ListNode expect4 = ListNode.createInstance(new int[]{1,2,3});
+        assertTrue(ListNode.isSame(expect4, instance.insertionSortList(head4)));
+                
+        ListNode head5 = ListNode.createInstance(new int[]{3,5,1});
+        ListNode expect5 = ListNode.createInstance(new int[]{1,3,5});
+        assertTrue(ListNode.isSame(expect5, instance.insertionSortList(head5)));
+                
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

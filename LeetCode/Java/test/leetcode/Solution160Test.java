@@ -44,38 +44,24 @@ public class Solution160Test {
     @Test
     public void testGetIntersectionNode() {
         System.out.println("getIntersectionNode");
-        ListNode headA = null;
-        ListNode headB = null;
         Solution160 instance = new Solution160();
-        ListNode expResult = null;
-        ListNode result = instance.getIntersectionNode(headA, headB);
-        assertEquals(expResult, result);
-        
-        ListNode headA1 = new ListNode(1);
-        ListNode headB1 = new ListNode(1);
-        ListNode result1 = instance.getIntersectionNode(headA1, headB1);
-        assertEquals(headA1.val, result1.val);
-        assertEquals(headA1.next, result1.next);
-        
-        ListNode headA2 = new ListNode(1);
-        ListNode headB2 = new ListNode(1);
-        headB2.next = new ListNode(2);
-        ListNode result2 = instance.getIntersectionNode(headA2, headB2);
-        assertEquals(null, result2);
 
-        ListNode headC3 = new ListNode(11);
-        headC3.next = new ListNode(12);
-        headC3.next.next = new ListNode(13);
-        ListNode headA3 = new ListNode(1);
-        headA3.next = new ListNode(2);
-        headA3.next.next = headC3;
-        ListNode headB3 = new ListNode(3);
-        headB3.next = new ListNode(4);
-        headB3.next.next = new ListNode(5);
-        headB3.next.next.next = headC3;
-        ListNode result3 = instance.getIntersectionNode(headA3, headB3);
-        assertEquals(headC3.val, result3.val);
-        assertEquals(headC3.next, result3.next);
+        assertEquals(null, instance.getIntersectionNode(null, null));
+        
+        ListNode headA1 = ListNode.createInstance(new int[]{1});
+        ListNode headB1 = ListNode.createInstance(new int[]{1});
+        ListNode expect1 = ListNode.createInstance(new int[]{1});
+        assertTrue(ListNode.isSame(expect1, instance.getIntersectionNode(headA1, headB1)));
+        
+        ListNode headA2 = ListNode.createInstance(new int[]{1});
+        ListNode headB2 = ListNode.createInstance(new int[]{1,2});
+        ListNode expect2 = null;
+        assertTrue(ListNode.isSame(expect2, instance.getIntersectionNode(headA2, headB2)));
+        
+        ListNode headA3 = ListNode.createInstance(new int[]{1,2,11,12,13});
+        ListNode headB3 = ListNode.createInstance(new int[]{3,4,5,11,12,13});
+        ListNode expect3 = ListNode.createInstance(new int[]{11,12,13});
+        assertTrue(ListNode.isSame(expect3, instance.getIntersectionNode(headA3, headB3)));
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

@@ -44,36 +44,18 @@ public class Solution025Test {
     @Test
     public void testReverseKGroup() {
         System.out.println("reverseKGroup");
-        ListNode head = null;
-        int k = 0;
         Solution025 instance = new Solution025();
-        ListNode expResult = null;
-        ListNode result = instance.reverseKGroup(head, k);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.reverseKGroup(null, 0));
         
-        ListNode head2 = new ListNode(1);
-        head2.next = new ListNode(2);
-        head2.next.next = new ListNode(3);
-        head2.next.next.next = new ListNode(4);
-        head2.next.next.next.next = new ListNode(5);
-        ListNode result2 = instance.reverseKGroup(head2, 2);
-        assertEquals(2, result2.val);
-        assertEquals(1, result2.next.val);
-        assertEquals(4, result2.next.next.val);
-        assertEquals(3, result2.next.next.next.val);
-        assertEquals(5, result2.next.next.next.next.val);
+        ListNode head2 = ListNode.createInstance(new int[]{1,2,3,4,5});
+        ListNode expect2 = ListNode.createInstance(new int[]{2,1,4,3,5});
+        assertTrue(ListNode.isSame(expect2, instance.reverseKGroup(head2,2)));
         
-        ListNode head3 = new ListNode(1);
-        head3.next = new ListNode(2);
-        head3.next.next = new ListNode(3);
-        head3.next.next.next = new ListNode(4);
-        head3.next.next.next.next = new ListNode(5);
-        ListNode result3 = instance.reverseKGroup(head3, 3);
-        assertEquals(3, result3.val);
-        assertEquals(2, result3.next.val);
-        assertEquals(1, result3.next.next.val);
-        assertEquals(4, result3.next.next.next.val);
-        assertEquals(5, result3.next.next.next.next.val);
+        ListNode head3 = ListNode.createInstance(new int[]{1,2,3,4,5});
+        ListNode expect3 = ListNode.createInstance(new int[]{3,2,1,4,5});
+        assertTrue(ListNode.isSame(expect3, instance.reverseKGroup(head3,3)));
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

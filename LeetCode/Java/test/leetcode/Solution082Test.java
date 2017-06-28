@@ -44,50 +44,26 @@ public class Solution082Test {
     @Test
     public void testDeleteDuplicates() {
         System.out.println("deleteDuplicates");
-        ListNode head = null;
         Solution082 instance = new Solution082();
-        ListNode expResult = null;
-        ListNode result = instance.deleteDuplicates(head);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.deleteDuplicates(null));
         
-        ListNode head1 = new ListNode(1);       
-        head1.next = new ListNode(2);  
-        head1.next.next =  new ListNode(3);  
-        ListNode result1 = instance.deleteDuplicates(head1);
-        assertEquals(head1.val, result1.val);
-        assertEquals(head1.next.val, result1.next.val);
-        assertEquals(head1.next.next.val, result1.next.next.val);
+        ListNode head2 = ListNode.createInstance(new int[]{1,2,3});
+        ListNode expect2 = ListNode.createInstance(new int[]{1,2,3});
+        assertTrue(ListNode.isSame(expect2, instance.deleteDuplicates(head2)));
         
-        ListNode head2 = new ListNode(1);       
-        head2.next = new ListNode(1);  
-        head2.next.next =  new ListNode(2);  
-        ListNode result2 = instance.deleteDuplicates(head2);
-        assertEquals(2, result2.val);
-        assertEquals(null, result2.next);
+        ListNode head3 = ListNode.createInstance(new int[]{1,1,2});
+        ListNode expect3 = ListNode.createInstance(new int[]{2});
+        assertTrue(ListNode.isSame(expect3, instance.deleteDuplicates(head3)));
         
-        ListNode head3 = new ListNode(1);       
-        head3.next = new ListNode(1);  
-        head3.next.next =  new ListNode(1);  
-        head3.next.next.next =  new ListNode(2);  
-        head3.next.next.next.next =  new ListNode(3);  
-        ListNode result3 = instance.deleteDuplicates(head3);
-        assertEquals(2, result3.val);
-        assertEquals(3, result3.next.val);
-        assertEquals(null, result3.next.next);
+        ListNode head4 = ListNode.createInstance(new int[]{1,1,1,2,3});
+        ListNode expect4 = ListNode.createInstance(new int[]{2,3});
+        assertTrue(ListNode.isSame(expect4, instance.deleteDuplicates(head4)));
         
-        ListNode head4 = new ListNode(1);       
-        head4.next = new ListNode(2);  
-        head4.next.next =  new ListNode(3);  
-        head4.next.next.next =  new ListNode(3);  
-        head4.next.next.next.next =  new ListNode(4);  
-        head4.next.next.next.next.next =  new ListNode(4);  
-        head4.next.next.next.next.next.next =  new ListNode(5);  
-        ListNode result4 = instance.deleteDuplicates(head4);
-        assertEquals(1, result4.val);
-        assertEquals(2, result4.next.val);
-        assertEquals(5, result4.next.next.val);
-        assertEquals(null, result4.next.next.next);
-        
+        ListNode head5 = ListNode.createInstance(new int[]{1,2,3,3,4,4,5});
+        ListNode expect5 = ListNode.createInstance(new int[]{1,2,5});
+        assertTrue(ListNode.isSame(expect5, instance.deleteDuplicates(head5)));
+                
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

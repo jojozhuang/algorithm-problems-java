@@ -5,8 +5,6 @@
  */
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
 import leetcode.common.ListNode;
 import org.junit.After;
 import org.junit.AfterClass;

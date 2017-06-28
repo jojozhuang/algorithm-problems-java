@@ -49,47 +49,31 @@ public class Solution143Test {
         instance.reorderList(head);
         assertEquals(null, head);
         
-        ListNode head2 = new ListNode(1);
+        ListNode head2 = ListNode.createInstance(new int[]{1});
+        ListNode expect2 = ListNode.createInstance(new int[]{1});
         instance.reorderList(head2);
-        assertEquals(1, head2.val);
-        assertEquals(null, head2.next);
-        
-        ListNode head3 = new ListNode(1);
-        head3.next = new ListNode(2);
+        assertTrue(ListNode.isSame(expect2, head2));
+                
+        ListNode head3 = ListNode.createInstance(new int[]{1,2});
+        ListNode expect3 = ListNode.createInstance(new int[]{1,2});
         instance.reorderList(head3);
-        assertEquals(1, head3.val);
-        assertEquals(2, head3.next.val);
-        assertEquals(null, head3.next.next);
+        assertTrue(ListNode.isSame(expect3, head3));
         
-        ListNode head4 = new ListNode(1);
-        head4.next = new ListNode(2);
-        head4.next.next = new ListNode(3);
+        ListNode head4 = ListNode.createInstance(new int[]{1,2,3});
+        ListNode expect4 = ListNode.createInstance(new int[]{1,3,2});
         instance.reorderList(head4);
-        assertEquals(1, head4.val);
-        assertEquals(3, head4.next.val);
-        assertEquals(2, head4.next.next.val);
+        assertTrue(ListNode.isSame(expect4, head4));
         
-        ListNode head5 = new ListNode(1);
-        head5.next = new ListNode(2);
-        head5.next.next = new ListNode(3);
-        head5.next.next.next = new ListNode(4);
+        ListNode head5 = ListNode.createInstance(new int[]{1,2,3,4});
+        ListNode expect5 = ListNode.createInstance(new int[]{1,4,2,3});
         instance.reorderList(head5);
-        assertEquals(1, head5.val);
-        assertEquals(4, head5.next.val);
-        assertEquals(2, head5.next.next.val);
-        assertEquals(3, head5.next.next.next.val);
+        assertTrue(ListNode.isSame(expect5, head5));
         
-        ListNode head6 = new ListNode(1);
-        head6.next = new ListNode(2);
-        head6.next.next = new ListNode(3);
-        head6.next.next.next = new ListNode(4);
-        head6.next.next.next.next = new ListNode(5);
+        ListNode head6 = ListNode.createInstance(new int[]{1,2,3,4,5});
+        ListNode expect6 = ListNode.createInstance(new int[]{1,5,2,4,3});
         instance.reorderList(head6);
-        assertEquals(1, head6.val);
-        assertEquals(5, head6.next.val);
-        assertEquals(2, head6.next.next.val);
-        assertEquals(4, head6.next.next.next.val);
-        assertEquals(3, head6.next.next.next.next.val);
+        assertTrue(ListNode.isSame(expect6, head6));
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

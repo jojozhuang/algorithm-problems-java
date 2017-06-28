@@ -52,27 +52,23 @@ public class Solution237Test {
         instance.deleteNode(node2);
         //assertEquals(null, node2);
 
-        ListNode node3 = new ListNode(3);
-        node3.next = new ListNode(1);
-        instance.deleteNode(node3);
-        assertEquals(1, node3.val);
-        assertEquals(null, node3.next);
+        ListNode head3 = ListNode.createInstance(new int[]{3,1});
+        ListNode expect3 = ListNode.createInstance(new int[]{1});
+        instance.deleteNode(head3);
+        assertTrue(ListNode.isSame(expect3, head3));
         
-        ListNode node4 = new ListNode(3);
-        node4.next = new ListNode(1);
-        node4.next.next = new ListNode(2);
-        instance.deleteNode(node4.next);
-        assertEquals(3, node4.val);
-        assertEquals(2, node4.next.val);
-        assertEquals(null, node4.next.next);
+        ListNode head4 = ListNode.createInstance(new int[]{3,1,2});
+        ListNode expect4 = ListNode.createInstance(new int[]{3,2});
+        instance.deleteNode(head4.next);
+        assertTrue(ListNode.isSame(expect4, head4));
         
-        ListNode node5 = new ListNode(6);
-        node5.next = new ListNode(3);
-        node5.next.next = new ListNode(8);
-        instance.deleteNode(node5.next.next);
-        assertEquals(6, node5.val);
-        assertEquals(3, node5.next.val);
-        //assertEquals(null, node5.next.next);                
+        // delete node except the tail
+        //ListNode head5 = ListNode.createInstance(new int[]{6,3,8});
+        //ListNode expect5 = ListNode.createInstance(new int[]{6,3});
+        //instance.deleteNode(head5.next.next);
+        //assertTrue(ListNode.isSame(expect5, head5));
+        
+          
        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

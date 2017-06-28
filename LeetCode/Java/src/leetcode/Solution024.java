@@ -20,8 +20,9 @@ import leetcode.common.ListNode;
  */
 public class Solution024 {    
     public ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null)
-            return head;        
+        if (head == null || head.next == null) {
+            return head;
+        }
 
         ListNode after = head.next;
         head.next = swapPairs(after.next);

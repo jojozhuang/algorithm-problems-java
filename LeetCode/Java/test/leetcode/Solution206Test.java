@@ -48,10 +48,17 @@ public class Solution206Test {
 
         assertEquals(null, instance.reverseList(null));
         
-        //1->2->3->4->5
-        ListNode head2 = ListNode.createInstance(new int[]{1,2,3,4,5});
-        ListNode expect2 = ListNode.createInstance(new int[]{5,4,3,2,1});
+        ListNode head2 = ListNode.createInstance(new int[]{1});
+        ListNode expect2 = ListNode.createInstance(new int[]{1});
         assertTrue(ListNode.isSame(expect2, instance.reverseList(head2)));
+        
+        ListNode head3 = ListNode.createInstance(new int[]{1,2});
+        ListNode expect3 = ListNode.createInstance(new int[]{2,1});
+        assertTrue(ListNode.isSame(expect3, instance.reverseList(head3)));
+        
+        ListNode head4 = ListNode.createInstance(new int[]{1,2,3,4,5});
+        ListNode expect4 = ListNode.createInstance(new int[]{5,4,3,2,1});
+        assertTrue(ListNode.isSame(expect4, instance.reverseList(head4)));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
