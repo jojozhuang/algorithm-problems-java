@@ -3,11 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode;
+package lintcode;
 
-import java.util.ArrayList;
-import java.util.List;
-import leetcode.common.ListUtil;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution018Test {
+public class ClimbingStairsIITest {
     
-    public Solution018Test() {
+    public ClimbingStairsIITest() {
     }
     
     @BeforeClass
@@ -41,19 +38,17 @@ public class Solution018Test {
     }
 
     /**
-     * Test of fourSum method, of class Solution018.
+     * Test of climbStairs2 method, of class ClimbingStairsII.
      */
     @Test
-    public void testFourSum() {
-        System.out.println("fourSum");
-        Solution018 instance = new Solution018();
-        
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        assertEquals(expResult, instance.fourSum(null, 0));
-        
-        List<List<Integer>> result2 = instance.fourSum(new int[]{1,0,-1,0,-2,2}, 0);
-        List<List<Integer>> expect2 = ListUtil.buildDoubleIntegerList(new Integer[][]{{-2,-1,1,2},{-2,0,0,2},{-1,0,0,1}});
-        assertEquals(expect2, result2);
+    public void testClimbStairs2() {
+        System.out.println("climbStairs2");
+        ClimbingStairsII instance = new ClimbingStairsII();
+        assertEquals(1, instance.climbStairs2(0));
+        assertEquals(1, instance.climbStairs2(1));
+        assertEquals(2, instance.climbStairs2(2));
+        assertEquals(4, instance.climbStairs2(3));
+        assertEquals(7, instance.climbStairs2(4));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

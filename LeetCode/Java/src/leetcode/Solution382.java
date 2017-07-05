@@ -5,6 +5,11 @@
  */
 package leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import leetcode.common.ListNode;
+
 /**
  * Linked List Random Node
  * 
@@ -31,15 +36,23 @@ package leetcode;
  * @author Johnny
  */
 public class Solution382 {
+    Map<Integer, ListNode> map = new HashMap<Integer, ListNode>();
     /** @param head The linked list's head.
         Note that the head is guaranteed to be not null, so it contains at 
         least one node. */
     public Solution382(ListNode head) {
-        
+        int i = 0;
+        while (head != null) {
+            map.put(i, head);
+            head = head.next;
+            i++;
+        }
     }
     
     /** Returns a random node's value. */
     public int getRandom() {
-        return 0;
+        Random r = new Random();
+        int num = r.nextInt(map.size());
+        return map.get(num).val;
     }
 }

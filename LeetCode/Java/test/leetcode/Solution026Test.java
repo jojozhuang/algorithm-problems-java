@@ -43,11 +43,9 @@ public class Solution026Test {
     @Test
     public void testRemoveDuplicates() {
         System.out.println("removeDuplicates");
-        int[] A = null;
         Solution026 instance = new Solution026();
-        int expResult = 0;
-        int result = instance.removeDuplicates(A);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.removeDuplicates(null));
         
         assertEquals(0, instance.removeDuplicates(new int[]{}));
         assertEquals(1, instance.removeDuplicates(new int[]{1}));

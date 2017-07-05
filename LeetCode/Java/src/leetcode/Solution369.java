@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import leetcode.common.ListNode;
+
 /**
  * Plus One Linked List.
  * 

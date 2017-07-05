@@ -31,17 +31,7 @@ public class LeetCode {
         System.out.println(reverse(""));
         System.out.println(reverse("W"));
         System.out.println(reverse("Welcome to coderpad!"));
-        //reverse linkedlist
         
-        ListNode root = new ListNode(1);
-        root.next = new ListNode(2);
-        root.next.next = new ListNode(3);
-        root.next.next.next = new ListNode(4);
-        ListNode res = reverse(root);
-        while (res != null) {
-          System.out.println(res.val);
-          res = res.next;
-        }       
     }
     
     public static String reverse(String str) {
@@ -61,26 +51,5 @@ public class LeetCode {
         }
 
         return new String(chs);
-    }
-    
-    public static ListNode reverse(ListNode head) {
-        ListNode prev = null;
-        while (head != null) {
-          ListNode next = head.next;
-          head.next = prev;
-          prev = head;
-          head = next;
-        }
-
-        return prev;
-    }   
-}
-
-class ListNode {
-    public int val;
-    public ListNode next;
-    public ListNode(int val) {
-      this.val = val;
-      this.next = null;
-    }
+    }  
 }
