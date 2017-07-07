@@ -86,7 +86,7 @@ public class TopKFrequentWords {
         }
 
         public void cleanup(OutputCollector<String, Integer> output) {
-            /*HashMap<String, Integer> sortedMap = sortByComparator(countMap, false);
+            HashMap<String, Integer> sortedMap = sortByComparator(countMap);
             int i = 0;
             for (String key : sortedMap.keySet()) {
                 if (i >= top) {
@@ -94,8 +94,8 @@ public class TopKFrequentWords {
                 }
                 output.collect(key, sortedMap.get(key));
                 i++;
-            }*/
-            int cnt = 0;
+            }
+            /*int cnt = 0;
             top = Math.min(top, countMap.size());
             Integer[] counts = countMap.values().toArray(new Integer[0]);
             Arrays.sort(counts);
@@ -110,10 +110,10 @@ public class TopKFrequentWords {
                         }
                     }
                 }
-            }
+            }*/
         }
         
-        private HashMap<String, Integer> sortByComparator(HashMap<String, Integer> unsortMap, final boolean order)
+        private HashMap<String, Integer> sortByComparator(HashMap<String, Integer> unsortMap)
         {
 
             List<Entry<String, Integer>> list = new LinkedList<Entry<String, Integer>>(unsortMap.entrySet());
@@ -124,14 +124,14 @@ public class TopKFrequentWords {
                 public int compare(Entry<String, Integer> o1,
                         Entry<String, Integer> o2)
                 {
-                    if (order)
-                    {
-                        return o1.getValue().compareTo(o2.getValue());
-                    }
-                    else
-                    {
-                        return o2.getValue().compareTo(o1.getValue());
-
+                    int val1 = o1.getValue();
+                    int val2 = o2.getValue();
+                    String key1 = o1.getKey();
+                    String key2 = o2.getKey();
+                    if (val1 == val2) {
+                        return key1.compareTo(key2);
+                    } else {
+                        return val2 - val1;
                     }
                 }
             });

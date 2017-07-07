@@ -81,7 +81,7 @@ public class TopKFrequentWordsTest {
         OutputCollector output2 = new OutputCollector();
         OutputCollector expect2 = new OutputCollector();
         expect2.collect("lintcode", 2);
-        expect2.collect("is", 1);
+        expect2.collect("I", 1);
         reduce.cleanup(output2);
         assertTrue(OutputCollector.isSame(output2, expect2));
         
@@ -132,8 +132,8 @@ public class TopKFrequentWordsTest {
         OutputCollector output2 = new OutputCollector();
         OutputCollector expect2 = new OutputCollector();
         expect2.collect("This", 2);
+        expect2.collect("content", 2);
         expect2.collect("is", 2);
-        expect2.collect("the", 2);
         reduce.cleanup(output2);
         assertTrue(OutputCollector.isSame(output2, expect2));
         
@@ -141,4 +141,52 @@ public class TopKFrequentWordsTest {
         //fail("The test case is a prototype.");
     }
     
+    @Test
+    public void testSomeMethod3() {
+        System.out.println("testSomeMethod3");
+        Document doc1 = new Document();
+        doc1.id = 1;
+        doc1.content = "tt gc gc ba ba";
+        
+        Document doc2 = new Document();
+        doc2.id = 2;
+        doc2.content = "wz gc gc ba ba";
+        
+        TopKFrequentWords.Map map = new TopKFrequentWords.Map();
+        OutputCollector output1 = new OutputCollector();
+        OutputCollector expect1 = new OutputCollector();
+        expect1.collect("tt", 1);
+        expect1.collect("gc", 1);
+        expect1.collect("gc", 1);
+        expect1.collect("ba", 1);
+        expect1.collect("ba", 1);
+        expect1.collect("wz", 1);
+        expect1.collect("ba", 1);
+        expect1.collect("ba", 1);
+        expect1.collect("gc", 1);
+        expect1.collect("gc", 1);
+
+        map.map("", doc1, output1);
+        map.map("", doc2, output1);
+        assertTrue(OutputCollector.isSame(output1, expect1));
+        
+        TopKFrequentWords.Reduce reduce = new TopKFrequentWords.Reduce();
+        reduce.setup(2);
+        
+        Iterator it1 = output1.map.entrySet().iterator();
+        while (it1.hasNext()) {
+            Map.Entry entry = (Map.Entry)it1.next();
+            reduce.reduce((String)entry.getKey(), ((List)entry.getValue()).iterator());
+        }
+        
+        OutputCollector output2 = new OutputCollector();
+        OutputCollector expect2 = new OutputCollector();
+        expect2.collect("ba", 4);
+        expect2.collect("gc", 4);
+        reduce.cleanup(output2);
+        assertTrue(OutputCollector.isSame(output2, expect2));
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 }
