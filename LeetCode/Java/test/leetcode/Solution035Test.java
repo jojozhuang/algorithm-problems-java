@@ -43,14 +43,10 @@ public class Solution035Test {
     @Test
     public void testSearchInsert() {
         System.out.println("searchInsert");
-        int[] A = null;
-        int target = 0;
         Solution035 instance = new Solution035();
-        int expResult = 0;
-        int result = instance.searchInsert(A, target);
-        assertEquals(expResult, result);
-        
-        assertEquals(0, instance.searchInsert(new int[]{}, target));
+
+        assertEquals(0, instance.searchInsert(null, 0));        
+        assertEquals(0, instance.searchInsert(new int[]{}, 0));
         assertEquals(0, instance.searchInsert(new int[]{1}, 0));
         assertEquals(0, instance.searchInsert(new int[]{1}, 1));
         assertEquals(2, instance.searchInsert(new int[]{1,2}, 3));

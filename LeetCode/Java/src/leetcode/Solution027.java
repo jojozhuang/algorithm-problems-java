@@ -22,7 +22,7 @@ public class Solution027 {
         
         int i = 0;
         int j = 0;
-        while(i < nums.length) {
+        while (i < nums.length) {
             if (nums[i] != val) {
                 nums[j] = nums[i];
                 j++;

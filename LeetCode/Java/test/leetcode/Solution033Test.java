@@ -43,12 +43,9 @@ public class Solution033Test {
     @Test
     public void testSearch() {
         System.out.println("search");
-        int[] nums = null;
-        int target = 0;
         Solution033 instance = new Solution033();
-        int expResult = -1;
-        int result = instance.search(nums, target);
-        assertEquals(expResult, result);
+
+        assertEquals(-1, instance.search(null, 0));
         assertEquals(0, instance.search(new int[] {1}, 1));
         assertEquals(-1, instance.search(new int[] {1}, 0));
         assertEquals(-1, instance.search(new int[] {1, 2}, 0));

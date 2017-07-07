@@ -43,12 +43,9 @@ public class Solution027Test {
     @Test
     public void testRemoveElement() {
         System.out.println("removeElement");
-        int[] A = null;
-        int elem = 0;
         Solution027 instance = new Solution027();
-        int expResult = 0;
-        int result = instance.removeElement(A, elem);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.removeElement(null, 0));
         
         assertEquals(1, instance.removeElement(new int[]{1}, 0));
         assertEquals(0, instance.removeElement(new int[]{1}, 1));
