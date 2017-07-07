@@ -49,7 +49,7 @@ public class Solution126 {
         }
     }
  
-    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {        
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {        
         List<List<String>> result = new ArrayList<List<String>>();
         
         if (beginWord.isEmpty() || endWord.isEmpty() || wordList == null || wordList.isEmpty()) {
@@ -59,7 +59,7 @@ public class Solution126 {
         LinkedList<WordNode> queue = new LinkedList<WordNode>();
         queue.add(new WordNode(beginWord, 1, null));
  
-        wordList.add(endWord);
+        //wordList.add(endWord);
  
         int minStep = 0;
  
