@@ -33,14 +33,14 @@ public class Solution059 {
         
         int[][] matrix = new int[n][n];
         
-        int top=0;        
-        int left=0;
-        int bottom=matrix.length-1;
-        int right=matrix[0].length-1;
+        int top = 0;        
+        int left = 0;
+        int bottom = matrix.length-1;
+        int right = matrix[0].length-1;
         int i = 0;
-        int index=1;
+        int index = 1;
 
-        while(top <= bottom && left <= right) {
+        while (top <= bottom && left <= right) {
             //left->right
             i = left;
             while(i <= right) {
@@ -63,7 +63,7 @@ public class Solution059 {
             }
             //right->left
             i = right;
-            while(i >= left) {
+            while (i >= left) {
                 matrix[bottom][i] = index;
                 index++;
                 i--;
@@ -71,7 +71,7 @@ public class Solution059 {
             bottom--;
             //bottom->top
             i = bottom;
-            while(i >= top) {
+            while (i >= top) {
                 matrix[i][left] = index;
                 index++;
                 i--;

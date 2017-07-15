@@ -38,12 +38,12 @@ public class Solution066 {
             }
         }
         
-        int[] ret = new int[digits.length + 1];
-        ret[0] = 1;
+        int[] res = new int[digits.length + 1];
+        res[0] = 1;
         /*for (int i = 1; i < ret.length; i++) {
             ret[i] = 0;
         }*/
         
-        return ret;                
+        return res;                
     }
 }

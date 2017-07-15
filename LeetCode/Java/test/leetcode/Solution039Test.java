@@ -7,6 +7,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import leetcode.common.ListUtil;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,27 +53,16 @@ public class Solution039Test {
         List<List<Integer>> result = instance.combinationSum(candidates, target);
         assertEquals(expResult, result);
         
-        List<Integer> result21 = new ArrayList<Integer>();
-        result21.add(2);
-        result21.add(2);
-        result21.add(3);
-        List<Integer> result22 = new ArrayList<Integer>();
-        result22.add(7);
+        List<Integer> result21 = ListUtil.buildIntegerList(new Integer[]{2,2,3});
+        List<Integer> result22 = ListUtil.buildIntegerList(new Integer[]{7});
         List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
         expResult2.add(result21);
         expResult2.add(result22);
         assertEquals(expResult2, instance.combinationSum(new int[]{2,3,6,7}, 7));
         
-        List<Integer> result31 = new ArrayList<Integer>();
-        result31.add(3);
-        result31.add(4);
-        result31.add(4);
-        List<Integer> result32 = new ArrayList<Integer>();
-        result32.add(3);
-        result32.add(8);
-        List<Integer> result33 = new ArrayList<Integer>();
-        result33.add(4);
-        result33.add(7);
+        List<Integer> result31 = ListUtil.buildIntegerList(new Integer[]{3,4,4});
+        List<Integer> result32 = ListUtil.buildIntegerList(new Integer[]{3,8});
+        List<Integer> result33 = ListUtil.buildIntegerList(new Integer[]{4,7});
         List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
         expResult3.add(result31);
         expResult3.add(result32);

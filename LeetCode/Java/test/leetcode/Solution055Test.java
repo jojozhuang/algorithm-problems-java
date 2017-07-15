@@ -43,11 +43,9 @@ public class Solution055Test {
     @Test
     public void testCanJump() {
         System.out.println("canJump");
-        int[] A = null;
         Solution055 instance = new Solution055();
-        boolean expResult = false;
-        boolean result = instance.canJump(A);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.canJump(null));
         
         assertEquals(true, instance.canJump(new int[]{0}));
         assertEquals(true, instance.canJump(new int[]{1}));

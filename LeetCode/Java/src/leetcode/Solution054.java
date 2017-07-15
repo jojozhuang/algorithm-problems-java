@@ -38,35 +38,35 @@ public class Solution054 {
         int right = matrix[0].length - 1;
         int i = 0;
 
-        while(top <= bottom && left <= right) {
+        while (top <= bottom && left <= right) {
             //left->right
             i = left;
-            while(i <= right) {
+            while (i <= right) {
                 res.add(matrix[top][i]);
                 i++;
             }
             top++;
             //top->bottom
             i = top;
-            while(i <= bottom) {
+            while (i <= bottom) {
                 res.add(matrix[i][right]);
                 i++;
             }
             right--;
             //check
-            if(top > bottom || left > right) {
+            if (top > bottom || left > right) {
                 break;
             }
             //right->left
             i = right;
-            while(i >= left) {
+            while (i >= left) {
                 res.add(matrix[bottom][i]);
                 i--;
             }
             bottom--;
             //bottom->top
             i = bottom;
-            while(i >= top) {
+            while (i >= top) {
                 res.add(matrix[i][left]);
                 i--;
             }
