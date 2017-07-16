@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * 
  * Define B[i] = A[0] * ... * A[i-1] * A[i+1] * ... * A[n-1], calculate B WITHOUT divide operation.
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class ProductofArrayExcludeItself {
     // b[i] = left * right, divide and conquer

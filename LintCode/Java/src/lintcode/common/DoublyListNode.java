@@ -7,7 +7,7 @@ package lintcode.common;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class DoublyListNode {
     public int val;

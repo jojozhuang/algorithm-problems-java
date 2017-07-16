@@ -32,7 +32,7 @@ package leetcode;
  * k = 3
  * return [9, 8, 9]
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution321 {
     //https://discuss.leetcode.com/topic/32272/share-my-greedy-solution

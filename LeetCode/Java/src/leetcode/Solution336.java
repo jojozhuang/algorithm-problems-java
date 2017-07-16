@@ -25,7 +25,7 @@ import java.util.List;
  * Return [[0, 1], [1, 0], [3, 2], [2, 4]]
  * The palindromes are ["dcbaabcd", "abcddcba", "slls", "llssssll"]
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution336 {
     //https://discuss.leetcode.com/category/420/palindrome-pairs

@@ -47,7 +47,7 @@ import lintcode.common.OutputCollector;
  * lintcode, 4
  * online, 3
  * 
- * @author i857285
+ * @author Johnny
  */
 public class TopKFrequentWords {
     //HashMap<String, Integer> map = new HashMap<String, Integer>();

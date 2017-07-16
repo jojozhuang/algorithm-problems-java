@@ -29,7 +29,7 @@ import lintcode.common.UndirectedGraphNode;
  * connect(2, 4)
  * query(1, 4) return true
 * 
- * @author i857285
+ * @author Johnny
  */
 public class ConnectingGraph {
     int[] nodes;

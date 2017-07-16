@@ -31,7 +31,7 @@ import java.util.List;
  * Note:
  * You may assume that all inputs are consist of lowercase letters a-z.
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution212 {
     //http://www.programcreek.com/2014/06/leetcode-word-search-ii-java/

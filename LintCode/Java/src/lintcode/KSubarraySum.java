@@ -20,7 +20,7 @@ import java.util.Map;
  * 
  * http://algorithm.yuanbin.me/zh-hans/integer_array/subarray_sum_k.html
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class KSubarraySum {    
     // two pointers

@@ -15,7 +15,7 @@ package lintcode;
  * Example
  * 5 = (101)2 => (1010)2 = 10
  * 
- * @author i857285
+ * @author Johnny
  */
 public class SwapBits {
     public int swapOddEvenBits(int x) {

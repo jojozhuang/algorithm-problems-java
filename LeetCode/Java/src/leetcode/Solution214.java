@@ -18,7 +18,7 @@ package leetcode;
  * 
  * Given "abcd", return "dcbabcd".
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution214 {
     public String shortestPalindrome(String s) {

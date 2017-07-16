@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Palindrome Partitioning.
- * @author RZHUANG
+ * @author Johnny
  */
 public class PalindromePartitioning {
     public List<List<String>> partition(String s) {

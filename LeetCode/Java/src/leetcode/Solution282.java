@@ -22,7 +22,7 @@ import java.util.List;
  * "00", 0 -> ["0+0", "0-0", "0*0"]
  * "3456237490", 9191 -> []
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution282 {
     //http://www.cnblogs.com/grandyang/p/4814506.html

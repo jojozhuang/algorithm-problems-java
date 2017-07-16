@@ -18,7 +18,7 @@ import java.util.Stack;
  * Example
  * Given A = [2, 4, 1, 3, 5] , (2, 1), (4, 1), (4, 3) are reverse pairs. return 3
  * 
- * @author i857285
+ * @author Johnny
  */
 public class ReversePairs {
     public long reversePairs(int[] A) {

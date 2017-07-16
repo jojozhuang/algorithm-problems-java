@@ -7,7 +7,7 @@ package lintcode;
 
 /**
  * Sort Colors II
- * @author RZHUANG
+ * @author Johnny
  */
 public class SortColors2 {
     public void sortColors2(int[] colors, int k) {

@@ -23,7 +23,7 @@ import java.util.Set;
  * "(a)())()" -> ["(a)()()", "(a())()"]
  * ")(" -> [""]
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution301 {
     //https://leetcode.com/discuss/81710/recommend-beginners-implementation-detailed-explaination

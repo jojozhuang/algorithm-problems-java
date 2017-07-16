@@ -31,4 +31,11 @@ public class ListUtil {
         }
         return res;
     }
+    
+    public static List<String> buildStringList(String[] array) {
+        if (array == null || array.length == 0) {
+            return new ArrayList<String>();
+        }
+        return new ArrayList<String>(Arrays.asList(array));
+    }
 }

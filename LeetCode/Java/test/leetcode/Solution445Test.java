@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class Solution445Test {
     

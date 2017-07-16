@@ -19,7 +19,7 @@ package leetcode;
  * Note:
  * n and k are non-negative integers.
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution276 {
     //https://leetcode.com/discuss/56173/o-n-time-java-solution-o-1-space

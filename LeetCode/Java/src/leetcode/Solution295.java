@@ -35,7 +35,7 @@ import java.util.Queue;
  * add(3) 
  * findMedian() -> 2
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution295 {
     //http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/

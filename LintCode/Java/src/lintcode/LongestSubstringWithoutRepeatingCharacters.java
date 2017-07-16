@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /**
  * Longest Substring Without Repeating Characters.
- * @author RZHUANG
+ * @author Johnny
  */
 public class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {

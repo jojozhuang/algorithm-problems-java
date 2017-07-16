@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution128Test {
     
@@ -49,6 +49,8 @@ public class Solution128Test {
         int result = instance.longestConsecutive(nums);
         assertEquals(expResult, result);
         
+        assertEquals(1, instance.longestConsecutive(new int[] {0}));
+        assertEquals(1, instance.longestConsecutive(new int[] {0,0}));
         assertEquals(4, instance.longestConsecutive(new int[] {100, 4, 200, 1, 3, 2}));
         assertEquals(4, instance.longestConsecutive(new int[] {1, 9, 3, 10, 4, 20, 2}));
         assertEquals(5, instance.longestConsecutive(new int[] {36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}));

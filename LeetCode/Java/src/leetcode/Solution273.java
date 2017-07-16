@@ -19,7 +19,7 @@ import java.util.HashMap;
  * 1234567 -> "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
  * Show Hint 
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution273 {
     //https://discuss.leetcode.com/topic/23054/my-clean-java-solution-very-easy-to-understand/9

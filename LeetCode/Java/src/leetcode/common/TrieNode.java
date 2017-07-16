@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author RZHUANG
+ * @author Johnny
  */
 public class TrieNode {
     public char c;

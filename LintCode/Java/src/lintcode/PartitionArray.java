@@ -25,7 +25,7 @@ package lintcode;
  * Challenge
  * Can you partition the array in-place and in O(n)?
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class PartitionArray {
     public int partitionArray(int[] nums, int k) {

@@ -32,7 +32,7 @@ package leetcode;
  * There are many calls to sumRegion function.
  * You may assume that row1 ≤ row2 and col1 ≤ col2.
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution304 {
     //http://buttercola.blogspot.com/2015/12/leetcode-range-sum-query-2d-immutable.html

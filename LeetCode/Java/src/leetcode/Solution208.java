@@ -17,7 +17,7 @@ import leetcode.common.TrieNode;
  * Note:
  * You may assume that all inputs are consist of lowercase letters a-z.
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution208 {
     private TrieNode root;

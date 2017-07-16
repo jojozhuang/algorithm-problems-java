@@ -36,7 +36,7 @@ package leetcode;
  * 
  * The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution329 {
     //https://leetcode.com/discuss/90455/neat-java-dfs-solution-with-memoization

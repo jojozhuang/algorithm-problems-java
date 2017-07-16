@@ -30,7 +30,7 @@ import java.util.List;
  *   ["a","z"]
  * ]
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution249 {
     //http://ryanleetcode.blogspot.com/2015/10/group-shifted-strings-leetcode.html

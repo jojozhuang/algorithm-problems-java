@@ -29,7 +29,7 @@ import java.util.TreeSet;
  * 
  * Return the array [2, 1, 1, 0].
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution315 {
     //http://www.cnblogs.com/grandyang/p/5078490.html

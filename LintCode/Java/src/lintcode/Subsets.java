@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author RZHUANG
+ * @author Johnny
  */
 public class Subsets {
     public ArrayList<ArrayList<Integer>> subsets(int[] S) {

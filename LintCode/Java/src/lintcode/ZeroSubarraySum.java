@@ -18,7 +18,7 @@ import java.util.Map;
  * Note
  * There is at least one subarray that it's sum equals to zero.
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class ZeroSubarraySum {
     public ArrayList<Integer> subarraySum(int[] nums) {

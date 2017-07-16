@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author RZHUANG
+ * @author Johnny
  */
 public class Combinations {
     public List<List<Integer>> combine(int n, int k) {

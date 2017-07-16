@@ -31,7 +31,7 @@ import java.util.LinkedList;
  * Note: 
  * You may assume k is always valid, ie: 1 ≤ k ≤ input array's size for non-empty array.
  *  
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution239 {
     public int[] maxSlidingWindow(int[] nums, int k) {

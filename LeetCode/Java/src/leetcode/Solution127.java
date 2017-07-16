@@ -6,7 +6,7 @@
 package leetcode;
 
 import java.util.LinkedList;
-import java.util.Set;
+import java.util.List;
 
 /**
  * Word Ladder.
@@ -32,7 +32,7 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution127 {    
-    public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         if (beginWord.isEmpty() || endWord.isEmpty() || wordList == null || wordList.isEmpty()) {
             return 0;
         }

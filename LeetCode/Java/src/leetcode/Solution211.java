@@ -29,7 +29,7 @@ import leetcode.common.TrieNode;
  * search(".ad") -> true
  * search("b..") -> true
  * 
- * @author RZHUANG
+ * @author Johnny
  */
 public class Solution211 {
     private TrieNode root = new TrieNode();

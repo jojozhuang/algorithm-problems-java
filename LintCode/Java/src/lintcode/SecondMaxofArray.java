@@ -18,7 +18,7 @@ import java.util.Arrays;
  * 
  * Given [1, 2], return 1.
  * 
- * @author i857285
+ * @author Johnny
  */
 public class SecondMaxofArray {
     public int secondMax(int[] nums) {

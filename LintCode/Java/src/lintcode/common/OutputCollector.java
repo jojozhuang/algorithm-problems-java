@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class OutputCollector<K, V> {
     public LinkedHashMap<K, ArrayList<V>> map = new LinkedHashMap<K, ArrayList<V>>();
