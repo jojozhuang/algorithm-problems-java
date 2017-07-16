@@ -5,8 +5,6 @@
  */
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import leetcode.common.TreeNode;
 
 /**
@@ -37,7 +35,7 @@ public class Solution105 {
         int rootvalue = preorder[prestart];
         TreeNode root = new TreeNode(rootvalue);
         int index  = -1;
-        for(int i = instart; i <= inend; i++) {
+        for (int i = instart; i <= inend; i++) {
             if (inorder[i] == rootvalue) {
                 index = i;
                 break;

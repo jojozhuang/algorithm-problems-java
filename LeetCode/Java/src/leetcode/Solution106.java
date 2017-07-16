@@ -5,8 +5,6 @@
  */
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import leetcode.common.TreeNode;
 
 /**
@@ -36,8 +34,8 @@ public class Solution106 {
         
         int rootvalue = postorder[postend];
         TreeNode root = new TreeNode(rootvalue);
-        int index  = -1;
-        for(int i = instart; i <= inend; i++) {
+        int index = -1;
+        for (int i = instart; i <= inend; i++) {
             if (inorder[i] == rootvalue) {
                 index = i;
                 break;

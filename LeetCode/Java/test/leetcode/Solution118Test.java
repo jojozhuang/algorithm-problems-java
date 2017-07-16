@@ -7,6 +7,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import leetcode.common.ListUtil;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -51,41 +52,17 @@ public class Solution118Test {
         List<List<Integer>> result = instance.generate(numRows);
         assertEquals(expResult, result);
         
-        List<List<Integer>> listpath1 = new ArrayList(); 
-        List<Integer> list1 = new ArrayList(); 
-        list1.add(1);
-        listpath1.add(list1);
-        assertEquals(listpath1,  instance.generate(1));
+        List<List<Integer>> expect1 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1}});
+        assertEquals(expect1,  instance.generate(1));
         
-        List<List<Integer>> listpath2 = new ArrayList(); 
-        List<Integer> list22 = new ArrayList(); 
-        list22.add(1);
-        list22.add(1);
-        listpath2.add(list1);
-        listpath2.add(list22);
-        assertEquals(listpath2,  instance.generate(2));
+        List<List<Integer>> expect2 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1},{1,1}});
+        assertEquals(expect2,  instance.generate(2));
 
-        List<List<Integer>> listpath3 = new ArrayList(); 
-        List<Integer> list33 = new ArrayList(); 
-        list33.add(1);
-        list33.add(2);
-        list33.add(1);
-        listpath3.add(list1);
-        listpath3.add(list22);
-        listpath3.add(list33);
-        assertEquals(listpath3,  instance.generate(3));
+        List<List<Integer>> expect3 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1},{1,1},{1,2,1}});
+        assertEquals(expect3,  instance.generate(3));
 
-        List<List<Integer>> listpath4 = new ArrayList(); 
-        List<Integer> list44 = new ArrayList(); 
-        list44.add(1);
-        list44.add(3);
-        list44.add(3);
-        list44.add(1);
-        listpath4.add(list1);
-        listpath4.add(list22);
-        listpath4.add(list33);
-        listpath4.add(list44);
-        assertEquals(listpath4,  instance.generate(4));
+        List<List<Integer>> expect4 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1},{1,1},{1,2,1},{1,3,3,1}});
+        assertEquals(expect4,  instance.generate(4));
 
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

@@ -41,7 +41,7 @@ public class Solution118 {
             } else {
                 list.add(1);
                 List<Integer> previous = res.get(i - 2);
-                for(int j = 0; j < previous.size() - 1; j++) {
+                for (int j = 0; j < previous.size() - 1; j++) {
                     list.add((previous.get(j) + previous.get(j + 1)));
                 }
                 list.add(1);
