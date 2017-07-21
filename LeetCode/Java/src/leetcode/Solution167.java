@@ -34,7 +34,7 @@ public class Solution167 {
         int end = numbers.length - 1;        
         int sum = 0;
         
-        while(start < end) {
+        while (start < end) {
             sum = numbers[start] + numbers[end];
             if (sum == target) {
                 res[0] = start + 1;

@@ -5,8 +5,6 @@
  */
 package leetcode;
 
-import java.util.Arrays;
-
 /**
  * Rotate Array.
  * Rotate an array of n elements to the right by k steps.

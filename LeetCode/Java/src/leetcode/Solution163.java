@@ -25,8 +25,8 @@ public class Solution163 {
             return res;
         }
         
-        int n = nums.length;
-        for (int i = 0; i < n; i++) {
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
             if (nums[i] == lower) {
                 lower++;
                 continue;
@@ -40,8 +40,8 @@ public class Solution163 {
             }            
         }
         
-        if (nums[n - 1] < upper) {
-            if (upper - nums[n - 1] == 1) {
+        if (nums[len - 1] < upper) {
+            if (upper - nums[len - 1] == 1) {
                 res.add("" + upper);
             } else {
                 res.add("" + (nums[nums.length - 1] + 1) + "->" + upper);

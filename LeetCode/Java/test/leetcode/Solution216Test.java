@@ -7,6 +7,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import leetcode.common.ListUtil;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,30 +53,10 @@ public class Solution216Test {
         List<List<Integer>> result = instance.combinationSum3(k, n);
         assertEquals(expResult, result);
         
-        List<Integer> result21 = new ArrayList<Integer>();
-        result21.add(1);
-        result21.add(2);
-        result21.add(4);
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
-        expResult2.add(result21);
+        List<List<Integer>> expResult2 = ListUtil.buildIntegerList2(new Integer[][]{{1,2,4}});
         assertEquals(expResult2, instance.combinationSum3(3,7));
         
-        List<Integer> result31 = new ArrayList<Integer>();
-        result31.add(1);
-        result31.add(2);
-        result31.add(6);
-        List<Integer> result32 = new ArrayList<Integer>();
-        result32.add(1);
-        result32.add(3);
-        result32.add(5);
-        List<Integer> result33 = new ArrayList<Integer>();
-        result33.add(2);
-        result33.add(3);
-        result33.add(4);
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
-        expResult3.add(result31);
-        expResult3.add(result32);
-        expResult3.add(result33);
+        List<List<Integer>> expResult3 = ListUtil.buildIntegerList2(new Integer[][]{{1,2,6},{1,3,5},{2,3,4}});
         assertEquals(expResult3, instance.combinationSum3(3, 9));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

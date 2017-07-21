@@ -43,12 +43,9 @@ public class Solution167Test {
     @Test
     public void testTwoSum() {
         System.out.println("twoSum");
-        int[] nums = null;
-        int target = 0;
         Solution167 instance = new Solution167();
-        int[] expResult = new int[]{-1,-1};
-        int[] result = instance.twoSum(nums, target);
-        assertArrayEquals(expResult, result);
+
+        assertArrayEquals(new int[]{-1,-1}, instance.twoSum(null, 0));
         
         assertArrayEquals(new int[]{1,2}, instance.twoSum(new int[]{2, 7, 11, 15}, 9));
         // TODO review the generated test code and remove the default call to fail.

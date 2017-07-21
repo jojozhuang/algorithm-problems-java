@@ -43,12 +43,9 @@ public class Solution219Test {
     @Test
     public void testContainsNearbyDuplicate() {
         System.out.println("containsNearbyDuplicate");
-        int[] nums = null;
-        int k = 0;
         Solution219 instance = new Solution219();
-        boolean expResult = false;
-        boolean result = instance.containsNearbyDuplicate(nums, k);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.containsNearbyDuplicate(null, 0));
         
         assertEquals(false, instance.containsNearbyDuplicate(new int[]{1,2}, 1));
         assertEquals(false, instance.containsNearbyDuplicate(new int[]{1,2,1}, 1));

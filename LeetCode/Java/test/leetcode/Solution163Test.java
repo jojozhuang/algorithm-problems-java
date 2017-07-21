@@ -7,6 +7,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import leetcode.common.ListUtil;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -58,30 +59,19 @@ public class Solution163Test {
         assertEquals(expResult2, result2);
         
         List<String> result3 = instance.findMissingRanges(new int[]{1,2}, 0, 3);
-        List<String> expResult3 = new ArrayList<String>();
-        expResult3.add("0");
-        expResult3.add("3");
+        List<String> expResult3 = ListUtil.buildStringList(new String[]{"0","3"});
         assertEquals(expResult3, result3);
         
         List<String> result4 = instance.findMissingRanges(new int[]{1,2}, 1, 4);
-        List<String> expResult4 = new ArrayList<String>();
-        expResult4.add("3->4");
+        List<String> expResult4 = ListUtil.buildStringList(new String[]{"3->4"});
         assertEquals(expResult4, result4);
         
         List<String> result5 = instance.findMissingRanges(new int[]{0, 1, 3, 50, 75}, 0, 99);
-        List<String> expResult5 = new ArrayList<String>();
-        expResult5.add("2");
-        expResult5.add("4->49");
-        expResult5.add("51->74");
-        expResult5.add("76->99");
+        List<String> expResult5 = ListUtil.buildStringList(new String[]{"2","4->49","51->74","76->99"});
         assertEquals(expResult5, result5);
         
         List<String> result6 = instance.findMissingRanges(new int[]{3, 50, 75}, 0, 99);
-        List<String> expResult6 = new ArrayList<String>();
-        expResult6.add("0->2");
-        expResult6.add("4->49");
-        expResult6.add("51->74");
-        expResult6.add("76->99");
+        List<String> expResult6 = ListUtil.buildStringList(new String[]{"0->2","4->49","51->74","76->99"});
         assertEquals(expResult6, result6);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

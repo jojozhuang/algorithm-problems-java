@@ -7,6 +7,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import leetcode.common.ListUtil;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -45,20 +46,10 @@ public class Solution243Test {
     @Test
     public void testShortestDistance() {
         System.out.println("shortestDistance");
-        List<String> words = null;
-        String word1 = "";
-        String word2 = "";
         Solution243 instance = new Solution243();
-        int expResult = 0;
-        int result = instance.shortestDistance(words, word1, word2);
-        assertEquals(expResult, result);
+        assertEquals(0, instance.shortestDistance(null, "", ""));
         
-        List<String> words2 = new ArrayList<String>();
-        words2.add("practice");
-        words2.add("makes");
-        words2.add("perfect");
-        words2.add("coding");
-        words2.add("makes");
+        List<String> words2 = ListUtil.buildStringList(new String[]{"practice","makes","perfect","coding","makes"});
         assertEquals(3, instance.shortestDistance(words2, "coding", "practice"));
         assertEquals(1, instance.shortestDistance(words2, "makes", "coding"));
         // TODO review the generated test code and remove the default call to fail.

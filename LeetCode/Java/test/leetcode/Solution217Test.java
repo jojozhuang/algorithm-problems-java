@@ -43,11 +43,9 @@ public class Solution217Test {
     @Test
     public void testContainsDuplicate() {
         System.out.println("containsDuplicate");
-        int[] nums = null;
         Solution217 instance = new Solution217();
-        boolean expResult = false;
-        boolean result = instance.containsDuplicate(nums);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.containsDuplicate(null));
         
         assertEquals(false, instance.containsDuplicate(new int[]{1}));
         assertEquals(false, instance.containsDuplicate(new int[]{1,2}));

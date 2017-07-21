@@ -31,7 +31,7 @@ public class Solution228 {
         
         int head = 1;
         int tail = 0;
-        while(head < nums.length) {            
+        while (head < nums.length) {            
             if (nums[head - 1] + 1 < nums[head]) {
                 if (head - 1 - tail == 0) {
                     res.add(String.valueOf(nums[tail]));

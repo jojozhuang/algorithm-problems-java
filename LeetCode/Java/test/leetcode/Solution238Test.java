@@ -43,12 +43,9 @@ public class Solution238Test {
     @Test
     public void testProductExceptSelf() {
         System.out.println("productExceptSelf");
-        int[] nums = new int[]{1,2};
         Solution238 instance = new Solution238();
-        int[] expResult = new int[]{2,1};
-        int[] result = instance.productExceptSelf(nums);
-        assertArrayEquals(expResult, result);
         
+        assertArrayEquals(new int[]{2,1}, instance.productExceptSelf(new int[]{1,2}));
         assertArrayEquals(new int[]{12,4,3}, instance.productExceptSelf(new int[]{1,3,4}));
         assertArrayEquals(new int[]{0,0}, instance.productExceptSelf(new int[]{0,0}));
         assertArrayEquals(new int[]{0,1}, instance.productExceptSelf(new int[]{1,0}));

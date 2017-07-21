@@ -34,7 +34,7 @@ public class Solution209 {
         
         int sum = 0;
         int min = len + 1;
-        while(right < len) {
+        while (right < len) {
             while (sum < s && right < len) {
                 sum += nums[right];
                 right++;

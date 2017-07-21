@@ -54,5 +54,5 @@ public class Solution078 {
             helper(nums, i + 1, list, res);
             list.remove(list.size() - 1);
         }
-    }    
+    }
 }

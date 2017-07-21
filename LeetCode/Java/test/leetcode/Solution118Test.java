@@ -52,16 +52,16 @@ public class Solution118Test {
         List<List<Integer>> result = instance.generate(numRows);
         assertEquals(expResult, result);
         
-        List<List<Integer>> expect1 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1}});
+        List<List<Integer>> expect1 = ListUtil.buildIntegerList2(new Integer[][]{{1}});
         assertEquals(expect1,  instance.generate(1));
         
-        List<List<Integer>> expect2 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1},{1,1}});
+        List<List<Integer>> expect2 = ListUtil.buildIntegerList2(new Integer[][]{{1},{1,1}});
         assertEquals(expect2,  instance.generate(2));
 
-        List<List<Integer>> expect3 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1},{1,1},{1,2,1}});
+        List<List<Integer>> expect3 = ListUtil.buildIntegerList2(new Integer[][]{{1},{1,1},{1,2,1}});
         assertEquals(expect3,  instance.generate(3));
 
-        List<List<Integer>> expect4 = ListUtil.buildDoubleIntegerList(new Integer[][]{{1},{1,1},{1,2,1},{1,3,3,1}});
+        List<List<Integer>> expect4 = ListUtil.buildIntegerList2(new Integer[][]{{1},{1,1},{1,2,1},{1,3,3,1}});
         assertEquals(expect4,  instance.generate(4));
 
         // TODO review the generated test code and remove the default call to fail.

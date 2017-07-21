@@ -21,7 +21,7 @@ public class ListUtil {
         return Arrays.asList(array);
     }
     
-    public static List<List<Integer>> buildDoubleIntegerList(Integer[][] array) {
+    public static List<List<Integer>> buildIntegerList2(Integer[][] array) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (array == null || array.length == 0) {
             return res;
