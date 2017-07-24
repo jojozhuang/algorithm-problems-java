@@ -6,6 +6,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,6 +30,30 @@ import java.util.List;
  */
 public class Solution442 {
     public List<Integer> findDuplicates(int[] nums) {
-        return new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
+        if (nums == null || nums.length == 0) {
+            return res;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] != i + 1) {
+                if (nums[i] == nums[nums[i] - 1]) {
+                    break;
+                }
+                int temp = nums[nums[i] - 1] ;
+                nums[nums[i] - 1] = nums[i];
+                nums[i] = temp;
+            }
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                res.add(nums[i]);
+            }
+        }
+        
+        Collections.sort(res);
+        
+        return res;
     }
 }

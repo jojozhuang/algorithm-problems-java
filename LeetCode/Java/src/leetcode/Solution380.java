@@ -53,10 +53,12 @@ import java.util.Random;
 public class Solution380 {
     Map<Integer, Integer> map;;
     List<Integer> list;
+    Random random;
     /** Initialize your data structure here. */
     public Solution380() {
         map = new HashMap<Integer, Integer>();
         list = new ArrayList<Integer>();
+        random = new Random();
     }
     
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
@@ -76,11 +78,16 @@ public class Solution380 {
             return false;
         } else {
             int index = map.get(val);
+            // swap the value with the last one in the list
             if (index < list.size() - 1) {
                 int last = list.get(list.size() - 1);
+                // move the last element to new position
                 list.set(index, last);
+                // update the map with the new position of this element
                 map.put(last, index);
+                // no need to do the above two steps for 'val', since it will be deleted.
             }
+            // always delete the last element of the list
             list.remove(list.size() - 1);
             map.remove(val);
             return true;
@@ -93,7 +100,6 @@ public class Solution380 {
             return 0;
         }
         
-        Random random = new Random();
         int index = random.nextInt(list.size());
         return list.get(index);
     }

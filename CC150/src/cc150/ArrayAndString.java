@@ -10,29 +10,49 @@ package cc150;
  * @author Johnny
  */
 public class ArrayAndString {
+    // Implement an algorithm to determine if a string has all unique characters. 
+    // What if you can not use additional data structures?
+    // Assume there are only lower case letters from 'a' to 'z'.
+    public boolean isUniqueChars(String str) {
+        if (str == null || str.length() == 0) {
+            return false;
+        }
+        int checker = 0;
+        
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            int index = c - 'a';
+            if ((checker & (1 << index)) == 1) {
+                return false;
+            } else {
+                checker |= 1 << index;
+            }
+        }
+        return true;
+    }
     public char[] replaceSpaces(char[] str, int length) {
         int spaceCount = 0, newLength, i;
-        char[] ret;
+        char[] res;
         for (i = 0; i < length; i++) {
             if (str[i] == ' ') {
                 spaceCount++;
             }
         }
         newLength = length + spaceCount * 2;
-        ret = new char[newLength];
+        res = new char[newLength];
         for (i = length - 1; i >= 0; i--) {
             if (str[i] == ' ') {
-                ret[newLength - 1] = '0';
-                ret[newLength - 2] = '2';
-                ret[newLength - 3] = '%';
+                res[newLength - 1] = '0';
+                res[newLength - 2] = '2';
+                res[newLength - 3] = '%';
                 newLength = newLength - 3;
             } else {
-                ret[newLength - 1] = str[i];
-                newLength = newLength - 1;
+                res[newLength - 1] = str[i];
+                newLength--;
             }
         }
         
-        return ret;
+        return res;
     }
     
     public String compress(String str) {        

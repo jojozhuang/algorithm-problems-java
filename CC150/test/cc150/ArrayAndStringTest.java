@@ -87,5 +87,39 @@ public class ArrayAndStringTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of isUniqueChars method, of class ArrayAndString.
+     */
+    @Test
+    public void testIsUniqueChars() {
+        System.out.println("isUniqueChars");
+        String str = "";
+        ArrayAndString instance = new ArrayAndString();
+        boolean expResult = false;
+        boolean result = instance.isUniqueChars(str);
+        assertEquals(expResult, result);
+        
+        assertEquals(true, instance.isUniqueChars("a"));
+        assertEquals(true, instance.isUniqueChars("ab"));
+        assertEquals(false, instance.isUniqueChars("aba"));
+        assertEquals(true, instance.isUniqueChars("abc"));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of rotate method, of class ArrayAndString.
+     */
+    @Test
+    public void testRotate() {
+        System.out.println("rotate");
+        int[][] matrix = null;
+        int n = 0;
+        ArrayAndString instance = new ArrayAndString();
+        instance.rotate(matrix, n);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }

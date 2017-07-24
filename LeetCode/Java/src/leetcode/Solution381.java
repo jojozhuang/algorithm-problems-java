@@ -5,6 +5,15 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * Insert Delete GetRandom O(1) - Duplicates allowed   
  * 
@@ -43,5 +52,62 @@ package leetcode;
  * @author Johnny
  */
 public class Solution381 {
+    Map<Integer, TreeSet<Integer>> map;
+    List<Integer> list;
+    Random random;
+    /** Initialize your data structure here. */
+    public Solution381() {
+        map = new HashMap<Integer, TreeSet<Integer>>();
+        list = new ArrayList<Integer>();
+        random = new Random();
+    }
     
+    /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
+    public boolean insert(int val) {
+        if (map.containsKey(val)) {
+            TreeSet<Integer> pos = map.get(val);
+            pos.add(list.size());
+            map.put(val, pos);
+            list.add(val);
+            return false;
+        } else {
+            TreeSet<Integer> pos = new TreeSet<Integer>();
+            pos.add(list.size());
+            map.put(val, pos);
+            list.add(val);
+            return true;
+        }
+    }
+    
+    /** Removes a value from the collection. Returns true if the collection contained the specified element. */
+    public boolean remove(int val) {
+        if (!map.containsKey(val)) {
+            return false;
+        } else {
+            TreeSet<Integer> pos = map.get(val);
+            int index = pos.pollLast();
+            if (index < list.size() - 1) {
+                int last = list.get(list.size() - 1);
+                list.set(index, last);
+                TreeSet<Integer> lastPos = map.get(last);
+                lastPos.pollLast();
+                lastPos.add(index);
+            }
+            list.remove(list.size() - 1);
+            if (pos.size() == 0) {
+                map.remove(val);
+            }
+            return true;
+        }
+    }
+    
+    /** Get a random element from the collection. */
+    public int getRandom() {
+        if (list.isEmpty()) {
+            return 0;
+        }
+        
+        int index = random.nextInt(list.size());
+        return list.get(index);
+    }
 }
