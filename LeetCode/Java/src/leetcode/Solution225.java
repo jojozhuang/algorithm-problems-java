@@ -28,16 +28,16 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution225 {
-    Queue<Integer> queue1 = new LinkedList<Integer>();
-    Queue<Integer> queue2 = new LinkedList<Integer>();
+    Queue<Integer> queue1 = new LinkedList<Integer>(); // Q1 always has all of the elements
+    Queue<Integer> queue2 = new LinkedList<Integer>(); // Q2 always be empty after pop or top.
     int lastnum = 0;
     // Push element x onto stack.
     public void push(int x) {
         queue1.offer(x);
     }
 
-    // Removes the element on top of the stack.
-    public void pop() {
+    // Removes the element on top of the stack and returns that element.
+    public int pop() {
         while(!queue1.isEmpty()) {
             lastnum = queue1.poll();
             if (!queue1.isEmpty()) {
@@ -46,7 +46,8 @@ public class Solution225 {
         }
         Queue<Integer> temp = queue1;
         queue1 = queue2;
-        queue2 = temp;        
+        queue2 = temp; 
+        return lastnum;
     }
 
     // Get the top element.
@@ -57,7 +58,7 @@ public class Solution225 {
         }
         Queue<Integer> temp = queue1;
         queue1 = queue2;
-        queue2 = temp;      
+        queue2 = temp;
         return lastnum;
     }
 

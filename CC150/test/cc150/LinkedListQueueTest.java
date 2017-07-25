@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode;
+package cc150;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution232Test {
+public class LinkedListQueueTest {
     
-    public Solution232Test() {
+    public LinkedListQueueTest() {
     }
     
     @BeforeClass
@@ -38,30 +38,31 @@ public class Solution232Test {
     }
 
     /**
-     * Test of push method, of class Solution232.
+     * Test of add method, of class LinkedListQueue.
      */
     @Test
-    public void testPush() {
-        System.out.println("push");
-        Solution232 queue = new Solution232();
-        assertEquals(true, queue.empty());
-        queue.push(1);
-        queue.push(2);
-        queue.push(3);
+    public void testQueue() throws Exception {
+        System.out.println("testLinkedListQueue");
+        LinkedListQueue queue = new LinkedListQueue();
+        assertEquals(true, queue.isEmpty());
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
         
-        assertEquals(false, queue.empty());
-        assertEquals(1, queue.pop());
-        assertEquals(2, queue.pop());
-        assertEquals(false, queue.empty());
+        assertEquals(false, queue.isEmpty());
+        assertEquals(1, queue.poll());
+        assertEquals(2, queue.poll());
+        assertEquals(false, queue.isEmpty());
         assertEquals(3, queue.peek());
         assertEquals(3, queue.peek());
-        assertEquals(false, queue.empty());
-        queue.push(4);
-        assertEquals(3, queue.pop());
-        assertEquals(false, queue.empty());
-        assertEquals(4, queue.pop());
-        assertEquals(true, queue.empty());
+        assertEquals(false, queue.isEmpty());
+        queue.add(4);
+        assertEquals(3, queue.poll());
+        assertEquals(false, queue.isEmpty());
+        assertEquals(4, queue.poll());
+        assertEquals(true, queue.isEmpty());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
 }

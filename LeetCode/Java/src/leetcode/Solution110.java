@@ -36,5 +36,23 @@ public class Solution110 {
         else {
             return Math.max(left, right) + 1;
         }
-    }    
+    }  
+    
+    /*
+    public boolean isBalanced(TreeNode root) {
+        return (maxDepth(root) - minDepth(root) <= 1);
+    }
+    
+    private int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    }
+    private int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.min(minDepth(root.left), minDepth(root.right));
+    }*/
 }

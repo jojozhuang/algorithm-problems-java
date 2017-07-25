@@ -33,6 +33,42 @@ package leetcode;
  */
 public class Solution605 {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
-        return false;
+        if (flowerbed == null || flowerbed.length == 0 || n > flowerbed.length) {
+            return false;
+        }
+        
+        int i = 0;
+        int count = 0;
+        boolean left = true; // The left is 1, the current position is not valid
+        while (i < flowerbed.length) {
+            if (flowerbed[i] == 0) {
+                if (!left) {
+                    left = true;
+                    i++;
+                    continue;
+                }
+                if (i + 1 < flowerbed.length) {
+                    if (flowerbed[i + 1] == 0) {
+                        count++;
+                        i += 2;
+                        left = true;
+                    } else {
+                        i += 2;
+                        left = false;
+                    }
+                } else {
+                    count++;
+                    break;
+                }
+            } else {
+                left = false;
+                i++;
+            }
+            if (count >= n) {
+                return true;
+            }
+        }
+        
+        return count >= n;
     }
 }

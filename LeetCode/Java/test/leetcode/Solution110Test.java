@@ -50,40 +50,26 @@ public class Solution110Test {
         boolean result = instance.isBalanced(root);
         assertEquals(expResult, result);
         
-        TreeNode p1 = new TreeNode(1);
+        TreeNode p1 = TreeNode.createInstance(new String[] {"1"});
         assertEquals(true, instance.isBalanced(p1));
 
-        TreeNode p2 = new TreeNode(1);
-        p2.left = new TreeNode(2);
+        TreeNode p2 = TreeNode.createInstance(new String[] {"1","2","#"});
         assertEquals(true, instance.isBalanced(p2));
 
-        TreeNode p3 = new TreeNode(1);
-        p3.left = new TreeNode(2);
-        p3.right = new TreeNode(2);
+        TreeNode p3 = TreeNode.createInstance(new String[] {"1","2","2"});
         assertEquals(true, instance.isBalanced(p3));
 
-        TreeNode p4 = new TreeNode(1);
-        p4.left = new TreeNode(2);
-        p4.right = new TreeNode(2);
-        p4.right.left = new TreeNode(3);
+        TreeNode p4 = TreeNode.createInstance(new String[] {"1","2","2","#","#","3","#"});
         assertEquals(true, instance.isBalanced(p4));
 
-        TreeNode p5 = new TreeNode(1);
-        p5.left = new TreeNode(2);
-        p5.right = new TreeNode(2);
-        p5.right.right = new TreeNode(3);
-        p5.right.right.right = new TreeNode(4);
+        TreeNode p5 = TreeNode.createInstance(new String[] {"1","2","2","#","#","#","3","#","4"});
         assertEquals(false, instance.isBalanced(p5));
 
-        TreeNode p6 = new TreeNode(1);
-        p6.left = new TreeNode(2);
-        p6.left.left = new TreeNode(3);
-        p6.left.left.left = new TreeNode(4);
-        p6.right = new TreeNode(2);
-        p6.right.right = new TreeNode(3);
-        p6.right.right.right = new TreeNode(4);
-        assertEquals(false, instance.isBalanced(p5));
+        TreeNode p6 = TreeNode.createInstance(new String[] {"1","2","2","3","#","#","3","4","#","#","4"});
+        assertEquals(false, instance.isBalanced(p6));
 
+        TreeNode p7 = TreeNode.createInstance(new String[] {"1","2","2","3","3","3","3","4","4","4","4","4","4","#","#","5","5","#","#","#","#","#","#","#","#","#","#","#","#"});
+        assertEquals(true, instance.isBalanced(p7));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

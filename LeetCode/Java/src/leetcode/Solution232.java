@@ -28,6 +28,41 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution232 {
+    private Stack<Integer> stack1 = new Stack<Integer>(); // s1 stores new elements
+    private Stack<Integer> stack2 = new Stack<Integer>(); // s2 stores old elements
+    
+    public void push(int x) {
+        stack1.push(x);
+    }
+
+    // Removes the element from in front of queue and returns that element. 
+    public int pop() {
+        if (!stack2.isEmpty()) {
+            return stack2.pop();
+        }
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+        }
+        return stack2.pop();
+    }
+
+    // Get the front element.
+    public int peek() {
+        if (!stack2.isEmpty()) {
+            return stack2.peek();
+        }
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+        }
+        return stack2.peek();
+    }
+
+    // Return whether the queue is empty.
+    public boolean empty() {
+        return stack1.isEmpty() && stack2.empty();
+    }
+    
+    /*
     private Stack<Integer> stack1 = new Stack<Integer>();
     private Stack<Integer> stack2 = new Stack<Integer>();
     
@@ -59,5 +94,5 @@ public class Solution232 {
     // Return whether the queue is empty.
     public boolean empty() {
         return stack1.isEmpty();
-    }
+    }*/
 }

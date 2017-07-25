@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode;
+package cc150;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution225Test {
+public class LinkedListStackTest {
     
-    public Solution225Test() {
+    public LinkedListStackTest() {
     }
     
     @BeforeClass
@@ -38,33 +38,34 @@ public class Solution225Test {
     }
 
     /**
-     * Test of push method, of class Solution225.
+     * Test of pop method, of class LinkedListStack.
      */
     @Test
-    public void testStack() {
-        System.out.println("testStack");
-        Solution225 stack = new Solution225();
-        
-        assertEquals(true, stack.empty());
+    public void testStack() throws Exception {
+        System.out.println("testLinkedListStack");
+        LinkedListStack stack = new LinkedListStack();
+        assertEquals(true, stack.isEmpty());
         stack.push(1);
         stack.push(2);
         stack.push(3);
         
-        assertEquals(false, stack.empty());
+        assertEquals(false, stack.isEmpty());
         assertEquals(3, stack.pop());
         assertEquals(2, stack.pop());
-        assertEquals(false, stack.empty());
-        assertEquals(1, stack.top());
-        assertEquals(1, stack.top());
-        assertEquals(false, stack.empty());
+        assertEquals(false, stack.isEmpty());
+        assertEquals(1, stack.peek());
+        assertEquals(1, stack.peek());
+        assertEquals(false, stack.isEmpty());
         stack.push(4);
         assertEquals(4, stack.pop());
-        assertEquals(false, stack.empty());
+        assertEquals(false, stack.isEmpty());
         assertEquals(1, stack.pop());
-        assertEquals(true, stack.empty());
+        assertEquals(true, stack.isEmpty());
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    
     
 }
