@@ -29,4 +29,16 @@ public class ConvertIntegerAtoIntegerB {
 
         return count;
     }
+    public static int bitSwapRequired2(int a, int b) {
+        int count = 0;
+        int xor = a ^ b;
+        while (xor != 0) {
+            if ((xor & 1) == 1){
+                count++;
+            }
+            xor = xor >> 1;
+        }
+
+        return count;
+    }
 }

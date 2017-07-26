@@ -18,6 +18,11 @@ public class CC150 {
         // TODO code application logic here
         
         //3.4 Towers of Hanoi
+        //4.8 Sum Path
+        //5.2 Show Decimal 3.72 in bits.
+        //5.3 Next bigger and smaller
+        //Design Questions:
+        // 1. Parking lot
         
     }
     

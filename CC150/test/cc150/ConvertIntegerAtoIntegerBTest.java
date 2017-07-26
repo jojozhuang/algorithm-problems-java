@@ -56,5 +56,25 @@ public class ConvertIntegerAtoIntegerBTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of bitSwapRequired2 method, of class ConvertIntegerAtoIntegerB.
+     */
+    @Test
+    public void testBitSwapRequired2() {
+        System.out.println("bitSwapRequired2");
+        int a = 0;
+        int b = 0;
+        int expResult = 0;
+        int result = ConvertIntegerAtoIntegerB.bitSwapRequired2(a, b);
+        assertEquals(expResult, result);
+        
+        assertEquals(1, ConvertIntegerAtoIntegerB.bitSwapRequired2(1, 3));
+        assertEquals(2, ConvertIntegerAtoIntegerB.bitSwapRequired2(1, 2));
+        assertEquals(3, ConvertIntegerAtoIntegerB.bitSwapRequired2(3, 4));
+        assertEquals(2, ConvertIntegerAtoIntegerB.bitSwapRequired2(31, 14));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }
