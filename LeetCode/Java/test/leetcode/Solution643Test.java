@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution020Test {
+public class Solution643Test {
     
-    public Solution020Test() {
+    public Solution643Test() {
     }
     
     @BeforeClass
@@ -38,24 +38,21 @@ public class Solution020Test {
     }
 
     /**
-     * Test of isValid method, of class Solution020.
+     * Test of findMaxAverage method, of class Solution643.
      */
     @Test
-    public void testIsValid() {
-        System.out.println("isValid");
-        String s = "()";
-        Solution020 instance = new Solution020();
-        boolean expResult = true;
-        boolean result = instance.isValid(s);
-        assertEquals(expResult, result);
+    public void testFindMaxAverage() {
+        System.out.println("findMaxAverage");
+        int[] nums = null;
+        int k = 0;
+        Solution643 instance = new Solution643();
+        double expResult = 0.0;
+        double result = instance.findMaxAverage(nums, k);
+        assertEquals(expResult, result, 0.0);
         
-        assertEquals(false, instance.isValid("("));
-        assertEquals(true, instance.isValid("()[]{}"));
-        assertEquals(false, instance.isValid("(]"));
-        assertEquals(false, instance.isValid("([)]"));
-        assertEquals(false, instance.isValid(")}{({))[{{[}"));
-        assertEquals(false, instance.isValid("(("));
-        
+        assertEquals(3, instance.findMaxAverage(new int[]{1,2,3}, 1), 0.0000001);
+        assertEquals(2.5, instance.findMaxAverage(new int[]{1,2,3}, 2), 0.0000001);
+        assertEquals(12.75, instance.findMaxAverage(new int[]{1,12,-5,-6,50,3}, 4), 0.0000001);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

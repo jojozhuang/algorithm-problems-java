@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution020Test {
+public class Solution398Test {
     
-    public Solution020Test() {
+    public Solution398Test() {
     }
     
     @BeforeClass
@@ -38,24 +38,22 @@ public class Solution020Test {
     }
 
     /**
-     * Test of isValid method, of class Solution020.
+     * Test of pick method, of class Solution398.
      */
     @Test
-    public void testIsValid() {
-        System.out.println("isValid");
-        String s = "()";
-        Solution020 instance = new Solution020();
-        boolean expResult = true;
-        boolean result = instance.isValid(s);
+    public void testPick() {
+        System.out.println("pick");
+        int target = 0;
+        Solution398 instance = new Solution398(null);
+        int expResult = 0;
+        int result = instance.pick(target);
         assertEquals(expResult, result);
         
-        assertEquals(false, instance.isValid("("));
-        assertEquals(true, instance.isValid("()[]{}"));
-        assertEquals(false, instance.isValid("(]"));
-        assertEquals(false, instance.isValid("([)]"));
-        assertEquals(false, instance.isValid(")}{({))[{{[}"));
-        assertEquals(false, instance.isValid("(("));
-        
+        Solution398 instance2 = new Solution398(new int[]{1,2,3,3,3});
+        assertEquals(0, instance2.pick(1));
+        assertEquals(1, instance2.pick(2));
+        int random2 = instance2.pick(3);
+        assertTrue(random2==2||random2==3||random2==4);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

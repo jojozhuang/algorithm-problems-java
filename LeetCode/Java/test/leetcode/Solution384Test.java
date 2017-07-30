@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,11 +15,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution020Test {
+public class Solution384Test {
     
-    public Solution020Test() {
+    public Solution384Test() {
     }
     
     @BeforeClass
@@ -38,24 +39,18 @@ public class Solution020Test {
     }
 
     /**
-     * Test of isValid method, of class Solution020.
+     * Test of shuffle method, of class Solution384.
      */
     @Test
-    public void testIsValid() {
-        System.out.println("isValid");
-        String s = "()";
-        Solution020 instance = new Solution020();
-        boolean expResult = true;
-        boolean result = instance.isValid(s);
-        assertEquals(expResult, result);
+    public void testShuffle() {
+        System.out.println("shuffle");
         
-        assertEquals(false, instance.isValid("("));
-        assertEquals(true, instance.isValid("()[]{}"));
-        assertEquals(false, instance.isValid("(]"));
-        assertEquals(false, instance.isValid("([)]"));
-        assertEquals(false, instance.isValid(")}{({))[{{[}"));
-        assertEquals(false, instance.isValid("(("));
-        
+        int[] nums1 = new int[]{1,2,3};
+        Solution384 instance = new Solution384(nums1);
+        int[] result1 = instance.shuffle();
+        Arrays.sort(result1);
+        assertArrayEquals(nums1, result1);
+        assertArrayEquals(nums1, instance.reset());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

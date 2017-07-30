@@ -24,6 +24,11 @@ public class CC150 {
         //Design Questions:
         // 1. Parking lot
         
+        
+        //20.1
+        //20.4 Write a method to count the number of 2s between 0 and n
+        //20.6 Selection Rank Algorithm, Heap 
+        
     }
     
 }

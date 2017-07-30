@@ -5,6 +5,12 @@
  */
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
 /**
  * Random Pick Index
  * 
@@ -28,11 +34,33 @@ package leetcode;
  * @author Johnny
  */
 public class Solution398 {
+    Map<Integer, List<Integer>> map = null;
     public Solution398(int[] nums) {
-        
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        map = new HashMap<Integer, List<Integer>>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!map.containsKey(nums[i])) {
+                List<Integer> list = new ArrayList<Integer>();
+                list.add(i);
+                map.put(nums[i], list);
+            } else {
+                map.get(nums[i]).add(i);
+            }
+        }
     }
     
     public int pick(int target) {
+        if (map != null && map.containsKey(target)) {
+            List<Integer> list = map.get(target);
+            int index = getRandom(list.size());
+            return list.get(index);
+        }
         return 0;
+    }
+    
+    private int getRandom(int max) {
+        return new Random().nextInt(max);
     }
 }

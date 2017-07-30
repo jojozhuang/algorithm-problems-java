@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Random;
+
 /**
  * Shuffle an Array
  * 
@@ -28,18 +30,32 @@ package leetcode;
  * @author Johnny
  */
 public class Solution384 {
+    int[] original = null;
+    Random random = null;
     public Solution384(int[] nums) {
-        
+        original = nums;
+        random = new Random();
     }
     
     /** Resets the array to its original configuration and return it. */
     public int[] reset() {
-        return new int[3];
+        return original;
     }
     
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
-        return new int[3];
+        if (original == null || original.length <= 1) {
+            return original;
+        }
+        
+        int[] shuffle = original.clone();
+        for (int i = 0; i < shuffle.length; i++) {
+            int index = random.nextInt(shuffle.length - i) + i;
+            int temp = shuffle[i];
+            shuffle[i] = shuffle[index];
+            shuffle[index] = temp;
+        }
+        return shuffle;
     }
     
 }

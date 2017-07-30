@@ -36,15 +36,14 @@ public class Solution020 {
                 if (stack.empty()) {
                     return false;
                 }
-                char pop = stack.pop();
-                if (current == ')' && pop == '(') 
+                char top = stack.pop();
+                if ((current == ')' && top == '(') ||
+                    (current == '}' && top == '{') ||
+                    (current == ']' && top == '[')) {
                     continue;
-                else if (current == '}' && pop == '{') 
-                    continue;
-                else if (current == ']' && pop == '[') 
-                    continue;
-                else
+                } else {
                     return false;
+                }
             }
         }
         
