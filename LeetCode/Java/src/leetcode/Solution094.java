@@ -31,71 +31,43 @@ import java.util.Stack;
  */
 public class Solution094 {
     //divide and conquer
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
         
         if (root == null) {
-            return result;
+            return res;
         }
         
         List<Integer> left = inorderTraversal(root.left);
         List<Integer> right = inorderTraversal(root.right);
         
-        result.addAll(left);
-        result.add(root.val);
-        result.addAll(right);
+        res.addAll(left);
+        res.add(root.val);
+        res.addAll(right);
         
-        return result;        
+        return res;        
     }
     
-    public List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        
-        if (root == null) {
-            return result;
-        }
-        
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        stack.push(root);
-        
-        while(!stack.isEmpty()) {
-            TreeNode node = stack.peek();
-            if (node.left == null) {
-                result.add(node.val);
-                stack.pop();
-                if (node.right != null) {
-                    stack.push(node.right);
-                    node.right = null;
-                }
-            } else {
-                stack.push(node.left);
-                node.left = null;
-            }
-        }
-        
-        return result;
-    }    
- 
     // stack
-    private List<Integer> inorderTraversal3(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
         
         if (root == null) {
-            return result;
+            return res;
         }
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode curr = root;
         
-        while(curr != null || !stack.empty()) {
-            while(curr != null) {
+        while (curr != null || !stack.empty()) {
+            while (curr != null) {
                 stack.push(curr);
                 curr = curr.left;
             }
             curr = stack.pop();
-            result.add(curr.val);
+            res.add(curr.val);
             curr = curr.right;
         }
-        return result;
+        return res;
     }    
 }

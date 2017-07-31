@@ -28,7 +28,7 @@ public class Solution150 {
         
         Stack<String> stack = new Stack<String>();
         int index = 0;
-        while(index < tokens.length) {
+        while (index < tokens.length) {
             String str = tokens[index];            
             if (isOperator(str)) {
                 int val1 = Integer.parseInt(stack.pop());
@@ -55,8 +55,8 @@ public class Solution150 {
             index++;
         }
         
-        String ret = stack.pop();
-        return Integer.parseInt(ret);
+        String res = stack.pop();
+        return Integer.parseInt(res);
     }
     
     private boolean isOperator(String str) {

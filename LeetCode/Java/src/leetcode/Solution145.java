@@ -30,7 +30,7 @@ import java.util.Stack;
  */
 public class Solution145 {
     // divide and conquer
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal2(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         
         if(root == null) {
@@ -47,7 +47,7 @@ public class Solution145 {
     }
     
     // reverse mid->right-left => left-right-mid
-    public List<Integer> postorderTraversal2(TreeNode root) {
+    public List<Integer> postorderTraversal3(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         
         if (root == null) {
@@ -72,7 +72,7 @@ public class Solution145 {
         return result;
     }
     
-    public List<Integer> postorderTraversal3(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         
         if (root == null) {

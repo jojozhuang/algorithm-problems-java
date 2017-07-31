@@ -21,27 +21,27 @@ import leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution173 {
-    private Stack<TreeNode> stack = new Stack<>();
-    private TreeNode curt;
+    private Stack<TreeNode> stack = new Stack<TreeNode>();
+    private TreeNode curr;
     public Solution173(TreeNode root) {
-        curt = root;
+        curr = root;
     }
 
     /** @return whether we have a next smallest number */
     public boolean hasNext() {
-        return (curt != null || !stack.isEmpty());
+        return (curr != null || !stack.isEmpty());
     }
 
     /** @return the next smallest number */
     public int next() {
-        while(curt != null) {
-            stack.push(curt);
-            curt = curt.left;
+        while (curr != null) {
+            stack.push(curr);
+            curr = curr.left;
         }
         
-        curt = stack.pop();
-        int res = curt.val;
-        curt = curt.right;
+        curr = stack.pop();
+        int res = curr.val;
+        curr = curr.right;
         return res;
     }
 }

@@ -135,22 +135,22 @@ public class AllSorting {
     }   
     
     // one way
-    private int Partition(int[] nums, int start, int end) {       
-        int m = start; //index of the last less value
+    private int partition(int[] nums, int start, int end) {       
+        int pivot = start; // select the first as the pivot
         
         for (int i = start + 1; i <= end; i++) {
             if (nums[i] < nums[start]) {
-                m++;
-                int temp = nums[m];
-                nums[m] = nums[i];
+                pivot++;
+                int temp = nums[pivot];
+                nums[pivot] = nums[i];
                 nums[i] = temp;
             }
         }
         
-        int temp = nums[m];
-        nums[m] = nums[start];
+        int temp = nums[pivot];
+        nums[pivot] = nums[start];
         nums[start] = temp;
-        return m;
+        return pivot;
     }    
     
     // two ways
@@ -217,12 +217,12 @@ public class AllSorting {
         if (start >= end) {
             return;
         }
-        int pivot = Partition3(nums, start, end);
+        int pivot = partition(nums, start, end);
         helper(nums, start, pivot - 1);
         helper(nums, pivot + 1, end);
     }
     
-    private int Partition3(int[] nums, int start, int end) {
+    private int Partition3999(int[] nums, int start, int end) {
         int pivot = start;
         for (int i = start; i <= end; i++) {
             if (nums[i] < nums[start]) {

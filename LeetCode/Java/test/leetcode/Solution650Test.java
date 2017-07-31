@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution155Test {
+public class Solution650Test {
     
-    public Solution155Test() {
+    public Solution650Test() {
     }
     
     @BeforeClass
@@ -38,25 +38,24 @@ public class Solution155Test {
     }
 
     /**
-     * Test of getMin method, of class Solution155.
+     * Test of minSteps method, of class Solution650.
      */
     @Test
-    public void testMinStack() {
-        System.out.println("minStack");
-        Solution155 instance = new Solution155();
-        instance.push(4);
-        assertEquals(4, instance.getMin());
-        instance.push(2);
-        assertEquals(2, instance.getMin());
-        instance.push(3);
-        assertEquals(2, instance.getMin());
-        assertEquals(3, instance.top());
-        instance.push(1);
-        assertEquals(1, instance.getMin());
-        assertEquals(1, instance.top());
-        instance.pop();
-        assertEquals(2, instance.getMin());
-        assertEquals(3, instance.top());
+    public void testMinSteps() {
+        System.out.println("minSteps");
+        int n = 0;
+        Solution650 instance = new Solution650();
+        int expResult = 0;
+        int result = instance.minSteps(n);
+        assertEquals(expResult, result);
+        
+        assertEquals(2, instance.minSteps(2));
+        assertEquals(3, instance.minSteps(3));
+        assertEquals(4, instance.minSteps(4));
+        assertEquals(5, instance.minSteps(5));
+        assertEquals(6, instance.minSteps(8));
+        assertEquals(6, instance.minSteps(9));
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

@@ -39,46 +39,32 @@ public class Solution173Test {
     }
 
     /**
-     * Test of hasNext method, of class Solution173.
-     */
-    @Test
-    public void testHasNext() {
-        System.out.println("hasNext");
-        TreeNode root = null;
-        Solution173 instance = new Solution173(root);
-        boolean expResult = false;
-        boolean result = instance.hasNext();
-        assertEquals(expResult, result);
-        
-        TreeNode root1 = new TreeNode(1);
-        Solution173 instance1 = new Solution173(root1);
-        assertEquals(true, instance1.hasNext());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of next method, of class Solution173.
      */
     @Test
-    public void testNext() {
-        System.out.println("next");
+    public void testTreeIterator() {
+        System.out.println("treeIterator");
         TreeNode root = new TreeNode(1);
         Solution173 instance = new Solution173(root);
         assertEquals(1, instance.next());
         
         TreeNode root1 = TreeNode.createInstance(new String[] {"1","#","2","#","3"});
         Solution173 instance1 = new Solution173(root1);
+        assertEquals(true, instance1.hasNext());
         assertEquals(1, instance1.next());
         assertEquals(2, instance1.next());
+        assertEquals(true, instance1.hasNext());
         assertEquals(3, instance1.next());
+        assertEquals(false, instance1.hasNext());
         
         TreeNode root2 = TreeNode.createInstance(new String[] {"4","2","#","1","3"});
         Solution173 instance2 = new Solution173(root2);
         assertEquals(1, instance2.next());
         assertEquals(2, instance2.next());
         assertEquals(3, instance2.next());
+        assertEquals(true, instance2.hasNext());
         assertEquals(4, instance2.next());
+        assertEquals(false, instance1.hasNext());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

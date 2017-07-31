@@ -20,7 +20,7 @@ import java.util.Queue;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
      
-    public static TreeNode createInstance(String[] arr) {  
+    public static TreeNode createInstance2(String[] arr) {  
         List<String> serial = Arrays.asList(arr);
         if(serial == null || serial.size() == 0) {
             return null;         
@@ -52,6 +52,37 @@ import java.util.Queue;
         
         return root;
     }
+    
+    public static TreeNode createInstance(String[] arr) {
+        if(arr == null || arr.length == 0) {
+            return null;         
+        }
+        
+        Queue<TreeNode> queueNode = new LinkedList<>();
+        
+        TreeNode root = new TreeNode(Integer.parseInt(arr[0]));
+        queueNode.offer(root);
+        
+        int index = 0;
+        while (index < arr.length - 1) {
+            TreeNode node = queueNode.poll();
+            if (node != null) {
+                String str = arr[++index];
+                if (!str.equals("#")) {
+                    node.left = new TreeNode(Integer.parseInt(str));
+                    queueNode.add(node.left);
+                }
+                str = arr[++index];
+                if (!str.equals("#")) {
+                    node.right = new TreeNode(Integer.parseInt(str));
+                    queueNode.add(node.right);
+                }             
+            }
+        }
+        
+        return root;
+    }
+    
     
     public static boolean isSame(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null) {

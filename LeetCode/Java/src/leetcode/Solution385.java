@@ -5,6 +5,7 @@
  */
 package leetcode;
 
+import java.util.Stack;
 import leetcode.common.NestedInteger;
 
 /**
@@ -31,12 +32,53 @@ import leetcode.common.NestedInteger;
  * 2. A nested list containing two elements:
  * i.  An integer containing value 456.
  *  ii. A nested list with one element:
- * a. An integer containing value 789.
+ *    a. An integer containing value 789.
  *
  * @author Johnny
  */
 public class Solution385 {
     public NestedInteger deserialize(String s) {
-        return null;
+        if (s == null || s.isEmpty()) {
+            return null;
+        }
+        if (s.charAt(0) != '[') {
+            return new NestedInteger(Integer.parseInt(s));
+        }
+        
+        Stack<NestedInteger> stack = new Stack<NestedInteger>();
+        NestedInteger curr = null;
+        int index = 0;
+        int left = 0;
+        
+        while (index < s.length()) {
+            char ch = s.charAt(index);
+            if (ch == '[') {
+                if (curr != null) {
+                    stack.push(curr);
+                }
+                curr = new NestedInteger();
+                left = index + 1;
+            } else if (ch == ']') {
+                String num = s.substring(left, index);
+                if (!num.isEmpty()) {
+                    curr.add(new NestedInteger(Integer.parseInt(num)));
+                }
+                if (!stack.isEmpty()) {
+                    NestedInteger pop = stack.pop();
+                    pop.add(curr);
+                    curr = pop;
+                }
+                left = index + 1;
+            } else if (ch == ','){
+                if (s.charAt(index - 1) != ']') {
+                    String num = s.substring(left, index);
+                    curr.add(new NestedInteger(Integer.valueOf(num)));
+                }
+                left = index + 1;
+            }
+            index++;
+        }
+        
+        return curr;
     }
 }

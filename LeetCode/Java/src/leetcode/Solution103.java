@@ -109,47 +109,4 @@ public class Solution103 {
         
         return result;
     }
-    
-    public List<List<Integer>> zigzagLevelOrder3(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        if (root == null) {
-            return result;
-        }
-        
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        Stack<Integer> stackLevel = new Stack<Integer>();
-        queue.offer(root);
-        boolean leftToRight = true;
-        
-        while(!queue.isEmpty()) {
-            List<Integer> level = new ArrayList<Integer>();
-            int size = queue.size();
-            for (int ix = 0; ix < size; ix++) {
-                TreeNode node = queue.poll();
-                if (leftToRight) {
-                    level.add(node.val);
-                }
-                else {
-                    stackLevel.push(node.val);
-                }
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
-                if (node.right != null) {
-                    queue.offer(node.right);
-                }                    
-            }
-            if (leftToRight) {
-                result.add(level);
-            }
-            else {
-                while(!stackLevel.isEmpty()) {
-                    level.add(stackLevel.pop());
-                }
-                result.add(level);
-            }
-            leftToRight = !leftToRight;
-        }
-        return result;
-    }  
 }

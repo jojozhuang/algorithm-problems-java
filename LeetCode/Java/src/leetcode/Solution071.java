@@ -7,8 +7,6 @@ package leetcode;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
 
 /**
  * Simplify Path.
@@ -34,7 +32,7 @@ public class Solution071 {
         
         Deque<String> deque = new LinkedList<String>();
         String[] list = path.split("/");
-        for(String item: list) {
+        for (String item: list) {
             if (item.equals(".") || item.isEmpty()) {
                 continue;
             } else if (item.equals("..")) {
@@ -51,10 +49,11 @@ public class Solution071 {
         } 
         
         StringBuilder sb = new StringBuilder();
-        while(!deque.isEmpty()) {
+        while (!deque.isEmpty()) {
             sb.append("/");
             sb.append(deque.pollFirst());
         }
+        
         return sb.toString();
     }
 }
