@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * Remove K Digits
  * 
@@ -37,6 +39,68 @@ package leetcode;
  */
 public class Solution402 {
     public String removeKdigits(String num, int k) {
-        return "";
+        if (num == null || num.isEmpty() || k < 0 || k >= num.length()) {
+            return "0";
+        }
+        
+        Stack<Character> stack = new Stack<>();
+        stack.push(num.charAt(0));
+        int i = 1; 
+        while (i < num.length() && k > 0) {
+            char ch = num.charAt(i);
+            if (stack.peek() <= ch) {
+                stack.push(ch);
+                i++;
+            } else {
+                while (!stack.isEmpty() && stack.peek() > ch && k > 0) {
+                    stack.pop();
+                    k--;                    
+                }
+                stack.push(ch);
+                i++;
+                if (k == 0) {
+                    break;
+                }
+            }
+        }
+        
+        String res = "";
+        StringBuilder sb = new StringBuilder();
+        if (k == 0) {
+            while (!stack.isEmpty()) {
+                sb.append(stack.pop());
+            }
+            res = sb.reverse().toString();
+            if (i < num.length()) {
+                res += num.substring(i);
+            }
+        } else {
+            while (!stack.isEmpty() && k > 0) {
+                stack.pop();
+                k--;
+            }
+            while (!stack.isEmpty()) {
+                sb.append(stack.pop());
+            }
+            res = sb.reverse().toString();
+        }
+        
+        if (res.startsWith("0")) {
+            int j = 0;
+            while (j < res.length()) {
+                if (res.charAt(j) == '0') {
+                    j++;
+                } else {
+                    break;
+                }
+            }
+            res = res.substring(j);
+        }
+
+        if (res.isEmpty()) {
+            res = "0";
+        }
+        
+        return res;
     } 
 }

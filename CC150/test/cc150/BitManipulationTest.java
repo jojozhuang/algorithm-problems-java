@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leetcode;
+package cc150;
 
-import leetcode.common.TreeNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution222Test {
+public class BitManipulationTest {
     
-    public Solution222Test() {
+    public BitManipulationTest() {
     }
     
     @BeforeClass
@@ -39,26 +38,21 @@ public class Solution222Test {
     }
 
     /**
-     * Test of countNodes method, of class Solution222.
+     * Test of add method, of class BitManipulation.
      */
     @Test
-    public void testCountNodes() {
-        System.out.println("countNodes");
-        TreeNode root = null;
-        Solution222 instance = new Solution222();
+    public void testAdd() {
+        System.out.println("add");
+        int a = 0;
+        int b = 0;
+        BitManipulation instance = new BitManipulation();
         int expResult = 0;
-        int result = instance.countNodes(root);
+        int result = instance.add(a, b);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
-        assertEquals(2, instance.countNodes(root2));
-        
-        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","3"});
-        assertEquals(3, instance.countNodes(root3));
-      
-        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","3","4","#","#","#"});
-        assertEquals(4, instance.countNodes(root4));
-        
+        assertEquals(5, instance.add(3, 2));
+        assertEquals(-3, instance.add(-2, -1));
+        assertEquals(1, instance.add(1, 0));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

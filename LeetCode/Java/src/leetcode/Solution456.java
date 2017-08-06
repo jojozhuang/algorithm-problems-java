@@ -5,6 +5,8 @@
  */
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * 132 Pattern
  * 
@@ -41,6 +43,49 @@ package leetcode;
  */
 public class Solution456 {
     public boolean find132pattern(int[] nums) {
+        if (nums == null || nums.length < 3) {
+            return false;
+        }
+        
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(nums[0]);
+        
+        int j = 1;
+        while (j < nums.length) {
+            if (nums[j] >= stack.peek()) {
+                stack.push(nums[j]);
+            } else {
+                if (stack.isEmpty()) {
+                    stack.push(nums[j]);
+                }
+                else if (stack.size() == 1) {
+                    stack.pop();
+                    stack.push(nums[j]);
+                } else {
+                    int top = stack.pop();                    
+                    while (!stack.isEmpty()) {
+                        int small = stack.peek();
+                        int k = j;
+                        while (k < nums.length) {
+                            if (nums[k] > small && nums[k] < top) {
+                                return true;
+                            }
+                            k++;
+                        }
+                        if (!stack.isEmpty()) {
+                            stack.pop();
+                        }
+                    }
+                    
+                    while (!stack.isEmpty()) {
+                        stack.pop();
+                    }
+                    stack.push(nums[j]);
+                }
+            }
+            j++;
+        }
+        
         return false;
     } 
 }

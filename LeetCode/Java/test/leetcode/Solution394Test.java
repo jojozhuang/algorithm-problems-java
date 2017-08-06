@@ -5,7 +5,6 @@
  */
 package leetcode;
 
-import leetcode.common.TreeNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Johnny
+ * @author i857285
  */
-public class Solution222Test {
+public class Solution394Test {
     
-    public Solution222Test() {
+    public Solution394Test() {
     }
     
     @BeforeClass
@@ -39,26 +38,20 @@ public class Solution222Test {
     }
 
     /**
-     * Test of countNodes method, of class Solution222.
+     * Test of decodeString method, of class Solution394.
      */
     @Test
-    public void testCountNodes() {
-        System.out.println("countNodes");
-        TreeNode root = null;
-        Solution222 instance = new Solution222();
-        int expResult = 0;
-        int result = instance.countNodes(root);
+    public void testDecodeString() {
+        System.out.println("decodeString");
+        String s = "";
+        Solution394 instance = new Solution394();
+        String expResult = "";
+        String result = instance.decodeString(s);
         assertEquals(expResult, result);
         
-        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
-        assertEquals(2, instance.countNodes(root2));
-        
-        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","3"});
-        assertEquals(3, instance.countNodes(root3));
-      
-        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","3","4","#","#","#"});
-        assertEquals(4, instance.countNodes(root4));
-        
+        assertEquals("aaabcbc", instance.decodeString("3[a]2[bc]"));
+        assertEquals("accaccacc", instance.decodeString("3[a2[c]]"));
+        assertEquals("abcabccdcdcdef", instance.decodeString("2[abc]3[cd]ef"));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
