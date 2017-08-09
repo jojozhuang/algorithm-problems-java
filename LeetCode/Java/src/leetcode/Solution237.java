@@ -20,11 +20,7 @@ import leetcode.common.ListNode;
  */
 public class Solution237 {
     public void deleteNode(ListNode node) {
-        if (node == null) {
-            return;
-        }
-        if (node.next == null) {
-            node = null;
+        if (node == null || node.next == null) {
             return;
         }
         

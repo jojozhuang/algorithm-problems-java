@@ -24,6 +24,38 @@ public class Solution155 {
     private Stack<Integer> stack2 = new Stack<Integer>();
     public void push(int x) {
         stack1.push(x);
+        if (x <= min()) {
+            stack2.push(x);
+        }
+    }
+
+    public void pop() {
+        int top = stack1.pop();
+        if (top == min()) {
+            stack2.pop();
+        }
+    }
+
+    public int top() {
+        return stack1.peek();
+    }
+
+    public int getMin() {
+        return stack2.peek();
+    }
+    
+    private int min() {
+        if (stack2.isEmpty()) {
+            return Integer.MAX_VALUE;
+        } else {
+            return stack2.peek();
+        }
+    }
+
+    /*private Stack<Integer> stack1 = new Stack<Integer>();
+    private Stack<Integer> stack2 = new Stack<Integer>();
+    public void push(int x) {
+        stack1.push(x);
         if (stack2.isEmpty()) {
             stack2.push(x);
         } else {
@@ -42,5 +74,5 @@ public class Solution155 {
 
     public int getMin() {
         return stack2.peek();
-    }
+    }*/
 }
