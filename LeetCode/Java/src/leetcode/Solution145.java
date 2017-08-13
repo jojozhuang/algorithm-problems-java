@@ -31,27 +31,27 @@ import java.util.Stack;
 public class Solution145 {
     // divide and conquer
     public List<Integer> postorderTraversal2(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         
         if(root == null) {
-            return result;
+            return res;
         }
         
         List<Integer> left = postorderTraversal(root.left);
         List<Integer> right = postorderTraversal(root.right);
         
-        result.addAll(left);
-        result.addAll(right);
-        result.add(root.val);
-        return result;
+        res.addAll(left);
+        res.addAll(right);
+        res.add(root.val);
+        return res;
     }
     
     // reverse mid->right-left => left-right-mid
     public List<Integer> postorderTraversal3(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         
         if (root == null) {
-            return result;
+            return res;
         }
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -59,7 +59,7 @@ public class Solution145 {
         
         while(!stack.isEmpty()) {
             TreeNode node = stack.pop();
-            result.add(node.val);
+            res.add(node.val);
             if (node.left != null) {
                 stack.push(node.left);
             }
@@ -67,16 +67,16 @@ public class Solution145 {
                 stack.push(node.right);
             }
         }
-        Collections.reverse(result);
+        Collections.reverse(res);
         
-        return result;
+        return res;
     }
     
     public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         
         if (root == null) {
-            return result;
+            return res;
         }
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -89,7 +89,7 @@ public class Solution145 {
                     stack.push(node.right);
                     node.right = null;
                 } else {
-                    result.add(node.val);
+                    res.add(node.val);
                     stack.pop();
                 }
             } else {
@@ -102,7 +102,7 @@ public class Solution145 {
             }            
         }
         
-        return result;
+        return res;
     }
     private List<Integer> postorderTraversal4(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();

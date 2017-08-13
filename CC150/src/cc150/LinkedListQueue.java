@@ -21,7 +21,7 @@ public class LinkedListQueue {
     }
     
     // Add value to the tail of the list
-    public void add(int value) {
+    public void enqueue(int value) {
         if (tail == null) {
             tail = new ListNode(value);
             head = tail;
@@ -32,7 +32,7 @@ public class LinkedListQueue {
     }
     
     // Poll value from the beginning of the list
-    public int poll() throws Exception {
+    public int dequeue() throws Exception {
         if (head == null) {
             throw new Exception();
         }

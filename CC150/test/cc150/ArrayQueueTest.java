@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author i857285
  */
-public class LinkedListQueueTest {
+public class ArrayQueueTest {
     
-    public LinkedListQueueTest() {
+    public ArrayQueueTest() {
     }
     
     @BeforeClass
@@ -38,12 +38,12 @@ public class LinkedListQueueTest {
     }
 
     /**
-     * Test of add method, of class LinkedListQueue.
+     * Test of enqueue method, of class ArrayQueue.
      */
     @Test
     public void testQueue() throws Exception {
-        System.out.println("testLinkedListQueue");
-        LinkedListQueue queue = new LinkedListQueue();
+        System.out.println("testArrayQueue");
+        ArrayQueue queue = new ArrayQueue(100);
         assertEquals(true, queue.isEmpty());
         queue.enqueue(1);
         queue.enqueue(2);
@@ -61,8 +61,6 @@ public class LinkedListQueueTest {
         assertEquals(false, queue.isEmpty());
         assertEquals(4, queue.dequeue());
         assertEquals(true, queue.isEmpty());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-
+    
 }

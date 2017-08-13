@@ -30,33 +30,33 @@ import java.util.ArrayList;
 public class Solution144 {
     // Divide and conquer (recursion)
     public List<Integer> preorderTraversal2(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         if (root == null) {
-            return result;
+            return res;
         }
         
         List<Integer> left = preorderTraversal2(root.left);
         List<Integer> right = preorderTraversal2(root.right);
         
-        result.add(root.val);
-        result.addAll(left);
-        result.addAll(right);
-        return result;
+        res.add(root.val);
+        res.addAll(left);
+        res.addAll(right);
+        return res;
     }
     
     // create stack
-    public List<Integer> preorderTraversal(TreeNode root) {        
-        List<Integer> result = new ArrayList<Integer>();
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
         
         if (root == null) {
-            return result;
+            return res;
         }
             
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         while (!stack.empty()) {
             TreeNode node = stack.pop();
-            result.add(node.val);
+            res.add(node.val);
             
             if (node.right != null) {
                 stack.push(node.right);
@@ -66,6 +66,6 @@ public class Solution144 {
             }
         }
         
-        return result;
+        return res;
     }
 }
