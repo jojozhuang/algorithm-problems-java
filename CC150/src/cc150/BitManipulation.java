@@ -27,4 +27,5 @@ public class BitManipulation {
     public int multiply(int a, int b) {
         return add(a, -b);
     }
+
 }
