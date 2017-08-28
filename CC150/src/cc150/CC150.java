@@ -31,6 +31,10 @@ public class CC150 {
         
         //CC189
         //chapter 4 tree and graph
+        // 5.3
+        // 5.4
+        // 5.8
+        
         
         Foo f = new Foo("f");
         changeReference(f); // It won't change the reference!

@@ -44,7 +44,7 @@ public class Solution102 {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
         
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<Integer>();
             int size = queue.size(); 
             for (int i = 0; i < size; i++) {
@@ -55,7 +55,7 @@ public class Solution102 {
                 }
                 if (node.right != null) {
                     queue.offer(node.right);
-                }                
+                }
             }
             res.add(level);
         }

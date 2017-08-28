@@ -9,23 +9,26 @@ package cc150.common;
  *
  * @author i857285
  */
-public class ListNode {
+public class DoublyListNode {
     public int val;
-    public ListNode next;
-    public ListNode(int x) {
+    public DoublyListNode previous;
+    public DoublyListNode next;
+    public DoublyListNode(int x) {
         val = x;
+        previous = null;
         next = null;
     }
     
-    public static ListNode create(int[] values) {  
+    public static DoublyListNode create(int[] values) {  
         if (values == null || values.length == 0) {
             return null;
         }
         
-        ListNode dummy = new ListNode(0);
-        ListNode curr = dummy;
+        DoublyListNode dummy = new DoublyListNode(0);
+        DoublyListNode curr = dummy;
         for (int i = 0; i < values.length; i++) {
-            curr.next = new ListNode(values[i]);
+            curr.next = new DoublyListNode(values[i]);
+            curr.next.previous = curr;
             curr = curr.next;
         }
         
