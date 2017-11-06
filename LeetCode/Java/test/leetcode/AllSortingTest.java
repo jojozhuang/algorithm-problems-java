@@ -46,10 +46,10 @@ public class AllSortingTest {
         int[] nums = null;
         AllSorting instance = new AllSorting();
         int[] expResult = null;
-        int[] result = instance.BubbleSort(nums);
+        int[] result = instance.bubbleSort(nums);
         assertArrayEquals(expResult, result);
         
-        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.BubbleSort(new int[]{2,4,5,7,1,2,3,6}));
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.bubbleSort(new int[]{2,4,5,7,1,2,3,6}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -58,33 +58,30 @@ public class AllSortingTest {
      * Test of InsertSort method, of class AllSorting.
      */
     @Test
-    public void testInsertSort() {
-        System.out.println("InsertSort");
+    public void testInsertionSort() {
+        System.out.println("insertionSort");
         int[] nums = null;
         AllSorting instance = new AllSorting();
         int[] expResult = null;
-        int[] result = instance.InsertSort(nums);
+        int[] result = instance.insertionSort(nums);
         assertArrayEquals(expResult, result);
-        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.InsertSort(new int[]{2,4,5,7,1,2,3,6}));
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.insertionSort(new int[]{2,4,5,7,1,2,3,6}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
 
     /**
-     * Test of MergeSort method, of class AllSorting.
+     * Test of shellSort method, of class AllSorting.
      */
     @Test
-    public void testMergeSort() {
-        System.out.println("MergeSort");
+    public void testShellSort() {
+        System.out.println("shellSort");
         int[] nums = null;
-        int from = 0;
-        int to = 0;
         AllSorting instance = new AllSorting();
         int[] expResult = null;
-        int[] result = instance.MergeSort(nums, from, to);
+        int[] result = instance.shellSort(nums);
         assertArrayEquals(expResult, result);
-        
-        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.MergeSort(new int[]{2,4,5,7,1,2,3,6}, 0, 7));
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.shellSort(new int[]{2,4,5,7,1,2,3,6}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -98,10 +95,43 @@ public class AllSortingTest {
         int[] nums = null;
         AllSorting instance = new AllSorting();
         int[] expResult = null;
-        int[] result = instance.SelectionSort(nums);
+        int[] result = instance.selectionSort(nums);
         assertArrayEquals(expResult, result);
         
-        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.SelectionSort(new int[]{2,4,5,7,1,2,3,6}));
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.selectionSort(new int[]{2,4,5,7,1,2,3,6}));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of heapSort method, of class AllSorting.
+     */
+    @Test
+    public void testHeapSort() {
+        System.out.println("heapSort");
+        int[] nums = null;
+        AllSorting instance = new AllSorting();
+        int[] expResult = null;
+        int[] result = instance.heapSort(nums);
+        assertArrayEquals(expResult, result);
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.heapSort(new int[]{2,4,5,7,1,2,3,6}));
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of MergeSort method, of class AllSorting.
+     */
+    @Test
+    public void testMergeSort() {
+        System.out.println("MergeSort");
+        int[] nums = null;
+        AllSorting instance = new AllSorting();
+        int[] expResult = null;
+        int[] result = instance.mergeSort(nums);
+        assertArrayEquals(expResult, result);
+        
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.mergeSort(new int[]{2,4,5,7,1,2,3,6}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -113,14 +143,12 @@ public class AllSortingTest {
     public void testQuickSort() {
         System.out.println("QuickSort");
         int[] nums = null;
-        int from = 0;
-        int to = 0;
         AllSorting instance = new AllSorting();
         int[] expResult = null;
-        int[] result = instance.QuickSort(nums, from, to);
+        int[] result = instance.quickSort(nums);
         assertArrayEquals(expResult, result);
         
-        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.QuickSort(new int[]{2,4,5,7,1,2,3,6}, 0, 7));
+        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.quickSort(new int[]{2,4,5,7,1,2,3,6}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -135,50 +163,12 @@ public class AllSortingTest {
         int maxVal = 0;
         AllSorting instance = new AllSorting();
         int[] expResult = null;
-        int[] result = instance.BucketSort(nums, maxVal);
+        int[] result = instance.bucketSort(nums, maxVal);
         assertArrayEquals(expResult, result);
        
-        assertArrayEquals(new int[]{0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5}, instance.BucketSort(new int[]{5,3,0,2,4,1,0,5,2,3,1,4}, 5));
+        assertArrayEquals(new int[]{0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5}, instance.bucketSort(new int[]{5,3,0,2,4,1,0,5,2,3,1,4}, 5));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-    }
-    
-    /**
-     * Test of QuickSort2 method, of class AllSorting.
-     */
-    @Test
-    public void testQuickSort2() {
-        System.out.println("QuickSort2");
-        int[] nums = null;
-        AllSorting instance = new AllSorting();
-        int[] expResult = null;
-        instance.QuickSort2(nums);
-        assertArrayEquals(expResult, nums);
-        
-        int[] nums2 = new int[]{2,4,5,7,1,2,3,6};
-        instance.QuickSort2(nums2);
-        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, nums2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
-    /**
-     * Test of MergeSort method, of class AllSorting.
-     */
-    @Test
-    public void MergeSort() {
-        System.out.println("MergeSort");
-        int[] nums = null;
-        AllSorting instance = new AllSorting();
-        int[] expResult = null;
-        instance.MergeSort(nums);
-        assertArrayEquals(expResult, nums);
-        
-        int[] nums2 = new int[]{2,4,5,7,1,2,3,6};
-        instance.MergeSort(nums2);
-        assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, nums2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
+    }   
+
 }
