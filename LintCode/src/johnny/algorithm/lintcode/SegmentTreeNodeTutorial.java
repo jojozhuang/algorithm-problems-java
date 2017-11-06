@@ -9,7 +9,7 @@ import johnny.algorithm.lintcode.common.SegmentTreeNode;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class SegmentTreeNodeTutorial {
     public SegmentTreeNode build(int start, int end) {

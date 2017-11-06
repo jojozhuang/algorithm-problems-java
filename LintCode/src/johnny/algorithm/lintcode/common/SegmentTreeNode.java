@@ -7,7 +7,7 @@ package johnny.algorithm.lintcode.common;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class SegmentTreeNode {
     public int start, end;
