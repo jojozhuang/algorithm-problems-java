@@ -23,7 +23,7 @@ import java.util.Stack;
  * FOLLOW UP
  * Implement a function popAt (int index) which performs a pop operation on a specific sub- stack.
  * 
- * @author i857285
+ * @author Johnny
  */
 public class CC189SetOfStacks {
     private int threshold;

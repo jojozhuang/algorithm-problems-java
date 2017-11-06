@@ -9,7 +9,7 @@ import java.util.Stack;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class SortStack {
     public static Stack<Integer> sort(Stack<Integer> stack) {

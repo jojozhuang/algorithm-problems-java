@@ -9,7 +9,7 @@ package johnny.algorithm.cc150;
  * Three in One: 
  * Describe how you could use a single array to implement three stacks.
  * 
- * @author i857285
+ * @author Johnny
  */
 public class CC189FixedMultiStack {
     private int numberOfStacks = 3;

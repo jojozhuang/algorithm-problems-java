@@ -7,7 +7,7 @@ package johnny.algorithm.cc150;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class BitManipulation {
     // It works for both positive as well as negative numbers

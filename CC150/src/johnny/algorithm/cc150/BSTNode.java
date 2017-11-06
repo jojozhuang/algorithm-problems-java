@@ -7,7 +7,7 @@ package johnny.algorithm.cc150;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class BSTNode {
     public int val;

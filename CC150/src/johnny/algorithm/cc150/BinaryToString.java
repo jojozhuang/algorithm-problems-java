@@ -11,7 +11,7 @@ package johnny.algorithm.cc150;
  * print the binary representation. If the number cannot be represented 
  * accurately in binary with at most 32 characters, print "ERROR".
  * 
- * @author i857285
+ * @author Johnny
  */
 public class BinaryToString {
     public String printBinary(double num) {

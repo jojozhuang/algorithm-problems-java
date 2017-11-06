@@ -9,7 +9,7 @@ import johnny.algorithm.cc150.common.ListNode;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class SinglyLinkedList {    
     public ListNode findMiddle(ListNode head) {

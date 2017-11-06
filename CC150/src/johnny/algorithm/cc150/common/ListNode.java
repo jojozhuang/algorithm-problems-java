@@ -7,7 +7,7 @@ package johnny.algorithm.cc150.common;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class ListNode {
     public int val;

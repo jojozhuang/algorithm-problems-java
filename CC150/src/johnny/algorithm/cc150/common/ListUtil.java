@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class ListUtil {
     public static LinkedList<TreeNode> buildTreeLinkList(Integer[] array) {

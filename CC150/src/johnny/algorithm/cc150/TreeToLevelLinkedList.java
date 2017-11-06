@@ -17,7 +17,7 @@ import johnny.algorithm.cc150.common.TreeNode;
  * of all the nodes at each depth (eg, if you have a tree with depth D, you’ll 
  * have D linked lists)
  * 
- * @author i857285
+ * @author Johnny
  */
 public class TreeToLevelLinkedList {
     public List<LinkedList<TreeNode>> convertTreeToList(TreeNode root) {

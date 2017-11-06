@@ -12,7 +12,7 @@ import johnny.algorithm.cc150.common.TreeNode;
  * Write an algorithm to find the ‘next’ node (e g , in-order successor) of a 
  * given node in a binary search tree where each node has a link to its parent
  * 
- * @author i857285
+ * @author Johnny
  */
 public class NodeSuccessor {
     public TreeNode inorderSuccessort(TreeNode node) {

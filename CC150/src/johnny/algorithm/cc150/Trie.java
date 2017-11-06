@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class Trie {
     private class TrieNode {

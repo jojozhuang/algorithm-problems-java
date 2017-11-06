@@ -7,7 +7,7 @@ package johnny.algorithm.cc150;
 
 /**
  *
- * @author i857285
+ * @author Johnny
  */
 public class BaseConvertor {
     // convert string with specified base to equivalent decimal value
