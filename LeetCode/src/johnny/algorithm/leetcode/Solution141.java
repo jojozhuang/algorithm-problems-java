@@ -33,7 +33,7 @@ public class Solution141 {
             } else {
                 fast = fast.next.next;
                 slow = slow.next;
-                if (fast == slow) {
+                if (fast == slow) { // Compare object, not its value. Nodes with same value may exist.
                     return true;
                 }
             }

@@ -17,7 +17,7 @@ public class SinglyLinkedList {
             return null;
         }
         
-        // find middle
+        // define fast and slow
         ListNode fast = head.next;
         ListNode slow = head;
         while(fast != null && fast.next != null) {
