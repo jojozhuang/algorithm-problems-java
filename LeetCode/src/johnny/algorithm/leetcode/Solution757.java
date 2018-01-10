@@ -1,44 +1,36 @@
 package johnny.algorithm.leetcode;
 
-import java.util.List;
-
 /**
- *757. Pyramid Transition Matrix
- *We are stacking blocks to form a pyramid. Each block has a color which is a one letter string, like `'Z'`.
+ *757. Set Intersection Size At Least Two
+ *An integer interval [a, b] (for integers a < b) is a set of all consecutive integers from a to b, 
+ *including a and b.
 
-For every block of color `C` we place not in the bottom row, we are placing it on top of a left block of color `A` and right block of color `B`. We are allowed to place the block there only if `(A, B, C)` is an allowed triple.
-
-We start with a bottom row of bottom, represented as a single string. We also start with a list of allowed triples allowed. Each allowed triple is represented as a string of length 3.
-
-Return true if we can build the pyramid all the way to the top, otherwise false.
+Find the minimum size of a set S such that for every integer interval A in intervals, the intersection
+ of S with A has size at least 2.
 
 Example 1:
-Input: bottom = "XYZ", allowed = ["XYD", "YZE", "DEA", "FFF"]
-Output: true
+Input: intervals = [[1, 3], [1, 4], [2, 5], [3, 5]]
+Output: 3
 Explanation:
-We can stack the pyramid like this:
-    A
-   / \
-  D   E
- / \ / \
-X   Y   Z
-
-This works because ('X', 'Y', 'D'), ('Y', 'Z', 'E'), and ('D', 'E', 'A') are allowed triples.
-Example 1:
-Input: bottom = "XXYX", allowed = ["XXX", "XXY", "XYX", "XYY", "YXZ"]
-Output: false
+Consider the set S = {2, 3, 4}.  For each interval, there are at least 2 elements from S in the 
+interval.
+Also, there isn't a smaller size set that fulfills the above condition.
+Thus, we output the size of this set, which is 3.
+Example 2:
+Input: intervals = [[1, 2], [2, 3], [2, 4], [4, 5]]
+Output: 5
 Explanation:
-We can't stack the pyramid to the top.
-Note that there could be allowed triples (A, B, C) and (A, B, D) with C != D.
+An example of a minimum sized set is {1, 2, 3, 4, 5}.
 Note:
-bottom will be a string with length in range [2, 12].
-allowed will have length in range [0, 343].
-Letters in all strings will be chosen from the set {'A', 'B', 'C', 'D', 'E', 'F', 'G'}.
+
+intervals will have length in range [1, 3000].
+intervals[i] will have length 2, representing some integer interval.
+intervals[i][j] will be an integer in [0, 10^8].
 
  * @author Johnny
  */
 public class Solution757 {
-    public boolean pyramidTransition(String bottom, List<String> allowed) {
-        return false;
+    public int intersectionSizeTwo(int[][] intervals) {
+        return 0;
     }
 }

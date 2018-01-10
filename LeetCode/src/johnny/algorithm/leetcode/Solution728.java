@@ -5,6 +5,7 @@
  */
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,6 +29,33 @@ The boundaries of each input argument are 1 <= left <= right <= 10000.
  */
 public class Solution728 {
     public List<Integer> selfDividingNumbers(int left, int right) {
-        return null;
+        List<Integer> res = new ArrayList<Integer>();
+        if (left < 1 || right > 10000 || left > right) {
+            return res;
+        }
+        
+        for (int i = left; i <= right; i++) {
+            if (isDividingNumber(i)) {
+                res.add(i);
+            }
+        }
+        
+        return res;
+       
+    }
+    
+    private boolean isDividingNumber(int num) {
+        int original = num;
+        while (num > 0) {
+            int remainder = num % 10;
+            if (remainder == 0) {
+                return false;
+            }
+            if (original % remainder != 0) {
+                return false;
+            }
+            num = num / 10;
+        }
+        return true;
     }
 }

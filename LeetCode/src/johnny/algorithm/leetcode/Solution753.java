@@ -1,46 +1,35 @@
 package johnny.algorithm.leetcode;
 
 /**
- *753. Open the Lock
- *You have a lock in front of you with 4 circular wheels. Each wheel has 10 slots: '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'. The wheels can rotate freely and wrap around: for example we can turn '9' to be '0', or '0' to be '9'. Each move consists of turning one wheel one slot.
+ *753. Cracking the Safe
+ *There is a box protected by a password. The password is n digits, where each letter can be one of
+ * the first k digits 0, 1, ..., k-1.
 
-The lock initially starts at '0000', a string representing the state of the 4 wheels.
+You can keep inputting the password, the password will automatically be matched against the last n 
+digits entered.
 
-You are given a list of deadends dead ends, meaning if the lock displays any of these codes, the 
-wheels of the lock will stop turning and you will be unable to open it.
+For example, assuming the password is "345", I can open it when I type "012345", but I enter a total
+ of 6 digits.
 
-Given a target representing the value of the wheels that will unlock the lock, return the minimum 
-total number of turns required to open the lock, or -1 if it is impossible.
+Please return any string of minimum length that is guaranteed to open the box after the entire 
+string is inputted.
 
 Example 1:
-Input: deadends = ["0201","0101","0102","1212","2002"], target = "0202"
-Output: 6
-Explanation:
-A sequence of valid moves would be "0000" -> "1000" -> "1100" -> "1200" -> "1201" -> "1202" -> "0202".
-Note that a sequence like "0000" -> "0001" -> "0002" -> "0102" -> "0202" would be invalid,
-because the wheels of the lock become stuck after the display becomes the dead end "0102".
+Input: n = 1, k = 2
+Output: "01"
+Note: "10" will be accepted too.
 Example 2:
-Input: deadends = ["8888"], target = "0009"
-Output: 1
-Explanation:
-We can turn the last wheel in reverse to move from "0000" -> "0009".
-Example 3:
-Input: deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"], target = "8888"
-Output: -1
-Explanation:
-We can't reach the target without getting stuck.
-Example 4:
-Input: deadends = ["0000"], target = "8888"
-Output: -1
+Input: n = 2, k = 2
+Output: "00110"
+Note: "01100", "10011", "11001" will be accepted too.
 Note:
-The length of deadends will be in the range [1, 500].
-target will not be in the list deadends.
-Every string in deadends and the string target will be a string of 4 digits from the 10,000
- possibilities '0000' to '9999'.
+n will be in the range [1, 4].
+k will be in the range [1, 10].
+k^n will be at most 4096.
  * @author Johnny
  */
 public class Solution753 {
-    public int openLock(String[] deadends, String target) {
-        return 0;
+    public String crackSafe(int n, int k) {
+        return null;  
     }
 }

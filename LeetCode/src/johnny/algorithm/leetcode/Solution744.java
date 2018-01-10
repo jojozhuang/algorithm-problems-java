@@ -1,27 +1,70 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode;
 
 /**
-*744. Network Delay Time
-*There are N network nodes, labelled 1 to N.
+ * 
+ 744. Find Smallest Letter Greater Than Target
+Given a list of sorted characters letters containing only lowercase letters, and given a target letter target, find the smallest element in the list that is larger than the given target.
 
-Given times, a list of travel times as directed edges times[i] = (u, v, w), where u is the source node, v is the target node, and w is the time it takes for a signal to travel from source to target.
+Letters also wrap around. For example, if the target is target = 'z' and letters = ['a', 'b'], the answer is 'a'.
 
-Now, we send a signal from a certain node K. How long will it take for all nodes to receive the signal? If it is impossible, return -1.
+Examples:
+Input:
+letters = ["c", "f", "j"]
+target = "a"
+Output: "c"
 
+Input:
+letters = ["c", "f", "j"]
+target = "c"
+Output: "f"
+
+Input:
+letters = ["c", "f", "j"]
+target = "d"
+Output: "f"
+
+Input:
+letters = ["c", "f", "j"]
+target = "g"
+Output: "j"
+
+Input:
+letters = ["c", "f", "j"]
+target = "j"
+Output: "c"
+
+Input:
+letters = ["c", "f", "j"]
+target = "k"
+Output: "c"
 Note:
-N will be in the range [1, 100].
-K will be in the range [1, N].
-The length of times will be in the range [1, 6000].
-All edges times[i] = (u, v, w) will have 1 <= u, v <= N and 1 <= w <= 100.
+letters has a length in range [2, 10000].
+letters consists of lowercase letters, and contains at least 2 unique letters.
+target is a lowercase letter.
  * @author Johnny
  */
 public class Solution744 {
-    public int networkDelayTime(int[][] times, int N, int K) {
-        return 0;
+    public char nextGreatestLetter(char[] letters, char target) {
+        if (letters == null || letters.length == 0) {
+            return target;
+        }
+        
+        int start = 0;
+        int end = letters.length - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            char c = letters[mid];
+            if (c > target) {
+                end = mid;
+            } else {
+                start = mid + 1;
+            }
+        }
+        
+        if (end <= letters.length - 1 && letters[end] > target) {
+            return letters[end];
+        } else {
+            return letters[0];
+        }
     }
 }

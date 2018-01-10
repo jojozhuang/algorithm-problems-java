@@ -1,38 +1,64 @@
 package johnny.algorithm.leetcode;
 
 /**
- *749. Shortest Completing Word
-Find the minimum length word from a given dictionary words, which has all the letters from the 
-string licensePlate. Such a word is said to complete the given string licensePlate
+ *749. Contain Virus
+A virus is spreading rapidly, and your task is to quarantine the infected area by installing walls.
 
-Here, for letters we ignore case. For example, "P" on the licensePlate still matches "p" on the word.
+The world is modeled as a 2-D array of cells, where 0 represents uninfected cells, and 1 represents
+ cells contaminated with the virus. A wall (and only one wall) can be installed between any two
+  4-directionally adjacent cells, on the shared boundary.
 
-It is guaranteed an answer exists. If there are multiple answers, return the one that occurs first in
- the array.
+Every night, the virus spreads to all neighboring cells in all four directions unless blocked by 
+a wall. Resources are limited. Each day, you can install walls around only one region -- the affected
+ area (continuous block of infected cells) that threatens the most uninfected cells the following 
+ night. There will never be a tie.
 
-The license plate might have the same letter occurring multiple times. For example, given a 
-licensePlate of "PP", the word "pair" does not complete the licensePlate, but the word "supper" does.
+Can you save the day? If so, what is the number of walls required? If not, and the world becomes 
+fully infected, return the number of walls used.
 
 Example 1:
-Input: licensePlate = "1s3 PSt", words = ["step", "steps", "stripe", "stepple"]
-Output: "steps"
-Explanation: The smallest length word that contains the letters "S", "P", "S", and "T".
-Note that the answer is not "step", because the letter "s" must occur in the word twice.
-Also note that we ignored case for the purposes of comparing whether a letter exists in the word.
+Input: grid = 
+[[0,1,0,0,0,0,0,1],
+ [0,1,0,0,0,0,0,1],
+ [0,0,0,0,0,0,0,1],
+ [0,0,0,0,0,0,0,0]]
+Output: 10
+Explanation:
+There are 2 contaminated regions.
+On the first day, add 5 walls to quarantine the viral region on the left. The board after the virus 
+spreads is:
+
+[[0,1,0,0,0,0,1,1],
+ [0,1,0,0,0,0,1,1],
+ [0,0,0,0,0,0,1,1],
+ [0,0,0,0,0,0,0,1]]
+
+On the second day, add 5 walls to quarantine the viral region on the right. The virus is fully
+ contained.
 Example 2:
-Input: licensePlate = "1s3 456", words = ["looks", "pest", "stew", "show"]
-Output: "pest"
-Explanation: There are 3 smallest length words that contains the letters "s".
-We return the one that occurred first.
+Input: grid = 
+[[1,1,1],
+ [1,0,1],
+ [1,1,1]]
+Output: 4
+Explanation: Even though there is only one cell saved, there are 4 walls built.
+Notice that walls are only built on the shared boundary of two different cells.
+Example 3:
+Input: grid = 
+[[1,1,1,0,0,0,0,0,0],
+ [1,0,1,0,1,1,1,1,1],
+ [1,1,1,0,0,0,0,0,0]]
+Output: 13
+Explanation: The region on the left only builds two new walls.
 Note:
-licensePlate will be a string with length in range [1, 7].
-licensePlate will contain digits, spaces, or letters (uppercase or lowercase).
-words will have a length in the range [10, 1000].
-Every words[i] will consist of lowercase letters, and have length in range [1, 15].
+The number of rows and columns of grid will each be in the range [1, 50].
+Each grid[i][j] will be either 0 or 1.
+Throughout the described process, there is always a contiguous viral region that will infect strictly more uncontaminated squares in the next round.
+
  * @author Johnny
  */
 public class Solution749 {
-public String shortestCompletingWord(String licensePlate, String[] words) {
-        return null;
+    public int containVirus(int[][] grid) {
+        return 0;
     }
 }

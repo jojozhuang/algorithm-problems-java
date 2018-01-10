@@ -1,35 +1,33 @@
 package johnny.algorithm.leetcode;
 
 /**
- *754. Cracking the Safe
- *There is a box protected by a password. The password is n digits, where each letter can be one of
- * the first k digits 0, 1, ..., k-1.
+ *754. Reach a Number
+ *You are standing at position 0 on an infinite number line. There is a goal at position target.
 
-You can keep inputting the password, the password will automatically be matched against the last n 
-digits entered.
+On each move, you can either go left or right. During the n-th move (starting from 1), you take n
+ steps.
 
-For example, assuming the password is "345", I can open it when I type "012345", but I enter a total
- of 6 digits.
-
-Please return any string of minimum length that is guaranteed to open the box after the entire 
-string is inputted.
+Return the minimum number of steps required to reach the destination.
 
 Example 1:
-Input: n = 1, k = 2
-Output: "01"
-Note: "10" will be accepted too.
+Input: target = 3
+Output: 2
+Explanation:
+On the first move we step from 0 to 1.
+On the second step we step from 1 to 3.
 Example 2:
-Input: n = 2, k = 2
-Output: "00110"
-Note: "01100", "10011", "11001" will be accepted too.
+Input: target = 2
+Output: 3
+Explanation:
+On the first move we step from 0 to 1.
+On the second move we step  from 1 to -1.
+On the third move we step from -1 to 2.
 Note:
-n will be in the range [1, 4].
-k will be in the range [1, 10].
-k^n will be at most 4096.
+target will be a non-zero integer in the range [-10^9, 10^9].
  * @author Johnny
  */
 public class Solution754 {
-    public String crackSafe(int n, int k) {
-        return null;  
+    public int reachNumber(int target) {
+        return 0;     
     }
 }

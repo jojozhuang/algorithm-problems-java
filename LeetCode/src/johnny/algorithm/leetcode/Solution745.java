@@ -1,70 +1,32 @@
 package johnny.algorithm.leetcode;
 
 /**
- * 
- 745. Find Smallest Letter Greater Than Target
-Given a list of sorted characters letters containing only lowercase letters, and given a target letter target, find the smallest element in the list that is larger than the given target.
+ * 745. Prefix and Suffix Search
+Given many words, words[i] has weight i.
 
-Letters also wrap around. For example, if the target is target = 'z' and letters = ['a', 'b'], the answer is 'a'.
+Design a class WordFilter that supports one function, WordFilter.f(String prefix, String suffix). 
+It will return the word with given prefix and suffix with maximum weight. If no word exists, 
+return -1.
 
 Examples:
 Input:
-letters = ["c", "f", "j"]
-target = "a"
-Output: "c"
-
-Input:
-letters = ["c", "f", "j"]
-target = "c"
-Output: "f"
-
-Input:
-letters = ["c", "f", "j"]
-target = "d"
-Output: "f"
-
-Input:
-letters = ["c", "f", "j"]
-target = "g"
-Output: "j"
-
-Input:
-letters = ["c", "f", "j"]
-target = "j"
-Output: "c"
-
-Input:
-letters = ["c", "f", "j"]
-target = "k"
-Output: "c"
+WordFilter(["apple"])
+WordFilter.f("a", "e") // returns 0
+WordFilter.f("b", "") // returns -1
 Note:
-letters has a length in range [2, 10000].
-letters consists of lowercase letters, and contains at least 2 unique letters.
-target is a lowercase letter.
+words has length in range [1, 15000].
+For each test case, up to words.length queries WordFilter.f may be made.
+words[i] has length in range [1, 10].
+prefix, suffix have lengths in range [0, 10].
+words[i] and prefix, suffix queries consist of lowercase letters only.
  * @author Johnny
  */
 public class Solution745 {
-    public char nextGreatestLetter(char[] letters, char target) {
-        if (letters == null || letters.length == 0) {
-            return target;
-        }
+    public Solution745(String[] words) {
         
-        int start = 0;
-        int end = letters.length - 1;
-        while (start < end) {
-            int mid = start + (end - start) / 2;
-            char c = letters[mid];
-            if (c > target) {
-                end = mid;
-            } else {
-                start = mid + 1;
-            }
-        }
-        
-        if (end <= letters.length - 1 && letters[end] > target) {
-            return letters[end];
-        } else {
-            return letters[0];
-        }
+    }
+    
+    public int f(String prefix, String suffix) {
+       return 0; 
     }
 }

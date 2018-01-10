@@ -8,10 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution745;
-import johnny.algorithm.leetcode.Solution748;
+import johnny.algorithm.leetcode.Solution744;
 
-public class Solution745Test {
+public class Solution744Test {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -33,7 +32,7 @@ public class Solution745Test {
     public void test() {
         System.out.println("nextGreatestLetter");
         
-        Solution745 instance = new Solution745();
+        Solution744 instance = new Solution744();
         assertEquals('a', instance.nextGreatestLetter(new char[] {}, 'a'));
         assertEquals('j', instance.nextGreatestLetter(new char[] {'j'}, 'a'));
         assertEquals('c', instance.nextGreatestLetter(new char[] {'c', 'f', 'j'}, 'a'));

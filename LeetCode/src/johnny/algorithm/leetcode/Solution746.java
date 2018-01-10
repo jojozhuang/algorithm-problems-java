@@ -1,32 +1,28 @@
 package johnny.algorithm.leetcode;
 
 /**
- * 746. Prefix and Suffix Search
-Given many words, words[i] has weight i.
+ *746. Min Cost Climbing Stairs
+On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).
 
-Design a class WordFilter that supports one function, WordFilter.f(String prefix, String suffix). 
-It will return the word with given prefix and suffix with maximum weight. If no word exists, 
-return -1.
+Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to 
+reach the top of the floor, and you can either start from the step with index 0, or the step with 
+index 1.
 
-Examples:
-Input:
-WordFilter(["apple"])
-WordFilter.f("a", "e") // returns 0
-WordFilter.f("b", "") // returns -1
+Example 1:
+Input: cost = [10, 15, 20]
+Output: 15
+Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
+Example 2:
+Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+Output: 6
+Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
 Note:
-words has length in range [1, 15000].
-For each test case, up to words.length queries WordFilter.f may be made.
-words[i] has length in range [1, 10].
-prefix, suffix have lengths in range [0, 10].
-words[i] and prefix, suffix queries consist of lowercase letters only.
+cost will have a length in the range [2, 1000].
+Every cost[i] will be an integer in the range [0, 999].
  * @author Johnny
  */
 public class Solution746 {
-    public Solution746(String[] words) {
-        
-    }
-    
-    public int f(String prefix, String suffix) {
-       return 0; 
+    public int minCostClimbingStairs(int[] cost) {
+        return 0; 
     }
 }

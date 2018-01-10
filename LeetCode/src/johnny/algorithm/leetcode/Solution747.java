@@ -1,28 +1,55 @@
 package johnny.algorithm.leetcode;
 
 /**
- *747. Min Cost Climbing Stairs
-On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).
+ * 
+ 747. Largest Number At Least Twice of Others
+In a given integer array nums, there is always exactly one largest element.
 
-Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to 
-reach the top of the floor, and you can either start from the step with index 0, or the step with 
-index 1.
+Find whether the largest element in the array is at least twice as much as every other number in the array.
+
+If it is, return the index of the largest element, otherwise return -1.
 
 Example 1:
-Input: cost = [10, 15, 20]
-Output: 15
-Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
+Input: nums = [3, 6, 1, 0]
+Output: 1
+Explanation: 6 is the largest integer, and for every other number in the array x,
+6 is more than twice as big as x.  The index of value 6 is 1, so we return 1.
 Example 2:
-Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
-Output: 6
-Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
+Input: nums = [1, 2, 3, 4]
+Output: -1
+Explanation: 4 isn't at least as big as twice the value of 3, so we return -1.
 Note:
-cost will have a length in the range [2, 1000].
-Every cost[i] will be an integer in the range [0, 999].
+nums will have a length in the range [1, 50].
+Every nums[i] will be an integer in the range [0, 99].
  * @author Johnny
  */
 public class Solution747 {
-    public int minCostClimbingStairs(int[] cost) {
-        return 0; 
+    public int dominantIndex(int[] nums) {
+        if (nums == null || nums.length < 1) {
+            return -1;
+        }
+        
+        if (nums.length == 1) {
+            return 0;
+        }
+        
+        int largest = Integer.MIN_VALUE;
+        int largest2 = Integer.MIN_VALUE;
+        int index = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > largest) {
+                largest2 = largest;
+                largest = nums[i];
+                index = i;
+            } else {
+                largest2 = Math.max(largest2, nums[i]);
+            }
+        }
+        
+        if (largest / 2 >= largest2) {
+            return index;
+        } else {
+            return -1;
+        }
     }
 }

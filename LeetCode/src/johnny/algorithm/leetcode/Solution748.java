@@ -1,55 +1,38 @@
 package johnny.algorithm.leetcode;
 
 /**
- * 
- 748. Largest Number At Least Twice of Others
-In a given integer array nums, there is always exactly one largest element.
+ *748. Shortest Completing Word
+Find the minimum length word from a given dictionary words, which has all the letters from the 
+string licensePlate. Such a word is said to complete the given string licensePlate
 
-Find whether the largest element in the array is at least twice as much as every other number in the array.
+Here, for letters we ignore case. For example, "P" on the licensePlate still matches "p" on the word.
 
-If it is, return the index of the largest element, otherwise return -1.
+It is guaranteed an answer exists. If there are multiple answers, return the one that occurs first in
+ the array.
+
+The license plate might have the same letter occurring multiple times. For example, given a 
+licensePlate of "PP", the word "pair" does not complete the licensePlate, but the word "supper" does.
 
 Example 1:
-Input: nums = [3, 6, 1, 0]
-Output: 1
-Explanation: 6 is the largest integer, and for every other number in the array x,
-6 is more than twice as big as x.  The index of value 6 is 1, so we return 1.
+Input: licensePlate = "1s3 PSt", words = ["step", "steps", "stripe", "stepple"]
+Output: "steps"
+Explanation: The smallest length word that contains the letters "S", "P", "S", and "T".
+Note that the answer is not "step", because the letter "s" must occur in the word twice.
+Also note that we ignored case for the purposes of comparing whether a letter exists in the word.
 Example 2:
-Input: nums = [1, 2, 3, 4]
-Output: -1
-Explanation: 4 isn't at least as big as twice the value of 3, so we return -1.
+Input: licensePlate = "1s3 456", words = ["looks", "pest", "stew", "show"]
+Output: "pest"
+Explanation: There are 3 smallest length words that contains the letters "s".
+We return the one that occurred first.
 Note:
-nums will have a length in the range [1, 50].
-Every nums[i] will be an integer in the range [0, 99].
+licensePlate will be a string with length in range [1, 7].
+licensePlate will contain digits, spaces, or letters (uppercase or lowercase).
+words will have a length in the range [10, 1000].
+Every words[i] will consist of lowercase letters, and have length in range [1, 15].
  * @author Johnny
  */
 public class Solution748 {
-    public int dominantIndex(int[] nums) {
-        if (nums == null || nums.length < 1) {
-            return -1;
-        }
-        
-        if (nums.length == 1) {
-            return 0;
-        }
-        
-        int largest = Integer.MIN_VALUE;
-        int largest2 = Integer.MIN_VALUE;
-        int index = -1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > largest) {
-                largest2 = largest;
-                largest = nums[i];
-                index = i;
-            } else {
-                largest2 = Math.max(largest2, nums[i]);
-            }
-        }
-        
-        if (largest / 2 >= largest2) {
-            return index;
-        } else {
-            return -1;
-        }
+public String shortestCompletingWord(String licensePlate, String[] words) {
+        return null;
     }
 }

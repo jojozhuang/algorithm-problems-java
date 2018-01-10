@@ -1,7 +1,7 @@
 package johnny.algorithm.leetcode;
 
 /**
- *751. Number Of Corner Rectangles
+ *751. IP to CIDR
  * @author Johnny
  */
 public class Solution751 {

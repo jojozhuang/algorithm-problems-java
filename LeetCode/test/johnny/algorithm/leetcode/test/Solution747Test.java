@@ -2,18 +2,15 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution748;
+import johnny.algorithm.leetcode.Solution747;
 
-public class Solution748Test {
+public class Solution747Test {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -35,7 +32,7 @@ public class Solution748Test {
     public void testDominantIndex() {
         System.out.println("dominantIndex");
         
-        Solution748 instance = new Solution748();
+        Solution747 instance = new Solution747();
         assertEquals(-1, instance.dominantIndex(null));
         assertEquals(0, instance.dominantIndex(new int[] {1}));
         assertEquals(-1, instance.dominantIndex(new int[] {2, 3}));
