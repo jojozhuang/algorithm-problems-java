@@ -21,13 +21,13 @@ import java.util.List;
  */
 public class Solution118 {
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> res = new ArrayList();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (numRows <= 0) {
             return res;
         }        
         
         for (int i = 1; i <= numRows; i++) {
-            List<Integer> list = new ArrayList();
+            List<Integer> list = new ArrayList<Integer>();
             if (i == 1) {
                 list.add(1);
             } else if(i == 2) {

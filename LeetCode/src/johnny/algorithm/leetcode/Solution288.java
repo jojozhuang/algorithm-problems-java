@@ -35,7 +35,7 @@ import java.util.HashMap;
  */
 public class Solution288 {
     //http://buttercola.blogspot.com/2015/10/leetcode-unique-word-abbreviation.html
-    HashMap<String, String> map = new HashMap();
+    HashMap<String, String> map = new HashMap<String, String>();
     public Solution288(String[] dictionary) {
         if (dictionary == null || dictionary.length == 0) {
             

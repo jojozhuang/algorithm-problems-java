@@ -30,7 +30,7 @@ public class Solution347 {
         }
         
         Map<Integer, Pair> map = new HashMap<Integer, Pair>();
-        List<Pair> list = new ArrayList();
+        List<Pair> list = new ArrayList<Pair>();
         for (int i = 0; i < nums.length; i++) {
             if (!map.containsKey(nums[i])) {
                 map.put(nums[i], new Pair(nums[i], 1));

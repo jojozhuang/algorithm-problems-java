@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.test;
 
 import java.util.ArrayList;
@@ -48,12 +43,11 @@ public class Solution355Test {
     @Test
     public void testPostTweet() {
         System.out.println("postTweet");
-        int userId = 0;
-        int tweetId = 0;
+
         Solution355 twitter = new Solution355();
         // User 1 posts a new tweet (id = 5).
         twitter.postTweet(1, 5);
-        List<Integer> list1 = new ArrayList();
+        List<Integer> list1 = new ArrayList<Integer>();
         list1.add(5);
         // User 1's news feed should return a list with 1 tweet id -> [5].
         assertEquals(list1, twitter.getNewsFeed(1));
@@ -66,7 +60,7 @@ public class Solution355Test {
 
         // User 1's news feed should return a list with 2 tweet ids -> [6, 5].
         // Tweet id 6 should precede tweet id 5 because it is posted after tweet id 5.
-        List<Integer> list2 = new ArrayList();
+        List<Integer> list2 = new ArrayList<Integer>();
         list2.add(6);
         list2.add(5);
         assertEquals(list2, twitter.getNewsFeed(1));
@@ -76,7 +70,7 @@ public class Solution355Test {
 
         // User 1's news feed should return a list with 1 tweet id -> [5],
         // since user 1 is no longer following user 2.
-        List<Integer> list3 = new ArrayList();
+        List<Integer> list3 = new ArrayList<Integer>();
         list3.add(5);
         assertEquals(list1, twitter.getNewsFeed(1));
 

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.common;
 
 import java.util.ArrayList;
@@ -28,7 +23,7 @@ public interface NestedInteger
 }*/
 
 public class NestedInteger {
-    public List<NestedInteger> list = new ArrayList();
+    public List<NestedInteger> list = new ArrayList<NestedInteger>();
     public Integer i;
 
     // Constructor initializes an empty nested list.

@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class Solution119 {
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> res = new ArrayList();
+        List<Integer> res = new ArrayList<Integer>();
         
         if (rowIndex <= 0) {
             res.add(1);
@@ -36,13 +36,13 @@ public class Solution119 {
     //just enhanced from Solution118 
     public List<Integer> getRow4(int rowIndex) {
         if (rowIndex<0)
-            return new ArrayList();
+            return new ArrayList<Integer>();
         
-        List<List<Integer>> listpath = new ArrayList();
-        List<Integer> list = new ArrayList();
+        List<List<Integer>> listpath = new ArrayList<List<Integer>>();
+        List<Integer> list = new ArrayList<Integer>();
 
         for (int i = 0; i<=rowIndex; i++) {
-            list = new ArrayList();
+            list = new ArrayList<Integer>();
             if (i==0) {
                 list.add(1);
             }
@@ -67,13 +67,13 @@ public class Solution119 {
     //improved with smaller storage space
     public List<Integer> getRow2(int rowIndex) {
         if (rowIndex<0)
-            return new ArrayList();
+            return new ArrayList<Integer>();
         
-        List<List<Integer>> previousRow = new ArrayList();
-        List<Integer> list = new ArrayList();
+        List<List<Integer>> previousRow = new ArrayList<List<Integer>>();
+        List<Integer> list = new ArrayList<Integer>();
 
         for (int i = 0; i<=rowIndex; i++) {
-            list = new ArrayList();
+            list = new ArrayList<Integer>();
             if (i==0) {
                 list.add(1);
                 previousRow.add(list);
@@ -102,12 +102,12 @@ public class Solution119 {
     //implemented with recursive approach
     public List<Integer> getRow3(int rowIndex) {
         if (rowIndex<0)
-            return new ArrayList();
+            return new ArrayList<Integer>();
         
-        List<Integer> list = new ArrayList();
+        List<Integer> list = new ArrayList<Integer>();
 
         for (int i = 0; i<=rowIndex; i++) {
-            list = new ArrayList();
+            list = new ArrayList<Integer>();
             if (i==0) {
                 list.add(1);
             }

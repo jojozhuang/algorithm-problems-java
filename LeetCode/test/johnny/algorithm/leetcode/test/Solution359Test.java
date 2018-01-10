@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.test;
 
 import org.junit.After;
@@ -46,8 +41,7 @@ public class Solution359Test {
     @Test
     public void testShouldPrintMessage() {
         System.out.println("shouldPrintMessage");
-        int timestamp = 0;
-        String message = "";
+
         Solution359 instance = new Solution359();
 
         assertEquals(true, instance.shouldPrintMessage(1, "foo"));

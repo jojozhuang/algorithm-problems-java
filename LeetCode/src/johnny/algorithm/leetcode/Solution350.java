@@ -62,7 +62,7 @@ public class Solution350 {
         }
         
         List<Integer> list = new ArrayList<Integer>();
-        HashMap<Integer, Integer> map = new HashMap();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums1.length; i++) {
             if (map.containsKey(nums1[i])) {
                 map.put(nums1[i], map.get(nums1[i]) + 1);

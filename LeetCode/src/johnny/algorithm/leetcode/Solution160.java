@@ -77,8 +77,8 @@ public class Solution160 {
         if (headA==null||headB==null)
             return null;
         
-        Stack stackA = new Stack();
-        Stack stackB = new Stack();
+        Stack<ListNode> stackA = new Stack<ListNode>();
+        Stack<ListNode> stackB = new Stack<ListNode>();
         
         ListNode common = null;
         ListNode common1 = null;

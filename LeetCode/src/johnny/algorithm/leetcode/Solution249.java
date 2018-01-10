@@ -30,7 +30,7 @@ import java.util.List;
 public class Solution249 {
     //http://ryanleetcode.blogspot.com/2015/10/group-shifted-strings-leetcode.html
    public List<List<String>> groupStrings(String[] strings) {
-        List<List<String>> res = new ArrayList();
+        List<List<String>> res = new ArrayList<List<String>>();
         if (strings == null || strings.length == 0) {
             return res;
         }

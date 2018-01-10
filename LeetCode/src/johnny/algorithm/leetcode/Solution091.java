@@ -78,7 +78,7 @@ public class Solution091 {
     
     private void helper(String s, int index, List<Character> list, List<List<Character>> ret, Map<String, Character> map) {
         if (index >= s.length()) {
-            ret.add(new ArrayList(list));
+            ret.add(new ArrayList<Character>(list));
             return;
         }
         int len = s.length();

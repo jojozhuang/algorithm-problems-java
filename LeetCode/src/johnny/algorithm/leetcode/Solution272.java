@@ -74,6 +74,7 @@ public class Solution272 {
             }
         }
 
-        return (List<Integer>)queue;
+        List<Integer> res = new ArrayList<Integer>(queue);
+        return res;
     }
 }

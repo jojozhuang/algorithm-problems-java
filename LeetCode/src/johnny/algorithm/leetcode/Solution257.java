@@ -21,7 +21,7 @@ import java.util.*;
  */
 public class Solution257 {
     public List<String> binaryTreePaths(TreeNode root) {
-        List<String> result = new ArrayList();
+        List<String> result = new ArrayList<String>();
         if (root == null) {
             return result;
         }

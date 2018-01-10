@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.test;
 
 import org.junit.After;
@@ -72,7 +67,6 @@ public class Solution236Test {
         root3.left = p3;
         TreeNode q3 = new TreeNode(3);
         root3.right = q3;
-        TreeNode q4 = new TreeNode(4);
         assertEquals(root3, instance.lowestCommonAncestor(root3, p3, q3));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

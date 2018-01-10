@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.test;
 
 import java.util.ArrayList;
@@ -51,12 +46,12 @@ public class Solution314Test {
         System.out.println("verticalOrder");
         TreeNode root = null;
         Solution314 instance = new Solution314();
-        List<List<Integer>> expResult = new ArrayList();
+        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
         List<List<Integer>> result = instance.verticalOrder(root);
         assertEquals(expResult, result);
         
         TreeNode root2 = TreeNode.createInstance(new String[]{"1"});
-        List<List<Integer>> expResult2 = new ArrayList();
+        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
         List<Integer> list21 = new ArrayList<Integer>();
         list21.add(1);
         expResult2.add(list21);
@@ -64,7 +59,7 @@ public class Solution314Test {
         assertEquals(expResult2, result2);
         
         TreeNode root3 = TreeNode.createInstance(new String[]{"1","2","3"});
-        List<List<Integer>> expResult3 = new ArrayList();
+        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
         List<Integer> list31 = new ArrayList<Integer>();
         list31.add(2);
         expResult3.add(list31);
@@ -78,7 +73,7 @@ public class Solution314Test {
         assertEquals(expResult3, result3);
         
         TreeNode root4 = TreeNode.createInstance(new String[]{"3","9","20", "#","#","15","7"});
-        List<List<Integer>> expResult4 = new ArrayList();
+        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
         List<Integer> list41 = new ArrayList<Integer>();
         list41.add(9);
         expResult4.add(list41);
@@ -96,7 +91,7 @@ public class Solution314Test {
         assertEquals(expResult4, result4);
         
         TreeNode root5 = TreeNode.createInstance(new String[]{"3","9","20", "4","5","2","7"});
-        List<List<Integer>> expResult5 = new ArrayList();
+        List<List<Integer>> expResult5 = new ArrayList<List<Integer>>();
         List<Integer> list51 = new ArrayList<Integer>();
         list51.add(4);
         expResult5.add(list51);

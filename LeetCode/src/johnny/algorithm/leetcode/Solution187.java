@@ -3,7 +3,6 @@ package johnny.algorithm.leetcode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Repeated DNA Sequences.
@@ -31,13 +30,13 @@ public class Solution187 {
             return res;
         }
         
-        HashMap<Character, Integer> map = new HashMap();
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         map.put('A', 0);
         map.put('C', 1);
         map.put('G', 2);
         map.put('T', 3);
         
-        HashMap<Integer, Integer> sumMap = new HashMap();
+        HashMap<Integer, Integer> sumMap = new HashMap<Integer, Integer>();
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
             sum = ((sum << 2) + map.get(s.charAt(i))) & 0xFFFFF;

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.test;
 
 import java.util.ArrayList;
@@ -51,19 +46,19 @@ public class Solution254Test {
         System.out.println("getFactors");
         int n = 0;
         Solution254 instance = new Solution254();
-        List<List<Integer>> expResult = new ArrayList();
+        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
         List<List<Integer>> result = instance.getFactors(n);
         assertEquals(expResult, result);
         
-        List<List<Integer>> expResult2 = new ArrayList();
+        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
         List<List<Integer>> result2 = instance.getFactors(1);
         assertTrue(expResult2.containsAll(result2)&&result2.containsAll(expResult2));
         
-        List<List<Integer>> expResult3 = new ArrayList();
+        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
         List<List<Integer>> result3 = instance.getFactors(37);
         assertTrue(expResult3.containsAll(result3)&&result3.containsAll(expResult3));
         
-        List<List<Integer>> expResult4 = new ArrayList();
+        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
         List<Integer> list41 = Arrays.asList(new Integer[]{2,2,3});
         List<Integer> list42 = Arrays.asList(new Integer[]{2,6});
         List<Integer> list43 = Arrays.asList(new Integer[]{3,4});
@@ -73,7 +68,7 @@ public class Solution254Test {
         List<List<Integer>> result4 = instance.getFactors(12);
         assertTrue(expResult4.containsAll(result4)&&result4.containsAll(expResult4));
         
-        List<List<Integer>> expResult5 = new ArrayList();
+        List<List<Integer>> expResult5 = new ArrayList<List<Integer>>();
         List<Integer> list51 = Arrays.asList(new Integer[]{2,16});
         List<Integer> list52 = Arrays.asList(new Integer[]{2,2,8});
         List<Integer> list53 = Arrays.asList(new Integer[]{2,2,2,4});

@@ -26,7 +26,7 @@ public class Solution253 {
         
         Arrays.sort(intervals, new IntervalComparator());
          
-        PriorityQueue<Integer> minHeap = new PriorityQueue();  
+        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();  
         for(int i = 0; i < intervals.length; i++) {  
             if(minHeap.size() == 0) {  
                 minHeap.add(intervals[i].end);  
@@ -48,7 +48,7 @@ public class Solution253 {
         
         Arrays.sort(intervals, new IntervalComparator());
          
-        PriorityQueue<Integer> minHeap = new PriorityQueue();  
+        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();  
         int rooms = 0;  
         for(int i = 0; i < intervals.length; i++) {  
             if(minHeap.size() == 0) {  

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.test;
 
 import org.junit.After;
@@ -46,10 +41,10 @@ public class Solution292Test {
     @Test
     public void testCanWinNim() {
         System.out.println("canWinNim");
-        int n = 0;
+
         Solution292 instance = new Solution292();
-        boolean expResult = false;
-        boolean result = instance.canWinNim(n);
+
+        assertEquals(false, instance.canWinNim(0));
         assertEquals(false, instance.canWinNim(4));
         assertEquals(true, instance.canWinNim(3));
         // TODO review the generated test code and remove the default call to fail.

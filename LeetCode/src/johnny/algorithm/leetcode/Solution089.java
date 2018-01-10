@@ -58,7 +58,7 @@ public class Solution089 {
     //recursion
     //http://fisherlei.blogspot.com/2012/12/leetcode-gray-code.html
     public List<Integer> grayCode2(int n) {
-        List<Integer> res = new ArrayList();
+        List<Integer> res = new ArrayList<Integer>();
         if (n <= 0) {
             res.add(0);
             return res;

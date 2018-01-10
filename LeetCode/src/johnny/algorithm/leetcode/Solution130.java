@@ -68,7 +68,7 @@ public class Solution130 {
         }
     }
     
-    private void enqueue(Queue queue, char[][] board, int i, int j) {
+    private void enqueue(Queue<Integer> queue, char[][] board, int i, int j) {
         int m = board.length;
         int n = board[0].length;
         if (i >=0 && i < m && j >=0 && j < n && board[i][j] == 'O') {

@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,8 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution724;
-import johnny.algorithm.leetcode.Solution728;
-import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution724Test {
 

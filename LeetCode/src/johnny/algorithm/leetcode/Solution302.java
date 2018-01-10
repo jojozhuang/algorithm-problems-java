@@ -44,7 +44,6 @@ public class Solution302 {
     
     private int searchHorizontal(char[][] image, int low, int high, boolean firstlast) {
         int m = image.length;
-        int n = image[0].length;
         
         while (low < high) {
             int mid = low + (high - low) / 2;
@@ -73,7 +72,6 @@ public class Solution302 {
         return low; 
     }
     private int searchVertical(char[][] image, int low, int high, boolean firstlast) {
-        int m = image.length;
         int n = image[0].length;
         
         while (low < high) {

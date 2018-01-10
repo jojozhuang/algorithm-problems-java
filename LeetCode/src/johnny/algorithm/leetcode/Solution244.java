@@ -28,7 +28,7 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution244 {
-    HashMap<String, List<Integer>> map = new HashMap();
+    HashMap<String, List<Integer>> map = new HashMap<String, List<Integer>>();
             
     public Solution244(String[] words) {
         if (words == null || words.length == 0) {

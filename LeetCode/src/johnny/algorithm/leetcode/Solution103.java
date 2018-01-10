@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import johnny.algorithm.leetcode.common.TreeNode;
 import java.util.List;
 import java.util.Queue;
-import java.util.Stack;
 
 /**
  * Binary Tree Zigzag Level Order Traversal.

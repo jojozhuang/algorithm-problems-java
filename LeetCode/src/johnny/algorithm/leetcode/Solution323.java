@@ -146,7 +146,7 @@ public class Solution323 {
         }
         
         boolean[] visited = new boolean[n];
-        List[] list = new List[n];
+        List<Integer>[] list = new List[n];
         for (int i = 0; i < n; i++) {
             list[i] = new ArrayList<Integer>();
         }

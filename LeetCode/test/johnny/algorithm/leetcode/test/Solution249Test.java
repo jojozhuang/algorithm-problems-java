@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package johnny.algorithm.leetcode.test;
 
 import java.util.ArrayList;
@@ -50,15 +45,15 @@ public class Solution249Test {
         System.out.println("groupStrings");
         String[] strings = null;
         Solution249 instance = new Solution249();
-        List<List<String>> expResult = new ArrayList();
+        List<List<String>> expResult = new ArrayList<List<String>>();
         List<List<String>> result = instance.groupStrings(strings);
         assertEquals(expResult, result);
         
-        List<List<String>> expResult2 = new ArrayList();
-        expResult2.add(new ArrayList());
-        expResult2.add(new ArrayList());
-        expResult2.add(new ArrayList());
-        expResult2.add(new ArrayList());
+        List<List<String>> expResult2 = new ArrayList<List<String>>();
+        expResult2.add(new ArrayList<String>());
+        expResult2.add(new ArrayList<String>());
+        expResult2.add(new ArrayList<String>());
+        expResult2.add(new ArrayList<String>());
         expResult2.get(0).add("abc");
         expResult2.get(0).add("bcd");
         expResult2.get(0).add("xyz");

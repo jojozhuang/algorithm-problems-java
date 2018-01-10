@@ -44,7 +44,7 @@ public class Solution168 {
         String ret = "";
         int quotient = n;
         int remainder = 0;
-        Stack st = new Stack();
+        Stack<String> st = new Stack<String>();
         
         while(quotient>0) {
             remainder = quotient%NUM26;
