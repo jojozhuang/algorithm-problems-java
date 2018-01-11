@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import johnny.algorithm.leetcode.common.Employee;
@@ -26,6 +27,35 @@ The maximum number of employees won't exceed 2000.
  */
 public class Solution690 {
     public int getImportance(List<Employee> employees, int id) {
-        return 0;
+        if (employees == null || employees.size() == 0) {
+            return 0;
+        }
+        
+        int importance = getImportance(employees, id, 0);
+                
+        return importance;
+    }
+    
+    private int getImportance(List<Employee> employees, int id, int index) {
+        List<Integer> sublist = new ArrayList<Integer>();
+        int importance = 0;
+        int newIndex = 0;
+        for (newIndex = index; newIndex < employees.size(); newIndex++) {
+            Employee emp = employees.get(newIndex);
+            if (emp.id == id) {
+                sublist = emp.subordinates;
+                importance += emp.importance;
+                break;
+            }
+        }
+        
+        if (sublist.size() != 0) {
+            for (int i = 0; i < sublist.size(); i++) {
+                importance += getImportance(employees, sublist.get(i), index);
+            }
+        }
+        
+        return importance;
     }
 }
+    

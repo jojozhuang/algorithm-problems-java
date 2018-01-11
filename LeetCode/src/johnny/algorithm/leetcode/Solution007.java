@@ -12,44 +12,16 @@ package johnny.algorithm.leetcode;
  */
 public class Solution007 {
     public int reverse(int x) {
-        long ret = 0;
+        long res = 0;
         while (x != 0) {
-            ret = ret * 10 + x % 10;
+            res = res * 10 + x % 10;
             x = x / 10;
         }
         
-        if (ret < Integer.MIN_VALUE || ret > Integer.MAX_VALUE) {
+        if (res < Integer.MIN_VALUE || res > Integer.MAX_VALUE) {
             return 0;
         } else {
-            return (int)ret;
-        }
-    }
-    private int reverse2(int x) {
-        boolean negtive = false;
-        
-        long xClone = x;
-        if (xClone < 0)
-        {
-            negtive = true;
-            xClone = Math.negateExact(xClone);
-        }
-        char[] original = String.valueOf(xClone).toCharArray();
-        char[] reversed = new char[original.length];
-        for(int i = original.length-1; i >= 0; i--)
-            reversed[original.length-i-1] = original[i];
-        
-        long longReversed = Long.parseLong(String.valueOf(reversed));
-        if (!negtive) {
-            if (longReversed > Math.pow(2, 31) - 1)
-                return 0;
-            else
-                return Integer.parseInt(String.valueOf(longReversed));
-        }
-        else {
-            if (longReversed > Math.pow(2, 31))
-                return 0;
-            else
-                return Math.negateExact(Integer.parseInt(String.valueOf(longReversed)));
+            return (int)res;
         }
     }
 }

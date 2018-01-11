@@ -33,7 +33,6 @@ public class Solution724Test {
         System.out.println("selfDividingNumbers");
         Solution724 instance = new Solution724();
 
-        
         assertEquals(0, instance.pivotIndex(new int[] {-1,-1,-1,0,1,1}));
         assertEquals(-1, instance.pivotIndex(new int[] {1,2}));
         assertEquals(-1, instance.pivotIndex(new int[] {1,2,3}));

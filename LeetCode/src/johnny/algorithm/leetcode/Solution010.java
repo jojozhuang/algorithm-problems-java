@@ -73,7 +73,6 @@ public class Solution010 {
         char[] sArray = s.toCharArray();
         char[] pArray = p.toCharArray();
         int i=0;
-        int j=0;
         for(i=0; i<sArray.length; i++) {
             if (i>=pArray.length)
                 return false;

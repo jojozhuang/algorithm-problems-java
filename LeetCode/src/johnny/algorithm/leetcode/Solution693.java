@@ -31,6 +31,21 @@ The binary representation of 10 is: 1010.
  */
 public class Solution693 {
     public boolean hasAlternatingBits(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        
+        long num = 1;
+        int last = 0;
+        while (num <= Integer.MAX_VALUE) {
+            if (num == n) {
+                return true;
+            }
+            
+            num = num * 2 + last;
+            last = (last == 1) ? 0:1;
+        }
+        
         return false;
     }
 }
