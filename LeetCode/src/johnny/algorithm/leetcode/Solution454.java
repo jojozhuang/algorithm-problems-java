@@ -30,6 +30,9 @@ package johnny.algorithm.leetcode;
  */
 public class Solution454 {
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+        // approach1: brute force, n^4
+        // approach2: hash last array, n^3
+        // approach3: sum a and b, hash; sum c and d, hash, n^2
         return 0;
     }    
 }
