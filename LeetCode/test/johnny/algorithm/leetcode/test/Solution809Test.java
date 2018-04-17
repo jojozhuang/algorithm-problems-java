@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution810;
+import johnny.algorithm.leetcode.Solution809;
 
-public class Solution810Test {
+public class Solution809Test {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -30,9 +30,9 @@ public class Solution810Test {
 
     @Test
     public void test() {
-        System.out.println("xorGame");
-        Solution810 instance = new Solution810();
-        assertEquals(false, instance.xorGame(new int[] {1,1,2}));
+        System.out.println("expressiveWords");
+        Solution809 instance = new Solution809();
+        assertEquals(1, instance.expressiveWords("heeellooo", new String[]{"hello", "hi", "helo"}));
     }
 
 }

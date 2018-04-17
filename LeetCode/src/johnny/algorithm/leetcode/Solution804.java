@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *804. Unique Morse Code Words
 International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: "a" maps to ".-", "b" maps to "-...", "c" maps to "-.-.", and so on.
@@ -33,6 +36,19 @@ words[i] will only consist of lowercase letters.
  */
 public class Solution804 {
     public int uniqueMorseRepresentations(String[] words) {
-        return 0;
+        String[] MORSE = new String[]{".-","-...","-.-.","-..",".","..-.","--.",
+                "....","..",".---","-.-",".-..","--","-.",
+                "---",".--.","--.-",".-.","...","-","..-",
+                "...-",".--","-..-","-.--","--.."};
+
+        Set<String> seen = new HashSet();
+        for (String word: words) {
+           StringBuilder code = new StringBuilder();
+           for (char c: word.toCharArray())
+               code.append(MORSE[c - 'a']);
+           seen.add(code.toString());
+        }
+        
+        return seen.size();
     }
 }
