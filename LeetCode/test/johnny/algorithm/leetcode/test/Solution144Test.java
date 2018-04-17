@@ -51,7 +51,7 @@ public class Solution144Test {
         List<Integer> result = instance.preorderTraversal(root);
         assertEquals(expResult, result);
         
-        TreeNode root1 = new TreeNode(1);        
+        TreeNode root1 = new TreeNode(1);
         List<Integer> expect1 = ListUtil.buildIntegerList(new Integer[]{1});
         List<Integer> result1 = instance.preorderTraversal(root1);
         assertEquals(expect1, result1);

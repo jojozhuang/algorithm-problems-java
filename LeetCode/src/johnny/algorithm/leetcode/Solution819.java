@@ -1,5 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /**
  *819. Most Common Word
 Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  It is guaranteed there is at least one word that isn't banned, and that the answer is unique.
@@ -33,6 +38,38 @@ Words only consist of letters, never apostrophes or other punctuation symbols.
  */
 public class Solution819 {
     public String mostCommonWord(String paragraph, String[] banned) {
-        return "";
+        if (paragraph == null || paragraph.length() == 0) {
+            return "";
+        }
+        paragraph += ".";
+
+        Set<String> banSet = new HashSet<String>();
+        for (String word: banned) {
+            banSet.add(word);
+        }
+        
+        Map<String, Integer> wordMap = new HashMap<String, Integer>();
+
+        String res = "";
+        int freqMax = 0;
+
+        StringBuilder word = new StringBuilder();
+        for (char c: paragraph.toCharArray()) {
+            if (Character.isLetter(c)) {
+                word.append(Character.toLowerCase(c));
+            } else if (word.length() > 0) {
+                String finalword = word.toString();
+                if (!banSet.contains(finalword)) {
+                    wordMap.put(finalword, wordMap.getOrDefault(finalword, 0) + 1);
+                    if (wordMap.get(finalword) > freqMax) {
+                        res = finalword;
+                        freqMax = wordMap.get(finalword);
+                    }
+                }
+                word = new StringBuilder();
+            }
+        }
+
+        return res;
     }
 }

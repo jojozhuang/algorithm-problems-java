@@ -26,6 +26,10 @@ Notes:
  */
 public class Solution810 {
     public boolean xorGame(int[] nums) {
-        return false;
+        int x = 0;
+        for (int v : nums) {
+            x ^= v;
+        }
+        return x == 0 || nums.length % 2 == 0;
     }
 }

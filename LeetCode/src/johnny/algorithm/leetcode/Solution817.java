@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import johnny.algorithm.leetcode.common.ListNode;
 
 /**
@@ -36,6 +39,19 @@ G is a subset of all values in the linked list.
  */
 public class Solution817 {
     public int numComponents(ListNode head, int[] G) {
-        return 0;
+        Set<Integer> Gset = new HashSet();
+        for (int x: G) Gset.add(x);
+
+        ListNode cur = head;
+        int ans = 0;
+
+        while (cur != null) {
+            if (Gset.contains(cur.val) &&
+                    (cur.next == null || !Gset.contains(cur.next.val)))
+                ans++;
+            cur = cur.next;
+        }
+
+        return ans;
     }
 }

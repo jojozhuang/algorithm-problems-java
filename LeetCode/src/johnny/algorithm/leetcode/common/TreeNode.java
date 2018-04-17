@@ -15,10 +15,10 @@ import java.util.Queue;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
      
-    public static TreeNode createInstance2(String[] arr) {  
+    public static TreeNode createInstance2(String[] arr) {
         List<String> serial = Arrays.asList(arr);
         if(serial == null || serial.size() == 0) {
-            return null;         
+            return null;
         }
         
         Queue<String> queueString = new LinkedList<>(serial);
@@ -41,7 +41,7 @@ import java.util.Queue;
                 if (!str.equals("#")) {
                     node.right = new TreeNode(Integer.parseInt(str));
                     queueNode.add(node.right);
-                }                
+                }
             }
         }
         
@@ -50,7 +50,7 @@ import java.util.Queue;
     
     public static TreeNode createInstance(String[] arr) {
         if(arr == null || arr.length == 0) {
-            return null;         
+            return null;
         }
         
         Queue<TreeNode> queueNode = new LinkedList<>();
@@ -71,7 +71,7 @@ import java.util.Queue;
                 if (!str.equals("#")) {
                     node.right = new TreeNode(Integer.parseInt(str));
                     queueNode.add(node.right);
-                }             
+                }
             }
         }
         

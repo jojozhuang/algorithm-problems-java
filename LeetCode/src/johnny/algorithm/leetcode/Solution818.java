@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  *818. Race Car
 Your car starts at position 0 and speed +1 on an infinite number line.  (Your car can go into negative positions.)
@@ -32,6 +34,22 @@ Your position goes from 0->1->3->7->7->6.
  */
 public class Solution818 {
     public int racecar(int target) {
-        return 0;
+        int[] dp = new int[target + 3];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0; dp[1] = 1; dp[2] = 4;
+
+        for (int t = 3; t <= target; ++t) {
+            int k = 32 - Integer.numberOfLeadingZeros(t);
+            if (t == (1<<k) - 1) {
+                dp[t] = k;
+                continue;
+            }
+            for (int j = 0; j < k-1; ++j)
+                dp[t] = Math.min(dp[t], dp[t - (1<<(k-1)) + (1<<j)] + k-1 + j + 2);
+            if ((1<<k) - 1 - t < t)
+                dp[t] = Math.min(dp[t], dp[(1<<k) - 1 - t] + k + 1);
+        }
+
+        return dp[target];
     }
 }
