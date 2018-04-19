@@ -35,7 +35,7 @@ public class Solution788Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution788 instance = new Solution788();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.rotatedDigits(10));
     }
 
 }

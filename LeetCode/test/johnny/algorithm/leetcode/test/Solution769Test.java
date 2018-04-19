@@ -32,10 +32,11 @@ public class Solution769Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("maxChunksToSorted");
         Solution769 instance = new Solution769();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(1, instance.maxChunksToSorted(new int[] {4,3,2,1,0}));
+        assertEquals(4, instance.maxChunksToSorted(new int[] {1,0,2,3,4}));
     }
 
 }

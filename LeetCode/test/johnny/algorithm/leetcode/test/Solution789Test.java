@@ -35,7 +35,9 @@ public class Solution789Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution789 instance = new Solution789();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.escapeGhosts(new int[][] {{1, 0}, {0, 3}}, new int[] {0, 1}));
+        assertEquals(false, instance.escapeGhosts(new int[][] {{1, 0}}, new int[] {2, 0}));
+        assertEquals(false, instance.escapeGhosts(new int[][] {{2,0}}, new int[] {1, 0}));
     }
 
 }

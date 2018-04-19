@@ -35,7 +35,8 @@ public class Solution775Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution775 instance = new Solution775();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.isIdealPermutation(new int[] {1,0,2}));
+        assertEquals(false, instance.isIdealPermutation(new int[] {1,2,0}));
     }
 
 }

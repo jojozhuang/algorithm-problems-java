@@ -35,7 +35,8 @@ public class Solution786Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution786 instance = new Solution786();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {2, 5}, instance.kthSmallestPrimeFraction(new int[] {1, 2, 3, 5}, 3));
+        assertArrayEquals(new int[] {1, 7}, instance.kthSmallestPrimeFraction(new int[] {1, 7}, 1));
     }
 
 }

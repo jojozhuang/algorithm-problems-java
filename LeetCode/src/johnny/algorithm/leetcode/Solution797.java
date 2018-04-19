@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,6 +26,25 @@ You can print different paths in any order, but you should keep the order of nod
  */
 public class Solution797 {
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-        return null;
+        return solve(graph, 0);
+    }
+
+    public List<List<Integer>> solve(int[][] graph, int node) {
+        int N = graph.length;
+        List<List<Integer>> ans = new ArrayList();
+        if (node == N - 1) {
+            List<Integer> path = new ArrayList();
+            path.add(N-1);
+            ans.add(path);
+            return ans;
+        }
+
+        for (int nei: graph[node]) {
+            for (List<Integer> path: solve(graph, nei)) {
+                path.add(0, node);
+                ans.add(path);
+            }
+        }
+        return ans;
     }
 }

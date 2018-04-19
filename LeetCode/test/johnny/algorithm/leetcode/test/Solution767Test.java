@@ -32,10 +32,11 @@ public class Solution767Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("reorganizeString");
         Solution767 instance = new Solution767();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("aba", instance.reorganizeString("aab"));
+        assertEquals("", instance.reorganizeString("aaab"));
     }
 
 }

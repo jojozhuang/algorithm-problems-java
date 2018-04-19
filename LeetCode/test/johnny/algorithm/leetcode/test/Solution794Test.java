@@ -35,7 +35,10 @@ public class Solution794Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution794 instance = new Solution794();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(false, instance.validTicTacToe(new String[] {"O  ", "   ", "   "}));
+        assertEquals(false, instance.validTicTacToe(new String[] {"XOX", " X ", "   "}));
+        assertEquals(false, instance.validTicTacToe(new String[] {"XXX", "   ", "OOO"}));
+        assertEquals(true, instance.validTicTacToe(new String[] {"XOX", "O O", "XOX"}));
     }
 
 }

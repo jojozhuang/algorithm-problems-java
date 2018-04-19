@@ -35,7 +35,8 @@ public class Solution787Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution787 instance = new Solution787();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(200, instance.findCheapestPrice(3, new int[][] {{0,1,100},{1,2,100},{0,2,500}}, 0, 2, 1));
+        assertEquals(500, instance.findCheapestPrice(3, new int[][] {{0,1,100},{1,2,100},{0,2,500}}, 0, 2, 0));
     }
 
 }

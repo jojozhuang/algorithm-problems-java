@@ -35,7 +35,7 @@ public class Solution795Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution795 instance = new Solution795();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(3, instance.numSubarrayBoundedMax(new int[] {2, 1, 4, 3}, 2, 3));
     }
 
 }

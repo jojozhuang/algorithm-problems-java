@@ -35,7 +35,8 @@ public class Solution782Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution782 instance = new Solution782();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] board1 = new int[][] {{0,1,1,0},{0,1,1,0},{1,0,0,1},{1,0,0,1}};
+        assertEquals(2, instance.movesToChessboard(board1));
     }
 
 }

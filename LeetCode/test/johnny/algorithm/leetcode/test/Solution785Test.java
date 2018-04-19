@@ -35,7 +35,8 @@ public class Solution785Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution785 instance = new Solution785();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] graph1 = new int[][] {{1,3}, {0,2}, {1,3}, {0,2}};
+        assertEquals(true, instance.isBipartite(graph1));
     }
 
 }

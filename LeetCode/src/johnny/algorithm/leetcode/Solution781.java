@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *781. Rabbits in Forest
 In a forest, each rabbit has some color. Some subset of rabbits (possibly all of them) tell you how many other rabbits have the same color as them. Those answers are placed in an array.
@@ -29,6 +32,15 @@ Each answers[i] will be an integer in the range [0, 999].
  */
 public class Solution781 {
     public int numRabbits(int[] answers) {
-        return 0;
+        int res = 0;
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int answer : answers){
+            map.put(answer,map.getOrDefault(answer,0)+1);
+        }
+        for(Integer n : map.keySet()){
+            int group = map.get(n)/(n+1);
+            res += map.get(n)%(n+1) != 0 ? (group+1)*(n+1) : group*(n+1);
+        }
+        return res;
     }
 }

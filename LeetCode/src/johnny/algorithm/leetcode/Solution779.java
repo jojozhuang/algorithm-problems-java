@@ -32,6 +32,6 @@ K will be an integer in the range [1, 2^(N-1)].
  */
 public class Solution779 {
     public int kthGrammar(int N, int K) {
-        return 0;
+        return Integer.bitCount(K-1) & 1;
     }
 }

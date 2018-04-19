@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution799;
 
-public class Solution801Test {
+public class Solution799Test {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -35,7 +35,8 @@ public class Solution801Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution799 instance = new Solution799();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(0.0, instance.champagneTower(1,1,1), 0.0);
+        assertEquals(0.5, instance.champagneTower(2,1,1), 0.0);
     }
 
 }

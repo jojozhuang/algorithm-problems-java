@@ -29,6 +29,11 @@ The time limit for this problem has been reduced.
  */
 public class Solution775 {
     public boolean isIdealPermutation(int[] A) {
-        return false;
+        int cmax = 0;
+        for (int i = 0; i < A.length - 2; ++i) {
+            cmax = Math.max(cmax, A[i]);
+            if (cmax > A[i + 2]) return false;
+        }
+        return true;
     }
 }

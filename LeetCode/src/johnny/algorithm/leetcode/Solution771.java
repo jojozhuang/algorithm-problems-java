@@ -22,6 +22,6 @@ The characters in J are distinct.
  */
 public class Solution771 {
     public int numJewelsInStones(String J, String S) {
-        return 0;
+        return S.replaceAll("[^" + J + "]", "").length();
     }
 }

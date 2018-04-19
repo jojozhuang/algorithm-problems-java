@@ -32,10 +32,10 @@ public class Solution777Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("canTransform");
         Solution777 instance = new Solution777();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.canTransform("RXXLRXRXL","XRLXXRRLX"));
     }
 
 }

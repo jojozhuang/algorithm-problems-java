@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution800;
 
-public class Solution801Test {
+public class Solution800Test {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {

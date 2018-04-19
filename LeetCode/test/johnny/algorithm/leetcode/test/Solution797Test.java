@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution797;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution797Test {
 
@@ -35,7 +36,9 @@ public class Solution797Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution797 instance = new Solution797();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] graph1 = new int[][] {{1,2}, {3}, {3}, {}};
+        List<List<Integer>> result1 = ListUtil.buildIntegerList2(new Integer[][] {{0,1,3},{0,2,3}});
+        assertEquals(result1, instance.allPathsSourceTarget(graph1));
     }
 
 }
