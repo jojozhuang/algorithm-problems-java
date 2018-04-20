@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Stack;
+
 /**
 *739. Daily Temperatures
 *Given a list of daily temperatures, produce a list that, for each day in the input, tells you 
@@ -15,6 +17,15 @@ integer in the range [30, 100].
  */
 public class Solution739 {
     public int[] dailyTemperatures(int[] temperatures) {
-        return null;
+        Stack<Integer> stack = new Stack<>();
+        int[] ret = new int[temperatures.length];
+        for(int i = 0; i < temperatures.length; i++) {
+            while(!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int idx = stack.pop();
+                ret[idx] = i - idx;
+            }
+            stack.push(i);
+        }
+        return ret;
     }
 }

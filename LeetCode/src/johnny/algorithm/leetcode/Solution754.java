@@ -28,6 +28,17 @@ target will be a non-zero integer in the range [-10^9, 10^9].
  */
 public class Solution754 {
     public int reachNumber(int target) {
-        return 0;     
+        target = Math.abs(target);
+        int step = 0;
+        int sum = 0;
+        while (sum < target) {
+            step++;
+            sum += step;
+        }
+        while ((sum - target) % 2 != 0) {
+            step++;
+            sum += step;
+        }
+        return step;
     }
 }

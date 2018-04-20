@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution756;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution756Test {
 
@@ -35,7 +36,8 @@ public class Solution756Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution756 instance = new Solution756();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> allowed1 = ListUtil.buildStringList(new String[] {"XXX", "XXY", "XYX", "XYY", "YXZ"});
+        assertEquals(false, instance.pyramidTransition("XXYX", allowed1));
     }
 
 }

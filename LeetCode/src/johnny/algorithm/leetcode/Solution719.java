@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
 *719. Find K-th Smallest Pair Distance
  Given an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.
@@ -22,7 +24,37 @@ Note:
  * @author Johnny
  */
 public class Solution719 {
-    public int smallestDistancePair(int[] nums, int k) {
-        return 0;
+    private int countPairs(int[] a, int mid) {
+        int n = a.length, res = 0;
+        for (int i = 0; i < n; ++i) {
+            int j = i;
+            while (j < n && a[j] - a[i] <= mid) j++;
+            res += j - i - 1;
+        }
+        return res;
+    }
+
+    public int smallestDistancePair(int a[], int k) {
+        int n = a.length;
+        Arrays.sort(a);
+
+        // Minimum absolute difference
+        int low = a[1] - a[0];
+        for (int i = 1; i < n - 1; i++)
+            low = Math.min(low, a[i + 1] - a[i]);
+
+        // Maximum absolute difference
+        int high = a[n - 1] - a[0];
+
+        // Do binary search for k-th absolute difference
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (countPairs(a, mid) < k)
+                low = mid + 1;
+            else
+                high = mid;
+        }
+
+        return low;
     }
 }

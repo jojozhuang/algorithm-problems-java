@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution722;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution722Test {
 
@@ -32,10 +33,16 @@ public class Solution722Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("removeComments");
         Solution722 instance = new Solution722();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
-    }
+        String[] source1 = new String[] {"/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"};
+        List<String> result1 = ListUtil.buildStringList(new String[] {"int main()","{ ","  ","int a, b, c;","a = b + c;","}"});
+        assertEquals(result1, instance.removeComments(source1));
+
+        String[] source2 = new String[] {"a/*comment", "line", "more_comment*/b"};
+        List<String> result2 = ListUtil.buildStringList(new String[] {"ab"});
+        assertEquals(result2, instance.removeComments(source2));
+}
 
 }

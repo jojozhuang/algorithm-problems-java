@@ -32,10 +32,15 @@ public class Solution741Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("cherryPickup");
         Solution741 instance = new Solution741();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] grid1 = {
+                    {0, 1, -1},
+                    {1, 0, -1},
+                    {1, 1,  1}
+                };
+        assertEquals(5, instance.cherryPickup(grid1));
     }
 
 }

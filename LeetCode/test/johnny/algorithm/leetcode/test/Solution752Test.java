@@ -35,7 +35,10 @@ public class Solution752Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution752 instance = new Solution752();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(6, instance.openLock(new String[]{"0201","0101","0102","1212","2002"}, "0202"));
+        assertEquals(1, instance.openLock(new String[]{"8888"}, "0009"));
+        assertEquals(-1, instance.openLock(new String[]{"8887","8889","8878","8898","8788","8988","7888","9888"}, "8888"));
+        assertEquals(-1, instance.openLock(new String[]{"0000"}, "8888"));
     }
 
 }

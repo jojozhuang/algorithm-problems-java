@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution749;
+import johnny.algorithm.leetcode.Solution765;
 
 public class Solution765Test {
 
@@ -32,10 +32,11 @@ public class Solution765Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution749 instance = new Solution749();
+        System.out.println("minSwapsCouples");
+        Solution765 instance = new Solution765();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(1, instance.minSwapsCouples(new int[] {0, 2, 1, 3}));
+        assertEquals(0, instance.minSwapsCouples(new int[] {3, 2, 0, 1}));
     }
 
 }

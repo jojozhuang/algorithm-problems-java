@@ -32,10 +32,11 @@ public class Solution746Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("minCostClimbingStairs");
         Solution746 instance = new Solution746();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(15, instance.minCostClimbingStairs(new int[] {10, 15, 20}));
+        assertEquals(6, instance.minCostClimbingStairs(new int[] {1, 100, 1, 1, 1, 100, 1, 1, 100, 1}));
     }
 
 }

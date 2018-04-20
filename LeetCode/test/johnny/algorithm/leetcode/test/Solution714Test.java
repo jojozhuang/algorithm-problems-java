@@ -32,10 +32,10 @@ public class Solution714Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("maxProfit");
         Solution714 instance = new Solution714();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(8, instance.maxProfit(new int[] {1, 3, 2, 8, 4, 9}, 2));
     }
 
 }

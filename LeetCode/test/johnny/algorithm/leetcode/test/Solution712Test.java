@@ -32,10 +32,11 @@ public class Solution712Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("minimumDeleteSum");
         Solution712 instance = new Solution712();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(231, instance.minimumDeleteSum("sea","eat"));
+        assertEquals(403, instance.minimumDeleteSum("delete","leet"));
     }
 
 }

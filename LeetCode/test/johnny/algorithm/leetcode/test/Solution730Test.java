@@ -32,10 +32,11 @@ public class Solution730Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("countPalindromicSubsequences");
         Solution730 instance = new Solution730();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(6, instance.countPalindromicSubsequences("bccb"));
+        assertEquals(104860361, instance.countPalindromicSubsequences("abcdabcdabcdabcdabcdabcdabcdabcddcbadcbadcbadcbadcbadcbadcbadcba"));
     }
 
 }

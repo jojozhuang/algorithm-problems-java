@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.TreeMap;
+
 /**
 *732. My Calendar III
 *Implement a MyCalendarThree class to store your events. A new event can always be added.
@@ -37,7 +39,13 @@ public class Solution732 {
         
     }
     
-    public int book(int start, int end) {
-        return 0;
+    private TreeMap<Integer, Integer> timeline = new TreeMap<>();
+    public int book(int s, int e) {
+        timeline.put(s, timeline.getOrDefault(s, 0) + 1); // 1 new event will be starting at [s]
+        timeline.put(e, timeline.getOrDefault(e, 0) - 1); // 1 new event will be ending at [e];
+        int ongoing = 0, k = 0;
+        for (int v : timeline.values())
+            k = Math.max(k, ongoing += v);
+        return k;
     }
 }

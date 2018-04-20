@@ -32,10 +32,10 @@ public class Solution739Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("dailyTemperatures");
         Solution739 instance = new Solution739();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {1, 1, 4, 2, 1, 1, 0, 0}, instance.dailyTemperatures(new int[] {73, 74, 75, 71, 69, 72, 76, 73}));
     }
 
 }

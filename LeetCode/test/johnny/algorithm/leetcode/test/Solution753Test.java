@@ -32,10 +32,11 @@ public class Solution753Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("crackSafe");
         Solution753 instance = new Solution753();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("01", instance.crackSafe(1,2));
+        assertEquals("00110", instance.crackSafe(2,2));
     }
 
 }

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.LinkedList;
+
 /**
 *735. Asteroid Collision. 
 *We are given an array asteroids of integers representing asteroids in a row.
@@ -42,6 +44,13 @@ Each asteroid will be a non-zero integer in the range [-1000, 1000]..
  */
 public class Solution735 {
     public int[] asteroidCollision(int[] asteroids) {
-        return null;  
+        LinkedList<Integer> s = new LinkedList<>(); // use LinkedList to simulate stack so that we don't need to reverse at end.
+        for (int i = 0; i < asteroids.length; i++) {
+            if (asteroids[i] > 0 || s.isEmpty() || s.getLast() < 0)
+                s.add(asteroids[i]);
+            else if (s.getLast() <= -asteroids[i])
+                if (s.pollLast() < -asteroids[i]) i--;
+        }
+        return s.stream().mapToInt(i->i).toArray();
     }
 }

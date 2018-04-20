@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution721;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution721Test {
 
@@ -32,10 +33,12 @@ public class Solution721Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("accountsMerge");
         Solution721 instance = new Solution721();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<List<String>> accounts1 = ListUtil.buildStringList2(new String[][] {{"John", "johnsmith@mail.com", "john00@mail.com"}, {"John", "johnnybravo@mail.com"}, {"John", "johnsmith@mail.com", "john_newyork@mail.com"}, {"Mary", "mary@mail.com"}});
+        List<List<String>> result1 = ListUtil.buildStringList2(new String[][]{{"John", "johnnybravo@mail.com"}, {"John", "john00@mail.com", "john_newyork@mail.com", "johnsmith@mail.com"}, {"Mary", "mary@mail.com"}});
+        assertEquals(result1, instance.accountsMerge(accounts1));
     }
 
 }

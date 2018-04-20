@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution749;
+import johnny.algorithm.leetcode.Solution761;
 
 public class Solution761Test {
 
@@ -32,10 +32,10 @@ public class Solution761Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution749 instance = new Solution749();
+        System.out.println("makeLargestSpecial");
+        Solution761 instance = new Solution761();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("11100100", instance.makeLargestSpecial("11011000"));
     }
 
 }

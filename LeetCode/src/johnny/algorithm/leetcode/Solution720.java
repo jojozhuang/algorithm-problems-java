@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
 *720. Longest Word in Dictionary
  Given a list of strings words representing an English Dictionary, find the longest word in words that can be built one character at a time by other words in words. If there is more than one possible answer, return the longest word with the smallest lexicographical order.
@@ -26,7 +30,16 @@ The length of words[i] will be in the range [1, 30].
  * @author Johnny
  */
 public class Solution720 {
-	 public String longestWord(String[] words) {
-	     return null;   
-	 }
+    public String longestWord(String[] words) {
+        Arrays.sort(words);
+        Set<String> built = new HashSet<String>();
+        String res = "";
+        for (String w : words) {
+            if (w.length() == 1 || built.contains(w.substring(0, w.length() - 1))) {
+                res = w.length() > res.length() ? w : res;
+                built.add(w);
+            }
+        }
+        return res;
+    }
 }

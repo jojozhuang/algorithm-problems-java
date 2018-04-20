@@ -10,7 +10,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution749;
+import johnny.algorithm.leetcode.Solution763;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution763Test {
 
@@ -32,10 +33,11 @@ public class Solution763Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution749 instance = new Solution749();
+        System.out.println("partitionLabels");
+        Solution763 instance = new Solution763();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<Integer> result1 = ListUtil.buildIntegerList(new Integer[] {9,7,8});
+        assertEquals(result1, instance.partitionLabels("ababcbacadefegdehijhklij"));
     }
 
 }

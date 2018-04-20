@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
 *731. My Calendar II
 Implement a MyCalendarTwo class to store your events. A new event can be added if adding the event will not cause a triple booking.
@@ -36,7 +39,23 @@ public class Solution731 {
         
     }
     
-    public boolean book(int start, int end) {
-        return false;
+    private List<int[]> books = new ArrayList<>();
+    public boolean book(int s, int e) {
+        MyCalendar overlaps = new MyCalendar();
+        for (int[] b : books)
+            if (Math.max(b[0], s) < Math.min(b[1], e)) // overlap exist
+                if (!overlaps.book(Math.max(b[0], s), Math.min(b[1], e))) return false; // overlaps overlapped
+        books.add(new int[]{ s, e });
+        return true;
+    }
+
+    private static class MyCalendar {
+        List<int[]> books = new ArrayList<>();
+        public boolean book(int start, int end) {
+            for (int[] b : books)
+                if (Math.max(b[0], start) < Math.min(b[1], end)) return false;
+            books.add(new int[]{ start, end });
+            return true;
+        }
     }
 }

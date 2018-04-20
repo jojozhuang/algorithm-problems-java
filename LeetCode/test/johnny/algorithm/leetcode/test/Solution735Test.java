@@ -32,10 +32,13 @@ public class Solution735Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("asteroidCollision");
         Solution735 instance = new Solution735();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {5, 10}, instance.asteroidCollision(new int[] {5, 10, -5}));
+        assertArrayEquals(new int[] {}, instance.asteroidCollision(new int[] {8, -8}));
+        assertArrayEquals(new int[] {10}, instance.asteroidCollision(new int[] {10, 2, -5}));
+        assertArrayEquals(new int[] {-2, -1, 1, 2}, instance.asteroidCollision(new int[] {-2, -1, 1, 2}));
     }
 
 }

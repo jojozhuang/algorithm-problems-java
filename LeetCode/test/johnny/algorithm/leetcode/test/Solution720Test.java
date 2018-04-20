@@ -32,10 +32,11 @@ public class Solution720Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("longestWord");
         Solution720 instance = new Solution720();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("world", instance.longestWord(new String[] {"w","wo","wor","worl", "world"}));
+        assertEquals("apple", instance.longestWord(new String[] {"a", "banana", "app", "appl", "ap", "apply", "apple"}));
     }
 
 }

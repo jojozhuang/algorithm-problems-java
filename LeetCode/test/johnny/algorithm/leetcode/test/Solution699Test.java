@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution699;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution699Test {
 
@@ -35,7 +36,9 @@ public class Solution699Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution699 instance = new Solution699();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] positions1 = {{1, 2}, {2, 3}, {6, 1}};
+        List<Integer> result1 = ListUtil.buildIntegerList(new Integer[] {2, 5, 5});
+        assertEquals(result1, instance.fallingSquares(positions1));
     }
 
 }

@@ -32,10 +32,12 @@ public class Solution733Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("floodFill");
         Solution733 instance = new Solution733();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] image1 = {{1,1,1},{1,1,0},{1,0,1}};
+        int[][] result1 = {{2,2,2},{2,2,0},{2,0,1}};
+        assertArrayEquals(result1, instance.floodFill(image1,1,1,2));
     }
 
 }

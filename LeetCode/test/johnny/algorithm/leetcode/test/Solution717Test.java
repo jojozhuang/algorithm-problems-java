@@ -32,10 +32,11 @@ public class Solution717Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("isOneBitCharacter");
         Solution717 instance = new Solution717();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.isOneBitCharacter(new int[] {1, 0, 0}));
+        assertEquals(false, instance.isOneBitCharacter(new int[] {1, 1, 1, 0}));
     }
 
 }

@@ -35,6 +35,17 @@ public class ListUtil {
         return new ArrayList<String>(Arrays.asList(array));
     }
     
+    public static List<List<String>> buildStringList2(String[][] array) {
+        List<List<String>> res = new ArrayList<List<String>>();
+        if (array == null || array.length == 0) {
+            return res;
+        }
+        for (int i = 0; i < array.length; i++) {
+            res.add(buildStringList(array[i]));
+        }
+        return res;
+    }
+    
     public static boolean equalLists(List<String> one, List<String> two){
         if (one == null && two == null){
             return true;

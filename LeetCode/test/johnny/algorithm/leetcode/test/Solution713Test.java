@@ -35,7 +35,7 @@ public class Solution713Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution713 instance = new Solution713();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(8, instance.numSubarrayProductLessThanK(new int[] {10, 5, 2, 6}, 100));
     }
 
 }

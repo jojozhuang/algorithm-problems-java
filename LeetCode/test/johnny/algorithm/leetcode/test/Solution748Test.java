@@ -32,10 +32,11 @@ public class Solution748Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("shortestCompletingWord");
         Solution748 instance = new Solution748();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("steps", instance.shortestCompletingWord("1s3 PSt", new String[] {"step", "steps", "stripe", "stepple"}));
+        assertEquals("pest", instance.shortestCompletingWord("1s3 456", new String[] {"looks", "pest", "stew", "show"}));
     }
 
 }

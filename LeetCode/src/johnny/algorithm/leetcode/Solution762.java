@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *762. Prime Number of Set Bits in Binary Representation
  *Given two integers L and R, find the count of numbers in the range [L, R] (inclusive) having a prime number of set bits in their binary representation.
@@ -35,6 +39,28 @@ R - L will be at most 10000.
  */
 public class Solution762 {
     public int countPrimeSetBits(int L, int R) {
-        return 0;
+        int cnt = 0;
+        Set<Integer> listPrimes = new HashSet<>(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29 ));
+        int[] res = countBits(R);
+        for(int i=L;i<=R;i++){
+            if(listPrimes.contains(res[i])){
+                cnt++;
+            }
+        }
+        return cnt;
+    }    
+    
+    public int[] countBits(int num) {
+        if(num == 0)
+            return new int[1];
+        int[] dp = new int[num+1];
+        
+        dp[0] = 0;
+        dp[1] = 1;
+        
+        for(int i=2;i<=num;i++){
+            dp[i] = dp[i >> 1] + dp[i & 1]; //  i >> 1 is i / 2 and i & 1 is i % 2
+        }
+        return dp;
     }
 }

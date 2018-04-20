@@ -32,10 +32,15 @@ public class Solution731Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("MyCalendarTwo");
         Solution731 instance = new Solution731();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.book(10, 20));
+        assertEquals(true, instance.book(50, 60));
+        assertEquals(true, instance.book(10, 40));
+        assertEquals(false, instance.book(5, 15));
+        assertEquals(true, instance.book(5, 10));
+        assertEquals(true, instance.book(25, 55));
     }
 
 }

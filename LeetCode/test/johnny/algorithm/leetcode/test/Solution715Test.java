@@ -35,7 +35,11 @@ public class Solution715Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution715 instance = new Solution715();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        instance.addRange(10, 20);
+        instance.removeRange(14, 16);
+        assertEquals(true, instance.queryRange(10, 14));
+        assertEquals(false, instance.queryRange(13, 15));
+        assertEquals(true, instance.queryRange(16, 17));
     }
 
 }
