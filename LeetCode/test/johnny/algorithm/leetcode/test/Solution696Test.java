@@ -32,10 +32,11 @@ public class Solution696Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("countBinarySubstrings");
         Solution696 instance = new Solution696();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(6, instance.countBinarySubstrings("00110011"));
+        assertEquals(4, instance.countBinarySubstrings("10101"));
     }
 
 }

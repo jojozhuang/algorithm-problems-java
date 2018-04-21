@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution692;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution692Test {
 
@@ -32,10 +33,14 @@ public class Solution692Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("topKFrequent");
         Solution692 instance = new Solution692();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> result1 = ListUtil.buildStringList(new String[] {"i", "love"});
+        assertEquals(result1, instance.topKFrequent(new String[] {"i", "love", "leetcode", "i", "love", "coding"}, 2));
+
+        List<String> result2 = ListUtil.buildStringList(new String[] {"the", "is", "sunny", "day"});
+        assertEquals(result2, instance.topKFrequent(new String[] {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}, 4));
     }
 
 }

@@ -32,10 +32,10 @@ public class Solution686Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("repeatedStringMatch");
         Solution686 instance = new Solution686();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(3, instance.repeatedStringMatch("abcd", "cdabcdab"));
     }
 
 }

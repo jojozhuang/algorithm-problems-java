@@ -18,6 +18,11 @@ Note: Length of the array will not exceed 10,000.
  */
 public class Solution674 {
     public int findLengthOfLCIS(int[] nums) {
-        return 0;    
+        int res = 0, cnt = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(i == 0 || nums[i-1] < nums[i]) res = Math.max(res, ++cnt);
+            else cnt = 1;
+        }
+        return res;
     }
 }

@@ -32,10 +32,10 @@ public class Solution698Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("canPartitionKSubsets");
         Solution698 instance = new Solution698();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.canPartitionKSubsets(new int[] {4, 3, 2, 3, 5, 2, 1}, 4));
     }
 
 }

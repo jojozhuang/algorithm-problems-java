@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution687;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution687Test {
 
@@ -35,7 +36,11 @@ public class Solution687Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution687 instance = new Solution687();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"5", "4", "5", "1", "1", "#", "5"});
+        assertEquals(2, instance.longestUnivaluePath(root1));
+
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1", "4", "5", "4", "4", "#", "5"});
+        assertEquals(2, instance.longestUnivaluePath(root2));
     }
 
 }

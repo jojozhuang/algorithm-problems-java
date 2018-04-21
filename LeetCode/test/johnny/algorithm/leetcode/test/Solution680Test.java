@@ -32,10 +32,11 @@ public class Solution680Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("validPalindrome");
         Solution680 instance = new Solution680();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.validPalindrome("aba"));
+        assertEquals(true, instance.validPalindrome("abca"));
     }
 
 }

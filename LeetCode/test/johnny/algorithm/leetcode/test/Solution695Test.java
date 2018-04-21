@@ -32,10 +32,25 @@ public class Solution695Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("maxAreaOfIsland");
         Solution695 instance = new Solution695();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] grid1 = new int[][] {
+            {0,0,1,0,0,0,0,1,0,0,0,0,0},
+            {0,0,0,0,0,0,0,1,1,1,0,0,0},
+            {0,1,1,0,1,0,0,0,0,0,0,0,0},
+            {0,1,0,0,1,1,0,0,1,0,1,0,0},
+            {0,1,0,0,1,1,0,0,1,1,1,0,0},
+            {0,0,0,0,0,0,0,0,0,0,1,0,0},
+            {0,0,0,0,0,0,0,1,1,1,0,0,0},
+            {0,0,0,0,0,0,0,1,1,0,0,0,0}
+        };
+        assertEquals(6, instance.maxAreaOfIsland(grid1));
+        
+        int[][] grid2 = new int[][] {
+            {0,0,0,0,0,0,0,0},
+        };
+        assertEquals(0, instance.maxAreaOfIsland(grid2));
     }
 
 }

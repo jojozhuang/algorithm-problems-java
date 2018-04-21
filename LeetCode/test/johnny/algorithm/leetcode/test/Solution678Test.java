@@ -32,10 +32,12 @@ public class Solution678Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("checkValidString");
         Solution678 instance = new Solution678();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.checkValidString("()"));
+        assertEquals(true, instance.checkValidString("(*)"));
+        assertEquals(true, instance.checkValidString("(*))"));
     }
 
 }

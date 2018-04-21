@@ -32,10 +32,11 @@ public class Solution682Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("calPoints");
         Solution682 instance = new Solution682();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(30, instance.calPoints(new String[] {"5","2","C","D","+"}));
+        assertEquals(27, instance.calPoints(new String[] {"5","-2","4","C","D","9","+","+"}));
     }
 
 }

@@ -32,10 +32,11 @@ public class Solution649Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("predictPartyVictory");
         Solution649 instance = new Solution649();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("Radiant", instance.predictPartyVictory("RD"));
+        assertEquals("Dire", instance.predictPartyVictory("RDD"));
     }
 
 }

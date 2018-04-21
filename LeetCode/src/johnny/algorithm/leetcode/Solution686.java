@@ -16,6 +16,14 @@ The length of A and B will be between 1 and 10000.
  */
 public class Solution686 {
     public int repeatedStringMatch(String A, String B) {
-        return 0;  
+        int count = 0;
+        StringBuilder sb = new StringBuilder();
+        while (sb.length() < B.length()) {
+            sb.append(A);
+            count++;
+        }
+        if(sb.toString().contains(B)) return count;
+        if(sb.append(A).toString().contains(B)) return ++count;
+        return -1;
     }
 }

@@ -32,10 +32,11 @@ public class Solution673Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findNumberOfLIS");
         Solution673 instance = new Solution673();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.findNumberOfLIS(new int[] {1,3,5,4,7}));
+        assertEquals(5, instance.findNumberOfLIS(new int[] {2,2,2,2,2}));
     }
 
 }

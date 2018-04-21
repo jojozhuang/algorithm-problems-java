@@ -32,10 +32,11 @@ public class Solution691Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("minStickers");
         Solution691 instance = new Solution691();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(3, instance.minStickers(new String[] {"with", "example", "science"}, "thehat"));
+        assertEquals(-1, instance.minStickers(new String[] {"notice", "possible"}, "basicbasic"));
     }
 
 }

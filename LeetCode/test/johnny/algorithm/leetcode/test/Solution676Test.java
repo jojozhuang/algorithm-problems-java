@@ -35,7 +35,11 @@ public class Solution676Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution676 instance = new Solution676();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        instance.buildDict(new String[] {"hello", "leetcode"});
+        assertEquals(false, instance.search("hello"));
+        assertEquals(true, instance.search("hhllo"));
+        assertEquals(false, instance.search("hell"));
+        assertEquals(false, instance.search("leetcoded"));
     }
 
 }

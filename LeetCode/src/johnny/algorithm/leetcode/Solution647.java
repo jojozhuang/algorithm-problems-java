@@ -30,64 +30,22 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution647 {
+    int count = 0;
+    
     public int countSubstrings(String s) {
-        if (s == null || s.isEmpty()) {
-            return 0;
+        if (s == null || s.length() == 0) return 0;
+        
+        for (int i = 0; i < s.length(); i++) { // i is the mid point
+            extendPalindrome(s, i, i); // odd length;
+            extendPalindrome(s, i, i + 1); // even length
         }
         
-        int res = 0;
-        List<String> words = getWords(s);
-        for (String word : words) {
-            if (!word.isEmpty()) {
-                if (isPalindrome(word)) {
-                    res++;
-                }
-            }
-        }
-        
-        return res;
+        return count;
     }
     
-    private List<String> getWords(String s) {
-        List<String> res = new ArrayList<String>();
-        
-        for (int i = 0; i < s.length(); i++) {
-            res.add(String.valueOf(s.charAt(i)));
-            for (int j = i + 1; j < s.length(); j++) {
-                res.add(s.substring(i, j + 1));
-            }
+    private void extendPalindrome(String s, int left, int right) {
+        while (left >=0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            count++; left--; right++;
         }
-        return res;
-    }
-    
-    private boolean isPalindrome(String s) {
-        if(s == null || s.isEmpty()) {
-            return true;
-        }
-        
-        s = s.toUpperCase();
-        
-        int start = 0;
-        int end = s.length() - 1;
-        while(start <= end) {
-            char left = s.charAt(start);
-            char right = s.charAt(end);
-            if (!Character.isLetterOrDigit(left)) {
-                start++;
-                continue;
-            }
-            if (!Character.isLetterOrDigit(right)) {
-                end--;
-                continue;
-            }
-            if (left != right) {
-                return false;
-            } else {
-                start++;
-                end--;
-            }
-        }
-            
-        return true;
     }
 }

@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution648;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution648Test {
 
@@ -32,10 +33,11 @@ public class Solution648Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("replaceWords");
         Solution648 instance = new Solution648();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> dict1 = ListUtil.buildStringList(new String[] {"cat", "bat", "rat"});
+        assertEquals("the cat was rat by the bat", instance.replaceWords(dict1, "the cattle was rattled by the battery"));
     }
 
 }

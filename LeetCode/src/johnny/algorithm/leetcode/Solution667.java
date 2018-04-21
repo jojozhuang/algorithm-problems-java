@@ -22,6 +22,9 @@ The n and k are in the range 1 <= k < n <= 104.
  */
 public class Solution667 {
     public int[] constructArray(int n, int k) {
-        return null;  
+        int[] res = new int[n];
+        for (int i = 0, l = 1, r = n; l <= r; i++)
+            res[i] = k > 1 ? (k-- % 2 != 0 ? l++ : r--) : l++;
+        return res;
     }
 }

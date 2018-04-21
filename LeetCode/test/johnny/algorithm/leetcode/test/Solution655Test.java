@@ -11,6 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution655;
+import johnny.algorithm.leetcode.common.ListUtil;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution655Test {
 
@@ -32,10 +34,25 @@ public class Solution655Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("printTree");
         Solution655 instance = new Solution655();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"1","2","#"});
+        List<List<String>> result1 = ListUtil.buildStringList2(new String[][] {{"", "1", ""}, {"2", "", ""}});
+        assertEquals(result1, instance.printTree(root1));
+        
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","3","#","4","#","#"});
+        List<List<String>> result2 = ListUtil.buildStringList2(new String[][] {{"", "", "", "1", "", "", ""},
+            {"", "2", "", "", "", "3", ""},
+            {"", "", "4", "", "", "", ""}});
+        assertEquals(result2, instance.printTree(root2));
+
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","5","3","#","#","#","4","#"});
+        List<List<String>> result3 = ListUtil.buildStringList2(new String[][] {{"",  "",  "", "",  "", "", "", "1", "",  "",  "",  "",  "", "", ""},
+        {"",  "",  "", "2", "", "", "", "",  "",  "",  "",  "5", "", "", ""},
+        {"",  "3", "", "",  "", "", "", "",  "",  "",  "",  "",  "", "", ""},
+        {"4", "",  "", "",  "", "", "", "",  "",  "",  "",  "",  "", "", ""}});
+        assertEquals(result3, instance.printTree(root3));
     }
 
 }

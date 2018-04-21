@@ -32,10 +32,10 @@ public class Solution688Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("knightProbability");
         Solution688 instance = new Solution688();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(0.0625, instance.knightProbability(3,2,0,0), 0.0);
     }
 
 }

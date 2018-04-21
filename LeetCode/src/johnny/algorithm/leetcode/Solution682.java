@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.LinkedList;
+
 /**
  *682. Baseball Game
 You're now a baseball game point recorder.
@@ -41,7 +43,26 @@ Every integer represented in the list will be between -30000 and 30000.
  * @author Johnny
  */
 public class Solution682 {
-	 public int calPoints(String[] ops) {
-	        return 0;
-	    }
+    public int calPoints(String[] ops) {
+        int sum = 0;
+        LinkedList<Integer> list = new LinkedList<>();
+        for (String op : ops) {
+            if (op.equals("C")) {
+                sum -= list.removeLast();
+            }
+            else if (op.equals("D")) {
+                list.add(list.peekLast() * 2);
+                sum += list.peekLast();
+            }
+            else if (op.equals("+")) {
+                list.add(list.peekLast() + list.get(list.size() - 2));
+                sum += list.peekLast();
+            }
+            else {
+                list.add(Integer.parseInt(op));
+                sum += list.peekLast();
+            }
+        }
+        return sum;
+    }
 }

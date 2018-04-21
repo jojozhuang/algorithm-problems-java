@@ -32,10 +32,10 @@ public class Solution689Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("maxSumOfThreeSubarrays");
         Solution689 instance = new Solution689();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {0, 3, 5}, instance.maxSumOfThreeSubarrays(new int[] {1,2,1,2,6,7,5,1}, 2));
     }
 
 }

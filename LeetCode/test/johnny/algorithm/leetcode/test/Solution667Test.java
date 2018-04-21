@@ -32,10 +32,11 @@ public class Solution667Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("constructArray");
         Solution667 instance = new Solution667();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {1, 2, 3}, instance.constructArray(3,1));
+        assertArrayEquals(new int[] {3, 1, 2}, instance.constructArray(3,2));
     }
 
 }

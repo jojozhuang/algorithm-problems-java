@@ -32,10 +32,11 @@ public class Solution684Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findRedundantConnection");
         Solution684 instance = new Solution684();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {2,3}, instance.findRedundantConnection(new int[][] {{1,2}, {1,3}, {2,3}}));
+        assertArrayEquals(new int[] {1,4}, instance.findRedundantConnection(new int[][] {{1,2}, {2,3}, {3,4}, {1,4}, {1,5}}));
     }
 
 }

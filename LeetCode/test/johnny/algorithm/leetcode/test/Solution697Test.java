@@ -32,10 +32,12 @@ public class Solution697Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findShortestSubArray");
         Solution697 instance = new Solution697();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.findShortestSubArray(new int[] {1, 2, 2, 3, 1}));
+        assertEquals(6, instance.findShortestSubArray(new int[] {1,2,2,3,1,4,2}));
+        
     }
 
 }
