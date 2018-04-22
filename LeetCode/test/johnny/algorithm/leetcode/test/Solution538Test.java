@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution538;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution538Test {
 
@@ -32,10 +33,12 @@ public class Solution538Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("convertBST");
         Solution538 instance = new Solution538();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"5","2","13"});
+        TreeNode expect1 = TreeNode.createInstance(new String[] {"18","20","13"});
+        assertTrue(TreeNode.isSame(expect1, instance.convertBST(root1)));
     }
 
 }

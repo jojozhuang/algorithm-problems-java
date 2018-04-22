@@ -35,7 +35,7 @@ public class Solution621Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution621 instance = new Solution621();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(8, instance.leastInterval(new char[] {'A','A','A','B','B','B'}, 2));
     }
 
 }

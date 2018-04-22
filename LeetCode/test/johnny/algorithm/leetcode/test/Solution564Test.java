@@ -32,10 +32,10 @@ public class Solution564Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("nearestPalindromic");
         Solution564 instance = new Solution564();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("121", instance.nearestPalindromic("123"));
     }
 
 }

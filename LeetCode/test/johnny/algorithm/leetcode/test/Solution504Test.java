@@ -32,10 +32,11 @@ public class Solution504Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("convertToBase7");
         Solution504 instance = new Solution504();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("202", instance.convertToBase7(100));
+        assertEquals("-10", instance.convertToBase7(-7));
     }
 
 }

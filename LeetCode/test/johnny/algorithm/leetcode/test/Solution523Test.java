@@ -32,10 +32,11 @@ public class Solution523Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("checkSubarraySum");
         Solution523 instance = new Solution523();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.checkSubarraySum(new int[] {23, 2, 4, 6, 7}, 6));
+        assertEquals(true, instance.checkSubarraySum(new int[] {23, 2, 6, 4, 7}, 6));
     }
 
 }

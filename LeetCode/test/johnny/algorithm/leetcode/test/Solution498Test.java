@@ -32,10 +32,15 @@ public class Solution498Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findDiagonalOrder");
         Solution498 instance = new Solution498();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] matrix1 = new int[][]{
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+        };
+        assertArrayEquals(new int[] {1,2,4,7,5,3,6,8,9}, instance.findDiagonalOrder(matrix1));
     }
 
 }

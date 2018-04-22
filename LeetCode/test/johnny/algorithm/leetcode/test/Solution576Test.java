@@ -32,10 +32,11 @@ public class Solution576Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findPaths");
         Solution576 instance = new Solution576();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(6, instance.findPaths(2,2,2,0,0));
+        assertEquals(12, instance.findPaths(1,3,3,0,1));
     }
 
 }

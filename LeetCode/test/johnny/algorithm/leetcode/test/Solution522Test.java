@@ -32,10 +32,11 @@ public class Solution522Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findLUSlength");
         Solution522 instance = new Solution522();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(3, instance.findLUSlength(new String[] {"aba", "cdc", "eae"}));
+        
     }
 
 }

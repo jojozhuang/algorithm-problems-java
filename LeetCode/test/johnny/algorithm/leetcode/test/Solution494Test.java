@@ -32,10 +32,10 @@ public class Solution494Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findTargetSumWays");
         Solution494 instance = new Solution494();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(5, instance.findTargetSumWays(new int[] {1, 1, 1, 1, 1}, 3));
     }
 
 }

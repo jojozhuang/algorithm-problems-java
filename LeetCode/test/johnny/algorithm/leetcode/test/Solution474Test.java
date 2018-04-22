@@ -32,10 +32,11 @@ public class Solution474Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMaxForm");
         Solution474 instance = new Solution474();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.findMaxForm(new String[] {"10", "0001", "111001", "1", "0"},5,3));
+        assertEquals(2, instance.findMaxForm(new String[] {"10", "0", "1"},1,1));
     }
 
 }

@@ -32,10 +32,11 @@ public class Solution486Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("PredictTheWinner");
         Solution486 instance = new Solution486();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(false, instance.PredictTheWinner(new int[] {1, 5, 2}));
+        assertEquals(true, instance.PredictTheWinner(new int[] {1, 5, 233, 7}));
     }
 
 }

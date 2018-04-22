@@ -32,10 +32,10 @@ public class Solution480Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("medianSlidingWindow");
         Solution480 instance = new Solution480();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new double[] {1,-1,-1,3,5,6}, instance.medianSlidingWindow(new int[] {1,3,-1,-3,5,3,6,7}, 3), 0.0);
     }
 
 }

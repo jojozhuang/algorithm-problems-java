@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution513;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution513Test {
 
@@ -32,10 +33,14 @@ public class Solution513Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findBottomLeftValue");
         Solution513 instance = new Solution513();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"2","1","3"});
+        assertEquals(1, instance.findBottomLeftValue(root1));
+        
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","3","4","#","5","6","#","#","7","#","#","#"});
+        assertEquals(7, instance.findBottomLeftValue(root2));
     }
 
 }

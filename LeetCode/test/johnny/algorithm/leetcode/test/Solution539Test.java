@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution539;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution539Test {
 
@@ -32,10 +33,11 @@ public class Solution539Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMinDifference");
         Solution539 instance = new Solution539();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> timePoints1 = ListUtil.buildList(new String[] {"23:59","00:00"});
+        assertEquals(1, instance.findMinDifference(timePoints1));
     }
 
 }

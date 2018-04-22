@@ -32,10 +32,11 @@ public class Solution537Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("complexNumberMultiply");
         Solution537 instance = new Solution537();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("0+2i", instance.complexNumberMultiply("1+1i", "1+1i"));
+        assertEquals("0+-2i", instance.complexNumberMultiply("1+-1i", "1+-1i"));
     }
 
 }

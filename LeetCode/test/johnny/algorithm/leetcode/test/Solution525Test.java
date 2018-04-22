@@ -32,10 +32,11 @@ public class Solution525Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMaxLength");
         Solution525 instance = new Solution525();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.findMaxLength(new int[] {0,1}));
+        assertEquals(2, instance.findMaxLength(new int[] {0,1,0}));
     }
 
 }

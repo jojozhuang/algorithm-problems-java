@@ -42,7 +42,7 @@ public class Solution475Test {
     public void testFindRadius() {
         System.out.println("findRadius");
         Solution475 instance = new Solution475();
-        assertEquals(0, instance.findRadius(new int[]{}, new int[]{}));
+        assertEquals(Integer.MIN_VALUE, instance.findRadius(new int[]{}, new int[]{}));
         assertEquals(0, instance.findRadius(new int[]{1}, new int[]{1}));
         assertEquals(1, instance.findRadius(new int[]{1,2}, new int[]{1}));
         assertEquals(1, instance.findRadius(new int[]{1,2,3}, new int[]{2}));

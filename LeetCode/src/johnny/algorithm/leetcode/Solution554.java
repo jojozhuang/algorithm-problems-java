@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * Brick Wall
@@ -40,6 +41,32 @@ import java.util.List;
  */
 public class Solution554 {
     public int leastBricks(List<List<Integer>> wall) {
-        return 0;
+        int R = wall.size(), min = R;
+        if (R == 1 && wall.get(0).size() > 1) return 0;
+        
+        // [0: end, 1: row, 2: col]
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (a[0] - b[0]));
+        
+        for (int i = 0; i < R; i++) {
+            pq.add(new int[] {wall.get(i).get(0), i, 0});
+        }
+        
+        while (!pq.isEmpty()) {
+            int end = pq.peek()[0], count = 0;
+            
+            while (!pq.isEmpty() && pq.peek()[0] == end) {
+                count++;
+                int[] brick = pq.poll();
+                if (brick[2] < wall.get(brick[1]).size() - 1) {
+                    pq.add(new int[] {end + wall.get(brick[1]).get(brick[2] + 1), brick[1], brick[2] + 1});
+                }
+            }
+            
+            if (!pq.isEmpty()) {
+                min = Math.min(min, R - count);
+            }
+        }
+        
+        return min;
     }
 }

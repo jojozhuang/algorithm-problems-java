@@ -32,10 +32,11 @@ public class Solution493Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("reversePairs");
         Solution493 instance = new Solution493();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.reversePairs(new int[] {1,3,2,3,1}));
+        assertEquals(3, instance.reversePairs(new int[] {2,4,3,5,1}));
     }
 
 }

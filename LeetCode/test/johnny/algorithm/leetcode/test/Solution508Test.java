@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution508;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution508Test {
 
@@ -32,10 +33,11 @@ public class Solution508Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findFrequentTreeSum");
         Solution508 instance = new Solution508();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"5","2","-3"});
+        assertArrayEquals(new int[] {2, -3, 4}, instance.findFrequentTreeSum(root1));
     }
 
 }

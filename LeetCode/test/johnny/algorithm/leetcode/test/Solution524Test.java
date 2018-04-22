@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution524;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution524Test {
 
@@ -32,10 +33,14 @@ public class Solution524Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findLongestWord");
         Solution524 instance = new Solution524();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> d1 = ListUtil.buildList(new String[] {"ale","apple","monkey","plea"});
+        assertEquals("apple", instance.findLongestWord("abpcplea", d1));
+
+        List<String> d2 = ListUtil.buildList(new String[] {"a","b","c"});
+        assertEquals("a", instance.findLongestWord("abpcplea", d2));
     }
 
 }

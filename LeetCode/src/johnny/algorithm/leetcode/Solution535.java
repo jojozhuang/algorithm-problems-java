@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Encode and Decode TinyURL
  * 
@@ -17,13 +20,16 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution535 {
-     // Encodes a URL to a shortened URL.
+    List<String> urls = new ArrayList<String>();
+    // Encodes a URL to a shortened URL.
     public String encode(String longUrl) {
-        return "";
+        urls.add(longUrl);
+        return String.valueOf(urls.size()-1);
     }
 
     // Decodes a shortened URL to its original URL.
     public String decode(String shortUrl) {
-        return "";
+        int index = Integer.valueOf(shortUrl);
+        return (index<urls.size())?urls.get(index):"";
     }
 }

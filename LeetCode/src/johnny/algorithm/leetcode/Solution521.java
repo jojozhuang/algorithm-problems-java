@@ -32,6 +32,6 @@ package johnny.algorithm.leetcode;
  */
 public class Solution521 {
     public int findLUSlength(String a, String b) {
-        return 0;
+        return a.equals(b) ? -1 : Math.max(a.length(), b.length());
     }
 }

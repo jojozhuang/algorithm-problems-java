@@ -32,10 +32,10 @@ public class Solution503Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("nextGreaterElements");
         Solution503 instance = new Solution503();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {2,-1,2}, instance.nextGreaterElements(new int[] {1,2,1}));
     }
 
 }

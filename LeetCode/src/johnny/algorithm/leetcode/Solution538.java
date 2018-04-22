@@ -24,7 +24,18 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution538 {
+    int sum = 0;
+    
     public TreeNode convertBST(TreeNode root) {
-        return null;
+        convert(root);
+        return root;
+    }
+    
+    public void convert(TreeNode cur) {
+        if (cur == null) return;
+        convert(cur.right);
+        cur.val += sum;
+        sum = cur.val;
+        convert(cur.left);
     } 
 }

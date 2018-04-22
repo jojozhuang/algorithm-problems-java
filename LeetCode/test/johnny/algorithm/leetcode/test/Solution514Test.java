@@ -32,10 +32,10 @@ public class Solution514Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findRotateSteps");
         Solution514 instance = new Solution514();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.findRotateSteps("godding","gd"));
     }
 
 }

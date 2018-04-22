@@ -32,10 +32,12 @@ public class Solution518Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("change");
         Solution518 instance = new Solution518();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.change(5, new int[] {1, 2, 5}));
+        assertEquals(0, instance.change(3, new int[] {2}));
+        assertEquals(1, instance.change(10, new int[] {10}));
     }
 
 }

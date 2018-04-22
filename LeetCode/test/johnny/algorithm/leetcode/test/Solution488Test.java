@@ -32,10 +32,13 @@ public class Solution488Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMinStep");
         Solution488 instance = new Solution488();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(-1, instance.findMinStep("WRRBBW", "RB"));
+        assertEquals(2, instance.findMinStep("WWRRBBWW", "WRBRW"));
+        assertEquals(2, instance.findMinStep("G", "GGGGG"));
+        assertEquals(3, instance.findMinStep("RBYYBBRRB", "YRBGB"));
     }
 
 }

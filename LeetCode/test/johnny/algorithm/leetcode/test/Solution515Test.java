@@ -11,6 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution515;
+import johnny.algorithm.leetcode.common.ListUtil;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution515Test {
 
@@ -32,10 +34,12 @@ public class Solution515Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("largestValues");
         Solution515 instance = new Solution515();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"1","3","2","5","3","#","9"});
+        List<Integer> expect1 = ListUtil.buildList(new Integer[] {1, 3, 9});
+        assertEquals(expect1, instance.largestValues(root1));
     }
 
 }

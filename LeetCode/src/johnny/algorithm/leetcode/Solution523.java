@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Continuous Subarray Sum
  * 
@@ -25,6 +28,17 @@ package johnny.algorithm.leetcode;
  */
 public class Solution523 {
     public boolean checkSubarraySum(int[] nums, int k) {
-        return false; 
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>(){{put(0,-1);}};;
+        int runningSum = 0;
+        for (int i=0;i<nums.length;i++) {
+            runningSum += nums[i];
+            if (k != 0) runningSum %= k; 
+            Integer prev = map.get(runningSum);
+            if (prev != null) {
+                if (i - prev > 1) return true;
+            }
+            else map.put(runningSum, i);
+        }
+        return false;
     }  
 }

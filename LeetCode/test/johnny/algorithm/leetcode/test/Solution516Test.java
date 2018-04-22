@@ -32,10 +32,11 @@ public class Solution516Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("longestPalindromeSubseq");
         Solution516 instance = new Solution516();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.longestPalindromeSubseq("bbbab"));
+        assertEquals(2, instance.longestPalindromeSubseq("cbbd"));
     }
 
 }

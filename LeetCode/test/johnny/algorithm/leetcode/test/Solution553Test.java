@@ -32,10 +32,10 @@ public class Solution553Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("optimalDivision");
         Solution553 instance = new Solution553();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("1000/(100/10/2)", instance.optimalDivision(new int[] {1000,100,10,2}));
     }
 
 }

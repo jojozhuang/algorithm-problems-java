@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution543;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution543Test {
 
@@ -32,10 +33,11 @@ public class Solution543Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("diameterOfBinaryTree");
         Solution543 instance = new Solution543();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"1","2","3","4","5","#","#"});
+        assertEquals(3, instance.diameterOfBinaryTree(root1));
     }
 
 }

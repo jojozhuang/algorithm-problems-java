@@ -32,10 +32,11 @@ public class Solution567Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("checkInclusion");
         Solution567 instance = new Solution567();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.checkInclusion("ab","eidbaooo"));
+        assertEquals(false, instance.checkInclusion("ab","eidboaoo"));
     }
 
 }

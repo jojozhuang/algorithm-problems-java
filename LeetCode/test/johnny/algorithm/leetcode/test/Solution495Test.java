@@ -32,10 +32,11 @@ public class Solution495Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findPoisonedDuration");
         Solution495 instance = new Solution495();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.findPoisonedDuration(new int[] {1,4}, 2));
+        assertEquals(3, instance.findPoisonedDuration(new int[] {1,2}, 2));
     }
 
 }

@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution472;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution472Test {
 
@@ -32,10 +33,12 @@ public class Solution472Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findAllConcatenatedWordsInADict");
         Solution472 instance = new Solution472();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> result1 = instance.findAllConcatenatedWordsInADict(new String[] {"cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"}); 
+        List<String> expect1 = ListUtil.buildList(new String[] {"catsdogcats","dogcatsdog","ratcatdogcat"});
+        assertTrue(ListUtil.equalsIgnoreOrder(result1, expect1));
     }
 
 }

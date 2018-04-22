@@ -32,10 +32,13 @@ public class Solution592Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("fractionAddition");
         Solution592 instance = new Solution592();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("0/1", instance.fractionAddition("-1/2+1/2"));
+        assertEquals("1/3", instance.fractionAddition("-1/2+1/2+1/3"));
+        assertEquals("-1/6", instance.fractionAddition("1/3-1/2"));
+        assertEquals("2/1", instance.fractionAddition("5/3+1/3"));
     }
 
 }

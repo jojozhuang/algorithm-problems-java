@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode.test;
 
+import static org.junit.Assert.*;
+
+import java.util.List;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -7,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution632;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 /**
  *
@@ -38,17 +43,11 @@ public class Solution632Test {
      */
     @Test
     public void testFindErrorNums() {
-        System.out.println("findErrorNums");
-        int[] nums = null;
+        System.out.println("judgeSquareSum");
         Solution632 instance = new Solution632();
-        int[] expResult = new int[2];
-        //int[] result = instance.findErrorNums(nums);
-        //assertArrayEquals(expResult, result);
-        
-        //assertArrayEquals(new int[]{2,3}, instance.findErrorNums(new int[]{1,2,2,4}));
-        //assertArrayEquals(new int[]{3,2}, instance.findErrorNums(new int[]{1,3,3,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+
+        List<List<Integer>> nums1 = ListUtil.buildList2(new Integer[][] {{4,10,15,24,26}, {0,9,12,20}, {5,18,22,30}});
+        assertArrayEquals(new int[] {20,24}, instance.smallestRange(nums1));
     }
     
 }

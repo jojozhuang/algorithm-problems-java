@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.stream.Stream;
+
 /**
  * Complex Number Multiplication
  * 
@@ -30,6 +32,8 @@ package johnny.algorithm.leetcode;
  */
 public class Solution537 {
     public String complexNumberMultiply(String a, String b) {
-        return "";
+        int[] coefs1 = Stream.of(a.split("\\+|i")).mapToInt(Integer::parseInt).toArray(), 
+                coefs2 = Stream.of(b.split("\\+|i")).mapToInt(Integer::parseInt).toArray();
+         return (coefs1[0]*coefs2[0] - coefs1[1]*coefs2[1]) + "+" + (coefs1[0]*coefs2[1] + coefs1[1]*coefs2[0]) + "i";
     }
 }
