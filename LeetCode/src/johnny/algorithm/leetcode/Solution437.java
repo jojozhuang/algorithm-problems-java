@@ -36,35 +36,13 @@ import johnny.algorithm.leetcode.common.TreeNode;
  */
 public class Solution437 {
     public int pathSum(TreeNode root, int sum) {
-        if (root == null) {
-            return 0;
-        }
-        
-        return helper(root, sum, sum);
+        if (root == null) return 0;
+        return pathSumFrom(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
     }
     
-    private int helper(TreeNode root, int sum, int originalSum) {
-        if (root == null) {
-            return 0;
-        }
-        
-        if ((originalSum >= 0 && sum < 0) ||
-            (originalSum < 0 && sum >= 0)) {
-            return helper(root, originalSum, originalSum);
-        }
-        
-        int count = 0;
-        if (root.val == sum) {
-            count++;
-        }
-        
-        if (root.val == originalSum && sum != originalSum) {
-            count++;
-        }
-        
-        int left = helper(root.left, sum - root.val, originalSum);
-        int right = helper(root.right, sum - root.val, originalSum);
-        
-        return left + right + count;
-    }  
+    private int pathSumFrom(TreeNode node, int sum) {
+        if (node == null) return 0;
+        return (node.val == sum ? 1 : 0) 
+            + pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);
+    }
 }

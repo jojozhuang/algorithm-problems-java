@@ -39,19 +39,11 @@ public class Solution454Test {
      * Test of minMoves method, of class Solution453.
      */
     @Test
-    public void testMinMoves() {
-        System.out.println("minMoves");
+    public void test() {
+        System.out.println("fourSumCount");
         Solution454 instance = new Solution454();
-        assertEquals(0, instance.minMoves(new int[]{}));
-        assertEquals(0, instance.minMoves(new int[]{1}));
-        assertEquals(0, instance.minMoves(new int[]{1,1}));
-        assertEquals(1, instance.minMoves(new int[]{1,2}));
-        assertEquals(2, instance.minMoves(new int[]{-1,1}));
-        assertEquals(Integer.MAX_VALUE - 1, instance.minMoves(new int[]{1, Integer.MAX_VALUE}));
-        assertEquals(-1 - Integer.MIN_VALUE, instance.minMoves(new int[]{Integer.MIN_VALUE, -1}));
-        assertEquals(3, instance.minMoves(new int[]{1,2,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+
+        assertEquals(2, instance.fourSumCount(new int[] {1,2,}, new int[] {-2,-1}, new int[] {-1,2}, new int[] {0, 2}));
     }
 
 }

@@ -32,10 +32,14 @@ public class Solution432Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("AllOne");
         Solution432 instance = new Solution432();
-
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        instance.inc("a");
+        instance.dec("b");
+        String param_3 = instance.getMaxKey();
+        String param_4 = instance.getMinKey();
+        assertEquals("a", param_3);
+        assertEquals("a", param_4);
     }
 
 }

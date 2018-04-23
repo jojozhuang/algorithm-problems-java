@@ -32,10 +32,10 @@ public class Solution447Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numberOfBoomerangs");
         Solution447 instance = new Solution447();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.numberOfBoomerangs(new int[][]{{0,0},{1,0},{2,0}}));
     }
 
 }

@@ -2,6 +2,8 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
+
 import johnny.algorithm.leetcode.common.Interval;
 
 /**
@@ -24,63 +26,30 @@ import johnny.algorithm.leetcode.common.Interval;
  * @author Johnny
  */
 public class Solution352 {
-     /** Initialize your data structure here. */
-    List<Interval> intervals;
+    TreeMap<Integer, Interval> tree;
+
     public Solution352() {
-        intervals = new ArrayList<Interval>();
+        tree = new TreeMap<>();
     }
-    
+
     public void addNum(int val) {
-        if (intervals.size() == 0) {
-            intervals.add(new Interval(val, val));
+        if(tree.containsKey(val)) return;
+        Integer l = tree.lowerKey(val);
+        Integer h = tree.higherKey(val);
+        if(l != null && h != null && tree.get(l).end + 1 == val && h == val + 1) {
+            tree.get(l).end = tree.get(h).end;
+            tree.remove(h);
+        } else if(l != null && tree.get(l).end + 1 >= val) {
+            tree.get(l).end = Math.max(tree.get(l).end, val);
+        } else if(h != null && h == val + 1) {
+            tree.put(val, new Interval(val, tree.get(h).end));
+            tree.remove(h);
         } else {
-            if (intervals.get(0).start >= val) {
-                if (intervals.get(0).start == val) {
-                    return;
-                } else if (intervals.get(0).start == val + 1) {
-                    intervals.get(0).start--;
-                } else {
-                    intervals.add(0, new Interval(val, val));
-                }
-            } else if (intervals.get(intervals.size() - 1).end <= val) {
-                if (intervals.get(intervals.size() - 1).end == val) {
-                    return;
-                } else if (intervals.get(intervals.size() - 1).end == val - 1) {
-                    intervals.get(intervals.size() - 1).end++;
-                } else {
-                    intervals.add(new Interval(val, val));
-                }
-            } else {
-                int start = 0;
-                int end = intervals.size() - 1;
-                while (start + 1 < end) {
-                    int mid = start + (end - start) / 2;
-                    Interval itv = intervals.get(mid);
-                    if (val >= itv.start && val <= itv.end) {
-                        break; //ignore
-                    } else if (val < itv.start) {
-                        end = mid;
-                    } else if (val > itv.end) {
-                        start = mid;
-                    }
-                }
-                // merge
-                if (intervals.get(start).end == val - 1) {
-                    intervals.get(start).end++;
-                    if (intervals.get(start).end == intervals.get(end).start - 1) {
-                        intervals.get(start).end = intervals.get(end).end;
-                        intervals.remove(end);
-                    }
-                } else if (val + 1 == intervals.get(end).start) {
-                    intervals.get(end).start--;
-                } else {
-                    intervals.add(end, new Interval(val, val));
-                }
-            }
-        }        
+            tree.put(val, new Interval(val, val));
+        }
     }
-    
+
     public List<Interval> getIntervals() {
-        return intervals;
+        return new ArrayList<>(tree.values());
     }
 }

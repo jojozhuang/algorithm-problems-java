@@ -32,10 +32,11 @@ public class Solution452Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMinArrowShots");
         Solution452 instance = new Solution452();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] points1 = new int[][] {{10,16}, {2,8}, {1,6}, {7,12}};
+        assertEquals(2, instance.findMinArrowShots(points1));
     }
 
 }

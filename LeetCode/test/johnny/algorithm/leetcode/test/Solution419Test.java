@@ -32,10 +32,22 @@ public class Solution419Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("countBattleships");
         Solution419 instance = new Solution419();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        char[][] board1 = new char[][] {
+            {'X','.','.','X'},
+            {'.','.','.','X'},
+            {'.','.','.','X'}
+        };
+        assertEquals(2, instance.countBattleships(board1));
+        
+        char[][] board2 = new char[][] {
+            {'.','.','.','X'},
+            {'X','X','X','X'},
+            {'.','.','.','X'}
+        };
+        assertEquals(2, instance.countBattleships(board2));
     }
 
 }

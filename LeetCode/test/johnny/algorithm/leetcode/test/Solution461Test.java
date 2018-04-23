@@ -32,10 +32,10 @@ public class Solution461Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("hammingDistance");
         Solution461 instance = new Solution461();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.hammingDistance(1,4));
     }
 
 }

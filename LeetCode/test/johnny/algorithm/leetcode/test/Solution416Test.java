@@ -32,10 +32,11 @@ public class Solution416Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("canPartition");
         Solution416 instance = new Solution416();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.canPartition(new int[] {1, 5, 11, 5}));
+        assertEquals(false, instance.canPartition(new int[] {1, 2, 3, 5}));
     }
 
 }

@@ -50,8 +50,6 @@ public class Solution327Test {
         assertEquals(expResult, result);
         
         assertEquals(3, instance.countRangeSum(new int[]{-2, 5, -1}, -2, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

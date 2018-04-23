@@ -28,6 +28,6 @@ package johnny.algorithm.leetcode;
  */
 public class Solution461 {
     public int hammingDistance(int x, int y) {
-        return 0;   
+        return Integer.bitCount(x ^ y);
     }   
 }

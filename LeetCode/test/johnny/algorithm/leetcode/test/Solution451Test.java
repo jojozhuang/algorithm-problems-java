@@ -32,10 +32,12 @@ public class Solution451Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("frequencySort");
         Solution451 instance = new Solution451();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("eert", instance.frequencySort("tree"));
+        assertEquals("aaaccc", instance.frequencySort("cccaaa"));
+        assertEquals("bbAa", instance.frequencySort("Aabb"));
     }
 
 }

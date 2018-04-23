@@ -32,10 +32,11 @@ public class Solution424Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("characterReplacement");
         Solution424 instance = new Solution424();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.characterReplacement("ABAB",2));
+        assertEquals(4, instance.characterReplacement("AABABBA",1));
     }
 
 }

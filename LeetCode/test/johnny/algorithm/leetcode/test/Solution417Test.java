@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution417;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution417Test {
 
@@ -32,10 +33,19 @@ public class Solution417Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("pacificAtlantic");
         Solution417 instance = new Solution417();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] matrix1 = new int[][] {
+            {1,2,2,3,5},
+            {3,2,3,4,4},
+            {2,4,5,3,1},
+            {6,7,1,4,5},
+            {5,1,1,2,4},
+        };
+        
+        List<int[]> expect1 = ListUtil.buildIntegerList3(new int[][]{{0, 4}, {1, 3}, {1, 4}, {2, 2}, {3, 0}, {3, 1}, {4, 0}});
+        assertArrayEquals(expect1.toArray(), instance.pacificAtlantic(matrix1).toArray());
     }
 
 }

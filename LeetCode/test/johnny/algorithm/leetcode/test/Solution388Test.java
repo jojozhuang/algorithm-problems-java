@@ -32,10 +32,10 @@ public class Solution388Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("lengthLongestPath");
         Solution388 instance = new Solution388();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(32, instance.lengthLongestPath("dir/subdir2/subsubdir2/file2.ext"));
     }
 
 }

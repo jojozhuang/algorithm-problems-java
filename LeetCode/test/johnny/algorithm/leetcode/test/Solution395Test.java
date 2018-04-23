@@ -32,10 +32,11 @@ public class Solution395Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("longestSubstring");
         Solution395 instance = new Solution395();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(3, instance.longestSubstring("aaabb", 3));
+        assertEquals(5, instance.longestSubstring("ababbc", 2));
     }
 
 }

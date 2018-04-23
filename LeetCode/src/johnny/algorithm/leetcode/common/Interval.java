@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode.common;
 
+import java.util.List;
+
 /**
  *
  * @author Johnny
@@ -9,6 +11,26 @@ public class Interval {
     public int end;
     public Interval() { start = 0; end = 0; }
     public Interval(int s, int e) { start = s; end = e; }
+    
+    public static Interval[] createArray(int[][] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+        
+
+        Interval[] intervals = new Interval[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            intervals[i] = new Interval(arr[i][0], arr[i][1]);
+        }
+        
+        return intervals;
+    }
+
+    public static List<Interval> buildList(int[][] arr) {
+        Interval[] points = createArray(arr);
+        return ListUtil.buildList(points);
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (o == this) {

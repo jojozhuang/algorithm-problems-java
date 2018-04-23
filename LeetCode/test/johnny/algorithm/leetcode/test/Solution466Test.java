@@ -32,10 +32,11 @@ public class Solution466Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("getMaxRepetitions");
         Solution466 instance = new Solution466();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.getMaxRepetitions("acb", 4, "ab", 2));
+        assertEquals(100000000, instance.getMaxRepetitions("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",1000000,"a",1));
     }
 
 }

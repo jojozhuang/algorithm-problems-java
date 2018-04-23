@@ -35,7 +35,11 @@ public class Solution363Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution363 instance = new Solution363();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] matrix1 = new int[][] {
+            {1,  0, 1},
+            {0, -2, 3}
+        };
+        assertEquals(2, instance.maxSumSubmatrix(matrix1, 2));
     }
 
 }

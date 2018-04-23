@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Maximum XOR of Two Numbers in an Array.
  * 
@@ -18,6 +21,21 @@ package johnny.algorithm.leetcode;
  */
 public class Solution421 {
     public int findMaximumXOR(int[] nums) {
-        return 0;
+        int max = 0, mask = 0;
+        for(int i = 31; i >= 0; i--){
+            mask = mask | (1 << i);
+            Set<Integer> set = new HashSet<>();
+            for(int num : nums){
+                set.add(num & mask);
+            }
+            int tmp = max | (1 << i);
+            for(int prefix : set){
+                if(set.contains(tmp ^ prefix)) {
+                    max = tmp;
+                    break;
+                }
+            }
+        }
+        return max;
     }
 }

@@ -32,10 +32,11 @@ public class Solution393Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("validUtf8");
         Solution393 instance = new Solution393();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.validUtf8(new int[] {197, 130, 1}));
+        assertEquals(false, instance.validUtf8(new int[] {235, 140, 4}));
     }
 
 }

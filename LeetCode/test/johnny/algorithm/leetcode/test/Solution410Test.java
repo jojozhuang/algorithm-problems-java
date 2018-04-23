@@ -32,10 +32,10 @@ public class Solution410Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("splitArray");
         Solution410 instance = new Solution410();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(18, instance.splitArray(new int[] {7,2,5,10,8},2));
     }
 
 }

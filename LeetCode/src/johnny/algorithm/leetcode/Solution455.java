@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * Assign Cookies
  * 
@@ -43,6 +45,12 @@ package johnny.algorithm.leetcode;
  */
 public class Solution455 {
     public int findContentChildren(int[] g, int[] s) {
-       return 0; 
+        Arrays.sort(g);
+        Arrays.sort(s);
+        int i = 0;
+        for(int j=0;i<g.length && j<s.length;j++) {
+            if(g[i]<=s[j]) i++;
+        }
+        return i;
     }
 }

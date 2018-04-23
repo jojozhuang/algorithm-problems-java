@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 4Sum II
  * 
@@ -33,6 +36,22 @@ public class Solution454 {
         // approach1: brute force, n^4
         // approach2: hash last array, n^3
         // approach3: sum a and b, hash; sum c and d, hash, n^2
-        return 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        for(int i=0; i<C.length; i++) {
+            for(int j=0; j<D.length; j++) {
+                int sum = C[i] + D[j];
+                map.put(sum, map.getOrDefault(sum, 0) + 1);
+            }
+        }
+        
+        int res=0;
+        for(int i=0; i<A.length; i++) {
+            for(int j=0; j<B.length; j++) {
+                res += map.getOrDefault(-1 * (A[i]+B[j]), 0);
+            }
+        }
+        
+        return res;
     }    
 }

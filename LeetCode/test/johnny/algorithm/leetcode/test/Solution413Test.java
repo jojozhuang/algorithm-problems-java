@@ -32,10 +32,11 @@ public class Solution413Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numberOfArithmeticSlices");
         Solution413 instance = new Solution413();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(6, instance.numberOfArithmeticSlices(new int[] {1, 3, 5, 7, 9}));
+        assertEquals(3, instance.numberOfArithmeticSlices(new int[] {1, 2, 3, 4}));
     }
 
 }

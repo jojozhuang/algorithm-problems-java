@@ -32,10 +32,10 @@ public class Solution357Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("countNumbersWithUniqueDigits");
         Solution357 instance = new Solution357();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(91, instance.countNumbersWithUniqueDigits(2));
     }
 
 }

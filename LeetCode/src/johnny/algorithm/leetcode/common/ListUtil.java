@@ -48,6 +48,21 @@ public class ListUtil {
         return res;
     }
     
+    public static List<int[]> buildIntegerList3(int[][] array) {
+        List<int[]> res = new ArrayList<int[]>();
+        if (array == null || array.length == 0) {
+            return res;
+        }
+        for (int i = 0; i < array.length; i++) {
+            int[] elem = new int[array[i].length];
+            for (int j = 0; j < array[i].length; j++) {
+                elem[j] = array[i][j];
+            }
+            res.add(elem);
+        }
+        return res;
+    }
+    
     public static List<String> buildStringList(String[] array) {
         if (array == null || array.length == 0) {
             return new ArrayList<String>();

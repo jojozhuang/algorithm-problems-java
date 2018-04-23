@@ -32,10 +32,16 @@ public class Solution463Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("islandPerimeter");
         Solution463 instance = new Solution463();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] grid1 = new int[][] {
+            {0,1,0,0},
+            {1,1,1,0},
+            {0,1,0,0},
+            {1,1,0,0}
+        };
+        assertEquals(16, instance.islandPerimeter(grid1));
     }
 
 }

@@ -28,24 +28,19 @@ package johnny.algorithm.leetcode;
  */
 public class Solution400 {
     public int findNthDigit(int n) {
-        if (n < 10) {
-            return n;
+        int len = 1;
+        long count = 9;
+        int start = 1;
+
+        while (n > len * count) {
+            n -= len * count;
+            len += 1;
+            count *= 10;
+            start *= 10;
         }
-        
-        int index = 9;
-        for (int i = 10; i <= n; i++) {
-            String curr = String.valueOf(i);
-            if (curr.length() + index < n) {
-                index += curr.length();
-                continue;
-            }
-            for (int j = 0; j < curr.length(); j++) {
-                index++;
-                if (index == n) {
-                    return curr.charAt(j) - '0';
-                }
-            }
-       }
-       return 0;
+
+        start += (n - 1) / len;
+        String s = Integer.toString(start);
+        return Character.getNumericValue(s.charAt((n - 1) % len));
     }
 }

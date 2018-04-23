@@ -32,10 +32,10 @@ public class Solution396Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("maxRotateFunction");
         Solution396 instance = new Solution396();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(26, instance.maxRotateFunction(new int[] {4, 3, 2, 6}));
     }
 
 }

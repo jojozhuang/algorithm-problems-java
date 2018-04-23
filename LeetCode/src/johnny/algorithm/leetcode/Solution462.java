@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * Minimum Moves to Equal Array Elements II
  * 
@@ -27,6 +29,14 @@ package johnny.algorithm.leetcode;
  */
 public class Solution462 {
     public int minMoves2(int[] nums) {
-        return 0;
+        Arrays.sort(nums);
+        int i = 0, j = nums.length-1;
+        int count = 0;
+        while(i < j){
+            count += nums[j]-nums[i];
+            i++;
+            j--;
+        }
+        return count;
     } 
 }

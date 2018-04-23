@@ -32,10 +32,12 @@ public class Solution443Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution440 instance = new Solution440();
+        System.out.println("compress");
+        Solution443 instance = new Solution443();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(6, instance.compress(new char[] {'a','a','b','b','c','c','c'}));
+        assertEquals(1, instance.compress(new char[] {'a'}));
+        assertEquals(4, instance.compress(new char[] {'a','b','b','b','b','b','b','b','b','b','b','b','b'}));
     }
 
 }

@@ -32,10 +32,11 @@ public class Solution392Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("isSubsequence");
         Solution392 instance = new Solution392();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.isSubsequence("abc", "ahbgdc"));
+        assertEquals(false, instance.isSubsequence("axc", "ahbgdc"));
     }
 
 }

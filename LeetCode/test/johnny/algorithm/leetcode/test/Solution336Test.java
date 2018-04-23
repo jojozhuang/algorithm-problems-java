@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution336;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -49,39 +50,13 @@ public class Solution336Test {
         List<List<Integer>> result = instance.palindromePairs(words);
         assertEquals(expResult, result);
         
-        List<Integer> list21 = new ArrayList<Integer>();
-        list21.add(0);
-        list21.add(1);
-        List<Integer> list22 = new ArrayList<Integer>();
-        list22.add(1);
-        list22.add(0);
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
-        expResult2.add(list21);
-        expResult2.add(list22);
-        assertEquals(expResult2, instance.palindromePairs(new String[]{"bat", "tab", "cat"}));
-        
-        List<Integer> list31 = new ArrayList<Integer>();
-        list31.add(0);
-        list31.add(1);
-        List<Integer> list32 = new ArrayList<Integer>();
-        list32.add(1);
-        list32.add(0);
-        List<Integer> list33 = new ArrayList<Integer>();
-        list33.add(3);
-        list33.add(2);
-        List<Integer> list34 = new ArrayList<Integer>();
-        list34.add(2);
-        list34.add(4);
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
-        expResult3.add(list31);
-        expResult3.add(list32);
-        expResult3.add(list33);
-        expResult3.add(list34);
+        List<List<Integer>> result2 = instance.palindromePairs(new String[]{"bat", "tab", "cat"});
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{0,1},{1,0}});
+        assertTrue(ListUtil.equalsIgnoreOrder(result2, expect2));
         
         List<List<Integer>> result3 = instance.palindromePairs(new String[]{"abcd", "dcba", "lls", "s", "sssll"});
-        assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{0,1},{1,0},{3,2},{2,4}});
+        assertTrue(ListUtil.equalsIgnoreOrder(result3, expect3));
     }
     
 }

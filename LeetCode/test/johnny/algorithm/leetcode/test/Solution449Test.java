@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution449;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution449Test {
 
@@ -32,10 +33,11 @@ public class Solution449Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("serialize");
         Solution449 instance = new Solution449();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"5","3","6","2","4","#","7"});
+        assertTrue(TreeNode.isSame(root1, instance.deserialize(instance.serialize(root1))));
     }
 
 }

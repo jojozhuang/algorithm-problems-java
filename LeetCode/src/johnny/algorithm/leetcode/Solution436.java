@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 import johnny.algorithm.leetcode.common.Interval;
 
 /**
@@ -41,6 +44,18 @@ import johnny.algorithm.leetcode.common.Interval;
  */
 public class Solution436 {
     public int[] findRightInterval(Interval[] intervals) {
-        return new int[1];
+        int[] result = new int[intervals.length];
+        java.util.NavigableMap<Integer, Integer> intervalMap = new TreeMap<>();
+        
+        for (int i = 0; i < intervals.length; ++i) {
+            intervalMap.put(intervals[i].start, i);    
+        }
+        
+        for (int i = 0; i < intervals.length; ++i) {
+            Map.Entry<Integer, Integer> entry = intervalMap.ceilingEntry(intervals[i].end);
+            result[i] = (entry != null) ? entry.getValue() : -1;
+        }
+        
+        return result;
     }
 }

@@ -32,10 +32,11 @@ public class Solution457Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("circularArrayLoop");
         Solution457 instance = new Solution457();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.circularArrayLoop(new int[] {2, -1, 1, 2, 2}));
+        assertEquals(false, instance.circularArrayLoop(new int[] {-1,2}));
     }
 
 }

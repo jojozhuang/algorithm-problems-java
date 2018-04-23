@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution301;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -51,20 +52,15 @@ public class Solution301Test {
         assertEquals(expResult, result);
         
         List<String> result2 = instance.removeInvalidParentheses("()())()");
-        assertEquals(2, result2.size());
-        assertEquals("()()()", result2.get(0));
-        assertEquals("(())()", result2.get(1));
+        List<String> expect2 = ListUtil.buildList(new String[] {"()()()","(())()"});
+        assertTrue(ListUtil.equalsIgnoreOrder(result2, expect2));
         
         List<String> result3 = instance.removeInvalidParentheses("(a)())()");
-        assertEquals(2, result3.size());
-        assertEquals("(a)()()", result3.get(0));
-        assertEquals("(a())()", result3.get(1));
+        List<String> expect3 = ListUtil.buildList(new String[] {"(a)()()","(a())()"});
+        assertTrue(ListUtil.equalsIgnoreOrder(result3, expect3));
         
         List<String> result4 = instance.removeInvalidParentheses(")(");
         assertEquals(1, result4.size());
         assertEquals("", result4.get(0));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }    
 }

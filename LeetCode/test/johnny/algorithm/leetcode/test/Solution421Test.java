@@ -32,10 +32,10 @@ public class Solution421Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMaximumXOR");
         Solution421 instance = new Solution421();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(28, instance.findMaximumXOR(new int[] {3, 10, 5, 25, 2, 8}));
     }
 
 }

@@ -32,10 +32,12 @@ public class Solution420Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("strongPasswordChecker");
         Solution420 instance = new Solution420();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(5, instance.strongPasswordChecker("a"));
+        assertEquals(2, instance.strongPasswordChecker("abbb"));
+        assertEquals(0, instance.strongPasswordChecker("aFan%128"));
     }
 
 }

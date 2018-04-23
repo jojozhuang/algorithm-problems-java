@@ -32,10 +32,12 @@ public class Solution459Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("repeatedSubstringPattern");
         Solution459 instance = new Solution459();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(true, instance.repeatedSubstringPattern("abab"));
+        assertEquals(false, instance.repeatedSubstringPattern("aba"));
+        assertEquals(true, instance.repeatedSubstringPattern("abcabcabcabc"));
     }
 
 }
