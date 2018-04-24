@@ -32,10 +32,20 @@ public class Solution604Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution604 instance = new Solution604();
+        System.out.println("StringIterator");
+        Solution604 instance = new Solution604("L1e2t1C1o1d1e1");
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals('L', instance.next());
+        assertEquals('e', instance.next());
+        assertEquals('e', instance.next());
+        assertEquals('t', instance.next());
+        assertEquals('C', instance.next());
+        assertEquals('o', instance.next());
+        assertEquals('d', instance.next());
+        assertEquals(true, instance.hasNext());
+        assertEquals('e', instance.next());
+        assertEquals(false, instance.hasNext());
+        assertEquals(' ', instance.next());
     }
 
 }

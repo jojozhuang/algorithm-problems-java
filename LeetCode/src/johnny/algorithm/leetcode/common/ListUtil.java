@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -27,7 +28,9 @@ public class ListUtil {
         if (array == null || array.length == 0) {
             return new ArrayList<T>();
         }
-        return Arrays.asList(array);
+        //return Arrays.asList(array); // return unmodifiable list.
+        // return modifiable list.
+        return new LinkedList<>(Arrays.asList(array));
     }
     
     public static List<Integer> buildIntegerList(Integer[] array) {

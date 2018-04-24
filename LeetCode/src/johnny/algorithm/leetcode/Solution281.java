@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -21,38 +22,50 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution281 {
-    //Solution1: https://leetcode.com/discuss/100385/c%23-easy-solution
-    //Solution2: https://leetcode.com/discuss/74897/clean-c%23-based-on-queue
-    Queue<List<Integer>> queue = new LinkedList<List<Integer>>();
-    /*public Solution281(List<Integer> v1, List<Integer> v2) {
-        if (v1 != null && v1.size() > 0) {
-            queue.offer(v1);
-        }
-        if (v2 != null && v2.size() > 0) {
-            queue.offer(v2);
-        }
-    }*/
-    
-    // k list
-    public Solution281(List<List<Integer>> klist) {        
-        for(List<Integer> listitem: klist) {
-            if (listitem != null && listitem.size() > 0) {
-                queue.offer(listitem);
-            }
-        }
+    LinkedList<Iterator> list;
+    public Solution281(List<Integer> v1, List<Integer> v2) {
+        list = new LinkedList<Iterator>();
+        if(!v1.isEmpty()) list.add(v1.iterator());
+        if(!v2.isEmpty()) list.add(v2.iterator());
     }
 
     public int next() {
-        List<Integer> list = queue.poll();
-        int next = list.get(0);
-        list.remove(0);
-        if (!list.isEmpty()) {
-            queue.offer(list);
-        }
-        return next;
+        Iterator poll = list.remove();
+        int result = (Integer)poll.next();
+        if(poll.hasNext()) list.add(poll);
+        return result;
     }
 
     public boolean hasNext() {
-        return !queue.isEmpty();
+        return !list.isEmpty();
+    }
+    
+    public class KList {
+        //Solution1: https://leetcode.com/discuss/100385/c%23-easy-solution
+        //Solution2: https://leetcode.com/discuss/74897/clean-c%23-based-on-queue
+        Queue<List<Integer>> queue = new LinkedList<List<Integer>>();
+        // k list
+       
+        public KList(List<List<Integer>> klist) {
+            for(List<Integer> listitem: klist) {
+                if (listitem != null && listitem.size() > 0) {
+                    queue.offer(listitem);
+                }
+            }
+        }
+    
+        public int next() {
+            List<Integer> list = queue.poll();
+            int next = list.get(0);
+            list.remove(0);
+            if (!list.isEmpty()) {
+                queue.offer(list);
+            }
+            return next;
+        }
+    
+        public boolean hasNext() {
+            return !queue.isEmpty();
+        }
     }
 }

@@ -22,8 +22,8 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution243 {
-    public int shortestDistance(List<String> words, String word1, String word2) {
-        if (words == null || words.size() == 0 || word1 == null || word1.isEmpty() ||
+    public int shortestDistance(String[] words, String word1, String word2) {
+        if (words == null || words.length == 0 || word1 == null || word1.isEmpty() ||
                 word2 == null || word2.isEmpty() || word1.equals(word2)) {
             return 0;
         }
@@ -31,10 +31,10 @@ public class Solution243 {
         int dist = Integer.MAX_VALUE;
         int index1 = -1;
         int index2 = -1;
-        for (int i = 0; i < words.size(); i++) {
-            if (words.get(i).equals(word1)) {
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].equals(word1)) {
                 index1 = i;
-            } else if (words.get(i).equals(word2)) {
+            } else if (words[i].equals(word2)) {
                 index2 = i;
             }
             

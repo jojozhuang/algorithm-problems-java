@@ -44,24 +44,15 @@ public class Solution252Test {
     @Test
     public void testCanAttendMeetings() {
         System.out.println("canAttendMeetings");
-        List<Interval> intervals = null;
         Solution252 instance = new Solution252();
-        boolean expResult = false;
-        boolean result = instance.canAttendMeetings(intervals);
-        assertEquals(expResult, result);
+ 
+        assertEquals(true, instance.canAttendMeetings(null));
         
-        List<Interval> intervals2 = new ArrayList<Interval>(0);
-        intervals2.add(new Interval(0, 30));
-        intervals2.add(new Interval(5, 10));
-        intervals2.add(new Interval(15, 20));        
-        assertEquals(false, instance.canAttendMeetings(intervals2));
-        
-        List<Interval> intervals3 = new ArrayList<Interval>(0);
-        intervals3.add(new Interval(5, 10));
-        intervals3.add(new Interval(15, 20));        
-        assertEquals(true, instance.canAttendMeetings(intervals3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        Interval[] intervals1 = Interval.createArray(new int[][] {{0,30},{5,10},{15,20}});
+        assertEquals(false, instance.canAttendMeetings(intervals1));
+
+        Interval[] intervals2 = Interval.createArray(new int[][] {{5,10},{15,20}});
+        assertEquals(true, instance.canAttendMeetings(intervals2));
     }
     
 }

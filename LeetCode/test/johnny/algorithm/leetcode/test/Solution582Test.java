@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution582;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution582Test {
 
@@ -32,10 +33,13 @@ public class Solution582Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("killProcess");
         Solution582 instance = new Solution582();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<Integer> pid1 = ListUtil.buildList(new Integer[] {1, 3, 10, 5});
+        List<Integer> ppid1 = ListUtil.buildList(new Integer[] {3, 0, 5, 3});
+        List<Integer> expect1 = ListUtil.buildList(new Integer[] {5,10});
+        assertEquals(expect1, instance.killProcess(pid1, ppid1, 5));
     }
 
 }

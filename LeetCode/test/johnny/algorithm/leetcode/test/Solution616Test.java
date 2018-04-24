@@ -35,7 +35,9 @@ public class Solution616Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution616 instance = new Solution616();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("<b>abc</b>xyz<b>123</b>", instance.addBoldTag("abcxyz123", new String[] {"abc","123"}));
+        assertEquals("<b>abc</b>xyz<b>123</b>", instance.addBoldTag("abcxyz123", new String[] {"abc","123"}));
+
     }
 
 }

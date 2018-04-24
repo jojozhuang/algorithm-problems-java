@@ -49,7 +49,7 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution305 {
-    public List<Integer> numIslands2(int m, int n, int[][] positions) {        
+    public List<Integer> numIslands2(int m, int n, int[][] positions) {
         List<Integer> res = new ArrayList<Integer>();
         if (m == 0 || n == 0 || positions == null || positions.length == 0 || positions[0].length != 2) {
             return res;

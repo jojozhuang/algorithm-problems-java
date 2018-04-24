@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Design Compressed String Iterator
  * 
@@ -35,16 +38,27 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution604 {
-    public Solution604(String compressedString) {
-        
+    Queue<int[]> queue = new LinkedList<>();
+    
+    public Solution604(String s) {
+        int i = 0, n = s.length();
+        while (i < n) {
+            int j = i+1;
+            while (j < n && s.charAt(j) - 'A' < 0) j++;
+            queue.add(new int[]{s.charAt(i) - 'A',  Integer.parseInt(s.substring(i+1, j))});
+            i = j;
+        }
     }
     
     public char next() {
-        return 'a';  
+        if (queue.isEmpty()) return ' ';
+        int[] top = queue.peek();
+        if (--top[1] == 0) queue.poll();
+        return (char) ('A' + top[0]);
     }
     
     public boolean hasNext() {
-        return false;
+        return !queue.isEmpty();
     }
 }
 /**

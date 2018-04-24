@@ -17,7 +17,7 @@ import java.util.Stack;
 public class Solution255 {
     public boolean verifyPreorder(int[] preorder) {
         if (preorder == null || preorder.length == 0) {
-            return false;
+            return true;
         }
         int low = Integer.MIN_VALUE;
         Stack<Integer> stack = new Stack<>();

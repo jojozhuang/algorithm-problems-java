@@ -27,9 +27,32 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution356 {
+    public boolean isReflected(int[][] points) {
+        if (points == null || points.length == 0 || points[0].length == 0) {
+            return true;
+        }
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        HashSet<String> set = new HashSet<>();
+        for(int[] p:points){
+            max = Math.max(max,p[0]);
+            min = Math.min(min,p[0]);
+            String str = p[0] + "a" + p[1];
+            set.add(str);
+        }
+        int sum = max+min;
+        for(int[] p:points){
+            //int[] arr = {sum-p[0],p[1]};
+            String str = (sum-p[0]) + "a" + p[1];
+            if( !set.contains(str))
+                return false;
+            
+        }
+        return true;
+    }
     //http://www.cnblogs.com/grandyang/p/5579271.html
     //https://segmentfault.com/a/1190000005825171
-    public boolean isReflected(int[][] points) {
+    public boolean isReflected3(int[][] points) {
         if (points == null || points.length == 0 || points[0].length == 0) {
             return false;
         }

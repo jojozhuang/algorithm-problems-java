@@ -32,10 +32,12 @@ public class Solution269Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("alienOrder");
         Solution269 instance = new Solution269();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("wertf", instance.alienOrder(new String[] {"wrt","wrf","er","ett","rftt"}));
+        assertEquals("zx", instance.alienOrder(new String[] {"z","x"}));
+        assertEquals("", instance.alienOrder(new String[] {"z","x","z"}));
     }
 
 }

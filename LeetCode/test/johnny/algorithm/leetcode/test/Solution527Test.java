@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution527;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution527Test {
 
@@ -32,10 +33,12 @@ public class Solution527Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("wordsAbbreviation");
         Solution527 instance = new Solution527();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> dict1 = ListUtil.buildList(new String[] {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"});
+        List<String> expect1 = ListUtil.buildList(new String[] {"l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"});
+        assertEquals(expect1, instance.wordsAbbreviation(dict1));
     }
 
 }

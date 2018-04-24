@@ -26,7 +26,7 @@ public class Solution320 {
     }
     
     private void dfs(List<String> res, String curr, int start, String s) {
-        res.add(curr + s.substring(start));                   
+        res.add(curr + s.substring(start));
         if (start == s.length()) 
             return;
 
@@ -37,7 +37,7 @@ public class Solution320 {
         }
         
         for (; i < s.length(); i++) {
-            String prefix = curr + s.substring(start, i);               
+            String prefix = curr + s.substring(start, i);
             for (int j = 1; j <= s.length() - i; j++) {
                 dfs(res,  prefix+ j, i + j, s);
             }

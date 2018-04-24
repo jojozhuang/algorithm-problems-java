@@ -32,10 +32,17 @@ public class Solution353Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution353 instance = new Solution353();
+        System.out.println("SnakeGame");
+        
+        int[][] food1 = new int[][] {{1,2},{0,1}};
+        Solution353 instance = new Solution353(3,2,food1);
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(0, instance.move("R"));
+        assertEquals(0, instance.move("D"));
+        assertEquals(1, instance.move("R"));
+        assertEquals(1, instance.move("U"));
+        assertEquals(2, instance.move("L"));
+        assertEquals(-1, instance.move("U"));
     }
 
 }

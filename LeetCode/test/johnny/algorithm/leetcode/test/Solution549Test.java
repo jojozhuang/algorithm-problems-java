@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution549;
+import johnny.algorithm.leetcode.common.TreeNode;
 
 public class Solution549Test {
 
@@ -32,10 +33,14 @@ public class Solution549Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("longestConsecutive");
         Solution549 instance = new Solution549();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"1","2","3"});
+        assertEquals(2, instance.longestConsecutive(root1));
+
+        TreeNode root2 = TreeNode.createInstance(new String[] {"2","1","3"});
+        assertEquals(3, instance.longestConsecutive(root2));
     }
 
 }

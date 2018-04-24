@@ -32,7 +32,7 @@ public class Solution285 {
         //another case: p.right is null
         TreeNode succ = p.right;
         while (root != null) {
-            if (root.val == p.val) {                
+            if (root.val == p.val) {
                 break;
             } else if (root.val < p.val) {
                 root = root.right;
@@ -42,6 +42,6 @@ public class Solution285 {
             }
         }
         
-        return succ;        
+        return succ;
     }
 }

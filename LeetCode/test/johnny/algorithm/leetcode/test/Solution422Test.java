@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution422;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution422Test {
 
@@ -32,10 +33,17 @@ public class Solution422Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("validWordSquare");
         Solution422 instance = new Solution422();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> words1 = ListUtil.buildList(new String[] {"abcd","bnrt","crmy","dtye"});
+        assertEquals(true, instance.validWordSquare(words1));
+
+        List<String> words2 = ListUtil.buildList(new String[] {"abcd","bnrt","crm","dt"});
+        assertEquals(true, instance.validWordSquare(words2));
+
+        List<String> words3 = ListUtil.buildList(new String[] {"ball","area","read","lady"});
+        assertEquals(false, instance.validWordSquare(words3));
     }
 
 }

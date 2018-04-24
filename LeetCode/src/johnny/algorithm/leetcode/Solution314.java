@@ -59,28 +59,28 @@ import johnny.algorithm.leetcode.common.TreeNode;
 public class Solution314 {
     //http://www.cnblogs.com/yrbbest/p/5065457.html
     //https://discuss.leetcode.com/topic/31954/5ms-java-clean-solution/2
-    public List<List<Integer>> verticalOrder(TreeNode root) {    
+    public List<List<Integer>> verticalOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-	if(root == null) {
+        if(root == null) {
             return res;
         }
-	
-	Map<Integer, ArrayList<Integer>> map = new HashMap<>();
-	Queue<TreeNode> q = new LinkedList<>();
-	Queue<Integer> cols = new LinkedList<>();
-
-	q.add(root); 
-	cols.add(0);
-
-	int min = 0, max = 0;
-	while(!q.isEmpty()) {
+        
+        Map<Integer, ArrayList<Integer>> map = new HashMap<>();
+        Queue<TreeNode> q = new LinkedList<>();
+        Queue<Integer> cols = new LinkedList<>();
+    
+        q.add(root); 
+        cols.add(0);
+    
+        int min = 0, max = 0;
+        while(!q.isEmpty()) {
             TreeNode node = q.poll();
             int col = cols.poll();
             if(!map.containsKey(col)) {
                 map.put(col, new ArrayList<Integer>());
             }
             map.get(col).add(node.val);
-
+    
             if(node.left != null) {
                 q.add(node.left); 
                 cols.add(col - 1);
@@ -95,12 +95,12 @@ public class Solution314 {
                     max = col + 1;
                 }
             }
-	}
-
-	for(int i = min; i <= max; i++) {
+        }
+    
+        for(int i = min; i <= max; i++) {
             res.add(map.get(i));
-	}
-
-	return res;
-     }
+        }
+    
+        return res;
+    }
 }

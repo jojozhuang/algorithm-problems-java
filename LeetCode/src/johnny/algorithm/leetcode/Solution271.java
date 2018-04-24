@@ -33,6 +33,7 @@ import java.util.List;
  */
 public class Solution271 {
     //https://segmentfault.com/a/1190000003791865
+    // Encodes a list of strings to a single string.
     public String encode(List<String> strs) {
         if (strs == null || strs.size() == 0) {
             return "";
@@ -45,6 +46,7 @@ public class Solution271 {
         return output.toString();
     }
     
+    // Decodes a single string to a list of strings.
     public List<String> decode(String s) {
         List<String> res = new LinkedList<String>();
         if (s == null || s.length() == 0) {

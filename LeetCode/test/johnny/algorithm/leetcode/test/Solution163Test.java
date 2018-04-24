@@ -71,8 +71,10 @@ public class Solution163Test {
         List<String> result6 = instance.findMissingRanges(new int[]{3, 50, 75}, 0, 99);
         List<String> expResult6 = ListUtil.buildStringList(new String[]{"0->2","4->49","51->74","76->99"});
         assertEquals(expResult6, result6);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
+        List<String> result7 = instance.findMissingRanges(new int[]{}, 1, 1);
+        List<String> expResult7 = ListUtil.buildStringList(new String[]{"1"});
+        assertEquals(result7, expResult7);
     }
     
 }

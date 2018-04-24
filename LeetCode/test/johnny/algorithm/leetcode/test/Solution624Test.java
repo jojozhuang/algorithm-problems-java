@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution624;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution624Test {
 
@@ -32,10 +33,15 @@ public class Solution624Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("maxDistance");
         Solution624 instance = new Solution624();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<List<Integer>> arrays1 = ListUtil.buildList2(new Integer[][] {
+            {1,2,3},
+            {4,5},
+            {1,2,3}
+        });
+        assertEquals(4, instance.maxDistance(arrays1));
     }
 
 }

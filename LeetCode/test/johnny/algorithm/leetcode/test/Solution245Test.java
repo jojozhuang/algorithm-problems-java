@@ -46,21 +46,17 @@ public class Solution245Test {
         String word2 = "";
         Solution245 instance = new Solution245();
         int expResult = Integer.MAX_VALUE;
-        int result = instance.shortestDistance(words, word1, word2);
+        int result = instance.shortestWordDistance(words, word1, word2);
         assertEquals(expResult, result);
         
         String[] words2 = new String[]{"practice", "makes", "perfect", "coding", "makes"};
-        assertEquals(3, instance.shortestDistance(words2, "coding", "practice"));
-        assertEquals(1, instance.shortestDistance(words2, "makes", "coding"));
-        assertEquals(3, instance.shortestDistance(words2, "makes", "makes"));
+        assertEquals(3, instance.shortestWordDistance(words2, "coding", "practice"));
+        assertEquals(1, instance.shortestWordDistance(words2, "makes", "coding"));
+        assertEquals(3, instance.shortestWordDistance(words2, "makes", "makes"));
         
         String[] words3 = new String[]{"practice", "makes", "perfect", "coding", "makes","makes"};
-        assertEquals(3, instance.shortestDistance(words3, "coding", "practice"));
-        assertEquals(1, instance.shortestDistance(words3, "makes", "coding"));
-        assertEquals(1, instance.shortestDistance(words3, "makes", "makes"));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(3, instance.shortestWordDistance(words3, "coding", "practice"));
+        assertEquals(1, instance.shortestWordDistance(words3, "makes", "coding"));
+        assertEquals(1, instance.shortestWordDistance(words3, "makes", "makes"));
     }
-    
 }

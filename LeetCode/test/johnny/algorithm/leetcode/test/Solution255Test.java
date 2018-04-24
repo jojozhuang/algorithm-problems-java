@@ -41,17 +41,12 @@ public class Solution255Test {
     @Test
     public void testVerifyPreorder() {
         System.out.println("verifyPreorder");
-        int[] preorder = null;
         Solution255 instance = new Solution255();
-        boolean expResult = false;
-        boolean result = instance.verifyPreorder(preorder);
-        assertEquals(expResult, result);
         
+        assertEquals(true, instance.verifyPreorder(null));
         assertEquals(true, instance.verifyPreorder(new int[]{4,1,2,3,6,5,8}));
         assertEquals(true, instance.verifyPreorder(new int[]{4,1,3,2,6,5,8}));
         assertEquals(false, instance.verifyPreorder(new int[]{4,1,2,3,6,8,5}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

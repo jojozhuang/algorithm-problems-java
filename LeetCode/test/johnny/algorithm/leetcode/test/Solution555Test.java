@@ -32,10 +32,10 @@ public class Solution555Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("splitLoopedString");
         Solution555 instance = new Solution555();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("zyxcba", instance.splitLoopedString(new String[] {"abc", "xyz"}));
     }
 
 }

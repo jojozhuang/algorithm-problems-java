@@ -41,17 +41,12 @@ public class Solution259Test {
     @Test
     public void testThreeSumSmaller() {
         System.out.println("threeSumSmaller");
-        int[] nums = null;
-        int target = 0;
         Solution259 instance = new Solution259();
-        int expResult = 0;
-        int result = instance.threeSumSmaller(nums, target);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.threeSumSmaller(null, 0));
+        assertEquals(1, instance.threeSumSmaller(new int[]{-1, 1, -1, -1}, -1));
         assertEquals(2, instance.threeSumSmaller(new int[]{-2, 0, 1, 3}, 2));
         assertEquals(4, instance.threeSumSmaller(new int[]{-2, 0, 1, 2}, 4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

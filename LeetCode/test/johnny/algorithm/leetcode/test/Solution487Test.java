@@ -32,10 +32,10 @@ public class Solution487Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMaxConsecutiveOnes");
         Solution487 instance = new Solution487();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(4, instance.findMaxConsecutiveOnes(new int[] {1,0,1,1,0}));
     }
 
 }

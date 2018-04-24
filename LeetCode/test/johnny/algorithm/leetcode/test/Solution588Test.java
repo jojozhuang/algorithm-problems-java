@@ -35,7 +35,10 @@ public class Solution588Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution588 instance = new Solution588();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> param_1 = instance.ls(path);
+        instance.mkdir(path);
+        instance.addContentToFile(filePath,content);
+        String param_4 = instance.readContentFromFile(filePath);
     }
 
 }

@@ -20,7 +20,7 @@ import java.util.List;
  * 
  * @author Johnny
  */
-public class Solution251 {    
+public class Solution251 implements Iterator<Integer> {    
     //https://segmentfault.com/a/1190000003791233
     List<Iterator<Integer>> list;
     int curr = 0;
@@ -34,7 +34,8 @@ public class Solution251 {
         }
     }
     
-    public int next() {
+    @Override
+    public Integer next() {
         Integer res = list.get(curr).next();
         if(!list.get(curr).hasNext()){
             curr++;
@@ -42,6 +43,7 @@ public class Solution251 {
         return res;
     }
     
+    @Override
     public boolean hasNext() {
         return curr < list.size() && list.get(curr).hasNext();
     }

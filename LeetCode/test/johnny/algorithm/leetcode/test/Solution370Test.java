@@ -32,10 +32,14 @@ public class Solution370Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("getModifiedArray");
         Solution370 instance = new Solution370();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] updates1 = new int[][] {
+            {1,  3,  2},
+            {2,  4,  3},
+            {0,  2, -2}};
+        assertArrayEquals(new int[] {-2, 0, 3, 5, 3}, instance.getModifiedArray(5, updates1));
     }
 
 }

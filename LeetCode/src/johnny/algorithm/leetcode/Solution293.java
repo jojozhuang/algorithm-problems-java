@@ -37,7 +37,7 @@ public class Solution293 {
         int i = 0;
         while(i < s.length() - 1) {
             if (s.charAt(i) == '+' && s.charAt(i + 1) == '+') {
-                res.add(s.substring(0, i ) + "--" + s.substring(i + 2));               
+                res.add(s.substring(0, i ) + "--" + s.substring(i + 2));
             }
             i++;
         }

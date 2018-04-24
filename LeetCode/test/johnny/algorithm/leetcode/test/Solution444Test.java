@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution444;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution444Test {
 
@@ -32,10 +33,19 @@ public class Solution444Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("sequenceReconstruction");
         Solution444 instance = new Solution444();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
-    }
+        List<List<Integer>> seqs1 = ListUtil.buildList2(new Integer[][] {{1,2},{1,3}});
+        assertEquals(false, instance.sequenceReconstruction(new int[] {1,2,3}, seqs1));
 
+        List<List<Integer>> seqs2 = ListUtil.buildList2(new Integer[][] {{1,2}});
+        assertEquals(false, instance.sequenceReconstruction(new int[] {1,2,3}, seqs2));
+
+        List<List<Integer>> seqs3 = ListUtil.buildList2(new Integer[][] {{1,2},{1,3},{2,3}});
+        assertEquals(true, instance.sequenceReconstruction(new int[] {1,2,3}, seqs3));
+
+        List<List<Integer>> seqs4 = ListUtil.buildList2(new Integer[][] {{5,2,6,3},{4,1,5,2}});
+        assertEquals(true, instance.sequenceReconstruction(new int[] {4,1,5,2,6,3}, seqs4));
+    }
 }

@@ -30,7 +30,7 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution245 {
-    public int shortestDistance(String[] words, String word1, String word2) {
+    public int shortestWordDistance(String[] words, String word1, String word2) {
         int posA = -1;
         int posB = -1;
         int minDistance = Integer.MAX_VALUE;

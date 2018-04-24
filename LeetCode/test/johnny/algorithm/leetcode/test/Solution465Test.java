@@ -32,10 +32,14 @@ public class Solution465Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("minTransfers");
         Solution465 instance = new Solution465();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] transactions1 = new int[][] {{0,1,10},{2,0,5}};
+        assertEquals(2, instance.minTransfers(transactions1));
+        
+        int[][] transactions2 = new int[][] {{0,1,10},{1,0,1},{1,2,5},{2,0,5}};
+        assertEquals(1, instance.minTransfers(transactions2));
     }
 
 }

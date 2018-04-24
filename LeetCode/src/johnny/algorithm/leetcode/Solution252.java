@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -18,15 +19,15 @@ import johnny.algorithm.leetcode.common.Interval;
  * @author Johnny
  */
 public class Solution252 {
-    public boolean canAttendMeetings(List<Interval> intervals) {
-        if (intervals == null || intervals.size() == 0) {
-            return false;
+    public boolean canAttendMeetings(Interval[] intervals) {
+        if (intervals == null || intervals.length == 0) {
+            return true;
         }
         
-        Collections.sort(intervals, new IntervalComparator());
+        Arrays.sort(intervals, new IntervalComparator());
         
-        for (int i = 1; i < intervals.size(); i++) {
-            if (intervals.get(i - 1).end > intervals.get(i).start) {
+        for (int i = 1; i < intervals.length; i++) {
+            if (intervals[i - 1].end > intervals[i].start) {
                 return false;
             }
         }

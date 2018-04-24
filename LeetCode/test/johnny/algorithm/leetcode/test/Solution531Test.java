@@ -32,10 +32,15 @@ public class Solution531Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findLonelyPixel");
         Solution531 instance = new Solution531();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        char[][] picture1 = new char[][] {
+            {'W', 'W', 'B'},
+            {'W', 'B', 'W'},
+            {'B', 'W', 'W'}
+        };
+        assertEquals(3, instance.findLonelyPixel(picture1));
     }
 
 }

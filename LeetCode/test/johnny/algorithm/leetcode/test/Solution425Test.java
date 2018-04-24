@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution425;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution425Test {
 
@@ -32,10 +33,38 @@ public class Solution425Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("wordSquares");
         Solution425 instance = new Solution425();
-
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        
+        String[] words1 = new String[] {"area","lead","wall","lady","ball"};
+        List<List<String>> expect1 = ListUtil.buildList2(new String[][] {
+            { "wall",
+              "area",
+              "lead",
+              "lady"
+            },
+            { "ball",
+              "area",
+              "lead",
+              "lady"
+            }
+        });
+        assertEquals(expect1, instance.wordSquares(words1));
+        
+        String[] words2 = new String[] {"abat","baba","atan","atal"};
+        List<List<String>> expect2 = ListUtil.buildList2(new String[][] {
+            { "baba",
+              "abat",
+              "baba",
+              "atan"
+            },
+            { "baba",
+              "abat",
+              "baba",
+              "atal"
+            }
+        });
+        assertEquals(expect2, instance.wordSquares(words2));
     }
 
 }

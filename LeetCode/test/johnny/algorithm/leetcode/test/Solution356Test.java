@@ -41,14 +41,12 @@ public class Solution356Test {
     @Test
     public void testIsReflected() {
         System.out.println("isReflected");
-        int[][] points = null;
         Solution356 instance = new Solution356();
-        boolean expResult = false;
-        boolean result = instance.isReflected(points);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isReflected(null));
         assertEquals(true, instance.isReflected(new int[][]{{1,1},{-1,1}}));
         assertEquals(false, instance.isReflected(new int[][]{{1,1},{-1,-1}}));
+        assertEquals(false, instance.isReflected(new int[][]{{0,0},{1,0},{3,0}}));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

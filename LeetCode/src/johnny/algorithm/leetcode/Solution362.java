@@ -59,6 +59,8 @@ public class Solution362 {
         }
     }
     
+    /** Return the number of hits in the past 5 minutes.
+        @param timestamp - The current timestamp (in seconds granularity). */
     public int getHits(int timestamp) {
         int sum = 0;
         for (int i = 0; i < 300; i++) {

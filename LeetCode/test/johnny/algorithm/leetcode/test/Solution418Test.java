@@ -32,10 +32,17 @@ public class Solution418Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("wordsTyping");
         Solution418 instance = new Solution418();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        String[] sentence1 = new String[] {"hello", "world"};
+        assertEquals(1, instance.wordsTyping(sentence1,2,8));
+
+        String[] sentence2 = new String[] {"a", "bcd", "e"};
+        assertEquals(2, instance.wordsTyping(sentence2,3,6));
+
+        String[] sentence3 = new String[] {"I", "had", "apple", "pie"};
+        assertEquals(1, instance.wordsTyping(sentence3,4,5));
     }
 
 }

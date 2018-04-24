@@ -32,10 +32,15 @@ public class Solution562Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("longestLine");
         Solution562 instance = new Solution562();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] M1 = new int[][] {
+            {0,1,1,0},
+            {0,1,1,0},
+            {0,0,0,1}
+        };
+        assertEquals(3, instance.longestLine(M1));
     }
 
 }

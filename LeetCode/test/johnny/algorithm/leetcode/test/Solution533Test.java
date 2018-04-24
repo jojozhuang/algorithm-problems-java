@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution532;
+import johnny.algorithm.leetcode.Solution533;
 
 public class Solution533Test {
 
@@ -32,10 +32,16 @@ public class Solution533Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution532 instance = new Solution532();
+        System.out.println("findBlackPixel");
+        Solution533 instance = new Solution533();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        char[][] picture1 = new char[][] {
+            {'W', 'B', 'W', 'B', 'B', 'W'},
+            {'W', 'B', 'W', 'B', 'B', 'W'},
+            {'W', 'B', 'W', 'B', 'B', 'W'},
+            {'W', 'W', 'B', 'W', 'B', 'W'}
+        };
+        assertEquals(6, instance.findBlackPixel(picture1,3));
     }
 
 }

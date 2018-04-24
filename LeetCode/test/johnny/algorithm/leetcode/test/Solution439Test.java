@@ -32,10 +32,12 @@ public class Solution439Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("parseTernary");
         Solution439 instance = new Solution439();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("2", instance.parseTernary("T?2:3"));
+        assertEquals("4", instance.parseTernary("F?1:T?4:5"));
+        assertEquals("F", instance.parseTernary("T?T?F:5:3"));
     }
 
 }
