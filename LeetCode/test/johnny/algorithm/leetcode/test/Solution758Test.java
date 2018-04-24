@@ -32,10 +32,10 @@ public class Solution758Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("boldWords");
         Solution758 instance = new Solution758();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("a<b>abc</b>d", instance.boldWords(new String[] {"ab", "bc"}, "aabcd"));
     }
 
 }

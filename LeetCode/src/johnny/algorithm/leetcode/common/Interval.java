@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode.common;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +30,13 @@ public class Interval {
     public static List<Interval> buildList(int[][] arr) {
         Interval[] points = createArray(arr);
         return ListUtil.buildList(points);
+    }
+    public static List<List<Interval>> buildList(int[][][] arr) {
+        List<List<Interval>> res = new ArrayList<List<Interval>>();
+        for (int i = 0; i < arr.length; i++) {
+            res.add(buildList(arr[i]));
+        }
+        return res;
     }
     
     @Override

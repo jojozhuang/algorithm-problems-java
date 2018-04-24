@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution656;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution656Test {
 
@@ -32,10 +33,11 @@ public class Solution656Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("cheapestJump");
         Solution656 instance = new Solution656();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<Integer> expect1 = ListUtil.buildList(new Integer[] {1,3,5});
+        assertEquals(expect1, instance.cheapestJump(new int[] {1,2,4,-1,2},2));
     }
 
 }

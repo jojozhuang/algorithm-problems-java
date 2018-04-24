@@ -32,10 +32,11 @@ public class Solution666Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("pathSum");
         Solution666 instance = new Solution666();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(12, instance.pathSum(new int[] {113, 215, 221}));
+        assertEquals(24, instance.pathSum(new int[] {113, 221}));
     }
 
 }

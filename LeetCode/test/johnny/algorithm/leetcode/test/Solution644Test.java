@@ -32,10 +32,10 @@ public class Solution644Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("findMaxAverage");
         Solution644 instance = new Solution644();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(12.75, instance.findMaxAverage(new int[] {1,12,-5,-6,50,3}, 4),0.001);
     }
 
 }

@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Minimum Factorization
  * 
@@ -21,6 +24,30 @@ package johnny.algorithm.leetcode;
  */
 public class Solution625 {
     public int smallestFactorization(int a) {
-        return 0;
+        // Case 1: If number is smaller than 10
+        if (a < 10) return a;
+        
+        // Case 2: Start with 9 and try every possible digit
+        List<Integer> res = new ArrayList<>();
+        for (int i = 9; i > 1; i--) {
+            // If current digit divides n, then store all
+            // occurrences of current digit in res
+            while (a % i == 0) {
+                a = a / i;
+                res.add(i);
+            }
+        }
+
+        // If n could not be broken in form of digits
+        if (a != 1) return 0;
+
+        // Get the result from the array in reverse order
+        long result = 0;
+        for (int i = res.size() - 1; i >= 0; i--) {
+            result = result * 10 + res.get(i);
+            if (result > Integer.MAX_VALUE) return 0;
+        }
+        
+        return (int)result;
     }
 }

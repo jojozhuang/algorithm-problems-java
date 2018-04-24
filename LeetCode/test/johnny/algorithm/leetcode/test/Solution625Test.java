@@ -35,7 +35,8 @@ public class Solution625Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution625 instance = new Solution625();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(68, instance.smallestFactorization(48));
+        assertEquals(35, instance.smallestFactorization(15));
     }
 
 }

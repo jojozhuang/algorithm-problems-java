@@ -32,10 +32,24 @@ public class Solution711Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numDistinctIslands2");
         Solution711 instance = new Solution711();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        int[][] grid1 = new int[][] {
+            {1,1,0,0,0},
+            {1,0,0,0,0},
+            {0,0,0,0,1},
+            {0,0,0,1,1}
+        };
+        assertEquals(1, instance.numDistinctIslands2(grid1));
+        
+        int[][] grid2 = new int[][] {
+            {1,1,1,0,0},
+            {1,0,0,0,1},
+            {0,1,0,0,1},
+            {0,1,1,1,0}
+        };
+        assertEquals(2, instance.numDistinctIslands2(grid2));
     }
 
 }

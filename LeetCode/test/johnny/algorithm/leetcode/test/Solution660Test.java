@@ -32,10 +32,10 @@ public class Solution660Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("newInteger");
         Solution660 instance = new Solution660();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(10, instance.newInteger(9));
     }
 
 }

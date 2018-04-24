@@ -32,10 +32,13 @@ public class Solution681Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution681 instance = new Solution681();
-
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        System.out.println("nextClosestTime");
+        
+        Solution681 instance1 = new Solution681();
+        assertEquals("19:39", instance1.nextClosestTime("19:34"));
+        
+        Solution681 instance2 = new Solution681();
+        assertEquals("22:22", instance2.nextClosestTime("23:59"));
     }
 
 }

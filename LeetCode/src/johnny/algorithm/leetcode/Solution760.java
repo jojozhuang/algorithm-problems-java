@@ -1,36 +1,42 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
- *757. Set Intersection Size At Least Two
- *An integer interval [a, b] (for integers a < b) is a set of all consecutive integers from a to b, 
- *including a and b.
+ *760. Find Anagram Mappings
+ *Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.
 
-Find the minimum size of a set S such that for every integer interval A in intervals, the intersection
- of S with A has size at least 2.
+We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.
 
-Example 1:
-Input: intervals = [[1, 3], [1, 4], [2, 5], [3, 5]]
-Output: 3
-Explanation:
-Consider the set S = {2, 3, 4}.  For each interval, there are at least 2 elements from S in the 
-interval.
-Also, there isn't a smaller size set that fulfills the above condition.
-Thus, we output the size of this set, which is 3.
-Example 2:
-Input: intervals = [[1, 2], [2, 3], [2, 4], [4, 5]]
-Output: 5
-Explanation:
-An example of a minimum sized set is {1, 2, 3, 4, 5}.
+These lists A and B may contain duplicates. If there are multiple answers, output any of them.
+
+For example, given
+
+A = [12, 28, 46, 32, 50]
+B = [50, 12, 32, 46, 28]
+We should return
+[1, 4, 3, 2, 0]
+as P[0] = 1 because the 0th element of A appears at B[1], and P[1] = 4 because the 1st element of A appears at B[4], and so on.
 Note:
 
-intervals will have length in range [1, 3000].
-intervals[i] will have length 2, representing some integer interval.
-intervals[i][j] will be an integer in [0, 10^8].
+A, B have equal lengths in range [1, 100].
+A[i], B[i] are integers in range [0, 10^5].
 
  * @author Johnny
  */
 public class Solution760 {
-    public int intersectionSizeTwo(int[][] intervals) {
-        return 0;
+    public int[] anagramMappings(int[] A, int[] B) {
+        int[] result = new int [A.length];
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for(int i = 0; i < B.length; i++) {
+            map.computeIfAbsent(B[i], k -> new ArrayList<>()).add(i);
+        }
+        for(int i = 0; i < A.length; i++) {
+            result[i] = map.get(A[i]).remove(map.get(A[i]).size()-1);
+        }
+        return result;
     }
 }

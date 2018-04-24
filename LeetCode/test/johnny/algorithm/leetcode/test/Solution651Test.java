@@ -32,10 +32,11 @@ public class Solution651Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("maxA");
         Solution651 instance = new Solution651();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(3, instance.maxA(3));
+        assertEquals(9, instance.maxA(7));
     }
 
 }

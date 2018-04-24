@@ -22,7 +22,7 @@ Input: sum("ap"), Output: 5
  */
 public class Solution677 {
     /** Initialize your data structure here. */
-    class TrieNode {
+    private class TrieNode {
         Map<Character, TrieNode> children;
         boolean isWord;
         int value;

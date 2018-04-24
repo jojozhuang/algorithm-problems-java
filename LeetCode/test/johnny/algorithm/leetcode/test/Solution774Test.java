@@ -32,10 +32,10 @@ public class Solution774Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("minmaxGasDist");
         Solution774 instance = new Solution774();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(0.500000, instance.minmaxGasDist(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 9),0.001);
     }
 
 }

@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution749;
+import johnny.algorithm.leetcode.Solution760;
 
 public class Solution760Test {
 
@@ -32,10 +32,10 @@ public class Solution760Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
-        Solution749 instance = new Solution749();
+        System.out.println("anagramMappings");
+        Solution760 instance = new Solution760();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertArrayEquals(new int[] {1, 4, 3, 2, 0}, instance.anagramMappings(new int[] {12, 28, 46, 32, 50}, new int[] {50, 12, 32, 46, 28}));
     }
 
 }

@@ -62,19 +62,19 @@ public class Solution715 {
         }
         for (Interval iv: todo) ranges.add(iv);
     }
-}
+    
+    class Interval implements Comparable<Interval>{
+        int left;
+        int right;
 
-class Interval implements Comparable<Interval>{
-    int left;
-    int right;
+        public Interval(int left, int right){
+            this.left = left;
+            this.right = right;
+        }
 
-    public Interval(int left, int right){
-        this.left = left;
-        this.right = right;
-    }
-
-    public int compareTo(Interval that){
-        if (this.right == that.right) return this.left - that.left;
-        return this.right - that.right;
+        public int compareTo(Interval that){
+            if (this.right == that.right) return this.left - that.left;
+            return this.right - that.right;
+        }
     }
 }

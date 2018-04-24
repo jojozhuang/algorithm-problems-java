@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution751;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution751Test {
 
@@ -32,10 +33,11 @@ public class Solution751Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("ipToCIDR");
         Solution751 instance = new Solution751();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        List<String> expect1 = ListUtil.buildList(new String[] {"255.0.0.7/32","255.0.0.8/29","255.0.0.16/32"});
+        assertEquals(expect1, instance.ipToCIDR("255.0.0.7", 10));
     }
 
 }

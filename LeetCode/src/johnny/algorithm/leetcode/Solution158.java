@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import johnny.algorithm.leetcode.common.Reader4;
+
 /**
  * Read N Characters Given Read4 II - Call multiple times.
 The API: int read4(char *buf) reads 4 characters at a time from a file.

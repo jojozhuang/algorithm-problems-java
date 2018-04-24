@@ -32,10 +32,28 @@ public class Solution750Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("countCornerRectangles");
         Solution750 instance = new Solution750();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
-    }
+        int[][] grid1 = new int[][]{
+            {1, 0, 0, 1, 0},
+            {0, 0, 1, 0, 1},
+            {0, 0, 0, 1, 0},
+            {1, 0, 1, 0, 1}
+        };
+        assertEquals(1, instance.countCornerRectangles(grid1));
+
+        int[][] grid2 = new int[][]{
+            {1, 1, 1},
+            {1, 1, 1},
+            {1, 1, 1}
+        };
+        assertEquals(9, instance.countCornerRectangles(grid2));
+
+        int[][] grid3 = new int[][]{
+            {1, 1, 1, 1}
+        };
+        assertEquals(0, instance.countCornerRectangles(grid3));
+}
 
 }

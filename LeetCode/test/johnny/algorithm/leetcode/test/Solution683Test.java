@@ -32,10 +32,11 @@ public class Solution683Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("kEmptySlots");
         Solution683 instance = new Solution683();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(2, instance.kEmptySlots(new int[] {1,3,2}, 1));
+        assertEquals(-1, instance.kEmptySlots(new int[] {1,2,3}, 1));
     }
 
 }

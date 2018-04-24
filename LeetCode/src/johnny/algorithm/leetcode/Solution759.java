@@ -1,36 +1,57 @@
 package johnny.algorithm.leetcode;
 
-/**
- *757. Set Intersection Size At Least Two
- *An integer interval [a, b] (for integers a < b) is a set of all consecutive integers from a to b, 
- *including a and b.
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
 
-Find the minimum size of a set S such that for every integer interval A in intervals, the intersection
- of S with A has size at least 2.
+import johnny.algorithm.leetcode.common.Interval;
+
+/**
+ *759. Employee Free Time
+ *We are given a list schedule of employees, which represents the working time for each employee.
+
+Each employee has a list of non-overlapping Intervals, and these intervals are in sorted order.
+
+Return the list of finite intervals representing common, positive-length free time for all employees, also in sorted order.
 
 Example 1:
-Input: intervals = [[1, 3], [1, 4], [2, 5], [3, 5]]
-Output: 3
+Input: schedule = [[[1,2],[5,6]],[[1,3]],[[4,10]]]
+Output: [[3,4]]
 Explanation:
-Consider the set S = {2, 3, 4}.  For each interval, there are at least 2 elements from S in the 
-interval.
-Also, there isn't a smaller size set that fulfills the above condition.
-Thus, we output the size of this set, which is 3.
+There are a total of three employees, and all common
+free time intervals would be [-inf, 1], [3, 4], [10, inf].
+We discard any intervals that contain inf as they aren't finite.
 Example 2:
-Input: intervals = [[1, 2], [2, 3], [2, 4], [4, 5]]
-Output: 5
-Explanation:
-An example of a minimum sized set is {1, 2, 3, 4, 5}.
+Input: schedule = [[[1,3],[6,7]],[[2,4]],[[2,5],[9,12]]]
+Output: [[5,6],[7,9]]
+(Even though we are representing Intervals in the form [x, y], the objects inside are Intervals, not lists or arrays. For example, schedule[0][0].start = 1, schedule[0][0].end = 2, and schedule[0][0][0] is not defined.)
+
+Also, we wouldn't include intervals like [5, 5] in our answer, as they have zero length.
+
 Note:
 
-intervals will have length in range [1, 3000].
-intervals[i] will have length 2, representing some integer interval.
-intervals[i][j] will be an integer in [0, 10^8].
+schedule and schedule[i] are lists with lengths in range [1, 50].
+0 <= schedule[i].start < schedule[i].end <= 10^8.
 
  * @author Johnny
  */
 public class Solution759 {
-    public int intersectionSizeTwo(int[][] intervals) {
-        return 0;
+    public List<Interval> employeeFreeTime(List<List<Interval>> schedule) {
+        List<Interval> result = new ArrayList<>();
+
+        PriorityQueue<Interval> pq = new PriorityQueue<>((a, b) -> a.start - b.start);
+        schedule.forEach(e -> pq.addAll(e));
+
+        Interval temp = pq.poll();
+        while(!pq.isEmpty()) {
+            if(temp.end < pq.peek().start) { // no intersect
+                result.add(new Interval(temp.end, pq.peek().start));
+                temp = pq.poll(); // becomes the next temp interval
+            }else { // intersect or sub merged
+                temp = temp.end < pq.peek().end ? pq.peek() : temp;
+                pq.poll();
+            }
+        }
+        return result;
     }
 }

@@ -32,10 +32,10 @@ public class Solution800Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("similarRGB");
         Solution800 instance = new Solution800();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals("#11ee66", instance.similarRGB("#09f166"));
     }
 
 }
