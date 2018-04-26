@@ -15,32 +15,21 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution320 {
-    //https://segmentfault.com/a/1190000004187690
-    public List<String> generateAbbreviations(String word) {
-        List<String> res = new ArrayList<>();
-        if (word == null || word.isEmpty()) {
-            return res;
-        }
-        dfs(res, "", 0, word);
-        return res;
+    public List<String> generateAbbreviations(String word){
+        List<String> ret = new ArrayList<String>();
+        backtrack(ret, word, 0, "", 0);
+
+        return ret;
     }
-    
-    private void dfs(List<String> res, String curr, int start, String s) {
-        res.add(curr + s.substring(start));
-        if (start == s.length()) 
-            return;
 
-        int i = 0;
-
-        if (start > 0) {
-            i = start + 1;
+    private void backtrack(List<String> ret, String word, int pos, String cur, int count){
+        if(pos==word.length()){
+            if(count > 0) cur += count;
+            ret.add(cur);
         }
-        
-        for (; i < s.length(); i++) {
-            String prefix = curr + s.substring(start, i);
-            for (int j = 1; j <= s.length() - i; j++) {
-                dfs(res,  prefix+ j, i + j, s);
-            }
+        else{
+            backtrack(ret, word, pos + 1, cur, count + 1);
+            backtrack(ret, word, pos+1, cur + (count>0 ? count : "") + word.charAt(pos), 0);
         }
     }
 }

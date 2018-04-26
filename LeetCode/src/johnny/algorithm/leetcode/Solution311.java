@@ -34,6 +34,27 @@ public class Solution311 {
             A[0].length != B.length) {
             return res;
         }
+        int m = A.length, n = A[0].length, nB = B[0].length;
+        int[][] C = new int[m][nB];
+
+        for(int i = 0; i < m; i++) {
+            for(int k = 0; k < n; k++) {
+                if (A[i][k] != 0) {
+                    for (int j = 0; j < nB; j++) {
+                        if (B[k][j] != 0) C[i][j] += A[i][k] * B[k][j];
+                    }
+                }
+            }
+        }
+        return C;   
+    }
+    public int[][] multiply2(int[][] A, int[][] B) {
+        int[][] res = new int[][]{};
+        if (A == null || A.length == 0 || A[0].length == 0 ||
+            B == null || B.length == 0 || B[0].length == 0 ||
+            A[0].length != B.length) {
+            return res;
+        }
         
         int n = A.length;
         int m = B[0].length;

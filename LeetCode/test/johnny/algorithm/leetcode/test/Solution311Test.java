@@ -41,12 +41,9 @@ public class Solution311Test {
     @Test
     public void testMultiply() {
         System.out.println("multiply");
-        int[][] A = null;
-        int[][] B = null;
         Solution311 instance = new Solution311();
-        int[][] expResult = new int[][]{};
-        int[][] result = instance.multiply(A, B);
-        assertArrayEquals(expResult, result);
+
+        assertArrayEquals(new int[][]{}, instance.multiply(null, null));
         
         int[][] A2 = new int[][]{
             {1, 0, 0},
@@ -57,13 +54,11 @@ public class Solution311Test {
             {0, 0, 0},
             {0, 0, 1}
         };
-        int[][] expResult2 = new int[][]{
+        int[][] expect2 = new int[][]{
             {7, 0, 0},
             {-7, 0, 3}
         };
-        assertArrayEquals(expResult2, instance.multiply(A2, B2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertArrayEquals(expect2, instance.multiply(A2, B2));
     }
     
 }

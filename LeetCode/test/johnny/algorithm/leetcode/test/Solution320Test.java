@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution320;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -44,18 +45,15 @@ public class Solution320Test {
     @Test
     public void testGenerateAbbreviations() {
         System.out.println("generateAbbreviations");
-        String word = "";
         Solution320 instance = new Solution320();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.generateAbbreviations(word);
-        assertEquals(expResult, result);
+
+        List<String> expect1 = ListUtil.buildList(new String[]{""});
+        List<String> result1 = instance.generateAbbreviations("");
+        assertTrue(ListUtil.equalsIgnoreOrder(expect1, result1));
         
-        String[] array2 = new String[]{"word","1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"};
-        ArrayList<String> expResult2 = new ArrayList<String>(Arrays.asList(array2));
+        List<String> expect2 = ListUtil.buildList(new String[]{"word","1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"});
         List<String> result2 = instance.generateAbbreviations("word");
-        assertTrue(result2.containsAll(expResult2)&&expResult2.containsAll(result2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
     }    
     
 }

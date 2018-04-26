@@ -22,11 +22,23 @@ For example, given the above Employee table, the nth highest salary where n = 2 
  */
 public class Solution177 {
     /*
-    CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+    DROP FUNCTION IF EXISTS getNthHighestSalary;
+    DELIMITER $$
+    CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT DETERMINISTIC
     BEGIN
+      DECLARE topN INT;
+      SET topN = N-1;
       RETURN (
-          # Write your MySQL query statement below.
-          
+       SELECT
+        IFNULL(
+          (SELECT DISTINCT Salary
+           FROM Employee
+           ORDER BY Salary DESC
+            LIMIT topN, 1),
+        NULL) AS SecondHighestSalary
       );
-    END*/
+    END$$
+    DELIMITER ;
+    */
+
 }

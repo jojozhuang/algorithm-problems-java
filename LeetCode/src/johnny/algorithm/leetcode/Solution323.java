@@ -29,10 +29,35 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution323 {
+    public int countComponents(int n, int[][] edges) {
+        if (n <= 0 || edges == null) {
+            return 0;
+        }
+        int[] roots = new int[n];
+        for(int i = 0; i < n; i++) roots[i] = i; 
+
+        for(int[] e : edges) {
+            int root1 = find(roots, e[0]);
+            int root2 = find(roots, e[1]);
+            if(root1 != root2) {      
+                roots[root1] = root2;  // union
+                n--;
+            }
+        }
+        return n;
+    }
+
+    public int find(int[] roots, int id) {
+        while(roots[id] != id) {
+            roots[id] = roots[roots[id]];  // optional: path compression
+            id = roots[id];
+        }
+        return id;
+    }
     //http://buttercola.blogspot.com/2016/01/leetcode-number-of-connected-components.html
     //https://segmentfault.com/a/1190000004224298
     // union - find
-    public int countComponents(int n, int[][] edges) {
+    public int countComponents4(int n, int[][] edges) {
         if (n <= 0 || edges == null || edges.length == 0) {
             return 0;
         }
@@ -50,7 +75,7 @@ public class Solution323 {
         // union
         for (int i = 0; i < edges.length; i++) {
             int[] edge = edges[i];
-            union(nodes[edge[0]], nodes[edge[1]]);
+            union4(nodes[edge[0]], nodes[edge[1]]);
         }
         // find root
         int count = 0;
@@ -63,12 +88,12 @@ public class Solution323 {
         return count;
     }   
     
-    private void union(Node node1, Node node2) {
+    private void union4(Node node1, Node node2) {
         if (node1 == null || node2 == null) {
             return;
         }
-        Node root1 = find(node1);
-        Node root2 = find(node2);
+        Node root1 = find4(node1);
+        Node root2 = find4(node2);
         if (root1.Rank > root2.Rank) {
             root2.Parent = root1;
         } else if (root1.Rank < root2.Rank) {
@@ -79,7 +104,7 @@ public class Solution323 {
         }
     }
     
-    private Node find(Node node) {
+    private Node find4(Node node) {
         if (node == null) {
             return null;
         }
@@ -111,7 +136,7 @@ public class Solution323 {
         }
         // union group
         for (int i = 0; i < edges.length; i++) {
-            union(parent, edges[i][0], edges[i][1]);
+            union3(parent, edges[i][0], edges[i][1]);
         }
 
         // Count
@@ -125,7 +150,7 @@ public class Solution323 {
     }
  
     // find root
-    private int find(int[] parent, int node) {
+    private int find3(int[] parent, int node) {
         while(parent[node] != node) {
             parent[node] = parent[parent[node]];
         }
@@ -133,9 +158,9 @@ public class Solution323 {
     }
 
     // union
-    private void union(int[] parent, int node1, int node2) {
-        int root1 = find(parent, node1);
-        int root2 = find(parent, node2);
+    private void union3(int[] parent, int node1, int node2) {
+        int root1 = find3(parent, node1);
+        int root2 = find3(parent, node2);
         parent[root1] = root2;
     }
     

@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution305;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,23 +44,18 @@ public class Solution305Test {
     @Test
     public void testNumIslands2() {
         System.out.println("numIslands2");
-        int m = 0;
-        int n = 0;
-        int[][] positions = null;
         Solution305 instance = new Solution305();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.numIslands2(m, n, positions);
-        assertEquals(expResult, result);
         
-        List<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(1);
-        expResult2.add(1);
-        expResult2.add(2);
-        expResult2.add(3);
+        List<Integer> expect1 = new ArrayList<Integer>(); 
+        assertEquals(expect1, instance.numIslands2(0, 0, null));
+        
+        List<Integer> expect2 = ListUtil.buildList(new Integer[] {1, 1, 2, 3});
         List<Integer> result2 = instance.numIslands2(3, 3, new int[][]{{0,0},{0,1},{1,2},{2,1}});
-        assertEquals(expResult2, result2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
+        assertEquals(expect2, result2);
+
+        List<Integer> expect3 = ListUtil.buildList(new Integer[] {1,2,3,4,3,2,1});
+        List<Integer> result3 = instance.numIslands2(3, 3, new int[][]{{0,1},{1,2},{2,1},{1,0},{0,2},{0,0},{1,1}});
+        assertEquals(expect3, result3);
+}
     
 }

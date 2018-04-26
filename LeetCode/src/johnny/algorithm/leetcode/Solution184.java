@@ -31,5 +31,26 @@ Write a SQL query to find employees who have the highest salary in each of the d
  * @author Johnny
  */
 public class Solution184 {
-
+    /*
+    USE `leetcode3`;
+    Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int);
+    Create table If Not Exists Department (Id int, Name varchar(255));
+    Truncate table Employee;
+    insert into Employee (Id, Name, Salary, DepartmentId) values ('1', 'Joe', '70000', '1');
+    insert into Employee (Id, Name, Salary, DepartmentId) values ('2', 'Henry', '80000', '2');
+    insert into Employee (Id, Name, Salary, DepartmentId) values ('3', 'Sam', '60000', '2');
+    insert into Employee (Id, Name, Salary, DepartmentId) values ('4', 'Max', '90000', '1');
+    Truncate table Department;
+    insert into Department (Id, Name) values ('1', 'IT');
+    insert into Department (Id, Name) values ('2', 'Sales');
+    */
+    
+    /*
+    SELECT d.Name AS Department, e.Name AS Employee, e.Salary
+    FROM Employee e
+    JOIN Department d ON e.DepartmentId = d.Id
+    JOIN (SELECT Max(Salary) MaxSalary, DepartmentId
+    FROM Employee
+    GROUP BY DepartmentId) m ON e.Salary=m.MaxSalary and e.DepartmentId = m.DepartmentId
+    */
 }

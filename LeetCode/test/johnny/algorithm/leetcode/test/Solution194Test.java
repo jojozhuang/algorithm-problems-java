@@ -32,10 +32,11 @@ public class Solution194Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("Transpose File");
         Solution194 instance = new Solution194();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        //bash
+        //assertEquals(result1, instance.eventualSafeNodes(graph1));
     }
 
 }

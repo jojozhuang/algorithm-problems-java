@@ -32,10 +32,11 @@ public class Solution192Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("Word Frequency");
         Solution192 instance = new Solution192();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        //bash
+        //assertEquals(result1, instance.eventualSafeNodes(graph1));
     }
 
 }

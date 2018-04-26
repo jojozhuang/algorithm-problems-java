@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution588;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution588Test {
 
@@ -32,13 +33,14 @@ public class Solution588Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("FileSystem");
         Solution588 instance = new Solution588();
 
-        List<String> param_1 = instance.ls(path);
-        instance.mkdir(path);
-        instance.addContentToFile(filePath,content);
-        String param_4 = instance.readContentFromFile(filePath);
+        List<String> result1 = ListUtil.buildList(new String[] {});
+        assertEquals(result1, instance.ls("/"));
+        instance.mkdir("/a/b/c");
+        instance.addContentToFile("/a/b/c/d","hello");
+        assertEquals("hello", instance.readContentFromFile("/a/b/c/d"));
     }
 
 }

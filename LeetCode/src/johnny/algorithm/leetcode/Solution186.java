@@ -22,13 +22,13 @@ public class Solution186 {
             return;
         }
         
-        reverse(s, 0, s.length - 1);        
+        reverse(s, 0, s.length - 1);
         
         int i = 0;
         int start = 0;
         while (i < s.length) {
             if (s[i] == ' ') {
-                reverse(s, start, i - 1);                
+                reverse(s, start, i - 1);
                 start = i + 1;
             }
             i++;

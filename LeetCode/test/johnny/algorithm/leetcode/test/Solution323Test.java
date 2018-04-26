@@ -41,13 +41,11 @@ public class Solution323Test {
     @Test
     public void testCountComponents() {
         System.out.println("countComponents");
-        int n = 0;
-        int[][] edges = null;
         Solution323 instance = new Solution323();
-        int expResult = 0;
-        int result = instance.countComponents(n, edges);
-        assertEquals(expResult, result);
+ 
+        assertEquals(0, instance.countComponents(0, null));
         
+        assertEquals(1, instance.countComponents(1, new int[][] {}));
         int[][] edges2 = new int[][] {
             {0, 1}, {1, 2}, {3, 4}
         };
@@ -56,8 +54,6 @@ public class Solution323Test {
             {0, 1}, {1, 2}, {2, 3},{3, 4}
         };
         assertEquals(1, instance.countComponents(5, edges3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

@@ -34,8 +34,34 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution288 {
+    HashMap<String, String> map;
+    public Solution288(String[] dictionary) {
+        map = new HashMap<String, String>();
+        for(String str:dictionary){
+            String key = getKey(str);
+            // If there is more than one string belong to the same key
+            // then the key will be invalid, we set the value to ""
+            if(map.containsKey(key)){
+                if(!map.get(key).equals(str)){
+                    map.put(key, "");
+                }
+            }
+            else{
+                map.put(key, str);
+            }
+        }
+    }
+
+    public boolean isUnique(String word) {
+        return !map.containsKey(getKey(word))||map.get(getKey(word)).equals(word);
+    }
+    
+    String getKey(String str){
+        if(str.length()<=2) return str;
+        return str.charAt(0)+Integer.toString(str.length()-2)+str.charAt(str.length()-1);
+    }
     //http://buttercola.blogspot.com/2015/10/leetcode-unique-word-abbreviation.html
-    HashMap<String, String> map = new HashMap<String, String>();
+    /*HashMap<String, String> map = new HashMap<String, String>();
     public Solution288(String[] dictionary) {
         if (dictionary == null || dictionary.length == 0) {
             
@@ -65,5 +91,5 @@ public class Solution288 {
         int len = s.length() - 2;
          
         return s.charAt(0) + "" + len + s.charAt(s.length() - 1);
-    }
+    }*/
 }
