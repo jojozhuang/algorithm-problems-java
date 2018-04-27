@@ -30,7 +30,7 @@ public class Solution804Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("uniqueMorseRepresentations");
         Solution804 instance = new Solution804();
 
         assertEquals(2, instance.uniqueMorseRepresentations(new String[] {"gin", "zen", "gig", "msg"}));

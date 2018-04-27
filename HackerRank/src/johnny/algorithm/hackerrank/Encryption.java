@@ -21,8 +21,7 @@ public class Encryption {
             row++;
         }
         
-        int index = 0;
-        String[] word = new String[col];        
+        String[] word = new String[col];
         for (int j = 0; j < col; j++) {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < row; i++) {
@@ -32,7 +31,7 @@ public class Encryption {
                     break;
                 }
             }
-            word[j] = sb.toString();   
+            word[j] = sb.toString();
         }
         
         StringBuilder ret = new StringBuilder();

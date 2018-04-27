@@ -45,7 +45,7 @@ public class Solution480 {
         TreeMap<Integer, Integer> maxHeap = new TreeMap<Integer, Integer>(Collections.reverseOrder());
         
         int minHeapCap = k/2; //smaller heap when k is odd.
-        int maxHeapCap = k - minHeapCap; 
+        //int maxHeapCap = k - minHeapCap; 
         
         for(int i=0; i< k; i++){
             maxHeap.put(nums[i], maxHeap.getOrDefault(nums[i], 0) + 1);

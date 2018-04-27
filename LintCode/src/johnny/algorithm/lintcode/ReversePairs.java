@@ -5,8 +5,6 @@
  */
 package johnny.algorithm.lintcode;
 
-import java.util.Stack;
-
 /**
  * Reverse Pairs
  * 

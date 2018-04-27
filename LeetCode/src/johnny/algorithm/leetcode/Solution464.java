@@ -51,7 +51,7 @@ public class Solution464 {
         if(sum < desiredTotal) return false;
         if(desiredTotal <= 0) return true;
         
-        map = new HashMap();
+        map = new HashMap<Integer, Boolean>();
         used = new boolean[maxChoosableInteger+1];
         return helper(desiredTotal);
     }

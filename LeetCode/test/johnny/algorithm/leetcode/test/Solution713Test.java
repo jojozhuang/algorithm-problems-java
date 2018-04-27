@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +30,7 @@ public class Solution713Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numSubarrayProductLessThanK");
         Solution713 instance = new Solution713();
 
         assertEquals(8, instance.numSubarrayProductLessThanK(new int[] {10, 5, 2, 6}, 100));

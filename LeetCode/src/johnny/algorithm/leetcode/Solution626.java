@@ -31,5 +31,28 @@ If the number of students is odd, there is no need to change the last one's seat
  * @author Johnny
  */
 public class Solution626 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    
+    /*
+    Create table If Not Exists seat(id int, student varchar(255));
+    Truncate table seat;
+    insert into seat (id, student) values ('1', 'Abbot');
+    insert into seat (id, student) values ('2', 'Doris');
+    insert into seat (id, student) values ('3', 'Emerson');
+    insert into seat (id, student) values ('4', 'Green');
+    insert into seat (id, student) values ('5', 'Jeames');
+    */
+    
+    /*
+    SELECT
+        s1.id, COALESCE(s2.student, s1.student) AS student
+    FROM
+        seat s1
+            LEFT JOIN
+        seat s2 ON ((s1.id + 1) ^ 1) - 1 = s2.id
+    ORDER BY s1.id;
+    */
 }

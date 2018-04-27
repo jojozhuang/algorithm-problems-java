@@ -39,7 +39,7 @@ G is a subset of all values in the linked list.
  */
 public class Solution817 {
     public int numComponents(ListNode head, int[] G) {
-        Set<Integer> Gset = new HashSet();
+        Set<Integer> Gset = new HashSet<Integer>();
         for (int x: G) Gset.add(x);
 
         ListNode cur = head;

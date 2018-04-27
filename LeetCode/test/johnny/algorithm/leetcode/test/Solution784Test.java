@@ -33,7 +33,7 @@ public class Solution784Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("letterCasePermutation");
         Solution784 instance = new Solution784();
 
         List<String> result1 = ListUtil.buildStringList(new String[] {"a1b2", "a1B2", "A1b2", "A1B2"});

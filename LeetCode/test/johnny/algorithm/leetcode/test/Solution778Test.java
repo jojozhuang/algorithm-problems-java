@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +30,7 @@ public class Solution778Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("swimInWater");
         Solution778 instance = new Solution778();
 
         int[][] grid1 = new int[][] {{0,2},{1,3}};

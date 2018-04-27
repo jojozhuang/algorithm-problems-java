@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution766;
 import johnny.algorithm.leetcode.Solution819;
 
 public class Solution819Test {

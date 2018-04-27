@@ -30,7 +30,7 @@ The total number of calls to removeRange in a single test case is at most 1000.
 public class Solution715 {
     TreeSet<Interval> ranges;
     public Solution715() {
-        ranges = new TreeSet();
+        ranges = new TreeSet<Interval>();
     }
 
     public void addRange(int left, int right) {
@@ -52,7 +52,7 @@ public class Solution715 {
 
     public void removeRange(int left, int right) {
         Iterator<Interval> itr = ranges.tailSet(new Interval(0, left)).iterator();
-        ArrayList<Interval> todo = new ArrayList();
+        ArrayList<Interval> todo = new ArrayList<Interval>();
         while (itr.hasNext()) {
             Interval iv = itr.next();
             if (right < iv.left) break;

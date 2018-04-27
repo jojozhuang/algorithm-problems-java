@@ -48,20 +48,18 @@ public class Solution204Test {
         assertEquals(expResult, result);
         
         assertEquals(0, instance.countPrimes(1));
-        assertEquals(1, instance.countPrimes(2));
-        assertEquals(2, instance.countPrimes(3));
+        assertEquals(0, instance.countPrimes(2));
+        assertEquals(1, instance.countPrimes(3));
         assertEquals(2, instance.countPrimes(4));
-        assertEquals(3, instance.countPrimes(5));
+        assertEquals(2, instance.countPrimes(5));
         assertEquals(3, instance.countPrimes(6));
-        assertEquals(4, instance.countPrimes(7));
+        assertEquals(3, instance.countPrimes(7));
         assertEquals(4, instance.countPrimes(8));
         assertEquals(4, instance.countPrimes(9));
         assertEquals(4, instance.countPrimes(10));
-        assertEquals(5, instance.countPrimes(11));
+        assertEquals(4, instance.countPrimes(11));
         assertEquals(5, instance.countPrimes(12));
-        assertEquals(41538, instance.countPrimes(499979));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(41537, instance.countPrimes(499979));
     }
     
 }

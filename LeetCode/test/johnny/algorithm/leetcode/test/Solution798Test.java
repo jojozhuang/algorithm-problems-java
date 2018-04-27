@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +30,7 @@ public class Solution798Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("bestRotation");
         Solution798 instance = new Solution798();
 
         assertEquals(3, instance.bestRotation(new int[]{2, 3, 1, 4, 0}));

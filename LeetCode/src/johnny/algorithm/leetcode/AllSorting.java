@@ -183,7 +183,7 @@ public class AllSorting {
         }
     }
     
-    private void merge2(int[] nums, int start, int mid, int end) {
+    public void merge2(int[] nums, int start, int mid, int end) {
         int[] mergeArr = new int[nums.length];
         for (int i = start; i <= end; i++) {
             mergeArr[i] = nums[i];
@@ -253,7 +253,7 @@ public class AllSorting {
     }
     
     // two ways
-    private int Partition2(int[] nums, int start, int end) {
+    public int Partition2(int[] nums, int start, int end) {
         int left = start + 1;
         int right = end;
        

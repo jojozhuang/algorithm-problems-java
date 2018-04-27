@@ -47,5 +47,29 @@ If there is only one node on the tree, you only need to output its root attribut
  * @author Johnny
  */
 public class Solution608 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    
+    /*
+    Create table If Not Exists tree (id int, p_id int);
+    Truncate table tree;
+    insert into tree (id, p_id) values ('1', NULL);
+    insert into tree (id, p_id) values ('2', '1');
+    insert into tree (id, p_id) values ('3', '1');
+    insert into tree (id, p_id) values ('4', '2');
+    insert into tree (id, p_id) values ('5', '2');
+    */
+    
+    /*
+    SELECT
+        atree.id,
+        IF(ISNULL(atree.p_id),
+            'Root',
+            IF(atree.id IN (SELECT p_id FROM tree), 'Inner','Leaf')) Type
+    FROM
+        tree atree
+    ORDER BY atree.id
+    */
 }

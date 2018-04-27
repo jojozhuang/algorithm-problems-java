@@ -33,6 +33,44 @@ With he same formula for the average salary comparison in February, the result i
  * @author Johnny
  */
 public class Solution615 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
-
+    
+    /*
+    Create table If Not Exists salary (id int, employee_id int, amount int, pay_date date);
+    Create table If Not Exists employee (employee_id int, department_id int);
+    Truncate table salary;
+    insert into salary (id, employee_id, amount, pay_date) values ('1', '1', '9000', '2017/03/31');
+    insert into salary (id, employee_id, amount, pay_date) values ('2', '2', '6000', '2017/03/31');
+    insert into salary (id, employee_id, amount, pay_date) values ('3', '3', '10000', '2017/03/31');
+    insert into salary (id, employee_id, amount, pay_date) values ('4', '1', '7000', '2017/02/28');
+    insert into salary (id, employee_id, amount, pay_date) values ('5', '2', '6000', '2017/02/28');
+    insert into salary (id, employee_id, amount, pay_date) values ('6', '3', '8000', '2017/02/28');
+    Truncate table employee;
+    insert into employee (employee_id, department_id) values ('1', '1');
+    insert into employee (employee_id, department_id) values ('2', '2');
+    insert into employee (employee_id, department_id) values ('3', '2');
+    */
+    
+    /*
+    select department_salary.pay_month, department_id,
+    case
+      when department_avg>company_avg then 'higher'
+      when department_avg<company_avg then 'lower'
+      else 'same'
+    end as comparison
+    from
+    (
+      select department_id, avg(amount) as department_avg, date_format(pay_date, '%Y-%m') as pay_month
+      from salary join employee on salary.employee_id = employee.employee_id
+      group by department_id, pay_month
+    ) as department_salary
+    join
+    (
+      select avg(amount) as company_avg,  date_format(pay_date, '%Y-%m') as pay_month from salary group by date_format(pay_date, '%Y-%m')
+    ) as company_salary
+    on department_salary.pay_month = company_salary.pay_month
+    */
 }

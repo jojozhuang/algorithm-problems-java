@@ -34,6 +34,9 @@ Using the above tables as example, return the following:
  * @author Johnny
  */
 public class Solution183 {
+    public int query() {
+        return 0;
+    }
     /*
     USE `leetcode`;
     Create table If Not Exists Customers (Id int, Name varchar(255));

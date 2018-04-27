@@ -31,6 +31,9 @@ Write a SQL query to find employees who have the highest salary in each of the d
  * @author Johnny
  */
 public class Solution184 {
+    public int query() {
+        return 0;
+    }
     /*
     USE `leetcode3`;
     Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int);

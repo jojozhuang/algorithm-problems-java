@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,8 +33,7 @@ public class Solution194Test {
         System.out.println("Transpose File");
         Solution194 instance = new Solution194();
 
-        //bash
-        //assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(0, instance.bash());
     }
 
 }

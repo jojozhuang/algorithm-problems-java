@@ -23,6 +23,9 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
  * @author Johnny
  */
 public class Solution181 {
+    public int query() {
+        return 0;
+    }
     /*
     USE `leetcode2`;
     Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, ManagerId int);

@@ -21,6 +21,9 @@ For example, given the above Employee table, the nth highest salary where n = 2 
  * @author Johnny
  */
 public class Solution177 {
+    public int query() {
+        return 0;
+    }
     /*
     DROP FUNCTION IF EXISTS getNthHighestSalary;
     DELIMITER $$

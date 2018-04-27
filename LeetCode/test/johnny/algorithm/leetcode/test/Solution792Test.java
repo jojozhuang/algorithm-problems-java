@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +30,7 @@ public class Solution792Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numMatchingSubseq");
         Solution792 instance = new Solution792();
 
         assertEquals(3, instance.numMatchingSubseq("abcde", new String[] {"a", "bb", "acd", "ace"}));

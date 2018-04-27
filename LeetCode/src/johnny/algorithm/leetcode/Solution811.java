@@ -41,7 +41,7 @@ The answer output can be returned in any order.
  */
 public class Solution811 {
     public List<String> subdomainVisits(String[] cpdomains) {
-        Map<String, Integer> counts = new HashMap();
+        Map<String, Integer> counts = new HashMap<String, Integer>();
         for (String domain: cpdomains) {
             String[] cpinfo = domain.split("\\s+");
             String[] frags = cpinfo[1].split("\\.");
@@ -53,7 +53,7 @@ public class Solution811 {
             }
         }
 
-        List<String> ans = new ArrayList();
+        List<String> ans = new ArrayList<String>();
         for (String dom: counts.keySet())
             ans.add("" + counts.get(dom) + " " + dom);
         return ans;

@@ -1,7 +1,6 @@
 package johnny.algorithm.leetcode;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  *764. Largest Plus Sign

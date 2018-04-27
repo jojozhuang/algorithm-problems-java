@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -38,7 +36,7 @@ public class Solution764Test {
         int[][] mines1 = new int[][] {{4, 2}};
         assertEquals(2, instance.orderOfLargestPlusSign(5, mines1));
 
-        int[][] mines2 = new int[][] {{}};
+        //int[][] mines2 = new int[][] {{}};
         //assertEquals(1, instance.orderOfLargestPlusSign(2, mines2));
 
         int[][] mines3 = new int[][] {{0, 0}};

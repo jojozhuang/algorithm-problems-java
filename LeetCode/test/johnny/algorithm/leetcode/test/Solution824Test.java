@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution820;
+import johnny.algorithm.leetcode.Solution824;
 
 public class Solution824Test {
 
@@ -32,8 +32,8 @@ public class Solution824Test {
     public void test() {
         System.out.println("minimumLengthEncoding");
         
-        //Solution824 instance = new Solution824();
-        //assertEquals(10, instance.minimumLengthEncoding(new String[] {"time", "me", "bell"}));
+        Solution824 instance = new Solution824();
+        assertEquals(0, instance.dummy());
     }
 
 }

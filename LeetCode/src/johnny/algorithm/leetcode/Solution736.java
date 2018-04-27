@@ -63,12 +63,12 @@ The answer and all intermediate calculations of that answer are guaranteed to fi
 public class Solution736 {
     ArrayList<Map<String, Integer>> scope;
     public Solution736() {
-        scope = new ArrayList();
-        scope.add(new HashMap());
+        scope = new ArrayList<Map<String, Integer>>();
+        scope.add(new HashMap<String, Integer>());
     }
 
     public int evaluate(String expression) {
-        scope.add(new HashMap());
+        scope.add(new HashMap<String, Integer>());
         int ans = evaluate_inner(expression);
         scope.remove(scope.size() - 1);
         return ans;
@@ -99,7 +99,7 @@ public class Solution736 {
     }
 
     public List<String> parse(String expression) {
-        List<String> ans = new ArrayList();
+        List<String> ans = new ArrayList<String>();
         int bal = 0;
         StringBuilder buf = new StringBuilder();
         for (String token: expression.split(" ")) {

@@ -21,6 +21,9 @@ For example, given the above Employee table, the query should return 200 as the 
  * @author Johnny
  */
 public class Solution176 {
+    public int query() {
+        return 0;
+    }
     /*
     Create table If Not Exists Employee (Id int, Salary int);
     Truncate table Employee;

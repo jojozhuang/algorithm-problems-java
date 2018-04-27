@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +30,7 @@ public class Solution795Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numSubarrayBoundedMax");
         Solution795 instance = new Solution795();
 
         assertEquals(3, instance.numSubarrayBoundedMax(new int[] {2, 1, 4, 3}, 2, 3));

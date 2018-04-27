@@ -51,7 +51,7 @@ public class FindMergeNodeTest {
         Node headB = null;
         FindMergeNode instance = new FindMergeNode();
         int expResult = Integer.MIN_VALUE;
-        int result = instance.FindMergeNode(headA, headB);
+        int result = instance.findMergeNode(headA, headB);
         assertEquals(expResult, result);
         
         Node headA2 = new Node();
@@ -65,9 +65,7 @@ public class FindMergeNodeTest {
         headB2.data = 1;
         headB2.next = new Node();
         headB2.next.data = 3;
-        assertEquals(3, instance.FindMergeNode(headA2, headB2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(3, instance.findMergeNode(headA2, headB2));
     }
     
 }

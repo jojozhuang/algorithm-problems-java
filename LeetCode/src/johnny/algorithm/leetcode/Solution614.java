@@ -31,5 +31,27 @@ Please display the result in follower's alphabet order.
  * @author Johnny
  */
 public class Solution614 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    
+    /*
+    Create table If Not Exists follow (followee varchar(255), follower varchar(255));
+    Truncate table follow;
+    insert into follow (followee, follower) values ('A', 'B');
+    insert into follow (followee, follower) values ('B', 'C');
+    insert into follow (followee, follower) values ('B', 'D');
+    insert into follow (followee, follower) values ('D', 'E');
+    */
+    
+    /*
+    select distinct follower, num
+    from follow, 
+    (select followee, count(distinct follower) as num from follow 
+    group by followee) as t
+    where follower = t.followee
+    order by follower;
+    */
+    
 }

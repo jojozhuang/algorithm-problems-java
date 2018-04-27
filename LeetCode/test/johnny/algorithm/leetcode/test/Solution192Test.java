@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -34,9 +32,8 @@ public class Solution192Test {
     public void test() {
         System.out.println("Word Frequency");
         Solution192 instance = new Solution192();
-
-        //bash
-        //assertEquals(result1, instance.eventualSafeNodes(graph1));
+        
+        assertEquals(0, instance.bash());
     }
 
 }

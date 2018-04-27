@@ -41,7 +41,7 @@ public class Solution804 {
                 "---",".--.","--.-",".-.","...","-","..-",
                 "...-",".--","-..-","-.--","--.."};
 
-        Set<String> seen = new HashSet();
+        Set<String> seen = new HashSet<String>();
         for (String word: words) {
            StringBuilder code = new StringBuilder();
            for (char c: word.toCharArray())

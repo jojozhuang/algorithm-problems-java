@@ -43,7 +43,7 @@ package johnny.algorithm.leetcode;
 public class Solution351 {
     //http://www.cnblogs.com/grandyang/p/5541012.html
     //https://discuss.leetcode.com/topic/46260/java-dfs-solution-with-clear-explanations-and-optimization-beats-97-61-12ms
-    int numberOfPatterns(int m, int n) {
+    public int numberOfPatterns(int m, int n) {
         if (m < 1 || n > 9 || m > n) {
             return 0;
         }

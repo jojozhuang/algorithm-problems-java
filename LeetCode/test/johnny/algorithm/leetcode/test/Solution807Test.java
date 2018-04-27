@@ -33,7 +33,6 @@ public class Solution807Test {
         System.out.println("maxIncreaseKeepingSkyline");
         Solution807 instance = new Solution807();
         int[][] grid1 = new int[][] {{3, 0, 8, 4},{2, 4, 5, 7},{9, 2, 6, 3},{0, 3, 1, 0}};
-        int[][] result1 = new int[][] {{8, 4, 8, 7},{7, 4, 7, 7},{9, 4, 8, 7},{3, 3, 3, 3}};
         assertEquals(35, instance.maxIncreaseKeepingSkyline(grid1));
     }
 

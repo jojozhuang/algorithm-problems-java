@@ -1,11 +1,5 @@
 package johnny.algorithm.leetcode;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
-
 /**
  *774. Minimize Max Distance to Gas Station
 On a horizontal number line, we have gas stations at positions stations[0], stations[1], ..., stations[N-1], where N = stations.length.

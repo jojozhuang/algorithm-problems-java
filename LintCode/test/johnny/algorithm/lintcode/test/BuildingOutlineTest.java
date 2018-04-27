@@ -6,8 +6,6 @@
 package johnny.algorithm.lintcode.test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -51,7 +49,7 @@ public class BuildingOutlineTest {
         System.out.println("buildingOutline");
         int[][] buildings = null;
         BuildingOutline instance = new BuildingOutline();
-        ArrayList<ArrayList<Integer>> expResult = new ArrayList();
+        ArrayList<ArrayList<Integer>> expResult = new ArrayList<ArrayList<Integer>>();
         ArrayList<ArrayList<Integer>> result = instance.buildingOutline(buildings);
         assertEquals(expResult, result);
         

@@ -1,7 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;

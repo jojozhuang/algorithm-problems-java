@@ -133,5 +133,9 @@ public class Solution355 {
             t.next=tweet_head;
             tweet_head=t;
         }
+        
+        public String toString() {
+            return id + "";
+        }
     }
 }

@@ -36,6 +36,9 @@ Write a SQL query to find employees who earn the top three salaries in each of t
  * @author Johnny
  */
 public class Solution185 {
+    public int query() {
+        return 0;
+    }
     /*
     USE `leetcode4`;
     Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int);
@@ -52,5 +55,22 @@ public class Solution185 {
     insert into Department (Id, Name) values ('2', 'Sales');
     */
     
-    
+    /*
+    SELECT
+        d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+    FROM
+        Employee e1
+            JOIN
+        Department d ON e1.DepartmentId = d.Id
+    WHERE
+        3 > (SELECT
+                COUNT(DISTINCT e2.Salary)
+            FROM
+                Employee e2
+            WHERE
+                e2.Salary > e1.Salary
+                    AND e1.DepartmentId = e2.DepartmentId
+            );
+    */
+
 }

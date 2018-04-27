@@ -34,6 +34,9 @@ FirstName, LastName, City, State
  * @author Johnny
  */
 public class Solution175 {
+    public int query() {
+        return 0;
+    }
     /*
     Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255));
     Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255));

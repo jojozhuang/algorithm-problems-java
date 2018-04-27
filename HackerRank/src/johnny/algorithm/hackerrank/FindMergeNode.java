@@ -12,7 +12,7 @@ import johnny.algorithm.hackerrank.common.Node;
  * @author Johnny
  */
 public class FindMergeNode {
-    public int FindMergeNode(Node headA, Node headB) {
+    public int findMergeNode(Node headA, Node headB) {
         int lenA = getLen(headA);
         int lenB = getLen(headB);
 

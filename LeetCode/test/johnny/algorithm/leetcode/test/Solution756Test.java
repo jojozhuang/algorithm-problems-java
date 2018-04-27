@@ -33,7 +33,7 @@ public class Solution756Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("pyramidTransition");
         Solution756 instance = new Solution756();
 
         List<String> allowed1 = ListUtil.buildStringList(new String[] {"XXX", "XXY", "XYX", "XYY", "YXZ"});

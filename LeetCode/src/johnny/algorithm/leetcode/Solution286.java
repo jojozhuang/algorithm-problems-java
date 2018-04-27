@@ -50,7 +50,7 @@ public class Solution286 {
             }
         }
     }
-    private void dfs(int[][] rooms, int i, int j, int distance) {
+    public void dfs(int[][] rooms, int i, int j, int distance) {
         if (i < 0 || i >= rooms.length || j < 0 ||  j >= rooms[0].length) {
             return ;
         }

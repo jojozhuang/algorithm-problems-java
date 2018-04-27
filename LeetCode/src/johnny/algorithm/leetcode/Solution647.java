@@ -1,8 +1,5 @@
 package johnny.algorithm.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Palindromic Substrings
  * 

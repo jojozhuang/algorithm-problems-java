@@ -18,5 +18,27 @@ Note: The longest distance among all the points are less than 10000.
  * @author Johnny
  */
 public class Solution612 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    
+    /*
+    CREATE TABLE If Not Exists point_2d (x INT NOT NULL, y INT NOT NULL);
+    Truncate table point_2d;
+    insert into point_2d (x, y) values ('-1', '-1');
+    insert into point_2d (x, y) values ('0', '0');
+    insert into point_2d (x, y) values ('-1', '-2');
+    */
+    
+    /*
+    SELECT
+        ROUND(SQRT(MIN((POW(p1.x - p2.x, 2) + POW(p1.y - p2.y, 2)))),2) AS shortest
+    FROM
+        point_2d p1
+            JOIN
+        point_2d p2 ON (p1.x <= p2.x AND p1.y < p2.y)
+            OR (p1.x <= p2.x AND p1.y > p2.y)
+            OR (p1.x < p2.x AND p1.y = p2.y)
+    */
 }

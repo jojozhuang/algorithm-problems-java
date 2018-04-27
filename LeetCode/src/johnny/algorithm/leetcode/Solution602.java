@@ -24,5 +24,33 @@ In the real world, multiple people could have the same most number of friends, c
  * @author Johnny
  */
 public class Solution602 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    /*
+    Create table If Not Exists request_accepted ( requester_id INT NOT NULL, accepter_id INT NULL, accept_date DATE NULL);
+    Truncate table request_accepted;
+    insert into request_accepted (requester_id, accepter_id, accept_date) values ('1', '2', '2016/06/03');
+    insert into request_accepted (requester_id, accepter_id, accept_date) values ('1', '3', '2016/06/08');
+    insert into request_accepted (requester_id, accepter_id, accept_date) values ('2', '3', '2016/06/08');
+    insert into request_accepted (requester_id, accepter_id, accept_date) values ('3', '4', '2016/06/09');
+    */
+    
+    /*
+    select ids as id, cnt as num
+    from
+    (
+    select ids, count(*) as cnt
+       from
+       (
+            select requester_id as ids from request_accepted
+            union all
+            select accepter_id from request_accepted
+        ) as tbl1
+       group by ids
+       ) as tbl2
+    order by cnt desc
+    limit 1
+    */
 }

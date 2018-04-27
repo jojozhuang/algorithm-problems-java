@@ -99,7 +99,7 @@ public class Solution145 {
         
         return res;
     }
-    private List<Integer> postorderTraversal4(TreeNode root) {
+    public List<Integer> postorderTraversal4(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         
         if (root == null) {

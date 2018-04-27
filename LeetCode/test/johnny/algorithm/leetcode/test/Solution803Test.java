@@ -30,7 +30,7 @@ public class Solution803Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("hitBricks");
         Solution803 instance = new Solution803();
 
         int[][] grid1 = new int[][] {{1,0,0,0},{1,1,1,0}};

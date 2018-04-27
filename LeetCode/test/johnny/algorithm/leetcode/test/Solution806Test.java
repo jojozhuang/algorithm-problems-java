@@ -30,7 +30,7 @@ public class Solution806Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numberOfLines");
         Solution806 instance = new Solution806();
 
         int[] widths1 = new int[]{10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10};

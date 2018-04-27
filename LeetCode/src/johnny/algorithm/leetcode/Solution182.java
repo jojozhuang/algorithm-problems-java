@@ -22,6 +22,9 @@ Note: All emails are in lowercase.
  * @author Johnny
  */
 public class Solution182 {
+    public int query() {
+        return 0;
+    }
     /*
     USE `leetcode2`;
     Create table If Not Exists Person (Id int, Email varchar(255));

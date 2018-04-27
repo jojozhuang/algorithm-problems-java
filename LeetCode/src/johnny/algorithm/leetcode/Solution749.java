@@ -79,16 +79,16 @@ public class Solution749 {
 
         int ans = 0;
         while (true) {
-            seen = new HashSet();
-            regions = new ArrayList();
-            frontiers = new ArrayList();
-            perimeters = new ArrayList();
+            seen = new HashSet<Integer>();
+            regions = new ArrayList<Set<Integer>>();
+            frontiers = new ArrayList<Set<Integer>>();
+            perimeters = new ArrayList<Integer>();
 
             for (int r = 0; r < R; ++r) {
                 for (int c = 0; c < C; ++c) {
                     if (grid[r][c] == 1 && !seen.contains(r*C + c)) {
-                        regions.add(new HashSet());
-                        frontiers.add(new HashSet());
+                        regions.add(new HashSet<Integer>());
+                        frontiers.add(new HashSet<Integer>());
                         perimeters.add(0);
                         dfs(r, c);
                     }

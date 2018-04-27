@@ -1,7 +1,5 @@
 package johnny.algorithm.leetcode;
 
-import java.util.List;
-
 /**
  * Shortest Word Distance.
  * 

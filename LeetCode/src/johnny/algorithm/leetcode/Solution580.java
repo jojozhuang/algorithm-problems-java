@@ -51,5 +51,32 @@ The Output should be:
  * @author Johnny
  */
 public class Solution580 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    
+    /*
+    CREATE TABLE IF NOT EXISTS student (student_id INT,student_name VARCHAR(45), gender VARCHAR(6), dept_id INT);
+    CREATE TABLE IF NOT EXISTS department (dept_id INT, dept_name VARCHAR(255));
+    Truncate table department;
+    insert into department (dept_id, dept_name) values ('1', 'Engineering');
+    insert into department (dept_id, dept_name) values ('2', 'Science');
+    insert into department (dept_id, dept_name) values ('3', 'Law');
+    Truncate table student;
+    insert into student (student_id, student_name, gender, dept_id) values ('1', 'Jack', 'M', '1');
+    insert into student (student_id, student_name, gender, dept_id) values ('2', 'Jane', 'F', '1');
+    insert into student (student_id, student_name, gender, dept_id) values ('3', 'Mark', 'M', '2');
+    */
+    
+    /*
+    SELECT d.dept_name, IFNULL(s.cnt,0) student_number
+    FROM department d
+    LEFT OUTER JOIN (
+        SELECT COUNT(*) cnt, dept_id
+        FROM student
+        GROUP BY dept_id) s ON d.dept_id=s.dept_id
+    ORDER BY s.cnt DESC, d.dept_name ASC
+    */
+
 }

@@ -1,6 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -47,7 +46,7 @@ public class Solution281Test {
         
         List<Integer> v11 = ListUtil.buildList(new Integer[] {1,2}); 
         List<Integer> v12 = ListUtil.buildList(new Integer[] {3, 4, 5, 6});
-        List<Integer> expect1 = ListUtil.buildList(new Integer[] {1, 3, 2, 4, 5, 6}); 
+        //List<Integer> expect1 = ListUtil.buildList(new Integer[] {1, 3, 2, 4, 5, 6}); 
         Solution281 instance = new Solution281(v11, v12);
         
         assertEquals(true, instance.hasNext());
@@ -62,7 +61,7 @@ public class Solution281Test {
         assertEquals(false, instance.hasNext());
         
         List<List<Integer>> klist1 = ListUtil.buildList2(new Integer[][] {{1,2,3},{4,5,6,7},{8,9}});
-        List<Integer> expect2 = ListUtil.buildList(new Integer[] {1,4,8,2,5,9,3,6,7}); 
+        //List<Integer> expect2 = ListUtil.buildList(new Integer[] {1,4,8,2,5,9,3,6,7}); 
         Solution281.KList instance2 = instance.new KList(klist1);
 
         assertEquals(true, instance2.hasNext());

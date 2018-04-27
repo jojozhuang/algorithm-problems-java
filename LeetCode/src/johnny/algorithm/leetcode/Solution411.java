@@ -85,7 +85,7 @@ public class Solution411 {
     }
     
     public String minAbbreviation(String target, String[] dictionary) {
-        List<String> dict = new ArrayList();
+        List<String> dict = new ArrayList<String>();
         int len = target.length();
         for (String str : dictionary) if (str.length() == len ) dict.add(str);
         if (dict.isEmpty()) return ""+len;
@@ -97,7 +97,7 @@ public class Solution411 {
         int min = 1, max = len; 
         while (max >= min) {
             int mid = min+( (max-min)/2 );
-            List<String> abbs = new ArrayList();
+            List<String> abbs = new ArrayList<String>();
             getAbbs(cc, 0, mid, new StringBuilder(), abbs);
             boolean conflict = true;
             for (String abbr: abbs){

@@ -35,7 +35,7 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution472 {
-    public static List<String> findAllConcatenatedWordsInADict(String[] words) {
+    public List<String> findAllConcatenatedWordsInADict(String[] words) {
         List<String> result = new ArrayList<>();
         Set<String> preWords = new HashSet<>();
         Arrays.sort(words, new Comparator<String>() {
@@ -54,7 +54,7 @@ public class Solution472 {
         return result;
     }
     
-    private static boolean canForm(String word, Set<String> dict) {
+    private boolean canForm(String word, Set<String> dict) {
         if (dict.isEmpty()) return false;
         boolean[] dp = new boolean[word.length() + 1];
         dp[0] = true;

@@ -21,6 +21,9 @@ Line 10
  * @author Johnny
  */
 public class Solution195 {
+    public int bash() {
+        return 0;
+    }
     //# Read from the file file.txt and output all valid phone numbers to stdout.
     
     /*

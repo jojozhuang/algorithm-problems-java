@@ -1,11 +1,8 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Search for a Range.
@@ -39,7 +36,7 @@ public class Solution163 {
     }
     
     public List<String> findMissingRanges(int[] nums, int lower, int upper) {
-        List<String> result = new ArrayList<String>();
+        List<String> result = new LinkedList<>();
         if (nums == null || nums.length == 0) {
             if (lower != upper) {
                 result.add(lower + "->" + upper);
@@ -48,23 +45,23 @@ public class Solution163 {
             }
             return result;
         }
+        long start = lower;
+        start -= 1;
         
-        // eliminate duplicate num
-        List<Integer> list = Arrays.stream(nums).boxed().collect(Collectors.toList());
-        Set<Integer> set = new HashSet<Integer>(list);
-        List<Integer> identicalList = new ArrayList<Integer>(set);
-        nums = identicalList.stream().mapToInt(i->i).toArray();
-        Arrays.sort(nums);
-        
-        long pre = (long)lower - 1;
-        for(int i = 0 ; i <= nums.length  ; i++){
-            long after = i == nums.length ? upper + 1 : nums[i]; 
-            if(pre + 2 == after){
-                result.add(String.valueOf(pre + 1));
-            }else if(pre + 2 < after){
-                result.add(String.valueOf(pre + 1) + "->" + String.valueOf(after - 1));
+        for(int i = 0; i < nums.length; i++){
+            if((long)nums[i] - start > 1L){
+                if((long)nums[i] - start > 2L)
+                    result.add((start+1)+"->"+(nums[i]-1));
+                else
+                    result.add((start+1)+"");
             }
-            pre = after;
+            start = nums[i];
+        }
+        if((long)upper - start >= 1L){
+            if((long)upper - start > 1L)
+                result.add((start+1)+"->"+(upper));
+            else
+                result.add((start+1)+"");
         }
         return result;
     }

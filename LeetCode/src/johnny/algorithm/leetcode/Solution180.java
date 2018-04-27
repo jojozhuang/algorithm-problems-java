@@ -25,6 +25,9 @@ For example, given the above Logs table, 1 is the only number that appears conse
  * @author Johnny
  */
 public class Solution180 {
+    public int query() {
+        return 0;
+    }
     /*
     Create table If Not Exists Logs (Id int, Num int);
     Truncate table Logs;

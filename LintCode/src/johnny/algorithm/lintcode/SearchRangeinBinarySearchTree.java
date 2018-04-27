@@ -6,7 +6,6 @@
 package johnny.algorithm.lintcode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import johnny.algorithm.lintcode.common.TreeNode;
 

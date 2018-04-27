@@ -44,5 +44,44 @@ So, the result is the sum of TIV_2016 of the first and last record, which is 45.
  * @author Johnny
  */
 public class Solution585 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    
+    /*
+    CREATE TABLE IF NOT EXISTS insurance (PID INTEGER(11), TIV_2015 NUMERIC(15,2), TIV_2016 NUMERIC(15,2), LAT NUMERIC(5,2), LON NUMERIC(5,2) );
+    Truncate table insurance;
+    insert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values ('1', '10', '5', '10', '10');
+    insert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values ('2', '20', '20', '20', '20');
+    insert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values ('3', '10', '30', '20', '20');
+    insert into insurance (PID, TIV_2015, TIV_2016, LAT, LON) values ('4', '10', '40', '40', '40');
+    */
+    
+    /*
+    SELECT
+        SUM(insurance.TIV_2016) AS TIV_2016
+    FROM
+        insurance
+    WHERE
+        insurance.TIV_2015 IN
+        (
+          SELECT
+            TIV_2015
+          FROM
+            insurance
+          GROUP BY TIV_2015
+          HAVING COUNT(*) > 1
+        )
+        AND CONCAT(LAT, LON) IN
+        (
+          SELECT
+            CONCAT(LAT, LON)
+          FROM
+            insurance
+          GROUP BY LAT , LON
+          HAVING COUNT(*) = 1
+        )
+    ;
+    */
 }

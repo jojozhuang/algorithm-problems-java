@@ -33,7 +33,7 @@ public class Solution699Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("fallingSquares");
         Solution699 instance = new Solution699();
 
         int[][] positions1 = {{1, 2}, {2, 3}, {6, 1}};

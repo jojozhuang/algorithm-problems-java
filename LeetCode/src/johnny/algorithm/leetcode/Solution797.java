@@ -31,9 +31,9 @@ public class Solution797 {
 
     public List<List<Integer>> solve(int[][] graph, int node) {
         int N = graph.length;
-        List<List<Integer>> ans = new ArrayList();
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
         if (node == N - 1) {
-            List<Integer> path = new ArrayList();
+            List<Integer> path = new ArrayList<Integer>();
             path.add(N-1);
             ans.add(path);
             return ans;

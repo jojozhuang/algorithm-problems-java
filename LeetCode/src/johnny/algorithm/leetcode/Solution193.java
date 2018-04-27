@@ -19,6 +19,9 @@ Your script should output the following valid phone numbers:
  * @author Johnny
  */
 public class Solution193 {
+    public int bash() {
+        return 0;
+    }
     //# Read from the file file.txt and output all valid phone numbers to stdout.
     /*
     Using grep:

@@ -16,6 +16,9 @@ package johnny.algorithm.leetcode;
  */
 public class Solution188 {
     public int maxProfit(int k, int[] prices) {
+        if (prices == null || prices.length == 0 || k <=0) {
+            return 0;
+        }
         int len = prices.length;
         if (k >= len / 2) return quickSolve(prices);
         

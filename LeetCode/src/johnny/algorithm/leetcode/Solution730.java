@@ -33,8 +33,8 @@ Each character S[i] will be in the set {'a', 'b', 'c', 'd'}.
  */
 public class Solution730 {
     int div=1000000007;
-    public int countPalindromicSubsequences(String S) {    
-        TreeSet[] characters = new TreeSet[26];
+    public int countPalindromicSubsequences(String S) {
+        TreeSet<Integer>[] characters = new TreeSet[26];
         int len = S.length();
         
         for (int i = 0; i < 26; i++) characters[i] = new TreeSet<Integer>();

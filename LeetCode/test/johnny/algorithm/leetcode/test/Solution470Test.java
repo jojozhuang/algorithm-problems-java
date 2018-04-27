@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -34,8 +32,8 @@ public class Solution470Test {
     public void test() {
         System.out.println("Solution470");
         Solution470 instance = new Solution470();
-
-        //assertEquals(result1, instance.eventualSafeNodes(graph1));
+        
+        assertEquals(0, instance.dummy());
     }
 
 }

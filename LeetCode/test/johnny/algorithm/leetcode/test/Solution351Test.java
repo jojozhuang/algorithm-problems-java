@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,10 +30,10 @@ public class Solution351Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("numberOfPatterns");
         Solution351 instance = new Solution351();
 
-        assertEquals(result1, instance.eventualSafeNodes(graph1));
+        assertEquals(9, instance.numberOfPatterns(1,1));
     }
 
 }

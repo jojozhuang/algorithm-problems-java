@@ -23,5 +23,25 @@ Consecutive available seats are more than 2(inclusive) seats consecutively avail
  * @author Johnny
  */
 public class Solution603 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    /*
+    Create table If Not Exists cinema (seat_id int primary key auto_increment, free bool);
+    Truncate table cinema;
+    insert into cinema (seat_id, free) values ('1', '1');
+    insert into cinema (seat_id, free) values ('2', '0');
+    insert into cinema (seat_id, free) values ('3', '1');
+    insert into cinema (seat_id, free) values ('4', '1');
+    insert into cinema (seat_id, free) values ('5', '1');
+    */
+    
+    /*
+    select distinct a.seat_id
+    from cinema a join cinema b
+      on abs(a.seat_id - b.seat_id) = 1
+      and a.free = true and b.free = true
+    order by a.seat_id
+    */
 }

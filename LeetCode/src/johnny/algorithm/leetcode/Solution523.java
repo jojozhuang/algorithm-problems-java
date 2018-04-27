@@ -28,7 +28,8 @@ import java.util.Map;
  */
 public class Solution523 {
     public boolean checkSubarraySum(int[] nums, int k) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>(){{put(0,-1);}};;
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        map.put(0,-1);
         int runningSum = 0;
         for (int i=0;i<nums.length;i++) {
             runningSum += nums[i];

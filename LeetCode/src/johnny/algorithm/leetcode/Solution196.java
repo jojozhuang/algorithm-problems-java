@@ -23,5 +23,14 @@ For example, after running your query, the above Person table should have the fo
  * @author Johnny
  */
 public class Solution196 {
+    public int query() {
+        return 0;
+    }
     //# Write your MySQL query statement below
+    /*
+    DELETE p1 FROM Person p1,
+        Person p2
+    WHERE
+        p1.Email = p2.Email AND p1.Id > p2.Id
+    */
 }

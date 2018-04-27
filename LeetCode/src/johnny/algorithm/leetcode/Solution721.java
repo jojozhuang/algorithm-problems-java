@@ -56,7 +56,7 @@ public class Solution721 {
         }
         List<List<String>> res = new ArrayList<>();
         for (String p : unions.keySet()) {
-            List<String> emails = new ArrayList(unions.get(p));
+            List<String> emails = new ArrayList<String>(unions.get(p));
             emails.add(0, owner.get(p));
             res.add(emails);
         }

@@ -2,8 +2,6 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +30,7 @@ public class Solution789Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("escapeGhosts");
         Solution789 instance = new Solution789();
 
         assertEquals(true, instance.escapeGhosts(new int[][] {{1, 0}, {0, 3}}, new int[] {0, 1}));

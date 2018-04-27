@@ -33,7 +33,7 @@ public class Solution797Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("allPathsSourceTarget");
         Solution797 instance = new Solution797();
 
         int[][] graph1 = new int[][] {{1,2}, {3}, {3}, {}};

@@ -59,7 +59,6 @@ public class AddandSearchWordTest {
     @Test
     public void testSearch() {
         System.out.println("search");
-        String word = "";
        
         AddandSearchWord instance = new AddandSearchWord();
         instance.addWord("bad");

@@ -5,7 +5,6 @@
  */
 package johnny.algorithm.lintcode;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 /**

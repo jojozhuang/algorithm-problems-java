@@ -57,8 +57,8 @@ public class TopKFrequentWordsTest {
         doc2.content = "lintcode is an online judge for coding interview you can test your code online at lintcode";
         
         TopKFrequentWords.Map map = new TopKFrequentWords.Map();
-        OutputCollector output1 = new OutputCollector();
-        OutputCollector expect1 = new OutputCollector();
+        OutputCollector<String, Integer> output1 = new OutputCollector<String, Integer>();
+        OutputCollector<String, Integer> expect1 = new OutputCollector<String, Integer>();
         expect1.collect("lintcode", 1);
         expect1.collect("lintcode", 1);
         expect1.collect("is", 1);
@@ -81,8 +81,8 @@ public class TopKFrequentWordsTest {
             reduce.reduce((String)entry.getKey(), ((List)entry.getValue()).iterator());
         }
         
-        OutputCollector output2 = new OutputCollector();
-        OutputCollector expect2 = new OutputCollector();
+        OutputCollector<String, Integer> output2 = new OutputCollector<String, Integer>();
+        OutputCollector<String, Integer> expect2 = new OutputCollector<String, Integer>();
         expect2.collect("lintcode", 2);
         expect2.collect("I", 1);
         reduce.cleanup(output2);
@@ -104,8 +104,8 @@ public class TopKFrequentWordsTest {
         doc2.content = "This is the       content of document3";
         
         TopKFrequentWords.Map map = new TopKFrequentWords.Map();
-        OutputCollector output1 = new OutputCollector();
-        OutputCollector expect1 = new OutputCollector();
+        OutputCollector<String, Integer> output1 = new OutputCollector<String, Integer>();
+        OutputCollector<String, Integer> expect1 = new OutputCollector<String, Integer>();
         expect1.collect("This", 1);
         expect1.collect("This", 1);
         expect1.collect("is", 1);
@@ -132,8 +132,8 @@ public class TopKFrequentWordsTest {
             reduce.reduce((String)entry.getKey(), ((List)entry.getValue()).iterator());
         }
         
-        OutputCollector output2 = new OutputCollector();
-        OutputCollector expect2 = new OutputCollector();
+        OutputCollector<String, Integer> output2 = new OutputCollector<String, Integer>();
+        OutputCollector<String, Integer> expect2 = new OutputCollector<String, Integer>();
         expect2.collect("This", 2);
         expect2.collect("content", 2);
         expect2.collect("is", 2);
@@ -156,8 +156,8 @@ public class TopKFrequentWordsTest {
         doc2.content = "wz gc gc ba ba";
         
         TopKFrequentWords.Map map = new TopKFrequentWords.Map();
-        OutputCollector output1 = new OutputCollector();
-        OutputCollector expect1 = new OutputCollector();
+        OutputCollector<String, Integer> output1 = new OutputCollector<String, Integer>();
+        OutputCollector<String, Integer> expect1 = new OutputCollector<String, Integer>();
         expect1.collect("tt", 1);
         expect1.collect("gc", 1);
         expect1.collect("gc", 1);
@@ -182,14 +182,11 @@ public class TopKFrequentWordsTest {
             reduce.reduce((String)entry.getKey(), ((List)entry.getValue()).iterator());
         }
         
-        OutputCollector output2 = new OutputCollector();
-        OutputCollector expect2 = new OutputCollector();
+        OutputCollector<String, Integer> output2 = new OutputCollector<String, Integer>();
+        OutputCollector<String, Integer> expect2 = new OutputCollector<String, Integer>();
         expect2.collect("ba", 4);
         expect2.collect("gc", 4);
         reduce.cleanup(output2);
         assertTrue(OutputCollector.isSame(output2, expect2));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

@@ -33,7 +33,7 @@ public class Solution802Test {
 
     @Test
     public void test() {
-        System.out.println("maxIncreaseKeepingSkyline");
+        System.out.println("eventualSafeNodes");
         Solution802 instance = new Solution802();
 
         int[][] graph1 = new int[][] {{1,2},{2,3},{5},{0},{5},{},{}};

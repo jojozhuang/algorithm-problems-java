@@ -23,6 +23,9 @@ Don't worry about handling ties, it is guaranteed that each word's frequency cou
  * @author Johnny
  */
 public class Solution192 {
+    public int bash() {
+        return 0;
+    }
     //# Read from the file words.txt and output the word frequency list to stdout.
     /*
     cat words.txt | tr -s ' ' '\n' | sort | uniq -c | sort -r | awk '{ print $2, $1 }'
