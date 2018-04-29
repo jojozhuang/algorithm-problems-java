@@ -54,8 +54,5 @@ public class InterleavingPositiveandNegativeNumbersTest {
         instance.rerange(A2);
         int[] expected2 = new int[] {-33,30,-19,26,-9,21};
         assertArrayEquals(expected2, A2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -54,10 +54,6 @@ public class Solution560Test {
         assertEquals(3, instance.subarraySum(new int[]{1,1,1}, 1));
         assertEquals(2, instance.subarraySum(new int[]{1,1,1}, 2));
         assertEquals(1, instance.subarraySum(new int[]{1,1,1}, 3));
-        
         assertEquals(4, instance.subarraySum(new int[]{1,2,1,2,1}, 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

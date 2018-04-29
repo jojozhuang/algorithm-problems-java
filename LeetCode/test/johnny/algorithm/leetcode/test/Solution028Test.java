@@ -53,9 +53,5 @@ public class Solution028Test {
         assertEquals(2, instance.strStr("abcdedf", "cd"));
         assertEquals(5, instance.strStr("1234567890", "67"));
         assertEquals(4, instance.strStr("mississippi", "issip"));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

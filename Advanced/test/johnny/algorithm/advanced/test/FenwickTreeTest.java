@@ -59,7 +59,7 @@ public class FenwickTreeTest {
         assertEquals(27, instance.getSum(8));
         assertEquals(34, instance.getSum(9));
         assertEquals(42, instance.getSum(10));
-        assertEquals(51, instance.getSum(11));       
+        assertEquals(51, instance.getSum(11));
         assertEquals(7, instance.getSum(0,3));
         assertEquals(9, instance.getSum(0,4));
         assertEquals(5, instance.getSum(3,4));
@@ -72,9 +72,5 @@ public class FenwickTreeTest {
         assertEquals(9, instance.getSum(3));
         assertEquals(11, instance.getSum(4));
         assertEquals(23, instance.getSum(7));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

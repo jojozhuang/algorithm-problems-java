@@ -54,8 +54,6 @@ public class Solution271Test {
         strs2.add("world");
         strs2.add("!");
         assertEquals("5#hello5#world1#!", instance.encode(strs2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -75,8 +73,5 @@ public class Solution271Test {
         expResult2.add("world");
         expResult2.add("!");
         assertEquals(expResult2, instance.decode("5#hello5#world1#!"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

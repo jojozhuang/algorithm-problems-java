@@ -71,9 +71,5 @@ public class Solution089Test {
         expResult4.add(5);
         expResult4.add(4);
         assertEquals(expResult4, instance.grayCode(3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

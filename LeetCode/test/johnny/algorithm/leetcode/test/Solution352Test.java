@@ -103,8 +103,5 @@ public class Solution352Test {
         instance4.addNum(6);
         List<Interval> result42 = instance4.getIntervals();
         assertTrue(expResult4.containsAll(result42) && result42.containsAll(expResult4));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }   
+    }
 }

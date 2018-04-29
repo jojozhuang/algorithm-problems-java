@@ -73,8 +73,5 @@ public class Solution282Test {
         
         List<String> expResult6 = new ArrayList<String>();
         assertEquals(expResult6, instance.addOperators("3456237490", 9191));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

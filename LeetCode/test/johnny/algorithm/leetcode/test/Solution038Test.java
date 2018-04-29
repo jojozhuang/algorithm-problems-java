@@ -52,7 +52,5 @@ public class Solution038Test {
         assertEquals("21", instance.countAndSay(3));
         assertEquals("1211", instance.countAndSay(4));
         assertEquals("111221", instance.countAndSay(5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }    
+    }
 }

@@ -54,8 +54,5 @@ public class TriangleCountTest {
         
         assertEquals(3, instance.triangleCount(new int[]{3,4,6,7}));
         assertEquals(4, instance.triangleCount(new int[]{4,4,4,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

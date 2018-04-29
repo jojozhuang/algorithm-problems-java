@@ -49,8 +49,5 @@ public class Solution348Test {
         assertEquals(0, instance.move(2, 0, 1));
         assertEquals(0, instance.move(1, 0, 2));
         assertEquals(1, instance.move(2, 1, 1));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

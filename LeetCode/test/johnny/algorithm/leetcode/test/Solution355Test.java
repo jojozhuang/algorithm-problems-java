@@ -73,8 +73,5 @@ public class Solution355Test {
         List<Integer> list3 = new ArrayList<Integer>();
         list3.add(5);
         assertEquals(list1, twitter.getNewsFeed(1));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }    
+    }
 }

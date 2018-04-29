@@ -54,8 +54,5 @@ public class Solution300Test {
         assertEquals(4, instance.lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
         assertEquals(3, instance.lengthOfLIS(new int[]{5, 4, 1, 2, 3}));
         assertEquals(4, instance.lengthOfLIS(new int[]{4, 2, 4, 5, 3, 7}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

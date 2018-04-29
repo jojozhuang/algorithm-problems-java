@@ -63,8 +63,5 @@ public class Solution241Test {
         expResult3.add(10);
         List<Integer> result3 = instance.diffWaysToCompute("2*3-4*5");
         assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

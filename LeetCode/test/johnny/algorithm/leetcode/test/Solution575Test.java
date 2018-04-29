@@ -51,9 +51,5 @@ public class Solution575Test {
         assertEquals(1, instance.distributeCandies(new int[]{1,1,1,1,1,1}));
         assertEquals(3, instance.distributeCandies(new int[]{1,1,2,2,3,3}));
         assertEquals(2, instance.distributeCandies(new int[]{1,1,2,3}));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

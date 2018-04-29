@@ -53,8 +53,5 @@ public class Solution198Test {
         assertEquals(2, instance.rob(new int[]{1,1,1,1}));
         assertEquals(4, instance.rob(new int[]{1,2,3}));
         assertEquals(13, instance.rob(new int[]{1,4,5,6,7}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

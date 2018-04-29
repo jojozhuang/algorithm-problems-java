@@ -71,9 +71,5 @@ public class Solution143Test {
         ListNode expect6 = ListNode.createInstance(new int[]{1,5,2,4,3});
         instance.reorderList(head6);
         assertTrue(ListNode.isSame(expect6, head6));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

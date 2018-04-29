@@ -48,8 +48,5 @@ public class Solution434Test {
         assertEquals(5, instance.countSegments("Hello, my name is John"));
         assertEquals(0, instance.countSegments("   "));
         assertEquals(6, instance.countSegments(", , , ,        a, eaefa"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

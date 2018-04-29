@@ -52,8 +52,5 @@ public class Solution290Test {
         assertEquals(false, instance.wordPattern("abba", "dog cat cat fish"));
         assertEquals(false, instance.wordPattern("aaaa", "dog cat cat dog"));
         assertEquals(false, instance.wordPattern("abba", "dog dog dog dog"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

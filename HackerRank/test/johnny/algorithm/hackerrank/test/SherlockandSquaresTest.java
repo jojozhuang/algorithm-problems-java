@@ -59,8 +59,5 @@ public class SherlockandSquaresTest {
         assertEquals(2, SherlockandSquares.squareNumber(3, 9));
         assertEquals(0, SherlockandSquares.squareNumber(17, 24));
         assertEquals(10, SherlockandSquares.squareNumber(1, 100));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

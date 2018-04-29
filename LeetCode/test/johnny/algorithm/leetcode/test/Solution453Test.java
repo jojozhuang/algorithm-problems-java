@@ -50,8 +50,5 @@ public class Solution453Test {
         assertEquals(Integer.MAX_VALUE - 1, instance.minMoves(new int[]{1, Integer.MAX_VALUE}));
         assertEquals(-1 - Integer.MIN_VALUE, instance.minMoves(new int[]{Integer.MIN_VALUE, -1}));
         assertEquals(3, instance.minMoves(new int[]{1,2,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

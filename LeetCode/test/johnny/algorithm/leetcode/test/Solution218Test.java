@@ -98,10 +98,5 @@ public class Solution218Test {
         assertEquals(expResult4.size(), result4.size());
         assertArrayEquals(expResult4.get(0), result4.get(0));
         assertArrayEquals(expResult4.get(1), result4.get(1));
-        
-    
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -44,8 +44,6 @@ public class Solution170Test {
         int number = 0;
         Solution170 instance = new Solution170();
         instance.add(number);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -57,15 +55,12 @@ public class Solution170Test {
         Solution170 instance = new Solution170();
         instance.add(1);
         instance.add(3);
-        instance.add(5);        
+        instance.add(5);
         assertEquals(true, instance.find(4));
         assertEquals(false, instance.find(7));
         assertEquals(true, instance.find(8));
         assertEquals(false, instance.find(3));
         instance.add(5);
         assertEquals(true, instance.find(10));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

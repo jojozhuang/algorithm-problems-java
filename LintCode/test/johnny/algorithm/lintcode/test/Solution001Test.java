@@ -59,8 +59,6 @@ public class Solution001Test {
         int[] expResult2 = {5100,5101};
         int[] result2 = instance2.twoSum1(numbers2, target2);
         assertArrayEquals(expResult2, result2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -82,8 +80,5 @@ public class Solution001Test {
         int[] expResult2 = {5100,5101};
         int[] result2 = instance2.twoSum2(numbers2, target2);
         assertArrayEquals(expResult2, result2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

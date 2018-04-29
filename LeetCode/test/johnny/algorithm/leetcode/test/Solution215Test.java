@@ -54,8 +54,5 @@ public class Solution215Test {
         assertEquals(3, instance.findKthLargest(new int[]{3,2,1,5,6,4}, 4));
         assertEquals(2, instance.findKthLargest(new int[]{3,2,1,5,6,4}, 5));
         assertEquals(1, instance.findKthLargest(new int[]{3,2,1,5,6,4}, 6));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

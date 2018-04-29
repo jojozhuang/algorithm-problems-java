@@ -62,8 +62,5 @@ public class Solution382Test {
         assertTrue(100 <= result2 && result2 <= 102);
         result2 = instance2.getRandom();
         assertTrue(100 <= result2 && result2 <= 102);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

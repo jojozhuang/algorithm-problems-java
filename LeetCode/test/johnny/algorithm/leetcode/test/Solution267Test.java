@@ -58,8 +58,5 @@ public class Solution267Test {
         List<String> expResult3 = new ArrayList<String>();
         List<String> result3 = instance.generatePalindromes("abc");
         assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

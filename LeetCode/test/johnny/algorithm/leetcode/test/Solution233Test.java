@@ -54,8 +54,6 @@ public class Solution233Test {
         assertEquals(4, instance.countDigitOne(11));
         assertEquals(6, instance.countDigitOne(13));
         assertEquals(767944060, instance.countDigitOne(824883294)); // timeout
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -78,9 +76,5 @@ public class Solution233Test {
         assertEquals(4, instance.countDigitOne2(11));
         assertEquals(6, instance.countDigitOne2(13));
         assertEquals(767944060, instance.countDigitOne(824883294));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

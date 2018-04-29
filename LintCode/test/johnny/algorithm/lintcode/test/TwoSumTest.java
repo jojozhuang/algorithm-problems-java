@@ -59,8 +59,5 @@ public class TwoSumTest {
         assertArrayEquals(new int[] {1, 2}, instance.twoSum2(new int[] { 2, 7 , 11, 15 }, 9));
         assertArrayEquals(new int[] {1, 4}, instance.twoSum2(new int[] { 2, 7 , 11, 15 }, 17));
         assertArrayEquals(new int[] {2, 3}, instance.twoSum2(new int[] { 1, 0, -1 }, -1));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

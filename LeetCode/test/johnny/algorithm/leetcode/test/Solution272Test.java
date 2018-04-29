@@ -98,9 +98,5 @@ public class Solution272Test {
         expResult37.add(4);
         expResult37.add(7);
         assertTrue(expResult37.containsAll(result37)&&result37.containsAll(expResult37));
-                
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

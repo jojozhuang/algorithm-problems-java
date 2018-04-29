@@ -53,8 +53,5 @@ public class Solution358Test {
         assertEquals("", instance.rearrangeString("aaabc", 3));
         assertTrue(instance.rearrangeString("aaadbbcc", 2).equals("abacabcd")||instance.rearrangeString("aaadbbcc", 2).equals("abcabcad"));
         //assertEquals("abacabcd", instance.rearrangeString("aaadbbcc", 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

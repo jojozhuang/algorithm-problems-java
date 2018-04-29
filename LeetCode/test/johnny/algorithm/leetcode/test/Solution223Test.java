@@ -56,8 +56,5 @@ public class Solution223Test {
         
         assertEquals(45, instance.computeArea(-3, 0, 3, 4, 0, -1, 9, 2));
         assertEquals(24, instance.computeArea(-3, 0, 3, 4, -3, 0, 3, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

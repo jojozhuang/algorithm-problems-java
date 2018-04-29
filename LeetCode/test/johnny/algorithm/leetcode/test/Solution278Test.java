@@ -71,8 +71,5 @@ public class Solution278Test {
         map3.put(8, true);
         instance.setMap(map3);
         assertEquals(4, instance.firstBadVersion(8));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

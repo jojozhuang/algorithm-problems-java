@@ -56,8 +56,5 @@ public class PangramsTest {
         assertEquals(true,  Pangrams.isPangram("The quick brown fox jumps over the lazy dog"));
         assertEquals(true,  Pangrams.isPangram("We promptly judged antique ivory buckles for the next prize"));
         assertEquals(false,  Pangrams.isPangram("We promptly judged antique ivory buckles for the prize"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

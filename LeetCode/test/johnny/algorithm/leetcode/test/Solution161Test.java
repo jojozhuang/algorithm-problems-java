@@ -54,8 +54,5 @@ public class Solution161Test {
         assertEquals(true, instance.isOneEditDistance("aab", "acb"));
         assertEquals(false, instance.isOneEditDistance("abcd", "abbb"));
         assertEquals(false, instance.isOneEditDistance("ac", "abcde"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

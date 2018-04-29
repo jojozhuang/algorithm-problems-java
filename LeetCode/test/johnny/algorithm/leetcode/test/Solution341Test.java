@@ -85,8 +85,6 @@ public class Solution341Test {
         assertEquals(Integer.valueOf(5), instance3.next());
         assertEquals(false, instance3.hasNext());
         assertEquals(null, instance3.next());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     //[[]]
@@ -181,5 +179,4 @@ public class Solution341Test {
 
         return input;
     }
-    
 }

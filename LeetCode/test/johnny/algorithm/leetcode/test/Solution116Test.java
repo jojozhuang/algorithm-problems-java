@@ -55,8 +55,5 @@ public class Solution116Test {
         assertEquals(6, root3.left.right.next.val);
         assertEquals(7,root3.right.left.next.val);
         assertEquals(null, root3.right.right.next);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

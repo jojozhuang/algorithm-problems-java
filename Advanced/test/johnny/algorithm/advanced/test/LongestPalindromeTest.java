@@ -60,8 +60,5 @@ public class LongestPalindromeTest {
         assertEquals(5, instance.longestPalindrome("abcdefgfeaa"));
         assertEquals(7, instance.longestPalindrome("abbacdefgfedaa"));
         assertEquals(4, instance.longestPalindrome("abba"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

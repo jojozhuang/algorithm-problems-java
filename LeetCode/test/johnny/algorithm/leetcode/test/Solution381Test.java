@@ -68,8 +68,6 @@ public class Solution381Test {
         assertTrue(collection.remove(1));
         random = collection.getRandom();
         assertTrue(random == 2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     /**
@@ -97,7 +95,5 @@ public class Solution381Test {
         assertTrue(collection.getRandom() == 20);
         assertTrue(collection.getRandom() == 20);
         assertTrue(collection.getRandom() == 20);
-        
-        
     }
 }

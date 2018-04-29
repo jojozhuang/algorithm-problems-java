@@ -49,10 +49,7 @@ public class Solution256Test {
         
         int[][] costs2 = new int[][]{{1,2,3}};
         assertEquals(1, instance.minCost(costs2));
-        int[][] costs3 = new int[][]{{1,2,3},{3,1,2}};        
+        int[][] costs3 = new int[][]{{1,2,3},{3,1,2}};
         assertEquals(2, instance.minCost(costs3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

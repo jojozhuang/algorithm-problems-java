@@ -45,7 +45,6 @@ public class Solution026Test {
         Solution026 instance = new Solution026();
 
         assertEquals(0, instance.removeDuplicates(null));
-        
         assertEquals(0, instance.removeDuplicates(new int[]{}));
         assertEquals(1, instance.removeDuplicates(new int[]{1}));
         assertEquals(2, instance.removeDuplicates(new int[]{1,2}));
@@ -53,8 +52,5 @@ public class Solution026Test {
         assertEquals(2, instance.removeDuplicates(new int[]{1,1,1,1,3}));
         assertEquals(4, instance.removeDuplicates(new int[]{1,1,3,3,4,4,5}));
         assertEquals(7, instance.removeDuplicates(new int[]{1,2,3,4,5,6,7}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -62,8 +62,5 @@ public class FibonacciTest {
         assertEquals(13, instance.fibonacci(8));
         assertEquals(21, instance.fibonacci(9));
         assertEquals(34, instance.fibonacci(10));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

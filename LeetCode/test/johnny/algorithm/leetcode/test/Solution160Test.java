@@ -60,9 +60,5 @@ public class Solution160Test {
         ListNode headB3 = ListNode.createInstance(new int[]{3,4,5,11,12,13});
         ListNode expect3 = ListNode.createInstance(new int[]{11,12,13});
         assertTrue(ListNode.isSame(expect3, instance.getIntersectionNode(headA3, headB3)));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

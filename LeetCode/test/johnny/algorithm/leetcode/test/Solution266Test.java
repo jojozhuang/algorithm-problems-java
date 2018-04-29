@@ -51,8 +51,5 @@ public class Solution266Test {
         assertEquals(false, instance.canPermutePalindrome("code"));
         assertEquals(true, instance.canPermutePalindrome("aab"));
         assertEquals(true, instance.canPermutePalindrome("carerac"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

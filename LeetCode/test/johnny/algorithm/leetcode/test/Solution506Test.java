@@ -46,8 +46,5 @@ public class Solution506Test {
         assertArrayEquals(new String[]{"Gold Medal", "Silver Medal"}, instance.findRelativeRanks(new int[]{2,1}));
         assertArrayEquals(new String[]{"Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"}, instance.findRelativeRanks(new int[]{5, 4, 3, 2, 1}));
         assertArrayEquals(new String[]{"Bronze Medal", "4", "5", "Silver Medal", "Gold Medal" }, instance.findRelativeRanks(new int[]{3,2,1,4,5}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

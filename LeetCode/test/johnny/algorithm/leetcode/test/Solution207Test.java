@@ -50,8 +50,5 @@ public class Solution207Test {
         
         assertEquals(true, instance.canFinish(2, new int[][]{{1,0}}));
         assertEquals(false, instance.canFinish(2, new int[][]{{1,0},{0,1}}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

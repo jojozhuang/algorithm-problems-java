@@ -52,9 +52,5 @@ public class Solution142Test {
         ListNode head3 = ListNode.createInstance(new int[]{1,2,3});
         head3.next.next.next = head3;
         assertEquals(head3, instance.detectCycle(head3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

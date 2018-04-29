@@ -61,9 +61,5 @@ public class Solution106Test {
         TreeNode result4 = instance.buildTree(new int[] {4,2,5,1,6,3,7}, new int[] {4,5,2,6,7,3,1});
         TreeNode expect4 = TreeNode.createInstance(new String[]{"1","2","3","4","5","6","7"});
         assertTrue(TreeNode.isSame(result4, expect4));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

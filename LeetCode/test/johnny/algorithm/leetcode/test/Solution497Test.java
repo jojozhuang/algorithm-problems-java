@@ -1,10 +1,14 @@
 package johnny.algorithm.leetcode.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import johnny.algorithm.leetcode.Solution497;
 
 /**
  *
@@ -33,8 +37,9 @@ public class Solution497Test {
 
     @Test
     public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("Solution497");
+        Solution497 instance = new Solution497();
+
+        assertEquals(0, instance.dummy());
     }
-    
 }

@@ -75,8 +75,5 @@ public class Solution285Test {
         root4.left.right.right = new TreeNode(14);
         TreeNode result4 = instance.inorderSuccessor(root4, root4.right);
         assertEquals(null, result4);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

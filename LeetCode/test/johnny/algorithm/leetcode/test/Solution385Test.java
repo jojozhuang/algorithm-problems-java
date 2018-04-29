@@ -71,8 +71,5 @@ public class Solution385Test {
         expect5.list.get(0).add(new NestedInteger(0));
         NestedInteger result5 = instance.deserialize("[[0]]");
         assertTrue(NestedInteger.isSame(expect5, result5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

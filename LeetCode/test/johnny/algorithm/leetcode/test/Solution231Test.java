@@ -55,8 +55,5 @@ public class Solution231Test {
         assertEquals(true, instance.isPowerOfTwo(8));
         assertEquals(true, instance.isPowerOfTwo(16));
         assertEquals(false, instance.isPowerOfTwo(17));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

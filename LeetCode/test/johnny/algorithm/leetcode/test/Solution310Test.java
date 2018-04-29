@@ -58,8 +58,5 @@ public class Solution310Test {
         expResult3.add(3);
         expResult3.add(4);
         assertEquals(expResult3, instance.findMinHeightTrees(6, new int[][]{{0, 3}, {1, 3}, {2, 3}, {4, 3}, {5, 4}}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

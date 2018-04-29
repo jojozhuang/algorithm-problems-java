@@ -53,9 +53,7 @@ public class Solution339Test {
         assertEquals(6, instance.depthSum(getExample1()));
         assertEquals(30, instance.depthSum(getExample2()));
         assertEquals(10, instance.depthSum(getExample3()));
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
-    }  
+    }
     
     public static List<NestedInteger> getExample1() {
         NestedInteger one = new NestedInteger();

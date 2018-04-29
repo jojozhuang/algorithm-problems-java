@@ -51,9 +51,5 @@ public class Solution151Test {
         assertEquals("aa", instance.reverseWords(" aa "));
         assertEquals("the blue", instance.reverseWords("   blue   the  "));
         assertEquals("the sky is blue", instance.reverseWords("blue is sky the"));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

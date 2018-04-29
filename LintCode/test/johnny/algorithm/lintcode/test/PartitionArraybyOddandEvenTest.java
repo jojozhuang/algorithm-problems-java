@@ -66,9 +66,5 @@ public class PartitionArraybyOddandEvenTest {
         int[] nums5 = new int[]{1, 2, 3, 4};
         instance.partitionArray(nums5);        
         assertArrayEquals(new int[]{1, 3, 2, 4}, nums5);
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

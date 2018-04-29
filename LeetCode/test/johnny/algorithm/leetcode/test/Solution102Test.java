@@ -105,9 +105,5 @@ public class Solution102Test {
         sub63.add(7);
         ret6.add(sub63);
         assertEquals(ret6, instance.levelOrder(p6));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

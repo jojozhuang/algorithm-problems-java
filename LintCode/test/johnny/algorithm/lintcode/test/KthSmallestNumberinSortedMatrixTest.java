@@ -62,8 +62,5 @@ public class KthSmallestNumberinSortedMatrixTest {
         assertEquals(1, instance.kthSmallest(matrix2, 1));
         assertEquals(9, instance.kthSmallest(matrix2, 9));
         assertEquals(8, instance.kthSmallest(matrix2, 7));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

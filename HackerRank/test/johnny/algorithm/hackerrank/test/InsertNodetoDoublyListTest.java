@@ -79,8 +79,5 @@ public class InsertNodetoDoublyListTest {
         assertEquals(expResult2.next.data, result2.next.data);
         assertEquals(expResult2.next.next.data, result2.next.next.data);
         assertEquals(expResult2.next.next.next.data, result2.next.next.next.data);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -50,8 +50,5 @@ public class Solution227Test {
         assertEquals(7, instance.calculate("3+2*2"));
         assertEquals(1, instance.calculate(" 3/2"));
         assertEquals(5, instance.calculate(" 3+5 / 2 "));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

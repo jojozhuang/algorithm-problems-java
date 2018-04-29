@@ -52,9 +52,5 @@ public class Solution248Test {
         assertEquals(3, instance.strobogrammaticInRange("2", "70"));
         assertEquals(1, instance.strobogrammaticInRange("88", "88"));
         assertEquals(39, instance.strobogrammaticInRange("0", "10000"));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -71,9 +71,5 @@ public class Solution652Test {
         assertEquals(expect4.size(), result4.size());
         assertTrue(TreeNode.isSame(expect4.get(0), result4.get(1)));
         assertTrue(TreeNode.isSame(expect4.get(1), result4.get(0)));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

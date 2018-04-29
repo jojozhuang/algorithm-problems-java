@@ -50,8 +50,5 @@ public class Solution150Test {
         assertEquals(3, instance.evalRPN(new String[]{"2", "1", "+"}));
         assertEquals(9, instance.evalRPN(new String[]{"2", "1", "+", "3", "*"}));
         assertEquals(6, instance.evalRPN(new String[]{"4", "13", "5", "/", "+"}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

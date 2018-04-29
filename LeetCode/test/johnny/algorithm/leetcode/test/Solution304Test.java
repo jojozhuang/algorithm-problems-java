@@ -53,8 +53,5 @@ public class Solution304Test {
         assertEquals(8, instance.sumRegion(2,1,4,3));
         assertEquals(11, instance.sumRegion(1,1,2,2));
         assertEquals(12, instance.sumRegion(1,2,2,4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

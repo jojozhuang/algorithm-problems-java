@@ -52,8 +52,5 @@ public class Solution128Test {
         assertEquals(4, instance.longestConsecutive(new int[] {100, 4, 200, 1, 3, 2}));
         assertEquals(4, instance.longestConsecutive(new int[] {1, 9, 3, 10, 4, 20, 2}));
         assertEquals(5, instance.longestConsecutive(new int[] {36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

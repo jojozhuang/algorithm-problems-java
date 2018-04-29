@@ -97,8 +97,5 @@ public class Solution130Test {
         };
         instance.solve(board41);
         assertArrayEquals(board42, board41);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

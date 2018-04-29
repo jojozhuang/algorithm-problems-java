@@ -56,8 +56,5 @@ public class Solution062Test {
         assertEquals(3, instance.uniquePaths(2, 3));
         assertEquals(6, instance.uniquePaths(3, 3));
         assertEquals(86493225, instance.uniquePaths(19, 13));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -52,8 +52,5 @@ public class Solution324Test {
         int[] nums3 = new int[]{1, 3, 2, 2, 3, 1};
         instance.wiggleSort(nums3);
         assertArrayEquals(new int[]{2, 3, 1, 3, 1, 2}, nums3);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

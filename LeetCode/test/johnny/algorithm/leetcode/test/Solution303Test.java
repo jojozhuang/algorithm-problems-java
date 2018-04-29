@@ -61,9 +61,5 @@ public class Solution303Test {
         assertEquals(1, instance4.sumRange(0, 2));
         assertEquals(-1, instance4.sumRange(2, 5));
         assertEquals(-3, instance4.sumRange(0, 5));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

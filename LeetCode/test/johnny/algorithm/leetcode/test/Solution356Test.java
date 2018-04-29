@@ -47,8 +47,5 @@ public class Solution356Test {
         assertEquals(true, instance.isReflected(new int[][]{{1,1},{-1,1}}));
         assertEquals(false, instance.isReflected(new int[][]{{1,1},{-1,-1}}));
         assertEquals(false, instance.isReflected(new int[][]{{0,0},{1,0},{3,0}}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

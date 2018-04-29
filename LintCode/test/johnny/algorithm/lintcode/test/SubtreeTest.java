@@ -82,9 +82,5 @@ public class SubtreeTest {
         TreeNode t81 = TreeNode.CreateInstance(new String[] {"1","1","1","2","3","#","2","#","#","4","5","3","#"});
         TreeNode t82 = TreeNode.CreateInstance(new String[] {"1","2","3","#","#","4","5"});
         assertEquals(true, instance.isSubtree(t81, t82));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -61,10 +61,7 @@ public class Solution247Test {
         assertEquals(expResult4, instance.findStrobogrammatic(3));
         
         List<String> expResult5 = new ArrayList<String>(Arrays.asList("1001", "6009","8008", "9006","1111", "6119","8118", "9116","1691", "6699","8698", "9696","1881", "6889","8888", "9886","1961", "6969","8968", "9966"));
-         List<String> result5 = instance.findStrobogrammatic(4);
+        List<String> result5 = instance.findStrobogrammatic(4);
         assertEquals(expResult5, result5);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

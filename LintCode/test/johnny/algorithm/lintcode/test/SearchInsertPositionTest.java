@@ -63,8 +63,5 @@ public class SearchInsertPositionTest {
         assertEquals(4, instance.searchInsert(new int[]{1,3,5,6}, 7));
         assertEquals(0, instance.searchInsert(new int[]{1,3,5,6}, 0));
         assertEquals(3, instance.searchInsert(new int[]{-1,0,1,2}, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
+    }   
 }

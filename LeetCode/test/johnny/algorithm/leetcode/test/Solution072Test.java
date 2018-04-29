@@ -55,8 +55,5 @@ public class Solution072Test {
         assertEquals(2, instance.minDistance("a", "cd"));
         assertEquals(2, instance.minDistance("a", "abc"));
         assertEquals(3, instance.minDistance("mart", "karma"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

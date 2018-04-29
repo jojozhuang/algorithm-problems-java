@@ -53,8 +53,5 @@ public class Solution064Test {
         assertEquals(6, instance.minPathSum(new int[][]{{1,2,3}}));
         assertEquals(9, instance.minPathSum(new int[][]{{2},{3},{4}}));
         assertEquals(12, instance.minPathSum(new int[][]{{1,2,3},{4,5,6}}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

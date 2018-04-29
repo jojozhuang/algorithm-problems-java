@@ -126,9 +126,6 @@ public class RecoveRotatedSortedArrayTest {
         expect3.add(1);   
         expect3.add(1); */
         assertArrayEquals(expect3.toArray(), nums.toArray());
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

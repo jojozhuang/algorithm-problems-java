@@ -51,8 +51,5 @@ public class Solution276Test {
         assertEquals(2, instance.numWays(1, 2));
         assertEquals(9, instance.numWays(2, 3));
         assertEquals(24, instance.numWays(3, 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

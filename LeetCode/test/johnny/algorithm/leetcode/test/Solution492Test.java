@@ -46,8 +46,5 @@ public class Solution492Test {
         assertArrayEquals(new int[]{1,1}, instance.constructRectangle(1));
         assertArrayEquals(new int[]{2,1}, instance.constructRectangle(2));
         assertArrayEquals(new int[]{2,2}, instance.constructRectangle(4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

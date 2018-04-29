@@ -52,8 +52,5 @@ public class Solution532Test {
         assertEquals(4, instance.findPairs(new int[]{1,2,3,4,5}, 1));
         assertEquals(1, instance.findPairs(new int[]{1,1,1,1,4}, 0));
         assertEquals(1, instance.findPairs(new int[]{1,3,1,5,4}, 0));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -83,8 +83,5 @@ public class Solution254Test {
         expResult5.add(list56);
         List<List<Integer>> result5 = instance.getFactors(32);
         assertTrue(expResult5.containsAll(result5)&&result5.containsAll(expResult5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

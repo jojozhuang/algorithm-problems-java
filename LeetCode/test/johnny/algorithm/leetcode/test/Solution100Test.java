@@ -75,9 +75,5 @@ public class Solution100Test {
         q6.left = new TreeNode(2);
         q6.right = new TreeNode(3);
         assertEquals(true, instance.isSameTree(p6, q6));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

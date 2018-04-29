@@ -90,9 +90,5 @@ public class Solution077Test {
         expResult5.add(list52);
         expResult5.add(list53);
         assertEquals(expResult5,  instance.combine(3, 2));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

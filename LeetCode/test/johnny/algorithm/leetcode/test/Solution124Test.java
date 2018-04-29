@@ -64,8 +64,5 @@ public class Solution124Test {
         root4.left = new TreeNode(-1);
         root4.right = new TreeNode(3);
         assertEquals(4, instance.maxPathSum(root4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -52,8 +52,5 @@ public class Solution414Test {
         assertEquals(-2147483648, instance.thirdMax(new int[]{-2147483648}));
         assertEquals(-2147483648, instance.thirdMax(new int[]{-2147483648,1,2}));
         assertEquals(1, instance.thirdMax(new int[]{-2147483648,1,1}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

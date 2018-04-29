@@ -67,8 +67,5 @@ public class PermutationIndex2Test {
         assertEquals(2, instance.permutationIndex2(new int[]{1,2,1}));
         assertEquals(3, instance.permutationIndex2(new int[]{2,1,1}));
         assertEquals(3, instance.permutationIndex2(new int[]{1,4,2,2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

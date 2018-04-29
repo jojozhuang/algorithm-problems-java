@@ -48,8 +48,5 @@ public class Solution338Test {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{0,1,1,2,1,2,2,3}, instance.countBits(7));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

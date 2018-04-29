@@ -34,10 +34,10 @@ public class Solution023 {
         } else if (start + 1 == end) {
             return mergeTwoLists(lists[start], lists[end]);
         }
-        
-        ListNode left = helper(lists, start, (start + (end - start)) / 2);
-        ListNode right = helper(lists, (start + (end - start)) / 2 + 1, end);
-        
+
+        ListNode left = helper(lists, start, start + (end - start) / 2);
+        ListNode right = helper(lists, start + (end - start) / 2 + 1, end);
+
         return mergeTwoLists(left, right);
     }
     

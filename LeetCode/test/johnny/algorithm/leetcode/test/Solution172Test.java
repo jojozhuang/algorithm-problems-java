@@ -67,9 +67,6 @@ public class Solution172Test {
         assertEquals(1151, instance.trailingZeroes(4617));
         assertEquals(452137076, instance.trailingZeroes(1808548329));
         assertEquals(536870902, instance.trailingZeroes(2147483647));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -104,8 +101,5 @@ public class Solution172Test {
         assertEquals(1151, instance.trailingZeroes2(4617));
         assertEquals(452137076, instance.trailingZeroes2(1808548329));
         assertEquals(536870902, instance.trailingZeroes2(2147483647));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

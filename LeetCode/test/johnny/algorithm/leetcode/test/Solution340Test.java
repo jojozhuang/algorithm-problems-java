@@ -49,8 +49,5 @@ public class Solution340Test {
         assertEquals(expResult, result);
         
         assertEquals(3, instance.lengthOfLongestSubstringKDistinct("eceba", 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

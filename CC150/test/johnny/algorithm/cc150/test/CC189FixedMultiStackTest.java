@@ -59,10 +59,5 @@ public class CC189FixedMultiStackTest {
         assertEquals(5, instance.pop(0));
         assertEquals(4, instance.pop(1));
         assertEquals(3, instance.pop(2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-
-    
-    
 }

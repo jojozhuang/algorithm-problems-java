@@ -52,8 +52,5 @@ public class Solution121Test {
         assertEquals(8, instance.maxProfit(new int[]{8,4,5,12,3,7,9,10,3,1}));
         assertEquals(0, instance.maxProfit(new int[]{8,7,6,5,4,3,2,1}));
         assertEquals(12, instance.maxProfit(new int[]{1,3,5,6,7,8,9,13}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

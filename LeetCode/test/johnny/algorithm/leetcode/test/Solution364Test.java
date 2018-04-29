@@ -53,8 +53,6 @@ public class Solution364Test {
         assertEquals(6, instance.depthSumInverse(getExample1()));
         assertEquals(15, instance.depthSumInverse(getExample2()));
         assertEquals(8, instance.depthSumInverse(getExample3()));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     public static List<NestedInteger> getExample1() {
@@ -138,5 +136,4 @@ public class Solution364Test {
 
         return input;
     }
-    
 }

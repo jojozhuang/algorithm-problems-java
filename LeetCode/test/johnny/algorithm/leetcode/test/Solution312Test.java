@@ -48,8 +48,5 @@ public class Solution312Test {
         assertEquals(expResult, result);
         
         assertEquals(167, instance.maxCoins(new int[]{3, 1, 5, 8}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

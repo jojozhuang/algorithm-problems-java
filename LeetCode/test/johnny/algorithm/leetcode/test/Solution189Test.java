@@ -97,8 +97,5 @@ public class Solution189Test {
         assertArrayEquals(new int[]{2,1}, nums13);
         //assertArrayEquals(new int[0], instance.rotate(new int[1], 2));
         //assertArrayEquals(new int[0], instance.rotate(new int[1], 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

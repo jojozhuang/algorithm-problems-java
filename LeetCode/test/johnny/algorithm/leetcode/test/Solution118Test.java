@@ -61,9 +61,5 @@ public class Solution118Test {
 
         List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][]{{1},{1,1},{1,2,1},{1,3,3,1}});
         assertEquals(expect4,  instance.generate(4));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

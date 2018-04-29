@@ -50,8 +50,5 @@ public class Solution325Test {
         
         assertEquals(4, instance.maxSubArrayLen(new int[]{1, -1, 5, -2, 3}, 3));
         assertEquals(2, instance.maxSubArrayLen(new int[]{-2, -1, 2, 1}, 1));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

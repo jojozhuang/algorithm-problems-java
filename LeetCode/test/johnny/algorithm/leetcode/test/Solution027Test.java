@@ -52,9 +52,5 @@ public class Solution027Test {
         assertEquals(2, instance.removeElement(new int[]{1,3,1,2}, 1));
         
         assertEquals(1, instance.removeElement(new int[]{4,5}, 4));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -53,8 +53,5 @@ public class Solution565Test {
         assertEquals(2, instance.arrayNesting(new int[]{2,1,0}));
         assertEquals(3, instance.arrayNesting(new int[]{1,2,0}));
         assertEquals(4, instance.arrayNesting(new int[]{5,4,0,3,1,6,2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

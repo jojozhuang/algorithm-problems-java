@@ -84,8 +84,5 @@ public class Solution289Test {
         };
         instance.gameOfLife(board3);
         assertArrayEquals(expect3, board3);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

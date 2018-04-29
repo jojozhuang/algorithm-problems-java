@@ -52,8 +52,5 @@ public class Solution070Test {
         assertEquals(3, instance.climbStairs(3));
         assertEquals(5, instance.climbStairs(4));
         assertEquals(8, instance.climbStairs(5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -50,8 +50,5 @@ public class Solution217Test {
         assertEquals(true, instance.containsDuplicate(new int[]{1,1}));
         assertEquals(true, instance.containsDuplicate(new int[]{1,2,3,1}));
         assertEquals(false, instance.containsDuplicate(new int[]{1,2,3,4,5,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

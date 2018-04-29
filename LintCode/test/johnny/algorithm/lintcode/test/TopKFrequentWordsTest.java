@@ -87,9 +87,6 @@ public class TopKFrequentWordsTest {
         expect2.collect("I", 1);
         reduce.cleanup(output2);
         assertTrue(OutputCollector.isSame(output2, expect2));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     @Test
@@ -139,9 +136,6 @@ public class TopKFrequentWordsTest {
         expect2.collect("is", 2);
         reduce.cleanup(output2);
         assertTrue(OutputCollector.isSame(output2, expect2));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     @Test

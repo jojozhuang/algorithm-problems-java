@@ -52,8 +52,5 @@ public class Solution398Test {
         assertEquals(1, instance2.pick(2));
         int random2 = instance2.pick(3);
         assertTrue(random2==2||random2==3||random2==4);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

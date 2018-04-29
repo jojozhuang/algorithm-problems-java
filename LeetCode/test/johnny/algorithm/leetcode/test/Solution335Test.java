@@ -50,9 +50,5 @@ public class Solution335Test {
         assertEquals(true, instance.isSelfCrossing(new int[]{2, 1, 1, 2}));
         assertEquals(false, instance.isSelfCrossing(new int[]{1, 2, 3, 4}));
         assertEquals(true, instance.isSelfCrossing(new int[]{1,1,1,1}));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

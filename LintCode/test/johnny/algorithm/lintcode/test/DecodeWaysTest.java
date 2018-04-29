@@ -58,8 +58,5 @@ public class DecodeWaysTest {
         assertEquals(2, instance.numDecodings("12"));
         assertEquals(5, instance.numDecodings("1213"));
         assertEquals(47923200, instance.numDecodings("2226252724242221201918171615141311108787876761721201211012111989898911918293"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

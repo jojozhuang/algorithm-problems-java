@@ -56,8 +56,5 @@ public class Solution216Test {
         
         List<List<Integer>> expResult3 = ListUtil.buildList2(new Integer[][]{{1,2,6},{1,3,5},{2,3,4}});
         assertEquals(expResult3, instance.combinationSum3(3, 9));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

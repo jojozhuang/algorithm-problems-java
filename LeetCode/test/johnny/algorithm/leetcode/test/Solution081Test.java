@@ -56,8 +56,5 @@ public class Solution081Test {
         assertEquals(true, instance.search(new int[] { 2, 1, 1 }, 1));
         assertEquals(true, instance.search(new int[] { 1, 1, 2, 1 }, 2));
         assertEquals(false, instance.search(new int[] { 1, 1, 2, 1 }, 0));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -57,8 +57,5 @@ public class Solution169Test {
         assertEquals(2, instance.majorityElement(new int[]{1,1,2,2,2}));
         assertEquals(3, instance.majorityElement(new int[]{1,1,2,2,2,3,3,3,3,3}));
         assertEquals(2, instance.majorityElement(new int[]{1,1,2,2,2,2,2,3,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");                
     }
-    
 }

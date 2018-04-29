@@ -78,8 +78,5 @@ public class Solution075Test {
         int[] nums9 = new int[]{0,0,0,2,1,0,2,0,1,2,2,2};
         instance.sortColors(nums9);
         assertArrayEquals(new int[]{0,0,0,0,0,1,1,2,2,2,2,2}, nums9);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -57,8 +57,5 @@ public class Solution270Test {
         assertEquals(7, instance.closestValue(root3, 6));
         assertEquals(1, instance.closestValue(root3, 2));
         assertEquals(4, instance.closestValue(root3, 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

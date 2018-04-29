@@ -60,8 +60,5 @@ public class Solution068Test {
         expResult3.add("What must be");
         expResult3.add("shall be.   ");
         assertEquals(expResult3, instance.fullJustify(new String[]{"What","must","be","shall","be."}, 12));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

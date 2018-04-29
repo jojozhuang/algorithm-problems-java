@@ -73,9 +73,5 @@ public class KSubarraySumTest {
         expResult5.add(2);
         expResult5.add(5);
         assertEquals(expResult5, instance.subarraySum2(new int[] { 1, 6, 20, 3, 10, 5}, 38));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -66,8 +66,5 @@ public class Solution088Test {
         num14[2] = 6;
         instance.merge(num14, 3, new int[]{1,2,3}, 3);
         assertArrayEquals(new int[]{1,2,3,4,5,6}, num14);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

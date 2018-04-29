@@ -80,8 +80,5 @@ public class LongestWordsTest {
         expResult6.add("hate");
         ArrayList<String> result6 = instance.longestWords(new String[]{"like", "love", "hate","yes"});
         assertEquals(expResult6, result6);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

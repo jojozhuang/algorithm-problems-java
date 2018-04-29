@@ -53,8 +53,5 @@ public class Solution342Test {
         assertEquals(false, instance.isPowerOfFour(8));
         assertEquals(true, instance.isPowerOfFour(16));
         assertEquals(true, instance.isPowerOfFour(64));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -51,8 +51,5 @@ public class Solution154Test {
         assertEquals(1, instance.findMin(new int[] {1, 2}));
         assertEquals(2, instance.findMin(new int[] {5,2,3}));
         assertEquals(2, instance.findMin(new int[] {3, 2, 3, 3, 3, 3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

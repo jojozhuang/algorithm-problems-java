@@ -54,8 +54,5 @@ public class SortColors2Test {
         int[] colors2 = new int[]{3,2,2,1,4};
         instance.sortColors2(colors2, 4);
         assertArrayEquals(new int[]{1,2,2,3,4}, colors2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

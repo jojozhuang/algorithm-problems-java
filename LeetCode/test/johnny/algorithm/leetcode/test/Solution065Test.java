@@ -68,8 +68,6 @@ public class Solution065Test {
         assertEquals(false, instance.isNumber("+-."));
         assertEquals(false, instance.isNumber("4e+"));
         assertEquals(false, instance.isNumber(".-4"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

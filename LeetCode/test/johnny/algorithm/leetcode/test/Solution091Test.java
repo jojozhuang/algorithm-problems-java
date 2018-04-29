@@ -56,8 +56,5 @@ public class Solution091Test {
         assertEquals(2, instance.numDecodings("2120"));
         assertEquals(1, instance.numDecodings("10210"));
         assertEquals(589824, instance.numDecodings("4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

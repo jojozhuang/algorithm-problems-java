@@ -59,8 +59,5 @@ public class Solution074Test {
         assertEquals(true, instance.searchMatrix(new int[][]{{1,3,5,7},{10, 11, 16, 20},{23, 30, 34, 50}}, 30));
         assertEquals(false, instance.searchMatrix(new int[][]{{1,3,5,7},{10, 11, 16, 20},{23, 30, 34, 50}}, 40));
         assertEquals(false, instance.searchMatrix(new int[][]{{1,3,5,7},{10, 11, 16, 20},{23, 30, 34, 50}}, 100));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

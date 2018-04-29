@@ -76,9 +76,5 @@ public class Solution174Test {
             {2,-6}
         };
         assertEquals(5, instance.calculateMinimumHP(dungeon6));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -51,8 +51,5 @@ public class Solution224Test {
         assertEquals(0, instance.calculate("1 + (2 -3)"));
         assertEquals(-3, instance.calculate("4 - (5 + 2)"));
         assertEquals(23, instance.calculate("(1+(4+5+2)-3)+(6+8)"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

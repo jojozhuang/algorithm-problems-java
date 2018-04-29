@@ -43,8 +43,6 @@ public class Solution146Test {
         System.out.println("get");
         Solution146 instance = new Solution146(3);
         assertEquals(-1, instance.get(0));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -67,8 +65,5 @@ public class Solution146Test {
         instance.set(2, 20);
         instance.set(5, 5);
         assertEquals(-1, instance.get(3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

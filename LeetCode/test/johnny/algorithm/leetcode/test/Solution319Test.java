@@ -57,8 +57,5 @@ public class Solution319Test {
         assertEquals(2, instance.bulbSwitch(8));
         assertEquals(3, instance.bulbSwitch(9));
         assertEquals(3, instance.bulbSwitch(10));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

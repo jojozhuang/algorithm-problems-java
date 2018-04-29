@@ -49,8 +49,5 @@ public class Solution599Test {
         assertArrayEquals(new String[]{"ef","wo"}, instance.findRestaurant(new String[]{"ef","wo"}, new String[]{"wo","ef"}));
         assertArrayEquals(new String[]{"Shogun"}, instance.findRestaurant(new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"}));
         assertArrayEquals(new String[]{"Shogun"}, instance.findRestaurant(new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"KFC", "Shogun", "Burger King"}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

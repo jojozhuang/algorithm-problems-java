@@ -44,14 +44,10 @@ public class Solution219Test {
         Solution219 instance = new Solution219();
 
         assertEquals(false, instance.containsNearbyDuplicate(null, 0));
-        
         assertEquals(false, instance.containsNearbyDuplicate(new int[]{1,2}, 1));
         assertEquals(false, instance.containsNearbyDuplicate(new int[]{1,2,1}, 1));
         assertEquals(true, instance.containsNearbyDuplicate(new int[]{1,2,1}, 2));
         assertEquals(true, instance.containsNearbyDuplicate(new int[]{1,2,3,4,5,1}, 5));
         assertEquals(false, instance.containsNearbyDuplicate(new int[]{1,2,3,4,5,1}, 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

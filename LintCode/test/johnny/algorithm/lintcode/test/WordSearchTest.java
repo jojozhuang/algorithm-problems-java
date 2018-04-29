@@ -62,10 +62,7 @@ public class WordSearchTest {
         
         char[][] board3 = new char[][] {
             "ABCE".toCharArray(),"SFES".toCharArray(), "ADEE".toCharArray()
-        };        
+        };
         assertEquals(true, instance.exist(board3, "ABCESEEEFS"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

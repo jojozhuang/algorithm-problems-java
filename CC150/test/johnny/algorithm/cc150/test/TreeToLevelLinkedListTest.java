@@ -75,8 +75,5 @@ public class TreeToLevelLinkedListTest {
         List<LinkedList<TreeNode>> result5 = instance.convertTreeToList(root5);
         List<LinkedList<TreeNode>> expect5 = ListUtil.buildTreeLinkList2(new Integer[][]{{1},{2,3},{4,5}});
         assertTrue(ListUtil.isSameTreeLinkList(result5, expect5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

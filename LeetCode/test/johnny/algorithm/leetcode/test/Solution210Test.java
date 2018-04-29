@@ -52,8 +52,5 @@ public class Solution210Test {
         assertArrayEquals(new int[]{0,1}, instance.findOrder(2, new int[][]{{1,0}}));
         assertArrayEquals(new int[]{}, instance.findOrder(2, new int[][]{{1,0},{0,1}}));
         assertArrayEquals(new int[]{0,1,2,3}, instance.findOrder(4, new int[][]{{1,0},{2,0},{3,1},{3,2}}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

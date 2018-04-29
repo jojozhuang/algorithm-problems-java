@@ -50,8 +50,5 @@ public class Solution164Test {
         assertEquals(1, instance.maximumGap(new int[]{3,1,4,2}));
         assertEquals(6, instance.maximumGap(new int[]{5,9,8,3,15}));
         assertEquals(3, instance.maximumGap(new int[]{1,3,4,7}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -64,8 +64,5 @@ public class PrintNumbersbyRecursionTest {
              expResult3.add(i);
          }
         assertEquals(expResult3, instance.numbersByRecursion(2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -51,8 +51,5 @@ public class Solution097Test {
         
         assertEquals(true, instance.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
         assertEquals(false, instance.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

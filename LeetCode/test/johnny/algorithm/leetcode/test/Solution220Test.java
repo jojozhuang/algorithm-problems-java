@@ -54,8 +54,5 @@ public class Solution220Test {
         assertEquals(true, instance.containsNearbyAlmostDuplicate(new int[]{1,8,4,10}, 2, 3));
         assertEquals(true, instance.containsNearbyAlmostDuplicate(new int[]{1,8,4,10}, 1, 4));
         assertEquals(true, instance.containsNearbyAlmostDuplicate(new int[]{1,8,4,10}, 2, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

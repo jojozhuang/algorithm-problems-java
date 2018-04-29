@@ -55,8 +55,5 @@ public class Solution155Test {
         instance.pop();
         assertEquals(2, instance.getMin());
         assertEquals(3, instance.top());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

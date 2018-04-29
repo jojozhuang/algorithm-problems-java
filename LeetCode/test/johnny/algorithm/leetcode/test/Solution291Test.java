@@ -51,7 +51,5 @@ public class Solution291Test {
         assertEquals(true, instance.wordPatternMatch("abab", "redblueredblue"));
         assertEquals(true, instance.wordPatternMatch("aaaa", "asdasdasdasd"));
         assertEquals(false, instance.wordPatternMatch("aabb", "xyzabcxzyabc"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }    
+    }
 }

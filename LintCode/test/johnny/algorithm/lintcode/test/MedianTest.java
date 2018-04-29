@@ -54,8 +54,5 @@ public class MedianTest {
         
         assertEquals(3, instance.median(new int[] {4, 5, 1, 2, 3}));
         assertEquals(5, instance.median(new int[] {7, 9, 4, 5}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

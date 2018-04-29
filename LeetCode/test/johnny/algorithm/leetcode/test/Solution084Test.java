@@ -49,8 +49,5 @@ public class Solution084Test {
         
         assertEquals(6, instance.largestRectangleArea(new int[]{4,3}));
         assertEquals(10, instance.largestRectangleArea(new int[]{2,1,5,6,2,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

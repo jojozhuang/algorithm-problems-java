@@ -43,7 +43,7 @@ public class Solution035Test {
         System.out.println("searchInsert");
         Solution035 instance = new Solution035();
 
-        assertEquals(0, instance.searchInsert(null, 0));        
+        assertEquals(0, instance.searchInsert(null, 0));
         assertEquals(0, instance.searchInsert(new int[]{}, 0));
         assertEquals(0, instance.searchInsert(new int[]{1}, 0));
         assertEquals(0, instance.searchInsert(new int[]{1}, 1));
@@ -59,8 +59,5 @@ public class Solution035Test {
         assertEquals(2, instance.searchInsert(new int[]{1,3,5,6}, 5));
         assertEquals(1, instance.searchInsert(new int[]{1,3,5,6}, 2));
         assertEquals(4, instance.searchInsert(new int[]{1,3,5,6}, 7));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

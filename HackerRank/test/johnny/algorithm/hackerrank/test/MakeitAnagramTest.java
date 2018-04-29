@@ -55,7 +55,5 @@ public class MakeitAnagramTest {
         
         assertEquals(4, instance.makeAnagram("cde", "abc"));
         assertEquals(2, instance.makeAnagram("ab", "bc"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

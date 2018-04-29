@@ -62,8 +62,5 @@ public class Solution200Test {
             {'0','0','0','1','1'},
         };
         assertEquals(3, instance.numIslands(grid3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

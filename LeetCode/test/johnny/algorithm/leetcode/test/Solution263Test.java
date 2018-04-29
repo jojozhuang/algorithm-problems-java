@@ -56,9 +56,5 @@ public class Solution263Test {
         assertEquals(true, instance.isUgly(9));
         assertEquals(true, instance.isUgly(10));
         assertEquals(false, instance.isUgly(11));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

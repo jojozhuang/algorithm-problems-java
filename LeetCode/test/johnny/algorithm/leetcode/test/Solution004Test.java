@@ -55,8 +55,5 @@ public class Solution004Test {
         assertEquals(2.5, instance.findMedianSortedArrays(new int[] {1,2,3}, new int[] {4}), 0.0);
         assertEquals(3, instance.findMedianSortedArrays(new int[] {1,2,3}, new int[] {4,5}), 0.0);
         assertEquals(3.5, instance.findMedianSortedArrays(new int[] {1,2,3,4,5,6}, new int[] {2,3,4,5}), 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

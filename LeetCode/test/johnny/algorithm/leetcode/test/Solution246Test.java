@@ -57,8 +57,5 @@ public class Solution246Test {
         assertEquals(true, instance.isStrobogrammatic("661199"));
         assertEquals(true, instance.isStrobogrammatic("6699"));
         assertEquals(false, instance.isStrobogrammatic("7212"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

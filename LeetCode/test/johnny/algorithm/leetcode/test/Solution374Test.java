@@ -44,8 +44,5 @@ public class Solution374Test {
         int n = 10;
         Solution374 instance = new Solution374(n, 6);
         assertEquals(6, instance.guessNumber(n));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

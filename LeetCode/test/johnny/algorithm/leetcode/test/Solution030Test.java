@@ -54,8 +54,5 @@ public class Solution030Test {
         expResult2.add(0);
         expResult2.add(9);
         assertEquals(expResult2, instance.findSubstring("barfoothefoobarman", new String[]{"foo", "bar"}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

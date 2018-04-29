@@ -64,8 +64,5 @@ public class Solution380Test {
 
         // Since 2 is the only number in the set, getRandom always return 2.
         assertTrue(randomSet.getRandom() == 2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

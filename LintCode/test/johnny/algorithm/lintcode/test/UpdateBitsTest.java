@@ -58,8 +58,5 @@ public class UpdateBitsTest {
         assertEquals(1108, instance.updateBits(1024, 21, 2, 6));
         assertEquals(331, instance.updateBits(35,41,3,9));
         assertEquals(2147483127, instance.updateBits(-521,0,31,31));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

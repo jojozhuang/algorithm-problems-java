@@ -60,8 +60,5 @@ public class FastPowerTest {
         assertEquals(2, instance.fastPower(2, 3, 31));
         assertEquals(0, instance.fastPower(2, 2, 8));
         assertEquals(0, instance.fastPower(100, 1000, 1000));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

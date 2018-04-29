@@ -68,8 +68,5 @@ public class Solution236Test {
         TreeNode q3 = new TreeNode(3);
         root3.right = q3;
         assertEquals(root3, instance.lowestCommonAncestor(root3, p3, q3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

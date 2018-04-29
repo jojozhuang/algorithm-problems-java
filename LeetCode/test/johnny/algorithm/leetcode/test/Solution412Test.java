@@ -75,8 +75,5 @@ public class Solution412Test {
         expResult3.add("14");
         expResult3.add("FizzBuzz");
         assertEquals(expResult3, instance.fizzBuzz(15));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -86,8 +86,5 @@ public class TopViewTest {
         Integer[] result5 = instance.top_view(root5);
         Integer[] expResult5 = new Integer[] {1,5,3,2,7};
         assertArrayEquals(result5, expResult5);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

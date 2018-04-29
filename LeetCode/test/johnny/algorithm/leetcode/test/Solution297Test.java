@@ -135,9 +135,6 @@ public class Solution297Test {
         root7.right.right = new TreeNode(7);
         String result7 = instance.serialize(root7);
         assertEquals("3,9,#,#,20,15,#,#,7,#,#", result7);*/
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -221,9 +218,5 @@ public class Solution297Test {
         assertEquals(20, result7.right.val);
         assertEquals(15, result7.right.left.val);
         assertEquals(7, result7.right.right.val);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

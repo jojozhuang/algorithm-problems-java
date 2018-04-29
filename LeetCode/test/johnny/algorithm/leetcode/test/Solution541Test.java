@@ -53,9 +53,5 @@ public class Solution541Test {
         assertEquals("cbadef", instance.reverseStr("abcdef", 3));
         assertEquals("fedcba", instance.reverseStr("abcdef", 100));
         assertEquals("cbadefhg", instance.reverseStr("abcdefgh", 3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

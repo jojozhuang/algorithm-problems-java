@@ -86,8 +86,5 @@ public class Count1inBinaryTest {
         assertEquals(31, instance.countOnes(-2));
         assertEquals(31, instance.countOnes(-3));
         assertEquals(30, instance.countOnes(-4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

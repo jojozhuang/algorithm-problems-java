@@ -58,9 +58,5 @@ public class Solution109Test {
         ListNode head4 = ListNode.createInstance(new int[]{1,2,3,4,5,6,7,8,9});
         TreeNode expect4 = TreeNode.createInstance(new String[] {"5","3","8","2","4","7","9","1","#","#","#","6","#"});
         assertTrue(TreeNode.isSame(expect4, instance.sortedListToBST(head4)));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

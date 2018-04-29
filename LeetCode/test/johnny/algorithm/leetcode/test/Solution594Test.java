@@ -48,8 +48,5 @@ public class Solution594Test {
         assertEquals(2, instance.findLHS(new int[]{1,2,3}));
         assertEquals(3, instance.findLHS(new int[]{5,4,3,3}));
         assertEquals(5, instance.findLHS(new int[]{1,3,2,2,5,2,3,7}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

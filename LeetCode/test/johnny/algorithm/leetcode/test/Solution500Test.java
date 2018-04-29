@@ -47,8 +47,5 @@ public class Solution500Test {
         assertArrayEquals(new String[]{}, instance.findWords(new String[]{"Hello"}));
         assertArrayEquals(new String[]{"Alaska"}, instance.findWords(new String[]{"Alaska"}));
         assertArrayEquals(new String[]{"Alaska", "Dad"}, instance.findWords(new String[]{"Hello", "Alaska", "Dad", "Peace"}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

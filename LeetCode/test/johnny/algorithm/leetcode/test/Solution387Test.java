@@ -46,8 +46,5 @@ public class Solution387Test {
         assertEquals(0, instance.firstUniqChar2("a"));
         assertEquals(0, instance.firstUniqChar2("leetcode"));
         assertEquals(2, instance.firstUniqChar2("loveleetcode"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

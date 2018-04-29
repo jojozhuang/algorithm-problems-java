@@ -44,8 +44,6 @@ public class Solution211Test {
         String word = "";
         Solution211 instance = new Solution211();
         instance.addWord(word);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -82,8 +80,5 @@ public class Solution211Test {
         assertEquals(true, instance4.search("a"));
         assertEquals(false, instance4.search(".a"));
         assertEquals(false, instance4.search("a."));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

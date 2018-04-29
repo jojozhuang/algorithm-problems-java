@@ -53,8 +53,5 @@ public class Solution214Test {
         assertEquals("aba", instance.shortestPalindrome("ba"));
         assertEquals("bbabb", instance.shortestPalindrome("abb"));
         assertEquals("abbaabba", instance.shortestPalindrome("aabba"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

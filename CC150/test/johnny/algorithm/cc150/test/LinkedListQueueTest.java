@@ -64,8 +64,5 @@ public class LinkedListQueueTest {
         assertEquals(false, queue.isEmpty());
         assertEquals(4, queue.dequeue());
         assertEquals(true, queue.isEmpty());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-
 }

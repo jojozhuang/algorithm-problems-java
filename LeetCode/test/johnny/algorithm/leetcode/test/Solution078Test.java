@@ -59,9 +59,5 @@ public class Solution078Test {
                
         List<List<Integer>> expResult4 = ListUtil.buildList2(new Integer[][]{{},{1},{1,3},{1,3,8},{1,8},{3},{3,8},{8}});
         assertEquals(expResult4, instance.subsets(new int[]{1,3,8}));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

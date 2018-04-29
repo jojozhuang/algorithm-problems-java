@@ -51,8 +51,5 @@ public class Solution165Test {
         assertEquals(1, instance.compareVersion("1.1", "1.0.1"));
         assertEquals(-1, instance.compareVersion("1.0", "1.0.1"));
         assertEquals(1, instance.compareVersion("2.333333", "2.333332"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -63,8 +63,5 @@ public class Solution173Test {
         assertEquals(true, instance2.hasNext());
         assertEquals(4, instance2.next());
         assertEquals(false, instance1.hasNext());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

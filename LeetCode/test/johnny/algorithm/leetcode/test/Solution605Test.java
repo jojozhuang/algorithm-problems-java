@@ -58,8 +58,5 @@ public class Solution605Test {
         assertEquals(true, instance.canPlaceFlowers(new int[]{1,0,0,0,1}, 1));
         assertEquals(false, instance.canPlaceFlowers(new int[]{1,0,0,0,1}, 2));
         assertEquals(true, instance.canPlaceFlowers(new int[]{1,0,0,0,0,0,1}, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

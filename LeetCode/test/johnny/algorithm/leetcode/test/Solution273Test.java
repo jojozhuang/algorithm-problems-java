@@ -47,7 +47,7 @@ public class Solution273Test {
         String result = instance.numberToWords(num);
         assertEquals(expResult, result);
         
-        assertEquals("One Hundred", instance.numberToWords(100));        
+        assertEquals("One Hundred", instance.numberToWords(100));
         assertEquals("One Thousand", instance.numberToWords(1000));
         assertEquals("Two Thousand", instance.numberToWords(2000));
         assertEquals("One Thousand One Hundred", instance.numberToWords(1100));
@@ -60,8 +60,5 @@ public class Solution273Test {
         assertEquals("One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven", instance.numberToWords(1234567));
         assertEquals("One Million Two Hundred Thirty Four Thousand Five Hundred", instance.numberToWords(1234500));
         assertEquals("One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand One", instance.numberToWords(1234567001));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

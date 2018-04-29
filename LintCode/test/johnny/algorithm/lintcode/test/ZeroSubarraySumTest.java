@@ -62,8 +62,5 @@ public class ZeroSubarraySumTest {
         expResult3.add(1);
         expResult3.add(3);
         assertEquals(expResult3, instance.subarraySum(new int[] { 5, -1, 2, -1, 2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

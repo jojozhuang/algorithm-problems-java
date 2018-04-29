@@ -60,8 +60,5 @@ public class Solution209Test {
         assertEquals(4, instance.minSubArrayLen(10, new int[]{2,3,1,2,4,3}));
         assertEquals(6, instance.minSubArrayLen(15, new int[]{2,3,1,2,4,3}));
         assertEquals(0, instance.minSubArrayLen(16, new int[]{2,3,1,2,4,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

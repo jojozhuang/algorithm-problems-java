@@ -63,8 +63,5 @@ public class Solution606Test {
         
         TreeNode t6 = TreeNode.createInstance(new String[] {"1","2","3","#","4"});
         assertEquals("1(2()(4))(3)", instance.tree2str(t6));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

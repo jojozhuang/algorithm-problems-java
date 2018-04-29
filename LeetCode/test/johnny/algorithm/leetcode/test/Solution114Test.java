@@ -123,8 +123,5 @@ public class Solution114Test {
         assertEquals(1, root5.right.val);
         assertEquals(4, root5.right.right.val);
         assertEquals(3, root5.right.right.right.val);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

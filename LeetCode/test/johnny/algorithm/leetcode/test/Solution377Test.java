@@ -52,8 +52,5 @@ public class Solution377Test {
         assertEquals(7, instance.combinationSum4(new int[]{1,2,3}, 4));
         assertEquals(39882198, instance.combinationSum4(new int[]{4,2,1}, 32));
         assertEquals(181997601, instance.combinationSum4(new int[]{1,2,3}, 32));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

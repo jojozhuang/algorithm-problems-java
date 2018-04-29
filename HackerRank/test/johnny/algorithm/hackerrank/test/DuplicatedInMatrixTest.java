@@ -94,8 +94,5 @@ public class DuplicatedInMatrixTest {
         matrix8[2] = new int[]{7,8,11};
         matrix8[3] = new int[]{10,11,12};
         assertEquals(true, instance.duplicated(matrix8, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

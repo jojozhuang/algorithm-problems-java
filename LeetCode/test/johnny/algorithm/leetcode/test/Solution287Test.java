@@ -52,8 +52,5 @@ public class Solution287Test {
         assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));
         assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3}));
         assertEquals(3, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,9,8,3,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

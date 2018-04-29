@@ -78,9 +78,5 @@ public class Solution101Test {
         p7.left.right = new TreeNode(3);
         p7.right.left = new TreeNode(3);
         assertEquals(true, instance.isSymmetric(p7));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

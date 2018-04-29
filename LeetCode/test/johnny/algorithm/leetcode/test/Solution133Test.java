@@ -51,7 +51,5 @@ public class Solution133Test {
         UndirectedGraphNode node2 = new UndirectedGraphNode(2);
         UndirectedGraphNode result2 = instance.cloneGraph(node2);
         assertEquals(result2.label, node2.label);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

@@ -51,8 +51,6 @@ public class Solution242Test {
         assertEquals(true, instance.isAnagram1("ba", "ab"));
         assertEquals(true, instance.isAnagram1("anagram", "nagaram"));
         assertEquals(false, instance.isAnagram1("car", "rat"));
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
     }
 
     /**
@@ -71,8 +69,5 @@ public class Solution242Test {
         assertEquals(true, instance.isAnagram2("ba", "ab"));
         assertEquals(true, instance.isAnagram2("anagram", "nagaram"));
         assertEquals(false, instance.isAnagram2("car", "rat"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

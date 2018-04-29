@@ -66,9 +66,5 @@ public class Solution230Test {
         assertEquals(6, instance.kthSmallest(root8, 5));
         TreeNode root9 = TreeNode.createInstance(new String[] {"4","2","7","#", "3", "5", "#","#","#","#","6","#","#"});
         assertEquals(7, instance.kthSmallest(root9, 6));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

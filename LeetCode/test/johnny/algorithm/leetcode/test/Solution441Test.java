@@ -42,6 +42,7 @@ public class Solution441Test {
     public void testArrangeCoins() {
         System.out.println("arrangeCoins");
         Solution441 instance = new Solution441();
+        
         assertEquals(0, instance.arrangeCoins(0));
         assertEquals(1, instance.arrangeCoins(1));
         assertEquals(1, instance.arrangeCoins(2));
@@ -53,9 +54,5 @@ public class Solution441Test {
         assertEquals(3, instance.arrangeCoins(8));
         assertEquals(60070, instance.arrangeCoins(1804289383));
         assertEquals(65535, instance.arrangeCoins(2147483647));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

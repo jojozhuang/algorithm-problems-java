@@ -65,8 +65,5 @@ public class Solution249Test {
         List<List<String>> result2 = instance.groupStrings(new String[]{"abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"});
         //assertEquals(expResult2, result2);
         assertTrue(expResult2.containsAll(result2)&& result2.containsAll(expResult2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

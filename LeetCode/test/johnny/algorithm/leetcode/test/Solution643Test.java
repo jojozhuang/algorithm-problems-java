@@ -51,8 +51,5 @@ public class Solution643Test {
         assertEquals(3, instance.findMaxAverage(new int[]{1,2,3}, 1), 0.0000001);
         assertEquals(2.5, instance.findMaxAverage(new int[]{1,2,3}, 2), 0.0000001);
         assertEquals(12.75, instance.findMaxAverage(new int[]{1,12,-5,-6,50,3}, 4), 0.0000001);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

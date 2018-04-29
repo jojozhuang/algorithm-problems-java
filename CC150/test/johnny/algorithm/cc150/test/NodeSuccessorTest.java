@@ -60,8 +60,6 @@ public class NodeSuccessorTest {
         assertEquals(TreeNode.getNode(6), instance.inorderSuccessort(TreeNode.getNode(4)));
         assertEquals(TreeNode.getNode(8), instance.inorderSuccessort(TreeNode.getNode(6)));
         assertEquals(TreeNode.getNode(9), instance.inorderSuccessort(TreeNode.getNode(8)));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -82,10 +80,5 @@ public class NodeSuccessorTest {
         assertEquals(TreeNode.getNode(4), instance.inorderSuccessort2(TreeNode.getNode(3)));
         assertEquals(TreeNode.getNode(6), instance.inorderSuccessort2(TreeNode.getNode(4)));
         assertEquals(TreeNode.getNode(8), instance.inorderSuccessort2(TreeNode.getNode(6)));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-
-    
-    
 }

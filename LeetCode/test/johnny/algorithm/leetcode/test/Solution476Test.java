@@ -48,8 +48,5 @@ public class Solution476Test {
         assertEquals(0, instance.findComplement(3));
         assertEquals(0, instance.findComplement(7));
         assertEquals(7, instance.findComplement(8));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

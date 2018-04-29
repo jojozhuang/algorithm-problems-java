@@ -57,8 +57,5 @@ public class Solution322Test {
         assertEquals(4, instance.coinChange(new int[]{1, 2, 5}, 14));
         assertEquals(20, instance.coinChange(new int[]{186,419,83,408}, 6249));
         assertEquals(-1, instance.coinChange(new int[]{2147483647}, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

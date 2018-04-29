@@ -65,8 +65,5 @@ public class Solution332Test {
         expResult3.add("ATL");
         expResult3.add("SFO");
         assertEquals(expResult3, instance.findItinerary(new String[][]{{"JFK","SFO"},{"JFK","ATL"}, {"SFO","ATL"},{"ATL","JFK"},{"ATL","SFO"}}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

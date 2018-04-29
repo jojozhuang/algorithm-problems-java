@@ -64,8 +64,5 @@ public class Solution437Test {
         
         TreeNode r7 = TreeNode.createInstance(new String[] {"5","4","8","11","#","13","4","7","2","#","#","5","1"});
         assertEquals(3, instance.pathSum(r7, 22));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

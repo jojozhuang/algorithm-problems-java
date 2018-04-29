@@ -47,8 +47,6 @@ public class Solution379Test {
         assertEquals(1, instance.get());
         assertEquals(2, instance.get());
         assertEquals(-1, instance.get());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -63,9 +61,6 @@ public class Solution379Test {
         assertEquals(true, instance.check(1));
         assertEquals(true, instance.check(2));
         assertEquals(false, instance.check(3));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -84,8 +79,5 @@ public class Solution379Test {
         instance.release(0);
         assertEquals(true, instance.check(0));
         assertEquals(0, instance.get());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -49,11 +49,7 @@ public class Solution530Test {
         TreeNode r2 = TreeNode.createInstance(new String[] {"9","3","20"});
         assertEquals(6, instance.getMinimumDifference(r2));
         
-        TreeNode r3 = TreeNode.createInstance(new String[] {"1","#", "3", "2","#"});        
+        TreeNode r3 = TreeNode.createInstance(new String[] {"1","#", "3", "2","#"});
         assertEquals(1, instance.getMinimumDifference(r3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

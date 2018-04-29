@@ -13,7 +13,7 @@ import johnny.algorithm.leetcode.common.ListNode;
  * 
  * @author Johnny
  */
-public class Solution024 {    
+public class Solution024 {
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) {
             return head;

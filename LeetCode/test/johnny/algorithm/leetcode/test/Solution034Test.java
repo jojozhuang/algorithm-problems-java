@@ -58,8 +58,5 @@ public class Solution034Test {
         assertArrayEquals(new int[]{-1,-1}, instance.searchRange(new int[]{0,0,1,1,1,4,5,5}, 2));
         assertArrayEquals(new int[]{3,4}, instance.searchRange(new int[]{5,7,7,8,8,10}, 8));
         assertArrayEquals(new int[]{0,5}, instance.searchRange(new int[]{6,6,6,6,6,6}, 6));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

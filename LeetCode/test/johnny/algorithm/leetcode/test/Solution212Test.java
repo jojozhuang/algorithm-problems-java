@@ -81,8 +81,5 @@ public class Solution212Test {
         List<String> result4 = instance.findWords(board4, new String[]{"a", "a"});
         //assertEquals(expResult2, result2);
         assertTrue(expResult4.containsAll(result4) && result4.containsAll(expResult4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

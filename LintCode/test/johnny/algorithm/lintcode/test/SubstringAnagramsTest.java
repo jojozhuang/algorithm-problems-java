@@ -57,8 +57,5 @@ public class SubstringAnagramsTest {
         assertEquals(ListUtil.buildIntegerList(new Integer[]{2}), instance.findAnagrams("acba", "ab"));
         assertEquals(ListUtil.buildIntegerList(new Integer[]{2,3,4,5}), instance.findAnagrams("abdededf", "de"));
         assertEquals(ListUtil.buildIntegerList(new Integer[]{0,6}), instance.findAnagrams("cbaebabacd", "abc"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

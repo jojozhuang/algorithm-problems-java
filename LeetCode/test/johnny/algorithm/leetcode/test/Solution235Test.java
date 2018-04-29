@@ -84,8 +84,5 @@ public class Solution235Test {
         assertEquals(root3, instance.lowestCommonAncestor(root3, n5, n9));
         assertEquals(n4, instance.lowestCommonAncestor(root3, n3, n5));
         assertEquals(n2, instance.lowestCommonAncestor(root3, n0, n5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

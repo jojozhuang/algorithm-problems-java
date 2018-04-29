@@ -54,8 +54,5 @@ public class EncryptionTest {
         assertEquals("hae and via ecy", Encryption.encrypt("haveaniceday"));
         assertEquals("fto ehg ee dd", Encryption.encrypt("feedthedog"));
         assertEquals("clu hlt io", Encryption.encrypt("chillout"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

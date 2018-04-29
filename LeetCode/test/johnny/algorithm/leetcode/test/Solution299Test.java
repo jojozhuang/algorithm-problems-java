@@ -54,8 +54,5 @@ public class Solution299Test {
         assertEquals("2A2B", instance.getHint("1234", "1432"));
         assertEquals("1A3B", instance.getHint("1807", "7810"));
         assertEquals("1A1B", instance.getHint("1123", "0111"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -56,8 +56,5 @@ public class Solution343Test {
         assertEquals(18, instance.integerBreak(8));
         assertEquals(27, instance.integerBreak(9));
         assertEquals(36, instance.integerBreak(10));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -51,8 +51,5 @@ public class Solution201Test {
         assertEquals(4, instance.rangeBitwiseAnd(5, 7));
         assertEquals(2, instance.rangeBitwiseAnd(2, 3));
         assertEquals(0, instance.rangeBitwiseAnd(0, Integer.MAX_VALUE));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

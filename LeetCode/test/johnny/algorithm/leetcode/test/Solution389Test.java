@@ -48,9 +48,5 @@ public class Solution389Test {
         assertEquals(' ', instance.findTheDifference("a", "ccc"));
         assertEquals('d', instance.findTheDifference("abc", "abdc"));
         assertEquals('e', instance.findTheDifference("abcd", "abcde"));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

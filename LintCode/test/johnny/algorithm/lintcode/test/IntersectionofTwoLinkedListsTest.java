@@ -68,8 +68,5 @@ public class IntersectionofTwoLinkedListsTest {
         }
         ListNode result2 = instance.getIntersectionNode(headA2, headB2);
         assertEquals(headA2, result2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

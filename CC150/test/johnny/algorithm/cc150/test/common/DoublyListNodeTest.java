@@ -53,8 +53,5 @@ public class DoublyListNodeTest {
         
         DoublyListNode result2 = DoublyListNode.create(new int[]{1,2,3,4,5});
         assertEquals(expResult, result2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

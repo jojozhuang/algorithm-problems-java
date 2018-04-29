@@ -71,14 +71,11 @@ public class RecoverRotatedSortedArrayTest {
         nums3.add(-1);
         for (int i = 0; i < 11; i++) {
            nums3.add(1);
-        }        
+        }
         instance.recoverRotatedSortedArray(nums3);
         assertEquals(-1, (long)nums3.get(0));
         assertEquals(1, (long)nums3.get(1));
         assertEquals(1, (long)nums3.get(2));
         assertEquals(1, (long)nums3.get(9));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

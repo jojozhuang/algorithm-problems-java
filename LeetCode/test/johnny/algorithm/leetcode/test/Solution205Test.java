@@ -54,8 +54,5 @@ public class Solution205Test {
         assertEquals(false, instance.isIsomorphic("foo", "bar"));
         assertEquals(true, instance.isIsomorphic("paper", "title"));
         assertEquals(true, instance.isIsomorphic("teacher", "awchkwo"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

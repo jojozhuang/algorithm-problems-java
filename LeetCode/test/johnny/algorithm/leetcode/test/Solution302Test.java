@@ -55,8 +55,5 @@ public class Solution302Test {
             {'0','1','0','0'}
         };
         assertEquals(6, instance.minArea(image2, 0, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

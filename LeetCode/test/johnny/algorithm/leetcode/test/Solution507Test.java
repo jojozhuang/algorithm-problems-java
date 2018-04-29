@@ -59,10 +59,5 @@ public class Solution507Test {
         assertEquals(false, instance.checkPerfectNumber(15));
         assertEquals(false, instance.checkPerfectNumber(16));
         assertEquals(true, instance.checkPerfectNumber(28));
-        
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

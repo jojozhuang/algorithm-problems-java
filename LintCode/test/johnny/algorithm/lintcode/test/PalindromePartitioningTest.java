@@ -78,8 +78,5 @@ public class PalindromePartitioningTest {
         expResult4.add(result42);  
         expResult4.add(result41);   
         assertEquals(expResult4, instance.partition("aab"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -44,8 +44,6 @@ public class Solution208Test {
         String word = "";
         Solution208 instance = new Solution208();
         instance.insert(word);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -64,8 +62,6 @@ public class Solution208Test {
         assertEquals(false, instance.search("fit"));
         assertEquals(true, instance.search("dog"));
         assertEquals(false, instance.search("tog"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -85,8 +81,6 @@ public class Solution208Test {
         assertEquals(true, instance.startsWith("f"));
         assertEquals(false, instance.startsWith("ac"));
         assertEquals(false, instance.startsWith("apq"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

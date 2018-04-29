@@ -72,9 +72,5 @@ public class Solution104Test {
         p5.right.right = new TreeNode(3);
         p5.right.right.right = new TreeNode(4);
         assertEquals(4, instance.maxDepth(p5));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

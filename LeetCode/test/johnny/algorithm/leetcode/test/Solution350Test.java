@@ -54,9 +54,5 @@ public class Solution350Test {
         assertArrayEquals(new int[]{}, instance.intersect(new int[]{1, 2}, new int[]{4, 6}));
         assertArrayEquals(new int[]{1,2}, instance.intersect(new int[]{1, 2}, new int[]{1, 2,3,4,5,6}));
         assertArrayEquals(new int[]{1,1,2}, instance.intersect(new int[]{1, 1,2}, new int[]{1, 1,2,4,5,6}));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

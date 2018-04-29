@@ -80,9 +80,5 @@ public class MajorityNumber3Test {
         nums4.add(3); 
         nums4.add(4);         
         assertEquals(3, instance.majorityNumber(nums4, 3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

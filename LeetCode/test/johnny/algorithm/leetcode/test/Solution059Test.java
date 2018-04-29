@@ -51,8 +51,5 @@ public class Solution059Test {
         assertArrayEquals(new int[][]{{1}}, instance.generateMatrix(1));
         assertArrayEquals(new int[][]{{1,2},{4,3}}, instance.generateMatrix(2));
         assertArrayEquals(new int[][]{{1,2,3},{8,9,4},{7,6,5}}, instance.generateMatrix(3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

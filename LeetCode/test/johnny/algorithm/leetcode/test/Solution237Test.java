@@ -65,9 +65,5 @@ public class Solution237Test {
         //ListNode expect5 = ListNode.createInstance(new int[]{6,3});
         //instance.deleteNode(head5.next.next);
         //assertTrue(ListNode.isSame(expect5, head5));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

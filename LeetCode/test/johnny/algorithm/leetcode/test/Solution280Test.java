@@ -49,8 +49,5 @@ public class Solution280Test {
         instance.wiggleSort(nums2);
         
         assertArrayEquals(new int[]{1,3,2,5,4,6}, nums2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

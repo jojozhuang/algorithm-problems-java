@@ -51,8 +51,5 @@ public class Solution557Test {
         assertEquals("ba dc e", instance.reverseWords("ab cd e"));
         assertEquals("ba dc gfe", instance.reverseWords("ab cd efg"));
         assertEquals("s'teL ekat edoCteeL tsetnoc", instance.reverseWords("Let's take LeetCode contest"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

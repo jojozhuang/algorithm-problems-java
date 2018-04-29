@@ -50,8 +50,5 @@ public class Solution415Test {
         assertEquals("322", instance.addStrings("321", "1"));
         assertEquals("20", instance.addStrings("19", "1"));
         assertEquals("100000000", instance.addStrings("99999000", "1000"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -53,8 +53,5 @@ public class Solution168Test {
         assertEquals("AA", instance.convertToTitle(27));
         assertEquals("AZ", instance.convertToTitle(52));
         assertEquals("AAE", instance.convertToTitle(707));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

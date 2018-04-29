@@ -78,9 +78,5 @@ public class Solution073Test {
         int[][] matrix9 = new int[][]{{1,2,3,4},{5,6,0,7},{8,9,7,6}};
         instance.setZeroes(matrix9);
         assertArrayEquals(new int[][]{{1,2,0,4},{0,0,0,0},{8,9,0,6}}, matrix9);
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

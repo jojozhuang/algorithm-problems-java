@@ -51,8 +51,5 @@ public class Solution404Test {
         
         TreeNode r3 = TreeNode.createInstance(new String[] {"3","9", "20", "#","#","15","7"});
         assertEquals(24, instance.sumOfLeftLeaves(r3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -15,18 +15,19 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution026 {
+    // Two pointers
     public int removeDuplicates(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
-        }        
-       
+        }
+
         int i = 1;
         int j = 0;
-        
-        while(i < nums.length) {
+
+        while (i < nums.length) {
             if (nums[i] != nums[j]) {
                 j++;
-                nums[j] = nums[i];                                
+                nums[j] = nums[i];
             }
             i++;
         }

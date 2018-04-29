@@ -51,8 +51,5 @@ public class Solution137Test {
         assertEquals(2, instance.singleNumber(new int[]{1,2,1,1}));
         assertEquals(3, instance.singleNumber(new int[]{2,2,1,2,1,1,3}));
         assertEquals(4, instance.singleNumber(new int[]{1,1,2,3,3,3,2,2,4,1}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

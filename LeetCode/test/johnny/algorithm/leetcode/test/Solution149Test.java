@@ -69,8 +69,8 @@ public class Solution149Test {
         points5[0] = new Point(1,1);
         points5[1] = new Point(1,2);
         points5[2] = new Point(2,2);
-        points5[3] = new Point(2,3);        
-        points5[4] = new Point(2,4);        
+        points5[3] = new Point(2,3);
+        points5[4] = new Point(2,4);
         assertEquals(3, instance.maxPoints(points5));
         
         Point[] points6 = new Point[3];
@@ -78,8 +78,5 @@ public class Solution149Test {
         points6[1] = new Point(3,3);
         points6[2] = new Point(-5,3);    
         assertEquals(3, instance.maxPoints(points6));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

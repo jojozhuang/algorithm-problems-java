@@ -49,9 +49,5 @@ public class Solution400Test {
         //assertEquals(1, instance.findNthDigit(12));
         //assertEquals(1, instance.findNthDigit(13));
         assertEquals(1, instance.findNthDigit(1000000000));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

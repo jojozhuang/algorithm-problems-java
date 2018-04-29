@@ -52,8 +52,5 @@ public class Solution202Test {
         assertEquals(true, instance.isHappy(19));
         assertEquals(false, instance.isHappy(33));
         assertEquals(false, instance.isHappy(11));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

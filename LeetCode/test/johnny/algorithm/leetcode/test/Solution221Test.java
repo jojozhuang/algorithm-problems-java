@@ -61,8 +61,5 @@ public class Solution221Test {
             {'1', '1', '1', '1'}
         };
         assertEquals(9, instance.maximalSquare(matrix3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -50,8 +50,6 @@ public class Solution284Test {
         Solution284 instance = new Solution284(al.iterator());
         Integer result = 1;
         assertEquals(result, instance.peek());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -69,8 +67,6 @@ public class Solution284Test {
         Integer result2 = 2;
         assertEquals(result1, instance.next());
         assertEquals(result2, instance.peek());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -94,8 +90,5 @@ public class Solution284Test {
         assertEquals(result2, instance.next());
         assertEquals(result3, instance.next());
         assertEquals(false, instance.hasNext());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -50,8 +50,5 @@ public class Solution359Test {
         assertEquals(false, instance.shouldPrintMessage(8, "bar"));
         assertEquals(false, instance.shouldPrintMessage(10, "foo"));
         assertEquals(true, instance.shouldPrintMessage(11, "foo"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

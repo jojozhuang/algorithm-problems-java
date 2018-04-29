@@ -76,8 +76,5 @@ public class Solution315Test {
         expResult5.add(0);
         expResult5.add(0);
         assertEquals(expResult5, instance.countSmaller(new int[] {5,6,5,5}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

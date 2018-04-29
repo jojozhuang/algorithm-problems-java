@@ -83,8 +83,6 @@ public class InsertNodeinaBinarySearchTreeTest {
         assertEquals(4, result4.right.val);
         assertEquals(3, result4.right.left.val);
         assertEquals(6, result4.right.right.val);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -129,8 +127,5 @@ public class InsertNodeinaBinarySearchTreeTest {
         assertEquals(4, result4.right.val);
         assertEquals(3, result4.right.left.val);
         assertEquals(6, result4.right.right.val);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

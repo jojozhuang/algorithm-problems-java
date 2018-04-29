@@ -51,8 +51,5 @@ public class Solution611Test {
         assertEquals(1, instance.triangleNumber(new int[]{2,2,3}));
         assertEquals(1, instance.triangleNumber(new int[]{1,2,3,4}));
         assertEquals(3, instance.triangleNumber(new int[]{2,2,3,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

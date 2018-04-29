@@ -59,8 +59,5 @@ public class Solution347Test {
         expResult3.add(2);
         expResult3.add(3);
         assertEquals(expResult3, instance.topKFrequent(new int[]{1,1,1,2,2,3}, 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

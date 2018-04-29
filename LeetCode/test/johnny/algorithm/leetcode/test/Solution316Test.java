@@ -49,8 +49,5 @@ public class Solution316Test {
         
         assertEquals("abc", instance.removeDuplicateLetters("bcabc"));
         assertEquals("acdb", instance.removeDuplicateLetters("cbacdcbc"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -50,8 +50,5 @@ public class Solution032Test {
         assertEquals(2, instance.longestValidParentheses("(()"));
         assertEquals(4, instance.longestValidParentheses(")()())"));
         assertEquals(2, instance.longestValidParentheses("()(()"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

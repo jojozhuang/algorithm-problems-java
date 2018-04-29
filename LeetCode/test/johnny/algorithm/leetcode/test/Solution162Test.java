@@ -49,8 +49,5 @@ public class Solution162Test {
         assertEquals(0, instance.findPeakElement(new int[] {1, 0}));
         assertEquals(2, instance.findPeakElement(new int[] {1, 2, 3, 1}));
         assertEquals(3, instance.findPeakElement(new int[] {1, 2, 3, 4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

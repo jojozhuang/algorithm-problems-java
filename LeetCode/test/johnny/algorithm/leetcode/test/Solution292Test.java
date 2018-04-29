@@ -47,8 +47,5 @@ public class Solution292Test {
         assertEquals(false, instance.canWinNim(0));
         assertEquals(false, instance.canWinNim(4));
         assertEquals(true, instance.canWinNim(3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

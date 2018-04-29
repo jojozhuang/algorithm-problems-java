@@ -54,9 +54,5 @@ public class Solution125Test {
         assertEquals(true, instance.isPalindrome("he! a Eh"));
         assertEquals(false, instance.isPalindrome("race a car"));
         assertEquals(true, instance.isPalindrome("A man, a plan, a canal: Panama"));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

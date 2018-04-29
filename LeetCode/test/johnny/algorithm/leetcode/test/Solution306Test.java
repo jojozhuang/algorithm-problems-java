@@ -51,8 +51,5 @@ public class Solution306Test {
         assertEquals(true, instance.isAdditiveNumber("199100199"));
         assertEquals(false, instance.isAdditiveNumber("1233456"));
         assertEquals(true, instance.isAdditiveNumber("198019823962"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

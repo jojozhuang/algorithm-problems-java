@@ -66,9 +66,5 @@ public class Solution438Test {
         List<Integer> expResult5 = new ArrayList<Integer>();
         expResult5.add(3);
         assertEquals(expResult5, instance.findAnagrams("abcde", "de"));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

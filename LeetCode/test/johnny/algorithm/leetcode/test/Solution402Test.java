@@ -56,8 +56,5 @@ public class Solution402Test {
         assertEquals("1219", instance.removeKdigits("1432219", 3));
         assertEquals("200", instance.removeKdigits("10200", 1));
         assertEquals("0", instance.removeKdigits("10", 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

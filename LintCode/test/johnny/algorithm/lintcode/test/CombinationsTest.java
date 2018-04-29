@@ -61,8 +61,5 @@ public class CombinationsTest {
         List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
         expResult4.add(list41);
         assertEquals(expResult4,  instance.combine(2, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

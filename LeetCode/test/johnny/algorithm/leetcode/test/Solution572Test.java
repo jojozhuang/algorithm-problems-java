@@ -67,8 +67,5 @@ public class Solution572Test {
         TreeNode s6 = TreeNode.createInstance(new String[] {"3","4","5","1","2","#","#","#","#","0","#"});
         TreeNode t6 = TreeNode.createInstance(new String[] {"4","1","2"});
         assertEquals(false, instance.isSubtree(s6, t6));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -47,8 +47,5 @@ public class Solution238Test {
         assertArrayEquals(new int[]{12,4,3}, instance.productExceptSelf(new int[]{1,3,4}));
         assertArrayEquals(new int[]{0,0}, instance.productExceptSelf(new int[]{0,0}));
         assertArrayEquals(new int[]{0,1}, instance.productExceptSelf(new int[]{1,0}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

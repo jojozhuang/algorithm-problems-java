@@ -49,8 +49,5 @@ public class Solution258Test {
         
         assertEquals(2, instance.addDigits(38));
         assertEquals(8, instance.addDigits(1853));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

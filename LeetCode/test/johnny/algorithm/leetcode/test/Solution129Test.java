@@ -56,8 +56,5 @@ public class Solution129Test {
         assertEquals(147, instance.sumNumbers(root4));
         TreeNode root5 = TreeNode.createInstance(new String[] {"1","2", "3", "#","#","4","5"});
         assertEquals(281, instance.sumNumbers(root5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

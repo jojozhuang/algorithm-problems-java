@@ -50,8 +50,5 @@ public class Solution096Test {
         assertEquals(1, instance.numTrees(1));
         assertEquals(2, instance.numTrees(2));
         assertEquals(5, instance.numTrees(3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

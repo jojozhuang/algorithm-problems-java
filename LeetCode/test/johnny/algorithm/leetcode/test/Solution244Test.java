@@ -45,8 +45,5 @@ public class Solution244Test {
         assertEquals(3, instance.shortest("coding", "practice"));
         assertEquals(1, instance.shortest("makes", "coding"));
         assertEquals(1, instance.shortest("makes", "practice"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

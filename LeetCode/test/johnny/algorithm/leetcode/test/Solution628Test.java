@@ -52,8 +52,5 @@ public class Solution628Test {
         assertEquals(0, instance.maximumProduct(new int[]{-4,-3,-2,-1,0}));
         assertEquals(-6, instance.maximumProduct(new int[]{-4,-3,-2,-1}));
         assertEquals(18, instance.maximumProduct(new int[]{-3,-2,0,1,2,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

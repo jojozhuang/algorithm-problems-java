@@ -60,8 +60,5 @@ public class CC189SetOfStacksTest {
         assertEquals(7, stack.pop());
         assertEquals(6, stack.pop());
         assertEquals(5, stack.pop());
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

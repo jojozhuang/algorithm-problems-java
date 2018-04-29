@@ -49,8 +49,5 @@ public class Solution384Test {
         Arrays.sort(result1);
         assertArrayEquals(nums1, result1);
         assertArrayEquals(nums1, instance.reset());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

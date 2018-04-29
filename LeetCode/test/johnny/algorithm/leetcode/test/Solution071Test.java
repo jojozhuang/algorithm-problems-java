@@ -51,8 +51,5 @@ public class Solution071Test {
         assertEquals("/home", instance.simplifyPath("/home/"));
         assertEquals("/home/foo", instance.simplifyPath("/home//foo/"));
         assertEquals("/c", instance.simplifyPath("/a/./b/../../c/"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

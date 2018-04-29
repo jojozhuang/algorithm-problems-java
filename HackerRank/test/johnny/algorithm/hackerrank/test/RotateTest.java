@@ -83,8 +83,5 @@ public class RotateTest {
         matrix4Res[2] = new int[] {13,11, 7, 8};
         matrix4Res[3] = new int[] {14,15,16,12};
         assertArrayEquals(matrix4Res, matrix4);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

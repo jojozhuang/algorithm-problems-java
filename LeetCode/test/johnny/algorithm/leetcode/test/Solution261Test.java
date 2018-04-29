@@ -58,8 +58,5 @@ public class Solution261Test {
         assertEquals(false, instance.validTree(5, edges3));
 
         assertEquals(true, instance.validTree(1, new int[][] {}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

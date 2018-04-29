@@ -49,9 +49,6 @@ public class Solution268Test {
         
         assertEquals(2, instance.missingNumber(new int[]{0,1,3}));
         assertEquals(3, instance.missingNumber(new int[]{0,1,2,4}));
-        assertEquals(5, instance.missingNumber(new int[]{0,1,2,3,4,6,7,8,9,10}));        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(5, instance.missingNumber(new int[]{0,1,2,3,4,6,7,8,9,10}));
     }
-    
 }

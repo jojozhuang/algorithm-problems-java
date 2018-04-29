@@ -51,8 +51,5 @@ public class Solution260Test {
         assertArrayEquals(new int[]{2,3}, instance.singleNumber(new int[]{1,2,1,3}));
         assertArrayEquals(new int[]{2,3}, instance.singleNumber(new int[]{1,3,1,2}));
         assertArrayEquals(new int[]{0,4}, instance.singleNumber(new int[]{1,2,1,2,3,3,4,0}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

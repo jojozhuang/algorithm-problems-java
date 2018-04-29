@@ -51,8 +51,5 @@ public class Solution354Test {
             {5,4},{6,4},{6,7},{2,3}
         };
         assertEquals(3, instance.maxEnvelopes(envelopes2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

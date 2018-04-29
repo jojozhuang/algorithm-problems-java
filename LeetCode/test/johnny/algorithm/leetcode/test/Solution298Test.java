@@ -58,8 +58,5 @@ public class Solution298Test {
         root3.right.left = new TreeNode(2);
         root3.right.left.left = new TreeNode(1);
         assertEquals(2, instance.longestConsecutive(root3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

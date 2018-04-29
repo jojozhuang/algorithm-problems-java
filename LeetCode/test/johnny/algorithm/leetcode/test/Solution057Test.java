@@ -71,15 +71,13 @@ public class Solution057Test {
         expResult3.add(new Interval(1,2));
         expResult3.add(new Interval(3,10));
         expResult3.add(new Interval(12,16));
-        assertTrue(expResult3.containsAll(result3));      
+        assertTrue(expResult3.containsAll(result3));
         
         List<Interval> inervals4 = new ArrayList<Interval>();
         List<Interval> result4 = instance.insert(inervals4, new Interval(5,7));
         List<Interval> expResult4 = new ArrayList<Interval>();
         expResult4.add(new Interval(5, 7));
         assertTrue(expResult4.containsAll(result4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

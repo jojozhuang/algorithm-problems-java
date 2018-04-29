@@ -59,8 +59,5 @@ public class DivideTwoIntegersTest {
         assertEquals(-2147483648, instance.divide(-2147483648, 1));
         assertEquals(1073741823, instance.divide(2147483647, 2));*/
         assertEquals(-1073741824, instance.divide(-2147483648, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

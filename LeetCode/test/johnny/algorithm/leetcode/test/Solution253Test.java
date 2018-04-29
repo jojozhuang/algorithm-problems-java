@@ -58,9 +58,5 @@ public class Solution253Test {
         intervals3[0] = new Interval(5, 10);
         intervals3[1] = new Interval(15, 20);
         assertEquals(1, instance.minMeetingRooms(intervals3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

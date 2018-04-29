@@ -52,8 +52,5 @@ public class Solution087Test {
         assertEquals(true, instance.isScramble("great", "rgtae"));
         assertEquals(false, instance.isScramble("great", "rgaat"));
         assertEquals(true, instance.isScramble("great", "rgate"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

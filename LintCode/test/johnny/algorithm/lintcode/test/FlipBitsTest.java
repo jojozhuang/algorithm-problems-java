@@ -56,8 +56,5 @@ public class FlipBitsTest {
         assertEquals(2, FlipBits.bitSwapRequired(1, 2));
         assertEquals(3, FlipBits.bitSwapRequired(3, 4));
         assertEquals(2, FlipBits.bitSwapRequired(31, 14));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

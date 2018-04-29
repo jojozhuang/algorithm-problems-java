@@ -66,9 +66,5 @@ public class Solution617Test {
         TreeNode t52 = TreeNode.createInstance(new String[] {"2","1","3","#","4","#","7"});
         TreeNode res5 = TreeNode.createInstance(new String[] {"3","4","5","5","4","#","7"});
         assertTrue(TreeNode.isSame(res5, instance.mergeTrees(t51, t52)));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

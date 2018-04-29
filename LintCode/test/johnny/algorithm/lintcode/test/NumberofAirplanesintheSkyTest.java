@@ -72,8 +72,6 @@ public class NumberofAirplanesintheSkyTest {
         airplanes3.add(new Interval(3, 10));
         airplanes3.add(new Interval(4, 10));
         assertEquals(4, instance.countOfAirplanes(airplanes3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

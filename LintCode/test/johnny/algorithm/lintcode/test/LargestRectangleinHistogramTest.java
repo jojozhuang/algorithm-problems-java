@@ -55,8 +55,5 @@ public class LargestRectangleinHistogramTest {
         assertEquals(2, instance.largestRectangleArea(new int[]{2,0,2}));
         assertEquals(8, instance.largestRectangleArea(new int[]{5,4,1,2}));
         assertEquals(12, instance.largestRectangleArea(new int[]{5,5,1,7,1,1,5,2,7,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

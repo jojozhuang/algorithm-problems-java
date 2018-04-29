@@ -54,8 +54,5 @@ public class Solution115Test {
         assertEquals(1, instance.numDistinct("abc", "ab"));
         assertEquals(2, instance.numDistinct("abad", "ad"));
         assertEquals(3, instance.numDistinct("rabbbit", "rabbit"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

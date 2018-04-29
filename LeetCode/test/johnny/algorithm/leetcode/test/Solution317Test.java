@@ -50,10 +50,8 @@ public class Solution317Test {
         int[][] grid2 = new int[][] {
             {1,0,2,0,1},
             {0,0,0,0,0},
-            {0,0,1,0,0}            
+            {0,0,1,0,0}
         };
         assertEquals(7, instance.shortestDistance(grid2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }    
+    }
 }

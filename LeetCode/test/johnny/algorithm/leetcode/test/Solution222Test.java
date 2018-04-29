@@ -56,9 +56,5 @@ public class Solution222Test {
       
         TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","3","4","#","#","#"});
         assertEquals(4, instance.countNodes(root4));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

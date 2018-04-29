@@ -56,8 +56,5 @@ public class SpaceReplacementTest {
         assertEquals(2, instance.replaceBlank("ab ".toCharArray(), 2));
         char[] string3 = { 'a', ' ', 'b', ' ', ' '};
         assertEquals(5, instance.replaceBlank(string3, 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

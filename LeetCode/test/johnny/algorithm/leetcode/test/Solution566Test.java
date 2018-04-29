@@ -61,8 +61,5 @@ public class Solution566Test {
         int[][] nums5 = new int[][]{{1,2,3},{4,5,6}};
         int[][] expResult5 = new int[][]{{1,2},{3,4},{5,6}};
         assertArrayEquals(expResult5, instance.matrixReshape(nums5, 3, 2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

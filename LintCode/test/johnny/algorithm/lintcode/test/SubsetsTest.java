@@ -67,8 +67,5 @@ public class SubsetsTest {
         item4.add(2);
         expResult4.add(item4);
         assertEquals(expResult4, instance.subsets(new int[]{1,2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

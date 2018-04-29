@@ -49,9 +49,5 @@ public class Solution362Test {
         instance.hit(300);
         assertEquals(4, instance.getHits(300));
         assertEquals(3, instance.getHits(301));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }  
-    
+    }
 }

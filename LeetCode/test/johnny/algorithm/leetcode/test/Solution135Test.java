@@ -48,8 +48,5 @@ public class Solution135Test {
         assertEquals(expResult, result);
         
         assertEquals(12, instance.candy(new int[]{1,4,3,1,2,3}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

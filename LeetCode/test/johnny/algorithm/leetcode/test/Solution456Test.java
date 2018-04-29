@@ -54,8 +54,5 @@ public class Solution456Test {
         assertEquals(true, instance.find132pattern(new int[]{-1,3,2,0}));
         assertEquals(false, instance.find132pattern(new int[]{2,2,2,2}));
         assertEquals(false, instance.find132pattern(new int[]{2,3,2,0}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

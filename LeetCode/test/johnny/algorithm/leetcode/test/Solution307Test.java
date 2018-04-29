@@ -68,8 +68,5 @@ public class Solution307Test {
         assertEquals(8, instance5.sumRange(0, 2));
         instance5.update(1, -2);
         assertEquals(-1, instance5.sumRange(0, 1));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

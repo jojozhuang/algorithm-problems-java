@@ -84,8 +84,5 @@ public class TopologicalSortingTest {
         expResult2.add(node14);
         expResult2.add(node15);
         assertEquals(expResult2, result2);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -81,16 +81,14 @@ public class Solution098Test {
         
         TreeNode p8 = new TreeNode(Integer.MIN_VALUE);
         p8.right = new TreeNode(Integer.MAX_VALUE);
-        assertEquals(true, instance.isValidBST(p8));        
+        assertEquals(true, instance.isValidBST(p8));
         
         TreeNode p9 = new TreeNode(Integer.MAX_VALUE);
-        p9.left = new TreeNode(Integer.MAX_VALUE);       
+        p9.left = new TreeNode(Integer.MAX_VALUE);
         assertEquals(false, instance.isValidBST(p9));
         
         TreeNode p10 = new TreeNode(Integer.MIN_VALUE);
-        p10.right = new TreeNode(Integer.MIN_VALUE);       
+        p10.right = new TreeNode(Integer.MIN_VALUE);
         assertEquals(false, instance.isValidBST(p10));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

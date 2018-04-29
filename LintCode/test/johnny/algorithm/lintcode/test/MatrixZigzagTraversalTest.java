@@ -62,8 +62,5 @@ public class MatrixZigzagTraversalTest {
             {9,10,11,12},
         };
         assertArrayEquals(new int[]{1, 2, 5, 9, 6, 3, 4, 7, 10, 11, 8, 12}, instance.printZMatrix(matrix2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

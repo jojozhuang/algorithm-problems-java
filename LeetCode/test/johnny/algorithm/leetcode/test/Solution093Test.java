@@ -53,7 +53,5 @@ public class Solution093Test {
         expResult2.add("255.255.11.135");
         expResult2.add("255.255.111.35");
         assertEquals(expResult2, instance.restoreIpAddresses("25525511135"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }        
+    }
 }

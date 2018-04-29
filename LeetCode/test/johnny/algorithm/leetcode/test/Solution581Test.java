@@ -48,8 +48,5 @@ public class Solution581Test {
         assertEquals(0, instance.findUnsortedSubarray(new int[]{1,2}));
         assertEquals(2, instance.findUnsortedSubarray(new int[]{2,1}));
         assertEquals(5, instance.findUnsortedSubarray(new int[]{2, 6, 4, 8, 10, 9, 15}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

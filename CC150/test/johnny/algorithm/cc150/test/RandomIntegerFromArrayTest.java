@@ -59,8 +59,5 @@ public class RandomIntegerFromArrayTest {
         for (int i = 0; i < result2.length; i++) {
             assertTrue(result2[i] >=1 && result2[i] <= 6);
         }
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

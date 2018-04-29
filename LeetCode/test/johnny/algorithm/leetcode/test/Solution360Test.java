@@ -52,8 +52,5 @@ public class Solution360Test {
         
         assertArrayEquals(new int[]{3, 9, 15, 33}, instance.sortTransformedArray(new int[]{-4, -2, 2, 4}, 1, 3, 5));
         assertArrayEquals(new int[]{-23, -5, 1, 7}, instance.sortTransformedArray(new int[]{-4, -2, 2, 4}, -1, 3, 5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

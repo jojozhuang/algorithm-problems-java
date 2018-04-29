@@ -58,8 +58,5 @@ public class PartitionArrayTest {
         assertEquals(2, instance.partitionArray(new int[] {3,4,2,1}, 3));
         assertEquals(2, instance.partitionArray(new int[] {3,3,2,1}, 3));
         assertEquals(10, instance.partitionArray(new int[] {9,9,9,8,9,8,7,9,8,8,8,9,8,9,8,8,6,9}, 9));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

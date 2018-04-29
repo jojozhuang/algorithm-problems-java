@@ -61,9 +61,5 @@ public class Solution029Test {
         assertEquals(-Integer.MAX_VALUE, instance.divide(Integer.MAX_VALUE, -1));
         assertEquals(Integer.MIN_VALUE, instance.divide(Integer.MIN_VALUE, 1));
         assertEquals(Integer.MAX_VALUE, instance.divide(Integer.MIN_VALUE, -1));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

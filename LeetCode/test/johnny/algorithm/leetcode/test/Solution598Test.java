@@ -57,9 +57,5 @@ public class Solution598Test {
         
         int[][] ops5 = new int[][]{{}};
         assertEquals(9, instance.maxCount(3, 3, ops5));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

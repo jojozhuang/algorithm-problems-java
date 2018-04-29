@@ -47,8 +47,5 @@ public class Solution561Test {
         assertEquals(1, instance.arrayPairSum(new int[]{1,2}));
         assertEquals(3, instance.arrayPairSum(new int[]{3,0,1,4}));
         assertEquals(4, instance.arrayPairSum(new int[]{1,4,3,2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

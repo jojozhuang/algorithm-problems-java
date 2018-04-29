@@ -50,8 +50,5 @@ public class Solution394Test {
         assertEquals("aaabcbc", instance.decodeString("3[a]2[bc]"));
         assertEquals("accaccacc", instance.decodeString("3[a2[c]]"));
         assertEquals("abcabccdcdcdef", instance.decodeString("2[abc]3[cd]ef"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

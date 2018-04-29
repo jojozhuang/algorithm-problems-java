@@ -80,9 +80,5 @@ public class Solution199Test {
         expResult4.add(3);
         expResult4.add(4);
         assertEquals(expResult4, instance.rightSideView(root4));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -65,14 +65,11 @@ public class Solution240Test {
                                         new int[] {18, 21, 23, 26, 30}};
         assertEquals(false, instance.searchMatrix(matrix3, 0));
         assertEquals(true, instance.searchMatrix(matrix3, 2));
-        assertEquals(true, instance.searchMatrix(matrix3, 3));        
+        assertEquals(true, instance.searchMatrix(matrix3, 3));
         assertEquals(true, instance.searchMatrix(matrix3, 11));
         assertEquals(false, instance.searchMatrix(matrix3, 20));
         assertEquals(true, instance.searchMatrix(matrix3, 22));
         assertEquals(true, instance.searchMatrix(matrix3, 30));
         assertEquals(false, instance.searchMatrix(matrix3, 31));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

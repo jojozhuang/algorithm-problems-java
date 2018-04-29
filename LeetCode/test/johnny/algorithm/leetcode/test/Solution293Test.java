@@ -54,8 +54,5 @@ public class Solution293Test {
         expResult2.add("+--+");
         expResult2.add("++--");
         assertEquals(expResult2, instance.generatePossibleNextMoves("++++"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -50,8 +50,5 @@ public class Solution333Test {
         
         TreeNode root2 = TreeNode.createInstance(new String[]{"10","5","15","1","8","#","7"});
         assertEquals(3, instance.largestBSTSubtree(root2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

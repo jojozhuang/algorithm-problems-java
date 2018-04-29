@@ -50,8 +50,5 @@ public class Solution344Test {
         assertEquals("a", instance.reverseString("a"));
         assertEquals("ba", instance.reverseString("ab"));
         assertEquals("olleh", instance.reverseString("hello"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

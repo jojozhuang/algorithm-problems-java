@@ -97,9 +97,5 @@ public class Solution126Test {
         expResult2.add(list31);
         expResult2.add(list32);
         assertEquals(expResult3, instance.findLadders("hit", "cog", wordList3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

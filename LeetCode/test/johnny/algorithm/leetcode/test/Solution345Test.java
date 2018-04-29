@@ -50,8 +50,5 @@ public class Solution345Test {
         assertEquals("holle", instance.reverseVowels("hello"));
         assertEquals("leotcede", instance.reverseVowels("leetcode"));
         assertEquals("a.b,.", instance.reverseVowels("a.b,."));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

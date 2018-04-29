@@ -57,8 +57,5 @@ public class UglyNumber2Test {
         assertEquals(5, instance.nthUglyNumber(5));
         assertEquals(10, instance.nthUglyNumber(9));
         assertEquals(150, instance.nthUglyNumber(41));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

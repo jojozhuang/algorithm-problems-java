@@ -55,8 +55,5 @@ public class Solution067Test {
         assertEquals("110", instance.addBinary("11", "11"));
         assertEquals("101", instance.addBinary("1", "100"));
         assertEquals("10000", instance.addBinary("1111", "1"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

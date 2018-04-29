@@ -50,8 +50,5 @@ public class Solution076Test {
         
         assertEquals("a", instance.minWindow("a", "a"));
         assertEquals("BANC", instance.minWindow("ADOBECODEBANC", "ABC"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

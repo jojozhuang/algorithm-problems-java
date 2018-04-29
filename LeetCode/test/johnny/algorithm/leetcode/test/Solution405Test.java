@@ -52,8 +52,5 @@ public class Solution405Test {
         assertEquals("ffffffff", instance.toHex(-1));
         assertEquals("fffffffe", instance.toHex(-2));
         assertEquals("80000000", instance.toHex(-2147483648));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

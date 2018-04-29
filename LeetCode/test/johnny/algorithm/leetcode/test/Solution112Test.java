@@ -77,8 +77,5 @@ public class Solution112Test {
         TreeNode p6 = new TreeNode(-2);
         p6.right = new TreeNode(-3);
         assertEquals(true, instance.hasPathSum(p6, -5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

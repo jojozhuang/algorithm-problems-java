@@ -50,8 +50,5 @@ public class Solution318Test {
         assertEquals(16, instance.maxProduct(new String[]{"abcw", "baz", "foo", "bar", "xtfn", "abcdef"}));
         assertEquals(4, instance.maxProduct(new String[]{"a", "ab", "abc", "d", "cd", "bcd", "abcd"}));
         assertEquals(0, instance.maxProduct(new String[]{"a", "aa", "aaa", "aaaa"}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

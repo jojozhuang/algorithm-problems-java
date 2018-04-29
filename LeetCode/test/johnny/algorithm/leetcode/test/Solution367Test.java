@@ -56,8 +56,5 @@ public class Solution367Test {
         assertEquals(false, instance.isPerfectSquare(10));
         assertEquals(true, instance.isPerfectSquare(100));
         assertEquals(true, instance.isPerfectSquare(808201));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

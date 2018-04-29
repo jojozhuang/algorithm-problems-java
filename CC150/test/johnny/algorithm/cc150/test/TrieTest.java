@@ -49,8 +49,6 @@ public class TrieTest {
         String word = "";
         Trie instance = new Trie();
         instance.insert(word);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -69,9 +67,6 @@ public class TrieTest {
         assertEquals(false, trie.search("fit"));
         assertEquals(true, trie.search("dog"));
         assertEquals(false, trie.search("tog"));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -92,8 +87,5 @@ public class TrieTest {
         assertEquals(false, trie.startsWith("ac"));
         assertEquals(false, trie.startsWith("apq"));
         assertEquals(true, trie.startsWith("full"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

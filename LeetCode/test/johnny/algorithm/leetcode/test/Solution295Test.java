@@ -44,8 +44,6 @@ public class Solution295Test {
         int num = 0;
         Solution295 instance = new Solution295();
         instance.addNum(num);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -84,9 +82,5 @@ public class Solution295Test {
         assertEquals(4, instance2.findMedian(), 0.0);
         instance2.addNum(0);
         assertEquals(3, instance2.findMedian(), 0.0);
-               
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

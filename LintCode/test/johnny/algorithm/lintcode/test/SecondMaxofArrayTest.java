@@ -52,8 +52,5 @@ public class SecondMaxofArrayTest {
         assertEquals(1, instance.secondMax(new int[]{1}));
         assertEquals(3, instance.secondMax(new int[]{1,3,2,4}));
         assertEquals(1, instance.secondMax(new int[]{1,2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

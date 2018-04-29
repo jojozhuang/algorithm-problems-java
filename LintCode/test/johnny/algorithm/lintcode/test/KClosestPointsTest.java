@@ -60,8 +60,5 @@ public class KClosestPointsTest {
         Point[] expect3 = Point.createList(new int[][]{{9,98},{6,90},{1,88},{12,106},{12,106},{-10,87},{-9,86},{-9,86},{-9,86},{-9,86},{-8,85},{-7,84},{-7,84},{3,82},{-5,82},{-5,82},{-3,80},{-3,80},{0,77},{0,77},{2,77},{2,77},{2,77},{3,77},{-3,77},{5,77},{-4,77},{-4,77},{1,76},{1,76},{1,76},{-6,77},{-8,77},{-10,77},{3,74},{3,74},{-2,73},{5,72},{5,72},{5,72},{6,71},{8,69},{10,67},{-4,63},{-4,63},{21,130},{21,130},{9,138},{27,146},{-8,43},{-12,42}});
         Point[] result3 = instance.kClosest(points3, new Point(1,99), 51);
         assertTrue(Point.isSame(expect3, result3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

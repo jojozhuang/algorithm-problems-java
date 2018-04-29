@@ -52,8 +52,5 @@ public class Solution132Test {
         assertEquals(0,  instance.minCut("aba"));
         assertEquals(2,  instance.minCut("abc"));
         assertEquals(1,  instance.minCut("aab"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

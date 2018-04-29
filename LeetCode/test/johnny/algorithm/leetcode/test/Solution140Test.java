@@ -63,8 +63,5 @@ public class Solution140Test {
         dict2.add("dog");
         List<String> result2 = instance.wordBreak("catsanddog", dict2);
         assertTrue(expResult2.containsAll(result2) && result2.containsAll(expResult2));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

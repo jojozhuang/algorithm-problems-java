@@ -85,9 +85,5 @@ public class SearchRangeinBinarySearchTreeTest {
         ArrayList<Integer> result7 = instance.searchRange(root7, 41, 41);
         Integer[] expResult7 = new Integer[] {41};
         assertArrayEquals(expResult7, result7.toArray());
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

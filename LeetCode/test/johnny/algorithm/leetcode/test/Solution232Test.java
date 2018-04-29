@@ -59,7 +59,5 @@ public class Solution232Test {
         assertEquals(false, queue.empty());
         assertEquals(4, queue.pop());
         assertEquals(true, queue.empty());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

@@ -50,8 +50,5 @@ public class Solution190Test {
         assertEquals(964176192, instance.reverseBits(43261596));
         assertEquals(-2, instance.reverseBits(2147483647));
         assertEquals(1, instance.reverseBits((int)2147483648l));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

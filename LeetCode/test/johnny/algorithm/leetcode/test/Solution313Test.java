@@ -49,8 +49,5 @@ public class Solution313Test {
         assertEquals(expResult, result);
         
         assertEquals(32, instance.nthSuperUglyNumber(12, new int[]{2, 7, 13, 19}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

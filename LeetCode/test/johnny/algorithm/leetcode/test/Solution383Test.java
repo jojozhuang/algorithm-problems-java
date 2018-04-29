@@ -47,9 +47,5 @@ public class Solution383Test {
         assertEquals(false, instance.canConstruct("a", "b"));
         assertEquals(false, instance.canConstruct("aa", "ab"));
         assertEquals(true, instance.canConstruct("aa", "aab"));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

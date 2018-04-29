@@ -63,8 +63,5 @@ public class ConvertBSTtoDoublyLinkedListTest {
         DoublyListNode expect4 = DoublyListNode.createInstance(new int[]{1,2,3,4,5});
         DoublyListNode result4 = instance.bstToDoublyList(root4);
         assertTrue(DoublyListNode.isSame(expect4, result4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

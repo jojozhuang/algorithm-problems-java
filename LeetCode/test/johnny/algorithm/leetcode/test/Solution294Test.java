@@ -52,8 +52,5 @@ public class Solution294Test {
         assertEquals(true, instance.canWin("++-+"));
         assertEquals(true, instance.canWin("+-++-+-"));
         assertEquals(false, instance.canWin("+-++-+-++"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -95,8 +95,5 @@ public class Solution090Test {
         item4.add(2);
         expResult4.add(item4);
         assertEquals(expResult4, instance.subsetsWithDup(new int[]{1,2,2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

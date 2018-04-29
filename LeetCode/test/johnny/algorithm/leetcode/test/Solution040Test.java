@@ -77,9 +77,5 @@ public class Solution040Test {
         
         List<List<Integer>> result4 = instance.combinationSum2(new int[]{10,1,2,7,6,1,5}, 8);
         assertTrue(expResult4.containsAll(result4) && result4.containsAll(result4));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

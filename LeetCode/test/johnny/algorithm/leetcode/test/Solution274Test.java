@@ -52,8 +52,5 @@ public class Solution274Test {
         assertEquals(4, instance.hIndex(new int[]{10, 8, 5, 4, 3}));
         assertEquals(3, instance.hIndex(new int[]{25, 8, 5, 3, 3}));
         assertEquals(5, instance.hIndex(new int[]{10, 10, 10, 10, 10}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

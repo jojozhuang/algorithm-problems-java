@@ -62,8 +62,5 @@ public class PermutationIndexTest {
         assertEquals(6, instance.permutationIndex(new int[]{3,2,1}));
         assertEquals(12, instance.permutationIndex(new int[]{2,4,3,1}));
         assertEquals(1263957845766L, instance.permutationIndex(new int[]{22,7,15,10,11,12,14,8,9,1,2,3,6,5,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -52,8 +52,5 @@ public class Solution326Test {
         assertEquals(true, instance.isPowerOfThree(81));
         assertEquals(false, instance.isPowerOfThree(101));
         assertEquals(false, instance.isPowerOfThree(Integer.MAX_VALUE));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

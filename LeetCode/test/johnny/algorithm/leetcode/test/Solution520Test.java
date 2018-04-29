@@ -50,8 +50,5 @@ public class Solution520Test {
         assertEquals(true, instance.detectCapitalUse("USA"));
         assertEquals(false, instance.detectCapitalUse("FlaG"));
         assertEquals(true, instance.detectCapitalUse("Leetcode"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

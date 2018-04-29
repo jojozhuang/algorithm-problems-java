@@ -60,9 +60,5 @@ public class SinglyLinkedListTest {
         ListNode head3 = ListNode.create(new int[]{1,2,3,4,5,6});
         ListNode middle3 = instance.findMiddle(head3);
         assertEquals(3, middle3.val);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

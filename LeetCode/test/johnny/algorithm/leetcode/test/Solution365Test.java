@@ -51,8 +51,5 @@ public class Solution365Test {
         
         assertEquals(true, instance.canMeasureWater(3, 5, 4));
         assertEquals(false, instance.canMeasureWater(2, 6, 5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

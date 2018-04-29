@@ -50,11 +50,8 @@ public class Solution330Test {
         
         assertEquals(3, instance.minPatches(new int[]{}, 7));
         assertEquals(1, instance.minPatches(new int[]{1, 3}, 6));
-        assertEquals(2, instance.minPatches(new int[]{1, 5, 10}, 20));        
+        assertEquals(2, instance.minPatches(new int[]{1, 5, 10}, 20));
         assertEquals(0, instance.minPatches(new int[]{1, 2, 2}, 5));
         assertEquals(28, instance.minPatches(new int[]{1,2,31,33},2147483647));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

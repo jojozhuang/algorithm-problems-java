@@ -69,8 +69,6 @@ public class Solution036Test {
         
         String[] input5 = {"....5..1.",".4.3.....",".....3..1","8......2.","..2.7....",".15......",".....2...",".2.9.....","..4......"};
         assertEquals(false, instance.isValidSudoku(createMatrix(input5)));
-        //TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     private char[][] createMatrix(String[] input) {
@@ -78,7 +76,7 @@ public class Solution036Test {
         for (int i=0; i<input.length; i++) {
             char[] row = input[i].toCharArray();
             for (int j=0; j<row.length; j++) {
-                board[i][j] = row[j];                
+                board[i][j] = row[j];
             }
         }
         return board;

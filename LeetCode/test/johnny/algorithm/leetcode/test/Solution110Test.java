@@ -68,8 +68,5 @@ public class Solution110Test {
 
         TreeNode p7 = TreeNode.createInstance(new String[] {"1","2","2","3","3","3","3","4","4","4","4","4","4","#","#","5","5","#","#","#","#","#","#","#","#","#","#","#","#"});
         assertEquals(true, instance.isBalanced(p7));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

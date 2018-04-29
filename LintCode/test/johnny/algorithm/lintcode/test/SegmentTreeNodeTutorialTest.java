@@ -53,8 +53,6 @@ public class SegmentTreeNodeTutorialTest {
         SegmentTreeNode expResult = new SegmentTreeNode(0, 0);
         SegmentTreeNode result = instance.build(start, end);
         assertEquals(expResult.start, result.start);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -84,9 +82,6 @@ public class SegmentTreeNodeTutorialTest {
         assertEquals(3, instance.querySum(root, 2, 3));
         assertEquals(3, instance.querySum(root, 0, 1));
         assertEquals(4, instance.querySum(root, 1, 4));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -102,8 +97,6 @@ public class SegmentTreeNodeTutorialTest {
         int expResult = 0;
         int result = instance.queryMax(root, start, end);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }
