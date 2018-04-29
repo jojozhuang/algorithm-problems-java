@@ -51,8 +51,6 @@ public class Solution055Test {
         assertEquals(false, instance.canJump(new int[]{3,2,1,0,0}));
         assertEquals(true, instance.canJump(new int[]{2,3,1,1,4}));
         assertEquals(false, instance.canJump(new int[]{3,2,1,0,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

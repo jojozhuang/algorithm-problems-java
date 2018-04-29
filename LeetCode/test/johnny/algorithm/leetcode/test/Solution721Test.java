@@ -36,8 +36,8 @@ public class Solution721Test {
         System.out.println("accountsMerge");
         Solution721 instance = new Solution721();
 
-        List<List<String>> accounts1 = ListUtil.buildStringList2(new String[][] {{"John", "johnsmith@mail.com", "john00@mail.com"}, {"John", "johnnybravo@mail.com"}, {"John", "johnsmith@mail.com", "john_newyork@mail.com"}, {"Mary", "mary@mail.com"}});
-        List<List<String>> result1 = ListUtil.buildStringList2(new String[][]{{"John", "johnnybravo@mail.com"}, {"John", "john00@mail.com", "john_newyork@mail.com", "johnsmith@mail.com"}, {"Mary", "mary@mail.com"}});
+        List<List<String>> accounts1 = ListUtil.buildList2(new String[][] {{"John", "johnsmith@mail.com", "john00@mail.com"}, {"John", "johnnybravo@mail.com"}, {"John", "johnsmith@mail.com", "john_newyork@mail.com"}, {"Mary", "mary@mail.com"}});
+        List<List<String>> result1 = ListUtil.buildList2(new String[][]{{"John", "johnnybravo@mail.com"}, {"John", "john00@mail.com", "john_newyork@mail.com", "johnsmith@mail.com"}, {"Mary", "mary@mail.com"}});
         assertEquals(result1, instance.accountsMerge(accounts1));
     }
 

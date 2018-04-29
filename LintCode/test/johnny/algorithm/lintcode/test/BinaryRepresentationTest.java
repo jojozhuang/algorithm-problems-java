@@ -55,8 +55,6 @@ public class BinaryRepresentationTest {
         assertEquals("11.1", instance.binaryRepresentation("3.5"));
         assertEquals("ERROR", instance.binaryRepresentation("3.72"));
         assertEquals("1", instance.binaryRepresentation("1.0"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

@@ -3,24 +3,42 @@ package johnny.algorithm.leetcode;
 import johnny.algorithm.leetcode.common.ListNode;
 
 /**
- * Merge k Sorted Lists.
- * Merge k sorted linked lists and return it as one sorted list. Analyze and 
- * describe its complexity.
+ * 23. Merge k Sorted Lists
+ * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+ * 
+ * Example:
+ * 
+ * Input:
+ * [
+ *   1->4->5,
+ *   1->3->4,
+ *   2->6
+ * ]
+ * Output: 1->1->2->3->4->4->5->6
  * 
  * @author Johnny
  */
 public class Solution023 {
+    // half merge, recursion
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
-        }        
-        
-        ListNode res = lists[0];
-        for (int i = 1; i < lists.length; i++) {
-            res = mergeTwoLists(res, lists[i]);
+        }
+
+        return helper(lists, 0, lists.length - 1);
+    }
+
+    private ListNode helper(ListNode[] lists, int start, int end) {
+        if (start == end) {
+            return lists[start];
+        } else if (start + 1 == end) {
+            return mergeTwoLists(lists[start], lists[end]);
         }
         
-        return res;
+        ListNode left = helper(lists, start, (start + (end - start)) / 2);
+        ListNode right = helper(lists, (start + (end - start)) / 2 + 1, end);
+        
+        return mergeTwoLists(left, right);
     }
     
     // in place
@@ -47,25 +65,16 @@ public class Solution023 {
         return dummy.next;
     }
     
-    // half merge, recursion
     public ListNode mergeKLists2(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
         }        
         
-        return helper(lists, 0, lists.length - 1);
-    }
-    
-    private ListNode helper(ListNode[] lists, int start, int end) {
-        if (start == end) {
-            return lists[start];
-        } else if (start + 1 == end) {
-            return mergeTwoLists(lists[start], lists[end]);
+        ListNode res = lists[0];
+        for (int i = 1; i < lists.length; i++) {
+            res = mergeTwoLists(res, lists[i]);
         }
         
-        ListNode left = helper(lists, start, (start + (end - start)) / 2);
-        ListNode right = helper(lists, (start + (end - start)) / 2 + 1, end);
-        
-        return mergeTwoLists(left, right);
+        return res;
     }
 }

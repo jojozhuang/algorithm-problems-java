@@ -48,8 +48,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.bubbleSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -64,8 +62,6 @@ public class AllSortingTest {
         int[] result = instance.insertionSort(nums);
         assertArrayEquals(expResult, result);
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.insertionSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -80,8 +76,6 @@ public class AllSortingTest {
         int[] result = instance.shellSort(nums);
         assertArrayEquals(expResult, result);
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.shellSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -97,8 +91,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.selectionSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -113,8 +105,6 @@ public class AllSortingTest {
         int[] result = instance.heapSort(nums);
         assertArrayEquals(expResult, result);
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.heapSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     /**
@@ -130,8 +120,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.mergeSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -147,8 +135,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.quickSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -165,8 +151,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
        
         assertArrayEquals(new int[]{0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5}, instance.bucketSort(new int[]{5,3,0,2,4,1,0,5,2,3,1,4}, 5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }   
 
 }

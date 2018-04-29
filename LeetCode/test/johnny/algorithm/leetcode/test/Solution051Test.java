@@ -69,7 +69,5 @@ public class Solution051Test {
         expResult2.get(1).add(".Q..");        
      
         assertEquals(expResult2, instance.solveNQueens(4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

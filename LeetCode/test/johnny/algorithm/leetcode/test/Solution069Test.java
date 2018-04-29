@@ -59,8 +59,5 @@ public class Solution069Test {
         assertEquals(15, instance.sqrt(255));
         assertEquals(16, instance.sqrt(256));
         assertEquals(46339, instance.sqrt(2147395599));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

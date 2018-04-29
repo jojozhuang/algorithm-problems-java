@@ -38,17 +38,17 @@ public class Solution655Test {
         Solution655 instance = new Solution655();
 
         TreeNode root1 = TreeNode.createInstance(new String[] {"1","2","#"});
-        List<List<String>> result1 = ListUtil.buildStringList2(new String[][] {{"", "1", ""}, {"2", "", ""}});
+        List<List<String>> result1 = ListUtil.buildList2(new String[][] {{"", "1", ""}, {"2", "", ""}});
         assertEquals(result1, instance.printTree(root1));
         
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","3","#","4","#","#"});
-        List<List<String>> result2 = ListUtil.buildStringList2(new String[][] {{"", "", "", "1", "", "", ""},
+        List<List<String>> result2 = ListUtil.buildList2(new String[][] {{"", "", "", "1", "", "", ""},
             {"", "2", "", "", "", "3", ""},
             {"", "", "4", "", "", "", ""}});
         assertEquals(result2, instance.printTree(root2));
 
         TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","5","3","#","#","#","4","#"});
-        List<List<String>> result3 = ListUtil.buildStringList2(new String[][] {{"",  "",  "", "",  "", "", "", "1", "",  "",  "",  "",  "", "", ""},
+        List<List<String>> result3 = ListUtil.buildList2(new String[][] {{"",  "",  "", "",  "", "", "", "1", "",  "",  "",  "",  "", "", ""},
         {"",  "",  "", "2", "", "", "", "",  "",  "",  "",  "5", "", "", ""},
         {"",  "3", "", "",  "", "", "", "",  "",  "",  "",  "",  "", "", ""},
         {"4", "",  "", "",  "", "", "", "",  "",  "",  "",  "",  "", "", ""}});

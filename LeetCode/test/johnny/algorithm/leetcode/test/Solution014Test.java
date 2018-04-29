@@ -41,11 +41,9 @@ public class Solution014Test {
     @Test
     public void testLongestCommonPrefix() {
         System.out.println("longestCommonPrefix");
-        String[] strs = null;
         Solution014 instance = new Solution014();
-        String expResult = "";
-        String result = instance.longestCommonPrefix(strs);
-        assertEquals(expResult, result);
+
+        assertEquals("", instance.longestCommonPrefix(null));
         assertEquals("a", instance.longestCommonPrefix(new String[]{"a"}));
         assertEquals("", instance.longestCommonPrefix(new String[]{"", "abc", "abb"}));
         assertEquals("", instance.longestCommonPrefix(new String[]{"a", "b", "c"}));
@@ -53,8 +51,6 @@ public class Solution014Test {
         assertEquals("ab", instance.longestCommonPrefix(new String[]{"abc", "ab", "ab"}));
         assertEquals("ab", instance.longestCommonPrefix(new String[]{"abcdef", "abc", "abb"}));
         assertEquals("abc", instance.longestCommonPrefix(new String[]{"abcdef", "abce", "abc123"}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

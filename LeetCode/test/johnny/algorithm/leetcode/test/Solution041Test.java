@@ -50,10 +50,5 @@ public class Solution041Test {
         assertEquals(2, instance.firstMissingPositive(new int[] {1,1}));
         assertEquals(3, instance.firstMissingPositive(new int[] {1,2,0}));
         assertEquals(2, instance.firstMissingPositive(new int[] {3,4,-1,1}));
-        
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -66,8 +66,6 @@ public class Solution050Test {
         assertEquals(-1, instance.myPow(-1, 2147483647), delta);
         assertEquals(1, instance.myPow(-1, 2147483646), delta);
         assertEquals(0.00003, instance.myPow(34.00515, -3), delta);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

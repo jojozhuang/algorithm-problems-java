@@ -53,8 +53,6 @@ public class ConnectingGraphTest {
         instance.connect(1, 3);
         assertEquals(true, instance.query(3, 1));
         assertEquals(false, instance.query(1, 4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -77,8 +75,5 @@ public class ConnectingGraphTest {
         //assertEquals(false, instance.query(8, 9));
         //instance.connect(2, 3);
         assertEquals(true, instance.query(9, 5));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

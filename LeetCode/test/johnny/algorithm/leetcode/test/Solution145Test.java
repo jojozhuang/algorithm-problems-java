@@ -51,21 +51,19 @@ public class Solution145Test {
         List<Integer> result = instance.postorderTraversal(root);
         assertEquals(expResult, result);
         
-        TreeNode root1 = new TreeNode(1);        
-        List<Integer> expect1 = ListUtil.buildIntegerList(new Integer[]{1});
+        TreeNode root1 = new TreeNode(1);
+        List<Integer> expect1 = ListUtil.buildList(new Integer[]{1});
         List<Integer> result1 = instance.postorderTraversal(root1);
         assertEquals(expect1, result1);
         
         TreeNode root2 = TreeNode.createInstance(new String[]{"1","2","3"});
-        List<Integer> expect2 = ListUtil.buildIntegerList(new Integer[]{2,3,1});
+        List<Integer> expect2 = ListUtil.buildList(new Integer[]{2,3,1});
         List<Integer> result2 = instance.postorderTraversal(root2);
         assertEquals(expect2, result2);
         
         TreeNode root3 = TreeNode.createInstance(new String[]{"1","#","2","3","#"});
-        List<Integer> expect3 = ListUtil.buildIntegerList(new Integer[]{3,2,1});
+        List<Integer> expect3 = ListUtil.buildList(new Integer[]{3,2,1});
         List<Integer> result3 = instance.postorderTraversal(root3);
         assertEquals(expect3, result3);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

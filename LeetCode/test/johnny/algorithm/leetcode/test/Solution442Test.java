@@ -50,16 +50,14 @@ public class Solution442Test {
         List<Integer> result = instance.findDuplicates(nums);
         assertEquals(expResult, result);
         
-        List<Integer> expect2 = ListUtil.buildIntegerList(new Integer[]{2,3});
+        List<Integer> expect2 = ListUtil.buildList(new Integer[]{2,3});
         assertEquals(expect2, instance.findDuplicates(new int[]{4,3,2,7,8,2,3,1}));
         
-        List<Integer> expect3 = ListUtil.buildIntegerList(new Integer[]{1});
+        List<Integer> expect3 = ListUtil.buildList(new Integer[]{1});
         assertEquals(expect3, instance.findDuplicates(new int[]{1,1}));
         
-        List<Integer> expect4 = ListUtil.buildIntegerList(new Integer[]{2});
+        List<Integer> expect4 = ListUtil.buildList(new Integer[]{2});
         assertEquals(expect4, instance.findDuplicates(new int[]{2,2}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

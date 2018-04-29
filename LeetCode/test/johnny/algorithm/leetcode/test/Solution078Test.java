@@ -51,13 +51,13 @@ public class Solution078Test {
         List<List<Integer>> result = instance.subsets(nums);
         assertEquals(expResult, result);
         
-        List<List<Integer>> expResult2 = ListUtil.buildIntegerList2(new Integer[][]{{},{1}});
+        List<List<Integer>> expResult2 = ListUtil.buildList2(new Integer[][]{{},{1}});
         assertEquals(expResult2, instance.subsets(new int[]{1}));
         
-        List<List<Integer>> expResult3 = ListUtil.buildIntegerList2(new Integer[][]{{},{1},{1,3},{3}});
+        List<List<Integer>> expResult3 = ListUtil.buildList2(new Integer[][]{{},{1},{1,3},{3}});
         assertEquals(expResult3, instance.subsets(new int[]{1,3}));
                
-        List<List<Integer>> expResult4 = ListUtil.buildIntegerList2(new Integer[][]{{},{1},{1,3},{1,3,8},{1,8},{3},{3,8},{8}});
+        List<List<Integer>> expResult4 = ListUtil.buildList2(new Integer[][]{{},{1},{1,3},{1,3,8},{1,8},{3},{3,8},{8}});
         assertEquals(expResult4, instance.subsets(new int[]{1,3,8}));
         
         // TODO review the generated test code and remove the default call to fail.

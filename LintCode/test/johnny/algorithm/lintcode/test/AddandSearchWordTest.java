@@ -49,8 +49,6 @@ public class AddandSearchWordTest {
         String word = "";
         AddandSearchWord instance = new AddandSearchWord();
         instance.addWord(word);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -88,8 +86,6 @@ public class AddandSearchWordTest {
         assertEquals(true, instance4.search("a"));
         assertEquals(false, instance4.search(".a"));
         assertEquals(false, instance4.search("a."));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

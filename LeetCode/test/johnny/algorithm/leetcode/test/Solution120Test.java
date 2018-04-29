@@ -47,17 +47,14 @@ public class Solution120Test {
 
         assertEquals(0, instance.minimumTotal(null));
         
-        List<List<Integer>> triangle1 = ListUtil.buildIntegerList2(new Integer[][]{{1}});
+        List<List<Integer>> triangle1 = ListUtil.buildList2(new Integer[][]{{1}});
         assertEquals(1, instance.minimumTotal(triangle1));
         
-        List<List<Integer>> triangle2 = ListUtil.buildIntegerList2(new Integer[][]{{1},{2,3}});
+        List<List<Integer>> triangle2 = ListUtil.buildList2(new Integer[][]{{1},{2,3}});
         assertEquals(3, instance.minimumTotal(triangle2));
    
-        List<List<Integer>> triangle3 = ListUtil.buildIntegerList2(new Integer[][]{{2},{3,4},{6,5,7},{4,1,8,3}});
+        List<List<Integer>> triangle3 = ListUtil.buildList2(new Integer[][]{{2},{3,4},{6,5,7},{4,1,8,3}});
         assertEquals(11, instance.minimumTotal(triangle3));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

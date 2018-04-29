@@ -36,7 +36,7 @@ public class Solution763Test {
         System.out.println("partitionLabels");
         Solution763 instance = new Solution763();
 
-        List<Integer> result1 = ListUtil.buildIntegerList(new Integer[] {9,7,8});
+        List<Integer> result1 = ListUtil.buildList(new Integer[] {9,7,8});
         assertEquals(result1, instance.partitionLabels("ababcbacadefegdehijhklij"));
     }
 

@@ -9,7 +9,9 @@ package johnny.algorithm.leetcode;
 public class Solution009 {
     // generate the reverse value of x
     public boolean isPalindrome(int x) {
-        if (x < 0) return false;
+        if (x < 0) {
+            return false;
+        }
         int reverse = 0;
         int num = x;
         while (num > 0) {
@@ -19,6 +21,7 @@ public class Solution009 {
         
         return reverse == x;
     }
+    
     public boolean isPalindrome2(int x) {
         if (x < 0) {
             return false;

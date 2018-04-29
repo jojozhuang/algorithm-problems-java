@@ -56,8 +56,6 @@ public class BitManipulationTest {
         assertEquals(5, instance.add(3, 2));
         assertEquals(-3, instance.add(-2, -1));
         assertEquals(1, instance.add(1, 0));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

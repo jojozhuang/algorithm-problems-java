@@ -127,8 +127,5 @@ public class Solution047Test {
         expResult5.add(result52);
         expResult5.add(result53);        
         assertEquals(expResult5, instance.permuteUnique(new int[]{1,1,5}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

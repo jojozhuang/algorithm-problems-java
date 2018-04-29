@@ -16,16 +16,16 @@ import java.util.Map;
  * @author Johnny
  */
 public class OutputCollector<K, V> {
-    public LinkedHashMap<K, ArrayList<V>> map = new LinkedHashMap<K, ArrayList<V>>();
+    public LinkedHashMap<K, List<V>> map = new LinkedHashMap<K, List<V>>();
     public void collect(K key, V value) {
         if (!map.containsKey(key)) {
             map.put(key, new ArrayList<V>());
         }
         map.get(key).add(value);
-        //map.getOrDefault(key, new ArrayList<V>()).add(value);        
+        //map.getOrDefault(key, new ArrayList<V>()).add(value);
     }   
     
-    public static boolean isSame(OutputCollector output1, OutputCollector output2) {
+    public static <K, V> boolean isSame(OutputCollector<K, V> output1, OutputCollector<K, V> output2) {
         if (output1 == null && output2 == null) {
             return true;
         }

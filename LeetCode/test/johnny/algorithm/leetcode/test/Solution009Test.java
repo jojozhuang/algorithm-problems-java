@@ -41,11 +41,9 @@ public class Solution009Test {
     @Test
     public void testIsPalindrome() {
         System.out.println("isPalindrome");
-        int x = 0;
         Solution009 instance = new Solution009();
-        boolean expResult = true;
-        boolean result = instance.isPalindrome(x);
-        assertEquals(expResult, result);
+
+        assertEquals(true, instance.isPalindrome(0));
         assertEquals(true, instance.isPalindrome(1));
         assertEquals(true, instance.isPalindrome(99));
         assertEquals(false, instance.isPalindrome(34));
@@ -64,8 +62,6 @@ public class Solution009Test {
         assertEquals(false, instance.isPalindrome(2147383412));
         assertEquals(true, instance.isPalindrome(2143883412));
         assertEquals(false, instance.isPalindrome(-2147447412));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

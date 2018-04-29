@@ -12,32 +12,32 @@ import java.util.List;
  * 
  * @author Johnny
  */
-public class Solution022 {        
+public class Solution022 {
     public List<String> generateParenthesis(int n) {
-        List<String> res = new ArrayList<String>();  
+        List<String> res = new ArrayList<String>();
         if (n <= 0) {
             return res;
         }
             
-        CombinationPar(res, "", n, n);  
-        return res;         
-    }   
+        combination(res, "", n, n);
+        return res;
+    }
     
-    private void CombinationPar(List<String> res, String item, int left, int right) {  
+    private void combination(List<String> res, String prefix, int left, int right) {
         if (left > right) {//deal wiith ")("
              return;
         }
 
-        if (left == 0 && right == 0){  
-            res.add(item);  
-            return;  
+        if (left == 0 && right == 0){
+            res.add(prefix);
+            return;
         }
 
-        if (left > 0) { 
-            CombinationPar(res, item + '(', left - 1, right);  
+        if (left > 0) {
+            combination(res, prefix + '(', left - 1, right);
         }
-        if (right > 0) { 
-            CombinationPar(res, item + ')', left, right - 1);  
+        if (right > 0) {
+            combination(res, prefix + ')', left, right - 1);
         }
     }
 }

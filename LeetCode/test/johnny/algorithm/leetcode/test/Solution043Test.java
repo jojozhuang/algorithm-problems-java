@@ -60,8 +60,5 @@ public class Solution043Test {
         assertEquals("42435", instance.multiply("123", "345"));
         assertEquals("15241578750190521", instance.multiply("123456789", "123456789"));
         assertEquals("0", instance.multiply("9133", "0"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -34,7 +34,7 @@ public class Solution018 {
         
         Arrays.sort(nums);
 
-        HashSet<List<Integer>> hashSet = new HashSet<List<Integer>>();        
+        HashSet<List<Integer>> hashSet = new HashSet<List<Integer>>();
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -44,11 +44,7 @@ public class Solution018 {
                 while (k < l) {
                     int sum = nums[i] + nums[j] + nums[k] + nums[l];
                     if (sum == target) {
-                        ArrayList<Integer> item = new ArrayList<Integer>();
-                        item.add(nums[i]);
-                        item.add(nums[j]);
-                        item.add(nums[k]);
-                        item.add(nums[l]);
+                        List<Integer> item = Arrays.asList(nums[i], nums[j],nums[k],nums[l]);
 
                         if (!hashSet.contains(item)) {
                             hashSet.add(item);

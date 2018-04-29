@@ -64,7 +64,5 @@ public class Solution002Test {
         ListNode l32 = ListNode.createInstance(new int[]{5,6,4});
         ListNode expect3 = ListNode.createInstance(new int[]{7,0,8});
         assertTrue(ListNode.isSame(expect3, instance.addTwoNumbers(l31,l32)));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

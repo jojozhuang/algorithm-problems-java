@@ -38,8 +38,8 @@ public class Solution019Test {
      * Test of removeNthFromEnd2 method, of class Solution019.
      */
     @Test
-    public void testRemoveNthFromEnd2() {
-        System.out.println("removeNthFromEnd2");        
+    public void testRemoveNthFromEnd() {
+        System.out.println("removeNthFromEnd");
         Solution019 instance = new Solution019();
        
         // 1 , 1
@@ -65,9 +65,6 @@ public class Solution019Test {
         ListNode head5 = ListNode.createInstance(new int[]{1,2,3,4,5});
         ListNode expect5 = ListNode.createInstance(new int[]{1,2,3,4});
         assertTrue(ListNode.isSame(expect5, instance.removeNthFromEnd(head5,1)));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

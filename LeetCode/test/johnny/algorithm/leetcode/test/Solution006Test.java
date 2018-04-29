@@ -41,14 +41,10 @@ public class Solution006Test {
     @Test
     public void testConvert() {
         System.out.println("convert");
-        String s = "";
-        int nRows = 0;
         Solution006 instance = new Solution006();
-        String expResult = "";
-        String result = instance.convert(s, nRows);
-        assertEquals(expResult, result);
-        
-        assertEquals("", instance.convert(null, nRows));
+
+        assertEquals("", instance.convert("", 0));
+        assertEquals("", instance.convert(null, 0));
         assertEquals("A", instance.convert("A", 0));
         assertEquals("AB", instance.convert("AB", -1));
         assertEquals("ABC", instance.convert("ABC", 1));
@@ -59,8 +55,6 @@ public class Solution006Test {
         assertEquals("PAHNAPLSIIGYIR", instance.convert("PAYPALISHIRING", 3));
         assertEquals("AGBFHCEIKDJ", instance.convert("ABCDEFGHIJK", 4));
         assertEquals("0481357926A", instance.convert("0123456789A", 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

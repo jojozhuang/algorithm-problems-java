@@ -44,7 +44,7 @@ public class KClosestPoints {
             distance[i] = Math.sqrt(Math.pow(points[i].x - origin.x, 2) + Math.pow(points[i].y - origin.y, 2));
         }
         
-        Comparator cmp = new Comparator<Integer>() {
+        Comparator<Integer> cmp = new Comparator<Integer>() {
             public int compare(Integer d1, Integer d2) {
                 if (Double.compare(distance[d1], distance[d2]) == 0) {
                     return (points[d1].x - points[d2].x);

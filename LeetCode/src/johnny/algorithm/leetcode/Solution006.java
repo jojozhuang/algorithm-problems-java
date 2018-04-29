@@ -44,27 +44,27 @@ public class Solution006 {
         return sb[0].toString();
     }
     //http://www.cnblogs.com/springfor/p/3889414.html
-    public String convert(String s, int nRows) {  
+    public String convert(String s, int numRows) {
         if(s == null || s.length() == 0) {
             return "";
         }
-        if(nRows <= 1) {
+        if(numRows <= 1) {
             return s;
         }
             
         StringBuilder res = new StringBuilder();  
-        int size = 2 * nRows - 2;  
-        for(int i = 0; i < nRows; i++){  
+        int size = 2 * numRows - 2;  
+        for(int i = 0; i < numRows; i++){  
             for(int j = i; j < s.length(); j += size){  
                 res.append(s.charAt(j));  
-                if(i != 0 && i != nRows - 1){//except the first row and the last row
-                    int temp = j + size - 2 * i;
-                    if(temp < s.length()) {
-                        res.append(s.charAt(temp));
+                if(i != 0 && i != numRows - 1){//except the first row and the last row
+                    int index = j + size - 2 * i;
+                    if(index < s.length()) {
+                        res.append(s.charAt(index));
                     }
                 }
-            }                  
+            }
         }  
-        return res.toString();  
+        return res.toString();
     }
 }

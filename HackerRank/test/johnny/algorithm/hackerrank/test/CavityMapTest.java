@@ -52,8 +52,6 @@ public class CavityMapTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new String[] {"1112", "1X12", "18X2", "1234"}, CavityMap.findCavity(new String[] {"1112", "1912", "1892", "1234"}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

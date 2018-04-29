@@ -56,8 +56,5 @@ public class Solution060Test {
         assertEquals("123", instance.getPermutation(3, 1));
         assertEquals("321", instance.getPermutation(3, 6));
         assertEquals("248716395", instance.getPermutation(9, 54494));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

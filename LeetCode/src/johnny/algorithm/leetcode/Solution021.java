@@ -10,32 +10,8 @@ import johnny.algorithm.leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution021 { 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode dummy = new ListNode(0);        
-        ListNode curr = dummy;
-        while(l1 != null && l2 != null) {            
-            ListNode newnode;
-            if (l1.val <= l2.val) {
-                newnode = new ListNode(l1.val);
-                l1 = l1.next;
-            } else {
-                newnode = new ListNode(l2.val); 
-                l2 = l2.next;
-            }            
-            curr.next = newnode;
-            curr = curr.next;
-        }
-        if (l1 != null) {
-            curr.next = l1;
-        }
-        if (l2 != null) {
-            curr.next = l2;
-        }
-        return dummy.next;
-    }
-    
     // in place
-    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy; 
         while(l1 != null && l2 != null) {

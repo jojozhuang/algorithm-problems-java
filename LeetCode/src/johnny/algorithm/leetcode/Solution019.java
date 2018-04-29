@@ -23,23 +23,20 @@ public class Solution019 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         
-        ListNode predel = dummy;
-        ListNode curr = head;
+        ListNode slow = dummy;
+        ListNode fast = head;
         
         for (int i = 0; i < n; i++) {
-            if (curr == null) {
-                return null;
-            }
-            curr = curr.next;
+            fast = fast.next;
         }
         
         //move the window(which has length = n)
-        while(curr != null) {
-            curr = curr.next;
-            predel = predel.next;
+        while(fast != null) {
+            fast = fast.next;
+            slow = slow.next;
         }
         
-        predel.next = predel.next.next;
-        return dummy.next;      
+        slow.next = slow.next.next;
+        return dummy.next;
     }
 }

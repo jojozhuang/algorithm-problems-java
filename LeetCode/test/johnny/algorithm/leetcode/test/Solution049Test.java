@@ -99,7 +99,5 @@ public class Solution049Test {
         expResult6.add(list63);
         List<List<String>> result6 = instance.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
         assertTrue(expResult6.containsAll(result6)&&result6.containsAll(expResult6));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }    
+    }
 }

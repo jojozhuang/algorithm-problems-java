@@ -34,6 +34,6 @@ public class Solution013 {
                 res -= map.get(s.charAt(i));
             }
         }
-        return res;        
+        return res;
     }
 }

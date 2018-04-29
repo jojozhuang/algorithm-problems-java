@@ -56,8 +56,6 @@ public class Solution054Test {
         assertThat(instance.spiralOrder(new int[][]{{4},{5},{6}}), is(Arrays.asList(4,5,6)));
         assertThat(instance.spiralOrder(new int[][]{{1,2,3,4},{5,6,7,8}}), is(Arrays.asList(1,2,3,4,8,7,6,5)));
         assertThat(instance.spiralOrder(new int[][]{{1,2,3,4},{5,6,7,8},{9,10,11,12}}), is(Arrays.asList(1,2,3,4,8,12,11,10,9,5,6,7)));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

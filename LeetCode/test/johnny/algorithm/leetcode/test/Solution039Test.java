@@ -51,23 +51,21 @@ public class Solution039Test {
         List<List<Integer>> result = instance.combinationSum(candidates, target);
         assertEquals(expResult, result);
         
-        List<Integer> result21 = ListUtil.buildIntegerList(new Integer[]{2,2,3});
-        List<Integer> result22 = ListUtil.buildIntegerList(new Integer[]{7});
+        List<Integer> result21 = ListUtil.buildList(new Integer[]{2,2,3});
+        List<Integer> result22 = ListUtil.buildList(new Integer[]{7});
         List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
         expResult2.add(result21);
         expResult2.add(result22);
         assertEquals(expResult2, instance.combinationSum(new int[]{2,3,6,7}, 7));
         
-        List<Integer> result31 = ListUtil.buildIntegerList(new Integer[]{3,4,4});
-        List<Integer> result32 = ListUtil.buildIntegerList(new Integer[]{3,8});
-        List<Integer> result33 = ListUtil.buildIntegerList(new Integer[]{4,7});
+        List<Integer> result31 = ListUtil.buildList(new Integer[]{3,4,4});
+        List<Integer> result32 = ListUtil.buildList(new Integer[]{3,8});
+        List<Integer> result33 = ListUtil.buildList(new Integer[]{4,7});
         List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
         expResult3.add(result31);
         expResult3.add(result32);
         expResult3.add(result33);
         assertEquals(expResult3, instance.combinationSum(new int[]{8,7,4,3}, 11));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

@@ -37,21 +37,21 @@ public class Solution816Test {
         
         Solution816 instance = new Solution816();
         
-        List<String> coordinates1 = ListUtil.buildStringList(new String[]{"(1, 23)", "(12, 3)", "(1.2, 3)", "(1, 2.3)"});
+        List<String> coordinates1 = ListUtil.buildList(new String[]{"(1, 23)", "(12, 3)", "(1.2, 3)", "(1, 2.3)"});
         List<String> result1 = instance.ambiguousCoordinates("(123)");
-        assertTrue(ListUtil.equalLists(coordinates1, result1));
+        assertTrue(ListUtil.equalsIgnoreOrder(coordinates1, result1));
         
-        List<String> coordinates2 = ListUtil.buildStringList(new String[]{"(0.001, 1)", "(0, 0.011)"});
+        List<String> coordinates2 = ListUtil.buildList(new String[]{"(0.001, 1)", "(0, 0.011)"});
         List<String> result2 = instance.ambiguousCoordinates("(00011)");
-        assertTrue(ListUtil.equalLists(coordinates2, result2));
+        assertTrue(ListUtil.equalsIgnoreOrder(coordinates2, result2));
         
-        List<String> coordinates3 = ListUtil.buildStringList(new String[]{"(0, 123)", "(0, 12.3)", "(0, 1.23)", "(0.1, 23)", "(0.1, 2.3)", "(0.12, 3)"});
+        List<String> coordinates3 = ListUtil.buildList(new String[]{"(0, 123)", "(0, 12.3)", "(0, 1.23)", "(0.1, 23)", "(0.1, 2.3)", "(0.12, 3)"});
         List<String> result3 = instance.ambiguousCoordinates("(0123)");
-        assertTrue(ListUtil.equalLists(coordinates3, result3));
+        assertTrue(ListUtil.equalsIgnoreOrder(coordinates3, result3));
         
-        List<String> coordinates4 = ListUtil.buildStringList(new String[]{"(10, 0)"});
+        List<String> coordinates4 = ListUtil.buildList(new String[]{"(10, 0)"});
         List<String> result4 = instance.ambiguousCoordinates("(100)");
-        assertTrue(ListUtil.equalLists(coordinates4, result4));
+        assertTrue(ListUtil.equalsIgnoreOrder(coordinates4, result4));
     }
 
 }

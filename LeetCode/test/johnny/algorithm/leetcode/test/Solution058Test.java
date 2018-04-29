@@ -53,7 +53,5 @@ public class Solution058Test {
         assertEquals(3, instance.lengthOfLastWord(" abc"));
         assertEquals(5, instance.lengthOfLastWord("Hello World"));
         assertEquals(6, instance.lengthOfLastWord("133 Hello Kitty!"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

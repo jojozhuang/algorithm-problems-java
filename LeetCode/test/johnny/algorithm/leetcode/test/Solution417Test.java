@@ -44,7 +44,7 @@ public class Solution417Test {
             {5,1,1,2,4},
         };
         
-        List<int[]> expect1 = ListUtil.buildIntegerList3(new int[][]{{0, 4}, {1, 3}, {1, 4}, {2, 2}, {3, 0}, {3, 1}, {4, 0}});
+        List<int[]> expect1 = ListUtil.buildList2(new int[][]{{0, 4}, {1, 3}, {1, 4}, {2, 2}, {3, 0}, {3, 1}, {4, 0}});
         assertArrayEquals(expect1.toArray(), instance.pacificAtlantic(matrix1).toArray());
     }
 

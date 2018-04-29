@@ -41,19 +41,12 @@ public class Solution016Test {
     @Test
     public void testThreeSumClosest() {
         System.out.println("threeSumClosest");
-        int[] num = null;
-        int target = 0;
         Solution016 instance = new Solution016();
-        int expResult = 0;
-        int result = instance.threeSumClosest(num, target);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.threeSumClosest(null, 0));
         assertEquals(2, instance.threeSumClosest(new int[]{-1,2,1,-4}, 1));
         assertEquals(2, instance.threeSumClosest(new int[]{-1,2,1,-4}, 2));
         assertEquals(-3, instance.threeSumClosest(new int[]{-1,2,1,-4}, -3));
         assertEquals(3, instance.threeSumClosest(new int[]{0,1,2}, 3));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

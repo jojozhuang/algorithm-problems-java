@@ -20,7 +20,7 @@ public class CavityMap {
         for (int i = 1; i < grid.length - 1; i++) {
             for (int j = 1; j < grid[i].length() - 1; j++) {
                 if (isCavity(grid, i, j)) {
-                    cavities.add(String.valueOf(i) + "," + String.valueOf(j));                    
+                    cavities.add(String.valueOf(i) + "," + String.valueOf(j));
                 }
             }
         }

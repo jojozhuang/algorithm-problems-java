@@ -192,7 +192,7 @@ public class Solution323 {
         return count;
     }
     
-    private void dfs(int index, List[] list, boolean[] visited) {
+    private void dfs(int index, List<Integer>[] list, boolean[] visited) {
         if (visited[index]) {
             return;
         }

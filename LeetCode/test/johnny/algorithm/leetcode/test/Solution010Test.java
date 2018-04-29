@@ -41,12 +41,9 @@ public class Solution010Test {
     @Test
     public void testIsMatch() {
         System.out.println("isMatch");
-        String s = "";
-        String p = "";
         Solution010 instance = new Solution010();
-        boolean expResult = true;
-        boolean result = instance.isMatch(s, p);
-        assertEquals(expResult, result);
+
+        assertEquals(true, instance.isMatch("", ""));
         assertEquals(false, instance.isMatch("aa","a"));
         assertEquals(true, instance.isMatch("aa","aa"));
         assertEquals(false, instance.isMatch("aaa","aa"));
@@ -55,10 +52,10 @@ public class Solution010Test {
         assertEquals(true, instance.isMatch("ab",".*"));
         assertEquals(true, instance.isMatch("aab","c*a*b"));
         assertEquals(true, instance.isMatch("aaa","ab*ac*a"));
-        //assertEquals(true, instance.isMatch("abcd","d*"));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(false, instance.isMatch("abcd","d*"));
+        assertEquals(false, instance.isMatch("mississippi","mis*is*p*."));
+        assertEquals(true, instance.isMatch("missispppppppi","mis*is*p*."));
+        assertEquals(true, instance.isMatch("missssssssispppppppi","mis*is*p*."));
     }
     
 }

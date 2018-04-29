@@ -37,7 +37,7 @@ public class Solution802Test {
         Solution802 instance = new Solution802();
 
         int[][] graph1 = new int[][] {{1,2},{2,3},{5},{0},{5},{},{}};
-        List<Integer> result1 = ListUtil.buildIntegerList(new Integer[] {2,4,5,6});
+        List<Integer> result1 = ListUtil.buildList(new Integer[] {2,4,5,6});
         assertEquals(result1, instance.eventualSafeNodes(graph1));
     }
 

@@ -118,8 +118,5 @@ public class BuildingOutlineTest {
         ArrayList<ArrayList<Integer>> result4 = instance.buildingOutline(buildings4);
         assertEquals(expResult4.size(), result4.size());
         assertTrue(expResult4.containsAll(result4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

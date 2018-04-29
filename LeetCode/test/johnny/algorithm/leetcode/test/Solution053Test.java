@@ -51,8 +51,5 @@ public class Solution053Test {
         assertEquals(4, instance.maxSubArray(new int[]{1,-2,1,3,-2}));
         assertEquals(11, instance.maxSubArray(new int[]{1,-2,5,1,-2,3,4}));
         assertEquals(6, instance.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

@@ -17,7 +17,29 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution017 {
+    private static final String[] KEYS = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
     public List<String> letterCombinations(String digits) {
+        List<String> res = new ArrayList<String>();
+        if (digits == null || digits.isEmpty()) {
+            return res;
+        }
+        combination(digits, 0, "", res);
+        
+        return res;
+    }
+    
+    private void combination(String digits, int pos, String prefix, List<String> res) {
+        if (pos >= digits.length()) {
+            res.add(prefix);
+            return;
+        }
+        String letters = KEYS[(digits.charAt(pos) - '0')];
+        for (int i = 0; i < letters.length(); i++) {
+            combination(digits, pos + 1, prefix + letters.charAt(i), res);
+        }
+    }
+    
+    public List<String> letterCombinations2(String digits) {
         List<String> res = new ArrayList<String>();
         if (digits == null || digits.isEmpty()) {
             return res;
@@ -51,5 +73,5 @@ public class Solution017 {
                 helper(digits, pos + 1, map, str + chars.charAt(i), res);
             }
         }
-    } 
+    }
 }

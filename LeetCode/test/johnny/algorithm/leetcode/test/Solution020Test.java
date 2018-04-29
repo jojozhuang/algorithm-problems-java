@@ -41,21 +41,16 @@ public class Solution020Test {
     @Test
     public void testIsValid() {
         System.out.println("isValid");
-        String s = "()";
         Solution020 instance = new Solution020();
-        boolean expResult = true;
-        boolean result = instance.isValid(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isValid(""));
+        assertEquals(true, instance.isValid("()"));
         assertEquals(false, instance.isValid("("));
         assertEquals(true, instance.isValid("()[]{}"));
         assertEquals(false, instance.isValid("(]"));
         assertEquals(false, instance.isValid("([)]"));
         assertEquals(false, instance.isValid(")}{({))[{{[}"));
         assertEquals(false, instance.isValid("(("));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

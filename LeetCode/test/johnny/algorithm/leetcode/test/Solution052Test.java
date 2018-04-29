@@ -51,8 +51,6 @@ public class Solution052Test {
         assertEquals(0, instance.totalNQueens(2));
         assertEquals(0, instance.totalNQueens(3));
         assertEquals(2, instance.totalNQueens(4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

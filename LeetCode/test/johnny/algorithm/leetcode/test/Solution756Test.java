@@ -36,7 +36,7 @@ public class Solution756Test {
         System.out.println("pyramidTransition");
         Solution756 instance = new Solution756();
 
-        List<String> allowed1 = ListUtil.buildStringList(new String[] {"XXX", "XXY", "XYX", "XYY", "YXZ"});
+        List<String> allowed1 = ListUtil.buildList(new String[] {"XXX", "XXY", "XYX", "XYY", "YXZ"});
         assertEquals(false, instance.pyramidTransition("XXYX", allowed1));
     }
 

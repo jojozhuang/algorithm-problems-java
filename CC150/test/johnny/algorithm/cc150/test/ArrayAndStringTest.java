@@ -67,8 +67,6 @@ public class ArrayAndStringTest {
         char[] ret4 = instance.replaceSpaces(str4, str4.length);
         char[] expResult4 = {'%','2','0','a','%','2','0','%','2','0','b'};
         assertArrayEquals(expResult4, ret4);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -87,8 +85,6 @@ public class ArrayAndStringTest {
         assertEquals("abb", instance.compress("abb"));
         assertEquals("a1b1c5", instance.compress("abccccc"));
         assertEquals("a2b1c5a3", instance.compress("aabcccccaaa"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -107,8 +103,6 @@ public class ArrayAndStringTest {
         assertEquals(true, instance.isUniqueChars("ab"));
         assertEquals(false, instance.isUniqueChars("aba"));
         assertEquals(true, instance.isUniqueChars("abc"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -121,8 +115,6 @@ public class ArrayAndStringTest {
         int n = 0;
         ArrayAndString instance = new ArrayAndString();
         instance.rotate(matrix, n);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

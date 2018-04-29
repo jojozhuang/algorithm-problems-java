@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution022;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -44,48 +45,17 @@ public class Solution022Test {
     public void testGenerateParenthesis() {
         System.out.println("generateParenthesis");
         Solution022 instance = new Solution022();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.generateParenthesis(0);
-        assertEquals(expResult, result);
-        
-        List<String> list1 = new ArrayList<String>();
-        list1.add("()");
-        assertEquals(list1, instance.generateParenthesis(1));
-        
-        List<String> list2 = new ArrayList<String>();        
-        list2.add("()()");
-        list2.add("(())");
-        List<String> result2 = instance.generateParenthesis(2);
-        assertTrue(result2.containsAll(list2) && list2.containsAll(result2));
-              
-        List<String> list3 = new ArrayList<String>();        
-        list3.add("((()))");
-        list3.add("(()())");
-        list3.add("(())()");
-        list3.add("()(())");
-        list3.add("()()()");
-        List<String> result3 = instance.generateParenthesis(3);
-        assertTrue(result3.containsAll(list3) && list3.containsAll(result3));
-        
-        List<String> list4 = new ArrayList<String>();        
-        list4.add("()()()()");
-        list4.add("(()()())");
-        list4.add("()(()())");
-        list4.add("((()()))");
-        list4.add("(()())()");
-        list4.add("()()(())");
-        list4.add("(()(()))");
-        list4.add("()(())()");
-        list4.add("()((()))");
-        list4.add("(((())))");
-        list4.add("((()))()");
-        list4.add("((())())");
-        list4.add("(())()()");
-        list4.add("(())(())");
-        List<String> result4 = instance.generateParenthesis(4);
-        assertTrue(result4.containsAll(list4) && list4.containsAll(result4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+
+        List<String> expect1 = new ArrayList<String>();
+        assertEquals(expect1, instance.generateParenthesis(0));
+
+        List<String> expect2 = ListUtil.buildList(new String[] {"()"});
+        assertEquals(expect2, instance.generateParenthesis(1));
+
+        List<String> expect3 = ListUtil.buildList(new String[] {"()()","(())"});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect3, instance.generateParenthesis(2)));
+
+        List<String> expect4 = ListUtil.buildList(new String[] {"((()))","(()())","(())()","()(())","()()()"});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect4, instance.generateParenthesis(3)));
     }
-    
 }

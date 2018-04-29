@@ -55,8 +55,5 @@ public class Backpack2Test {
         assertEquals(expResult, result);
         
         assertEquals(9, instance.backPack2(10, new int[]{2,3,5,7}, new int[]{1,5,2,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

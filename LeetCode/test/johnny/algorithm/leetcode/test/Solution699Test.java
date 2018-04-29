@@ -37,7 +37,7 @@ public class Solution699Test {
         Solution699 instance = new Solution699();
 
         int[][] positions1 = {{1, 2}, {2, 3}, {6, 1}};
-        List<Integer> result1 = ListUtil.buildIntegerList(new Integer[] {2, 5, 5});
+        List<Integer> result1 = ListUtil.buildList(new Integer[] {2, 5, 5});
         assertEquals(result1, instance.fallingSquares(positions1));
     }
 

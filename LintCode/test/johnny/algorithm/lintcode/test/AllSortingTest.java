@@ -53,8 +53,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.BubbleSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -69,8 +67,6 @@ public class AllSortingTest {
         int[] result = instance.InsertSort(nums);
         assertArrayEquals(expResult, result);
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.InsertSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -88,8 +84,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.MergeSort(new int[]{2,4,5,7,1,2,3,6}, 0, 7));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -105,8 +99,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.SelectionSort(new int[]{2,4,5,7,1,2,3,6}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -124,8 +116,6 @@ public class AllSortingTest {
         assertArrayEquals(expResult, result);
         
         assertArrayEquals(new int[]{1,2,2,3,4,5,6,7}, instance.QuickSort(new int[]{2,4,5,7,1,2,3,6}, 0, 7));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

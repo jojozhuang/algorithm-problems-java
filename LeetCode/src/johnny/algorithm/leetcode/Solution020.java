@@ -15,7 +15,30 @@ import java.util.Stack;
 public class Solution020 {
     public boolean isValid(String s) {
         if (s == null || s.isEmpty()) {
+            return true;
+        }
+        
+        if (s.length() % 2 != 0) {
             return false;
+        }
+        
+        Stack<Character> stack = new Stack<Character>();
+        for (char c : s.toCharArray()) {
+            if (c == '(')
+                stack.push(')');
+            else if (c == '{')
+                stack.push('}');
+            else if (c == '[')
+                stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c)
+                return false;
+        }
+        return stack.isEmpty();
+    }
+    
+    public boolean isValid2(String s) {
+        if (s == null || s.isEmpty()) {
+            return true;
         }
         
         if (s.length() % 2 != 0) {

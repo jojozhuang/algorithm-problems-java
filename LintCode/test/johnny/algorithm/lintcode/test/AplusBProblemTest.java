@@ -55,8 +55,6 @@ public class AplusBProblemTest {
         assertEquals(3, instance.aplusb(1, 2));
         assertEquals(9, instance.aplusb(4, 5));
         assertEquals(133, instance.aplusb(111, 22));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

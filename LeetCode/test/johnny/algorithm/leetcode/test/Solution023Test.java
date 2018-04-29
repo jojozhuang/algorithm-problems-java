@@ -44,46 +44,25 @@ public class Solution023Test {
         Solution023 instance = new Solution023();
 
         assertEquals(null, instance.mergeKLists(null));
-        
-        ListNode[] lists2 = ListNode.createList(new int[][]{{1}});
-        ListNode expect2 = ListNode.createInstance(new int[]{1});
+
+        ListNode[] lists1 = ListNode.createList(new int[][]{{1}});
+        ListNode expect1 = ListNode.createInstance(new int[]{1});
+        assertTrue(ListNode.isSame(expect1, instance.mergeKLists(lists1)));
+
+        ListNode[] lists2 = ListNode.createList(new int[][]{{1,3,8},{2}});
+        ListNode expect2 = ListNode.createInstance(new int[]{1,2,3,8});
         assertTrue(ListNode.isSame(expect2, instance.mergeKLists(lists2)));
-        
-        ListNode[] lists3 = ListNode.createList(new int[][]{{1,3,8},{2}});
-        ListNode expect3 = ListNode.createInstance(new int[]{1,2,3,8});
+
+        ListNode[] lists3 = ListNode.createList(new int[][]{{1,4,5},{1,3,4},{2,6}});
+        ListNode expect3 = ListNode.createInstance(new int[]{1,1,2,3,4,4,5,6});
         assertTrue(ListNode.isSame(expect3, instance.mergeKLists(lists3)));
 
         ListNode[] lists4 = ListNode.createList(new int[][]{{1,3,8,11},{2},{5,6}});
         ListNode expect4 = ListNode.createInstance(new int[]{1,2,3,5,6,8,11});
         assertTrue(ListNode.isSame(expect4, instance.mergeKLists(lists4)));
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of mergeKLists2 method, of class Solution023.
-     */
-    @Test
-    public void testMergeKLists2() {
-        System.out.println("mergeKLists2");
-        Solution023 instance = new Solution023();
-
-        assertEquals(null, instance.mergeKLists(null));
         
-        ListNode[] lists2 = ListNode.createList(new int[][]{{1}});
-        ListNode expect2 = ListNode.createInstance(new int[]{1});
-        assertTrue(ListNode.isSame(expect2, instance.mergeKLists2(lists2)));
-        
-        ListNode[] lists3 = ListNode.createList(new int[][]{{1,3,8},{2}});
-        ListNode expect3 = ListNode.createInstance(new int[]{1,2,3,8});
-        assertTrue(ListNode.isSame(expect3, instance.mergeKLists2(lists3)));
-
-        ListNode[] lists4 = ListNode.createList(new int[][]{{1,3,8,11},{2},{5,6}});
-        ListNode expect4 = ListNode.createInstance(new int[]{1,2,3,5,6,8,11});
-        assertTrue(ListNode.isSame(expect4, instance.mergeKLists2(lists4)));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ListNode[] lists5 = ListNode.createList(new int[][]{{-10,-9,-9,-3,-1,-1,0},{-5},{4},{-8},{},{-9,-6,-5,-4,-2,2,3},{-3,-3,-2,-1,0}});
+        ListNode expect5 = ListNode.createInstance(new int[]{1,2,3,5,6,8,11});
+        assertTrue(ListNode.isSame(expect5, instance.mergeKLists(lists5)));
     }
-    
 }

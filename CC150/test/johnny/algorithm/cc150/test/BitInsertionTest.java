@@ -56,8 +56,6 @@ public class BitInsertionTest {
         assertEquals(expResult, result);
         
         assertEquals(1100, instance.insert(1024, 19, 2, 6));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

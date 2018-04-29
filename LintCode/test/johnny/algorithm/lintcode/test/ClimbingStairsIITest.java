@@ -52,8 +52,6 @@ public class ClimbingStairsIITest {
         assertEquals(2, instance.climbStairs2(2));
         assertEquals(4, instance.climbStairs2(3));
         assertEquals(7, instance.climbStairs2(4));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

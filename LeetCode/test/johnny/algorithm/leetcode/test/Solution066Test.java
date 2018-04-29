@@ -57,8 +57,5 @@ public class Solution066Test {
         assertArrayEquals(new int[]{2,0,0}, instance.plusOne(new int[]{1,9,9}));
         assertArrayEquals(new int[]{9,9,0}, instance.plusOne(new int[]{9,8,9}));
         assertArrayEquals(new int[]{1,0,0,0}, instance.plusOne(new int[]{9,9,9}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

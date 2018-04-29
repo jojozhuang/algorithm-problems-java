@@ -10,7 +10,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution011 {        
-    //Shrink from both sides, O(N2)
+    //Shrink from both sides, O(N)
     //http://www.programcreek.com/2014/03/leetcode-container-with-most-water-java/
     public int maxArea(int[] height) {
         if (height == null || height.length < 2) {
@@ -23,14 +23,13 @@ public class Solution011 {
         
         while (left < right) {
             max = Math.max(max, (right - left) * Math.min(height[left], height[right]));
-           
             if(height[left] < height[right]) {
                 left++;
             } else {
                 right--;
             }
         }
-            
+
         return max;
     }
 }

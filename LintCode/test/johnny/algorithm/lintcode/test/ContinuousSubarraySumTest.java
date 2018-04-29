@@ -65,8 +65,5 @@ public class ContinuousSubarraySumTest {
         expResult4.add(4);
         expResult4.add(7);
         assertEquals(expResult4, instance.continuousSubarraySum(new int[]{-1,-2,-3,-100,1,2,3,100}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

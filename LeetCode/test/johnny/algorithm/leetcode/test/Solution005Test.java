@@ -41,19 +41,14 @@ public class Solution005Test {
     @Test
     public void testLongestPalindrome() {
         System.out.println("longestPalindrome");
-        String s = "";
         Solution005 instance = new Solution005();
-        String expResult = "";
-        String result = instance.longestPalindrome(s);
-        assertEquals(expResult, result);
-        
-        //assertEquals("", instance.longestPalindrome("ab"));
+
+        assertEquals("", instance.longestPalindrome(""));
+        assertEquals("b", instance.longestPalindrome("ab"));
         assertEquals("cac", instance.longestPalindrome("abcac"));
         assertEquals("aba", instance.longestPalindrome("aba"));
         assertEquals("abcddcba", instance.longestPalindrome("abcddcba"));
         assertEquals("cdzdc", instance.longestPalindrome("abcdzdcab"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

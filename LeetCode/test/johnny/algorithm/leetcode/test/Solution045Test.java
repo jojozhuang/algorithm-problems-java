@@ -54,8 +54,5 @@ public class Solution045Test {
         assertEquals(Integer.MAX_VALUE, instance.jump(new int[]{3,2,1,0,0}));
         assertEquals(2, instance.jump(new int[]{2,3,1,1,4}));
         assertEquals(Integer.MAX_VALUE, instance.jump(new int[]{3,2,1,0,4}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

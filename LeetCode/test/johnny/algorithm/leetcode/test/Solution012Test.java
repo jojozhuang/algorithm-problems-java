@@ -41,12 +41,9 @@ public class Solution012Test {
     @Test
     public void testIntToRoman() {
         System.out.println("intToRoman");
-        int num = 0;
         Solution012 instance = new Solution012();
-        String expResult = "";
-        String result = instance.intToRoman(num);
-        assertEquals(expResult, result);
         
+        assertEquals("", instance.intToRoman(0));
         assertEquals("", instance.intToRoman(-1));
         assertEquals("I", instance.intToRoman(1));
         assertEquals("II", instance.intToRoman(2));
@@ -86,15 +83,12 @@ public class Solution012Test {
         assertEquals("CCIX", instance.intToRoman(209));
         assertEquals("CDXLIII", instance.intToRoman(443));
         assertEquals("CDXCIII", instance.intToRoman(493));
-        assertEquals("CDXCIX", instance.intToRoman(499));        
+        assertEquals("CDXCIX", instance.intToRoman(499));
         assertEquals("D", instance.intToRoman(500));
         assertEquals("CMXCIX", instance.intToRoman(999));
         assertEquals("M", instance.intToRoman(1000));
         assertEquals("MMMDCLXXXIX", instance.intToRoman(3689));
         assertEquals("MMMCMXCIX", instance.intToRoman(3999));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

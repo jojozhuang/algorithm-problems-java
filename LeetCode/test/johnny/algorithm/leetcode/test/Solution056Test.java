@@ -62,9 +62,5 @@ public class Solution056Test {
         expResult2.add(new Interval(8,10));
         expResult2.add(new Interval(15,18));
         assertTrue(expResult2.containsAll(result2));
-        
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-    
 }

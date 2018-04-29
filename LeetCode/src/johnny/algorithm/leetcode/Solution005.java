@@ -14,6 +14,37 @@ public class Solution005 {
             return s;
         }
         
+        int start = 0, end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
+        }
+
+        return s.substring(start, end + 1);
+    }
+    
+    private int expandAroundCenter(String s, int start, int end) {
+        int left = start;
+        int right = end;
+        
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        
+        return right - left - 1;
+    }
+    
+    public String longestPalindrome2(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        
         String res = "";
         for (int i = 0; i < s.length(); i++) {
             String temp = palindrome(s, i, i);
@@ -47,6 +78,6 @@ public class Solution005 {
             return "";
         } else {
             return s.substring(i + 1, j);
-        }            
+        }
     }
 }

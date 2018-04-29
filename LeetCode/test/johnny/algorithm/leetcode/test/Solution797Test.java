@@ -37,7 +37,7 @@ public class Solution797Test {
         Solution797 instance = new Solution797();
 
         int[][] graph1 = new int[][] {{1,2}, {3}, {3}, {}};
-        List<List<Integer>> result1 = ListUtil.buildIntegerList2(new Integer[][] {{0,1,3},{0,2,3}});
+        List<List<Integer>> result1 = ListUtil.buildList2(new Integer[][] {{0,1,3},{0,2,3}});
         assertEquals(result1, instance.allPathsSourceTarget(graph1));
     }
 

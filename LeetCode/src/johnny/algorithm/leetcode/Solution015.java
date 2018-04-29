@@ -46,11 +46,7 @@ public class Solution015 {
             while (start < end) {
                 long sum = (long)nums[start] + (long)nums[end] + (long)nums[i];
                 if (sum == 0) {
-                    ArrayList<Integer> list = new ArrayList<Integer>();
-                    list.add(nums[i]);
-                    list.add(nums[start]);
-                    list.add(nums[end]);
-                    res.add(list);
+                    res.add(Arrays.asList(nums[i], nums[start], nums[end]));
 
                     start++;
                     end--;
@@ -70,5 +66,5 @@ public class Solution015 {
         }
 
         return res;
-    }    
+    }
 }

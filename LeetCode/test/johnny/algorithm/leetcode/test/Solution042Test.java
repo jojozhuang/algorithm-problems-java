@@ -48,8 +48,6 @@ public class Solution042Test {
         assertEquals(expResult, result);
         
         assertEquals(6, instance.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

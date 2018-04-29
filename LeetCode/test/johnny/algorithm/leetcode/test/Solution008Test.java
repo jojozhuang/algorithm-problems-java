@@ -41,16 +41,14 @@ public class Solution008Test {
     @Test
     public void testAtoi() {
         System.out.println("myAtoi");
-        String str = "";
         Solution008 instance = new Solution008();
-        int expResult = 0;
-        int result = instance.myAtoi(str);
-        assertEquals(expResult, result);
-               
+
+        assertEquals(0, instance.myAtoi(""));
+        assertEquals(0, instance.myAtoi(" "));
         assertEquals(123, instance.myAtoi("123"));
         assertEquals(2, instance.myAtoi("2"));
         assertEquals(0, instance.myAtoi("0"));
-        assertEquals(-1, instance.myAtoi("-1"));       
+        assertEquals(-1, instance.myAtoi("-1"));
         assertEquals(100, instance.myAtoi("100"));
         assertEquals(-900, instance.myAtoi("-900"));
         assertEquals(2147483647, instance.myAtoi("2147483647"));
@@ -80,8 +78,6 @@ public class Solution008Test {
         assertEquals(0, instance.myAtoi("00-0012a42"));
         assertEquals(89, instance.myAtoi("089-0012a42"));
         assertEquals(-2147483647, instance.myAtoi("-2147483647"));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }
