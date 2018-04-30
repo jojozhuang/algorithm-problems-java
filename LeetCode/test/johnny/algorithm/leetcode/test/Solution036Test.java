@@ -41,13 +41,11 @@ public class Solution036Test {
     @Test
     public void testIsValidSudoku() {
         System.out.println("isValidSudoku");
-        char[][] board = null;
         Solution036 instance = new Solution036();
-        boolean expResult = false;
-        boolean result = instance.isValidSudoku(board);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.isValidSudoku(null));
         assertEquals(false, instance.isValidSudoku(new char[2][3]));
-               
+
         char[][] board2 = {
             {'5','3','.','.','7','.','.','.','.'}, 
             {'6','.','.','1','9','5','.','.','.'}, 

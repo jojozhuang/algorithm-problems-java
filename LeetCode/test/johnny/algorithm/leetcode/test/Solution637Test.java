@@ -41,5 +41,4 @@ public class Solution637Test {
         List<Double> result1 = ListUtil.buildList(new Double[] {3.0, 14.5, 11.0});
         assertEquals(result1, instance.averageOfLevels(root1));
     }
-
 }

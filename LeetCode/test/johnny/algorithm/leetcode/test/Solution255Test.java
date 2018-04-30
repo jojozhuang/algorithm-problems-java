@@ -48,5 +48,4 @@ public class Solution255Test {
         assertEquals(true, instance.verifyPreorder(new int[]{4,1,3,2,6,5,8}));
         assertEquals(false, instance.verifyPreorder(new int[]{4,1,2,3,6,8,5}));
     }
-    
 }

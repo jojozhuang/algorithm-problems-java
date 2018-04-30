@@ -47,81 +47,34 @@ public class Solution114Test {
         instance.flatten(root);
         assertEquals(null, root);
         
-        TreeNode root1 = new TreeNode(1);
-        instance = new Solution114();
-        instance.flatten(root1);
-        assertEquals(1, root1.val);
+        TreeNode root2 = new TreeNode(1);
+        TreeNode expect2 = TreeNode.createInstance(new String[] {"1","#","#"});
+        Solution114 instance2 = new Solution114();
+        instance2.flatten(root2);
+        assertTrue(TreeNode.isSame(expect2, root2));
         
-        /*TreeNode root2 = new TreeNode(1);
-        root2.left = new TreeNode(2);
-        instance = new Solution114();
-        instance.flatten(root2);
-        assertEquals(1, root2.val);
-        assertEquals(2, root2.right.val);
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","#"});
+        TreeNode expect3 = TreeNode.createInstance(new String[] {"1","#","2"});
+        Solution114 instance3 = new Solution114();
+        instance3.flatten(root3);
+        assertTrue(TreeNode.isSame(expect3, root3));
         
-        TreeNode root3 = new TreeNode(1);
-        root3.left = new TreeNode(2);
-        root3.right = new TreeNode(3);
-        instance = new Solution114();
-        instance.flatten(root3);
-        assertEquals(1, root3.val);
-        assertEquals(2, root3.right.val);
-        assertEquals(3, root3.right.right.val);
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","3"});
+        TreeNode expect4 = TreeNode.createInstance(new String[] {"1","#","2","#","3"});
+        Solution114 instance4 = new Solution114();
+        instance4.flatten(root4);
+        assertTrue(TreeNode.isSame(expect4, root4));
         
-        TreeNode root4 = new TreeNode(1);
-        root4.left = new TreeNode(2);
-        root4.left.left = new TreeNode(3);
-        root4.left.right = new TreeNode(4);
-        root4.right = new TreeNode(5);
-        root4.right.left = new TreeNode(6);
-        instance = new Solution114();
-        instance.flatten(root4);
-        assertEquals(1, root4.val);
-        assertEquals(2, root4.right.val);
-        assertEquals(3, root4.right.right.val);
-        assertEquals(4, root4.right.right.right.val);
-        assertEquals(5, root4.right.right.right.right.val);
-        assertEquals(6, root4.right.right.right.right.right.val);
+        TreeNode root5 = TreeNode.createInstance(new String[] {"1","2","5","3","4","6","#"});
+        TreeNode expect5 = TreeNode.createInstance(new String[] {"1","#","2","#","3","#","4","#","5","#","6"});
+        Solution114 instance5 = new Solution114();
+        instance5.flatten(root5);
+        assertTrue(TreeNode.isSame(expect5, root5));
         
-        TreeNode root5 = new TreeNode(2);
-        root5.left = new TreeNode(1);
-        root5.right = new TreeNode(4);
-        root5.right.left = new TreeNode(3);
-        instance = new Solution114();
-        instance.flatten(root5);
-        assertEquals(2, root5.val);
-        assertEquals(1, root5.right.val);
-        assertEquals(4, root5.right.right.val);
-        assertEquals(3, root5.right.right.right.val);*/
-        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
-        instance = new Solution114();
-        instance.flatten(root2);
-        assertEquals(1, root2.val);
-        assertEquals(2, root2.right.val);
-        
-        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","3"});
-        instance = new Solution114();
-        instance.flatten(root3);
-        assertEquals(1, root3.val);
-        assertEquals(2, root3.right.val);
-        assertEquals(3, root3.right.right.val);
-        
-        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","5","3","4","6","#"});
-        instance = new Solution114();
-        instance.flatten(root4);
-        assertEquals(1, root4.val);
-        assertEquals(2, root4.right.val);
-        assertEquals(3, root4.right.right.val);
-        assertEquals(4, root4.right.right.right.val);
-        assertEquals(5, root4.right.right.right.right.val);
-        assertEquals(6, root4.right.right.right.right.right.val);
-        
-        TreeNode root5 = TreeNode.createInstance(new String[] {"2","1","4","#","#","3","#"});
-        instance = new Solution114();
-        instance.flatten(root5);
-        assertEquals(2, root5.val);
-        assertEquals(1, root5.right.val);
-        assertEquals(4, root5.right.right.val);
-        assertEquals(3, root5.right.right.right.val);
+        TreeNode root6 = TreeNode.createInstance(new String[] {"2","1","4","#","#","3","#"});
+        TreeNode expect6 = TreeNode.createInstance(new String[] {"2","#","1","#","4","#","3"});
+        Solution114 instance6 = new Solution114();
+        instance6.flatten(root6);
+        assertTrue(TreeNode.isSame(expect6, root6));
     }
 }

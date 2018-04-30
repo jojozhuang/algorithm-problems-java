@@ -36,5 +36,4 @@ public class Solution633Test {
         assertEquals(true, instance.judgeSquareSum(5));
         assertEquals(false, instance.judgeSquareSum(3));
     }
-
 }

@@ -42,12 +42,10 @@ public class Solution333Test {
     @Test
     public void testLargestBSTSubtree() {
         System.out.println("largestBSTSubtree");
-        TreeNode root = null;
         Solution333 instance = new Solution333();
-        int expResult = 0;
-        int result = instance.largestBSTSubtree(root);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.largestBSTSubtree(null));
+
         TreeNode root2 = TreeNode.createInstance(new String[]{"10","5","15","1","8","#","7"});
         assertEquals(3, instance.largestBSTSubtree(root2));
     }

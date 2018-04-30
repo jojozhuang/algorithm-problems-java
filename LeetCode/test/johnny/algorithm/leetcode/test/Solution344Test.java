@@ -41,12 +41,9 @@ public class Solution344Test {
     @Test
     public void testReverseString() {
         System.out.println("reverseString");
-        String s = "";
         Solution344 instance = new Solution344();
-        String expResult = "";
-        String result = instance.reverseString(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.reverseString(""));
         assertEquals("a", instance.reverseString("a"));
         assertEquals("ba", instance.reverseString("ab"));
         assertEquals("olleh", instance.reverseString("hello"));

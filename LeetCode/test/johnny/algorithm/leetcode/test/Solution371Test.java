@@ -41,13 +41,9 @@ public class Solution371Test {
     @Test
     public void testGetSum() {
         System.out.println("getSum");
-        int a = 0;
-        int b = 0;
         Solution371 instance = new Solution371();
-        int expResult = 0;
-        int result = instance.getSum(a, b);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.getSum(0, 0));
         assertEquals(3, instance.getSum(1, 2));
     }
 }

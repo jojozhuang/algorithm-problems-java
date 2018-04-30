@@ -41,13 +41,9 @@ public class Solution029Test {
     @Test
     public void testDivide() {
         System.out.println("divide");
-        int dividend = 0;
-        int divisor = 1;
         Solution029 instance = new Solution029();
-        int expResult = 0;
-        int result = instance.divide(dividend, divisor);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.divide(0, 1));
         assertEquals(Integer.MAX_VALUE, instance.divide(13, 0));
         assertEquals(6, instance.divide(13, 2));
         assertEquals(0, instance.divide(1, 2));

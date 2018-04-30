@@ -40,5 +40,4 @@ public class Solution513Test {
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","3","4","#","5","6","#","#","7","#","#","#"});
         assertEquals(7, instance.findBottomLeftValue(root2));
     }
-
 }

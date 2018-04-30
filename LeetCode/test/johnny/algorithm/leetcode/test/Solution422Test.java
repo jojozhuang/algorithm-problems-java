@@ -45,5 +45,4 @@ public class Solution422Test {
         List<String> words3 = ListUtil.buildList(new String[] {"ball","area","read","lady"});
         assertEquals(false, instance.validWordSquare(words3));
     }
-
 }

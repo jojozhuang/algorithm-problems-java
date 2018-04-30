@@ -42,12 +42,9 @@ public class Solution129Test {
     @Test
     public void testSumNumbers() {
         System.out.println("sumNumbers");
-        TreeNode root = null;
         Solution129 instance = new Solution129();
-        int expResult = 0;
-        int result = instance.sumNumbers(root);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.sumNumbers(null));
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","2", "#"});
         assertEquals(12, instance.sumNumbers(root2));
         TreeNode root3 = TreeNode.createInstance(new String[] {"1","2", "3"});

@@ -41,12 +41,9 @@ public class Solution071Test {
     @Test
     public void testSimplifyPath() {
         System.out.println("simplifyPath");
-        String path = "";
         Solution071 instance = new Solution071();
-        String expResult = "";
-        String result = instance.simplifyPath(path);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.simplifyPath(""));
         assertEquals("/", instance.simplifyPath("/../"));
         assertEquals("/home", instance.simplifyPath("/home/"));
         assertEquals("/home/foo", instance.simplifyPath("/home//foo/"));

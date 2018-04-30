@@ -41,18 +41,15 @@ public class Solution240Test {
     @Test
     public void testSearchMatrix() {
         System.out.println("searchMatrix");
-        int[][] matrix = null;
-        int target = 0;
         Solution240 instance = new Solution240();
-        boolean expResult = false;
-        boolean result = instance.searchMatrix(matrix, target);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.searchMatrix(null, 0));
         
-        int[][] matrix1 = new int[][] { new int[] {1} };
+        int[][] matrix1 = new int[][] {new int[] {1}};
         assertEquals(false, instance.searchMatrix(matrix1, 0));
         assertEquals(true, instance.searchMatrix(matrix1, 1));
         
-        int[][] matrix2 = new int[][] { new int[] {1, 2}, new int[] {2, 3} };
+        int[][] matrix2 = new int[][] {new int[] {1, 2}, new int[] {2, 3}};
         assertEquals(false, instance.searchMatrix(matrix2, 0));
         assertEquals(true, instance.searchMatrix(matrix2, 2));
         assertEquals(true, instance.searchMatrix(matrix2, 3));

@@ -36,5 +36,4 @@ public class Solution679Test {
         assertEquals(true, instance.judgePoint24(new int[] {4, 1, 8, 7}));
         //assertEquals(true, instance.judgePoint24(new int[] {1, 2, 1, 2}));
     }
-
 }

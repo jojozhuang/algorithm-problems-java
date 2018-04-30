@@ -16,7 +16,7 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution242 {
-    public boolean isAnagram1(String s, String t) {
+    public boolean isAnagram(String s, String t) {
         if (s == null || t == null) {
             return false;
         }

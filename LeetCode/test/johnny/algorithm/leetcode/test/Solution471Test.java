@@ -38,7 +38,5 @@ public class Solution471Test {
         assertEquals("a9[a]", instance.encode("aaaaaaaaaa"));
         assertEquals("2[aabc]d", instance.encode("aabcaabcd"));
         assertEquals("2[2[abbb]c]", instance.encode("abbbabbbcabbbabbbc"));
-        
     }
-
 }

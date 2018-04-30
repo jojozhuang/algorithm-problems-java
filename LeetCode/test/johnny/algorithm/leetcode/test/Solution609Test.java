@@ -40,5 +40,4 @@ public class Solution609Test {
         List<List<String>> result1 = ListUtil.buildList2(new String[][] {{"root/a/2.txt","root/c/d/4.txt","root/4.txt"},{"root/a/1.txt","root/c/3.txt"}});
         assertEquals(result1, instance.findDuplicate(path1));
     }
-
 }

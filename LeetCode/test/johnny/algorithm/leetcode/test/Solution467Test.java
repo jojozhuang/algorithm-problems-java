@@ -37,5 +37,4 @@ public class Solution467Test {
         assertEquals(2, instance.findSubstringInWraproundString("cac"));
         assertEquals(6, instance.findSubstringInWraproundString("zab"));
     }
-
 }

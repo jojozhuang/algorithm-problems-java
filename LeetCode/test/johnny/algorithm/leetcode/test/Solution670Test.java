@@ -36,5 +36,4 @@ public class Solution670Test {
         assertEquals(7236, instance.maximumSwap(2736));
         assertEquals(9973, instance.maximumSwap(9973));
     }
-
 }

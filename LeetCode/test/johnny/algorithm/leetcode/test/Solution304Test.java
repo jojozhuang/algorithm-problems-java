@@ -41,6 +41,7 @@ public class Solution304Test {
     @Test
     public void testSumRegion() {
         System.out.println("sumRegion");
+        
         int[][] matrix = new int[][] {
             {3, 0, 1, 4, 2},
             {5, 6, 3, 2, 1},

@@ -43,6 +43,7 @@ public class Solution404Test {
     public void testSumOfLeftLeaves() {
         System.out.println("sumOfLeftLeaves");
         Solution404 instance = new Solution404();
+        
         TreeNode r1 = new TreeNode(1);
         assertEquals(0, instance.sumOfLeftLeaves(r1));
         

@@ -41,12 +41,9 @@ public class Solution032Test {
     @Test
     public void testLongestValidParentheses() {
         System.out.println("longestValidParentheses");
-        String s = "";
         Solution032 instance = new Solution032();
-        int expResult = 0;
-        int result = instance.longestValidParentheses(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.longestValidParentheses(""));
         assertEquals(2, instance.longestValidParentheses("(()"));
         assertEquals(4, instance.longestValidParentheses(")()())"));
         assertEquals(2, instance.longestValidParentheses("()(()"));

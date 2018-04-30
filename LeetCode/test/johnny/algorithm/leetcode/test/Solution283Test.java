@@ -47,7 +47,7 @@ public class Solution283Test {
         
         int[] nums2 = new int[]{0, 1, 0, 3, 12};
         instance.moveZeroes(nums2);
-        int[] expResult2 = new int[]{1, 3, 12, 0, 0};
-        assertArrayEquals(nums2, expResult2);
+        int[] expect2 = new int[]{1, 3, 12, 0, 0};
+        assertArrayEquals(expect2, nums2);
     }
 }

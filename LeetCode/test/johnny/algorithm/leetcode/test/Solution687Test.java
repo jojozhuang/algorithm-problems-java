@@ -40,5 +40,4 @@ public class Solution687Test {
         TreeNode root2 = TreeNode.createInstance(new String[] {"1", "4", "5", "4", "4", "#", "5"});
         assertEquals(2, instance.longestUnivaluePath(root2));
     }
-
 }

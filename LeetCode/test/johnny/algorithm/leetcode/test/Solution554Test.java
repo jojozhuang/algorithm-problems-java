@@ -44,5 +44,4 @@ public class Solution554Test {
             {1,3,1,1}});
         assertEquals(2, instance.leastBricks(wall1));
     }
-
 }

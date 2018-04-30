@@ -46,6 +46,22 @@ public class ListUtil {
     }
 
     public static <T> boolean equalsIgnoreOrder(List<T> list1, List<T> list2) {
+        boolean res = equalsIgnoreOrderPrint(list1, list2);
+        if (res == false) {
+            println("Expect List:");
+            for(T t1: list1) {
+                print(t1.toString());
+            }
+            println("");
+            println("Actual List:");
+            for(T t2: list2) {
+                print(t2.toString());
+            }
+        }
+        return res;
+    }
+    
+    private static <T> boolean equalsIgnoreOrderPrint(List<T> list1, List<T> list2) {
         if (list1 == null && list2 == null){
             return true;
         }
@@ -59,6 +75,12 @@ public class ListUtil {
         return (list1.containsAll(list2) && list2.containsAll(list1));
     }
     
+    private static void println(String msg) {
+        System.out.println(msg);
+    }
+    private static void print(String msg) {
+        System.out.print(msg);
+    }
     /*
     public static <T extends Comparable> boolean equalLists(List<T> list1, List<T> list2){
         if (list1 == null && list2 == null){

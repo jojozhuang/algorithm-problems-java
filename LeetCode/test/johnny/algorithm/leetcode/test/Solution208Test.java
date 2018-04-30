@@ -82,5 +82,4 @@ public class Solution208Test {
         assertEquals(false, instance.startsWith("ac"));
         assertEquals(false, instance.startsWith("apq"));
     }
-    
 }

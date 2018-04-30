@@ -41,11 +41,9 @@ public class Solution200Test {
     @Test
     public void testNumIslands() {
         System.out.println("numIslands");
-        char[][] grid = null;
         Solution200 instance = new Solution200();
-        int expResult = 0;
-        int result = instance.numIslands(grid);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.numIslands(null));
         
         char[][] grid2 = new char[][] {
             {'1','1','1','1','0'},

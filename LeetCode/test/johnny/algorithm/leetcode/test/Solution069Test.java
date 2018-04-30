@@ -41,12 +41,9 @@ public class Solution069Test {
     @Test
     public void testSqrt() {
         System.out.println("sqrt");
-        int x = 0;
         Solution069 instance = new Solution069();
-        int expResult = 0;
-        int result = instance.sqrt(x);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.sqrt(0));
         assertEquals(0, instance.sqrt(-1));
         assertEquals(1, instance.sqrt(1));
         assertEquals(2, instance.sqrt(4));

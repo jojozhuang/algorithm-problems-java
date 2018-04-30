@@ -37,5 +37,4 @@ public class Solution451Test {
         assertEquals("aaaccc", instance.frequencySort("cccaaa"));
         assertEquals("bbAa", instance.frequencySort("Aabb"));
     }
-
 }

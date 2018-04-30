@@ -35,5 +35,4 @@ public class Solution388Test {
 
         assertEquals(32, instance.lengthLongestPath("dir/subdir2/subsubdir2/file2.ext"));
     }
-
 }

@@ -41,13 +41,9 @@ public class Solution115Test {
     @Test
     public void testNumDistinct() {
         System.out.println("numDistinct");
-        String S = "";
-        String T = null;
         Solution115 instance = new Solution115();
-        int expResult = 0;
-        int result = instance.numDistinct(S, T);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.numDistinct("", null));
         assertEquals(1, instance.numDistinct("a", ""));
         assertEquals(1, instance.numDistinct("ab", "a"));
         assertEquals(2, instance.numDistinct("aa", "a"));

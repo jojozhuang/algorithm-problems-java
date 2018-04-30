@@ -35,5 +35,4 @@ public class Solution634Test {
 
         assertEquals(2, instance.findDerangement(3));
     }
-
 }

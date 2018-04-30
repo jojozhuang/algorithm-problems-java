@@ -36,5 +36,4 @@ public class Solution629Test {
         assertEquals(1, instance.kInversePairs(3,0));
         assertEquals(2, instance.kInversePairs(3,1));
     }
-
 }

@@ -41,7 +41,5 @@ public class Solution623Test {
         TreeNode root2 = TreeNode.createInstance(new String[] {"4","2","#","3","1"});
         TreeNode result2 = TreeNode.createInstance(new String[] {"4","2","#","1","1","3","#","#","1"});
         assertTrue(TreeNode.isSame(result2, instance.addOneRow(root2,1,3)));
-
     }
-
 }

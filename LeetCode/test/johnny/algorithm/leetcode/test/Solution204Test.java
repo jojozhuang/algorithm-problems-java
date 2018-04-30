@@ -41,12 +41,9 @@ public class Solution204Test {
     @Test
     public void testCountPrimes() {
         System.out.println("countPrimes");
-        int n = 0;
         Solution204 instance = new Solution204();
-        int expResult = 0;
-        int result = instance.countPrimes(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.countPrimes(0));
         assertEquals(0, instance.countPrimes(1));
         assertEquals(0, instance.countPrimes(2));
         assertEquals(1, instance.countPrimes(3));
@@ -61,5 +58,4 @@ public class Solution204Test {
         assertEquals(5, instance.countPrimes(12));
         assertEquals(41537, instance.countPrimes(499979));
     }
-    
 }

@@ -38,5 +38,4 @@ public class Solution592Test {
         assertEquals("-1/6", instance.fractionAddition("1/3-1/2"));
         assertEquals("2/1", instance.fractionAddition("5/3+1/3"));
     }
-
 }

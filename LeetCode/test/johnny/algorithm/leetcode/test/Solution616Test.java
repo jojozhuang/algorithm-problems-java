@@ -35,7 +35,5 @@ public class Solution616Test {
 
         assertEquals("<b>abc</b>xyz<b>123</b>", instance.addBoldTag("abcxyz123", new String[] {"abc","123"}));
         assertEquals("<b>abc</b>xyz<b>123</b>", instance.addBoldTag("abcxyz123", new String[] {"abc","123"}));
-
     }
-
 }

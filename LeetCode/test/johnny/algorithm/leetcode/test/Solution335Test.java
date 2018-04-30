@@ -41,12 +41,9 @@ public class Solution335Test {
     @Test
     public void testIsSelfCrossing() {
         System.out.println("isSelfCrossing");
-        int[] x = null;
         Solution335 instance = new Solution335();
-        boolean expResult = false;
-        boolean result = instance.isSelfCrossing(x);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isSelfCrossing(null));
         assertEquals(true, instance.isSelfCrossing(new int[]{2, 1, 1, 2}));
         assertEquals(false, instance.isSelfCrossing(new int[]{1, 2, 3, 4}));
         assertEquals(true, instance.isSelfCrossing(new int[]{1,1,1,1}));

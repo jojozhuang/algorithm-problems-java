@@ -41,12 +41,9 @@ public class Solution312Test {
     @Test
     public void testMaxCoins() {
         System.out.println("maxCoins");
-        int[] nums = null;
         Solution312 instance = new Solution312();
-        int expResult = 0;
-        int result = instance.maxCoins(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.maxCoins(null));
         assertEquals(167, instance.maxCoins(new int[]{3, 1, 5, 8}));
     }
 }

@@ -42,11 +42,9 @@ public class Solution250Test {
     @Test
     public void testCountUnivalSubtrees() {
         System.out.println("countUnivalSubtrees");
-        TreeNode root = null;
         Solution250 instance = new Solution250();
-        int expResult = 0;
-        int result = instance.countUnivalSubtrees(root);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.countUnivalSubtrees(null));
         
         TreeNode root2 = TreeNode.createInstance(new String[]{"5","1","5","5","5", "#","5"});
         assertEquals(4, instance.countUnivalSubtrees(root2));

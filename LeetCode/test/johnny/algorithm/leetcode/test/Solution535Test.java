@@ -42,5 +42,4 @@ public class Solution535Test {
         String url3 = "http://jojozhuang.github.io/";
         assertEquals(url3, instance.decode(instance.encode(url3)));
     }
-
 }

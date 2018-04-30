@@ -42,11 +42,9 @@ public class Solution278Test {
     @Test
     public void testFirstBadVersion() {
         System.out.println("firstBadVersion");
-        int n = 0;
         Solution278 instance = new Solution278();
-        int expResult = 0;
-        int result = instance.firstBadVersion(n);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.firstBadVersion(0));
         
         HashMap<Integer, Boolean> map1 = new HashMap<Integer, Boolean>();
         map1.put(1, true);

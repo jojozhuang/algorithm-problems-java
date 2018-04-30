@@ -36,5 +36,4 @@ public class Solution556Test {
         assertEquals(21, instance.nextGreaterElement(12));
         assertEquals(-1, instance.nextGreaterElement(21));
     }
-
 }

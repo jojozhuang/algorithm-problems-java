@@ -41,12 +41,9 @@ public class Solution645Test {
     @Test
     public void testFindErrorNums() {
         System.out.println("findErrorNums");
-        int[] nums = null;
         Solution645 instance = new Solution645();
-        int[] expResult = new int[2];
-        int[] result = instance.findErrorNums(nums);
-        assertArrayEquals(expResult, result);
-        
+
+        assertArrayEquals(new int[2], instance.findErrorNums(null));
         assertArrayEquals(new int[]{2,3}, instance.findErrorNums(new int[]{1,2,2,4}));
         assertArrayEquals(new int[]{3,2}, instance.findErrorNums(new int[]{1,3,3,4}));
     }

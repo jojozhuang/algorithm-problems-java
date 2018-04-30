@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution089;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -44,32 +45,17 @@ public class Solution089Test {
     public void testGrayCode() {
         System.out.println("grayCode");
         Solution089 instance = new Solution089();
-        List<Integer> expResult = new ArrayList<Integer>();
-        expResult.add(0);
-        List<Integer> result = instance.grayCode(0);
-        assertEquals(expResult, result);
         
-        List<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(0);
-        expResult2.add(1);
-        assertEquals(expResult2, instance.grayCode(1));
+        List<Integer> expect1 =  ListUtil.buildList(new Integer[] {0});
+        assertEquals(expect1, instance.grayCode(0));
         
-        List<Integer> expResult3 = new ArrayList<Integer>();
-        expResult3.add(0);
-        expResult3.add(1);
-        expResult3.add(3);
-        expResult3.add(2);
-        assertEquals(expResult3, instance.grayCode(2));
+        List<Integer> expect2 = ListUtil.buildList(new Integer[] {0,1});
+        assertEquals(expect2, instance.grayCode(1));
         
-         List<Integer> expResult4 = new ArrayList<Integer>();
-        expResult4.add(0);
-        expResult4.add(1);
-        expResult4.add(3);
-        expResult4.add(2);
-        expResult4.add(6);
-        expResult4.add(7);
-        expResult4.add(5);
-        expResult4.add(4);
-        assertEquals(expResult4, instance.grayCode(3));
+        List<Integer> expect3 = ListUtil.buildList(new Integer[] {0,1,3,2});
+        assertEquals(expect3, instance.grayCode(2));
+        
+         List<Integer> expect4 = ListUtil.buildList(new Integer[] {0,1,3,2,6,7,5,4});
+        assertEquals(expect4, instance.grayCode(3));
     }
 }

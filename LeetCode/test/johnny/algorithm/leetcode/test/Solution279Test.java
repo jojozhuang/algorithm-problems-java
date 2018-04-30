@@ -41,12 +41,9 @@ public class Solution279Test {
     @Test
     public void testNumSquares() {
         System.out.println("numSquares");
-        int n = 0;
         Solution279 instance = new Solution279();
-        int expResult = 0;
-        int result = instance.numSquares(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.numSquares(0));
         assertEquals(1, instance.numSquares(4));
         assertEquals(3, instance.numSquares(12));
         assertEquals(2, instance.numSquares(13));

@@ -36,5 +36,4 @@ public class Solution664Test {
         assertEquals(2, instance.strangePrinter("aaabbb"));
         assertEquals(2, instance.strangePrinter("aba"));
     }
-
 }

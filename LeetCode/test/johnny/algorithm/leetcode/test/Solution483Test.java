@@ -36,5 +36,4 @@ public class Solution483Test {
         assertEquals("8", instance.smallestGoodBase("4681"));
         assertEquals("999999999999999999", instance.smallestGoodBase("1000000000000000000"));
     }
-
 }

@@ -41,13 +41,9 @@ public class Solution290Test {
     @Test
     public void testWordPattern() {
         System.out.println("wordPattern");
-        String pattern = "";
-        String str = "";
         Solution290 instance = new Solution290();
-        boolean expResult = false;
-        boolean result = instance.wordPattern(pattern, str);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.wordPattern("", ""));
         assertEquals(true, instance.wordPattern("abba", "dog cat cat dog"));
         assertEquals(false, instance.wordPattern("abba", "dog cat cat fish"));
         assertEquals(false, instance.wordPattern("aaaa", "dog cat cat dog"));

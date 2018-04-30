@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution090;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,57 +44,18 @@ public class Solution090Test {
     @Test
     public void testSubsetsWithDup() {
         System.out.println("subsetsWithDup");
-        int[] nums = null;
         Solution090 instance = new Solution090();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.subsetsWithDup(nums);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1, instance.subsetsWithDup(null));
         
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
-        List<Integer> item2 = new ArrayList<Integer>();
-        expResult2.add(item2);
-        item2 = new ArrayList<Integer>();
-        item2.add(1);
-        expResult2.add(item2);
-        assertEquals(expResult2, instance.subsetsWithDup(new int[]{1}));
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{},{1}});
+        assertEquals(expect2, instance.subsetsWithDup(new int[]{1}));
         
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
-        List<Integer> item3 = new ArrayList<Integer>();
-        expResult3.add(item3);
-        item3 = new ArrayList<Integer>();
-        item3.add(1);
-        expResult3.add(item3);
-        item3 = new ArrayList<Integer>();
-        item3.add(1);
-        item3.add(3);
-        expResult3.add(item3);
-        item3 = new ArrayList<Integer>();
-        item3.add(3);
-        expResult3.add(item3);
-        assertEquals(expResult3, instance.subsetsWithDup(new int[]{1,3}));
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{},{1},{1,3},{3}});
+        assertEquals(expect3, instance.subsetsWithDup(new int[]{1,3}));
         
-        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
-        List<Integer> item4 = new ArrayList<Integer>();
-        expResult4.add(item4);
-        item4 = new ArrayList<Integer>();
-        item4.add(1);
-        expResult4.add(item4);
-        item4 = new ArrayList<Integer>();
-        item4.add(1);
-        item4.add(2);
-        expResult4.add(item4);        
-        item4 = new ArrayList<Integer>();
-        item4.add(1);
-        item4.add(2);
-        item4.add(2);
-        expResult4.add(item4);        
-        item4 = new ArrayList<Integer>();
-        item4.add(2);
-        expResult4.add(item4);
-        item4 = new ArrayList<Integer>();
-        item4.add(2);
-        item4.add(2);
-        expResult4.add(item4);
-        assertEquals(expResult4, instance.subsetsWithDup(new int[]{1,2,2}));
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][] {{},{1},{1,2},{1,2,2},{2},{2,2}});
+        assertEquals(expect4, instance.subsetsWithDup(new int[]{1,2,2}));
     }
 }

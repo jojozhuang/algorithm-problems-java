@@ -42,6 +42,7 @@ public class Solution507Test {
     public void testCheckPerfectNumber() {
         System.out.println("checkPerfectNumber");
         Solution507 instance = new Solution507();
+        
         assertEquals(false, instance.checkPerfectNumber(1));
         assertEquals(false, instance.checkPerfectNumber(2));
         assertEquals(false, instance.checkPerfectNumber(3));

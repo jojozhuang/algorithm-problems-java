@@ -37,5 +37,4 @@ public class Solution269Test {
         assertEquals("zx", instance.alienOrder(new String[] {"z","x"}));
         assertEquals("", instance.alienOrder(new String[] {"z","x","z"}));
     }
-
 }

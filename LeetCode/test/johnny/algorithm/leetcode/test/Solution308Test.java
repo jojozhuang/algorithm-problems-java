@@ -44,5 +44,4 @@ public class Solution308Test {
         instance.update(3, 2, 2);
         assertEquals(10, instance.sumRegion(2, 1, 4, 3));
     }
-
 }

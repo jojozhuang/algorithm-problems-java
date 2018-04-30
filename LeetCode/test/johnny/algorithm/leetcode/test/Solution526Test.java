@@ -35,5 +35,4 @@ public class Solution526Test {
 
         assertEquals(2, instance.countArrangement(2));
     }
-
 }

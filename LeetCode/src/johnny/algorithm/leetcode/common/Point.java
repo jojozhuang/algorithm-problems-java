@@ -12,7 +12,7 @@ public class Point implements Comparable<Point> {
     public Point() { x = 0; y = 0; }
     public Point(int a, int b) { x = a; y = b; }
     
-    public static Point[] createArray(int[][] arr) {
+    public static Point[] buildArray(int[][] arr) {
         if (arr == null || arr.length == 0) {
             return null;
         }
@@ -27,7 +27,7 @@ public class Point implements Comparable<Point> {
     }
 
     public static List<Point> buildList(int[][] arr) {
-        Point[] points = createArray(arr);
+        Point[] points = buildArray(arr);
         return ListUtil.buildList(points);
     }
 

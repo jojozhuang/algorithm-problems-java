@@ -41,13 +41,9 @@ public class Solution209Test {
     @Test
     public void testMinSubArrayLen() {
         System.out.println("minSubArrayLen");
-        int s = 0;
-        int[] nums = null;
         Solution209 instance = new Solution209();
-        int expResult = 0;
-        int result = instance.minSubArrayLen(s, nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.minSubArrayLen(0, null));
         assertEquals(1, instance.minSubArrayLen(1, new int[]{1}));
         assertEquals(0, instance.minSubArrayLen(2, new int[]{1}));
         assertEquals(1, instance.minSubArrayLen(2, new int[]{2,3}));

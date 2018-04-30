@@ -41,9 +41,7 @@ public class Solution186Test {
     @Test
     public void testReverseWords() {
         System.out.println("reverseWords");
-        char[] s = null;
         Solution186 instance = new Solution186();
-        instance.reverseWords(s);
         
         char[] s2 = "vc".toCharArray();
         instance.reverseWords(s2);
@@ -56,7 +54,5 @@ public class Solution186Test {
         char[] s4 = "blue is sky the".toCharArray();
         instance.reverseWords(s4);
         assertArrayEquals("the sky is blue".toCharArray(), s4);
-        
     }
-    
 }

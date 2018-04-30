@@ -37,5 +37,4 @@ public class Solution678Test {
         assertEquals(true, instance.checkValidString("(*)"));
         assertEquals(true, instance.checkValidString("(*))"));
     }
-
 }

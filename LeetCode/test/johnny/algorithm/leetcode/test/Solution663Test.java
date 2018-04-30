@@ -39,6 +39,5 @@ public class Solution663Test {
 
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","10","#","#","2","20"});
         assertEquals(false, instance.checkEqualTree(root2));
-}
-
+    }
 }

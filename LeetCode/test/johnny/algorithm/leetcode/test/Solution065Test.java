@@ -41,12 +41,9 @@ public class Solution065Test {
     @Test
     public void testIsNumber() {
         System.out.println("isNumber");
-        String s = "";
         Solution065 instance = new Solution065();
-        boolean expResult = false;
-        boolean result = instance.isNumber(s);
-        assertEquals(expResult, result);
-        
+ 
+        assertEquals(false, instance.isNumber(""));
         assertEquals(true, instance.isNumber("0"));
         assertEquals(true, instance.isNumber(" 0.1 "));
         assertEquals(false, instance.isNumber("abc"));
@@ -69,5 +66,4 @@ public class Solution065Test {
         assertEquals(false, instance.isNumber("4e+"));
         assertEquals(false, instance.isNumber(".-4"));
     }
-    
 }

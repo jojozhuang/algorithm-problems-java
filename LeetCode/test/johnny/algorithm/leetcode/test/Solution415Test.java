@@ -42,6 +42,7 @@ public class Solution415Test {
     public void testAddStrings() {
         System.out.println("addStrings");
         Solution415 instance = new Solution415();
+        
         assertEquals("", instance.addStrings("", ""));
         assertEquals("1", instance.addStrings("", "1"));
         assertEquals("2", instance.addStrings("2", ""));

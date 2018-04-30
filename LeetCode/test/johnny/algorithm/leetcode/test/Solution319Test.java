@@ -41,12 +41,9 @@ public class Solution319Test {
     @Test
     public void testBulbSwitch() {
         System.out.println("bulbSwitch");
-        int n = 0;
         Solution319 instance = new Solution319();
-        int expResult = 0;
-        int result = instance.bulbSwitch(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.bulbSwitch(0));
         assertEquals(1, instance.bulbSwitch(1));
         assertEquals(1, instance.bulbSwitch(2));
         assertEquals(1, instance.bulbSwitch(3));

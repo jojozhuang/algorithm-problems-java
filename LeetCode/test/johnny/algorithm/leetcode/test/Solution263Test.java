@@ -41,12 +41,9 @@ public class Solution263Test {
     @Test
     public void testIsUgly() {
         System.out.println("isUgly");
-        int num = 0;
         Solution263 instance = new Solution263();
-        boolean expResult = false;
-        boolean result = instance.isUgly(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isUgly(0));
         assertEquals(true, instance.isUgly(1));
         assertEquals(true, instance.isUgly(2));
         assertEquals(true, instance.isUgly(3));

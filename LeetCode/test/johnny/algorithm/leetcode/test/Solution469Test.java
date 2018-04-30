@@ -42,5 +42,4 @@ public class Solution469Test {
         List<List<Integer>> points2 = ListUtil.buildList2(new Integer[][] {{0,0},{0,10},{10,10},{10,0},{5,5}});
         assertEquals(false, instance.isConvex(points2));
     }
-
 }

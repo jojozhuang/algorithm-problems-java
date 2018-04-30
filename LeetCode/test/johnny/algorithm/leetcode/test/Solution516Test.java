@@ -36,5 +36,4 @@ public class Solution516Test {
         assertEquals(4, instance.longestPalindromeSubseq("bbbab"));
         assertEquals(2, instance.longestPalindromeSubseq("cbbd"));
     }
-
 }

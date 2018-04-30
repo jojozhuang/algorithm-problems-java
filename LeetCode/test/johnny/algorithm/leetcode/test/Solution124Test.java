@@ -42,27 +42,20 @@ public class Solution124Test {
     @Test
     public void testMaxPathSum() {
         System.out.println("maxPathSum");
-        TreeNode root = null;
         Solution124 instance = new Solution124();
-        int expResult = Integer.MIN_VALUE;
-        int result = instance.maxPathSum(root);
-        assertEquals(expResult, result);
+
+        assertEquals(Integer.MIN_VALUE, instance.maxPathSum(null));
         
-        TreeNode root1 = new TreeNode(1);        
+        TreeNode root1 = new TreeNode(1);
         assertEquals(1, instance.maxPathSum(root1));
         
-        TreeNode root2 = new TreeNode(1);
-        root2.left = new TreeNode(2);
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
         assertEquals(3, instance.maxPathSum(root2));
         
-        TreeNode root3 = new TreeNode(1);
-        root3.left = new TreeNode(2);
-        root3.right = new TreeNode(3);
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","3"});
         assertEquals(6, instance.maxPathSum(root3));
         
-         TreeNode root4 = new TreeNode(1);
-        root4.left = new TreeNode(-1);
-        root4.right = new TreeNode(3);
+         TreeNode root4 = TreeNode.createInstance(new String[] {"1","-1","3"});
         assertEquals(4, instance.maxPathSum(root4));
     }
 }

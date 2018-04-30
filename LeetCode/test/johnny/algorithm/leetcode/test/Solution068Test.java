@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution068;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,22 +44,15 @@ public class Solution068Test {
     @Test
     public void testFullJustify() {
         System.out.println("fullJustify");
-        String[] words = null;
-        int maxWidth = 0;
         Solution068 instance = new Solution068();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.fullJustify(words, maxWidth);
-        assertEquals(expResult, result);
         
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("This    is    an");
-        expResult2.add("example  of text");
-        expResult2.add("justification.  ");
-        assertEquals(expResult2, instance.fullJustify(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16));
+        List<String> expect2 = ListUtil.buildList(new String[] {});
+        assertEquals(expect2, instance.fullJustify(null, 0));
         
-        List<String> expResult3 = new ArrayList<String>();
-        expResult3.add("What must be");
-        expResult3.add("shall be.   ");
-        assertEquals(expResult3, instance.fullJustify(new String[]{"What","must","be","shall","be."}, 12));
+        List<String> expect3 = ListUtil.buildList(new String[] {"This    is    an","example  of text","justification.  "}); 
+        assertEquals(expect3, instance.fullJustify(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16));
+        
+        List<String> expect4 = ListUtil.buildList(new String[] {"What must be","shall be.   "});
+        assertEquals(expect4, instance.fullJustify(new String[]{"What","must","be","shall","be."}, 12));
     }
 }

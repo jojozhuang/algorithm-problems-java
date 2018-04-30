@@ -44,11 +44,10 @@ public class Solution336Test {
     @Test
     public void testPalindromePairs() {
         System.out.println("palindromePairs");
-        String[] words = null;
         Solution336 instance = new Solution336();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.palindromePairs(words);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = new ArrayList<List<Integer>>();
+        assertEquals(expect1, instance.palindromePairs(null));
         
         List<List<Integer>> result2 = instance.palindromePairs(new String[]{"bat", "tab", "cat"});
         List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{0,1},{1,0}});
@@ -58,5 +57,4 @@ public class Solution336Test {
         List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{0,1},{1,0},{3,2},{2,4}});
         assertTrue(ListUtil.equalsIgnoreOrder(result3, expect3));
     }
-    
 }

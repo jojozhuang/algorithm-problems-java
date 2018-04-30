@@ -36,5 +36,4 @@ public class Solution484Test {
         assertArrayEquals(new int[] {1,2}, instance.findPermutation("I"));
         assertArrayEquals(new int[] {2,1,3}, instance.findPermutation("DI"));
     }
-
 }

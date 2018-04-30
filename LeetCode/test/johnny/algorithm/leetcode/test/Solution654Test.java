@@ -37,5 +37,4 @@ public class Solution654Test {
         TreeNode result1 = TreeNode.createInstance(new String[] {"6","3","5","#","2","0","#","#","1","#","#"});
         assertTrue(TreeNode.isSame(result1, instance.constructMaximumBinaryTree(new int[] {3,2,1,6,0,5})));
     }
-
 }

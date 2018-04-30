@@ -14,10 +14,10 @@ public class TreeLinkNode {
     public TreeLinkNode left, right, next;
     public TreeLinkNode(int x) { val = x; }
     
-    public static TreeLinkNode CreateInstance(String[] arr) {  
+    public static TreeLinkNode CreateInstance(String[] arr) {
         List<String> serial = Arrays.asList(arr);
         if(serial == null || serial.size() == 0) {
-            return null;         
+            return null;
         }
         
         Queue<String> queueString = new LinkedList<>(serial);
@@ -40,10 +40,10 @@ public class TreeLinkNode {
                 if (!str.equals("#")) {
                     node.right = new TreeLinkNode(Integer.parseInt(str));
                     queueNode.add(node.right);
-                }                
+                }
             }
         }
         
         return root;
-     }
+    }
 }

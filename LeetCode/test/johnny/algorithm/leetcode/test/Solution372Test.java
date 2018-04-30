@@ -36,5 +36,4 @@ public class Solution372Test {
         assertEquals(8, instance.superPow(2, new int[] {3}));
         assertEquals(1024, instance.superPow(2, new int[] {1,0}));
     }
-
 }

@@ -42,18 +42,14 @@ public class Solution230Test {
     @Test
     public void testKthSmallest() {
         System.out.println("kthSmallest");
-        TreeNode root = null;
-        int k = 0;
         Solution230 instance = new Solution230();
-        int expResult = Integer.MIN_VALUE;
-        int result = instance.kthSmallest(root, k);
-        assertEquals(expResult, result);
+
+        assertEquals(Integer.MIN_VALUE, instance.kthSmallest(null, 0));
         
         TreeNode root2 = TreeNode.createInstance(new String[] {"2","1", "#"});
         assertEquals(1, instance.kthSmallest(root2, 1));
         TreeNode root3 = TreeNode.createInstance(new String[] {"2","1", "#"});
         assertEquals(2, instance.kthSmallest(root3, 2));
-        
         TreeNode root4 = TreeNode.createInstance(new String[] {"4","2","7","#", "3", "5", "#","#","#","#","6","#","#"});
         assertEquals(2, instance.kthSmallest(root4, 1));
         TreeNode root5 = TreeNode.createInstance(new String[] {"4","2","7","#", "3", "5", "#","#","#","#","6","#","#"});

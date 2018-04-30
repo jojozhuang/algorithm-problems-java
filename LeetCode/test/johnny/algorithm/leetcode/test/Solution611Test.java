@@ -41,12 +41,9 @@ public class Solution611Test {
     @Test
     public void testTriangleNumber() {
         System.out.println("triangleNumber");
-        int[] nums = null;
         Solution611 instance = new Solution611();
-        int expResult = 0;
-        int result = instance.triangleNumber(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.triangleNumber(null));
         assertEquals(0, instance.triangleNumber(new int[]{1,2,3}));
         assertEquals(1, instance.triangleNumber(new int[]{2,2,3}));
         assertEquals(1, instance.triangleNumber(new int[]{1,2,3,4}));

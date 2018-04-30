@@ -41,13 +41,9 @@ public class Solution330Test {
     @Test
     public void testMinPatches() {
         System.out.println("minPatches");
-        int[] nums = null;
-        int n = 0;
         Solution330 instance = new Solution330();
-        int expResult = 0;
-        int result = instance.minPatches(nums, n);
-        assertEquals(expResult, result);
         
+        assertEquals(0, instance.minPatches(null, 0));
         assertEquals(3, instance.minPatches(new int[]{}, 7));
         assertEquals(1, instance.minPatches(new int[]{1, 3}, 6));
         assertEquals(2, instance.minPatches(new int[]{1, 5, 10}, 20));

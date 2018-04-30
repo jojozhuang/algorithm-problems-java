@@ -35,5 +35,4 @@ public class Solution462Test {
 
         assertEquals(2, instance.minMoves2(new int[]{1,2,3}));
     }
-
 }

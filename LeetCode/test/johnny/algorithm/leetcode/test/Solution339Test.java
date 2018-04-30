@@ -44,11 +44,10 @@ public class Solution339Test {
     @Test
     public void testDepthSum() {
         System.out.println("depthSum");
-        List<NestedInteger> nestedList = new ArrayList<NestedInteger>();
         Solution339 instance = new Solution339();
-        int expResult = 0;
-        int result = instance.depthSum(nestedList);
-        assertEquals(expResult, result);
+
+        List<NestedInteger> nestedList = new ArrayList<NestedInteger>();
+        assertEquals(0, instance.depthSum(nestedList));
         
         assertEquals(6, instance.depthSum(getExample1()));
         assertEquals(30, instance.depthSum(getExample2()));
@@ -61,7 +60,7 @@ public class Solution339Test {
         NestedInteger two = new NestedInteger();
         two.i = 2;
         NestedInteger three = new NestedInteger();
-        three.i = 3;        
+        three.i = 3;
 
         List<NestedInteger> input = new ArrayList<NestedInteger>();
         input.add(one);

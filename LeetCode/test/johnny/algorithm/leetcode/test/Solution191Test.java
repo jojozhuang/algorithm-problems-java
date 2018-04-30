@@ -41,12 +41,9 @@ public class Solution191Test {
     @Test
     public void testHammingWeight() {
         System.out.println("hammingWeight");
-        int n = 0;
         Solution191 instance = new Solution191();
-        int expResult = 0;
-        int result = instance.hammingWeight(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.hammingWeight(0));
         assertEquals(1, instance.hammingWeight(1));
         assertEquals(1, instance.hammingWeight(2));
         assertEquals(2, instance.hammingWeight(3));

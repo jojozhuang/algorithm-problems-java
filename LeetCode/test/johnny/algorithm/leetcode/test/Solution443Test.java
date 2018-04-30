@@ -37,5 +37,4 @@ public class Solution443Test {
         assertEquals(1, instance.compress(new char[] {'a'}));
         assertEquals(4, instance.compress(new char[] {'a','b','b','b','b','b','b','b','b','b','b','b','b'}));
     }
-
 }

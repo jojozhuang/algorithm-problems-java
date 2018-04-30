@@ -42,5 +42,4 @@ public class Solution353Test {
         assertEquals(2, instance.move("L"));
         assertEquals(-1, instance.move("U"));
     }
-
 }

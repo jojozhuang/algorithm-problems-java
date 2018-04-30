@@ -44,12 +44,11 @@ public class Solution301Test {
     @Test
     public void testRemoveInvalidParentheses() {
         System.out.println("removeInvalidParentheses");
-        String s = "";
         Solution301 instance = new Solution301();
-        List<String> expResult = new ArrayList<String>();
-        expResult.add("");
-        List<String> result = instance.removeInvalidParentheses(s);
-        assertEquals(expResult, result);
+
+        List<String> expect1 = ListUtil.buildList(new String[] {""});
+        List<String> result1 = instance.removeInvalidParentheses("");
+        assertEquals(expect1, result1);
         
         List<String> result2 = instance.removeInvalidParentheses("()())()");
         List<String> expect2 = ListUtil.buildList(new String[] {"()()()","(())()"});
@@ -62,5 +61,5 @@ public class Solution301Test {
         List<String> result4 = instance.removeInvalidParentheses(")(");
         assertEquals(1, result4.size());
         assertEquals("", result4.get(0));
-    }    
+    }
 }

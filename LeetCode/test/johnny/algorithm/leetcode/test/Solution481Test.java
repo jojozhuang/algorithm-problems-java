@@ -35,5 +35,4 @@ public class Solution481Test {
 
         assertEquals(3, instance.magicalString(6));
     }
-
 }

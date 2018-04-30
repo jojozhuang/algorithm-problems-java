@@ -41,12 +41,9 @@ public class Solution345Test {
     @Test
     public void testReverseVowels() {
         System.out.println("reverseVowels");
-        String s = "";
         Solution345 instance = new Solution345();
-        String expResult = "";
-        String result = instance.reverseVowels(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.reverseVowels(""));
         assertEquals("holle", instance.reverseVowels("hello"));
         assertEquals("leotcede", instance.reverseVowels("leetcode"));
         assertEquals("a.b,.", instance.reverseVowels("a.b,."));

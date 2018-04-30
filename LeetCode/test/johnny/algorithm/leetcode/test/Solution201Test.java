@@ -41,13 +41,9 @@ public class Solution201Test {
     @Test
     public void testRangeBitwiseAnd() {
         System.out.println("rangeBitwiseAnd");
-        int m = 0;
-        int n = 0;
         Solution201 instance = new Solution201();
-        int expResult = 0;
-        int result = instance.rangeBitwiseAnd(m, n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.rangeBitwiseAnd(0, 0));
         assertEquals(4, instance.rangeBitwiseAnd(5, 7));
         assertEquals(2, instance.rangeBitwiseAnd(2, 3));
         assertEquals(0, instance.rangeBitwiseAnd(0, Integer.MAX_VALUE));

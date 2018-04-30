@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution056;
 import johnny.algorithm.leetcode.common.Interval;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -44,23 +45,12 @@ public class Solution056Test {
     @Test
     public void testMerge() {
         System.out.println("merge");
-        List<Interval> inervals = null;
         Solution056 instance = new Solution056();
-        List<Interval> expResult = null;
-        List<Interval> result = instance.merge(inervals);
-        assertEquals(expResult, result);
-        
-        List<Interval> inervals2 = new ArrayList<Interval>();
-        inervals2.add(new Interval(1,3));
-        inervals2.add(new Interval(2,6));
-        inervals2.add(new Interval(8,10));
-        inervals2.add(new Interval(15,18));
+
+        assertEquals(null, instance.merge(null));
+        List<Interval> inervals2 = Interval.buildList(new int[][] {{1,3},{2,6},{8,10},{15,18}});
         List<Interval> result2 = instance.merge(inervals2);
-        
-        List<Interval> expResult2 = new ArrayList<Interval>();
-        expResult2.add(new Interval(1,6));
-        expResult2.add(new Interval(8,10));
-        expResult2.add(new Interval(15,18));
-        assertTrue(expResult2.containsAll(result2));
+        List<Interval> expect2 = Interval.buildList(new int[][] {{1,6},{8,10},{15,18}});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
     }
 }

@@ -34,14 +34,13 @@ public class Solution436Test {
         System.out.println("findRightInterval");
         Solution436 instance = new Solution436();
 
-        Interval[] intervals1 = Interval.createArray(new int[][] { {1,2} });
+        Interval[] intervals1 = Interval.buildArray(new int[][] { {1,2} });
         assertArrayEquals(new int[] {-1}, instance.findRightInterval(intervals1));
         
-        Interval[] intervals2 = Interval.createArray(new int[][] { {3,4}, {2,3}, {1,2} });
+        Interval[] intervals2 = Interval.buildArray(new int[][] { {3,4}, {2,3}, {1,2} });
         assertArrayEquals(new int[] {-1, 0, 1}, instance.findRightInterval(intervals2));
         
-        Interval[] intervals3 = Interval.createArray(new int[][] { {1,4}, {2,3}, {3,4} });
+        Interval[] intervals3 = Interval.buildArray(new int[][] { {1,4}, {2,3}, {3,4} });
         assertArrayEquals(new int[] {-1, 2, -1}, instance.findRightInterval(intervals3));
     }
-
 }

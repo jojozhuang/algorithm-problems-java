@@ -13,7 +13,7 @@ public class Interval {
     public Interval() { start = 0; end = 0; }
     public Interval(int s, int e) { start = s; end = e; }
     
-    public static Interval[] createArray(int[][] arr) {
+    public static Interval[] buildArray(int[][] arr) {
         if (arr == null || arr.length == 0) {
             return null;
         }
@@ -28,7 +28,7 @@ public class Interval {
     }
 
     public static List<Interval> buildList(int[][] arr) {
-        Interval[] points = createArray(arr);
+        Interval[] points = buildArray(arr);
         return ListUtil.buildList(points);
     }
     public static List<List<Interval>> buildList(int[][][] arr) {

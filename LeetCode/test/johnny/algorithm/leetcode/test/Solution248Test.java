@@ -41,13 +41,9 @@ public class Solution248Test {
     @Test
     public void testStrobogrammaticInRange() {
         System.out.println("strobogrammaticInRange");
-        String low = "";
-        String high = "";
         Solution248 instance = new Solution248();
-        int expResult = 0;
-        int result = instance.strobogrammaticInRange(low, high);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0,  instance.strobogrammaticInRange("", ""));
         assertEquals(2, instance.strobogrammaticInRange("1", "8"));
         assertEquals(3, instance.strobogrammaticInRange("2", "70"));
         assertEquals(1, instance.strobogrammaticInRange("88", "88"));

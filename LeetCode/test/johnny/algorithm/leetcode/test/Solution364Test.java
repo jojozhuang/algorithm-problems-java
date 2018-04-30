@@ -44,12 +44,9 @@ public class Solution364Test {
     @Test
     public void testDepthSumInverse() {
         System.out.println("depthSumInverse");
-        List<NestedInteger> nestedList = null;
         Solution364 instance = new Solution364();
-        int expResult = 0;
-        int result = instance.depthSumInverse(nestedList);
-        assertEquals(expResult, result);
         
+        assertEquals(0, instance.depthSumInverse(null));
         assertEquals(6, instance.depthSumInverse(getExample1()));
         assertEquals(15, instance.depthSumInverse(getExample2()));
         assertEquals(8, instance.depthSumInverse(getExample3()));

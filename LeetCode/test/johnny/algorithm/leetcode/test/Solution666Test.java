@@ -36,5 +36,4 @@ public class Solution666Test {
         assertEquals(12, instance.pathSum(new int[] {113, 215, 221}));
         assertEquals(24, instance.pathSum(new int[] {113, 221}));
     }
-
 }

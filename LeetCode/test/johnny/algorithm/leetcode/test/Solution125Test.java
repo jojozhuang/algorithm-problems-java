@@ -41,12 +41,9 @@ public class Solution125Test {
     @Test
     public void testIsPalindrome() {
         System.out.println("isPalindrome");
-        String s = "";
         Solution125 instance = new Solution125();
-        boolean expResult = true;
-        boolean result = instance.isPalindrome(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isPalindrome(""));
         assertEquals(false, instance.isPalindrome("he"));
         assertEquals(false, instance.isPalindrome("0P"));
         assertEquals(false, instance.isPalindrome("he!234"));

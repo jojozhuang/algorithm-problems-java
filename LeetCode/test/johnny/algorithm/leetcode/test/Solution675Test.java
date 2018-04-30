@@ -54,5 +54,4 @@ public class Solution675Test {
             {8,7,6}});
         assertEquals(6, instance.cutOffTree(forest3));
     }
-
 }

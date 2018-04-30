@@ -41,12 +41,9 @@ public class Solution070Test {
     @Test
     public void testClimbStairs() {
         System.out.println("climbStairs");
-        int n = 0;
         Solution070 instance = new Solution070();
-        int expResult = 0;
-        int result = instance.climbStairs(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.climbStairs(0));
         assertEquals(1, instance.climbStairs(1));
         assertEquals(2, instance.climbStairs(2));
         assertEquals(3, instance.climbStairs(3));

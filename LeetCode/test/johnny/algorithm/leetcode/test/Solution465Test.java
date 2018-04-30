@@ -39,5 +39,4 @@ public class Solution465Test {
         int[][] transactions2 = new int[][] {{0,1,10},{1,0,1},{1,2,5},{2,0,5}};
         assertEquals(1, instance.minTransfers(transactions2));
     }
-
 }

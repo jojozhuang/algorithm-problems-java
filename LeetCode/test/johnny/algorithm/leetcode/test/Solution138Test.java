@@ -61,7 +61,7 @@ public class Solution138Test {
         RandomListNode head5 = RandomListNode.createInstance(new int[]{-1},new int[]{-1});
         RandomListNode expect5 = RandomListNode.createInstance(new int[]{-1},new int[]{-1});
         assertTrue(RandomListNode.isSame(expect5, instance.copyRandomList(head5)));
-                
+
         RandomListNode head6 = RandomListNode.createInstance(new int[]{1,2,3,4},new int[]{2,-1,-1,1});
         RandomListNode expect6 = RandomListNode.createInstance(new int[]{1,2,3,4},new int[]{2,-1,-1,1});
         assertTrue(RandomListNode.isSame(expect6, instance.copyRandomList(head6)));

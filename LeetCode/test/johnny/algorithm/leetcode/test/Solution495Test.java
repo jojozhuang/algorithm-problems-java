@@ -36,5 +36,4 @@ public class Solution495Test {
         assertEquals(4, instance.findPoisonedDuration(new int[] {1,4}, 2));
         assertEquals(3, instance.findPoisonedDuration(new int[] {1,2}, 2));
     }
-
 }

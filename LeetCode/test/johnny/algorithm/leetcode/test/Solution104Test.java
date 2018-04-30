@@ -42,35 +42,23 @@ public class Solution104Test {
     @Test
     public void testMaxDepth() {
         System.out.println("maxDepth");
-        TreeNode root = null;
         Solution104 instance = new Solution104();
-        int expResult = 0;
-        int result = instance.maxDepth(root);
-        assertEquals(expResult, result);
 
-        TreeNode p1 = new TreeNode(1);
-        assertEquals(1, instance.maxDepth(p1));
+        assertEquals(0, instance.maxDepth(null));
 
-        TreeNode p2 = new TreeNode(1);
-        p2.left = new TreeNode(2);
-        assertEquals(2, instance.maxDepth(p2));
+        TreeNode root1 = new TreeNode(1);
+        assertEquals(1, instance.maxDepth(root1));
 
-        TreeNode p3 = new TreeNode(1);
-        p3.left = new TreeNode(2);
-        p3.right = new TreeNode(2);
-        assertEquals(2, instance.maxDepth(p3));
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
+        assertEquals(2, instance.maxDepth(root2));
 
-        TreeNode p4 = new TreeNode(1);
-        p4.left = new TreeNode(2);
-        p4.right = new TreeNode(2);
-        p4.right.left = new TreeNode(3);
-        assertEquals(3, instance.maxDepth(p4));
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","2"});
+        assertEquals(2, instance.maxDepth(root3));
 
-        TreeNode p5 = new TreeNode(1);
-        p5.left = new TreeNode(2);
-        p5.right = new TreeNode(2);
-        p5.right.right = new TreeNode(3);
-        p5.right.right.right = new TreeNode(4);
-        assertEquals(4, instance.maxDepth(p5));
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","2","#","#","3","#"});
+        assertEquals(3, instance.maxDepth(root4));
+
+        TreeNode root5 = TreeNode.createInstance(new String[] {"1","2","2","#","#","#","3","#","4"});
+        assertEquals(4, instance.maxDepth(root5));
     }
 }

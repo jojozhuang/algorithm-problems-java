@@ -39,5 +39,4 @@ public class Solution363Test {
         };
         assertEquals(2, instance.maxSumSubmatrix(matrix1, 2));
     }
-
 }

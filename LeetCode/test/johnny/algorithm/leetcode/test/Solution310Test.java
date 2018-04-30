@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution310;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,20 +44,15 @@ public class Solution310Test {
     @Test
     public void testFindMinHeightTrees() {
         System.out.println("findMinHeightTrees");
-        int n = 0;
-        int[][] edges = null;
         Solution310 instance = new Solution310();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.findMinHeightTrees(n, edges);
-        assertEquals(expResult, result);
+
+        List<Integer> expect1 = new ArrayList<Integer>();
+        assertEquals(expect1, instance.findMinHeightTrees(0, null));
         
-        List<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(1);
-        assertEquals(expResult2, instance.findMinHeightTrees(4, new int[][]{{1, 0}, {1, 2}, {1, 3}}));
+        List<Integer> expect2 = ListUtil.buildList(new Integer[] {1});
+        assertEquals(expect2, instance.findMinHeightTrees(4, new int[][]{{1, 0}, {1, 2}, {1, 3}}));
         
-        List<Integer> expResult3 = new ArrayList<Integer>();
-        expResult3.add(3);
-        expResult3.add(4);
-        assertEquals(expResult3, instance.findMinHeightTrees(6, new int[][]{{0, 3}, {1, 3}, {2, 3}, {4, 3}, {5, 4}}));
+        List<Integer> expect3 = ListUtil.buildList(new Integer[] {3,4});
+        assertEquals(expect3, instance.findMinHeightTrees(6, new int[][]{{0, 3}, {1, 3}, {2, 3}, {4, 3}, {5, 4}}));
     }
 }

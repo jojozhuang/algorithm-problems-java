@@ -41,11 +41,10 @@ public class Solution048Test {
     @Test
     public void testRotate() {
         System.out.println("rotate");
-        int[][] matrix = null;
         Solution048 instance = new Solution048();
-        int[][] expResult = null;
+        int[][] matrix = null;
         instance.rotate(matrix);
-        assertArrayEquals(expResult, matrix);
+        assertArrayEquals(null, matrix);
         
         int[][] matrix2 = new int[][]{};
         instance.rotate(matrix2);
@@ -67,5 +66,4 @@ public class Solution048Test {
         instance.rotate(matrix6);
         assertArrayEquals(new int[][]{{13,9,5,1},{14,10,6,2},{15,11,7,3},{16,12,8,4}},matrix6);
     }
-    
 }

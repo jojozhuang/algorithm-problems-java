@@ -35,5 +35,4 @@ public class Solution593Test {
 
         assertEquals(true, instance.validSquare(new int[] {0,0},new int[] {1,1},new int[] {1,0},new int[] {0,1}));
     }
-
 }

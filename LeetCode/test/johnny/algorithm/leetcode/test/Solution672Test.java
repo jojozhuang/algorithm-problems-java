@@ -37,5 +37,4 @@ public class Solution672Test {
         assertEquals(3, instance.flipLights(2,1));
         assertEquals(4, instance.flipLights(3,1));
     }
-
 }

@@ -1,6 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution051;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,31 +43,17 @@ public class Solution051Test {
     @Test
     public void testSolveNQueens() {
         System.out.println("solveNQueens");
-        int n = 0;
         Solution051 instance = new Solution051();
-        List<List<String>> expResult = new ArrayList<>();
-        List<List<String>> result = instance.solveNQueens(n);
-        assertEquals(expResult, result);
         
-        List<List<String>> expResult11 = new ArrayList<>();
-        expResult11.add(new ArrayList<String>());
-        expResult11.get(0).add("Q");
-        assertEquals(expResult11, instance.solveNQueens(1));
-        assertEquals(expResult, instance.solveNQueens(2));
-        assertEquals(expResult, instance.solveNQueens(3));
+        List<List<String>> expect1 = ListUtil.buildList2(new String[][] {}); 
+        assertEquals(expect1, instance.solveNQueens(0));
         
-        List<List<String>> expResult2 = new ArrayList<>();
-        expResult2.add(new ArrayList<String>());
-        expResult2.add(new ArrayList<String>());
-        expResult2.get(0).add(".Q..");
-        expResult2.get(0).add("...Q");
-        expResult2.get(0).add("Q...");
-        expResult2.get(0).add("..Q.");
-        expResult2.get(1).add("..Q.");
-        expResult2.get(1).add("Q...");
-        expResult2.get(1).add("...Q");
-        expResult2.get(1).add(".Q..");        
-     
-        assertEquals(expResult2, instance.solveNQueens(4));
+        List<List<String>> expect2 = ListUtil.buildList2(new String[][] {{"Q"}});
+        assertEquals(expect2, instance.solveNQueens(1));
+        assertEquals(expect1, instance.solveNQueens(2));
+        assertEquals(expect1, instance.solveNQueens(3));
+        
+        List<List<String>> expect3 = ListUtil.buildList2(new String[][] {{".Q..","...Q","Q...","..Q."},{"..Q.","Q...","...Q",".Q.."}});
+        assertEquals(expect3, instance.solveNQueens(4));
     }
 }

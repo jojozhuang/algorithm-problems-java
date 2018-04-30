@@ -45,5 +45,4 @@ public class Solution454Test {
 
         assertEquals(2, instance.fourSumCount(new int[] {1,2,}, new int[] {-2,-1}, new int[] {-1,2}, new int[] {0, 2}));
     }
-
 }

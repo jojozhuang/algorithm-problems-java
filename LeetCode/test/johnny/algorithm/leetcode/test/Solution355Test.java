@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution355;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -47,8 +48,7 @@ public class Solution355Test {
         Solution355 twitter = new Solution355();
         // User 1 posts a new tweet (id = 5).
         twitter.postTweet(1, 5);
-        List<Integer> list1 = new ArrayList<Integer>();
-        list1.add(5);
+        List<Integer> list1 = ListUtil.buildList(new Integer[] {5});
         // User 1's news feed should return a list with 1 tweet id -> [5].
         assertEquals(list1, twitter.getNewsFeed(1));
         
@@ -60,9 +60,7 @@ public class Solution355Test {
 
         // User 1's news feed should return a list with 2 tweet ids -> [6, 5].
         // Tweet id 6 should precede tweet id 5 because it is posted after tweet id 5.
-        List<Integer> list2 = new ArrayList<Integer>();
-        list2.add(6);
-        list2.add(5);
+        List<Integer> list2 = ListUtil.buildList(new Integer[] {6,5});
         assertEquals(list2, twitter.getNewsFeed(1));
 
         // User 1 unfollows user 2.
@@ -70,8 +68,7 @@ public class Solution355Test {
 
         // User 1's news feed should return a list with 1 tweet id -> [5],
         // since user 1 is no longer following user 2.
-        List<Integer> list3 = new ArrayList<Integer>();
-        list3.add(5);
+        List<Integer> list3 = ListUtil.buildList(new Integer[] {5});
         assertEquals(list1, twitter.getNewsFeed(1));
     }
 }

@@ -35,5 +35,4 @@ public class Solution357Test {
 
         assertEquals(91, instance.countNumbersWithUniqueDigits(2));
     }
-
 }

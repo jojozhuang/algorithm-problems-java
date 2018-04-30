@@ -35,5 +35,4 @@ public class Solution552Test {
 
         assertEquals(8, instance.checkRecord(2));
     }
-
 }

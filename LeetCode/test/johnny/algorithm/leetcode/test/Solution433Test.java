@@ -37,5 +37,4 @@ public class Solution433Test {
         assertEquals(2, instance.minMutation("AACCGGTT","AAACGGTA", new String[] {"AACCGGTA", "AACCGCTA", "AAACGGTA"}));
         assertEquals(3, instance.minMutation("AAAAACCC","AACCCCCC", new String[] {"AAAACCCC", "AAACCCCC", "AACCCCCC"}));
     }
-
 }

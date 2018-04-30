@@ -42,12 +42,9 @@ public class Solution100Test {
     @Test
     public void testIsSameTree() {
         System.out.println("isSameTree");
-        TreeNode p = null;
-        TreeNode q = null;
         Solution100 instance = new Solution100();
-        boolean expResult = true;
-        boolean result = instance.isSameTree(p, q);
-        assertEquals(expResult, result);
+
+        assertEquals(true, instance.isSameTree(null, null));
         
         TreeNode p2 = new TreeNode(1);
         TreeNode q2 = null;
@@ -57,23 +54,16 @@ public class Solution100Test {
         TreeNode q3 = new TreeNode(1);
         assertEquals(true, instance.isSameTree(p3, q3));
 
-        TreeNode p4 = new TreeNode(1);
-        p4.left = new TreeNode(2);
+        TreeNode p4 = TreeNode.createInstance(new String[] {"1","2","#"});
         TreeNode q4 = new TreeNode(1);
         assertEquals(false, instance.isSameTree(p4, q4));
 
-        TreeNode p5 = new TreeNode(1);
-        p5.left = new TreeNode(2);
-        TreeNode q5 = new TreeNode(1);
-        q5.right = new TreeNode(2);
+        TreeNode p5 = TreeNode.createInstance(new String[] {"1","2","#"});
+        TreeNode q5 = TreeNode.createInstance(new String[] {"1","#","2"});
         assertEquals(false, instance.isSameTree(p5, q5));
 
-        TreeNode p6 = new TreeNode(1);
-        p6.left = new TreeNode(2);
-        p6.right = new TreeNode(3);
-        TreeNode q6 = new TreeNode(1);
-        q6.left = new TreeNode(2);
-        q6.right = new TreeNode(3);
+        TreeNode p6 = TreeNode.createInstance(new String[] {"1","2","3"});
+        TreeNode q6 = TreeNode.createInstance(new String[] {"1","2","3"});
         assertEquals(true, instance.isSameTree(p6, q6));
     }
 }

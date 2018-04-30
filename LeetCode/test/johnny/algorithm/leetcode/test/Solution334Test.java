@@ -41,12 +41,9 @@ public class Solution334Test {
     @Test
     public void testIncreasingTriplet() {
         System.out.println("increasingTriplet");
-        int[] nums = null;
         Solution334 instance = new Solution334();
-        boolean expResult = false;
-        boolean result = instance.increasingTriplet(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.increasingTriplet(null));
         assertEquals(true, instance.increasingTriplet(new int[]{1,2,3}));
         assertEquals(true, instance.increasingTriplet(new int[]{1,2,3,4,5}));
         assertEquals(false, instance.increasingTriplet(new int[]{5,4,3,2,1}));

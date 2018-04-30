@@ -44,7 +44,6 @@ public class Solution217Test {
         Solution217 instance = new Solution217();
 
         assertEquals(false, instance.containsDuplicate(null));
-        
         assertEquals(false, instance.containsDuplicate(new int[]{1}));
         assertEquals(false, instance.containsDuplicate(new int[]{1,2}));
         assertEquals(true, instance.containsDuplicate(new int[]{1,1}));

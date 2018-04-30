@@ -35,5 +35,4 @@ public class Solution458Test {
 
         assertEquals(10, instance.poorPigs(1000, 15, 20));
     }
-
 }

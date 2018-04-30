@@ -66,5 +66,4 @@ public class Solution425Test {
         });
         assertEquals(expect2, instance.wordSquares(words2));
     }
-
 }

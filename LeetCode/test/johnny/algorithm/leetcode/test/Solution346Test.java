@@ -41,11 +41,9 @@ public class Solution346Test {
     @Test
     public void testNext() {
         System.out.println("next");
-        int val = 0;
         Solution346 instance = new Solution346(3);
-        double expResult = 0.0;
-        double result = instance.next(val);
-        assertEquals(expResult, result, 0.0);
+
+        assertEquals(0.0, instance.next(0), 0.0);
         assertEquals(1.5, instance.next(3), 0.001);
         assertEquals(1, instance.next(0), 0.001);
         assertEquals(2, instance.next(3), 0.001);

@@ -41,13 +41,9 @@ public class Solution276Test {
     @Test
     public void testNumWays() {
         System.out.println("numWays");
-        int n = 0;
-        int k = 0;
         Solution276 instance = new Solution276();
-        int expResult = 0;
-        int result = instance.numWays(n, k);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.numWays(0, 0));
         assertEquals(2, instance.numWays(1, 2));
         assertEquals(9, instance.numWays(2, 3));
         assertEquals(24, instance.numWays(3, 3));

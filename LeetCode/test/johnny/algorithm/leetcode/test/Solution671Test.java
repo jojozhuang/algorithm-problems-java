@@ -40,5 +40,4 @@ public class Solution671Test {
         TreeNode root2 = TreeNode.createInstance(new String[] {"2","2","2"});
         assertEquals(-1, instance.findSecondMinimumValue(root2));
     }
-
 }

@@ -42,5 +42,4 @@ public class Solution418Test {
         String[] sentence3 = new String[] {"I", "had", "apple", "pie"};
         assertEquals(1, instance.wordsTyping(sentence3,4,5));
     }
-
 }

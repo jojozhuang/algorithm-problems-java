@@ -36,5 +36,4 @@ public class Solution457Test {
         assertEquals(true, instance.circularArrayLoop(new int[] {2, -1, 1, 2, 2}));
         assertEquals(false, instance.circularArrayLoop(new int[] {-1,2}));
     }
-
 }

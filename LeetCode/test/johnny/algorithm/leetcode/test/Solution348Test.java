@@ -42,6 +42,7 @@ public class Solution348Test {
     public void testMove() {
         System.out.println("move");
         Solution348 instance = new Solution348(3);
+        
         assertEquals(0, instance.move(0, 0, 1));
         assertEquals(0, instance.move(0, 2, 2));
         assertEquals(0, instance.move(2, 2, 1));

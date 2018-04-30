@@ -41,12 +41,9 @@ public class Solution164Test {
     @Test
     public void testMaximumGap() {
         System.out.println("maximumGap");
-        int[] nums = null;
         Solution164 instance = new Solution164();
-        int expResult = 0;
-        int result = instance.maximumGap(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.maximumGap(null));
         assertEquals(1, instance.maximumGap(new int[]{3,1,4,2}));
         assertEquals(6, instance.maximumGap(new int[]{5,9,8,3,15}));
         assertEquals(3, instance.maximumGap(new int[]{1,3,4,7}));

@@ -41,13 +41,9 @@ public class Solution087Test {
     @Test
     public void testIsScramble() {
         System.out.println("isScramble");
-        String s1 = "";
-        String s2 = "";
         Solution087 instance = new Solution087();
-        boolean expResult = true;
-        boolean result = instance.isScramble(s1, s2);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isScramble("", ""));
         assertEquals(true, instance.isScramble("great", "rgeat"));
         assertEquals(true, instance.isScramble("great", "rgtae"));
         assertEquals(false, instance.isScramble("great", "rgaat"));

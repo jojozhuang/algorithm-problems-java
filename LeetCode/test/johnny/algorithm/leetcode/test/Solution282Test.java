@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution282;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,35 +44,24 @@ public class Solution282Test {
     @Test
     public void testAddOperators() {
         System.out.println("addOperators");
-        String num = "";
-        int target = 0;
         Solution282 instance = new Solution282();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.addOperators(num, target);
-        assertEquals(expResult, result);
+
+        List<String> expect1 = new ArrayList<String>();
+        assertEquals(expect1, instance.addOperators("", 0));
         
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("1+2+3");
-        expResult2.add("1*2*3");
-        assertEquals(expResult2, instance.addOperators("123", 6));
+        List<String> expect2 = ListUtil.buildList(new String[] {"1+2+3","1*2*3"});
+        assertEquals(expect2, instance.addOperators("123", 6));
         
-        List<String> expResult3 = new ArrayList<String>();
-        expResult3.add("2+3*2");
-        expResult3.add("2*3+2");        
-        assertEquals(expResult3, instance.addOperators("232", 8));
+        List<String> expect3 = ListUtil.buildList(new String[] {"2+3*2","2*3+2"});
+        assertEquals(expect3, instance.addOperators("232", 8));
         
-        List<String> expResult4 = new ArrayList<String>();
-        expResult4.add("1*0+5");
-        expResult4.add("10-5");
-        assertEquals(expResult4, instance.addOperators("105", 5));
+        List<String> expect4 = ListUtil.buildList(new String[] {"1*0+5","10-5"});
+        assertEquals(expect4, instance.addOperators("105", 5));
         
-        List<String> expResult5 = new ArrayList<String>();
-        expResult5.add("0+0");
-        expResult5.add("0-0");
-        expResult5.add("0*0");
-        assertEquals(expResult5, instance.addOperators("00", 0));
+        List<String> expect5 = ListUtil.buildList(new String[] {"0+0","0-0","0*0"});
+        assertEquals(expect5, instance.addOperators("00", 0));
         
-        List<String> expResult6 = new ArrayList<String>();
-        assertEquals(expResult6, instance.addOperators("3456237490", 9191));
+        List<String> expect6 = new ArrayList<String>();
+        assertEquals(expect6, instance.addOperators("3456237490", 9191));
     }
 }

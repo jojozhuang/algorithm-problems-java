@@ -40,7 +40,7 @@ public class Solution094 {
         res.add(root.val);
         res.addAll(right);
         
-        return res;        
+        return res;
     }
     
     // stack
@@ -64,5 +64,5 @@ public class Solution094 {
             curr = curr.right;
         }
         return res;
-    }    
+    }
 }

@@ -36,5 +36,4 @@ public class Solution649Test {
         assertEquals("Radiant", instance.predictPartyVictory("RD"));
         assertEquals("Dire", instance.predictPartyVictory("RDD"));
     }
-
 }

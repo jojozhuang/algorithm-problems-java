@@ -41,5 +41,4 @@ public class Solution582Test {
         List<Integer> expect1 = ListUtil.buildList(new Integer[] {5,10});
         assertEquals(expect1, instance.killProcess(pid1, ppid1, 5));
     }
-
 }

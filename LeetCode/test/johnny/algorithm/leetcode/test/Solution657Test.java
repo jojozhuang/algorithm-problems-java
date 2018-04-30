@@ -41,11 +41,9 @@ public class Solution657Test {
     @Test
     public void testJudgeCircle() {
         System.out.println("judgeCircle");
-        String moves = "";
         Solution657 instance = new Solution657();
-        boolean expResult = false;
-        boolean result = instance.judgeCircle(moves);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.judgeCircle(""));
         assertEquals(true, instance.judgeCircle("UD"));
         assertEquals(false, instance.judgeCircle("LL"));
         assertEquals(true, instance.judgeCircle("UDLR"));

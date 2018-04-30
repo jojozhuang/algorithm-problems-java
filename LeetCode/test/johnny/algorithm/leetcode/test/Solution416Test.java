@@ -36,5 +36,4 @@ public class Solution416Test {
         assertEquals(true, instance.canPartition(new int[] {1, 5, 11, 5}));
         assertEquals(false, instance.canPartition(new int[] {1, 2, 3, 5}));
     }
-
 }

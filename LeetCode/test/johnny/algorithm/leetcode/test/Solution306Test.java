@@ -41,12 +41,9 @@ public class Solution306Test {
     @Test
     public void testIsAdditiveNumber() {
         System.out.println("isAdditiveNumber");
-        String num = "";
         Solution306 instance = new Solution306();
-        boolean expResult = false;
-        boolean result = instance.isAdditiveNumber(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isAdditiveNumber(""));
         assertEquals(true, instance.isAdditiveNumber("112358"));
         assertEquals(true, instance.isAdditiveNumber("199100199"));
         assertEquals(false, instance.isAdditiveNumber("1233456"));

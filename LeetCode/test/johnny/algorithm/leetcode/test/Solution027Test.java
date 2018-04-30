@@ -44,13 +44,11 @@ public class Solution027Test {
         Solution027 instance = new Solution027();
 
         assertEquals(0, instance.removeElement(null, 0));
-        
         assertEquals(1, instance.removeElement(new int[]{1}, 0));
         assertEquals(0, instance.removeElement(new int[]{1}, 1));
         assertEquals(2, instance.removeElement(new int[]{1,2,3}, 1));
         assertEquals(0, instance.removeElement(new int[]{1,1,1}, 1));
         assertEquals(2, instance.removeElement(new int[]{1,3,1,2}, 1));
-        
         assertEquals(1, instance.removeElement(new int[]{4,5}, 4));
     }
 }

@@ -41,11 +41,11 @@ public class Solution031Test {
     @Test
     public void testNextPermutation() {
         System.out.println("nextPermutation");
-        int[] nums = null;
         Solution031 instance = new Solution031();
-        int[] expResult = null;
+        
+        int[] nums = null;
         instance.nextPermutation(nums);
-        assertArrayEquals(expResult, nums);
+        assertArrayEquals(null, nums);
         
         int[] nums2 = new int[]{1};
         instance.nextPermutation(nums2);

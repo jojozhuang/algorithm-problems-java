@@ -55,7 +55,7 @@ public class Solution233 {
         
         HashMap<String, Integer> map = new HashMap<String, Integer>();
         int count = 0;
-        for (int i = 1; i <= n; i++) {            
+        for (int i = 1; i <= n; i++) {
             String str = String.valueOf(i);
             if (!str.contains("1")) {
                 continue;

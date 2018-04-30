@@ -52,5 +52,4 @@ public class Solution055Test {
         assertEquals(true, instance.canJump(new int[]{2,3,1,1,4}));
         assertEquals(false, instance.canJump(new int[]{3,2,1,0,4}));
     }
-    
 }

@@ -45,7 +45,5 @@ public class Solution638Test {
         List<List<Integer>> special2 = ListUtil.buildList2(new Integer[][] {{1,1,0,4},{2,2,1,9}});
         List<Integer> needs2 = ListUtil.buildList(new Integer[] {1,2,1});
         assertEquals(11, instance.shoppingOffers(price2, special2, needs2));
-
     }
-
 }

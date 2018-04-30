@@ -39,5 +39,4 @@ public class Solution648Test {
         List<String> dict1 = ListUtil.buildList(new String[] {"cat", "bat", "rat"});
         assertEquals("the cat was rat by the bat", instance.replaceWords(dict1, "the cattle was rattled by the battery"));
     }
-
 }

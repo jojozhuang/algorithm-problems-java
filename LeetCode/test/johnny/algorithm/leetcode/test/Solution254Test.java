@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution254;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -44,44 +45,25 @@ public class Solution254Test {
     @Test
     public void testGetFactors() {
         System.out.println("getFactors");
-        int n = 0;
         Solution254 instance = new Solution254();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.getFactors(n);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1, instance.getFactors(0));
         
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {});
         List<List<Integer>> result2 = instance.getFactors(1);
-        assertTrue(expResult2.containsAll(result2)&&result2.containsAll(expResult2));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
         
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {});
         List<List<Integer>> result3 = instance.getFactors(37);
-        assertTrue(expResult3.containsAll(result3)&&result3.containsAll(expResult3));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect3, result3));
         
-        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
-        List<Integer> list41 = Arrays.asList(new Integer[]{2,2,3});
-        List<Integer> list42 = Arrays.asList(new Integer[]{2,6});
-        List<Integer> list43 = Arrays.asList(new Integer[]{3,4});
-        expResult4.add(list41);
-        expResult4.add(list42);
-        expResult4.add(list43);        
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][] {{2,2,3},{2,6},{3,4}});
         List<List<Integer>> result4 = instance.getFactors(12);
-        assertTrue(expResult4.containsAll(result4)&&result4.containsAll(expResult4));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect4, result4));
         
-        List<List<Integer>> expResult5 = new ArrayList<List<Integer>>();
-        List<Integer> list51 = Arrays.asList(new Integer[]{2,16});
-        List<Integer> list52 = Arrays.asList(new Integer[]{2,2,8});
-        List<Integer> list53 = Arrays.asList(new Integer[]{2,2,2,4});
-        List<Integer> list54 = Arrays.asList(new Integer[]{2,2,2,2,2});
-        List<Integer> list55 = Arrays.asList(new Integer[]{2,4,4});
-        List<Integer> list56 = Arrays.asList(new Integer[]{4,8});
-        expResult5.add(list51);
-        expResult5.add(list52);
-        expResult5.add(list53);
-        expResult5.add(list54);
-        expResult5.add(list55);
-        expResult5.add(list56);
+        List<List<Integer>> expect5 = ListUtil.buildList2(new Integer[][] {{2,16},{2,2,8},{2,2,2,4},{2,2,2,2,2},{2,4,4},{4,8}});
         List<List<Integer>> result5 = instance.getFactors(32);
-        assertTrue(expResult5.containsAll(result5)&&result5.containsAll(expResult5));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect5, result5));
     }
 }

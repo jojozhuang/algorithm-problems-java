@@ -42,6 +42,7 @@ public class Solution155Test {
     public void testMinStack() {
         System.out.println("minStack");
         Solution155 instance = new Solution155();
+        
         instance.push(4);
         assertEquals(4, instance.getMin());
         instance.push(2);

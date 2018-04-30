@@ -41,13 +41,9 @@ public class Solution245Test {
     @Test
     public void testShortestDistance() {
         System.out.println("shortestDistance");
-        String[] words = new String[]{};
-        String word1 = "";
-        String word2 = "";
         Solution245 instance = new Solution245();
-        int expResult = Integer.MAX_VALUE;
-        int result = instance.shortestWordDistance(words, word1, word2);
-        assertEquals(expResult, result);
+
+        assertEquals(Integer.MAX_VALUE, instance.shortestWordDistance(new String[]{}, "", ""));
         
         String[] words2 = new String[]{"practice", "makes", "perfect", "coding", "makes"};
         assertEquals(3, instance.shortestWordDistance(words2, "coding", "practice"));

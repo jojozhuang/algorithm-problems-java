@@ -11,6 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution140;
+import johnny.algorithm.leetcode.common.ListUtil;
+import johnny.algorithm.leetcode.common.SetUtil;
 
 import static org.junit.Assert.*;
 
@@ -45,23 +47,14 @@ public class Solution140Test {
     @Test
     public void testWordBreak() {
         System.out.println("wordBreak");
-        String s = "";
-        Set<String> dict = null;
         Solution140 instance = new Solution140();
-        List<String> expResult = new LinkedList<String>();
-        List<String> result = instance.wordBreak(s, dict);
-        assertEquals(expResult, result);
+
+        List<String> expect1 = new LinkedList<String>();
+        assertEquals(expect1, instance.wordBreak("", null));
         
-        List<String> expResult2 = new LinkedList<>();
-        expResult2.add("cats and dog");
-        expResult2.add("cat sand dog");
-        Set<String> dict2 = new HashSet<String>();
-        dict2.add("cat");
-        dict2.add("cats");
-        dict2.add("and");
-        dict2.add("sand");
-        dict2.add("dog");
+        List<String> expect2 = ListUtil.buildList(new String[] {"cats and dog","cat sand dog"});
+        Set<String> dict2 = SetUtil.buildList(new String[] {"cat","cats","and","sand","dog"});
         List<String> result2 = instance.wordBreak("catsanddog", dict2);
-        assertTrue(expResult2.containsAll(result2) && result2.containsAll(expResult2));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
     }
 }

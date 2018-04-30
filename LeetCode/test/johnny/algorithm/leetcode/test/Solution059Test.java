@@ -41,13 +41,10 @@ public class Solution059Test {
     @Test
     public void testGenerateMatrix() {
         System.out.println("generateMatrix");
-        int n = 0;
         Solution059 instance = new Solution059();
-        int[][] expResult = new int[][]{};
-        int[][] result = instance.generateMatrix(n);
-        assertArrayEquals(expResult, result);
-        
-        assertArrayEquals(expResult, instance.generateMatrix(-1));
+
+        assertArrayEquals(new int[][]{}, instance.generateMatrix(0));
+        assertArrayEquals(new int[][]{}, instance.generateMatrix(-1));
         assertArrayEquals(new int[][]{{1}}, instance.generateMatrix(1));
         assertArrayEquals(new int[][]{{1,2},{4,3}}, instance.generateMatrix(2));
         assertArrayEquals(new int[][]{{1,2,3},{8,9,4},{7,6,5}}, instance.generateMatrix(3));

@@ -41,16 +41,12 @@ public class Solution052Test {
     @Test
     public void testTotalNQueens() {
         System.out.println("totalNQueens");
-        int n = 0;
         Solution052 instance = new Solution052();
-        int expResult = 0;
-        int result = instance.totalNQueens(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.totalNQueens(0));
         assertEquals(1, instance.totalNQueens(1));
         assertEquals(0, instance.totalNQueens(2));
         assertEquals(0, instance.totalNQueens(3));
         assertEquals(2, instance.totalNQueens(4));
     }
-    
 }

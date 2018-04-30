@@ -41,12 +41,9 @@ public class Solution041Test {
     @Test
     public void testFirstMissingPositive() {
         System.out.println("firstMissingPositive");
-        int[] nums = null;
         Solution041 instance = new Solution041();
-        int expResult = 1;
-        int result = instance.firstMissingPositive(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(1, instance.firstMissingPositive(null));
         assertEquals(2, instance.firstMissingPositive(new int[] {1,1}));
         assertEquals(3, instance.firstMissingPositive(new int[] {1,2,0}));
         assertEquals(2, instance.firstMissingPositive(new int[] {3,4,-1,1}));

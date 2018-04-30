@@ -42,11 +42,11 @@ public class Solution243Test {
     public void testShortestDistance() {
         System.out.println("shortestDistance");
         Solution243 instance = new Solution243();
+        
         assertEquals(0, instance.shortestDistance(null, "", ""));
         
         String[] words2 = new String[]{"practice","makes","perfect","coding","makes"};
         assertEquals(3, instance.shortestDistance(words2, "coding", "practice"));
         assertEquals(1, instance.shortestDistance(words2, "makes", "coding"));
     }
-    
 }

@@ -62,5 +62,4 @@ public class Solution127Test {
         List<String> wordList6 = ListUtil.buildList(new String[]{"hot", "dot", "dog", "lot","log"});
         assertEquals(5, instance.ladderLength("hit", "cog", wordList6));
     }
-    
 }

@@ -45,11 +45,10 @@ public class Solution103Test {
     @Test
     public void testZigzagLevelOrder() {
         System.out.println("zigzagLevelOrder");
-        TreeNode root = null;
         Solution103 instance = new Solution103();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.zigzagLevelOrder(root);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1, instance.zigzagLevelOrder(null));
         
         TreeNode root2 = new TreeNode(1);
         List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][]{{1}});
@@ -75,5 +74,4 @@ public class Solution103Test {
         List<List<Integer>> expect7 = ListUtil.buildList2(new Integer[][]{{1},{3,2},{4,5}});
         assertEquals(expect7, instance.zigzagLevelOrder(root7));
     }
-    
 }

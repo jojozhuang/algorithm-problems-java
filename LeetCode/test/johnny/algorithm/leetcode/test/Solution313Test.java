@@ -41,13 +41,9 @@ public class Solution313Test {
     @Test
     public void testNthSuperUglyNumber() {
         System.out.println("nthSuperUglyNumber");
-        int n = 0;
-        int[] primes = null;
         Solution313 instance = new Solution313();
-        int expResult = 0;
-        int result = instance.nthSuperUglyNumber(n, primes);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.nthSuperUglyNumber(0, null));
         assertEquals(32, instance.nthSuperUglyNumber(12, new int[]{2, 7, 13, 19}));
     }
 }

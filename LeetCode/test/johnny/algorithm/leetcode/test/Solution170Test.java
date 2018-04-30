@@ -36,17 +36,6 @@ public class Solution170Test {
     }
 
     /**
-     * Test of add method, of class Solution170.
-     */
-    @Test
-    public void testAdd() {
-        System.out.println("add");
-        int number = 0;
-        Solution170 instance = new Solution170();
-        instance.add(number);
-    }
-
-    /**
      * Test of find method, of class Solution170.
      */
     @Test

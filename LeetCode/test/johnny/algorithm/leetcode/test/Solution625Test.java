@@ -36,5 +36,4 @@ public class Solution625Test {
         assertEquals(68, instance.smallestFactorization(48));
         assertEquals(35, instance.smallestFactorization(15));
     }
-
 }

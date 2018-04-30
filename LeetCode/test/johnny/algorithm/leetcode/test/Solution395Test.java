@@ -36,5 +36,4 @@ public class Solution395Test {
         assertEquals(3, instance.longestSubstring("aaabb", 3));
         assertEquals(5, instance.longestSubstring("ababbc", 2));
     }
-
 }

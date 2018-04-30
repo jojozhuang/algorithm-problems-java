@@ -41,12 +41,9 @@ public class Solution343Test {
     @Test
     public void testIntegerBreak() {
         System.out.println("integerBreak");
-        int n = 0;
         Solution343 instance = new Solution343();
-        int expResult = 0;
-        int result = instance.integerBreak(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.integerBreak(0));
         assertEquals(1, instance.integerBreak(2));
         assertEquals(2, instance.integerBreak(3));
         assertEquals(4, instance.integerBreak(4));

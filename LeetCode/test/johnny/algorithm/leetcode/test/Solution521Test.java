@@ -35,5 +35,4 @@ public class Solution521Test {
 
         assertEquals(3, instance.findLUSlength("aba", "cdc"));
     }
-
 }

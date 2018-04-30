@@ -41,12 +41,9 @@ public class Solution358Test {
     @Test
     public void testRearrangeString() {
         System.out.println("rearrangeString");
-        String str = "";
-        int k = 0;
         Solution358 instance = new Solution358();
-        String expResult = "";
-        String result = instance.rearrangeString(str, k);
-        assertEquals(expResult, result);
+
+        assertEquals("", instance.rearrangeString("", 0));
         
         assertTrue(instance.rearrangeString("aabbcc", 3).equals("abcabc")||instance.rearrangeString("aabbcc", 3).equals("acbacb"));
         //assertEquals("abcabc", instance.rearrangeString("aabbcc", 3));

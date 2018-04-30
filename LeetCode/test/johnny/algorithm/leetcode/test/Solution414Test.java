@@ -42,6 +42,7 @@ public class Solution414Test {
     public void testThirdMax() {
         System.out.println("thirdMax");
         Solution414 instance = new Solution414();
+        
         assertEquals(2, instance.thirdMax(new int[]{1,2,2,5,3,5}));
         assertEquals(0, instance.thirdMax(new int[]{}));
         assertEquals(1, instance.thirdMax(new int[]{1}));

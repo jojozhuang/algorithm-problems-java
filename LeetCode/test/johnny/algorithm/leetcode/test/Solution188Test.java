@@ -54,5 +54,4 @@ public class Solution188Test {
         assertEquals(12, instance.maxProfit(2, new int[]{1,3,5,6,7,8,9,13}));
         assertEquals(13, instance.maxProfit(2, new int[]{1,2,4,2,5,7,2,4,9,0}));
     }
-    
 }

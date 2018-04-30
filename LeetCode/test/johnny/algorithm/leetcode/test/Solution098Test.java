@@ -48,47 +48,31 @@ public class Solution098Test {
         boolean result = instance.isValidBST(root);
         assertEquals(expResult, result);
         
-        TreeNode p2 = new TreeNode(1);
-        p2.left = new TreeNode(2);
-        p2.right = new TreeNode(3);
-        assertEquals(false, instance.isValidBST(p2));
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","3"});
+        assertEquals(false, instance.isValidBST(root2));
 
-        TreeNode p3 = new TreeNode(1);
-        p3.right = new TreeNode(2);
-        p3.right.right = new TreeNode(3);
-        assertEquals(true, instance.isValidBST(p3));
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","#","2","#","3"});
+        assertEquals(true, instance.isValidBST(root3));
 
-        TreeNode p4 = new TreeNode(2);
-        p4.left = new TreeNode(1);
-        p4.right = new TreeNode(3);
-        assertEquals(true, instance.isValidBST(p4));
+        TreeNode root4 = TreeNode.createInstance(new String[] {"2","1","3"});
+        assertEquals(true, instance.isValidBST(root4));
 
-        TreeNode p5 = new TreeNode(1);
-        p5.right = new TreeNode(3);
-        p5.right.left = new TreeNode(2);
-        assertEquals(true, instance.isValidBST(p5));
+        TreeNode root5 = TreeNode.createInstance(new String[] {"1","#","3","2","#"});
+        assertEquals(true, instance.isValidBST(root5));
         
-        TreeNode p6 = new TreeNode(10);
-        p6.left = new TreeNode(5);        
-        p6.right = new TreeNode(15);
-        p6.right.left = new TreeNode(6);
-        p6.right.right = new TreeNode(20);
-        assertEquals(false, instance.isValidBST(p6));
+        TreeNode root6 = TreeNode.createInstance(new String[] {"10","5","15","#","#","6","20"});
+        assertEquals(false, instance.isValidBST(root6));
         
-        TreeNode p7 = new TreeNode(1);
-        p7.left = new TreeNode(1);       
-        assertEquals(false, instance.isValidBST(p7));
+        TreeNode root7 = TreeNode.createInstance(new String[] {"1","1","#"});
+        assertEquals(false, instance.isValidBST(root7));
         
-        TreeNode p8 = new TreeNode(Integer.MIN_VALUE);
-        p8.right = new TreeNode(Integer.MAX_VALUE);
-        assertEquals(true, instance.isValidBST(p8));
+        TreeNode root8 = TreeNode.createInstance(new String[] {Integer.MIN_VALUE + "", "#", Integer.MAX_VALUE + ""});
+        assertEquals(true, instance.isValidBST(root8));
         
-        TreeNode p9 = new TreeNode(Integer.MAX_VALUE);
-        p9.left = new TreeNode(Integer.MAX_VALUE);
-        assertEquals(false, instance.isValidBST(p9));
+        TreeNode root9 = TreeNode.createInstance(new String[] {Integer.MAX_VALUE + "", Integer.MAX_VALUE + "", "#"}); 
+        assertEquals(false, instance.isValidBST(root9));
         
-        TreeNode p10 = new TreeNode(Integer.MIN_VALUE);
-        p10.right = new TreeNode(Integer.MIN_VALUE);
-        assertEquals(false, instance.isValidBST(p10));
+        TreeNode root10 = TreeNode.createInstance(new String[] {Integer.MIN_VALUE + "", "#", Integer.MIN_VALUE + ""}); 
+        assertEquals(false, instance.isValidBST(root10));
     }
 }

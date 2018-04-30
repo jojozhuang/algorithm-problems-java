@@ -42,6 +42,7 @@ public class Solution383Test {
     public void testCanConstruct() {
         System.out.println("canConstruct");
         Solution383 instance = new Solution383();
+        
         assertEquals(true, instance.canConstruct("", ""));
         assertEquals(false, instance.canConstruct("a", ""));
         assertEquals(false, instance.canConstruct("a", "b"));

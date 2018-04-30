@@ -35,5 +35,4 @@ public class Solution502Test {
 
         assertEquals(4, instance.findMaximizedCapital(2, 0, new int[] {1,2,3}, new int[] {0,1,1}));
     }
-
 }

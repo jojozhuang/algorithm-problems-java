@@ -41,12 +41,9 @@ public class Solution646Test {
     @Test
     public void testFindLongestChain() {
         System.out.println("findLongestChain");
-        int[][] pairs = null;
         Solution646 instance = new Solution646();
-        int expResult = 0;
-        int result = instance.findLongestChain(pairs);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.findLongestChain(null));
         assertEquals(2, instance.findLongestChain(new int[][]{{1,2},{2,3},{3,4}}));
         assertEquals(3, instance.findLongestChain(new int[][]{{1,2},{2,3},{3,4},{7,8}}));
         assertEquals(2, instance.findLongestChain(new int[][]{{1,2},{2,3},{3,4},{4,5}}));

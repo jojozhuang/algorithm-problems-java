@@ -40,39 +40,19 @@ public class Solution285Test {
     @Test
     public void testInorderSuccessor() {
         System.out.println("inorderSuccessor");
-        TreeNode root = null;
-        TreeNode p = null;
         Solution285 instance = new Solution285();
-        TreeNode expResult = null;
-        TreeNode result = instance.inorderSuccessor(root, p);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.inorderSuccessor(null, null));
         
-        TreeNode root2 = new TreeNode(20);
-        root2.left = new TreeNode(8);
-        root2.right = new TreeNode(22);
-        root2.left.left = new TreeNode(4);
-        root2.left.right = new TreeNode(12);
-        root2.left.right.left = new TreeNode(10);
-        root2.left.right.right = new TreeNode(14);
+        TreeNode root2 = TreeNode.createInstance(new String[] {"20","8","22","4","12","#","#","#","#","10","14"});
         TreeNode result2 = instance.inorderSuccessor(root2, root2.left);
         assertEquals(10, result2.val);
-        TreeNode root3 = new TreeNode(20);
-        root3.left = new TreeNode(8);
-        root3.right = new TreeNode(22);
-        root3.left.left = new TreeNode(4);
-        root3.left.right = new TreeNode(12);
-        root3.left.right.left = new TreeNode(10);
-        root3.left.right.right = new TreeNode(14);
+        
+        TreeNode root3 = TreeNode.createInstance(new String[] {"20","8","22","4","12","#","#","#","#","10","14"});
         TreeNode result3 = instance.inorderSuccessor(root3, root3.left.right.right);
         assertEquals(20, result3.val);
         
-        TreeNode root4 = new TreeNode(20);
-        root4.left = new TreeNode(8);
-        root4.right = new TreeNode(22);
-        root4.left.left = new TreeNode(4);
-        root4.left.right = new TreeNode(12);
-        root4.left.right.left = new TreeNode(10);
-        root4.left.right.right = new TreeNode(14);
+        TreeNode root4 = TreeNode.createInstance(new String[] {"20","8","22","4","12","#","#","#","#","10","14"});
         TreeNode result4 = instance.inorderSuccessor(root4, root4.right);
         assertEquals(null, result4);
     }

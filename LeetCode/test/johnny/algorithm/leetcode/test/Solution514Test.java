@@ -35,5 +35,4 @@ public class Solution514Test {
 
         assertEquals(4, instance.findRotateSteps("godding","gd"));
     }
-
 }

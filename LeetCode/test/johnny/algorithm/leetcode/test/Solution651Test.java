@@ -36,5 +36,4 @@ public class Solution651Test {
         assertEquals(3, instance.maxA(3));
         assertEquals(9, instance.maxA(7));
     }
-
 }

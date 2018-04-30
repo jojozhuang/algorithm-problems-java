@@ -35,5 +35,4 @@ public class Solution590Test {
 
         assertEquals(0, instance.dummy());
     }
-
 }

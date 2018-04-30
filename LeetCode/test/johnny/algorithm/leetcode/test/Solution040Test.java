@@ -1,6 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -44,38 +43,18 @@ public class Solution040Test {
     @Test
     public void testCombinationSum2() {
         System.out.println("combinationSum2");
-        int[] candidates = null;
-        int target = 0;
         Solution040 instance = new Solution040();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.combinationSum2(candidates, target);
-        assertEquals(expResult, result);
         
-        List<Integer> result21 = ListUtil.buildList(new Integer[]{7});
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
-        expResult2.add(result21);        
-        List<List<Integer>> result2 = instance.combinationSum2(new int[]{2,3,6,7}, 7);
-        assertTrue(expResult2.containsAll(result2) && result2.containsAll(expResult2));
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1,  instance.combinationSum2(null, 0));
         
-        List<Integer> result31 = ListUtil.buildList(new Integer[]{3,8});
-        List<Integer> result32 = ListUtil.buildList(new Integer[]{4,7});
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
-        expResult3.add(result31);
-        expResult3.add(result32);
-        List<List<Integer>> result3 = instance.combinationSum2(new int[]{8,7,4,3}, 11);
-        assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{7}});
+        assertEquals(expect2, instance.combinationSum2(new int[]{2,3,6,7}, 7));
         
-        List<Integer> result41 = ListUtil.buildList(new Integer[]{1,7});
-        List<Integer> result42 = ListUtil.buildList(new Integer[]{1,2,5});
-        List<Integer> result43 = ListUtil.buildList(new Integer[]{2,6});
-        List<Integer> result44 = ListUtil.buildList(new Integer[]{1,1,6});
-        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
-        expResult4.add(result41);
-        expResult4.add(result42);
-        expResult4.add(result43);
-        expResult4.add(result44);
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{4,7},{3,8}});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect3, instance.combinationSum2(new int[]{8,7,4,3}, 11)));
         
-        List<List<Integer>> result4 = instance.combinationSum2(new int[]{10,1,2,7,6,1,5}, 8);
-        assertTrue(expResult4.containsAll(result4) && result4.containsAll(result4));
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][] {{1,7},{1,2,5},{2,6},{1,1,6}});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect4, instance.combinationSum2(new int[]{10,1,2,7,6,1,5}, 8)));
     }
 }

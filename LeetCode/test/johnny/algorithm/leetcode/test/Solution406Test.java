@@ -37,5 +37,4 @@ public class Solution406Test {
         int[][] expect1 = new int[][] {{5,0}, {7,0}, {5,2}, {6,1}, {4,4}, {7,1}};
         assertArrayEquals(expect1, instance.reconstructQueue(people1));
     }
-
 }

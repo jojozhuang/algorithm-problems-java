@@ -41,12 +41,9 @@ public class Solution091Test {
     @Test
     public void testNumDecodings() {
         System.out.println("numDecodings");
-        String s = "";
         Solution091 instance = new Solution091();
-        int expResult = 0;
-        int result = instance.numDecodings(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.numDecodings(""));
         assertEquals(1, instance.numDecodings("1"));
         assertEquals(2, instance.numDecodings("12"));
         assertEquals(3, instance.numDecodings("123"));

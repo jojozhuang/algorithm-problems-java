@@ -42,6 +42,7 @@ public class Solution594Test {
     public void testFindLHS() {
         System.out.println("findLHS");
         Solution594 instance = new Solution594();
+        
         assertEquals(0, instance.findLHS(new int[]{}));
         assertEquals(0, instance.findLHS(new int[]{1}));
         assertEquals(2, instance.findLHS(new int[]{1,2}));

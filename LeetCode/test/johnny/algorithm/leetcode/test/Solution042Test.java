@@ -41,13 +41,9 @@ public class Solution042Test {
     @Test
     public void testTrap() {
         System.out.println("trap");
-        int[] height = null;
         Solution042 instance = new Solution042();
-        int expResult = 0;
-        int result = instance.trap(height);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.trap(null));
         assertEquals(6, instance.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
     }
-    
 }

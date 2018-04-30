@@ -41,12 +41,9 @@ public class Solution202Test {
     @Test
     public void testIsHappy() {
         System.out.println("isHappy");
-        int n = 0;
         Solution202 instance = new Solution202();
-        boolean expResult = false;
-        boolean result = instance.isHappy(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isHappy(0));
         assertEquals(true, instance.isHappy(7));
         assertEquals(true, instance.isHappy(10));
         assertEquals(true, instance.isHappy(19));

@@ -44,11 +44,10 @@ public class Solution448Test {
     @Test
     public void testFindDisappearedNumbers() {
         System.out.println("findDisappearedNumbers");
-        int[] nums = null;
         Solution448 instance = new Solution448();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.findDisappearedNumbers(nums);
-        assertEquals(expResult, result);
+        
+        List<Integer> expect1 = new ArrayList<Integer>(); 
+        assertEquals(expect1, instance.findDisappearedNumbers(null));
         
         List<Integer> expect2 = ListUtil.buildList(new Integer[]{5,6});
         assertEquals(expect2, instance.findDisappearedNumbers(new int[]{4,3,2,7,8,2,3,1}));
@@ -59,5 +58,4 @@ public class Solution448Test {
         List<Integer> expect4 = ListUtil.buildList(new Integer[]{1});
         assertEquals(expect4, instance.findDisappearedNumbers(new int[]{2,2}));
     }
-    
 }

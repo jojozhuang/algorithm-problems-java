@@ -41,13 +41,9 @@ public class Solution215Test {
     @Test
     public void testFindKthLargest() {
         System.out.println("findKthLargest");
-        int[] nums = null;
-        int k = 0;
         Solution215 instance = new Solution215();
-        int expResult = 0;
-        int result = instance.findKthLargest(nums, k);
-        assertEquals(expResult, result);
         
+        assertEquals(0, instance.findKthLargest(null, 0));
         assertEquals(6, instance.findKthLargest(new int[]{3,2,1,5,6,4}, 1));
         assertEquals(5, instance.findKthLargest(new int[]{3,2,1,5,6,4}, 2));
         assertEquals(4, instance.findKthLargest(new int[]{3,2,1,5,6,4}, 3));

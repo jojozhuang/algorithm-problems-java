@@ -41,11 +41,9 @@ public class Solution398Test {
     @Test
     public void testPick() {
         System.out.println("pick");
-        int target = 0;
         Solution398 instance = new Solution398(null);
-        int expResult = 0;
-        int result = instance.pick(target);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.pick(0));
         
         Solution398 instance2 = new Solution398(new int[]{1,2,3,3,3});
         assertEquals(0, instance2.pick(1));

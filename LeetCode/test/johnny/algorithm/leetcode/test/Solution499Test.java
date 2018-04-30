@@ -54,6 +54,5 @@ public class Solution499Test {
         int[] ball2 = new int[] {4,3};
         int[] hole2 = new int[] {3,0};
         assertEquals("impossible", instance.findShortestWay(maze2,ball2,hole2));
-}
-
+    }
 }

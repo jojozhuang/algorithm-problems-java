@@ -36,5 +36,4 @@ public class Solution525Test {
         assertEquals(2, instance.findMaxLength(new int[] {0,1}));
         assertEquals(2, instance.findMaxLength(new int[] {0,1,0}));
     }
-
 }

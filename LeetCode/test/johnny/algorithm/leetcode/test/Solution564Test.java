@@ -35,5 +35,4 @@ public class Solution564Test {
 
         assertEquals("121", instance.nearestPalindromic("123"));
     }
-
 }

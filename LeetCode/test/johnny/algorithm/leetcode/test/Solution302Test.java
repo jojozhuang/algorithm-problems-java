@@ -41,13 +41,9 @@ public class Solution302Test {
     @Test
     public void testMinArea() {
         System.out.println("minArea");
-        char[][] image = null;
-        int x = 0;
-        int y = 0;
         Solution302 instance = new Solution302();
-        int expResult = 0;
-        int result = instance.minArea(image, x, y);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.minArea(null, 0, 0));
         
         char[][] image2 = new char[][] {
             {'0','0','1','0'},

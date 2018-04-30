@@ -51,5 +51,4 @@ public class Solution642Test {
         List<String> expect4 = ListUtil.buildList(new String[] {});
         assertEquals(expect4, instance.input('#'));
     }
-
 }

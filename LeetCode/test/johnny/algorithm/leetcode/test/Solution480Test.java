@@ -35,5 +35,4 @@ public class Solution480Test {
 
         assertArrayEquals(new double[] {1,-1,-1,3,5,6}, instance.medianSlidingWindow(new int[] {1,3,-1,-3,5,3,6,7}, 3), 0.0);
     }
-
 }

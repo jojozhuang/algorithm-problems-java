@@ -36,5 +36,4 @@ public class Solution413Test {
         assertEquals(6, instance.numberOfArithmeticSlices(new int[] {1, 3, 5, 7, 9}));
         assertEquals(3, instance.numberOfArithmeticSlices(new int[] {1, 2, 3, 4}));
     }
-
 }

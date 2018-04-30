@@ -37,5 +37,4 @@ public class Solution501Test {
         TreeNode root1 = TreeNode.createInstance(new String[] {"1","#","2","2","#"});
         assertArrayEquals(new int[] {2}, instance.findMode(root1));
     }
-
 }

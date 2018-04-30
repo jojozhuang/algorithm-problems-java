@@ -51,8 +51,9 @@ public class Solution211Test {
      */
     @Test
     public void testSearch() {
-        System.out.println("search");        
+        System.out.println("search");
         Solution211 instance = new Solution211();
+        
         instance.addWord("bad");
         instance.addWord("dad");
         instance.addWord("mad");

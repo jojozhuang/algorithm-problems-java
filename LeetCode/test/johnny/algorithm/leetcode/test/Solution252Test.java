@@ -46,11 +46,10 @@ public class Solution252Test {
  
         assertEquals(true, instance.canAttendMeetings(null));
         
-        Interval[] intervals1 = Interval.createArray(new int[][] {{0,30},{5,10},{15,20}});
+        Interval[] intervals1 = Interval.buildArray(new int[][] {{0,30},{5,10},{15,20}});
         assertEquals(false, instance.canAttendMeetings(intervals1));
 
-        Interval[] intervals2 = Interval.createArray(new int[][] {{5,10},{15,20}});
+        Interval[] intervals2 = Interval.buildArray(new int[][] {{5,10},{15,20}});
         assertEquals(true, instance.canAttendMeetings(intervals2));
     }
-    
 }

@@ -41,12 +41,9 @@ public class Solution316Test {
     @Test
     public void testRemoveDuplicateLetters() {
         System.out.println("removeDuplicateLetters");
-        String s = "";
         Solution316 instance = new Solution316();
-        String expResult = "";
-        String result = instance.removeDuplicateLetters(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.removeDuplicateLetters(""));
         assertEquals("abc", instance.removeDuplicateLetters("bcabc"));
         assertEquals("acdb", instance.removeDuplicateLetters("cbacdcbc"));
     }

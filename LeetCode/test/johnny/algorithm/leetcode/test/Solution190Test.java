@@ -41,12 +41,9 @@ public class Solution190Test {
     @Test
     public void testReverseBits() {
         System.out.println("reverseBits");
-        int n = 0;
         Solution190 instance = new Solution190();
-        int expResult = 0;
-        long result = instance.reverseBits(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.reverseBits(0));
         assertEquals(964176192, instance.reverseBits(43261596));
         assertEquals(-2, instance.reverseBits(2147483647));
         assertEquals(1, instance.reverseBits((int)2147483648l));

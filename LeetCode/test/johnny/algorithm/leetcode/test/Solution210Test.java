@@ -41,14 +41,10 @@ public class Solution210Test {
     @Test
     public void testFindOrder() {
         System.out.println("findOrder");
-        int numCourses = 0;
-        int[][] prerequisites = null;
         Solution210 instance = new Solution210();
-        int[] expResult = new int[0];
-        int[] result = instance.findOrder(numCourses, prerequisites);
-        assertArrayEquals(expResult, result);
         
-        assertArrayEquals(new int[]{0,1}, instance.findOrder(2, new int[][]{}));        
+        assertArrayEquals(new int[0], instance.findOrder(0, null));
+        assertArrayEquals(new int[]{0,1}, instance.findOrder(2, new int[][]{}));
         assertArrayEquals(new int[]{0,1}, instance.findOrder(2, new int[][]{{1,0}}));
         assertArrayEquals(new int[]{}, instance.findOrder(2, new int[][]{{1,0},{0,1}}));
         assertArrayEquals(new int[]{0,1,2,3}, instance.findOrder(4, new int[][]{{1,0},{2,0},{3,1},{3,2}}));

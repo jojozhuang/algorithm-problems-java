@@ -39,5 +39,4 @@ public class Solution539Test {
         List<String> timePoints1 = ListUtil.buildList(new String[] {"23:59","00:00"});
         assertEquals(1, instance.findMinDifference(timePoints1));
     }
-
 }

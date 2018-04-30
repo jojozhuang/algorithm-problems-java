@@ -42,6 +42,7 @@ public class Solution453Test {
     public void testMinMoves() {
         System.out.println("minMoves");
         Solution453 instance = new Solution453();
+        
         assertEquals(0, instance.minMoves(new int[]{}));
         assertEquals(0, instance.minMoves(new int[]{1}));
         assertEquals(0, instance.minMoves(new int[]{1,1}));

@@ -35,5 +35,4 @@ public class Solution375Test {
 
         assertEquals(16, instance.getMoneyAmount(10));
     }
-
 }

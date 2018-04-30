@@ -36,5 +36,4 @@ public class Solution668Test {
         assertEquals(3, instance.findKthNumber(3,3,5));
         assertEquals(6, instance.findKthNumber(2,3,6));
     }
-
 }

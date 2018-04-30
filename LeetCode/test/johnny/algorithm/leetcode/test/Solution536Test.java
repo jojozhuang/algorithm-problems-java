@@ -37,5 +37,4 @@ public class Solution536Test {
         TreeNode expect1 = TreeNode.createInstance(new String[] {"4","2","6","3","1","5","#"});
         assertTrue(TreeNode.isSame(expect1, instance.str2tree("4(2(3)(1))(6(5))")));
     }
-
 }

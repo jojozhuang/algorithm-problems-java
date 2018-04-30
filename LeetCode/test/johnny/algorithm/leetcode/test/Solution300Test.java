@@ -41,12 +41,9 @@ public class Solution300Test {
     @Test
     public void testLengthOfLIS() {
         System.out.println("lengthOfLIS");
-        int[] nums = null;
         Solution300 instance = new Solution300();
-        int expResult = 0;
-        int result = instance.lengthOfLIS(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.lengthOfLIS(null));
         assertEquals(1, instance.lengthOfLIS(new int[]{1}));
         assertEquals(3, instance.lengthOfLIS(new int[]{1,2,3}));
         assertEquals(3, instance.lengthOfLIS(new int[]{1,4,2,3}));

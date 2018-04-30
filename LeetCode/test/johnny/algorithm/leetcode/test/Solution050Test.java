@@ -41,20 +41,16 @@ public class Solution050Test {
     @Test
     public void testPow() {
         System.out.println("pow");
-        double x = 0.0;
-        double delta=0.00001;
-        int n = 0;
         Solution050 instance = new Solution050();
-        double expResult = 0;
-        double result = instance.myPow(x, n);
-        assertEquals(expResult, result, 0.0);
-        
+        double delta = 0.00001;
+
+        assertEquals(0, instance.myPow(0.0, 0), delta);
         assertEquals(1, instance.myPow(1, 0), 0.0);
         assertEquals(0, instance.myPow(0, 2323), 0.0);
         assertEquals(3.0, instance.myPow(3.0, 1), delta);
         assertEquals(4.0, instance.myPow(2.0, 2), delta);
         assertEquals(1024.0, instance.myPow(2.0, 10), delta);
-        assertEquals(128.0, instance.myPow(2.0, 7), delta);        
+        assertEquals(128.0, instance.myPow(2.0, 7), delta);
         assertEquals(-1, instance.myPow(-1, 1), delta);
         assertEquals(9, instance.myPow(-3, 2), delta);
         assertEquals(-27, instance.myPow(-3, 3), delta);
@@ -67,5 +63,4 @@ public class Solution050Test {
         assertEquals(1, instance.myPow(-1, 2147483646), delta);
         assertEquals(0.00003, instance.myPow(34.00515, -3), delta);
     }
-    
 }

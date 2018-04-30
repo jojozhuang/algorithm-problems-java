@@ -41,11 +41,11 @@ public class Solution073Test {
     @Test
     public void testSetZeroes() {
         System.out.println("setZeroes");
-        int[][] matrix = null;
         Solution073 instance = new Solution073();
-        int[][] expResult = null;
+        
+        int[][] matrix = null;
         instance.setZeroes(matrix);
-        assertArrayEquals(expResult, matrix);
+        assertArrayEquals(null, matrix);
         
         int[][] matrix2 = new int[][]{};
         instance.setZeroes(matrix2);

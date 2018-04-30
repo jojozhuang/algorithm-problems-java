@@ -36,5 +36,4 @@ public class Solution486Test {
         assertEquals(false, instance.PredictTheWinner(new int[] {1, 5, 2}));
         assertEquals(true, instance.PredictTheWinner(new int[] {1, 5, 233, 7}));
     }
-
 }

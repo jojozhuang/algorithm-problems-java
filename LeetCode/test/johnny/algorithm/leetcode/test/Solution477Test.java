@@ -35,5 +35,4 @@ public class Solution477Test {
 
         assertEquals(6, instance.totalHammingDistance(new int[] {4, 14, 2}));
     }
-
 }

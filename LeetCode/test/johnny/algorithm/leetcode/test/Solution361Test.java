@@ -39,5 +39,4 @@ public class Solution361Test {
             {'0', 'E', '0', '0'}};
         assertEquals(3, instance.maxKilledEnemies(grid1));
     }
-
 }

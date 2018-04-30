@@ -41,15 +41,9 @@ public class Solution327Test {
     @Test
     public void testCountRangeSum() {
         System.out.println("countRangeSum");
-        int[] nums = null;
-        int lower = 0;
-        int upper = 0;
         Solution327 instance = new Solution327();
-        int expResult = 0;
-        int result = instance.countRangeSum(nums, lower, upper);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.countRangeSum(null, 0, 0));
         assertEquals(3, instance.countRangeSum(new int[]{-2, 5, -1}, -2, 2));
     }
-    
 }

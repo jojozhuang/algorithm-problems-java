@@ -41,14 +41,9 @@ public class Solution365Test {
     @Test
     public void testCanMeasureWater() {
         System.out.println("canMeasureWater");
-        int x = 0;
-        int y = 0;
-        int z = 0;
         Solution365 instance = new Solution365();
-        boolean expResult = true;
-        boolean result = instance.canMeasureWater(x, y, z);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.canMeasureWater(0, 0, 0));
         assertEquals(true, instance.canMeasureWater(3, 5, 4));
         assertEquals(false, instance.canMeasureWater(2, 6, 5));
     }

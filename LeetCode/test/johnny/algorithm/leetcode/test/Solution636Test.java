@@ -42,5 +42,4 @@ public class Solution636Test {
                 "0:end:6"});
         assertArrayEquals(new int[] {3, 4}, instance.exclusiveTime(2, logs1));
     }
-
 }

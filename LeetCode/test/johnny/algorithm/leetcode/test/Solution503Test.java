@@ -35,5 +35,4 @@ public class Solution503Test {
 
         assertArrayEquals(new int[] {2,-1,2}, instance.nextGreaterElements(new int[] {1,2,1}));
     }
-
 }

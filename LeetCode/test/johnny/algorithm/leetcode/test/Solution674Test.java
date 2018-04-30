@@ -36,5 +36,4 @@ public class Solution674Test {
         assertEquals(3, instance.findLengthOfLCIS(new int[] {1,3,5,4,7}));
         assertEquals(1, instance.findLengthOfLCIS(new int[] {2,2,2,2,2}));
     }
-
 }

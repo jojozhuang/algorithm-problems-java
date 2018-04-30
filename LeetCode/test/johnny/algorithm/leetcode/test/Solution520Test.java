@@ -42,6 +42,7 @@ public class Solution520Test {
     public void testDetectCapitalUse() {
         System.out.println("detectCapitalUse");
         Solution520 instance = new Solution520();
+        
         assertEquals(true, instance.detectCapitalUse(""));
         assertEquals(true, instance.detectCapitalUse("a"));
         assertEquals(true, instance.detectCapitalUse("A"));

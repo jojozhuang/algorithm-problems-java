@@ -42,12 +42,9 @@ public class Solution270Test {
     @Test
     public void testClosestValue() {
         System.out.println("closestValue");
-        TreeNode root = null;
-        double target = 0.0;
         Solution270 instance = new Solution270();
-        int expResult = Integer.MAX_VALUE;
-        int result = instance.closestValue(root, target);
-        assertEquals(expResult, result);
+
+        assertEquals(Integer.MAX_VALUE, instance.closestValue(null, 0.0));
         
         TreeNode root2 = TreeNode.createInstance(new String[] {"4"});
         assertEquals(4, instance.closestValue(root2, 3));

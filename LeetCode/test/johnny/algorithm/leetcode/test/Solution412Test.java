@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution412;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -44,36 +45,17 @@ public class Solution412Test {
     public void testFizzBuzz() {
         System.out.println("fizzBuzz");
         Solution412 instance = new Solution412();
-        List<String> expResult = new ArrayList<String>();
-        assertEquals(expResult, instance.fizzBuzz(0));
-        List<String> expResult1 = new ArrayList<String>();
-        expResult1.add("1");
-        assertEquals(expResult1, instance.fizzBuzz(1));
         
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("1");
-        expResult2.add("2");
-        expResult2.add("Fizz");
-        expResult2.add("4");
-        expResult2.add("Buzz");
-        assertEquals(expResult2, instance.fizzBuzz(5));
+        List<String> expect1 = new ArrayList<String>();
+        assertEquals(expect1, instance.fizzBuzz(0));
         
-        List<String> expResult3 = new ArrayList<String>();
-        expResult3.add("1");
-        expResult3.add("2");
-        expResult3.add("Fizz");
-        expResult3.add("4");
-        expResult3.add("Buzz");
-        expResult3.add("Fizz");
-        expResult3.add("7");
-        expResult3.add("8");
-        expResult3.add("Fizz");
-        expResult3.add("Buzz");
-        expResult3.add("11");
-        expResult3.add("Fizz");
-        expResult3.add("13");
-        expResult3.add("14");
-        expResult3.add("FizzBuzz");
-        assertEquals(expResult3, instance.fizzBuzz(15));
+        List<String> expect2 = ListUtil.buildList(new String[] {"1"});
+        assertEquals(expect2, instance.fizzBuzz(1));
+        
+        List<String> expect3 = ListUtil.buildList(new String[] {"1","2","Fizz","4","Buzz"});
+        assertEquals(expect3, instance.fizzBuzz(5));
+        
+        List<String> expect4 = ListUtil.buildList(new String[] {"1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"});
+        assertEquals(expect4, instance.fizzBuzz(15));
     }
 }

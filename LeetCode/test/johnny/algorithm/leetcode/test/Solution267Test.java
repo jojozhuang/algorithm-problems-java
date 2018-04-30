@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution267;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,20 +44,18 @@ public class Solution267Test {
     @Test
     public void testGeneratePalindromes() {
         System.out.println("generatePalindromes");
-        String s = "";
         Solution267 instance = new Solution267();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.generatePalindromes(s);
-        assertTrue(expResult.containsAll(result) && result.containsAll(expResult));
         
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("abba");
-        expResult2.add("baab");
+        List<String> expect1 = ListUtil.buildList(new String[] {});
+        List<String> result1 = instance.generatePalindromes("");
+        assertTrue(ListUtil.equalsIgnoreOrder(expect1, result1));
+        
+        List<String> expect2 = ListUtil.buildList(new String[] {"abba","baab"});
         List<String> result2 = instance.generatePalindromes("aabb");
-        assertTrue(expResult2.containsAll(result2) && result2.containsAll(expResult2));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
         
-        List<String> expResult3 = new ArrayList<String>();
+        List<String> expect3 = ListUtil.buildList(new String[] {});
         List<String> result3 = instance.generatePalindromes("abc");
-        assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect3, result3));
     }
 }

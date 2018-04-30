@@ -34,14 +34,13 @@ public class Solution435Test {
         System.out.println("eraseOverlapIntervals");
         Solution435 instance = new Solution435();
 
-        Interval[] intervals1 = Interval.createArray(new int[][] { {1,2}, {2,3}, {3,4}, {1,3} });
+        Interval[] intervals1 = Interval.buildArray(new int[][] { {1,2}, {2,3}, {3,4}, {1,3} });
         assertEquals(1, instance.eraseOverlapIntervals(intervals1));
 
-        Interval[] intervals2 = Interval.createArray(new int[][] { {1,2}, {1,2}, {1,2} });
+        Interval[] intervals2 = Interval.buildArray(new int[][] { {1,2}, {1,2}, {1,2} });
         assertEquals(2, instance.eraseOverlapIntervals(intervals2));
 
-        Interval[] intervals3 = Interval.createArray(new int[][] { {1,2}, {2,3} });
+        Interval[] intervals3 = Interval.buildArray(new int[][] { {1,2}, {2,3} });
         assertEquals(0, instance.eraseOverlapIntervals(intervals3));
-}
-
+    }
 }

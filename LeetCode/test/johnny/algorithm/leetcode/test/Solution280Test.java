@@ -47,7 +47,6 @@ public class Solution280Test {
         
         int[] nums2 = new int[]{1,2,3,4,5,6};
         instance.wiggleSort(nums2);
-        
         assertArrayEquals(new int[]{1,3,2,5,4,6}, nums2);
     }
 }

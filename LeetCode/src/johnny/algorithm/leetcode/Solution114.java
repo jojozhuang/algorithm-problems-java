@@ -30,7 +30,7 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * 
  * @author Johnny
  */
-public class Solution114 {    
+public class Solution114 {
     public void flatten(TreeNode root) {
         if (root == null) {
             return;
@@ -50,6 +50,6 @@ public class Solution114 {
             root.right = root.left;
             tail.right = right;
             root.left = null;
-        }        
+        }
     }
 }

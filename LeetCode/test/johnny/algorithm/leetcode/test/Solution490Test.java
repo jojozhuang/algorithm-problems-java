@@ -54,6 +54,5 @@ public class Solution490Test {
         int[] start2 = new int[] {0,4};
         int[] destination2 = new int[] {3,2};
         assertEquals(false, instance.hasPath(maze2,start2,destination2));
-}
-
+    }
 }

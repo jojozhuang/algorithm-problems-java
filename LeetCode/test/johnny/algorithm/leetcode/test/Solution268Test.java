@@ -41,12 +41,9 @@ public class Solution268Test {
     @Test
     public void testMissingNumber() {
         System.out.println("missingNumber");
-        int[] nums = null;
         Solution268 instance = new Solution268();
-        int expResult = 0;
-        int result = instance.missingNumber(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.missingNumber(null));
         assertEquals(2, instance.missingNumber(new int[]{0,1,3}));
         assertEquals(3, instance.missingNumber(new int[]{0,1,2,4}));
         assertEquals(5, instance.missingNumber(new int[]{0,1,2,3,4,6,7,8,9,10}));

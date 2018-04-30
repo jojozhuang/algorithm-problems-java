@@ -41,12 +41,9 @@ public class Solution038Test {
     @Test
     public void testCountAndSay() {
         System.out.println("countAndSay");
-        int n = 0;
         Solution038 instance = new Solution038();
-        String expResult = "";
-        String result = instance.countAndSay(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.countAndSay(0));
         assertEquals("1", instance.countAndSay(1));
         assertEquals("11", instance.countAndSay(2));
         assertEquals("21", instance.countAndSay(3));

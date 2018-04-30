@@ -39,5 +39,4 @@ public class Solution370Test {
             {0,  2, -2}};
         assertArrayEquals(new int[] {-2, 0, 3, 5, 3}, instance.getModifiedArray(5, updates1));
     }
-
 }

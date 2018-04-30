@@ -41,14 +41,11 @@ public class Solution088Test {
     @Test
     public void testMerge() {
         System.out.println("merge");
+        
         int[] num1 = {1};
-        int m = 1;
-        int[] num2 = {};
-        int n = 0;
         Solution088 instance = new Solution088();
-        int[] expResult = {1};
-        instance.merge(num1, m, num2, n);
-        assertArrayEquals(expResult, num1);
+        instance.merge(num1, num1.length, new int[] {}, 0);
+        assertArrayEquals(new int[]{1}, num1);
         
         int[] num12 = new int[2];
         num12[0] = 1;

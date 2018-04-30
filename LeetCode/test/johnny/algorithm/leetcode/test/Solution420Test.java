@@ -37,5 +37,4 @@ public class Solution420Test {
         assertEquals(2, instance.strongPasswordChecker("abbb"));
         assertEquals(0, instance.strongPasswordChecker("aFan%128"));
     }
-
 }

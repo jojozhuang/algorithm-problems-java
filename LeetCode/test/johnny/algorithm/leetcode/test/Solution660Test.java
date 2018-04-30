@@ -35,5 +35,4 @@ public class Solution660Test {
 
         assertEquals(10, instance.newInteger(9));
     }
-
 }

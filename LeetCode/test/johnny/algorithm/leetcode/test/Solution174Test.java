@@ -41,11 +41,9 @@ public class Solution174Test {
     @Test
     public void testCalculateMinimumHP() {
         System.out.println("calculateMinimumHP");
-        int[][] dungeon = null;
         Solution174 instance = new Solution174();
-        int expResult = 0;
-        int result = instance.calculateMinimumHP(dungeon);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.calculateMinimumHP(null));
         
         int[][] dungeon2 = new int[][] {
             {-2,-3,3},

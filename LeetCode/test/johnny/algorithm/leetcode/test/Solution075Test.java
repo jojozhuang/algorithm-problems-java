@@ -41,11 +41,11 @@ public class Solution075Test {
     @Test
     public void testSortColors() {
         System.out.println("sortColors");
-        int[] nums = null;
         Solution075 instance = new Solution075();
-        int[] expResult = null;
+
+        int[] nums = null;
         instance.sortColors(nums);
-        assertArrayEquals(expResult, nums);
+        assertArrayEquals(null, nums);
         
         int[] nums2 = new int[]{};
         instance.sortColors(nums2);

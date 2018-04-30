@@ -37,5 +37,4 @@ public class Solution459Test {
         assertEquals(false, instance.repeatedSubstringPattern("aba"));
         assertEquals(true, instance.repeatedSubstringPattern("abcabcabcabc"));
     }
-
 }

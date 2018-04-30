@@ -43,6 +43,7 @@ public class Solution530Test {
     public void testGetMinimumDifference() {
         System.out.println("getMinimumDifference");
         Solution530 instance = new Solution530();
+        
         TreeNode r1 = TreeNode.createInstance(new String[] {"3"});
         assertEquals(Integer.MAX_VALUE, instance.getMinimumDifference(r1));
         

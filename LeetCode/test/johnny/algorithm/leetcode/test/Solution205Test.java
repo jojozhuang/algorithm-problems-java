@@ -41,13 +41,9 @@ public class Solution205Test {
     @Test
     public void testIsIsomorphic() {
         System.out.println("isIsomorphic");
-        String s = "";
-        String t = "";
         Solution205 instance = new Solution205();
-        boolean expResult = true;
-        boolean result = instance.isIsomorphic(s, t);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isIsomorphic("", ""));
         assertEquals(true, instance.isIsomorphic("a", "a"));
         assertEquals(false, instance.isIsomorphic("ab", "aa"));
         assertEquals(true, instance.isIsomorphic("egg", "add"));

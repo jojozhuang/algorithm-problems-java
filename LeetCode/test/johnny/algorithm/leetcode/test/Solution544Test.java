@@ -37,5 +37,4 @@ public class Solution544Test {
         assertEquals("((1,4),(2,3))", instance.findContestMatch(4));
         assertEquals("(((1,8),(4,5)),((2,7),(3,6)))", instance.findContestMatch(8));
     }
-
 }

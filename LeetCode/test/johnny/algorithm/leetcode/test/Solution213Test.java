@@ -41,12 +41,9 @@ public class Solution213Test {
     @Test
     public void testRob() {
         System.out.println("rob");
-        int[] nums = null;
         Solution213 instance = new Solution213();
-        int expResult = 0;
-        int result = instance.rob(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.rob(null));
         assertEquals(1, instance.rob(new int[]{1}));
         assertEquals(2, instance.rob(new int[]{1,2}));
         assertEquals(3, instance.rob(new int[]{1,3,1}));

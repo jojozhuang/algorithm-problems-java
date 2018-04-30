@@ -42,12 +42,11 @@ public class Solution384Test {
     @Test
     public void testShuffle() {
         System.out.println("shuffle");
+        Solution384 instance = new Solution384(new int[]{1,2,3});
         
-        int[] nums1 = new int[]{1,2,3};
-        Solution384 instance = new Solution384(nums1);
         int[] result1 = instance.shuffle();
         Arrays.sort(result1);
-        assertArrayEquals(nums1, result1);
-        assertArrayEquals(nums1, instance.reset());
+        assertArrayEquals(new int[]{1,2,3}, result1);
+        assertArrayEquals(new int[]{1,2,3}, instance.reset());
     }
 }

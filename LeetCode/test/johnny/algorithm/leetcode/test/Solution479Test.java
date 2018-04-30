@@ -35,5 +35,4 @@ public class Solution479Test {
 
         assertEquals(987, instance.largestPalindrome(2));
     }
-
 }

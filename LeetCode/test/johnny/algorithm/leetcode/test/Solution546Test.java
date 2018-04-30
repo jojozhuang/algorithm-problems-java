@@ -35,5 +35,4 @@ public class Solution546Test {
 
         assertEquals(23, instance.removeBoxes(new int[] {1, 3, 2, 2, 2, 3, 4, 3, 1}));
     }
-
 }

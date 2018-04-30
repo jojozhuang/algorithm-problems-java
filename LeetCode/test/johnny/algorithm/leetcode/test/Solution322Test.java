@@ -41,13 +41,9 @@ public class Solution322Test {
     @Test
     public void testCoinChange() {
         System.out.println("coinChange");
-        int[] coins = null;
-        int amount = 0;
         Solution322 instance = new Solution322();
-        int expResult = 0;
-        int result = instance.coinChange(coins, amount);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.coinChange(null, 0));
         assertEquals(0, instance.coinChange(new int[]{1}, 0));
         assertEquals(-1, instance.coinChange(new int[]{2}, 3));
         assertEquals(-1, instance.coinChange(new int[]{2}, 1));

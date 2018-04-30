@@ -1,6 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution047;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,89 +43,24 @@ public class Solution047Test {
     @Test
     public void testPermuteUnique() {
         System.out.println("permuteUnique");
-        int[] nums = null;
         Solution047 instance = new Solution047();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.permuteUnique(nums);
-        assertEquals(expResult, result);
         
-        List<Integer> result11 = new ArrayList<Integer>();
-        result11.add(1);
-        List<List<Integer>> expResult1 = new ArrayList<List<Integer>>();
-        expResult1.add(result11);        
-        assertEquals(expResult1, instance.permuteUnique(new int[]{1}));
-        
-        List<Integer> result21 = new ArrayList<Integer>();
-        result21.add(1);
-        result21.add(3);
-        List<Integer> result22 = new ArrayList<Integer>();
-        result22.add(3);
-        result22.add(1);
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
-        expResult2.add(result21);
-        expResult2.add(result22);
-        assertEquals(expResult2, instance.permuteUnique(new int[]{1,3}));
-        
-        /*List<Integer> result31 = new ArrayList<Integer>();
-        result31.add(3);
-        result31.add(1);
-        List<Integer> result32 = new ArrayList<Integer>();
-        result32.add(1);
-        result32.add(3);
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
-        expResult3.add(result31);
-        expResult3.add(result32);
-        assertEquals(expResult3, instance.permuteUnique(new int[]{3,1}));*/
-        
-        List<Integer> result41 = new ArrayList<Integer>();
-        result41.add(1);
-        result41.add(2);
-        result41.add(3);
-        List<Integer> result42 = new ArrayList<Integer>();
-        result42.add(1);
-        result42.add(3);
-        result42.add(2);
-        List<Integer> result43 = new ArrayList<Integer>();
-        result43.add(2);
-        result43.add(1);
-        result43.add(3);
-        List<Integer> result44 = new ArrayList<Integer>();
-        result44.add(2);
-        result44.add(3);
-        result44.add(1);
-        List<Integer> result45 = new ArrayList<Integer>();
-        result45.add(3);
-        result45.add(1);
-        result45.add(2);
-        List<Integer> result46 = new ArrayList<Integer>();
-        result46.add(3);
-        result46.add(2);
-        result46.add(1);
-        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
-        expResult4.add(result41);
-        expResult4.add(result42);
-        expResult4.add(result43);
-        expResult4.add(result44);
-        expResult4.add(result45);
-        expResult4.add(result46);
-        assertEquals(expResult4, instance.permuteUnique(new int[]{1,2,3}));
-        
-        List<Integer> result51 = new ArrayList<Integer>();
-        result51.add(1);
-        result51.add(1);
-        result51.add(5);
-        List<Integer> result52 = new ArrayList<Integer>();
-        result52.add(1);
-        result52.add(5);
-        result52.add(1);
-        List<Integer> result53 = new ArrayList<Integer>();
-        result53.add(5);
-        result53.add(1);
-        result53.add(1);        
-        List<List<Integer>> expResult5 = new ArrayList<List<Integer>>();
-        expResult5.add(result51);
-        expResult5.add(result52);
-        expResult5.add(result53);        
-        assertEquals(expResult5, instance.permuteUnique(new int[]{1,1,5}));
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1, instance.permuteUnique(null));
+
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{1}});
+        assertEquals(expect2, instance.permuteUnique(new int[]{1}));
+
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{1,3},{3,1}});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect3, instance.permuteUnique(new int[]{1,3})));
+
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][] {{1,3},{3,1}});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect4, instance.permuteUnique(new int[]{3,1})));
+
+        List<List<Integer>> expect5 = ListUtil.buildList2(new Integer[][] {{1,2,3},{1,3,2},{2,1,3},{2,3,1},{3,1,2},{3,2,1}});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect5, instance.permuteUnique(new int[]{1,2,3})));
+
+        List<List<Integer>> expect6 = ListUtil.buildList2(new Integer[][] {{1,1,5},{1,5,1},{5,1,1}});
+        assertTrue(ListUtil.equalsIgnoreOrder(expect6, instance.permuteUnique(new int[]{1,1,5})));
     }
 }

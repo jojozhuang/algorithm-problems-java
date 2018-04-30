@@ -37,5 +37,4 @@ public class Solution517Test {
         assertEquals(2, instance.findMinMoves(new int[] {0,3,0}));
         assertEquals(-1, instance.findMinMoves(new int[] {0,2,0}));
     }
-
 }

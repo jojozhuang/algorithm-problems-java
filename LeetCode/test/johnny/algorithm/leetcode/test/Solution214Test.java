@@ -41,12 +41,9 @@ public class Solution214Test {
     @Test
     public void testShortestPalindrome() {
         System.out.println("shortestPalindrome");
-        String s = "";
         Solution214 instance = new Solution214();
-        String expResult = "";
-        String result = instance.shortestPalindrome(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.shortestPalindrome(""));
         assertEquals("aaacecaaa", instance.shortestPalindrome("aacecaaa"));
         assertEquals("dcbabcd", instance.shortestPalindrome("abcd"));
         assertEquals("cabbac", instance.shortestPalindrome("abbac"));

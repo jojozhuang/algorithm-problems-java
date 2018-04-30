@@ -36,5 +36,4 @@ public class Solution667Test {
         assertArrayEquals(new int[] {1, 2, 3}, instance.constructArray(3,1));
         assertArrayEquals(new int[] {3, 1, 2}, instance.constructArray(3,2));
     }
-
 }

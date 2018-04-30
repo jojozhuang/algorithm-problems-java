@@ -40,5 +40,4 @@ public class Solution368Test {
         List<Integer> expect1 = ListUtil.buildList(new Integer[] {1,2});
         assertTrue(ListUtil.equalsIgnoreOrder(result1, expect1));
     }
-
 }

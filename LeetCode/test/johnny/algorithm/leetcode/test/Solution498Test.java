@@ -40,5 +40,4 @@ public class Solution498Test {
         };
         assertArrayEquals(new int[] {1,2,4,7,5,3,6,8,9}, instance.findDiagonalOrder(matrix1));
     }
-
 }

@@ -35,5 +35,4 @@ public class Solution644Test {
 
         assertEquals(12.75, instance.findMaxAverage(new int[] {1,12,-5,-6,50,3}, 4),0.001);
     }
-
 }

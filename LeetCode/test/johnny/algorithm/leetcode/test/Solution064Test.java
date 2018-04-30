@@ -41,12 +41,9 @@ public class Solution064Test {
     @Test
     public void testMinPathSum() {
         System.out.println("minPathSum");
-        int[][] grid = null;
         Solution064 instance = new Solution064();
-        int expResult = 0;
-        int result = instance.minPathSum(grid);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.minPathSum(null));
         assertEquals(0, instance.minPathSum(new int[][]{}));
         assertEquals(0, instance.minPathSum(new int[][]{{}}));
         assertEquals(1, instance.minPathSum(new int[][]{{1}}));

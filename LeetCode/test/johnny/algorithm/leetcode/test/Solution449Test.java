@@ -37,5 +37,4 @@ public class Solution449Test {
         TreeNode root1 = TreeNode.createInstance(new String[] {"5","3","6","2","4","#","7"});
         assertTrue(TreeNode.isSame(root1, instance.deserialize(instance.serialize(root1))));
     }
-
 }

@@ -41,13 +41,9 @@ public class Solution060Test {
     @Test
     public void testGetPermutation() {
         System.out.println("getPermutation");
-        int n = 0;
-        int k = 0;
         Solution060 instance = new Solution060();
-        String expResult = "";
-        String result = instance.getPermutation(n, k);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.getPermutation(0, 0));
         assertEquals("", instance.getPermutation(1, 123123));
         assertEquals("", instance.getPermutation(2, 0));
         assertEquals("12", instance.getPermutation(2, 1));

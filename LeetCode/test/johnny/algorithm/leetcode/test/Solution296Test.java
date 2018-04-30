@@ -41,11 +41,9 @@ public class Solution296Test {
     @Test
     public void testMinTotalDistance() {
         System.out.println("minTotalDistance");
-        int[][] grid = null;
         Solution296 instance = new Solution296();
-        int expResult = 0;
-        int result = instance.minTotalDistance(grid);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.minTotalDistance(null));
         
         int[][] grid2 = new int[][] {
             {1,0,0,0,1},

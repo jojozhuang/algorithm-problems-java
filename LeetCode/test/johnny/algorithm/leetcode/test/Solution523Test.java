@@ -36,5 +36,4 @@ public class Solution523Test {
         assertEquals(true, instance.checkSubarraySum(new int[] {23, 2, 4, 6, 7}, 6));
         assertEquals(true, instance.checkSubarraySum(new int[] {23, 2, 6, 4, 7}, 6));
     }
-
 }

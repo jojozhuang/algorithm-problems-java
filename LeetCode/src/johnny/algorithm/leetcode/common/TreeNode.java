@@ -78,8 +78,19 @@ import java.util.Queue;
         return root;
     }
     
-    
     public static boolean isSame(TreeNode t1, TreeNode t2) {
+        boolean res = isSamePrint(t1, t2);
+        if (!res) {
+            println("Expect TreeNode:");
+            print(t1);
+            println("");
+            println("Actual TreeNode:");
+            print(t2);
+        }
+        return res;
+    }
+    
+    private static boolean isSamePrint(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null) {
             return true;
         }
@@ -93,6 +104,39 @@ import java.util.Queue;
             return false;
         }
         
-        return isSame(t1.left, t2.left) && isSame(t1.right, t2.right);
+        return isSamePrint(t1.left, t2.left) && isSamePrint(t1.right, t2.right);
+    }
+    
+    private static void print(TreeNode root) {
+        if (root == null) {
+            print(",null");
+        }
+        
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        
+        while (!queue.isEmpty()) {
+            //List<Integer> level = new ArrayList<Integer>();
+            int size = queue.size(); 
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                //level.add(node.val);
+                print(node.val+",");
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            //res.add(level);
+        }
+    }
+    
+    private static void println(String msg) {
+        System.out.println(msg);
+    }
+    private static void print(String msg) {
+        System.out.print(msg);
     }
  }

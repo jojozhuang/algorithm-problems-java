@@ -65,6 +65,5 @@ public class Solution391Test {
             {2,2,4,4}
         };
         assertEquals(false, instance.isRectangleCover(rectangles4));
-}
-
+    }
 }

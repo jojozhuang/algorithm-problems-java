@@ -38,5 +38,4 @@ public class Solution488Test {
         assertEquals(2, instance.findMinStep("G", "GGGGG"));
         assertEquals(3, instance.findMinStep("RBYYBBRRB", "YRBGB"));
     }
-
 }

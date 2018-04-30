@@ -35,5 +35,4 @@ public class Solution396Test {
 
         assertEquals(26, instance.maxRotateFunction(new int[] {4, 3, 2, 6}));
     }
-
 }

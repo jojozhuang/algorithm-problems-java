@@ -36,5 +36,4 @@ public class Solution403Test {
         assertEquals(true, instance.canCross(new int[] {0,1,3,5,6,8,12,17}));
         assertEquals(false, instance.canCross(new int[] {0,1,2,3,4,8,9,11}));
     }
-
 }

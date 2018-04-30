@@ -40,5 +40,4 @@ public class Solution527Test {
         List<String> expect1 = ListUtil.buildList(new String[] {"l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"});
         assertEquals(expect1, instance.wordsAbbreviation(dict1));
     }
-
 }

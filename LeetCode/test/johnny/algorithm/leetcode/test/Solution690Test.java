@@ -65,5 +65,4 @@ public class Solution690Test {
         assertEquals(3, instance.getImportance(list3, 3));
         assertEquals(0, instance.getImportance(list3, 4));
     }
-
 }

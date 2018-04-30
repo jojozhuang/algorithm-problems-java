@@ -41,12 +41,9 @@ public class Solution053Test {
     @Test
     public void testMaxSubArray() {
         System.out.println("maxSubArray");
-        int[] nums = null;
         Solution053 instance = new Solution053();
-        int expResult = 0;
-        int result = instance.maxSubArray(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.maxSubArray(null));
         assertEquals(7, instance.maxSubArray(new int[]{1,-2,3,4,-2}));
         assertEquals(4, instance.maxSubArray(new int[]{1,-2,1,3,-2}));
         assertEquals(11, instance.maxSubArray(new int[]{1,-2,5,1,-2,3,4}));

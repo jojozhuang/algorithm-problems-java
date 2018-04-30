@@ -41,12 +41,9 @@ public class Solution273Test {
     @Test
     public void testNumberToWords() {
         System.out.println("numberToWords");
-        int num = 0;
         Solution273 instance = new Solution273();
-        String expResult = "Zero";
-        String result = instance.numberToWords(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("Zero", instance.numberToWords(0));
         assertEquals("One Hundred", instance.numberToWords(100));
         assertEquals("One Thousand", instance.numberToWords(1000));
         assertEquals("Two Thousand", instance.numberToWords(2000));

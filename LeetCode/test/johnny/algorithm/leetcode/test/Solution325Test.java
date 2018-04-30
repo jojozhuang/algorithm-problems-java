@@ -41,13 +41,9 @@ public class Solution325Test {
     @Test
     public void testMaxSubArrayLen() {
         System.out.println("maxSubArrayLen");
-        int[] nums = null;
-        int k = 0;
         Solution325 instance = new Solution325();
-        int expResult = 0;
-        int result = instance.maxSubArrayLen(nums, k);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.maxSubArrayLen(null, 0));
         assertEquals(4, instance.maxSubArrayLen(new int[]{1, -1, 5, -2, 3}, 3));
         assertEquals(2, instance.maxSubArrayLen(new int[]{-2, -1, 2, 1}, 1));
     }

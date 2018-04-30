@@ -38,5 +38,4 @@ public class Solution450Test {
         TreeNode expect1 = TreeNode.createInstance(new String[] {"5","4","6","2","#","#","7"});
         assertTrue(TreeNode.isSame(expect1, instance.deleteNode(root1, 3)));
     }
-
 }

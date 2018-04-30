@@ -41,13 +41,9 @@ public class Solution299Test {
     @Test
     public void testGetHint() {
         System.out.println("getHint");
-        String secret = "";
-        String guess = "";
         Solution299 instance = new Solution299();
-        String expResult = "0A0B";
-        String result = instance.getHint(secret, guess);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("0A0B", instance.getHint("", ""));
         assertEquals("1A0B", instance.getHint("12", "13"));
         assertEquals("0A2B", instance.getHint("12", "21"));
         assertEquals("2A0B", instance.getHint("123", "113"));

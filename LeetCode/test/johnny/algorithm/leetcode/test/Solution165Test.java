@@ -42,6 +42,7 @@ public class Solution165Test {
     public void testCompareVersion() {
         System.out.println("compareVersion");
         Solution165 instance = new Solution165();
+        
         assertEquals(0, instance.compareVersion("1.0", "1"));
         assertEquals(0, instance.compareVersion("1", "01"));
         assertEquals(0, instance.compareVersion("1.1", "1.1.0.00."));

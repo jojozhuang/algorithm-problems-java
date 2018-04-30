@@ -42,12 +42,9 @@ public class Solution133Test {
     @Test
     public void testCloneGraph() {
         System.out.println("cloneGraph");
-        UndirectedGraphNode node = null;
         Solution133 instance = new Solution133();
-        UndirectedGraphNode expResult = null;
-        UndirectedGraphNode result = instance.cloneGraph(node);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(null, instance.cloneGraph(null));
         UndirectedGraphNode node2 = new UndirectedGraphNode(2);
         UndirectedGraphNode result2 = instance.cloneGraph(node2);
         assertEquals(result2.label, node2.label);

@@ -42,6 +42,7 @@ public class Solution496Test {
     public void testNextGreaterElement() {
         System.out.println("nextGreaterElement");
         Solution496 instance = new Solution496();
+        
         assertArrayEquals(new int[]{}, instance.nextGreaterElement(new int[]{}, new int[]{}));
         assertArrayEquals(new int[]{-1}, instance.nextGreaterElement(new int[]{1}, new int[]{1}));
         assertArrayEquals(new int[]{-1}, instance.nextGreaterElement(new int[]{2}, new int[]{1,2}));

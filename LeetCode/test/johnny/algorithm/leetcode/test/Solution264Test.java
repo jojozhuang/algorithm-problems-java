@@ -41,11 +41,9 @@ public class Solution264Test {
     @Test
     public void testNthUglyNumber() {
         System.out.println("nthUglyNumber");
-        int n = 0;
         Solution264 instance = new Solution264();
-        int expResult = 0;
-        int result = instance.nthUglyNumber(n);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.nthUglyNumber(0));
         assertEquals(1, instance.nthUglyNumber(1));
         assertEquals(2, instance.nthUglyNumber(2));
         assertEquals(3, instance.nthUglyNumber(3));

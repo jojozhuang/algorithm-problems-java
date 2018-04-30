@@ -42,5 +42,4 @@ public class Solution669Test {
         TreeNode result2 = TreeNode.createInstance(new String[] {"3","2","#","1","#"});
         assertTrue(TreeNode.isSame(result2, instance.trimBST(root2, 1, 3)));
     }
-
 }

@@ -41,13 +41,9 @@ public class Solution076Test {
     @Test
     public void testMinWindow() {
         System.out.println("minWindow");
-        String s = "";
-        String t = "";
         Solution076 instance = new Solution076();
-        String expResult = "";
-        String result = instance.minWindow(s, t);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.minWindow("", ""));
         assertEquals("a", instance.minWindow("a", "a"));
         assertEquals("BANC", instance.minWindow("ADOBECODEBANC", "ABC"));
     }

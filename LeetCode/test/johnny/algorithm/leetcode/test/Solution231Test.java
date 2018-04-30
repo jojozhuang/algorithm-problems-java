@@ -41,12 +41,9 @@ public class Solution231Test {
     @Test
     public void testIsPowerOfTwo() {
         System.out.println("isPowerOfTwo");
-        int n = 0;
         Solution231 instance = new Solution231();
-        boolean expResult = false;
-        boolean result = instance.isPowerOfTwo(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isPowerOfTwo(0));
         assertEquals(true, instance.isPowerOfTwo(1));
         assertEquals(true, instance.isPowerOfTwo(2));
         assertEquals(false, instance.isPowerOfTwo(3));

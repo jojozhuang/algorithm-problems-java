@@ -41,12 +41,9 @@ public class Solution294Test {
     @Test
     public void testCanWin() {
         System.out.println("canWin");
-        String s = "";
         Solution294 instance = new Solution294();
-        boolean expResult = false;
-        boolean result = instance.canWin(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.canWin(""));
         assertEquals(true, instance.canWin("++++"));
         assertEquals(false, instance.canWin("+--+"));
         assertEquals(true, instance.canWin("++-+"));

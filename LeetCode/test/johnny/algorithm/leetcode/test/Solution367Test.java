@@ -41,12 +41,9 @@ public class Solution367Test {
     @Test
     public void testIsPerfectSquare() {
         System.out.println("isPerfectSquare");
-        int num = 0;
         Solution367 instance = new Solution367();
-        boolean expResult = true;
-        boolean result = instance.isPerfectSquare(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isPerfectSquare(0));
         assertEquals(true, instance.isPerfectSquare(1));
         assertEquals(false, instance.isPerfectSquare(2));
         assertEquals(false, instance.isPerfectSquare(3));

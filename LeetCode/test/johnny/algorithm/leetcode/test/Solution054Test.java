@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution054;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -45,17 +46,14 @@ public class Solution054Test {
     @Test
     public void testSpiralOrder() {
         System.out.println("spiralOrder");
-        int[][] matrix = null;
         Solution054 instance = new Solution054();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.spiralOrder(matrix);
-        assertEquals(expResult, result);
         
-        assertEquals(expResult, instance.spiralOrder(new int[][]{}));        
-        assertThat(instance.spiralOrder(new int[][]{{1,2,3}}), is(Arrays.asList(1,2,3)));
-        assertThat(instance.spiralOrder(new int[][]{{4},{5},{6}}), is(Arrays.asList(4,5,6)));
-        assertThat(instance.spiralOrder(new int[][]{{1,2,3,4},{5,6,7,8}}), is(Arrays.asList(1,2,3,4,8,7,6,5)));
-        assertThat(instance.spiralOrder(new int[][]{{1,2,3,4},{5,6,7,8},{9,10,11,12}}), is(Arrays.asList(1,2,3,4,8,12,11,10,9,5,6,7)));
+        List<Integer> expect1 = ListUtil.buildList(new Integer[] {});
+        assertEquals(expect1, instance.spiralOrder(null));
+        assertEquals(expect1, instance.spiralOrder(new int[][]{}));
+        assertTrue(ListUtil.equalsIgnoreOrder(Arrays.asList(1,2,3), instance.spiralOrder(new int[][]{{1,2,3}})));
+        assertTrue(ListUtil.equalsIgnoreOrder(Arrays.asList(4,5,6), instance.spiralOrder(new int[][]{{4},{5},{6}})));
+        assertTrue(ListUtil.equalsIgnoreOrder(Arrays.asList(1,2,3,4,8,7,6,5), instance.spiralOrder(new int[][]{{1,2,3,4},{5,6,7,8}})));
+        assertTrue(ListUtil.equalsIgnoreOrder(Arrays.asList(1,2,3,4,8,12,11,10,9,5,6,7), instance.spiralOrder(new int[][]{{1,2,3,4},{5,6,7,8},{9,10,11,12}})));
     }
-    
 }

@@ -36,5 +36,4 @@ public class Solution397Test {
         assertEquals(3, instance.integerReplacement(8));
         assertEquals(4, instance.integerReplacement(7));
     }
-
 }

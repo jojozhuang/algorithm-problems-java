@@ -41,11 +41,9 @@ public class Solution221Test {
     @Test
     public void testMaximalSquare() {
         System.out.println("maximalSquare");
-        char[][] matrix = null;
         Solution221 instance = new Solution221();
-        int expResult = 0;
-        int result = instance.maximalSquare(matrix);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.maximalSquare(null));
         
         char[][] matrix2 = new char[][] {
             {'1', '0', '1', '0', '0'},

@@ -42,13 +42,9 @@ public class Solution236Test {
     @Test
     public void testLowestCommonAncestor() {
         System.out.println("lowestCommonAncestor");
-        TreeNode root = null;
-        TreeNode p = null;
-        TreeNode q = null;
         Solution236 instance = new Solution236();
-        TreeNode expResult = null;
-        TreeNode result = instance.lowestCommonAncestor(root, p, q);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.lowestCommonAncestor(null, null, null));
         
         TreeNode root1 = new TreeNode(1);
         TreeNode p1 = new TreeNode(2);

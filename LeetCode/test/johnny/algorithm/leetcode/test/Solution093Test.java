@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution093;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,15 +44,12 @@ public class Solution093Test {
     @Test
     public void testRestoreIpAddresses() {
         System.out.println("restoreIpAddresses");
-        String s = "";
         Solution093 instance = new Solution093();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.restoreIpAddresses(s);
-        assertEquals(expResult, result);
+
+        List<String> expect1 = ListUtil.buildList(new String[] {});
+        assertEquals(expect1, instance.restoreIpAddresses(""));
         
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("255.255.11.135");
-        expResult2.add("255.255.111.35");
-        assertEquals(expResult2, instance.restoreIpAddresses("25525511135"));
+        List<String> expect2 = ListUtil.buildList(new String[] {"255.255.11.135","255.255.111.35"});
+        assertEquals(expect2, instance.restoreIpAddresses("25525511135"));
     }
 }

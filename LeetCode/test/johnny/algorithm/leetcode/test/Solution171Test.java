@@ -41,12 +41,9 @@ public class Solution171Test {
     @Test
     public void testTitleToNumber() {
         System.out.println("titleToNumber");
-        String s = "";
         Solution171 instance = new Solution171();
-        int expResult = 0;
-        int result = instance.titleToNumber(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.titleToNumber(""));
         assertEquals(1, instance.titleToNumber("A"));
         assertEquals(25, instance.titleToNumber("Y"));
         assertEquals(26, instance.titleToNumber("Z"));

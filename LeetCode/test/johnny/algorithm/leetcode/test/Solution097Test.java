@@ -41,14 +41,9 @@ public class Solution097Test {
     @Test
     public void testIsInterleave() {
         System.out.println("isInterleave");
-        String s1 = "";
-        String s2 = "";
-        String s3 = "";
         Solution097 instance = new Solution097();
-        boolean expResult = true;
-        boolean result = instance.isInterleave(s1, s2, s3);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isInterleave("", "", ""));
         assertEquals(true, instance.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
         assertEquals(false, instance.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
     }

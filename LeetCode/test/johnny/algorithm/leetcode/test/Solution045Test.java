@@ -41,12 +41,9 @@ public class Solution045Test {
     @Test
     public void testJump() {
         System.out.println("jump");
-        int[] nums = null;
         Solution045 instance = new Solution045();
-        int expResult = Integer.MAX_VALUE;
-        int result = instance.jump(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(Integer.MAX_VALUE, instance.jump(null));
         assertEquals(0, instance.jump(new int[]{0}));
         assertEquals(0, instance.jump(new int[]{1}));
         assertEquals(1, instance.jump(new int[]{1,2}));

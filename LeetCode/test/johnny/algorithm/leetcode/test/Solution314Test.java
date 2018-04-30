@@ -2,6 +2,8 @@ package johnny.algorithm.leetcode.test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import johnny.algorithm.leetcode.common.ListUtil;
 import johnny.algorithm.leetcode.common.TreeNode;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -44,72 +46,30 @@ public class Solution314Test {
     @Test
     public void testVerticalOrder() {
         System.out.println("verticalOrder");
-        TreeNode root = null;
         Solution314 instance = new Solution314();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.verticalOrder(root);
-        assertEquals(expResult, result);
-        
+
+        List<List<Integer>> expect1 = new ArrayList<List<Integer>>();
+        List<List<Integer>> result1 = instance.verticalOrder(null);
+        assertEquals(expect1, result1);
+
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{1}});
         TreeNode root2 = TreeNode.createInstance(new String[]{"1"});
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
-        List<Integer> list21 = new ArrayList<Integer>();
-        list21.add(1);
-        expResult2.add(list21);
         List<List<Integer>> result2 = instance.verticalOrder(root2);
-        assertEquals(expResult2, result2);
+        assertEquals(expect2, result2);
         
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{2},{1},{3}});
         TreeNode root3 = TreeNode.createInstance(new String[]{"1","2","3"});
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
-        List<Integer> list31 = new ArrayList<Integer>();
-        list31.add(2);
-        expResult3.add(list31);
-        List<Integer> list32 = new ArrayList<Integer>();
-        list32.add(1);
-        expResult3.add(list32);
-        List<Integer> list33 = new ArrayList<Integer>();
-        list33.add(3);
-        expResult3.add(list33);
         List<List<Integer>> result3 = instance.verticalOrder(root3);
-        assertEquals(expResult3, result3);
+        assertEquals(expect3, result3);
         
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][] {{9},{3,15},{20},{7}});
         TreeNode root4 = TreeNode.createInstance(new String[]{"3","9","20", "#","#","15","7"});
-        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
-        List<Integer> list41 = new ArrayList<Integer>();
-        list41.add(9);
-        expResult4.add(list41);
-        List<Integer> list42 = new ArrayList<Integer>();
-        list42.add(3);
-        list42.add(15);        
-        expResult4.add(list42);
-        List<Integer> list43 = new ArrayList<Integer>();
-        list43.add(20);
-        expResult4.add(list43);
-        List<Integer> list44 = new ArrayList<Integer>();
-        list44.add(7);
-        expResult4.add(list44);
         List<List<Integer>> result4 = instance.verticalOrder(root4);
-        assertEquals(expResult4, result4);
+        assertEquals(expect4, result4);
         
+        List<List<Integer>> expect5 = ListUtil.buildList2(new Integer[][] {{4},{9},{3,5,2},{20},{7}});
         TreeNode root5 = TreeNode.createInstance(new String[]{"3","9","20", "4","5","2","7"});
-        List<List<Integer>> expResult5 = new ArrayList<List<Integer>>();
-        List<Integer> list51 = new ArrayList<Integer>();
-        list51.add(4);
-        expResult5.add(list51);
-        List<Integer> list52 = new ArrayList<Integer>();
-        list52.add(9);
-        expResult5.add(list52);
-        List<Integer> list53 = new ArrayList<Integer>();
-        list53.add(3);
-        list53.add(5);
-        list53.add(2);
-        expResult5.add(list53);
-        List<Integer> list54 = new ArrayList<Integer>();
-        list54.add(20);
-        expResult5.add(list54);
-        List<Integer> list55 = new ArrayList<Integer>();
-        list55.add(7);
-        expResult5.add(list55);
         List<List<Integer>> result5 = instance.verticalOrder(root5);
-        assertEquals(expResult5, result5);
+        assertEquals(expect5, result5);
     }
 }

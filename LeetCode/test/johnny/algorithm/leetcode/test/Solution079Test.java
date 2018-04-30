@@ -41,12 +41,9 @@ public class Solution079Test {
     @Test
     public void testExist() {
         System.out.println("exist");
-        char[][] board = null;
-        String word = "";
         Solution079 instance = new Solution079();
-        boolean expResult = false;
-        boolean result = instance.exist(board, word);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.exist(null, ""));
         
         char[][] board2 = new char[][] {
             "ABCE".toCharArray(),"SFCS".toCharArray(), "ADEE".toCharArray()

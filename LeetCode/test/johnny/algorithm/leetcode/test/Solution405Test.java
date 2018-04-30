@@ -42,6 +42,7 @@ public class Solution405Test {
     public void testToHex() {
         System.out.println("toHex");
         Solution405 instance = new Solution405();
+        
         assertEquals("0", instance.toHex(0));
         assertEquals("1", instance.toHex(1));
         assertEquals("a", instance.toHex(10));

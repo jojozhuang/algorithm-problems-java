@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution257;
+import johnny.algorithm.leetcode.common.ListUtil;
 import johnny.algorithm.leetcode.common.TreeNode;
 
 import static org.junit.Assert.*;
@@ -44,38 +45,25 @@ public class Solution257Test {
     @Test
     public void testBinaryTreePaths() {
         System.out.println("binaryTreePaths");
-        TreeNode root = null;
         Solution257 instance = new Solution257();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.binaryTreePaths(root);
-        assertEquals(expResult, result);
         
-        TreeNode root1 = new TreeNode(1);
-        List<String> expResult1 = new ArrayList<String>();
-        expResult1.add("1");
-        assertEquals(expResult1, instance.binaryTreePaths(root1));
+        List<String> expect1 = new ArrayList<String>();
+        assertEquals(expect1, instance.binaryTreePaths(null));
         
+        List<String> expect2 = ListUtil.buildList(new String[] {"1"});
         TreeNode root2 = new TreeNode(1);
-        root2.left = new TreeNode(2);
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("1->2");
-        assertEquals(expResult2, instance.binaryTreePaths(root2));
+        assertEquals(expect2, instance.binaryTreePaths(root2));
         
-        TreeNode root3 = new TreeNode(1);
-        root3.left = new TreeNode(2);
-        root3.right = new TreeNode(3);
-        List<String> expResult3 = new ArrayList<String>();
-        expResult3.add("1->2");
-        expResult3.add("1->3");        
-        assertEquals(expResult3, instance.binaryTreePaths(root3));
+        List<String> expect3 = ListUtil.buildList(new String[] {"1->2"});
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","#"});
+        assertEquals(expect3, instance.binaryTreePaths(root3));
+
+        List<String> expect4 = ListUtil.buildList(new String[] {"1->2","1->3"});
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","3"});
+        assertEquals(expect4, instance.binaryTreePaths(root4));
         
-        TreeNode root4 = new TreeNode(1);
-        root4.left = new TreeNode(2);
-        root4.left.right = new TreeNode(5);
-        root4.right = new TreeNode(3);
-        List<String> expResult4 = new ArrayList<String>();
-        expResult4.add("1->2->5");
-        expResult4.add("1->3");        
-        assertEquals(expResult4, instance.binaryTreePaths(root4));
+        List<String> expect5 = ListUtil.buildList(new String[] {"1->2->5","1->3"});
+        TreeNode root5 = TreeNode.createInstance(new String[] {"1","2","3","#","5","#","#"});
+        assertEquals(expect5, instance.binaryTreePaths(root5));
     }
 }

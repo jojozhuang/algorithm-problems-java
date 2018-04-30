@@ -47,5 +47,4 @@ public class Solution419Test {
         };
         assertEquals(2, instance.countBattleships(board2));
     }
-
 }

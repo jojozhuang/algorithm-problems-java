@@ -1,6 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution030;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,16 +43,12 @@ public class Solution030Test {
     @Test
     public void testFindSubstring() {
         System.out.println("findSubstring");
-        String s = "";
-        String[] words = null;
         Solution030 instance = new Solution030();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.findSubstring(s, words);
-        assertEquals(expResult, result);
-        
-        List<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(0);
-        expResult2.add(9);
-        assertEquals(expResult2, instance.findSubstring("barfoothefoobarman", new String[]{"foo", "bar"}));
+
+        List<Integer> expect1 = ListUtil.buildList(new Integer[] {});
+        assertEquals(expect1, instance.findSubstring("", null));
+
+        List<Integer> expect2 = ListUtil.buildList(new Integer[] {0,9});
+        assertEquals(expect2, instance.findSubstring("barfoothefoobarman", new String[]{"foo", "bar"}));
     }
 }

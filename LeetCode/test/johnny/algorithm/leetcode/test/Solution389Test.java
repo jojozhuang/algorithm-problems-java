@@ -42,6 +42,7 @@ public class Solution389Test {
     public void testFindTheDifference() {
         System.out.println("findTheDifference");
         Solution389 instance = new Solution389();
+        
         assertEquals(' ', instance.findTheDifference("", ""));
         assertEquals(' ', instance.findTheDifference("a", ""));
         assertEquals('y', instance.findTheDifference("", "y"));

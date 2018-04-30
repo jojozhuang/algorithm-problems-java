@@ -41,12 +41,9 @@ public class Solution326Test {
     @Test
     public void testIsPowerOfThree() {
         System.out.println("isPowerOfThree");
-        int n = 0;
         Solution326 instance = new Solution326();
-        boolean expResult = false;
-        boolean result = instance.isPowerOfThree(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isPowerOfThree(0));
         assertEquals(true, instance.isPowerOfThree(3));
         assertEquals(false, instance.isPowerOfThree(8));
         assertEquals(true, instance.isPowerOfThree(81));

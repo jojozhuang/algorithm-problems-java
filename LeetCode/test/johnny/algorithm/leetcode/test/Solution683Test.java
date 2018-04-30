@@ -36,5 +36,4 @@ public class Solution683Test {
         assertEquals(2, instance.kEmptySlots(new int[] {1,3,2}, 1));
         assertEquals(-1, instance.kEmptySlots(new int[] {1,2,3}, 1));
     }
-
 }

@@ -45,5 +45,4 @@ public class Solution568Test {
         int[][] days3 = new int[][] {{7,0,0},{0,7,0},{0,0,7}};
         assertEquals(21, instance.maxVacationDays(flights3, days3));
     }
-
 }

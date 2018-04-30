@@ -41,12 +41,9 @@ public class Solution261Test {
     @Test
     public void testValidTree() {
         System.out.println("validTree");
-        int n = 0;
-        int[][] edges = null;
         Solution261 instance = new Solution261();
-        boolean expResult = false;
-        boolean result = instance.validTree(n, edges);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.validTree(0, null));
         
         int[][] edges2 = new int[][] {
             {0, 1}, {0, 2}, {0, 3}, {1, 4}

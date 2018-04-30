@@ -42,6 +42,7 @@ public class Solution434Test {
     public void testCountSegments() {
         System.out.println("countSegments");
         Solution434 instance = new Solution434();
+        
         assertEquals(0, instance.countSegments(""));
         assertEquals(1, instance.countSegments("a"));
         assertEquals(2, instance.countSegments(" a b "));

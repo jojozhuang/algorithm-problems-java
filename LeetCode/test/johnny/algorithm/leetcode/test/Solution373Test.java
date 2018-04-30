@@ -47,6 +47,5 @@ public class Solution373Test {
         List<int[]> result3 = instance.kSmallestPairs(new int[] {1,2}, new int[] {3}, 3);
         List<int[]> expect3 = ListUtil.buildList2(new int[][]{{1,3},{2,3}});
         assertArrayEquals(expect3.toArray(), result3.toArray());
-}
-
+    }
 }

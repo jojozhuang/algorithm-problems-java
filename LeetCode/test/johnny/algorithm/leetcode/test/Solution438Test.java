@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution438;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -44,27 +45,21 @@ public class Solution438Test {
     public void testFindAnagrams() {
         System.out.println("findAnagrams");
         Solution438 instance = new Solution438();
-        List<Integer> expResult = new ArrayList<Integer>();
-        assertEquals(expResult, instance.findAnagrams("", "a"));
-        assertEquals(expResult, instance.findAnagrams("a", "abc"));
         
-        List<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(0);
-        assertEquals(expResult2, instance.findAnagrams("a", "a"));
+        List<Integer> expect1 = new ArrayList<Integer>();
+        assertEquals(expect1, instance.findAnagrams("", "a"));
+        assertEquals(expect1, instance.findAnagrams("a", "abc"));
         
-        List<Integer> expResult3 = new ArrayList<Integer>();
-        expResult3.add(0);
-        expResult3.add(1);
-        expResult3.add(2);
-        assertEquals(expResult3, instance.findAnagrams("abab", "ab"));
+        List<Integer> expect2 = ListUtil.buildList(new Integer[] {0});
+        assertEquals(expect2, instance.findAnagrams("a", "a"));
         
-        List<Integer> expResult4 = new ArrayList<Integer>();
-        expResult4.add(0);
-        expResult4.add(6);
-        assertEquals(expResult4, instance.findAnagrams("cbaebabacd", "abc"));
+        List<Integer> expect3 = ListUtil.buildList(new Integer[] {0,1,2});
+        assertEquals(expect3, instance.findAnagrams("abab", "ab"));
         
-        List<Integer> expResult5 = new ArrayList<Integer>();
-        expResult5.add(3);
-        assertEquals(expResult5, instance.findAnagrams("abcde", "de"));
+        List<Integer> expect4 = ListUtil.buildList(new Integer[] {0,6});
+        assertEquals(expect4, instance.findAnagrams("cbaebabacd", "abc"));
+        
+        List<Integer> expect5 = ListUtil.buildList(new Integer[] {3});
+        assertEquals(expect5, instance.findAnagrams("abcde", "de"));
     }
 }

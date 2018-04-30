@@ -41,12 +41,9 @@ public class Solution342Test {
     @Test
     public void testIsPowerOfFour() {
         System.out.println("isPowerOfFour");
-        int num = 0;
         Solution342 instance = new Solution342();
-        boolean expResult = false;
-        boolean result = instance.isPowerOfFour(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isPowerOfFour(0));
         assertEquals(false, instance.isPowerOfFour(2));
         assertEquals(true, instance.isPowerOfFour(4));
         assertEquals(false, instance.isPowerOfFour(5));

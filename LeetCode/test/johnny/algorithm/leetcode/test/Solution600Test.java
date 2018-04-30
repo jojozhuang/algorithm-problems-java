@@ -35,5 +35,4 @@ public class Solution600Test {
 
         assertEquals(5, instance.findIntegers(5));
     }
-
 }

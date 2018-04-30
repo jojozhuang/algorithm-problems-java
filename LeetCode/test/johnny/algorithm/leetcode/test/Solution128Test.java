@@ -41,12 +41,9 @@ public class Solution128Test {
     @Test
     public void testLongestConsecutive() {
         System.out.println("longestConsecutive");
-        int[] nums = null;
         Solution128 instance = new Solution128();
-        int expResult = 0;
-        int result = instance.longestConsecutive(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.longestConsecutive(null));
         assertEquals(1, instance.longestConsecutive(new int[] {0}));
         assertEquals(1, instance.longestConsecutive(new int[] {0,0}));
         assertEquals(4, instance.longestConsecutive(new int[] {100, 4, 200, 1, 3, 2}));

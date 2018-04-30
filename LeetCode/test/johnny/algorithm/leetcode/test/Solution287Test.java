@@ -41,12 +41,9 @@ public class Solution287Test {
     @Test
     public void testFindDuplicate() {
         System.out.println("findDuplicate");
-        int[] nums = null;
         Solution287 instance = new Solution287();
-        int expResult = 0;
-        int result = instance.findDuplicate(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.findDuplicate(null));
         assertEquals(5, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,5}));
         assertEquals(1, instance.findDuplicate(new int[]{1,1,2}));
         assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));

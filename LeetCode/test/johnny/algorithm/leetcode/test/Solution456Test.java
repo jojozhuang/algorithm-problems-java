@@ -41,12 +41,9 @@ public class Solution456Test {
     @Test
     public void testFind132pattern() {
         System.out.println("find132pattern");
-        int[] nums = null;
         Solution456 instance = new Solution456();
-        boolean expResult = false;
-        boolean result = instance.find132pattern(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.find132pattern(null));
         assertEquals(true, instance.find132pattern(new int[]{-2,1,2,-2,1,2}));
         assertEquals(true, instance.find132pattern(new int[]{3,5,0,3,4}));
         assertEquals(false, instance.find132pattern(new int[]{1,2,3,4}));

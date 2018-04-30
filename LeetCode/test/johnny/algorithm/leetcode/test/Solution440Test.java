@@ -35,5 +35,4 @@ public class Solution440Test {
 
         assertEquals(10, instance.findKthNumber(13,2));
     }
-
 }

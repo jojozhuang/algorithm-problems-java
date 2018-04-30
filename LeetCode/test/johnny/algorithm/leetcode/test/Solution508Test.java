@@ -37,5 +37,4 @@ public class Solution508Test {
         TreeNode root1 = TreeNode.createInstance(new String[] {"5","2","-3"});
         assertArrayEquals(new int[] {2, -3, 4}, instance.findFrequentTreeSum(root1));
     }
-
 }

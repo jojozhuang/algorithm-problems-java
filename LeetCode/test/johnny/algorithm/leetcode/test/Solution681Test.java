@@ -38,5 +38,4 @@ public class Solution681Test {
         Solution681 instance2 = new Solution681();
         assertEquals("22:22", instance2.nextClosestTime("23:59"));
     }
-
 }

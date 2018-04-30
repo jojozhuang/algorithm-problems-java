@@ -36,5 +36,4 @@ public class Solution547Test {
         assertEquals(2, instance.findCircleNum(new int[][] {{1,1,0},{1,1,0},{0,0,1}}));
         assertEquals(1, instance.findCircleNum(new int[][] {{1,1,0},{1,1,1},{0,1,1}}));
     }
-
 }

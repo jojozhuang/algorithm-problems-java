@@ -36,5 +36,4 @@ public class Solution682Test {
         assertEquals(30, instance.calPoints(new String[] {"5","2","C","D","+"}));
         assertEquals(27, instance.calPoints(new String[] {"5","-2","4","C","D","9","+","+"}));
     }
-
 }

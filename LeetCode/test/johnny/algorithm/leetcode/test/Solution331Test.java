@@ -41,12 +41,9 @@ public class Solution331Test {
     @Test
     public void testIsValidSerialization() {
         System.out.println("isValidSerialization");
-        String preorder = "";
         Solution331 instance = new Solution331();
-        boolean expResult = false;
-        boolean result = instance.isValidSerialization(preorder);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isValidSerialization(""));
         assertEquals(true, instance.isValidSerialization("#"));
         assertEquals(false, instance.isValidSerialization("1,#"));
         assertEquals(false, instance.isValidSerialization("9,#,#,1"));

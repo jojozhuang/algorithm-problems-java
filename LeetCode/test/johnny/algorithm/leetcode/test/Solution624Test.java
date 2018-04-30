@@ -43,5 +43,4 @@ public class Solution624Test {
         });
         assertEquals(4, instance.maxDistance(arrays1));
     }
-
 }

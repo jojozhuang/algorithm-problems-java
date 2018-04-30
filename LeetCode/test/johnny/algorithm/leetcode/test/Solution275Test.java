@@ -41,12 +41,9 @@ public class Solution275Test {
     @Test
     public void testHIndex() {
         System.out.println("hIndex");
-        int[] citations = null;
         Solution275 instance = new Solution275();
-        int expResult = 0;
-        int result = instance.hIndex(citations);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.hIndex(null));
         assertEquals(0, instance.hIndex(new int[]{0}));
         assertEquals(1, instance.hIndex(new int[]{1,1,1,1,1}));
         assertEquals(2, instance.hIndex(new int[]{2,2,2,2,2}));

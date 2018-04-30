@@ -40,5 +40,4 @@ public class Solution378Test {
         };
         assertEquals(13, instance.kthSmallest(matrix1, 8));
     }
-
 }

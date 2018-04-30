@@ -40,5 +40,4 @@ public class Solution265Test {
         };
         assertEquals(6, instance.minCostII(costs1));
     }
-
 }

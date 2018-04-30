@@ -41,12 +41,9 @@ public class Solution338Test {
     @Test
     public void testCountBits() {
         System.out.println("countBits");
-        int num = 0;
         Solution338 instance = new Solution338();
-        int[] expResult = new int[1];
-        int[] result = instance.countBits(num);
-        assertArrayEquals(expResult, result);
-        
+
+        assertArrayEquals(new int[1], instance.countBits(0));
         assertArrayEquals(new int[]{0,1,1,2,1,2,2,3}, instance.countBits(7));
     }
 }

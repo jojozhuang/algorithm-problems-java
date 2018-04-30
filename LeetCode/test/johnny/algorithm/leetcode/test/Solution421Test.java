@@ -35,5 +35,4 @@ public class Solution421Test {
 
         assertEquals(28, instance.findMaximumXOR(new int[] {3, 10, 5, 25, 2, 8}));
     }
-
 }

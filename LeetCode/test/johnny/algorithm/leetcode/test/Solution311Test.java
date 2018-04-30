@@ -60,5 +60,4 @@ public class Solution311Test {
         };
         assertArrayEquals(expect2, instance.multiply(A2, B2));
     }
-    
 }

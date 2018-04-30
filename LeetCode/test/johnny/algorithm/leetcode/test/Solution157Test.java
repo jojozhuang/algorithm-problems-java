@@ -35,5 +35,4 @@ public class Solution157Test {
 
         assertEquals(0, instance.read(new char[] {}, 2));
     }
-
 }

@@ -35,5 +35,4 @@ public class Solution686Test {
 
         assertEquals(3, instance.repeatedStringMatch("abcd", "cdabcdab"));
     }
-
 }

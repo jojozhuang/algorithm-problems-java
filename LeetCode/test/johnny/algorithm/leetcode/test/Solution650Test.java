@@ -41,12 +41,9 @@ public class Solution650Test {
     @Test
     public void testMinSteps() {
         System.out.println("minSteps");
-        int n = 0;
         Solution650 instance = new Solution650();
-        int expResult = 0;
-        int result = instance.minSteps(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.minSteps(0));
         assertEquals(2, instance.minSteps(2));
         assertEquals(3, instance.minSteps(3));
         assertEquals(4, instance.minSteps(4));

@@ -42,5 +42,4 @@ public class Solution591Test {
         assertEquals(false, instance.isValid("<DIV> unmatched tags with invalid tag name  </1234567890> and <CDATA[[]]>  </DIV>"));
         assertEquals(false, instance.isValid("<DIV>  unmatched start tag <B>  and unmatched end tag </C>  </DIV>"));
     }
-
 }

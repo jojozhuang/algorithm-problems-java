@@ -41,12 +41,9 @@ public class Solution066Test {
     @Test
     public void testPlusOne() {
         System.out.println("plusOne");
-        int[] digits = null;
         Solution066 instance = new Solution066();
-        int[] expResult = null;
-        int[] result = instance.plusOne(digits);
-        assertArrayEquals(expResult, result);
-        
+
+        assertArrayEquals(null, instance.plusOne(null));
         assertArrayEquals(new int[]{1}, instance.plusOne(new int[]{0}));
         assertArrayEquals(new int[]{2}, instance.plusOne(new int[]{1}));
         assertArrayEquals(new int[]{1,0}, instance.plusOne(new int[]{9}));

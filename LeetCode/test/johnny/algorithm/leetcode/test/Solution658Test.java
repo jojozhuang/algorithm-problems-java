@@ -44,13 +44,11 @@ public class Solution658Test {
     @Test
     public void testFindClosestElements() {
         System.out.println("findClosestElements");
-        List<Integer> arr = null;
-        int k = 0;
-        int x = 0;
         Solution658 instance = new Solution658();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.findClosestElements(arr, k, x);
-        assertEquals(expResult, result);
+
+        List<Integer> expect1 = new ArrayList<Integer>();
+        List<Integer> result1 = instance.findClosestElements(null, 0, 0);
+        assertEquals(expect1, result1);
         
         List<Integer> arr2 = ListUtil.buildList(new Integer[]{1,2,3,4,5});
         List<Integer> expect2 = ListUtil.buildList(new Integer[]{1,2,3,4});
@@ -76,5 +74,4 @@ public class Solution658Test {
         List<Integer> expect7 = ListUtil.buildList(new Integer[]{1,3});
         assertEquals(expect7, instance.findClosestElements(arr7, 2, 2));
     }
-    
 }

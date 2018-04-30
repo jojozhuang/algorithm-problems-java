@@ -41,12 +41,9 @@ public class Solution122Test {
     @Test
     public void testMaxProfit() {
         System.out.println("maxProfit");
-        int[] prices = null;
         Solution122 instance = new Solution122();
-        int expResult = 0;
-        int result = instance.maxProfit(prices);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.maxProfit(null));
         assertEquals(2, instance.maxProfit(new int[]{2,1,2,0,1}));
         assertEquals(2, instance.maxProfit(new int[]{3,2,3,1,2}));
         assertEquals(19, instance.maxProfit(new int[]{8,4,5,1,3,7,9,10,3,12}));

@@ -41,11 +41,9 @@ public class Solution058Test {
     @Test
     public void testLengthOfLastWord() {
         System.out.println("lengthOfLastWord");
-        String s = "";
         Solution058 instance = new Solution058();
-        int expResult = 0;
-        int result = instance.lengthOfLastWord(s);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.lengthOfLastWord(""));
         
         assertEquals(1, instance.lengthOfLastWord("a"));
         assertEquals(1, instance.lengthOfLastWord("a "));

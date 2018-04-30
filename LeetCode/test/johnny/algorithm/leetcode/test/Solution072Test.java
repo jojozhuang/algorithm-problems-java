@@ -41,13 +41,9 @@ public class Solution072Test {
     @Test
     public void testMinDistance() {
         System.out.println("minDistance");
-        String word1 = "";
-        String word2 = "";
         Solution072 instance = new Solution072();
-        int expResult = 0;
-        int result = instance.minDistance(word1, word2);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.minDistance("", ""));
         assertEquals(0, instance.minDistance("a", "a"));
         assertEquals(1, instance.minDistance("a", "b"));
         assertEquals(1, instance.minDistance("a", "aa"));

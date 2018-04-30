@@ -35,5 +35,4 @@ public class Solution555Test {
 
         assertEquals("zyxcba", instance.splitLoopedString(new String[] {"abc", "xyz"}));
     }
-
 }

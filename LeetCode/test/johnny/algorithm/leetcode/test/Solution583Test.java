@@ -35,5 +35,4 @@ public class Solution583Test {
 
         assertEquals(2, instance.minDistance("sea", "eat"));
     }
-
 }

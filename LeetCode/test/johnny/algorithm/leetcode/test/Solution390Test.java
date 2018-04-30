@@ -35,5 +35,4 @@ public class Solution390Test {
 
         assertEquals(6, instance.lastRemaining(9));
     }
-
 }

@@ -41,12 +41,9 @@ public class Solution168Test {
     @Test
     public void testConvertToTitle() {
         System.out.println("convertToTitle");
-        int n = 0;
         Solution168 instance = new Solution168();
-        String expResult = "";
-        String result = instance.convertToTitle(n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.convertToTitle(0));
         assertEquals("A", instance.convertToTitle(1));
         assertEquals("Y", instance.convertToTitle(25));
         assertEquals("Z", instance.convertToTitle(26));

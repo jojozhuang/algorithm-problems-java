@@ -40,5 +40,4 @@ public class Solution562Test {
         };
         assertEquals(3, instance.longestLine(M1));
     }
-
 }

@@ -41,13 +41,9 @@ public class Solution062Test {
     @Test
     public void testUniquePaths() {
         System.out.println("uniquePaths");
-        int m = 0;
-        int n = 0;
         Solution062 instance = new Solution062();
-        int expResult = 0;
-        int result = instance.uniquePaths(m, n);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.uniquePaths(0, 0));
         assertEquals(1, instance.uniquePaths(1, 1));
         assertEquals(1, instance.uniquePaths(3, 1));
         assertEquals(1, instance.uniquePaths(1, 4));

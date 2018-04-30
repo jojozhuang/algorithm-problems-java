@@ -41,7 +41,7 @@ public class Solution606Test {
      */
     @Test
     public void testTree2str() {
-        System.out.println("tree2str");        
+        System.out.println("tree2str");
         Solution606 instance = new Solution606();
 
         assertEquals("", instance.tree2str(null));

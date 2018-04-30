@@ -41,12 +41,9 @@ public class Solution135Test {
     @Test
     public void testCandy() {
         System.out.println("candy");
-        int[] ratings = null;
         Solution135 instance = new Solution135();
-        int expResult = 0;
-        int result = instance.candy(ratings);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.candy(null));
         assertEquals(12, instance.candy(new int[]{1,4,3,1,2,3}));
     }
 }

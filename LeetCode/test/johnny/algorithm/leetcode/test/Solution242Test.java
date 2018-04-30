@@ -39,35 +39,14 @@ public class Solution242Test {
      * Test of isAnagram1 method, of class Solution242.
      */
     @Test
-    public void testIsAnagram1() {
-        System.out.println("isAnagram1");
-        String s = "";
-        String t = "";
+    public void testIsAnagram() {
+        System.out.println("isAnagram");
         Solution242 instance = new Solution242();
-        boolean expResult = true;
-        boolean result = instance.isAnagram1(s, t);
-        assertEquals(expResult, result);
-        assertEquals(false, instance.isAnagram1("bc", "ab"));
-        assertEquals(true, instance.isAnagram1("ba", "ab"));
-        assertEquals(true, instance.isAnagram1("anagram", "nagaram"));
-        assertEquals(false, instance.isAnagram1("car", "rat"));
-    }
 
-    /**
-     * Test of isAnagram2 method, of class Solution242.
-     */
-    @Test
-    public void testIsAnagram2() {
-        System.out.println("isAnagram2");
-        String s = "";
-        String t = "";
-        Solution242 instance = new Solution242();
-        boolean expResult = false;
-        boolean result = instance.isAnagram2(s, t);
-        assertEquals(expResult, result);
-        assertEquals(false, instance.isAnagram2("bc", "ab"));
-        assertEquals(true, instance.isAnagram2("ba", "ab"));
-        assertEquals(true, instance.isAnagram2("anagram", "nagaram"));
-        assertEquals(false, instance.isAnagram2("car", "rat"));
+        assertEquals(true, instance.isAnagram("", ""));
+        assertEquals(false, instance.isAnagram("bc", "ab"));
+        assertEquals(true, instance.isAnagram("ba", "ab"));
+        assertEquals(true, instance.isAnagram("anagram", "nagaram"));
+        assertEquals(false, instance.isAnagram("car", "rat"));
     }
 }

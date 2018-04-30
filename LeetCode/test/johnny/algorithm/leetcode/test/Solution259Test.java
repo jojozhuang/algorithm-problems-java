@@ -48,5 +48,4 @@ public class Solution259Test {
         assertEquals(2, instance.threeSumSmaller(new int[]{-2, 0, 1, 3}, 2));
         assertEquals(4, instance.threeSumSmaller(new int[]{-2, 0, 1, 2}, 4));
     }
-    
 }

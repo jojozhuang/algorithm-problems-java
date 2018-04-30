@@ -41,12 +41,9 @@ public class Solution258Test {
     @Test
     public void testAddDigits() {
         System.out.println("addDigits");
-        int num = 0;
         Solution258 instance = new Solution258();
-        int expResult = 0;
-        int result = instance.addDigits(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.addDigits(0));
         assertEquals(2, instance.addDigits(38));
         assertEquals(8, instance.addDigits(1853));
     }

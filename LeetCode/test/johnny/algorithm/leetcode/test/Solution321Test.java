@@ -41,14 +41,9 @@ public class Solution321Test {
     @Test
     public void testMaxNumber() {
         System.out.println("maxNumber");
-        int[] nums1 = null;
-        int[] nums2 = null;
-        int k = 0;
         Solution321 instance = new Solution321();
-        int[] expResult = null;
-        int[] result = instance.maxNumber(nums1, nums2, k);
-        assertArrayEquals(expResult, result);
-        
+
+        assertArrayEquals(null, instance.maxNumber(null, null, 0));
         assertArrayEquals(new int[]{9, 8, 6, 5, 3}, instance.maxNumber(new int[]{3, 4, 6, 5}, new int[]{9, 1, 2, 5, 8, 3}, 5));
         assertArrayEquals(new int[]{6, 7, 6, 0, 4}, instance.maxNumber(new int[]{6,7}, new int[]{6,0,4}, 5));
         assertArrayEquals(new int[]{9, 8, 9}, instance.maxNumber(new int[]{3, 9}, new int[]{8,9}, 3));

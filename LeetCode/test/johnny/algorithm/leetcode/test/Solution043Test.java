@@ -41,13 +41,9 @@ public class Solution043Test {
     @Test
     public void testMultiply() {
         System.out.println("multiply");
-        String num1 = null;
-        String num2 = null;
         Solution043 instance = new Solution043();
-        String expResult = null;
-       String result = instance.multiply(num1, num2);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(null,  instance.multiply(null, null));
         assertEquals("", instance.multiply("", ""));
         assertEquals("", instance.multiply("11", ""));
         assertEquals("0", instance.multiply("1", "0"));
@@ -55,7 +51,7 @@ public class Solution043Test {
         assertEquals("81", instance.multiply("9", "9"));
         assertEquals("123", instance.multiply("123", "1"));
         assertEquals("456", instance.multiply("1", "456"));
-       assertEquals("1230", instance.multiply("123", "10"));
+        assertEquals("1230", instance.multiply("123", "10"));
         assertEquals("246", instance.multiply("123", "2"));
         assertEquals("42435", instance.multiply("123", "345"));
         assertEquals("15241578750190521", instance.multiply("123456789", "123456789"));

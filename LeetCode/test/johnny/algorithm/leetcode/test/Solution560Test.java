@@ -41,13 +41,9 @@ public class Solution560Test {
     @Test
     public void testSubarraySum() {
         System.out.println("subarraySum");
-        int[] nums = null;
-        int k = 0;
         Solution560 instance = new Solution560();
-        int expResult = 0;
-        int result = instance.subarraySum(nums, k);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.subarraySum(null, 0));
         assertEquals(1, instance.subarraySum(new int[]{1,2}, 3));
         assertEquals(1, instance.subarraySum(new int[]{1,2}, 2));
         assertEquals(0, instance.subarraySum(new int[]{1,2}, 4));

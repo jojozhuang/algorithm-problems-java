@@ -35,5 +35,4 @@ public class Solution548Test {
 
         assertEquals(true, instance.splitArray(new int[] {1,2,1,2,1,2,1}));
     }
-
 }

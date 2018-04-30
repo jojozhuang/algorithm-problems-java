@@ -41,12 +41,9 @@ public class Solution266Test {
     @Test
     public void testCanPermutePalindrome() {
         System.out.println("canPermutePalindrome");
-        String s = "";
         Solution266 instance = new Solution266();
-        boolean expResult = false;
-        boolean result = instance.canPermutePalindrome(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.canPermutePalindrome(""));
         assertEquals(true, instance.canPermutePalindrome("d"));
         assertEquals(false, instance.canPermutePalindrome("code"));
         assertEquals(true, instance.canPermutePalindrome("aab"));

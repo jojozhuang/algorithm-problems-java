@@ -56,5 +56,4 @@ public class Solution120Test {
         List<List<Integer>> triangle3 = ListUtil.buildList2(new Integer[][]{{2},{3,4},{6,5,7},{4,1,8,3}});
         assertEquals(11, instance.minimumTotal(triangle3));
     }
-    
 }

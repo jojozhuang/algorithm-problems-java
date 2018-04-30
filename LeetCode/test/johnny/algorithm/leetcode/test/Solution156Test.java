@@ -42,18 +42,11 @@ public class Solution156Test {
     @Test
     public void testUpsideDownBinaryTree() {
         System.out.println("upsideDownBinaryTree");
-        TreeNode root = null;
         Solution156 instance = new Solution156();
-        TreeNode expResult = null;
-        TreeNode result = instance.upsideDownBinaryTree(root);
-        assertEquals(expResult, result);
-        
-        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2", "3","4","5"});
-        TreeNode result2 = instance.upsideDownBinaryTree(root2);
-        assertEquals(4, result2.val);
-        assertEquals(5, result2.left.val);
-        assertEquals(2, result2.right.val);
-        assertEquals(3, result2.right.left.val);
-        assertEquals(1, result2.right.right.val);
+ 
+        assertEquals(null, instance.upsideDownBinaryTree(null));
+        TreeNode expect2 = TreeNode.createInstance(new String[] {"4","5","2","#","#","3","1"});
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","3","4","5"});
+        assertTrue(TreeNode.isSame(expect2, instance.upsideDownBinaryTree(root2)));
     }
 }

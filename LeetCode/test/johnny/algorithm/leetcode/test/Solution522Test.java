@@ -34,7 +34,5 @@ public class Solution522Test {
         Solution522 instance = new Solution522();
 
         assertEquals(3, instance.findLUSlength(new String[] {"aba", "cdc", "eae"}));
-        
     }
-
 }

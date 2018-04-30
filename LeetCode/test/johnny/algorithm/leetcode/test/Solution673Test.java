@@ -36,5 +36,4 @@ public class Solution673Test {
         assertEquals(2, instance.findNumberOfLIS(new int[] {1,3,5,4,7}));
         assertEquals(5, instance.findNumberOfLIS(new int[] {2,2,2,2,2}));
     }
-
 }

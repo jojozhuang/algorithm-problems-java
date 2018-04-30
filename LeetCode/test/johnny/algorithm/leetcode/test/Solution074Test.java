@@ -41,13 +41,9 @@ public class Solution074Test {
     @Test
     public void testSearchMatrix() {
         System.out.println("searchMatrix");
-        int[][] matrix = null;
-        int target = 0;
         Solution074 instance = new Solution074();
-        boolean expResult = false;
-        boolean result = instance.searchMatrix(matrix, target);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.searchMatrix(null, 0));
         assertEquals(false, instance.searchMatrix(new int[][]{}, 0));
         assertEquals(false, instance.searchMatrix(new int[][]{{}}, 0));
         assertEquals(true, instance.searchMatrix(new int[][]{{1}}, 1));

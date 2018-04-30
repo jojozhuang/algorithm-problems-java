@@ -42,5 +42,4 @@ public class Solution524Test {
         List<String> d2 = ListUtil.buildList(new String[] {"a","b","c"});
         assertEquals("a", instance.findLongestWord("abpcplea", d2));
     }
-
 }

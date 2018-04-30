@@ -41,13 +41,9 @@ public class Solution044Test {
     @Test
     public void testIsMatch() {
         System.out.println("isMatch");
-        String s = "";
-        String p = "";
         Solution044 instance = new Solution044();
-        boolean expResult = true;
-        boolean result = instance.isMatch(s, p);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.isMatch("", ""));
         assertEquals(false, instance.isMatch("aa",""));
         assertEquals(false, instance.isMatch("","?"));
         assertEquals(true, instance.isMatch("","*"));
@@ -61,5 +57,4 @@ public class Solution044Test {
         assertEquals(true, instance.isMatch("ho","**ho"));
         //assertEquals(true, instance.isMatch("abbabaaabbabbaababbabbbbbabbbabbbabaaaaababababbbabababaabbababaabbbbbbaaaabababbbaabbbbaabbbbababababbaabbaababaabbbababababbbbaaabbbbbabaaaabbababbbbaababaabbababbbbbababbbabaaaaaaaabbbbbaabaaababaaaabb","**aa*****ba*a*bb**aa*ab****a*aaaaaa***a*aaaa**bbabb*b*b**aaaaaaaaa*a********ba*bbb***a*ba*bb*bb**a*b*bb"));
     }
-    
 }

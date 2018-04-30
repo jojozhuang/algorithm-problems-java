@@ -41,5 +41,4 @@ public class Solution463Test {
         };
         assertEquals(16, instance.islandPerimeter(grid1));
     }
-
 }

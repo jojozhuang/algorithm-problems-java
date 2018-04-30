@@ -35,5 +35,4 @@ public class Solution193Test {
 
         assertEquals(0, instance.bash());
     }
-
 }

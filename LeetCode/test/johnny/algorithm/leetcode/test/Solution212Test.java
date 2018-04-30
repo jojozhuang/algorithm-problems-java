@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution212;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,12 +44,10 @@ public class Solution212Test {
     @Test
     public void testFindWords() {
         System.out.println("findWords");
-        char[][] board = null;
-        String[] words = null;
         Solution212 instance = new Solution212();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.findWords(board, words);
-        assertEquals(expResult, result);
+
+        List<String> expect1 = ListUtil.buildList(new String[] {}); 
+        assertEquals(expect1, instance.findWords(null, null));
         
         char[][] board2 = new char[][] {
             {'o','a','a','n'},
@@ -56,30 +55,22 @@ public class Solution212Test {
             {'i','h','k','r'},
             {'i','f','l','v'}
         };
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("eat");
-        expResult2.add("oath");
+        List<String> expect2 = ListUtil.buildList(new String[] {"eat","oath"});
         List<String> result2 = instance.findWords(board2, new String[]{"oath","pea","eat","rain"});
-        //assertEquals(expResult2, result2);
-        assertTrue(expResult2.containsAll(result2) && result2.containsAll(expResult2));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
         
         char[][] board3 = new char[][] {
             {'a','a'}
         };
-        List<String> expResult3 = new ArrayList<String>();
-        expResult3.add("a");
+        List<String> expect3 = ListUtil.buildList(new String[] {"a"});
         List<String> result3 = instance.findWords(board3, new String[]{"a"});
-        //assertEquals(expResult2, result2);
-        assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect3, result3));
         
         char[][] board4 = new char[][] {
             {'a'}
         };
-        List<String> expResult4 = new ArrayList<String>();
-        expResult4.add("a");
-        expResult4.add("a");
+        List<String> expect4 = ListUtil.buildList(new String[] {"a"});
         List<String> result4 = instance.findWords(board4, new String[]{"a", "a"});
-        //assertEquals(expResult2, result2);
-        assertTrue(expResult4.containsAll(result4) && result4.containsAll(expResult4));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect4, result4));
     }
 }

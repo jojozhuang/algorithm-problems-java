@@ -36,5 +36,4 @@ public class Solution639Test {
         assertEquals(9, instance.numDecodings("*"));
         assertEquals(18, instance.numDecodings("1*"));
     }
-
 }

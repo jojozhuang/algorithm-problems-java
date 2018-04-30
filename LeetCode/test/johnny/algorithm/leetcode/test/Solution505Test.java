@@ -55,5 +55,4 @@ public class Solution505Test {
         int[] destination2 = new int[] {3,2};
         assertEquals(-1, instance.shortestDistance(maze2,start2,destination2));
     }
-
 }

@@ -41,12 +41,9 @@ public class Solution394Test {
     @Test
     public void testDecodeString() {
         System.out.println("decodeString");
-        String s = "";
         Solution394 instance = new Solution394();
-        String expResult = "";
-        String result = instance.decodeString(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.decodeString(""));
         assertEquals("aaabcbc", instance.decodeString("3[a]2[bc]"));
         assertEquals("accaccacc", instance.decodeString("3[a2[c]]"));
         assertEquals("abcabccdcdcdef", instance.decodeString("2[abc]3[cd]ef"));

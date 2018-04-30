@@ -39,5 +39,4 @@ public class Solution631Test {
         instance.set(2, 'B', 2);
         assertEquals(6, instance.sum(3, 'C', new String[] {"A1", "A1:B2"}));
     }
-
 }

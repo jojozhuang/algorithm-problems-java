@@ -41,13 +41,9 @@ public class Solution350Test {
     @Test
     public void testIntersect() {
         System.out.println("intersect");
-        int[] nums1 = null;
-        int[] nums2 = null;
         Solution350 instance = new Solution350();
-        int[] expResult = new int[]{};
-        int[] result = instance.intersect(nums1, nums2);
-        assertArrayEquals(expResult, result);
-        
+
+        assertArrayEquals(new int[]{}, instance.intersect(null, null));
         assertArrayEquals(new int[]{2,2}, instance.intersect(new int[]{1, 2, 2, 1}, new int[]{2, 2}));
         assertArrayEquals(new int[]{3}, instance.intersect(new int[]{1, 2, 3}, new int[]{3, 4}));
         assertArrayEquals(new int[]{4,6}, instance.intersect(new int[]{1, 2, 3,4,5,6}, new int[]{4, 6}));

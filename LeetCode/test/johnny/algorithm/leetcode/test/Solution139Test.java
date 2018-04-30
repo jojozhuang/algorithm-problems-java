@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution139;
+import johnny.algorithm.leetcode.common.SetUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,30 +44,23 @@ public class Solution139Test {
     @Test
     public void testWordBreak() {
         System.out.println("wordBreak");
-        String s = "";
-        Set<String> dict = null;
         Solution139 instance = new Solution139();
-        boolean expResult = false;
-        boolean result = instance.wordBreak(s, dict);
-        assertEquals(expResult, result);
+
+        assertEquals(false, instance.wordBreak("", null));
         
-        Set<String> dict2 = new HashSet<String>();
-        dict2.add("a");        
+        Set<String> dict2 = SetUtil.buildList(new String[] {"a"});
         assertEquals(true, instance.wordBreak("a", dict2));
-        Set<String> dict3 = new HashSet<String>();
-        dict3.add("b");        
+        
+        Set<String> dict3 = SetUtil.buildList(new String[] {"b"});
         assertEquals(false, instance.wordBreak("a", dict3));
-        Set<String> dict4 = new HashSet<String>();
-        dict4.add("cd");     
-        dict4.add("ap");   
+        
+        Set<String> dict4 = SetUtil.buildList(new String[] {"cd","ap"});
         assertEquals(false, instance.wordBreak("abcd", dict4));
-        Set<String> dict5 = new HashSet<String>();
-        dict5.add("cd");     
-        dict5.add("ap");   
+        
+        Set<String> dict5 = SetUtil.buildList(new String[] {"cd","ap"});
         assertEquals(true, instance.wordBreak("cdap", dict5));
-        Set<String> dict6 = new HashSet<String>();
-        dict6.add("leet");     
-        dict6.add("code");   
+        
+        Set<String> dict6 = SetUtil.buildList(new String[] {"leet","code"});
         assertEquals(true, instance.wordBreak("leetcode", dict6));
     }
 }

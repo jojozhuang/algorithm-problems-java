@@ -42,5 +42,4 @@ public class Solution411Test {
         String[] dictionary3 = new String[] {"plain", "amber", "blade"};
         assertEquals("1p3", instance.minAbbreviation("apple", dictionary3));
     }
-
 }

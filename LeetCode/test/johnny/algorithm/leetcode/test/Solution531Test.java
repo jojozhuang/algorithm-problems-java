@@ -40,5 +40,4 @@ public class Solution531Test {
         };
         assertEquals(3, instance.findLonelyPixel(picture1));
     }
-
 }

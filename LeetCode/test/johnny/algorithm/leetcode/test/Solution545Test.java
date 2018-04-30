@@ -41,5 +41,4 @@ public class Solution545Test {
         List<Integer> expect1 = ListUtil.buildList(new Integer[] {1, 3, 4, 2});
         assertEquals(expect1, instance.boundaryOfBinaryTree(root1));
     }
-
 }

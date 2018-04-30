@@ -41,12 +41,9 @@ public class Solution227Test {
     @Test
     public void testCalculate() {
         System.out.println("calculate");
-        String s = "";
         Solution227 instance = new Solution227();
-        int expResult = 0;
-        int result = instance.calculate(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.calculate(""));
         assertEquals(7, instance.calculate("3+2*2"));
         assertEquals(1, instance.calculate(" 3/2"));
         assertEquals(5, instance.calculate(" 3+5 / 2 "));

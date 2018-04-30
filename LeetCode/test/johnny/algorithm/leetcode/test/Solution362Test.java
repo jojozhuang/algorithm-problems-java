@@ -42,6 +42,7 @@ public class Solution362Test {
     public void testHit() {
         System.out.println("hit");
         Solution362 instance = new Solution362();
+        
         instance.hit(1);
         instance.hit(2);
         instance.hit(3);

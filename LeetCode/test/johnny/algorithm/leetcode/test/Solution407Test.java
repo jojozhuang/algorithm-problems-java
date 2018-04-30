@@ -40,5 +40,4 @@ public class Solution407Test {
         };
         assertEquals(4, instance.trapRainWater(heightMap1));
     }
-
 }

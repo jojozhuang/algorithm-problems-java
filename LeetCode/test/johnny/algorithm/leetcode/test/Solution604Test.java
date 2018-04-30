@@ -45,5 +45,4 @@ public class Solution604Test {
         assertEquals(false, instance.hasNext());
         assertEquals(' ', instance.next());
     }
-
 }

@@ -37,5 +37,4 @@ public class Solution659Test {
         assertEquals(true, instance.isPossible(new int[] {1,2,3,3,4,4,5,5}));
         assertEquals(false, instance.isPossible(new int[] {1,2,3,4,4,5}));
     }
-
 }

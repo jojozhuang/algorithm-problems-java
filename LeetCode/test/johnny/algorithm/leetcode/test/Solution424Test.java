@@ -36,5 +36,4 @@ public class Solution424Test {
         assertEquals(4, instance.characterReplacement("ABAB",2));
         assertEquals(4, instance.characterReplacement("AABABBA",1));
     }
-
 }

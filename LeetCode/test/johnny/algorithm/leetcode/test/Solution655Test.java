@@ -54,5 +54,4 @@ public class Solution655Test {
         {"4", "",  "", "",  "", "", "", "",  "",  "",  "",  "",  "", "", ""}});
         assertEquals(result3, instance.printTree(root3));
     }
-
 }

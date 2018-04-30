@@ -41,5 +41,4 @@ public class Solution533Test {
         };
         assertEquals(6, instance.findBlackPixel(picture1,3));
     }
-
 }

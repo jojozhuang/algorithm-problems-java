@@ -35,5 +35,4 @@ public class Solution688Test {
 
         assertEquals(0.0625, instance.knightProbability(3,2,0,0), 0.0);
     }
-
 }

@@ -41,12 +41,9 @@ public class Solution246Test {
     @Test
     public void testIsStrobogrammatic() {
         System.out.println("isStrobogrammatic");
-        String num = "";
         Solution246 instance = new Solution246();
-        boolean expResult = false;
-        boolean result = instance.isStrobogrammatic(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.isStrobogrammatic(""));
         assertEquals(true, instance.isStrobogrammatic("69"));
         assertEquals(true, instance.isStrobogrammatic("88"));
         assertEquals(true, instance.isStrobogrammatic("818"));

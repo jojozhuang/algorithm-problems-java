@@ -42,5 +42,4 @@ public class Solution588Test {
         instance.addContentToFile("/a/b/c/d","hello");
         assertEquals("hello", instance.readContentFromFile("/a/b/c/d"));
     }
-
 }

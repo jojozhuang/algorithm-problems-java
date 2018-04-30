@@ -41,11 +41,9 @@ public class Solution317Test {
     @Test
     public void testShortestDistance() {
         System.out.println("shortestDistance");
-        int[][] grid = null;
         Solution317 instance = new Solution317();
-        int expResult = -1;
-        int result = instance.shortestDistance(grid);
-        assertEquals(expResult, result);
+
+        assertEquals(-1, instance.shortestDistance(null));
         
         int[][] grid2 = new int[][] {
             {1,0,2,0,1},

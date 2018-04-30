@@ -44,36 +44,35 @@ public class Solution095Test {
     @Test
     public void testGenerateTrees() {
         System.out.println("generateTrees");
-        int n = 0;
         Solution095 instance = new Solution095();
-        List<TreeNode> expResult = new ArrayList<TreeNode>();
-        List<TreeNode> result = instance.generateTrees(n);
-        assertEquals(expResult, result);
+
+        List<TreeNode> expect0 = new ArrayList<TreeNode>();
+        assertEquals(expect0, instance.generateTrees(0));
         
-        List<TreeNode> result2 = instance.generateTrees(1);
-        assertEquals(1, result2.get(0).val);
+        List<TreeNode> result1 = instance.generateTrees(1);
+        List<TreeNode> expect1 = new ArrayList<TreeNode>();
+        expect1.add(TreeNode.createInstance(new String[] {"1","#","#"}));
+        for (int i = 0; i < result1.size(); i++) {
+            assertTrue(TreeNode.isSame(expect1.get(i), result1.get(i)));
+        }
         
-        List<TreeNode> result3 = instance.generateTrees(2);
-        assertEquals(1, result3.get(0).val);
-        assertEquals(2, result3.get(0).right.val);
-        assertEquals(2, result3.get(1).val);
-        assertEquals(1, result3.get(1).left.val);
+        List<TreeNode> result2 = instance.generateTrees(2);
+        List<TreeNode> expect2 = new ArrayList<TreeNode>();
+        expect2.add(TreeNode.createInstance(new String[] {"1","#","2"}));
+        expect2.add(TreeNode.createInstance(new String[] {"2","1","#"}));
+        for (int i = 0; i < result2.size(); i++) {
+            assertTrue(TreeNode.isSame(expect2.get(i), result2.get(i)));
+        }
         
-        List<TreeNode> result4 = instance.generateTrees(3);
-        assertEquals(1, result4.get(0).val);
-        assertEquals(2, result4.get(0).right.val);
-        assertEquals(3, result4.get(0).right.right.val);
-        assertEquals(1, result4.get(1).val);
-        assertEquals(3, result4.get(1).right.val);
-        assertEquals(2, result4.get(1).right.left.val);
-        assertEquals(2, result4.get(2).val);
-        assertEquals(1, result4.get(2).left.val);
-        assertEquals(3, result4.get(2).right.val);
-        assertEquals(3, result4.get(3).val);
-        assertEquals(1, result4.get(3).left.val);
-        assertEquals(2, result4.get(3).left.right.val);
-        assertEquals(3, result4.get(4).val);
-        assertEquals(2, result4.get(4).left.val);
-        assertEquals(1, result4.get(4).left.left.val);
+        List<TreeNode> result3 = instance.generateTrees(3);
+        List<TreeNode> expect3 = new ArrayList<TreeNode>();
+        expect3.add(TreeNode.createInstance(new String[] {"1","#","2","#","3"}));
+        expect3.add(TreeNode.createInstance(new String[] {"1","#","3","2","#"}));
+        expect3.add(TreeNode.createInstance(new String[] {"2","1","3","#","#","#","#"}));
+        expect3.add(TreeNode.createInstance(new String[] {"3","1","#","#","2"}));
+        expect3.add(TreeNode.createInstance(new String[] {"3","2","#","1","#"}));
+        for (int i = 0; i < result3.size(); i++) {
+            assertTrue(TreeNode.isSame(expect3.get(i), result3.get(i)));
+        }
     }
 }

@@ -41,12 +41,9 @@ public class Solution303Test {
     @Test
     public void testSumRange() {
         System.out.println("sumRange");
-        int i = 0;
-        int j = 0;
         Solution303 instance = new Solution303(new int[]{});
-        int expResult = 0;
-        int result = instance.sumRange(i, j);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.sumRange(0, 0));
         
         Solution303 instance2 = new Solution303(new int[]{1});
         assertEquals(1, instance2.sumRange(0, 0));

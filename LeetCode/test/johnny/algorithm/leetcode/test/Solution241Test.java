@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution241;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,25 +44,17 @@ public class Solution241Test {
     @Test
     public void testDiffWaysToCompute() {
         System.out.println("diffWaysToCompute");
-        String input = "";
         Solution241 instance = new Solution241();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.diffWaysToCompute(input);
-        assertEquals(expResult, result);
         
-        List<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(0);
-        expResult2.add(2);
+        List<Integer> expect1 = ListUtil.buildList(new Integer[] {});
+        assertEquals(expect1, instance.diffWaysToCompute(""));
+        
+        List<Integer> expect2 = ListUtil.buildList(new Integer[] {0,2});
         List<Integer> result2 = instance.diffWaysToCompute("2-1-1");
-        assertTrue(expResult2.containsAll(result2) && result2.containsAll(expResult2));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
         
-        List<Integer> expResult3 = new ArrayList<Integer>();
-        expResult3.add(-34);
-        expResult3.add(-14);
-        expResult3.add(-10);
-        expResult3.add(-10);
-        expResult3.add(10);
+        List<Integer> expect3 = ListUtil.buildList(new Integer[] {-34,-14,-10,-10,10});
         List<Integer> result3 = instance.diffWaysToCompute("2*3-4*5");
-        assertTrue(expResult3.containsAll(result3) && result3.containsAll(expResult3));
+        assertTrue(ListUtil.equalsIgnoreOrder(expect3, result3));
     }
 }

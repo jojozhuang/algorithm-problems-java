@@ -41,5 +41,4 @@ public class Solution515Test {
         List<Integer> expect1 = ListUtil.buildList(new Integer[] {1, 3, 9});
         assertEquals(expect1, instance.largestValues(root1));
     }
-
 }

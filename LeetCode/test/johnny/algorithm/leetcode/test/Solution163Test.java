@@ -85,5 +85,4 @@ public class Solution163Test {
         List<String> expect10 = ListUtil.buildList(new String[]{"-2147483647->2147483647"});
         assertEquals(expect10, result10);
     }
-    
 }

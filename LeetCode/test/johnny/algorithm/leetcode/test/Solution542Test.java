@@ -57,5 +57,4 @@ public class Solution542Test {
         };
         assertArrayEquals(result2, instance.updateMatrix(matrix2));
     }
-
 }

@@ -41,13 +41,9 @@ public class Solution028Test {
     @Test
     public void testStrStr() {
         System.out.println("strStr");
-        String haystack = "";
-        String needle = "";
         Solution028 instance = new Solution028();
-        int expResult = 0;
-        int result = instance.strStr(haystack, needle);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.strStr("", ""));
         assertEquals(0, instance.strStr("A", ""));
         assertEquals(-1, instance.strStr("abcdedf", "cf"));
         assertEquals(2, instance.strStr("abcdedf", "cd"));

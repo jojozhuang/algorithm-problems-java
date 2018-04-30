@@ -36,5 +36,4 @@ public class Solution393Test {
         assertEquals(true, instance.validUtf8(new int[] {197, 130, 1}));
         assertEquals(false, instance.validUtf8(new int[] {235, 140, 4}));
     }
-
 }

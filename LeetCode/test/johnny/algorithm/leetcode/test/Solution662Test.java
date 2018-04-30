@@ -46,5 +46,4 @@ public class Solution662Test {
         TreeNode root4 = TreeNode.createInstance(new String[] {"1","3","2","5","#","#","9","6","#","#","7"});
         assertEquals(8, instance.widthOfBinaryTree(root4));
     }
-
 }

@@ -44,11 +44,10 @@ public class Solution442Test {
     @Test
     public void testFindDuplicates() {
         System.out.println("findDuplicates");
-        int[] nums = null;
         Solution442 instance = new Solution442();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.findDuplicates(nums);
-        assertEquals(expResult, result);
+        
+        List<Integer> expect1 = new ArrayList<Integer>();
+        assertEquals(expect1, instance.findDuplicates(null));
         
         List<Integer> expect2 = ListUtil.buildList(new Integer[]{2,3});
         assertEquals(expect2, instance.findDuplicates(new int[]{4,3,2,7,8,2,3,1}));
@@ -59,5 +58,4 @@ public class Solution442Test {
         List<Integer> expect4 = ListUtil.buildList(new Integer[]{2});
         assertEquals(expect4, instance.findDuplicates(new int[]{2,2}));
     }
-    
 }

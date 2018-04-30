@@ -41,13 +41,9 @@ public class Solution159Test {
     @Test
     public void testLengthOfLongestSubstringTwoDistinct() {
         System.out.println("lengthOfLongestSubstringTwoDistinct");
-        String s = "";
         Solution159 instance = new Solution159();
-        int expResult = 0;
-        int result = instance.lengthOfLongestSubstringTwoDistinct(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.lengthOfLongestSubstringTwoDistinct(""));
         assertEquals(3, instance.lengthOfLongestSubstringTwoDistinct("eceba"));
     }
-    
 }

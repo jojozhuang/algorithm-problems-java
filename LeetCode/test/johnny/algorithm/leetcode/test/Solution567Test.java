@@ -36,5 +36,4 @@ public class Solution567Test {
         assertEquals(true, instance.checkInclusion("ab","eidbaooo"));
         assertEquals(false, instance.checkInclusion("ab","eidboaoo"));
     }
-
 }

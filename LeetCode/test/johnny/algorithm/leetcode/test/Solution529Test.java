@@ -60,6 +60,5 @@ public class Solution529Test {
             {'B', 'B', 'B', 'B', 'B'}
         };
         assertArrayEquals(expect2, instance.updateBoard(board2, new int[] {1,2}));
-}
-
+    }
 }

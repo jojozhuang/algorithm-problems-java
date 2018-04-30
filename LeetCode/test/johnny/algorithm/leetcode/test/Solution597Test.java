@@ -35,5 +35,4 @@ public class Solution597Test {
         
         assertEquals(0, instance.query());
     }
-
 }

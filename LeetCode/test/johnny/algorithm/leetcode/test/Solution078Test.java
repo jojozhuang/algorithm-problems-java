@@ -44,20 +44,18 @@ public class Solution078Test {
     @Test
     public void testSubsets() {
         System.out.println("subsets");
-        
-        int[] nums = null;
         Solution078 instance = new Solution078();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.subsets(nums);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1, instance.subsets(null));
         
-        List<List<Integer>> expResult2 = ListUtil.buildList2(new Integer[][]{{},{1}});
-        assertEquals(expResult2, instance.subsets(new int[]{1}));
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][]{{},{1}});
+        assertEquals(expect2, instance.subsets(new int[]{1}));
         
-        List<List<Integer>> expResult3 = ListUtil.buildList2(new Integer[][]{{},{1},{1,3},{3}});
-        assertEquals(expResult3, instance.subsets(new int[]{1,3}));
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][]{{},{1},{1,3},{3}});
+        assertEquals(expect3, instance.subsets(new int[]{1,3}));
                
-        List<List<Integer>> expResult4 = ListUtil.buildList2(new Integer[][]{{},{1},{1,3},{1,3,8},{1,8},{3},{3,8},{8}});
-        assertEquals(expResult4, instance.subsets(new int[]{1,3,8}));
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][]{{},{1},{1,3},{1,3,8},{1,8},{3},{3,8},{8}});
+        assertEquals(expect4, instance.subsets(new int[]{1,3,8}));
     }
 }

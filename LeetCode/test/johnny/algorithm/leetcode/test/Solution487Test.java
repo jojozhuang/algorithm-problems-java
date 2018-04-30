@@ -35,5 +35,4 @@ public class Solution487Test {
 
         assertEquals(4, instance.findMaxConsecutiveOnes(new int[] {1,0,1,1,0}));
     }
-
 }

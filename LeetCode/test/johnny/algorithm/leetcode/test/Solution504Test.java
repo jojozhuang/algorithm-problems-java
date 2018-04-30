@@ -36,5 +36,4 @@ public class Solution504Test {
         assertEquals("202", instance.convertToBase7(100));
         assertEquals("-10", instance.convertToBase7(-7));
     }
-
 }

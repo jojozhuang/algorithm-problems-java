@@ -41,13 +41,9 @@ public class Solution134Test {
     @Test
     public void testCanCompleteCircuit() {
         System.out.println("canCompleteCircuit");
-        int[] gas = null;
-        int[] cost = null;
         Solution134 instance = new Solution134();
-        int expResult = -1;
-        int result = instance.canCompleteCircuit(gas, cost);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(-1, instance.canCompleteCircuit(null, null));
         assertEquals(0, instance.canCompleteCircuit(new int[]{1,2,3}, new int[]{1,1,1}));
         assertEquals(-1, instance.canCompleteCircuit(new int[]{1,2,3}, new int[]{1,5,1}));
         assertEquals(2, instance.canCompleteCircuit(new int[]{1,2,3}, new int[]{1,4,1}));

@@ -41,13 +41,9 @@ public class Solution067Test {
     @Test
     public void testAddBinary() {
         System.out.println("addBinary");
-        String a = "";
-        String b = "";
         Solution067 instance = new Solution067();
-        String expResult = "";
-        String result = instance.addBinary(a, b);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.addBinary("", ""));
         assertEquals("1", instance.addBinary("", "1"));
         assertEquals("1", instance.addBinary("1", "0"));
         assertEquals("10", instance.addBinary("1", "1"));

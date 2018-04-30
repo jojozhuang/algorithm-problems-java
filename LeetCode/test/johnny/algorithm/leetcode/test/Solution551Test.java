@@ -42,6 +42,7 @@ public class Solution551Test {
     public void testCheckRecord() {
         System.out.println("checkRecord");
         Solution551 instance = new Solution551();
+        
         assertEquals(false, instance.checkRecord(""));
         assertEquals(true, instance.checkRecord("A"));
         assertEquals(true, instance.checkRecord("AL"));

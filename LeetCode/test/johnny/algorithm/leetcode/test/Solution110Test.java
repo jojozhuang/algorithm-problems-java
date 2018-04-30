@@ -42,31 +42,29 @@ public class Solution110Test {
     @Test
     public void testIsBalanced() {
         System.out.println("isBalanced");
-        TreeNode root = null;
         Solution110 instance = new Solution110();
-        boolean expResult = true;
-        boolean result = instance.isBalanced(root);
-        assertEquals(expResult, result);
+
+        assertEquals(true, instance.isBalanced(null));
         
-        TreeNode p1 = TreeNode.createInstance(new String[] {"1"});
-        assertEquals(true, instance.isBalanced(p1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"1"});
+        assertEquals(true, instance.isBalanced(root1));
 
-        TreeNode p2 = TreeNode.createInstance(new String[] {"1","2","#"});
-        assertEquals(true, instance.isBalanced(p2));
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
+        assertEquals(true, instance.isBalanced(root2));
 
-        TreeNode p3 = TreeNode.createInstance(new String[] {"1","2","2"});
-        assertEquals(true, instance.isBalanced(p3));
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","2"});
+        assertEquals(true, instance.isBalanced(root3));
 
-        TreeNode p4 = TreeNode.createInstance(new String[] {"1","2","2","#","#","3","#"});
-        assertEquals(true, instance.isBalanced(p4));
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","2","#","#","3","#"});
+        assertEquals(true, instance.isBalanced(root4));
 
-        TreeNode p5 = TreeNode.createInstance(new String[] {"1","2","2","#","#","#","3","#","4"});
-        assertEquals(false, instance.isBalanced(p5));
+        TreeNode root5 = TreeNode.createInstance(new String[] {"1","2","2","#","#","#","3","#","4"});
+        assertEquals(false, instance.isBalanced(root5));
 
-        TreeNode p6 = TreeNode.createInstance(new String[] {"1","2","2","3","#","#","3","4","#","#","4"});
-        assertEquals(false, instance.isBalanced(p6));
+        TreeNode root6 = TreeNode.createInstance(new String[] {"1","2","2","3","#","#","3","4","#","#","4"});
+        assertEquals(false, instance.isBalanced(root6));
 
-        TreeNode p7 = TreeNode.createInstance(new String[] {"1","2","2","3","3","3","3","4","4","4","4","4","4","#","#","5","5","#","#","#","#","#","#","#","#","#","#","#","#"});
-        assertEquals(true, instance.isBalanced(p7));
+        TreeNode root7 = TreeNode.createInstance(new String[] {"1","2","2","3","3","3","3","4","4","4","4","4","4","#","#","5","5","#","#","#","#","#","#","#","#","#","#","#","#"});
+        assertEquals(true, instance.isBalanced(root7));
     }
 }

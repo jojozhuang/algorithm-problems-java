@@ -46,5 +46,4 @@ public class Solution455Test {
         assertEquals(1, instance.findContentChildren(new int[] {1,2,3}, new int[] {1,1}));
         assertEquals(2, instance.findContentChildren(new int[] {1,2}, new int[] {1,2,3}));
     }
-
 }

@@ -41,12 +41,9 @@ public class Solution063Test {
     @Test
     public void testUniquePathsWithObstacles() {
         System.out.println("uniquePathsWithObstacles");
-        int[][] obstacleGrid = null;
         Solution063 instance = new Solution063();
-        int expResult = 0;
-        int result = instance.uniquePathsWithObstacles(obstacleGrid);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.uniquePathsWithObstacles(null));
         assertEquals(2, instance.uniquePathsWithObstacles(new int[][]{{0,0,0},{0,1,0},{0,0,0}}));
         assertEquals(0, instance.uniquePathsWithObstacles(new int[][]{{1,0,0},{0,1,0},{0,0,0}}));
     }

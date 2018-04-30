@@ -37,5 +37,4 @@ public class Solution543Test {
         TreeNode root1 = TreeNode.createInstance(new String[] {"1","2","3","4","5","#","#"});
         assertEquals(3, instance.diameterOfBinaryTree(root1));
     }
-
 }

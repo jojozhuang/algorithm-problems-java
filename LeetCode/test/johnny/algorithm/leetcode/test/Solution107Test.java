@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution107;
+import johnny.algorithm.leetcode.common.ListUtil;
 import johnny.algorithm.leetcode.common.TreeNode;
 
 import static org.junit.Assert.*;
@@ -44,123 +45,37 @@ public class Solution107Test {
     @Test
     public void testLevelOrderBottom() {
         System.out.println("levelOrderBottom");
-        TreeNode root = null;
         Solution107 instance = new Solution107();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.levelOrderBottom(root);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1, instance.levelOrderBottom(null));
         
-        TreeNode p2 = new TreeNode(1);
-        List<List<Integer>> ret2 = new ArrayList<List<Integer>>();
-        List<Integer> sub2 = new ArrayList<Integer>();
-        sub2.add(1);
-        ret2.add(sub2);
-        assertEquals(ret2, instance.levelOrderBottom(p2));
+        TreeNode root2 = new TreeNode(1);
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{1}});
+        assertEquals(expect2, instance.levelOrderBottom(root2));
 
-        TreeNode p3 = new TreeNode(1);
-        p3.left = new TreeNode(2);
-        List<List<Integer>> ret3 = new ArrayList<List<Integer>>();
-        List<Integer> sub3 = new ArrayList<Integer>();
-        sub3.add(2);
-        ret3.add(sub3);
-        List<Integer> sub32 = new ArrayList<Integer>();
-        sub32.add(1);
-        ret3.add(sub32);
-        assertEquals(ret3, instance.levelOrderBottom(p3));
+        TreeNode root3 = TreeNode.createInstance(new String[]{"1","2","#"});
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{2},{1}});
+        assertEquals(expect3, instance.levelOrderBottom(root3));
 
-        TreeNode p4 = new TreeNode(1);
-        p4.left = new TreeNode(2);
-        p4.right = new TreeNode(3);
-        List<List<Integer>> ret4 = new ArrayList<List<Integer>>();
-        List<Integer> sub41 = new ArrayList<Integer>();
-        sub41.add(2);
-        sub41.add(3);
-        ret4.add(sub41);
-        List<Integer> sub42 = new ArrayList<Integer>();
-        sub42.add(1);
-        ret4.add(sub42);
-        assertEquals(ret4, instance.levelOrderBottom(p4));        
+        TreeNode root4 = TreeNode.createInstance(new String[]{"1","2","3"});
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][] {{2,3},{1}});
+        assertEquals(expect4, instance.levelOrderBottom(root4));
 
-        TreeNode p5 = new TreeNode(1);        
-        p5.right = new TreeNode(3);
-        p5.right.right = new TreeNode(5);
-        List<List<Integer>> ret5 = new ArrayList<List<Integer>>();
-        List<Integer> sub51 = new ArrayList<Integer>();
-        sub51.add(5);
-        ret5.add(sub51);
-        List<Integer> sub52 = new ArrayList<Integer>();
-        sub52.add(3);
-        ret5.add(sub52);
-        List<Integer> sub53 = new ArrayList<Integer>();
-        sub53.add(1);
-        ret5.add(sub53);
-        assertEquals(ret5, instance.levelOrderBottom(p5));
+        TreeNode root5 = TreeNode.createInstance(new String[]{"1","#","3","#","5"});
+        List<List<Integer>> expect5 = ListUtil.buildList2(new Integer[][] {{5},{3},{1}});
+        assertEquals(expect5, instance.levelOrderBottom(root5));
 
-        TreeNode p6 = new TreeNode(3);
-        p6.left = new TreeNode(9);
-        p6.right = new TreeNode(20);
-        p6.right.left = new TreeNode(15);
-        p6.right.right = new TreeNode(7);
-        List<List<Integer>> ret6 = new ArrayList<List<Integer>>();
-        List<Integer> sub61 = new ArrayList<Integer>();
-        sub61.add(15);
-        sub61.add(7);
-        ret6.add(sub61);
-        List<Integer> sub62 = new ArrayList<Integer>();
-        sub62.add(9);
-        sub62.add(20);
-        ret6.add(sub62);
-        List<Integer> sub63 = new ArrayList<Integer>();
-        sub63.add(3);
-        ret6.add(sub63);
-        assertEquals(ret6, instance.levelOrderBottom(p6));
+        TreeNode root6 = TreeNode.createInstance(new String[]{"3","9","20","#","#","15","7"});
+        List<List<Integer>> expect6 = ListUtil.buildList2(new Integer[][] {{15,7},{9,20},{3}});
+        assertEquals(expect6, instance.levelOrderBottom(root6));
         
-        TreeNode p7 = new TreeNode(1);
-        p7.left = new TreeNode(2);
-        p7.right = new TreeNode(3);
-        p7.left.left = new TreeNode(4);
-        p7.right.right = new TreeNode(5);
-        List<List<Integer>> ret7 = new ArrayList<List<Integer>>();
-        List<Integer> sub71 = new ArrayList<Integer>();
-        sub71.add(4);
-        sub71.add(5);
-        ret7.add(sub71);
-        List<Integer> sub72 = new ArrayList<Integer>();
-        sub72.add(2);
-        sub72.add(3);
-        ret7.add(sub72);
-        List<Integer> sub73 = new ArrayList<Integer>();
-        sub73.add(1);
-        ret7.add(sub73);
-        assertEquals(ret7, instance.levelOrderBottom(p7));
+        TreeNode root7 = TreeNode.createInstance(new String[]{"1","2","3","4","#","#","5"});
+        List<List<Integer>> expect7 = ListUtil.buildList2(new Integer[][] {{4,5},{2,3},{1}});
+        assertEquals(expect7, instance.levelOrderBottom(root7));
         
-        TreeNode p8 = new TreeNode(0);
-        p8.left = new TreeNode(-3);
-        p8.right = new TreeNode(-2);
-        p8.left.left = new TreeNode(-9);
-        p8.left.right = new TreeNode(-8);
-        p8.left.left.left = new TreeNode(2);
-        p8.left.right.right = new TreeNode(-5);
-        p8.left.left.left.left = new TreeNode(5);
-        List<List<Integer>> ret8 = new ArrayList<List<Integer>>();
-        List<Integer> sub81 = new ArrayList<Integer>();
-        sub81.add(5);
-        ret8.add(sub81);
-        List<Integer> sub82 = new ArrayList<Integer>();
-        sub82.add(2);
-        sub82.add(-5);
-        ret8.add(sub82);
-        List<Integer> sub83 = new ArrayList<Integer>();
-        sub83.add(-9);
-        sub83.add(-8);
-        ret8.add(sub83);
-        List<Integer> sub84 = new ArrayList<Integer>();
-        sub84.add(-3);
-        sub84.add(-2);
-        ret8.add(sub84);
-        List<Integer> sub85 = new ArrayList<Integer>();
-        sub85.add(0);
-        ret8.add(sub85);
-        assertEquals(ret8, instance.levelOrderBottom(p8));
+        TreeNode root8 = TreeNode.createInstance(new String[]{"0","-3","-2","-9","-8","#","#","2","#","#","-5","5","#"});
+        List<List<Integer>> expect8 = ListUtil.buildList2(new Integer[][] {{5},{2,-5},{-9,-8},{-3,-2},{0}});
+        assertEquals(expect8, instance.levelOrderBottom(root8));
     }
 }

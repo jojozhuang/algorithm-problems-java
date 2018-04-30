@@ -41,12 +41,9 @@ public class Solution179Test {
     @Test
     public void testLargestNumber() {
         System.out.println("largestNumber");
-        int[] nums = null;
         Solution179 instance = new Solution179();
-        String expResult = "";
-        String result = instance.largestNumber(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.largestNumber(null));
         assertEquals("0", instance.largestNumber(new int[]{0,0}));
         assertEquals("9534330", instance.largestNumber(new int[]{3,30,34,5,9}));
         assertEquals("5645342312", instance.largestNumber(new int[]{12,23,34,45,56}));

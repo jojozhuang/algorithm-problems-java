@@ -47,5 +47,4 @@ public class Solution277Test {
         assertEquals(-1, instance.findCelebrity(20));
         assertEquals(-1, instance.findCelebrity(100));
     }
-
 }

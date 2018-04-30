@@ -40,5 +40,4 @@ public class Solution549Test {
         TreeNode root2 = TreeNode.createInstance(new String[] {"2","1","3"});
         assertEquals(3, instance.longestConsecutive(root2));
     }
-
 }

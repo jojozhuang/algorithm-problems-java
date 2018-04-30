@@ -56,7 +56,7 @@ public class Solution037Test {
             {'.','.','.','4','1','9','.','.','5'},
             {'.','.','.','.','8','.','.','7','9'},
         };
-        char[][] expResult2 = new char[][] {
+        char[][] expect2 = new char[][] {
             {'5','3','4','6','7','8','9','1','2'},
             {'6','7','2','1','9','5','3','4','8'},
             {'1','9','8','3','4','2','5','6','7'},
@@ -68,6 +68,6 @@ public class Solution037Test {
             {'3','4','5','2','8','6','1','7','9'},
         };
         instance.solveSudoku(board2);
-        assertArrayEquals(expResult2, board2);
+        assertArrayEquals(expect2, board2);
     }
 }

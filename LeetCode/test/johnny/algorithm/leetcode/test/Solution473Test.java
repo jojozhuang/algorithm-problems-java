@@ -36,5 +36,4 @@ public class Solution473Test {
         assertEquals(true, instance.makesquare(new int[] {1,1,2,2,2}));
         assertEquals(false, instance.makesquare(new int[] {3,3,3,3,4}));
     }
-
 }

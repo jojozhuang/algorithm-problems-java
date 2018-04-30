@@ -41,12 +41,9 @@ public class Solution151Test {
     @Test
     public void testReverseWords() {
         System.out.println("reverseWords");
-        String s = "";
         Solution151 instance = new Solution151();
-        String expResult = "";
-        String result = instance.reverseWords(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.reverseWords(""));
         assertEquals("vc", instance.reverseWords(" vc "));
         assertEquals("aa", instance.reverseWords(" aa "));
         assertEquals("the blue", instance.reverseWords("   blue   the  "));

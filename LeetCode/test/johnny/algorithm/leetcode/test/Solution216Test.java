@@ -44,17 +44,16 @@ public class Solution216Test {
     @Test
     public void testCombinationSum3() {
         System.out.println("combinationSum3");
-        int k = 0;
-        int n = 0;
         Solution216 instance = new Solution216();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.combinationSum3(k, n);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = new ArrayList<List<Integer>>();
+        List<List<Integer>> result1 = instance.combinationSum3(0, 0);
+        assertEquals(expect1, result1);
         
-        List<List<Integer>> expResult2 = ListUtil.buildList2(new Integer[][]{{1,2,4}});
-        assertEquals(expResult2, instance.combinationSum3(3,7));
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][]{{1,2,4}});
+        assertEquals(expect2, instance.combinationSum3(3,7));
         
-        List<List<Integer>> expResult3 = ListUtil.buildList2(new Integer[][]{{1,2,6},{1,3,5},{2,3,4}});
-        assertEquals(expResult3, instance.combinationSum3(3, 9));
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][]{{1,2,6},{1,3,5},{2,3,4}});
+        assertEquals(expect3, instance.combinationSum3(3, 9));
     }
 }

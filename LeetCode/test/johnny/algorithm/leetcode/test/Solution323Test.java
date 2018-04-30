@@ -55,5 +55,4 @@ public class Solution323Test {
         };
         assertEquals(1, instance.countComponents(5, edges3));
     }
-    
 }

@@ -1,6 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -44,28 +43,15 @@ public class Solution039Test {
     @Test
     public void testCombinationSum() {
         System.out.println("combinationSum");
-        int[] candidates = null;
-        int target = 0;
         Solution039 instance = new Solution039();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.combinationSum(candidates, target);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
+        assertEquals(expect1,  instance.combinationSum(null, 0));
         
-        List<Integer> result21 = ListUtil.buildList(new Integer[]{2,2,3});
-        List<Integer> result22 = ListUtil.buildList(new Integer[]{7});
-        List<List<Integer>> expResult2 = new ArrayList<List<Integer>>();
-        expResult2.add(result21);
-        expResult2.add(result22);
-        assertEquals(expResult2, instance.combinationSum(new int[]{2,3,6,7}, 7));
+        List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{2,2,3},{7}});
+        assertEquals(expect2, instance.combinationSum(new int[]{2,3,6,7}, 7));
         
-        List<Integer> result31 = ListUtil.buildList(new Integer[]{3,4,4});
-        List<Integer> result32 = ListUtil.buildList(new Integer[]{3,8});
-        List<Integer> result33 = ListUtil.buildList(new Integer[]{4,7});
-        List<List<Integer>> expResult3 = new ArrayList<List<Integer>>();
-        expResult3.add(result31);
-        expResult3.add(result32);
-        expResult3.add(result33);
-        assertEquals(expResult3, instance.combinationSum(new int[]{8,7,4,3}, 11));
+        List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{3,4,4},{3,8},{4,7}});
+        assertEquals(expect3, instance.combinationSum(new int[]{8,7,4,3}, 11));
     }
-    
 }

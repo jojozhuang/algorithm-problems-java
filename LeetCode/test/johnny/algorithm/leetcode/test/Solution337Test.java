@@ -42,16 +42,14 @@ public class Solution337Test {
     @Test
     public void testRob() {
         System.out.println("rob");
-        TreeNode root = null;
         Solution337 instance = new Solution337();
-        int expResult = 0;
-        int result = instance.rob(root);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.rob(null));
         
-        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2", "#"});        
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2", "#"});
         assertEquals(2, instance.rob(root2));
         
-        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2", "3"});        
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2", "3"});
         assertEquals(5, instance.rob(root3));
         
         TreeNode root4 = TreeNode.createInstance(new String[] {"3","2", "3","#","3","#","1"});

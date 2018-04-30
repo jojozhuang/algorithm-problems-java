@@ -35,5 +35,4 @@ public class Solution553Test {
 
         assertEquals("1000/(100/10/2)", instance.optimalDivision(new int[] {1000,100,10,2}));
     }
-
 }

@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution347;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,21 +44,15 @@ public class Solution347Test {
     @Test
     public void testTopKFrequent() {
         System.out.println("topKFrequent");
-        int[] nums = null;
-        int k = 0;
         Solution347 instance = new Solution347();
-        List<Integer> expResult = new ArrayList<Integer>();
-        List<Integer> result = instance.topKFrequent(nums, k);
-        assertEquals(expResult, result);
+
+        List<Integer> expect1 = new ArrayList<Integer>(); 
+        assertEquals(expect1, instance.topKFrequent(null, 0));
         
-        List<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(1);
-        expResult2.add(2);
-        assertEquals(expResult2, instance.topKFrequent(new int[]{1,1,1,2,2,3}, 2));
-        List<Integer> expResult3 = new ArrayList<Integer>();
-        expResult3.add(1);
-        expResult3.add(2);
-        expResult3.add(3);
-        assertEquals(expResult3, instance.topKFrequent(new int[]{1,1,1,2,2,3}, 3));
+        List<Integer> expect2 = ListUtil.buildList(new Integer[] {1,2});
+        assertEquals(expect2, instance.topKFrequent(new int[]{1,1,1,2,2,3}, 2));
+        
+        List<Integer> expect3 = ListUtil.buildList(new Integer[] {1,2,3});
+        assertEquals(expect3, instance.topKFrequent(new int[]{1,1,1,2,2,3}, 3));
     }
 }

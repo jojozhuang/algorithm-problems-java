@@ -36,5 +36,4 @@ public class Solution392Test {
         assertEquals(true, instance.isSubsequence("abc", "ahbgdc"));
         assertEquals(false, instance.isSubsequence("axc", "ahbgdc"));
     }
-
 }

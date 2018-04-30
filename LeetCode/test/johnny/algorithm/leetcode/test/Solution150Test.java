@@ -41,12 +41,9 @@ public class Solution150Test {
     @Test
     public void testEvalRPN() {
         System.out.println("evalRPN");
-        String[] tokens = null;
         Solution150 instance = new Solution150();
-        int expResult = 0;
-        int result = instance.evalRPN(tokens);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.evalRPN(null));
         assertEquals(3, instance.evalRPN(new String[]{"2", "1", "+"}));
         assertEquals(9, instance.evalRPN(new String[]{"2", "1", "+", "3", "*"}));
         assertEquals(6, instance.evalRPN(new String[]{"4", "13", "5", "/", "+"}));

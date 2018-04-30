@@ -41,13 +41,9 @@ public class Solution207Test {
     @Test
     public void testCanFinish() {
         System.out.println("canFinish");
-        int numCourses = 0;
-        int[][] prerequisites = null;
         Solution207 instance = new Solution207();
-        boolean expResult = false;
-        boolean result = instance.canFinish(numCourses, prerequisites);
-        assertEquals(expResult, result);
         
+        assertEquals(false, instance.canFinish(0, null));
         assertEquals(true, instance.canFinish(2, new int[][]{{1,0}}));
         assertEquals(false, instance.canFinish(2, new int[][]{{1,0},{0,1}}));
     }

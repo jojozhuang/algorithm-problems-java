@@ -41,12 +41,9 @@ public class Solution153Test {
     @Test
     public void testFindMin() {
         System.out.println("findMin");
-        int[] num = null;
         Solution153 instance = new Solution153();
-        int expResult = -1;
-        int result = instance.findMin(num);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(-1, instance.findMin(null));
         assertEquals(1, instance.findMin(new int[] {1}));
         assertEquals(1, instance.findMin(new int[] {1, 2}));
         assertEquals(1, instance.findMin(new int[] {1, 2, 3}));

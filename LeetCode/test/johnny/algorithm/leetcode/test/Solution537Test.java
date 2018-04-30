@@ -36,5 +36,4 @@ public class Solution537Test {
         assertEquals("0+2i", instance.complexNumberMultiply("1+1i", "1+1i"));
         assertEquals("0+-2i", instance.complexNumberMultiply("1+-1i", "1+-1i"));
     }
-
 }

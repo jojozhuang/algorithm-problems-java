@@ -41,13 +41,9 @@ public class Solution291Test {
     @Test
     public void testWordPatternMatch() {
         System.out.println("wordPatternMatch");
-        String pattern = "";
-        String str = "";
         Solution291 instance = new Solution291();
-        boolean expResult = true;
-        boolean result = instance.wordPatternMatch(pattern, str);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(true, instance.wordPatternMatch("", ""));
         assertEquals(true, instance.wordPatternMatch("abab", "redblueredblue"));
         assertEquals(true, instance.wordPatternMatch("aaaa", "asdasdasdasd"));
         assertEquals(false, instance.wordPatternMatch("aabb", "xyzabcxzyabc"));

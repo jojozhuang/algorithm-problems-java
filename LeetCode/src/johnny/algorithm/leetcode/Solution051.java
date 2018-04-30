@@ -39,7 +39,7 @@ public class Solution051 {
             return res;
         }
             
-        int[] columnVal = new int[n];        
+        int[] columnVal = new int[n];
         dfs(n, 0, columnVal, res);
         
         return res;

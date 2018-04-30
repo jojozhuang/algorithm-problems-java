@@ -41,19 +41,15 @@ public class Solution169Test {
     @Test
     public void testMajorityElement() {
         System.out.println("majorityElement");
-        int[] nums = null;
         Solution169 instance = new Solution169();
-        int expResult = Integer.MIN_VALUE;
-        int result = instance.majorityElement(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(Integer.MIN_VALUE, instance.majorityElement(null));
         assertEquals(1, instance.majorityElement(new int[] {1}));
         assertEquals(1, instance.majorityElement(new int[] {1,1}));
         assertEquals(3, instance.majorityElement(new int[] {1,3,3,3,5}));
         assertEquals(4, instance.majorityElement(new int[] {1,2,3,4,4}));
         assertEquals(1, instance.majorityElement(new int[] {1,2,1,4,1}));
         assertEquals(2, instance.majorityElement(new int[] {2,2,2,2,2}));
-        
         assertEquals(2, instance.majorityElement(new int[]{1,1,2,2,2}));
         assertEquals(3, instance.majorityElement(new int[]{1,1,2,2,2,3,3,3,3,3}));
         assertEquals(2, instance.majorityElement(new int[]{1,1,2,2,2,2,2,3,3}));

@@ -41,13 +41,9 @@ public class Solution605Test {
     @Test
     public void testCanPlaceFlowers() {
         System.out.println("canPlaceFlowers");
-        int[] flowerbed = null;
-        int n = 0;
         Solution605 instance = new Solution605();
-        boolean expResult = false;
-        boolean result = instance.canPlaceFlowers(flowerbed, n);
-        assertEquals(expResult, result);
         
+        assertEquals(false, instance.canPlaceFlowers(null, 0));
         assertEquals(true, instance.canPlaceFlowers(new int[]{0}, 1));
         assertEquals(false, instance.canPlaceFlowers(new int[]{0}, 2));
         assertEquals(false, instance.canPlaceFlowers(new int[]{1}, 1));

@@ -35,5 +35,4 @@ public class Solution351Test {
 
         assertEquals(9, instance.numberOfPatterns(1,1));
     }
-
 }

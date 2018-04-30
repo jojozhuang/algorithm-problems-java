@@ -41,12 +41,9 @@ public class Solution084Test {
     @Test
     public void testLargestRectangleArea() {
         System.out.println("largestRectangleArea");
-        int[] heights = null;
         Solution084 instance = new Solution084();
-        int expResult = 0;
-        int result = instance.largestRectangleArea(heights);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.largestRectangleArea(null));
         assertEquals(6, instance.largestRectangleArea(new int[]{4,3}));
         assertEquals(10, instance.largestRectangleArea(new int[]{2,1,5,6,2,3}));
     }

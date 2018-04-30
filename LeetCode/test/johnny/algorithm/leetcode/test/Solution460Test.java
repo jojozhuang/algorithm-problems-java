@@ -44,5 +44,4 @@ public class Solution460Test {
         assertEquals(3,cache.get(3));       // returns 3
         assertEquals(4,cache.get(4));       // returns 4
     }
-
 }

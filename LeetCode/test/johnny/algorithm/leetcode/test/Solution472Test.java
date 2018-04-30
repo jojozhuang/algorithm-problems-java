@@ -40,5 +40,4 @@ public class Solution472Test {
         List<String> expect1 = ListUtil.buildList(new String[] {"catsdogcats","dogcatsdog","ratcatdogcat"});
         assertTrue(ListUtil.equalsIgnoreOrder(result1, expect1));
     }
-
 }

@@ -35,5 +35,4 @@ public class Solution461Test {
 
         assertEquals(2, instance.hammingDistance(1,4));
     }
-
 }

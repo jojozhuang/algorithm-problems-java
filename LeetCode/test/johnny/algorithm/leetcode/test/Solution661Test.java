@@ -45,5 +45,4 @@ public class Solution661Test {
         };
         assertArrayEquals(result1, instance.imageSmoother(m1));
     }
-
 }

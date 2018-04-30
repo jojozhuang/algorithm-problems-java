@@ -42,11 +42,9 @@ public class Solution385Test {
     @Test
     public void testDeserialize() {
         System.out.println("deserialize");
-        String s = "";
         Solution385 instance = new Solution385();
-        NestedInteger expResult = null;
-        NestedInteger result = instance.deserialize(s);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.deserialize(""));
         
         NestedInteger expect2 = new NestedInteger(234);
         NestedInteger result2 = instance.deserialize("234");

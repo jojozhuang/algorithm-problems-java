@@ -36,5 +36,4 @@ public class Solution680Test {
         assertEquals(true, instance.validPalindrome("aba"));
         assertEquals(true, instance.validPalindrome("abca"));
     }
-
 }

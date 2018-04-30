@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution271;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,16 +44,11 @@ public class Solution271Test {
     @Test
     public void testEncode() {
         System.out.println("encode");
-        List<String> strs = null;
         Solution271 instance = new Solution271();
-        String expResult = "";
-        String result = instance.encode(strs);
-        assertEquals(expResult, result);
+
+        assertEquals("", instance.encode(null));
         
-        List<String> strs2 = new ArrayList<String>();
-        strs2.add("hello");
-        strs2.add("world");
-        strs2.add("!");
+        List<String> strs2 = ListUtil.buildList(new String[] {"hello","world","!"});
         assertEquals("5#hello5#world1#!", instance.encode(strs2));
     }
 
@@ -62,16 +58,12 @@ public class Solution271Test {
     @Test
     public void testDecode() {
         System.out.println("decode");
-        String s = "";
         Solution271 instance = new Solution271();
-        List<String> expResult = new ArrayList<String>();
-        List<String> result = instance.decode(s);
-        assertEquals(expResult, result);
         
-        List<String> expResult2 = new ArrayList<String>();
-        expResult2.add("hello");
-        expResult2.add("world");
-        expResult2.add("!");
-        assertEquals(expResult2, instance.decode("5#hello5#world1#!"));
+        List<String> expect1 = new ArrayList<String>(); 
+        assertEquals(expect1, instance.decode(""));
+        
+        List<String> expect2 = ListUtil.buildList(new String[] {"hello","world","!"});
+        assertEquals(expect2, instance.decode("5#hello5#world1#!"));
     }
 }

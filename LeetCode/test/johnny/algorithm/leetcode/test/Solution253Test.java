@@ -42,21 +42,14 @@ public class Solution253Test {
     @Test
     public void testMinMeetingRooms() {
         System.out.println("minMeetingRooms");
-        Interval[] intervals = null;
         Solution253 instance = new Solution253();
-        int expResult = 0;
-        int result = instance.minMeetingRooms(intervals);
-        assertEquals(expResult, result);
+
+        assertEquals(0, instance.minMeetingRooms(null));
         
-        Interval[] intervals2 = new Interval[3];
-        intervals2[0] = new Interval(0, 30);
-        intervals2[1] = new Interval(5, 10);
-        intervals2[2] = new Interval(15, 20);
+        Interval[] intervals2 = Interval.buildArray(new int[][] {{0,30},{5,10},{15,20}});
         assertEquals(2, instance.minMeetingRooms(intervals2));
         
-         Interval[] intervals3 = new Interval[2];
-        intervals3[0] = new Interval(5, 10);
-        intervals3[1] = new Interval(15, 20);
+         Interval[] intervals3 =Interval.buildArray(new int[][] {{5,10},{15,20}});
         assertEquals(1, instance.minMeetingRooms(intervals3));
     }
 }

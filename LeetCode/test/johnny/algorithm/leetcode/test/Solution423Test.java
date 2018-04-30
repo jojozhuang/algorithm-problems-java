@@ -36,5 +36,4 @@ public class Solution423Test {
         assertEquals("012", instance.originalDigits("owoztneoer"));
         assertEquals("45", instance.originalDigits("fviefuro"));
     }
-
 }

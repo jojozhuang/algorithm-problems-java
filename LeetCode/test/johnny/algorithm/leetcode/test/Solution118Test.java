@@ -44,11 +44,10 @@ public class Solution118Test {
     @Test
     public void testGenerate() {
         System.out.println("generate");
-        int numRows = 0;
         Solution118 instance = new Solution118();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
-        List<List<Integer>> result = instance.generate(numRows);
-        assertEquals(expResult, result);
+
+        List<List<Integer>> expect = ListUtil.buildList2(new Integer[][]{});
+        assertEquals(expect, instance.generate(0));
         
         List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][]{{1}});
         assertEquals(expect1,  instance.generate(1));

@@ -41,12 +41,9 @@ public class Solution132Test {
     @Test
     public void testMinCut() {
         System.out.println("minCut");
-        String s = "";
         Solution132 instance = new Solution132();
-        int expResult = 0;
-        int result = instance.minCut(s);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.minCut(""));
         assertEquals(0,  instance.minCut("a"));
         assertEquals(1,  instance.minCut("ab"));
         assertEquals(0,  instance.minCut("aba"));

@@ -41,11 +41,9 @@ public class Solution329Test {
     @Test
     public void testLongestIncreasingPath() {
         System.out.println("longestIncreasingPath");
-        int[][] matrix = null;
         Solution329 instance = new Solution329();
-        int expResult = 0;
-        int result = instance.longestIncreasingPath(matrix);
-        assertEquals(expResult, result);
+
+        assertEquals(null, instance.longestIncreasingPath(null));
         
         int[][] matrix2 = new int[][] {
             {9,9,4},

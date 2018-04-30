@@ -41,13 +41,9 @@ public class Solution081Test {
     @Test
     public void testSearch() {
         System.out.println("search");
-        int[] nums = null;
-        int target = 0;
         Solution081 instance = new Solution081();
-        boolean expResult = false;
-        boolean result = instance.search(nums, target);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(false, instance.search(null, 0));
         assertEquals(true, instance.search(new int[] { 1 }, 1));
         assertEquals(false, instance.search(new int[] { 1 }, 0));
         assertEquals(true, instance.search(new int[] { 2, 1 }, 1));

@@ -41,12 +41,9 @@ public class Solution256Test {
     @Test
     public void testMinCost() {
         System.out.println("minCost");
-        int[][] costs = null;
         Solution256 instance = new Solution256();
-        int expResult = 0;
-        int result = instance.minCost(costs);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.minCost(null));
         int[][] costs2 = new int[][]{{1,2,3}};
         assertEquals(1, instance.minCost(costs2));
         int[][] costs3 = new int[][]{{1,2,3},{3,1,2}};

@@ -42,18 +42,16 @@ public class Solution222Test {
     @Test
     public void testCountNodes() {
         System.out.println("countNodes");
-        TreeNode root = null;
         Solution222 instance = new Solution222();
-        int expResult = 0;
-        int result = instance.countNodes(root);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.countNodes(null));
+
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","#"});
         assertEquals(2, instance.countNodes(root2));
-        
+
         TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","3"});
         assertEquals(3, instance.countNodes(root3));
-      
+
         TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","3","4","#","#","#"});
         assertEquals(4, instance.countNodes(root4));
     }

@@ -36,5 +36,4 @@ public class Solution452Test {
         int[][] points1 = new int[][] {{10,16}, {2,8}, {1,6}, {7,12}};
         assertEquals(2, instance.findMinArrowShots(points1));
     }
-
 }

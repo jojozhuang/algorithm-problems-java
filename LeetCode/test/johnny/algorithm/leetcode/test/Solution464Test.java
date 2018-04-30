@@ -35,5 +35,4 @@ public class Solution464Test {
 
         assertEquals(false, instance.canIWin(10,11));
     }
-
 }

@@ -36,5 +36,4 @@ public class Solution493Test {
         assertEquals(2, instance.reversePairs(new int[] {1,3,2,3,1}));
         assertEquals(3, instance.reversePairs(new int[] {2,4,3,5,1}));
     }
-
 }

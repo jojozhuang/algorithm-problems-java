@@ -41,13 +41,9 @@ public class Solution402Test {
     @Test
     public void testRemoveKdigits() {
         System.out.println("removeKdigits");
-        String num = "";
-        int k = 0;
         Solution402 instance = new Solution402();
-        String expResult = "0";
-        String result = instance.removeKdigits(num, k);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("0", instance.removeKdigits("", 0));
         assertEquals("1", instance.removeKdigits("54321", 4));
         assertEquals("4321", instance.removeKdigits("54321", 1));
         assertEquals("0", instance.removeKdigits("54321", 5));

@@ -49,5 +49,4 @@ public class Solution632Test {
         List<List<Integer>> nums1 = ListUtil.buildList2(new Integer[][] {{4,10,15,24,26}, {0,9,12,20}, {5,18,22,30}});
         assertArrayEquals(new int[] {20,24}, instance.smallestRange(nums1));
     }
-    
 }

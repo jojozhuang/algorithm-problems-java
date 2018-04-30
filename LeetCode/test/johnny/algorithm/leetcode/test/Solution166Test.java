@@ -41,13 +41,9 @@ public class Solution166Test {
     @Test
     public void testFractionToDecimal() {
         System.out.println("fractionToDecimal");
-        int numerator = 0;
-        int denominator = 0;
         Solution166 instance = new Solution166();
-        String expResult = "";
-        String result = instance.fractionToDecimal(numerator, denominator);
-        assertEquals(expResult, result);
-        
+
+        assertEquals("", instance.fractionToDecimal(0, 0));
         assertEquals("0.5", instance.fractionToDecimal(1, 2));
         assertEquals("2", instance.fractionToDecimal(2, 1));
         assertEquals("0.(6)", instance.fractionToDecimal(2, 3));

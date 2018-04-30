@@ -41,13 +41,9 @@ public class Solution340Test {
     @Test
     public void testLengthOfLongestSubstringKDistinct() {
         System.out.println("lengthOfLongestSubstringKDistinct");
-        String s = "";
-        int k = 0;
         Solution340 instance = new Solution340();
-        int expResult = 0;
-        int result = instance.lengthOfLongestSubstringKDistinct(s, k);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.lengthOfLongestSubstringKDistinct("", 0));
         assertEquals(3, instance.lengthOfLongestSubstringKDistinct("eceba", 2));
     }
 }

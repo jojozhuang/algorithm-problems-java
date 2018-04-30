@@ -44,7 +44,6 @@ public class Solution162Test {
         Solution162 instance = new Solution162();
 
         assertEquals(-1, instance.findPeakElement(null));
-        
         assertEquals(1, instance.findPeakElement(new int[] {1, 2}));
         assertEquals(0, instance.findPeakElement(new int[] {1, 0}));
         assertEquals(2, instance.findPeakElement(new int[] {1, 2, 3, 1}));

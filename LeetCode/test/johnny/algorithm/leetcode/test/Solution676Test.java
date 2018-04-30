@@ -39,5 +39,4 @@ public class Solution676Test {
         assertEquals(false, instance.search("hell"));
         assertEquals(false, instance.search("leetcoded"));
     }
-
 }

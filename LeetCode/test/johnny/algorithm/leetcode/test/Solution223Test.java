@@ -41,19 +41,9 @@ public class Solution223Test {
     @Test
     public void testComputeArea() {
         System.out.println("computeArea");
-        int A = 0;
-        int B = 0;
-        int C = 0;
-        int D = 0;
-        int E = 0;
-        int F = 0;
-        int G = 0;
-        int H = 0;
         Solution223 instance = new Solution223();
-        int expResult = 0;
-        int result = instance.computeArea(A, B, C, D, E, F, G, H);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.computeArea(0, 0, 0, 0, 0, 0, 0, 0));
         assertEquals(45, instance.computeArea(-3, 0, 3, 4, 0, -1, 9, 2));
         assertEquals(24, instance.computeArea(-3, 0, 3, 4, -3, 0, 3, 2));
     }

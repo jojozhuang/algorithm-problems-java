@@ -41,8 +41,8 @@ public class Solution374Test {
     @Test
     public void testGuessNumber() {
         System.out.println("guessNumber");
-        int n = 10;
-        Solution374 instance = new Solution374(n, 6);
-        assertEquals(6, instance.guessNumber(n));
+        Solution374 instance = new Solution374(10, 6);
+
+        assertEquals(6, instance.guessNumber(10));
     }
 }

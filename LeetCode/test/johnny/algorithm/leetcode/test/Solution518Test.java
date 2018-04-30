@@ -37,5 +37,4 @@ public class Solution518Test {
         assertEquals(0, instance.change(3, new int[] {2}));
         assertEquals(1, instance.change(10, new int[] {10}));
     }
-
 }

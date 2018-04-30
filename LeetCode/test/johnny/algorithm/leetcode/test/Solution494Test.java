@@ -35,5 +35,4 @@ public class Solution494Test {
 
         assertEquals(5, instance.findTargetSumWays(new int[] {1, 1, 1, 1, 1}, 3));
     }
-
 }

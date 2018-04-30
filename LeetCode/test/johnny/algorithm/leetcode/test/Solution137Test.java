@@ -41,12 +41,9 @@ public class Solution137Test {
     @Test
     public void testSingleNumber() {
         System.out.println("singleNumber");
-        int[] nums = null;
         Solution137 instance = new Solution137();
-        int expResult = 0;
-        int result = instance.singleNumber(nums);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.singleNumber(null));
         assertEquals(1, instance.singleNumber(new int[]{1}));
         assertEquals(2, instance.singleNumber(new int[]{1,2,1,1}));
         assertEquals(3, instance.singleNumber(new int[]{2,2,1,2,1,1,3}));

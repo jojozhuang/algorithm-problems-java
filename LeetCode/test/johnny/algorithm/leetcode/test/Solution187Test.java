@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution187;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,19 +44,15 @@ public class Solution187Test {
     @Test
     public void testFindRepeatedDnaSequences() {
         System.out.println("findRepeatedDnaSequences");
-        String s = "";
         Solution187 instance = new Solution187();
-        List<String> expResult = new ArrayList<>();
-        List<String> result = instance.findRepeatedDnaSequences(s);
-        assertEquals(expResult, result);
         
-        List<String> expResult2 = new ArrayList<>();
-        expResult2.add("AAAAACCCCC");
-        expResult2.add("CCCCCAAAAA");        
-        assertEquals(expResult2,  instance.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+        List<String> expect1 = new ArrayList<>();
+        assertEquals(expect1, instance.findRepeatedDnaSequences(""));
         
-        List<String> expResult3 = new ArrayList<>();
-        expResult3.add("AAAAACCCCC");   
-        assertEquals(expResult3,  instance.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCTTTTTGGGTTT"));
+        List<String> expect2 = ListUtil.buildList(new String[] {"AAAAACCCCC","CCCCCAAAAA"});
+        assertEquals(expect2,  instance.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+        
+        List<String> expect3 = ListUtil.buildList(new String[] {"AAAAACCCCC"});
+        assertEquals(expect3,  instance.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCTTTTTGGGTTT"));
     }
 }

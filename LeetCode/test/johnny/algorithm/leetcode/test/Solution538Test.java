@@ -38,5 +38,4 @@ public class Solution538Test {
         TreeNode expect1 = TreeNode.createInstance(new String[] {"18","20","13"});
         assertTrue(TreeNode.isSame(expect1, instance.convertBST(root1)));
     }
-
 }

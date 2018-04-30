@@ -35,5 +35,4 @@ public class Solution630Test {
 
         assertEquals(3, instance.scheduleCourse(new int[][] {{100, 200}, {200, 1300}, {1000, 1250}, {2000, 3200}}));
     }
-
 }

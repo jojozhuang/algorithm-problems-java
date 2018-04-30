@@ -41,12 +41,10 @@ public class Solution085Test {
     @Test
     public void testMaximalRectangle() {
         System.out.println("maximalRectangle");
-        char[][] matrix = null;
         Solution085 instance = new Solution085();
-        int expResult = 0;
-        int result = instance.maximalRectangle(matrix);
-        assertEquals(expResult, result);
-        
+
+        assertEquals(0, instance.maximalRectangle(null));
+
         char[][] matrix2 = new char[][] {
             {'0','0','1','0'},
             {'0','0','0','1'},

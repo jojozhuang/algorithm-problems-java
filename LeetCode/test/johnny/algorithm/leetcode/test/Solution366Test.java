@@ -41,5 +41,4 @@ public class Solution366Test {
         List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {{4,5,3},{2},{1}});
         assertEquals(expect1, instance.findLeaves(root1));
     }
-
 }

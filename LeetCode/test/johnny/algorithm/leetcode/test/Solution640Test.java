@@ -39,5 +39,4 @@ public class Solution640Test {
         assertEquals("x=-1", instance.solveEquation("2x+3x-6x=x+2"));
         assertEquals("No solution", instance.solveEquation("x=x+2"));
     }
-
 }

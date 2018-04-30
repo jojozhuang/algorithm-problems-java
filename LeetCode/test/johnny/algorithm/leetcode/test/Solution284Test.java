@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution284;
+import johnny.algorithm.leetcode.common.ListUtil;
 
 import static org.junit.Assert.*;
 
@@ -43,10 +44,8 @@ public class Solution284Test {
     @Test
     public void testPeek() {
         System.out.println("peek");
-        List<Integer> al = new ArrayList<Integer>();
-        al.add(1);
-        al.add(2);
-        al.add(3);
+        
+        List<Integer> al = ListUtil.buildList(new Integer[] {1,2,3});
         Solution284 instance = new Solution284(al.iterator());
         Integer result = 1;
         assertEquals(result, instance.peek());
@@ -58,10 +57,8 @@ public class Solution284Test {
     @Test
     public void testNext() {
         System.out.println("next");
-        List<Integer> al = new ArrayList<Integer>();
-        al.add(1);
-        al.add(2);
-        al.add(3);
+        
+        List<Integer> al = ListUtil.buildList(new Integer[] {1,2,3});
         Solution284 instance = new Solution284(al.iterator());
         Integer result1 = 1;
         Integer result2 = 2;
@@ -74,11 +71,8 @@ public class Solution284Test {
      */
     @Test
     public void testHasNext() {
-        System.out.println("hasNext");       
-        List<Integer> al = new ArrayList<Integer>();
-        al.add(1);
-        al.add(2);
-        al.add(3);
+        System.out.println("hasNext");
+        List<Integer> al = ListUtil.buildList(new Integer[] {1,2,3});
         Solution284 instance = new Solution284(al.iterator());
         Integer result1 = 1;
         Integer result2 = 2;

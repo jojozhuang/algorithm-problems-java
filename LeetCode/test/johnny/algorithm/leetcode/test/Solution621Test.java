@@ -35,5 +35,4 @@ public class Solution621Test {
 
         assertEquals(8, instance.leastInterval(new char[] {'A','A','A','B','B','B'}, 2));
     }
-
 }
