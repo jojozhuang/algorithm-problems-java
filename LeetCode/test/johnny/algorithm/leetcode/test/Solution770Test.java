@@ -1,35 +1,14 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.List;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution770;
 import johnny.algorithm.leetcode.common.ListUtil;
 
-public class Solution770Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution770Test extends JunitBase {
 
     @Test
     public void test() {
@@ -58,6 +37,5 @@ public class Solution770Test {
         Solution770 instance6 = new Solution770();
         List<String> expect6 = ListUtil.buildList(new String[] {"-1*a*a*b*b","2*a*a*b*c","-1*a*a*c*c","1*a*b*b*b","-1*a*b*b*c","-1*a*b*c*c","1*a*c*c*c","-1*b*b*b*c","2*b*b*c*c","-1*b*c*c*c","2*a*a*b","-2*a*a*c","-2*a*b*b","2*a*c*c","1*b*b*b","-1*b*b*c","1*b*c*c","-1*c*c*c","-1*a*a","1*a*b","1*a*c","-1*b*c"});
         assertEquals(expect6, instance6.basicCalculatorIV("((a - b) * (b - c) + (c - a)) * ((a - b) + (b - c) * (c - a))", new String[] {"e"}, new int[] {1}));
-}
-
+    }
 }

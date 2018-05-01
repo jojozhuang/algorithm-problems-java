@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution146;
 
-import static org.junit.Assert.*;
+public class Solution146Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution146Test {
-    
-    public Solution146Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of get method, of class Solution146.
-     */
     @Test
     public void testGet() {
         System.out.println("get");
@@ -45,9 +14,6 @@ public class Solution146Test {
         assertEquals(-1, instance.get(0));
     }
 
-    /**
-     * Test of set method, of class Solution146.
-     */
     @Test
     public void testSet() {
         System.out.println("set");

@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution380;
 
-import static org.junit.Assert.*;
+public class Solution380Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution380Test {
-    
-    public Solution380Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getRandom method, of class Solution380.
-     */
     @Test
     public void testGetRandom() {
         System.out.println("getRandom");
         Solution380 randomSet = new Solution380();
-        
+
         // Inserts 1 to the set. Returns true as 1 was inserted successfully.
         randomSet.insert(1);
 

@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution053;
 
-import static org.junit.Assert.*;
+public class Solution053Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution053Test {
-    
-    public Solution053Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of maxSubArray method, of class Solution053.
-     */
     @Test
     public void testMaxSubArray() {
         System.out.println("maxSubArray");

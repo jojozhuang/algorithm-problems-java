@@ -1,54 +1,24 @@
 package johnny.algorithm.leetcode.test;
 
+import static org.junit.Assert.*;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution341;
 import johnny.algorithm.leetcode.common.NestedInteger;
 
-import static org.junit.Assert.*;
+public class Solution341Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution341Test {
-    
-    public Solution341Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of next method, of class Solution341.
-     */
     @Test
     public void testNext() {
         System.out.println("next");
-        
+
         Solution341 instance0 = new Solution341(getExampleEmpty());
         assertEquals(false, instance0.hasNext());
         assertEquals(null, instance0.next());
-        
+
         //[1,2,3]
         Solution341 instance1 = new Solution341(getExample1());
         assertEquals(true, instance1.hasNext());
@@ -59,7 +29,7 @@ public class Solution341Test {
         assertEquals(Integer.valueOf(3), instance1.next());
         assertEquals(false, instance1.hasNext());
         assertEquals(null, instance1.next());
-        
+
          //[[4],[5],[6]]
         Solution341 instance2 = new Solution341(getExample2());
         assertEquals(true, instance2.hasNext());
@@ -70,7 +40,7 @@ public class Solution341Test {
         assertEquals(Integer.valueOf(6), instance2.next());
         assertEquals(false, instance2.hasNext());
         assertEquals(null, instance2.next());
-        
+
         //[[1,2],3,[4,5]]
         Solution341 instance3 = new Solution341(getExample3());
         assertEquals(true, instance3.hasNext());
@@ -94,7 +64,7 @@ public class Solution341Test {
         input.add(empty);
         return input;
     }
-    
+
     //[1,2,3]
     public static List<NestedInteger> getExample1() {
         NestedInteger one = new NestedInteger();
@@ -102,7 +72,7 @@ public class Solution341Test {
         NestedInteger two = new NestedInteger();
         two.i = 2;
         NestedInteger three = new NestedInteger();
-        three.i = 3;        
+        three.i = 3;
 
         List<NestedInteger> input = new ArrayList<NestedInteger>();
         input.add(one);
@@ -119,14 +89,14 @@ public class Solution341Test {
         fourList.add(four);
         NestedInteger fourElement = new NestedInteger();
         fourElement.list = fourList;
-        
+
         NestedInteger five = new NestedInteger();
         five.i = 5;
         List<NestedInteger> fiveList = new ArrayList<NestedInteger>();
         fiveList.add(five);
         NestedInteger fiveElement = new NestedInteger();
         fiveElement.list = fiveList;
-        
+
         NestedInteger six = new NestedInteger();
         six.i = 6;
         List<NestedInteger> sixList = new ArrayList<NestedInteger>();

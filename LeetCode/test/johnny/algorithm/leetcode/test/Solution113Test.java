@@ -1,55 +1,24 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
+
+import java.util.List;
 
 import johnny.algorithm.leetcode.Solution113;
 import johnny.algorithm.leetcode.common.ListUtil;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution113Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution113Test {
-    
-    public Solution113Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of pathSum method, of class Solution113.
-     */
     @Test
     public void testPathSum() {
         System.out.println("pathSum");
         Solution113 instance = new Solution113();
-        
+
         List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
         assertEquals(expect1,  instance.pathSum(null, 0));
-        
+
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","#","#"});
         List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {});
         assertEquals(expect2, instance.pathSum(root2, 2));
@@ -69,15 +38,15 @@ public class Solution113Test {
         TreeNode root6 = TreeNode.createInstance(new String[] {"1","2","2","#","#","#","3","#","4"});
         List<List<Integer>> expect6 = ListUtil.buildList2(new Integer[][] {{1,2,3,4}});
         assertEquals(expect6, instance.pathSum(root6, 10));
-        
+
         TreeNode root7 = TreeNode.createInstance(new String[] {"-2","#","-3"});
         List<List<Integer>> expect7 = ListUtil.buildList2(new Integer[][] {{-2,-3}});
         assertEquals(expect7, instance.pathSum(root7, -5));
-        
+
         TreeNode root8 = TreeNode.createInstance(new String[]{"5","4","8","11","#","13","4","7","2","#","#","5","1","#","#","#","#","#","#","#","#"});
         List<List<Integer>> expect8 = ListUtil.buildList2(new Integer[][] {{5,4,11,2},{5,8,4,5}});
         assertEquals(expect8, instance.pathSum(root8, 22));
-        
+
         TreeNode root9 = TreeNode.createInstance(new String[]{"1","-2","-3","1","3","-2","#","-1","#","#","#","#","#"});
         List<List<Integer>> expect9 = ListUtil.buildList2(new Integer[][] {{1,-2,1,-1}});
         assertEquals(expect9, instance.pathSum(root9, -1));

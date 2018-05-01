@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution134;
 
-import static org.junit.Assert.*;
+public class Solution134Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution134Test {
-    
-    public Solution134Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of canCompleteCircuit method, of class Solution134.
-     */
     @Test
     public void testCanCompleteCircuit() {
         System.out.println("canCompleteCircuit");

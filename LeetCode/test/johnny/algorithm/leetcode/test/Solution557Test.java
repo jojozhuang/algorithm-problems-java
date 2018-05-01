@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution557;
 
-import static org.junit.Assert.*;
+public class Solution557Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution557Test {
-    
-    public Solution557Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of reverseWords method, of class Solution557.
-     */
     @Test
     public void testReverseWords() {
         System.out.println("reverseWords");
         Solution557 instance = new Solution557();
- 
+
         assertEquals("", instance.reverseWords(""));
         assertEquals("a", instance.reverseWords("a"));
         assertEquals("ba", instance.reverseWords("ab"));

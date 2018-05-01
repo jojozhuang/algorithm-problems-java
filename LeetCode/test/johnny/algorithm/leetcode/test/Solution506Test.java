@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution506;
 
-import static org.junit.Assert.*;
+public class Solution506Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution506Test {
-    
-    public Solution506Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findRelativeRanks method, of class Solution506.
-     */
     @Test
     public void testFindRelativeRanks() {
         System.out.println("findRelativeRanks");
         Solution506 instance = new Solution506();
-        
+
         assertArrayEquals(new String[]{}, instance.findRelativeRanks(new int[]{}));
         assertArrayEquals(new String[]{"Gold Medal", "Silver Medal"}, instance.findRelativeRanks(new int[]{2,1}));
         assertArrayEquals(new String[]{"Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"}, instance.findRelativeRanks(new int[]{5, 4, 3, 2, 1}));

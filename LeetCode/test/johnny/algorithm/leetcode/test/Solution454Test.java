@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution454;
 
-import static org.junit.Assert.*;
+public class Solution454Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution454Test {
-
-    public Solution454Test() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of minMoves method, of class Solution453.
-     */
     @Test
     public void test() {
         System.out.println("fourSumCount");

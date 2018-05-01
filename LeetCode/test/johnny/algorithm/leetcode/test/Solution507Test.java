@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution507;
 
-import static org.junit.Assert.*;
+public class Solution507Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution507Test {
-    
-    public Solution507Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of checkPerfectNumber method, of class Solution507.
-     */
     @Test
     public void testCheckPerfectNumber() {
         System.out.println("checkPerfectNumber");
         Solution507 instance = new Solution507();
-        
+
         assertEquals(false, instance.checkPerfectNumber(1));
         assertEquals(false, instance.checkPerfectNumber(2));
         assertEquals(false, instance.checkPerfectNumber(3));

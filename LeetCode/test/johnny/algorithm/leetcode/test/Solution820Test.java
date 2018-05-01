@@ -1,39 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution820;
 
-public class Solution820Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution820Test extends JunitBase {
 
     @Test
     public void test() {
         System.out.println("minimumLengthEncoding");
-        
         Solution820 instance = new Solution820();
+
         assertEquals(10, instance.minimumLengthEncoding(new String[] {"time", "me", "bell"}));
     }
-
 }

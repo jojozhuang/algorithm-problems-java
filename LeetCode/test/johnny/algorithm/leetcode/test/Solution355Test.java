@@ -1,46 +1,15 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
+
+import java.util.List;
 
 import johnny.algorithm.leetcode.Solution355;
 import johnny.algorithm.leetcode.common.ListUtil;
 
-import static org.junit.Assert.*;
+public class Solution355Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution355Test {
-    
-    public Solution355Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of postTweet method, of class Solution355.
-     */
     @Test
     public void testPostTweet() {
         System.out.println("postTweet");
@@ -51,7 +20,7 @@ public class Solution355Test {
         List<Integer> list1 = ListUtil.buildList(new Integer[] {5});
         // User 1's news feed should return a list with 1 tweet id -> [5].
         assertEquals(list1, twitter.getNewsFeed(1));
-        
+
         // User 1 follows user 2.
         twitter.follow(1, 2);
 

@@ -16,7 +16,7 @@ public class CavityMap {
         if (grid == null || grid.length == 0 || grid[0].length() == 0) {
             return null;
         }
-        ArrayList<String> cavities = new ArrayList();
+        ArrayList<String> cavities = new ArrayList<String>();
         for (int i = 1; i < grid.length - 1; i++) {
             for (int j = 1; j < grid[i].length() - 1; j++) {
                 if (isCavity(grid, i, j)) {

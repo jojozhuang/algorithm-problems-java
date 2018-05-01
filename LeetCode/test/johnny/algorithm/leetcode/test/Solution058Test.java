@@ -1,50 +1,18 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution058;
 
-import static org.junit.Assert.*;
+public class Solution058Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution058Test {
-    
-    public Solution058Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of lengthOfLastWord method, of class Solution058.
-     */
     @Test
     public void testLengthOfLastWord() {
         System.out.println("lengthOfLastWord");
         Solution058 instance = new Solution058();
 
         assertEquals(0, instance.lengthOfLastWord(""));
-        
         assertEquals(1, instance.lengthOfLastWord("a"));
         assertEquals(1, instance.lengthOfLastWord("a "));
         assertEquals(2, instance.lengthOfLastWord("teach me "));

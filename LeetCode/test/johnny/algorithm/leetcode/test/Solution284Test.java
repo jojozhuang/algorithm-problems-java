@@ -1,63 +1,29 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
+
+import java.util.List;
 
 import johnny.algorithm.leetcode.Solution284;
 import johnny.algorithm.leetcode.common.ListUtil;
 
-import static org.junit.Assert.*;
+public class Solution284Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution284Test {
-    
-    public Solution284Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of peek method, of class Solution284.
-     */
     @Test
     public void testPeek() {
         System.out.println("peek");
-        
+
         List<Integer> al = ListUtil.buildList(new Integer[] {1,2,3});
         Solution284 instance = new Solution284(al.iterator());
         Integer result = 1;
         assertEquals(result, instance.peek());
     }
 
-    /**
-     * Test of next method, of class Solution284.
-     */
     @Test
     public void testNext() {
         System.out.println("next");
-        
+
         List<Integer> al = ListUtil.buildList(new Integer[] {1,2,3});
         Solution284 instance = new Solution284(al.iterator());
         Integer result1 = 1;
@@ -66,9 +32,6 @@ public class Solution284Test {
         assertEquals(result2, instance.peek());
     }
 
-    /**
-     * Test of hasNext method, of class Solution284.
-     */
     @Test
     public void testHasNext() {
         System.out.println("hasNext");

@@ -1,43 +1,13 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution099;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
-/**
- *
- * @author Johnny
- */
-public class Solution099Test {
-    
-    public Solution099Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class Solution099Test extends JunitBase {
 
-    /**
-     * Test of recoverTree method, of class Solution099.
-     */
     @Test
     public void testRecoverTree() {
         System.out.println("recoverTree");
@@ -45,7 +15,7 @@ public class Solution099Test {
         Solution099 instance = new Solution099();
         instance.recoverTree(root);
         assertEquals(null, root);
-        
+
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","3","#","#","2"});
         TreeNode expect2 = TreeNode.createInstance(new String[] {"3","1","#","#","2"});
         instance.recoverTree(root2);

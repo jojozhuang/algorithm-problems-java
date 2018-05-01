@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution166;
 
-import static org.junit.Assert.*;
+public class Solution166Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution166Test {
-    
-    public Solution166Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of fractionToDecimal method, of class Solution166.
-     */
     @Test
     public void testFractionToDecimal() {
         System.out.println("fractionToDecimal");

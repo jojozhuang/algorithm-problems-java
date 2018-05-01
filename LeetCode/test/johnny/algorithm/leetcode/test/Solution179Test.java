@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution179;
 
-import static org.junit.Assert.*;
+public class Solution179Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution179Test {
-    
-    public Solution179Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of largestNumber method, of class Solution179.
-     */
     @Test
     public void testLargestNumber() {
         System.out.println("largestNumber");

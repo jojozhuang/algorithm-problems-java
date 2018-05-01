@@ -1,52 +1,21 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution031;
 
-import static org.junit.Assert.*;
+public class Solution031Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution031Test {
-    
-    public Solution031Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of nextPermutation method, of class Solution031.
-     */
     @Test
     public void testNextPermutation() {
         System.out.println("nextPermutation");
         Solution031 instance = new Solution031();
-        
+
         int[] nums = null;
         instance.nextPermutation(nums);
         assertArrayEquals(null, nums);
-        
+
         int[] nums2 = new int[]{1};
         instance.nextPermutation(nums2);
         assertArrayEquals(new int[]{1}, nums2);

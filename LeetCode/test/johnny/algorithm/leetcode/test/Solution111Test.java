@@ -1,51 +1,20 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution111;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution111Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution111Test {
-    
-    public Solution111Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of minDepth method, of class Solution111.
-     */
     @Test
     public void testMinDepth() {
         System.out.println("minDepth");
         Solution111 instance = new Solution111();
 
         assertEquals(0, instance.minDepth(null));
-        
+
         TreeNode root1 = new TreeNode(1);
         assertEquals(1, instance.minDepth(root1));
 

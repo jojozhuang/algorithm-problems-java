@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution367;
 
-import static org.junit.Assert.*;
+public class Solution367Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution367Test {
-    
-    public Solution367Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isPerfectSquare method, of class Solution367.
-     */
     @Test
     public void testIsPerfectSquare() {
         System.out.println("isPerfectSquare");

@@ -1,55 +1,24 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution245;
 
-import static org.junit.Assert.*;
+public class Solution245Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution245Test {
-    
-    public Solution245Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of shortestDistance method, of class Solution245.
-     */
     @Test
     public void testShortestDistance() {
         System.out.println("shortestDistance");
         Solution245 instance = new Solution245();
 
         assertEquals(Integer.MAX_VALUE, instance.shortestWordDistance(new String[]{}, "", ""));
-        
+
         String[] words2 = new String[]{"practice", "makes", "perfect", "coding", "makes"};
         assertEquals(3, instance.shortestWordDistance(words2, "coding", "practice"));
         assertEquals(1, instance.shortestWordDistance(words2, "makes", "coding"));
         assertEquals(3, instance.shortestWordDistance(words2, "makes", "makes"));
-        
+
         String[] words3 = new String[]{"practice", "makes", "perfect", "coding", "makes","makes"};
         assertEquals(3, instance.shortestWordDistance(words3, "coding", "practice"));
         assertEquals(1, instance.shortestWordDistance(words3, "makes", "coding"));

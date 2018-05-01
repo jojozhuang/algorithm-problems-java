@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution628;
 
-import static org.junit.Assert.*;
+public class Solution628Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution628Test {
-    
-    public Solution628Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of maximumProduct method, of class Solution628.
-     */
     @Test
     public void testMaximumProduct() {
         System.out.println("maximumProduct");

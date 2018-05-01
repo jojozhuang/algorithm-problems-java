@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution012;
 
-import static org.junit.Assert.*;
+public class Solution012Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution012Test {
-    
-    public Solution012Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of intToRoman method, of class Solution012.
-     */
     @Test
     public void testIntToRoman() {
         System.out.println("intToRoman");
         Solution012 instance = new Solution012();
-        
+
         assertEquals("", instance.intToRoman(0));
         assertEquals("", instance.intToRoman(-1));
         assertEquals("I", instance.intToRoman(1));
@@ -90,5 +59,4 @@ public class Solution012Test {
         assertEquals("MMMDCLXXXIX", instance.intToRoman(3689));
         assertEquals("MMMCMXCIX", instance.intToRoman(3999));
     }
-    
 }

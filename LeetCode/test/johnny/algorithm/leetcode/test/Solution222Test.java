@@ -1,44 +1,13 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution222;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution222Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution222Test {
-    
-    public Solution222Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of countNodes method, of class Solution222.
-     */
     @Test
     public void testCountNodes() {
         System.out.println("countNodes");

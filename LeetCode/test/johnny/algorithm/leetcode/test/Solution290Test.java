@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution290;
 
-import static org.junit.Assert.*;
+public class Solution290Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution290Test {
-    
-    public Solution290Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of wordPattern method, of class Solution290.
-     */
     @Test
     public void testWordPattern() {
         System.out.println("wordPattern");

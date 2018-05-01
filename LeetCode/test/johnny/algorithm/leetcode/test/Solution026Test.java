@@ -1,44 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution026;
 
-import static org.junit.Assert.*;
+public class Solution026Test extends JunitBase {
 
-
-/**
- *
- * @author Johnny
- */
-public class Solution026Test {
-    
-    public Solution026Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of removeDuplicates method, of class Solution026.
-     */
     @Test
     public void testRemoveDuplicates() {
         System.out.println("removeDuplicates");

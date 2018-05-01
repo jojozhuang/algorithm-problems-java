@@ -1,44 +1,13 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution002;
 import johnny.algorithm.leetcode.common.ListNode;
 
-import static org.junit.Assert.*;
+public class Solution002Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution002Test {
-    
-    public Solution002Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of addTwoNumbers method, of class Solution002.
-     */
     @Test
     public void testAddTwoNumbers() {
         System.out.println("addTwoNumbers");
@@ -50,14 +19,14 @@ public class Solution002Test {
         ListNode l12 = ListNode.createInstance(new int[]{5});
         ListNode expect1 = ListNode.createInstance(new int[]{0,1});
         assertTrue(ListNode.isSame(expect1, instance.addTwoNumbers(l11,l12)));
-        
+
         //Input: (2) + (8 -> 9)
         //Output: 0 -> 0 -> 1
         ListNode l21 = ListNode.createInstance(new int[]{2});
         ListNode l22 = ListNode.createInstance(new int[]{8,9});
         ListNode expect2 = ListNode.createInstance(new int[]{0,0,1});
         assertTrue(ListNode.isSame(expect2, instance.addTwoNumbers(l21,l22)));
-        
+
         //Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
         //Output: 7 -> 0 -> 8
         ListNode l31 = ListNode.createInstance(new int[]{2,4,3});

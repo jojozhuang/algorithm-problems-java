@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution532;
 
-import static org.junit.Assert.*;
+public class Solution532Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution532Test {
-    
-    public Solution532Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findPairs method, of class Solution532.
-     */
     @Test
     public void testFindPairs() {
         System.out.println("findPairs");
         Solution532 instance = new Solution532();
- 
+
         assertEquals(0, instance.findPairs(new int[]{}, 1));
         assertEquals(1, instance.findPairs(new int[]{1,2}, 1));
         assertEquals(1, instance.findPairs(new int[]{1,1,1}, 0));

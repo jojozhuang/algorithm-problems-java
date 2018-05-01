@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution541;
 
-import static org.junit.Assert.*;
+public class Solution541Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution541Test {
-    
-    public Solution541Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of reverseStr method, of class Solution541.
-     */
     @Test
     public void testReverseStr() {
         System.out.println("reverseStr");

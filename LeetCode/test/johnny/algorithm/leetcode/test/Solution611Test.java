@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution611;
 
-import static org.junit.Assert.*;
+public class Solution611Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution611Test {
-    
-    public Solution611Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of triangleNumber method, of class Solution611.
-     */
     @Test
     public void testTriangleNumber() {
         System.out.println("triangleNumber");

@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution362;
 
-import static org.junit.Assert.*;
+public class Solution362Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution362Test {
-    
-    public Solution362Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of hit method, of class Solution362.
-     */
     @Test
     public void testHit() {
         System.out.println("hit");
         Solution362 instance = new Solution362();
-        
+
         instance.hit(1);
         instance.hit(2);
         instance.hit(3);

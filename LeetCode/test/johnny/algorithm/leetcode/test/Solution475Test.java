@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution475;
 
-import static org.junit.Assert.*;
+public class Solution475Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution475Test {
-    
-    public Solution475Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findRadius method, of class Solution475.
-     */
     @Test
     public void testFindRadius() {
         System.out.println("findRadius");
         Solution475 instance = new Solution475();
-        
+
         assertEquals(Integer.MIN_VALUE, instance.findRadius(new int[]{}, new int[]{}));
         assertEquals(0, instance.findRadius(new int[]{1}, new int[]{1}));
         assertEquals(1, instance.findRadius(new int[]{1,2}, new int[]{1}));

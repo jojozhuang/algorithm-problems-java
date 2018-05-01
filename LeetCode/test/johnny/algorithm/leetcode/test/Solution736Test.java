@@ -1,32 +1,11 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution736;
 
-public class Solution736Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution736Test extends JunitBase {
 
     @Test
     public void test() {
@@ -42,5 +21,4 @@ public class Solution736Test {
         assertEquals(6, instance.evaluate("(let x 2 (add (let x 3 (let x 4 x)) x))"));
         assertEquals(4, instance.evaluate("(let a1 3 b2 (add a1 1) b2)"));
     }
-
 }

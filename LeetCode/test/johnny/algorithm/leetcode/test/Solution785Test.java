@@ -1,32 +1,11 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution785;
 
-public class Solution785Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution785Test extends JunitBase {
 
     @Test
     public void test() {
@@ -36,5 +15,4 @@ public class Solution785Test {
         int[][] graph1 = new int[][] {{1,3}, {0,2}, {1,3}, {0,2}};
         assertEquals(true, instance.isBipartite(graph1));
     }
-
 }

@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution409;
 
-import static org.junit.Assert.*;
+public class Solution409Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution409Test {
-    
-    public Solution409Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of longestPalindrome method, of class Solution409.
-     */
     @Test
     public void testLongestPalindrome() {
         System.out.println("longestPalindrome");
         Solution409 instance = new Solution409();
-        
+
         assertEquals(0, instance.longestPalindrome(""));
         assertEquals(1, instance.longestPalindrome("a"));
         assertEquals(1, instance.longestPalindrome("ab"));

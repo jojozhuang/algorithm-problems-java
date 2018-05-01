@@ -1,51 +1,20 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution100;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution100Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution100Test {
-    
-    public Solution100Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isSameTree method, of class Solution100.
-     */
     @Test
     public void testIsSameTree() {
         System.out.println("isSameTree");
         Solution100 instance = new Solution100();
 
         assertEquals(true, instance.isSameTree(null, null));
-        
+
         TreeNode p2 = new TreeNode(1);
         TreeNode q2 = null;
         assertEquals(false, instance.isSameTree(p2, q2));

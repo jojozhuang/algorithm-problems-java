@@ -1,46 +1,15 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.List;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution632;
 import johnny.algorithm.leetcode.common.ListUtil;
 
-/**
- *
- * @author Johnny
- */
-public class Solution632Test {
-    
-    public Solution632Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class Solution632Test extends JunitBase {
 
-    /**
-     * Test of findErrorNums method, of class Solution632.
-     */
     @Test
     public void testFindErrorNums() {
         System.out.println("judgeSquareSum");

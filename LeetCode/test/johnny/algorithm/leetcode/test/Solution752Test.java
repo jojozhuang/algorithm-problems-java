@@ -1,32 +1,11 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution752;
 
-public class Solution752Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution752Test extends JunitBase {
 
     @Test
     public void test() {
@@ -38,5 +17,4 @@ public class Solution752Test {
         assertEquals(-1, instance.openLock(new String[]{"8887","8889","8878","8898","8788","8988","7888","9888"}, "8888"));
         assertEquals(-1, instance.openLock(new String[]{"0000"}, "8888"));
     }
-
 }

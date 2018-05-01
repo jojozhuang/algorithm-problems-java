@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution643;
 
-import static org.junit.Assert.*;
+public class Solution643Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution643Test {
-    
-    public Solution643Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findMaxAverage method, of class Solution643.
-     */
     @Test
     public void testFindMaxAverage() {
         System.out.println("findMaxAverage");

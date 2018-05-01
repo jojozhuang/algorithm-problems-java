@@ -1,51 +1,20 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution108;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution108Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution108Test {
-    
-    public Solution108Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of sortedArrayToBST method, of class Solution108.
-     */
     @Test
     public void testSortedArrayToBST() {
         System.out.println("sortedArrayToBST");
         Solution108 instance = new Solution108();
 
         assertEquals(null, instance.sortedArrayToBST(null));
-        
+
         TreeNode result1 = instance.sortedArrayToBST(new int[] {1,2,3});
         TreeNode expect1 = TreeNode.createInstance(new String[] {"2","1","3"});
         assertTrue(TreeNode.isSame(expect1, result1));

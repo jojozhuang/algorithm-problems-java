@@ -1,35 +1,14 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.List;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution759;
 import johnny.algorithm.leetcode.common.Interval;
 
-public class Solution759Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution759Test extends JunitBase {
 
     @Test
     public void test() {
@@ -43,6 +22,5 @@ public class Solution759Test {
         List<List<Interval>> schedule2 = Interval.buildList(new int[][][] {{{1,3},{6,7}},{{2,4}},{{2,5},{9,12}}});
         List<Interval> expect2 = Interval.buildList(new int[][] {{5,6},{7,9}});
         assertEquals(expect2, instance.employeeFreeTime(schedule2));
-}
-
+    }
 }

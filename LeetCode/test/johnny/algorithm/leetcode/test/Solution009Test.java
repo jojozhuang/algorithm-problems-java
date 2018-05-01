@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution009;
 
-import static org.junit.Assert.*;
+public class Solution009Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution009Test {
-    
-    public Solution009Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isPalindrome method, of class Solution009.
-     */
     @Test
     public void testIsPalindrome() {
         System.out.println("isPalindrome");
@@ -63,5 +32,4 @@ public class Solution009Test {
         assertEquals(true, instance.isPalindrome(2143883412));
         assertEquals(false, instance.isPalindrome(-2147447412));
     }
-    
 }

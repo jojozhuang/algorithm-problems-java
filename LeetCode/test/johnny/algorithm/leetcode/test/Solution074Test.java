@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution074;
 
-import static org.junit.Assert.*;
+public class Solution074Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution074Test {
-    
-    public Solution074Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of searchMatrix method, of class Solution074.
-     */
     @Test
     public void testSearchMatrix() {
         System.out.println("searchMatrix");

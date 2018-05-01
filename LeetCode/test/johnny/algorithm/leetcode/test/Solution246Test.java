@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution246;
 
-import static org.junit.Assert.*;
+public class Solution246Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution246Test {
-    
-    public Solution246Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isStrobogrammatic method, of class Solution246.
-     */
     @Test
     public void testIsStrobogrammatic() {
         System.out.println("isStrobogrammatic");

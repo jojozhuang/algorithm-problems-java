@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution136;
 
-import static org.junit.Assert.*;
+public class Solution136Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution136Test {
-    
-    public Solution136Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of singleNumber method, of class Solution136.
-     */
     @Test
     public void testSingleNumber() {
         System.out.println("singleNumber");

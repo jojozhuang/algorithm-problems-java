@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution331;
 
-import static org.junit.Assert.*;
+public class Solution331Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution331Test {
-    
-    public Solution331Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isValidSerialization method, of class Solution331.
-     */
     @Test
     public void testIsValidSerialization() {
         System.out.println("isValidSerialization");

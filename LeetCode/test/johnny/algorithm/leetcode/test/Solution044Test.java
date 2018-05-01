@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution044;
 
-import static org.junit.Assert.*;
+public class Solution044Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution044Test {
-    
-    public Solution044Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isMatch method, of class Solution044.
-     */
     @Test
     public void testIsMatch() {
         System.out.println("isMatch");

@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution379;
 
-import static org.junit.Assert.*;
+public class Solution379Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution379Test {
-    
-    public Solution379Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of get method, of class Solution379.
-     */
     @Test
     public void testGet() {
         System.out.println("get");
@@ -49,23 +18,17 @@ public class Solution379Test {
         assertEquals(-1, instance.get());
     }
 
-    /**
-     * Test of check method, of class Solution379.
-     */
     @Test
     public void testCheck() {
         System.out.println("check");
         Solution379 instance = new Solution379(3);
-        
+
         assertEquals(true, instance.check(0));
         assertEquals(true, instance.check(1));
         assertEquals(true, instance.check(2));
         assertEquals(false, instance.check(3));
     }
 
-    /**
-     * Test of release method, of class Solution379.
-     */
     @Test
     public void testRelease() {
         System.out.println("release");

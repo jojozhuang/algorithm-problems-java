@@ -1,36 +1,15 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import johnny.algorithm.leetcode.Solution690;
 import johnny.algorithm.leetcode.common.Employee;
 
-public class Solution690Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution690Test extends JunitBase {
 
     @Test
     public void test() {
@@ -38,7 +17,7 @@ public class Solution690Test {
         Solution690 instance = new Solution690();
 
         assertEquals(0, instance.getImportance(new ArrayList<Employee>(), 1));
-        
+
         List<Employee> list1 = new ArrayList<Employee>();
         list1.add(new Employee(1, 5, new ArrayList<Integer>()));
         assertEquals(5, instance.getImportance(list1, 1));
@@ -52,7 +31,7 @@ public class Solution690Test {
         assertEquals(8, instance.getImportance(list2, 1));
         assertEquals(3, instance.getImportance(list2, 2));
         assertEquals(0, instance.getImportance(list2, 3));
-        
+
         List<Employee> list3 = new ArrayList<Employee>();
         List<Integer> sub3 = new ArrayList<Integer>();
         sub3.add(2);

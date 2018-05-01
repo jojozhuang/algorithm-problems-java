@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution213;
 
-import static org.junit.Assert.*;
+public class Solution213Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution213Test {
-    
-    public Solution213Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of rob method, of class Solution213.
-     */
     @Test
     public void testRob() {
         System.out.println("rob");

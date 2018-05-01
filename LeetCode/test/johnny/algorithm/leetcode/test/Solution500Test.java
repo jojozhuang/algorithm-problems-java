@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution500;
 
-import static org.junit.Assert.*;
+public class Solution500Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution500Test {
-    
-    public Solution500Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findWords method, of class Solution500.
-     */
     @Test
     public void testFindWords() {
         System.out.println("findWords");

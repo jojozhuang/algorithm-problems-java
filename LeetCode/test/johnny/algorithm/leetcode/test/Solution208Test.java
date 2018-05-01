@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution208;
 
-import static org.junit.Assert.*;
+public class Solution208Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution208Test {
-    
-    public Solution208Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of insert method, of class Solution208.
-     */
     @Test
     public void testInsert() {
         System.out.println("insert");
@@ -46,9 +15,6 @@ public class Solution208Test {
         instance.insert(word);
     }
 
-    /**
-     * Test of search method, of class Solution208.
-     */
     @Test
     public void testSearch() {
         System.out.println("search");
@@ -64,9 +30,6 @@ public class Solution208Test {
         assertEquals(false, instance.search("tog"));
     }
 
-    /**
-     * Test of startsWith method, of class Solution208.
-     */
     @Test
     public void testStartsWith() {
         System.out.println("startsWith");

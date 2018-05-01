@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution349;
 
-import static org.junit.Assert.*;
+public class Solution349Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution349Test {
-    
-    public Solution349Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of intersection method, of class Solution349.
-     */
     @Test
     public void testIntersection() {
         System.out.println("intersection");
         Solution349 instance = new Solution349();
-        
+
         assertArrayEquals(new int[]{}, instance.intersection(null, null));
         assertArrayEquals(new int[]{2}, instance.intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2}));
         assertArrayEquals(new int[]{3}, instance.intersection(new int[]{1, 2, 3}, new int[]{3, 4}));

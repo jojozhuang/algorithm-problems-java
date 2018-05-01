@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution456;
 
-import static org.junit.Assert.*;
+public class Solution456Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution456Test {
-    
-    public Solution456Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of find132pattern method, of class Solution456.
-     */
     @Test
     public void testFind132pattern() {
         System.out.println("find132pattern");

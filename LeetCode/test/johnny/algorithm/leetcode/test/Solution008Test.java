@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution008;
 
-import static org.junit.Assert.*;
+public class Solution008Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution008Test {
-    
-    public Solution008Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of atoi method, of class Solution008.
-     */
     @Test
     public void testAtoi() {
         System.out.println("myAtoi");
@@ -79,5 +48,4 @@ public class Solution008Test {
         assertEquals(89, instance.myAtoi("089-0012a42"));
         assertEquals(-2147483647, instance.myAtoi("-2147483647"));
     }
-    
 }

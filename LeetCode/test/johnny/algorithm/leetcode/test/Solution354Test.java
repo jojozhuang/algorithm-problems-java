@@ -1,50 +1,19 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution354;
 
-import static org.junit.Assert.*;
+public class Solution354Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution354Test {
-    
-    public Solution354Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of maxEnvelopes method, of class Solution354.
-     */
     @Test
     public void testMaxEnvelopes() {
         System.out.println("maxEnvelopes");
         Solution354 instance = new Solution354();
 
         assertEquals(0, instance.maxEnvelopes(null));
-        
+
         int[][] envelopes2 = new int[][] {
             {5,4},{6,4},{6,7},{2,3}
         };

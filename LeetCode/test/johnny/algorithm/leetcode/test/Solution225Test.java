@@ -1,53 +1,22 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution225;
 
-import static org.junit.Assert.*;
+public class Solution225Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution225Test {
-    
-    public Solution225Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of push method, of class Solution225.
-     */
     @Test
     public void testStack() {
         System.out.println("testStack");
         Solution225 stack = new Solution225();
-        
+
         assertEquals(true, stack.empty());
         stack.push(1);
         stack.push(2);
         stack.push(3);
-        
+
         assertEquals(false, stack.empty());
         assertEquals(3, stack.pop());
         assertEquals(2, stack.pop());

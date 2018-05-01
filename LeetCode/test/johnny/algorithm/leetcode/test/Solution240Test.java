@@ -1,61 +1,30 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution240;
 
-import static org.junit.Assert.*;
+public class Solution240Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution240Test {
-    
-    public Solution240Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of searchMatrix method, of class Solution240.
-     */
     @Test
     public void testSearchMatrix() {
         System.out.println("searchMatrix");
         Solution240 instance = new Solution240();
 
         assertEquals(false, instance.searchMatrix(null, 0));
-        
+
         int[][] matrix1 = new int[][] {new int[] {1}};
         assertEquals(false, instance.searchMatrix(matrix1, 0));
         assertEquals(true, instance.searchMatrix(matrix1, 1));
-        
+
         int[][] matrix2 = new int[][] {new int[] {1, 2}, new int[] {2, 3}};
         assertEquals(false, instance.searchMatrix(matrix2, 0));
         assertEquals(true, instance.searchMatrix(matrix2, 2));
         assertEquals(true, instance.searchMatrix(matrix2, 3));
         assertEquals(false, instance.searchMatrix(matrix2, 4));
-        
-        int[][] matrix3 = new int[][] { new int[] {1, 4, 7, 11, 15}, 
+
+        int[][] matrix3 = new int[][] { new int[] {1, 4, 7, 11, 15},
                                         new int[] {2, 5, 8, 12, 19},
                                         new int[] {3, 6, 9, 16, 22},
                                         new int[] {10, 13, 14, 17, 24},

@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution485;
 
-import static org.junit.Assert.*;
+public class Solution485Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution485Test {
-    
-    public Solution485Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findMaxConsecutiveOnes method, of class Solution485.
-     */
     @Test
     public void testFindMaxConsecutiveOnes() {
         System.out.println("findMaxConsecutiveOnes");

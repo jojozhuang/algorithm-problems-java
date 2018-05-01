@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution350;
 
-import static org.junit.Assert.*;
+public class Solution350Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution350Test {
-    
-    public Solution350Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of intersect method, of class Solution350.
-     */
     @Test
     public void testIntersect() {
         System.out.println("intersect");

@@ -1,51 +1,20 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution101;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution101Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution101Test {
-    
-    public Solution101Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isSymmetric method, of class Solution101.
-     */
     @Test
     public void testIsSymmetric() {
         System.out.println("isSymmetric");
         Solution101 instance = new Solution101();
 
         assertEquals(true, instance.isSymmetric(null));
-        
+
         TreeNode p2 = new TreeNode(1);
         assertEquals(true, instance.isSymmetric(p2));
 

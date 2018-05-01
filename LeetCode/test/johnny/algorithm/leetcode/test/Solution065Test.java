@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution065;
 
-import static org.junit.Assert.*;
+public class Solution065Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution065Test {
-    
-    public Solution065Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isNumber method, of class Solution065.
-     */
     @Test
     public void testIsNumber() {
         System.out.println("isNumber");
         Solution065 instance = new Solution065();
- 
+
         assertEquals(false, instance.isNumber(""));
         assertEquals(true, instance.isNumber("0"));
         assertEquals(true, instance.isNumber(" 0.1 "));

@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution383;
 
-import static org.junit.Assert.*;
+public class Solution383Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution383Test {
-    
-    public Solution383Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of canConstruct method, of class Solution383.
-     */
     @Test
     public void testCanConstruct() {
         System.out.println("canConstruct");
         Solution383 instance = new Solution383();
-        
+
         assertEquals(true, instance.canConstruct("", ""));
         assertEquals(false, instance.canConstruct("a", ""));
         assertEquals(false, instance.canConstruct("a", "b"));

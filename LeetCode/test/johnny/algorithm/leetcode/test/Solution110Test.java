@@ -1,51 +1,20 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution110;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution110Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution110Test {
-    
-    public Solution110Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isBalanced method, of class Solution110.
-     */
     @Test
     public void testIsBalanced() {
         System.out.println("isBalanced");
         Solution110 instance = new Solution110();
 
         assertEquals(true, instance.isBalanced(null));
-        
+
         TreeNode root1 = TreeNode.createInstance(new String[] {"1"});
         assertEquals(true, instance.isBalanced(root1));
 

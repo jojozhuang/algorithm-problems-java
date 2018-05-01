@@ -1,39 +1,18 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution505;
 
-public class Solution505Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution505Test extends JunitBase {
 
     @Test
     public void test() {
         System.out.println("shortestDistance");
         Solution505 instance = new Solution505();
 
-        int[][] maze1 = new int[][] { 
+        int[][] maze1 = new int[][] {
             {0, 0, 1, 0, 0},
             {0, 0, 0, 0, 0},
             {0, 0, 0, 1, 0},
@@ -44,7 +23,7 @@ public class Solution505Test {
         int[] destination1 = new int[] {4,4};
         assertEquals(12, instance.shortestDistance(maze1,start1,destination1));
 
-        int[][] maze2 = new int[][] { 
+        int[][] maze2 = new int[][] {
             {0, 0, 1, 0, 0},
             {0, 0, 0, 0, 0},
             {0, 0, 0, 1, 0},

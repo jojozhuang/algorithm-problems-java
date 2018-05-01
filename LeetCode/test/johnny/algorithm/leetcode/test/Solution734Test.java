@@ -1,32 +1,11 @@
 package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution734;
 
-public class Solution734Test {
-
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+public class Solution734Test extends JunitBase {
 
     @Test
     public void test() {
@@ -42,11 +21,10 @@ public class Solution734Test {
         String[] words22 = new String[] {"great"};
         String[][] pairs2 = new String[][] {{}};
         assertEquals(true, instance.areSentencesSimilar(words21,words22,pairs2));
-        
+
         String[] words31 = new String[] {"great"};
         String[] words32 = new String[] {"doubleplus","good"};
         String[][] pairs3 = new String[][] {{"great", "doubleplus"}, {"great","good"}, {"skills","talent"}};
         assertEquals(false, instance.areSentencesSimilar(words31,words32,pairs3));
     }
-
 }

@@ -1,64 +1,34 @@
 package johnny.algorithm.leetcode.test;
 
+import static org.junit.Assert.*;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution364;
 import johnny.algorithm.leetcode.common.NestedInteger;
 
-import static org.junit.Assert.*;
+public class Solution364Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution364Test {
-    
-    public Solution364Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of depthSumInverse method, of class Solution364.
-     */
     @Test
     public void testDepthSumInverse() {
         System.out.println("depthSumInverse");
         Solution364 instance = new Solution364();
-        
+
         assertEquals(0, instance.depthSumInverse(null));
         assertEquals(6, instance.depthSumInverse(getExample1()));
         assertEquals(15, instance.depthSumInverse(getExample2()));
         assertEquals(8, instance.depthSumInverse(getExample3()));
     }
-    
+
     public static List<NestedInteger> getExample1() {
         NestedInteger one = new NestedInteger();
         one.i = 1;
         NestedInteger two = new NestedInteger();
         two.i = 2;
         NestedInteger three = new NestedInteger();
-        three.i = 3;        
+        three.i = 3;
 
         List<NestedInteger> input = new ArrayList<NestedInteger>();
         input.add(one);
@@ -74,14 +44,14 @@ public class Solution364Test {
         fourList.add(four);
         NestedInteger fourElement = new NestedInteger();
         fourElement.list = fourList;
-        
+
         NestedInteger five = new NestedInteger();
         five.i = 5;
         List<NestedInteger> fiveList = new ArrayList<NestedInteger>();
         fiveList.add(five);
         NestedInteger fiveElement = new NestedInteger();
         fiveElement.list = fiveList;
-        
+
         NestedInteger six = new NestedInteger();
         six.i = 6;
         List<NestedInteger> sixList = new ArrayList<NestedInteger>();

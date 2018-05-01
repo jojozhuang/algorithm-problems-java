@@ -1,51 +1,20 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution230;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution230Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution230Test {
-    
-    public Solution230Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of kthSmallest method, of class Solution230.
-     */
     @Test
     public void testKthSmallest() {
         System.out.println("kthSmallest");
         Solution230 instance = new Solution230();
 
         assertEquals(Integer.MIN_VALUE, instance.kthSmallest(null, 0));
-        
+
         TreeNode root2 = TreeNode.createInstance(new String[] {"2","1", "#"});
         assertEquals(1, instance.kthSmallest(root2, 1));
         TreeNode root3 = TreeNode.createInstance(new String[] {"2","1", "#"});

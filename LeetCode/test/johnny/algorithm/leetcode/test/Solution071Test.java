@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution071;
 
-import static org.junit.Assert.*;
+public class Solution071Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution071Test {
-    
-    public Solution071Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of simplifyPath method, of class Solution071.
-     */
     @Test
     public void testSimplifyPath() {
         System.out.println("simplifyPath");

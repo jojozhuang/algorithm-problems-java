@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution205;
 
-import static org.junit.Assert.*;
+public class Solution205Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution205Test {
-    
-    public Solution205Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of isIsomorphic method, of class Solution205.
-     */
     @Test
     public void testIsIsomorphic() {
         System.out.println("isIsomorphic");

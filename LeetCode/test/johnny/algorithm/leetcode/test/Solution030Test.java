@@ -1,45 +1,15 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
+
+import java.util.List;
 
 import johnny.algorithm.leetcode.Solution030;
 import johnny.algorithm.leetcode.common.ListUtil;
 
-import static org.junit.Assert.*;
+public class Solution030Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution030Test {
-    
-    public Solution030Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findSubstring method, of class Solution030.
-     */
     @Test
     public void testFindSubstring() {
         System.out.println("findSubstring");

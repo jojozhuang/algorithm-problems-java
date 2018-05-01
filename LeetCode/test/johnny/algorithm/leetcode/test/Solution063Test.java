@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution063;
 
-import static org.junit.Assert.*;
+public class Solution063Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution063Test {
-    
-    public Solution063Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of uniquePathsWithObstacles method, of class Solution063.
-     */
     @Test
     public void testUniquePathsWithObstacles() {
         System.out.println("uniquePathsWithObstacles");

@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution014;
 
-import static org.junit.Assert.*;
+public class Solution014Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution014Test {
-    
-    public Solution014Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of longestCommonPrefix method, of class Solution014.
-     */
     @Test
     public void testLongestCommonPrefix() {
         System.out.println("longestCommonPrefix");
@@ -52,5 +21,4 @@ public class Solution014Test {
         assertEquals("ab", instance.longestCommonPrefix(new String[]{"abcdef", "abc", "abb"}));
         assertEquals("abc", instance.longestCommonPrefix(new String[]{"abcdef", "abce", "abc123"}));
     }
-    
 }

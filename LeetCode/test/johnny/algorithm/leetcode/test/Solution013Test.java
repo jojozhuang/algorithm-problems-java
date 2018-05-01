@@ -1,9 +1,5 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution013;
@@ -14,25 +10,9 @@ import static org.junit.Assert.*;
  *
  * @author Johnny
  */
-public class Solution013Test {
-    
+public class Solution013Test extends JunitBase {
+
     public Solution013Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
     }
 
     /**

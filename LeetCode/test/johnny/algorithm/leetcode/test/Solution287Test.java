@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution287;
 
-import static org.junit.Assert.*;
+public class Solution287Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution287Test {
-    
-    public Solution287Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findDuplicate method, of class Solution287.
-     */
     @Test
     public void testFindDuplicate() {
         System.out.println("findDuplicate");

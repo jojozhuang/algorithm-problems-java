@@ -1,50 +1,19 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution037;
 
-import static org.junit.Assert.*;
+public class Solution037Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution037Test {
-    
-    public Solution037Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of solveSudoku method, of class Solution037.
-     */
     @Test
     public void testSolveSudoku() {
         System.out.println("solveSudoku");
         char[][] board = null;
         Solution037 instance = new Solution037();
         instance.solveSudoku(board);
-        
+
         char[][] board2 = new char[][] {
             {'5','3','.','.','7','.','.','.','.'},
             {'6','.','.','1','9','5','.','.','.'},

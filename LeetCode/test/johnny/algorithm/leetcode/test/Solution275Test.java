@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution275;
 
-import static org.junit.Assert.*;
+public class Solution275Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution275Test {
-    
-    public Solution275Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of hIndex method, of class Solution275.
-     */
     @Test
     public void testHIndex() {
         System.out.println("hIndex");

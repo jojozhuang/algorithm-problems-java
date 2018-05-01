@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution238;
 
-import static org.junit.Assert.*;
+public class Solution238Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution238Test {
-    
-    public Solution238Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of productExceptSelf method, of class Solution238.
-     */
     @Test
     public void testProductExceptSelf() {
         System.out.println("productExceptSelf");
         Solution238 instance = new Solution238();
-        
+
         assertArrayEquals(new int[]{2,1}, instance.productExceptSelf(new int[]{1,2}));
         assertArrayEquals(new int[]{12,4,3}, instance.productExceptSelf(new int[]{1,3,4}));
         assertArrayEquals(new int[]{0,0}, instance.productExceptSelf(new int[]{0,0}));

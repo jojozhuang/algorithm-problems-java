@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution060;
 
-import static org.junit.Assert.*;
+public class Solution060Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution060Test {
-    
-    public Solution060Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getPermutation method, of class Solution060.
-     */
     @Test
     public void testGetPermutation() {
         System.out.println("getPermutation");

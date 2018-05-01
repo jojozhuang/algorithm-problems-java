@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution381;
 
-import static org.junit.Assert.*;
+public class Solution381Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution381Test {
-    
-    public Solution381Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getRandom method, of class Solution381.
-     */
     @Test
     public void testGetRandom() {
         System.out.println("getRandom");
         Solution381 collection = new Solution381();
-        
+
         // Inserts 1 to the collection. Returns true as the collection did not contain 1.
         assertTrue(collection.insert(1));
 
@@ -62,17 +31,14 @@ public class Solution381Test {
         // getRandom should return 1 and 2 both equally likely.
         random = collection.getRandom();
         assertTrue(random == 1 || random == 2);
-        
+
         // extra testing
         assertFalse(collection.remove(3));
         assertTrue(collection.remove(1));
         random = collection.getRandom();
         assertTrue(random == 2);
     }
-    
-    /**
-     * Test of getRandom method, of class Solution381.
-     */
+
     @Test
     public void testGetRandom2() {
         System.out.println("getRandom2");

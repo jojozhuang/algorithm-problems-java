@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution599;
 
-import static org.junit.Assert.*;
+public class Solution599Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution599Test {
-    
-    public Solution599Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findRestaurant method, of class Solution599.
-     */
     @Test
     public void testFindRestaurant() {
         System.out.println("findRestaurant");
         Solution599 instance = new Solution599();
-        
+
         assertArrayEquals(new String[]{"abc"}, instance.findRestaurant(new String[]{"abc"}, new String[]{"abc"}));
         assertArrayEquals(new String[]{"cd"}, instance.findRestaurant(new String[]{"abc","cd"}, new String[]{"cd"}));
         assertArrayEquals(new String[]{"ef"}, instance.findRestaurant(new String[]{"ef","cd"}, new String[]{"ef","cd"}));

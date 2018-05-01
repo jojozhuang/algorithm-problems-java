@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution154;
 
-import static org.junit.Assert.*;
+public class Solution154Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution154Test {
-    
-    public Solution154Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findMin method, of class Solution154.
-     */
     @Test
     public void testFindMin() {
         System.out.println("findMin");

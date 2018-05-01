@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution594;
 
-import static org.junit.Assert.*;
+public class Solution594Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution594Test {
-    
-    public Solution594Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of findLHS method, of class Solution594.
-     */
     @Test
     public void testFindLHS() {
         System.out.println("findLHS");
         Solution594 instance = new Solution594();
-        
+
         assertEquals(0, instance.findLHS(new int[]{}));
         assertEquals(0, instance.findLHS(new int[]{1}));
         assertEquals(2, instance.findLHS(new int[]{1,2}));

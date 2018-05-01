@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution011;
 
-import static org.junit.Assert.*;
+public class Solution011Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution011Test {
-    
-    public Solution011Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of maxArea method, of class Solution011.
-     */
     @Test
     public void testMaxArea() {
         System.out.println("maxArea");
         Solution011 instance = new Solution011();
-        
+
         assertEquals(0, instance.maxArea(new int[]{}));
         assertEquals(4, instance.maxArea(new int[]{2,3,4}));
         assertEquals(6, instance.maxArea(new int[]{1,2,3,4,5}));

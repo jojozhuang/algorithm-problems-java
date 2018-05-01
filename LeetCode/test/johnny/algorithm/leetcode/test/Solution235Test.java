@@ -1,63 +1,32 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution235;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution235Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution235Test {
-    
-    public Solution235Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of lowestCommonAncestor method, of class Solution235.
-     */
     @Test
     public void testLowestCommonAncestor() {
         System.out.println("lowestCommonAncestor");
         Solution235 instance = new Solution235();
 
         assertEquals(null, instance.lowestCommonAncestor(null, null, null));
-        
+
         TreeNode root1 = new TreeNode(1);
         TreeNode p1 = new TreeNode(2);
         root1.right = p1;
         assertEquals(root1, instance.lowestCommonAncestor(root1, root1, p1));
-        
+
         TreeNode root2 = new TreeNode(2);
         TreeNode p2 = new TreeNode(1);
         root2.left = p2;
         TreeNode q2 = new TreeNode(3);
         root2.right = q2;
         assertEquals(root2, instance.lowestCommonAncestor(root2, p2, q2));
-        
+
         TreeNode root3 = new TreeNode(6);
         TreeNode n2 = new TreeNode(2);
         root3.left = n2;

@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution052;
 
-import static org.junit.Assert.*;
+public class Solution052Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution052Test {
-    
-    public Solution052Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of totalNQueens method, of class Solution052.
-     */
     @Test
     public void testTotalNQueens() {
         System.out.println("totalNQueens");

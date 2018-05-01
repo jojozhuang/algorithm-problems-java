@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution330;
 
-import static org.junit.Assert.*;
+public class Solution330Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution330Test {
-    
-    public Solution330Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of minPatches method, of class Solution330.
-     */
     @Test
     public void testMinPatches() {
         System.out.println("minPatches");
         Solution330 instance = new Solution330();
-        
+
         assertEquals(0, instance.minPatches(null, 0));
         assertEquals(3, instance.minPatches(new int[]{}, 7));
         assertEquals(1, instance.minPatches(new int[]{1, 3}, 6));

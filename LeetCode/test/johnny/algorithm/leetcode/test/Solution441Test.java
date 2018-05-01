@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution441;
 
-import static org.junit.Assert.*;
+public class Solution441Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution441Test {
-    
-    public Solution441Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of arrangeCoins method, of class Solution441.
-     */
     @Test
     public void testArrangeCoins() {
         System.out.println("arrangeCoins");
         Solution441 instance = new Solution441();
-        
+
         assertEquals(0, instance.arrangeCoins(0));
         assertEquals(1, instance.arrangeCoins(1));
         assertEquals(1, instance.arrangeCoins(2));

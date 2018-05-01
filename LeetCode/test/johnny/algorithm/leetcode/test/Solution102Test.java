@@ -1,47 +1,16 @@
 package johnny.algorithm.leetcode.test;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
+
+import java.util.List;
 
 import johnny.algorithm.leetcode.Solution102;
 import johnny.algorithm.leetcode.common.ListUtil;
 import johnny.algorithm.leetcode.common.TreeNode;
 
-import static org.junit.Assert.*;
+public class Solution102Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution102Test {
-    
-    public Solution102Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of levelOrder method, of class Solution102.
-     */
     @Test
     public void testLevelOrder() {
         System.out.println("levelOrder");
@@ -49,7 +18,7 @@ public class Solution102Test {
 
         List<List<Integer>> expect1 = ListUtil.buildList2(new Integer[][] {});
         assertEquals(expect1, instance.levelOrder(null));
-        
+
         TreeNode root2 = new TreeNode(1);
         List<List<Integer>> expect2 = ListUtil.buildList2(new Integer[][] {{1}});
         assertEquals(expect2, instance.levelOrder(root2));

@@ -1,48 +1,17 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution415;
 
-import static org.junit.Assert.*;
+public class Solution415Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution415Test {
-    
-    public Solution415Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of addStrings method, of class Solution415.
-     */
     @Test
     public void testAddStrings() {
         System.out.println("addStrings");
         Solution415 instance = new Solution415();
-        
+
         assertEquals("", instance.addStrings("", ""));
         assertEquals("1", instance.addStrings("", "1"));
         assertEquals("2", instance.addStrings("2", ""));

@@ -1,43 +1,12 @@
 package johnny.algorithm.leetcode.test;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution321;
 
-import static org.junit.Assert.*;
+public class Solution321Test extends JunitBase {
 
-/**
- *
- * @author Johnny
- */
-public class Solution321Test {
-    
-    public Solution321Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of maxNumber method, of class Solution321.
-     */
     @Test
     public void testMaxNumber() {
         System.out.println("maxNumber");
