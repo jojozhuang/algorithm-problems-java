@@ -43,7 +43,7 @@ public class Solution114 {
         
         if (root.left != null) {
             TreeNode tail = root.left;
-            while(tail.right != null) {
+            while (tail.right != null) {
                 tail = tail.right;
             }
             TreeNode right = root.right;

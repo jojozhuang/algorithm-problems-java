@@ -44,7 +44,7 @@ public class Solution091 {
             }
             if (isValid(s.substring(i - 2, i))) {
                 dp[i] += dp[i - 2];
-            }           
+            }
         }
         
         return dp[dp.length - 1];

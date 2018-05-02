@@ -23,16 +23,17 @@ public class Solution096 {
             return 0;
         }
         
-        int[] count = new int[n + 1];
-        count[0] = 1;
-        count[1] = 1;
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
         
         for (int i = 2; i <= n; i++) {
             for (int j = 0; j < i; j++) {
-                count[i] += count[j] * count[i - j - 1];                
+                // if left child has j sub trees, then right child has i - j - 1 sub trees.
+                dp[i] += dp[j] * dp[i - j - 1];
             }
         }
         
-        return count[n];
+        return dp[n];
     }
 }

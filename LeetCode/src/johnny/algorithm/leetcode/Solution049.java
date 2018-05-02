@@ -46,7 +46,7 @@ public class Solution049 {
             map.get(key).add(str);
         }
         
-        for(List<String> li: map.values()) {
+        for (List<String> li: map.values()) {
             if (li.size() > 1) {
                 Collections.sort(li);
             }

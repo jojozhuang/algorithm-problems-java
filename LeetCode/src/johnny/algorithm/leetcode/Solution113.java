@@ -48,7 +48,7 @@ public class Solution113 {
             if (root.left == null && root.right == null) {
                 list.add(root.val);
                 res.add(new ArrayList<Integer>(list));
-                list.remove(list.size() - 1);
+                list.remove(list.size() - 1); // don't forget to remove the last integer
                 return;
             }
         }
@@ -57,5 +57,5 @@ public class Solution113 {
         helper(root.left, sum - root.val, list, res);
         helper(root.right, sum - root.val, list, res);
         list.remove(list.size() - 1);
-    }    
+    }
 }

@@ -18,12 +18,12 @@ public class Solution038 {
             return "";
         }
         
-        String str = "1";  
+        String str = "1";
         for (int i = 1; i < n; i++) {
             int count = 1;
-            StringBuilder sb = new StringBuilder();       
+            StringBuilder sb = new StringBuilder();
             char c = str.charAt(0);
-            for(int j = 1; j < str.length(); j++) {
+            for (int j = 1; j < str.length(); j++) {
                 if (c != str.charAt(j)){
                     sb.append(count);
                     sb.append(c);

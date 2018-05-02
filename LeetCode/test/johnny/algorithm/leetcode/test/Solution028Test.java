@@ -18,5 +18,7 @@ public class Solution028Test extends JunitBase {
         assertEquals(2, instance.strStr("abcdedf", "cd"));
         assertEquals(5, instance.strStr("1234567890", "67"));
         assertEquals(4, instance.strStr("mississippi", "issip"));
+        assertEquals(2, instance.strStr("hello", "ll"));
+        assertEquals(-1, instance.strStr("aaaaa", "bba"));
     }
 }

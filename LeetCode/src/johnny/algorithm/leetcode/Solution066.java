@@ -14,6 +14,26 @@ public class Solution066 {
         if (digits == null || digits.length == 0) {
             return null;
         }
+        int n = digits.length;
+        for (int i=n-1; i>=0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            
+            digits[i] = 0;
+        }
+        
+        int[] newNumber = new int[n+1];
+        newNumber[0] = 1;
+        
+        return newNumber;
+    }
+    
+    public int[] plusOne2(int[] digits) {
+        if (digits == null || digits.length == 0) {
+            return null;
+        }
         
         int carry = 0;
         int sum = 0;
@@ -39,6 +59,6 @@ public class Solution066 {
             ret[i] = 0;
         }*/
         
-        return res;                
+        return res;
     }
 }

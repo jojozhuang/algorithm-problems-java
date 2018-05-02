@@ -56,5 +56,5 @@ public class Solution102 {
         }
         
         return res;
-    }   
+    }
 }

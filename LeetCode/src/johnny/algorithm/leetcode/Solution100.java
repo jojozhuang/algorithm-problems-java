@@ -29,5 +29,5 @@ public class Solution100 {
             return false;
         
         return true;
-    } 
+    }
 }

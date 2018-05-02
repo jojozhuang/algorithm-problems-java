@@ -25,7 +25,7 @@ public class Solution059 {
         
         int[][] matrix = new int[n][n];
         
-        int top = 0;        
+        int top = 0;
         int left = 0;
         int bottom = matrix.length-1;
         int right = matrix[0].length-1;
@@ -38,7 +38,7 @@ public class Solution059 {
             while(i <= right) {
                 matrix[top][i] = index;
                 index++;
-                i++;                
+                i++;
             }
             top++;
             //top->bottom

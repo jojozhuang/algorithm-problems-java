@@ -21,8 +21,8 @@ public class Solution082 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         
-        ListNode curr = dummy;        
-        while(curr.next != null && curr.next.next != null) {
+        ListNode curr = dummy;
+        while (curr.next != null && curr.next.next != null) {
             if (curr.next.val == curr.next.next.val) {
                 int pre_value = curr.next.val;
                 while (curr.next != null && curr.next.val == pre_value) {

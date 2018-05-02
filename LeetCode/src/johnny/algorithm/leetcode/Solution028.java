@@ -10,70 +10,56 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution028 {
-    public int strStr(String haystack, String needle) {
+    public int strStr2(String haystack, String needle) {
         if (haystack == null || needle == null ||
             haystack.length() < needle.length()) {
             return -1;
         }
-        
+
         int j = 0;
         for(int i = 0; i < haystack.length() - needle.length() + 1; i++) {
             for (j = 0; j < needle.length(); j++) {
                 if (haystack.charAt(i + j) != needle.charAt(j)) {
                     break;
-                }                
+                }
             }
-            if (j == needle.length())
+            if (j == needle.length()) {
                 return i;
+            }
         }
         return -1;
     }
-    /*
+    
     public int strStr(String haystack, String needle) {
-        if (haystack==null||needle==null)
-            return -1;
-        if (haystack.isEmpty()&&needle.isEmpty())
-            return 0;
-        if (haystack.isEmpty()&&!needle.isEmpty())
-            return -1;
-        if (!haystack.isEmpty()&&needle.isEmpty())
-            return 0;
-        
-        char[] chHay = haystack.toCharArray();
-        char[] chNdl = needle.toCharArray(); 
-        
-        int i=0;
-        int j=0;
-        int temp=0;
-        boolean second=true;
-        
-        //the below code is equivalent to embedded loop(double loops)
-        while(i<chHay.length&&j<chNdl.length) {
-            if (chHay[i]!=chNdl[j]) {
-                if (j!=0) {
-                    i=temp+1;
-                    temp=0;
-                }
-                else
-                    i++;
-                j=0;
+        if (needle.length() == 0) return 0;
+        if (needle.length() > haystack.length() || haystack.length() == 0) return -1;
+        char[] ndl = needle.toCharArray();
+        char[] hay = haystack.toCharArray();
+        int[] pai = new int[ndl.length];
+        pai[0] = -1;
+        int k = -1;
+        for (int i = 1; i < ndl.length; i++) {
+            while (k > -1 && ndl[k + 1] != ndl[i]) {
+                k = pai[k];
             }
-            else {
-                if (temp==0)
-                    temp = i;
-                if (chHay[i]==chNdl[0] && second) { //find the position for the rollback
-                    temp = i;
-                    second = false;
-                }
-                if (j==chNdl.length-1)
-                    return i-j;
-                else {
-                    i++;
-                    j++;
-                }
-            }            
+            if (ndl[k + 1] == ndl[i]) {
+                k++;
+            }
+            pai[i] = k;
+
         }
-        
+        k = -1;
+        for (int i = 0; i < hay.length; i++) {
+            while (k > -1 && ndl[k + 1] != hay[i]) {
+                k = pai[k];
+            }
+            if (ndl[k + 1] == hay[i]) {
+                k++;
+                if (k == ndl.length - 1) {
+                    return i - k;
+                }
+            }
+        }
         return -1;
-    }*/
+    }
 }

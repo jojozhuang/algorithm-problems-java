@@ -19,7 +19,7 @@ import java.util.Stack;
  */
 public class Solution084 {
     //http://www.programcreek.com/2014/05/leetcode-largest-rectangle-in-histogram-java/
-    public int largestRectangleArea(int[] heights) {
+    public int largestRectangleArea3(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;
         }
@@ -53,6 +53,26 @@ public class Solution084 {
         return max;
     }
     
+    //Brute Force
+    public int largestRectangleArea(int[] heights) {
+        if (heights == null || heights.length == 0) {
+            return 0;
+        }
+        
+        int n = heights.length;
+        int max = 0;
+        
+        for (int i = 0; i < n; i++) {
+            int min = heights[i];
+            for (int j = i; j < n; j++) {
+                min = Math.min(min, heights[j]);
+                max = Math.max(max, (j - i + 1) * min);
+            }
+        }
+        
+        return max;
+    }
+    
     public int largestRectangleArea2(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;
@@ -60,14 +80,14 @@ public class Solution084 {
         
         int n = heights.length;
         int[][] area = new int[n][n];
-        int max = 0;        
+        int max = 0;
         
         for (int i = 0; i < n; i++) {
             int min = 0;
-            for (int j = i; j < n; j++) {                
+            for (int j = i; j < n; j++) {
                 if (j == i) {
                     min = heights[i];
-                    area[i][j] = heights[i];                    
+                    area[i][j] = heights[i];
                 } else {
                     min = Math.min(min, heights[j]);
                     area[i][j] = (j - i + 1) * min;

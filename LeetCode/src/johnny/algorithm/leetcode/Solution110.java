@@ -28,10 +28,9 @@ public class Solution110 {
         if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
             return -1;
         }
-        else {
-            return Math.max(left, right) + 1;
-        }
-    }  
+        
+        return Math.max(left, right) + 1;
+    }
     
     /*
     public boolean isBalanced(TreeNode root) {

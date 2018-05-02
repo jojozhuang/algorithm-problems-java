@@ -34,11 +34,11 @@ public class Solution092 {
         
         ListNode prev = null;
         ListNode curr = premNode.next;
-        while(curr != null && i <= n) {
+        while (curr != null && i <= n) {
             ListNode next = curr.next;
             curr.next = prev;
             prev = curr; 
-            curr = next;                       
+            curr = next;
             i++;
         }
         

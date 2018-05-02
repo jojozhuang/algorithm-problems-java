@@ -17,7 +17,7 @@ public class Solution081 {
             return false;
         }
         
-        for(int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target) {
                 return true;
             }

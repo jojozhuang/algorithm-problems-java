@@ -2,7 +2,6 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Deque;
 import java.util.LinkedList;
 import johnny.algorithm.leetcode.common.TreeNode;
 import java.util.List;
@@ -44,23 +43,19 @@ public class Solution103 {
         
         while (!queue.isEmpty()) {
             int size = queue.size();
-            Deque<Integer> deque = new LinkedList<Integer>();
+            List<Integer> list = new ArrayList<Integer>();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                deque.offerLast(node.val);
+                if (odd) {
+                    list.add(0, node.val);
+                } else {
+                    list.add(node.val);
+                }
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
                 if (node.right != null) {
                     queue.offer(node.right);
-                }
-            }
-            List<Integer> list = new ArrayList<Integer>();
-            while (!deque.isEmpty()) {
-                if (!odd) {
-                    list.add(deque.pollFirst());
-                } else {
-                    list.add(deque.pollLast());
                 }
             }
             res.add(list);

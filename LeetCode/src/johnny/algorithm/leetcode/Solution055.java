@@ -17,7 +17,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution055 {
-    // Greedy, top to bottom    
+    // Greedy, top to bottom
     public boolean canJump(int[] nums) {
         if (nums == null || nums.length == 0) {
             return false;

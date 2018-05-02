@@ -24,6 +24,6 @@ public class Solution033Test extends JunitBase {
         assertEquals(4, instance.search(new int[] {4, 5, 6, 7, 0, 1, 2}, 0));
         assertEquals(6, instance.search(new int[] {4, 5, 6, 7, 0, 1, 2}, 2));
         assertEquals(3, instance.search(new int[] {4, 5, 6, 7, 0, 1, 2}, 7));
-        //assertEquals(3, instance.search(new int[] {1, 1, 1, 2, 1, 1, 1}, 2));
+        assertEquals(3, instance.search(new int[] {1, 1, 1, 2, 1, 1, 1}, 2));
     }
 }

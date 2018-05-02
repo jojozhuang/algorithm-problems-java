@@ -26,7 +26,7 @@ public class Solution058 {
             if (s.charAt(i) == ' ') {
                 if (count > 0) {
                     return count;
-                }                
+                }
             } else {
                 count++;
             }

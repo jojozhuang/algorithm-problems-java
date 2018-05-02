@@ -19,5 +19,7 @@ public class Solution027Test extends JunitBase {
         assertEquals(0, instance.removeElement(new int[]{1,1,1}, 1));
         assertEquals(2, instance.removeElement(new int[]{1,3,1,2}, 1));
         assertEquals(1, instance.removeElement(new int[]{4,5}, 4));
+        assertEquals(2, instance.removeElement(new int[]{3,2,2,3}, 3));
+        assertEquals(5, instance.removeElement(new int[]{0,1,2,2,3,0,4,2}, 2));
     }
 }

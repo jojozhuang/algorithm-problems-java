@@ -32,7 +32,7 @@ public class Solution039 {
         
         Arrays.sort(candidates);
         List<Integer> list = new ArrayList<Integer>();
-        helper(candidates, 0, target, list, res);        
+        helper(candidates, 0, target, list, res);
         return res;
     }
     

@@ -20,7 +20,7 @@ public class Solution061 {
         
         ListNode fast = head;
         int len = 1;
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next;
             len++;
         }
@@ -32,7 +32,7 @@ public class Solution061 {
         
         ListNode prev = head;
         ListNode rhead = head.next;
-        while(rhead != null && step > 1) {
+        while (rhead != null && step > 1) {
             rhead = rhead.next;
             prev = prev.next;
             step--;

@@ -27,7 +27,7 @@ public class Solution048 {
                 matrix[n-1-i][n-1-j] = matrix[j][n-1-i];
                 matrix[j][n-1-i] = temp;
             }
-        }        
+        }
     }
     public void rotate3(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -47,7 +47,7 @@ public class Solution048 {
             }
             start++;
             end--;
-        }        
+        }
     }
      
     public void rotate2(int[][] matrix) {

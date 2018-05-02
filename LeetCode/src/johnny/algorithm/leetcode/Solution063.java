@@ -28,6 +28,24 @@ public class Solution063 {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
             return 0;
         }
+        int width = obstacleGrid[0].length;
+        int[] dp = new int[width];
+        dp[0] = 1;
+        for (int[] row : obstacleGrid) {
+            for (int j = 0; j < width; j++) {
+                if (row[j] == 1)
+                    dp[j] = 0;
+                else if (j > 0)
+                    dp[j] += dp[j - 1];
+            }
+        }
+        return dp[width - 1];
+    }
+    
+    public int uniquePathsWithObstacles2(int[][] obstacleGrid) {
+        if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
+            return 0;
+        }
         
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
@@ -41,14 +59,14 @@ public class Solution063 {
             if (obstacleGrid[i][0] == 1) {
                 obs = true;
             }
-            f[i][0] = obs ? 0 : 1;            
+            f[i][0] = obs ? 0 : 1;
         }
         obs = false;
         for(int j = 0; j < n; j++) {
             if (obstacleGrid[0][j] == 1) {
                 obs = true;
             }
-            f[0][j] = obs ? 0 : 1;          
+            f[0][j] = obs ? 0 : 1;
         }
         // Calculate f[i][j]
         for(int i = 1; i < m; i++) {

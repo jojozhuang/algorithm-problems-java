@@ -52,6 +52,6 @@ public class Solution060 {
             nums.remove(rank);
         }
 
-        return sb.toString();       
+        return sb.toString();
     }
 }

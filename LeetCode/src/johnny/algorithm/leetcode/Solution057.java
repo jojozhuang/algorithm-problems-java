@@ -131,6 +131,6 @@ public class Solution057 {
             }
         }
         
-        return res;        
+        return res;
     }   
 }

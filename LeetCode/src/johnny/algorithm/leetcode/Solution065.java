@@ -33,7 +33,7 @@ public class Solution065 {
         if (index >= 0) {
             String left = s.substring(0, index);
             String right = s.substring(index + 1);
-            int res_left = helper(left);            
+            int res_left = helper(left);
             int res_right = helper(right);
             boolean dot_left = isdot(left);
             if (res_left == 0 || res_right == 0) {
@@ -81,7 +81,7 @@ public class Solution065 {
     }
     
     // 2: number with sign, 1: is number, -1: not number, 0: empty
-    private int helper(String s) {        
+    private int helper(String s) {
         if (s.isEmpty()) {
             return 0;
         }

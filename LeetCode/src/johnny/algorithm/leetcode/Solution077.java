@@ -35,8 +35,7 @@ public class Solution077 {
         return res;
     }
     
-    private void dfs(int n, int k, int pos, List<Integer> list,
-                     List<List<Integer>> res) {
+    private void dfs(int n, int k, int pos, List<Integer> list, List<List<Integer>> res) {
         if (list.size() == k) {
             res.add(new ArrayList<Integer>(list));
             return;

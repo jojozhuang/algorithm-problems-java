@@ -29,7 +29,7 @@ public class Solution105 {
         
         int rootvalue = preorder[prestart];
         TreeNode root = new TreeNode(rootvalue);
-        int index  = -1;
+        int index  = -1; //Index of current root in inorder
         for (int i = instart; i <= inend; i++) {
             if (inorder[i] == rootvalue) {
                 index = i;

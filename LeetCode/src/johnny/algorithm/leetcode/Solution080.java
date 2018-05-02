@@ -17,6 +17,20 @@ public class Solution080 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
+        int i = 0;
+        for (int n : nums) {
+            if (i < 2 || n > nums[i-2]) {
+                nums[i] = n;
+                i++;
+            }
+        }
+        return i;
+    }
+    
+    public int removeDuplicates2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
         
         if (nums.length == 1) {
             return 1;

@@ -27,8 +27,7 @@ public class Solution088 {
             if (nums1[i] > nums2[j]) {
                 nums1[end] = nums1[i];
                 i--;
-            }
-            else {
+            } else {
                 nums1[end] = nums2[j];
                 j--;
             }
@@ -36,10 +35,10 @@ public class Solution088 {
         }
         
         if (j >= 0) {
-            for (int p = j; p >= 0; p--) {
-                nums1[end] = nums2[p];
+            for (int k = j; k >= 0; k--) {
+                nums1[end] = nums2[k];
                 end--;
             }
-        }             
+        }
     }
 }

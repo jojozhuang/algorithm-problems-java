@@ -60,32 +60,27 @@ public class Solution087 {
         if (s1.equals(s2)) {
             return true;
         }
-            
-        int n = s1.length();
-        //Check characters.
-        int[] chars = new int[26];
-        for (int i = 0; i < n; i++) {
-            chars[s1.charAt(i) - 'a']++;
-            chars[s2.charAt(i) - 'a']--;
+        
+        int[] letters = new int[26];
+        for (int i = 0; i < s1.length(); i++) {
+            letters[s1.charAt(i)-'a']++;
+            letters[s2.charAt(i)-'a']--;
         }
-            
         for (int i = 0; i < 26; i++) {
-            if (chars[i] != 0)
+            if (letters[i] != 0) {
                 return false;
+            }
         }
- 
-        //More letters
-        for (int i = 1; i < n; i++) {
-            String s11 = s1.substring(0, i);
-            String s12 = s1.substring(i, n);
-            String s21 = s2.substring(0, i);
-            String s22 = s2.substring(i, n);
-            if (isScramble(s11, s21) && isScramble(s12, s22))
+    
+        for (int i = 1; i < s1.length(); i++) {
+            if (isScramble(s1.substring(0,i), s2.substring(0,i)) 
+             && isScramble(s1.substring(i), s2.substring(i))) {
                 return true;
-            s21 = s2.substring(0, n - i);
-            s22 = s2.substring(n - i, n);
-            if (isScramble(s11, s22) && isScramble(s12, s21))
+            }
+            if (isScramble(s1.substring(0,i), s2.substring(s2.length()-i)) 
+             && isScramble(s1.substring(i), s2.substring(0,s2.length()-i))) {
                 return true;
+            }
         }
         return false;
     }

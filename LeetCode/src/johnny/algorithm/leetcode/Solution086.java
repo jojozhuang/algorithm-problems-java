@@ -28,7 +28,7 @@ public class Solution086 {
         ListNode rightCurr = rightDummy;
         
         ListNode curr = head;
-        while(curr != null) {
+        while (curr != null) {
             if (curr.val < x) {
                 leftCurr.next = curr;
                 leftCurr = leftCurr.next;

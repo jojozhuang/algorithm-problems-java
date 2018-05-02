@@ -15,22 +15,22 @@ public class Solution101Test extends JunitBase {
 
         assertEquals(true, instance.isSymmetric(null));
 
-        TreeNode p2 = new TreeNode(1);
-        assertEquals(true, instance.isSymmetric(p2));
+        TreeNode root2 = new TreeNode(1);
+        assertEquals(true, instance.isSymmetric(root2));
 
-        TreeNode p3 = TreeNode.createInstance(new String[] {"1","2","#"});
-        assertEquals(false, instance.isSymmetric(p3));
+        TreeNode root3 = TreeNode.createInstance(new String[] {"1","2","#"});
+        assertEquals(false, instance.isSymmetric(root3));
 
-        TreeNode p4 = TreeNode.createInstance(new String[] {"1","2","3"});
-        assertEquals(false, instance.isSymmetric(p4));
+        TreeNode root4 = TreeNode.createInstance(new String[] {"1","2","3"});
+        assertEquals(false, instance.isSymmetric(root4));
 
-        TreeNode p5 = TreeNode.createInstance(new String[] {"1","2","2"});
-        assertEquals(true, instance.isSymmetric(p5));
+        TreeNode root5 = TreeNode.createInstance(new String[] {"1","2","2"});
+        assertEquals(true, instance.isSymmetric(root5));
 
-        TreeNode p6 = TreeNode.createInstance(new String[] {"1","2","2","#","#","3","3"});
-        assertEquals(false, instance.isSymmetric(p6));
+        TreeNode root6 = TreeNode.createInstance(new String[] {"1","2","2","#","#","3","3"});
+        assertEquals(false, instance.isSymmetric(root6));
 
-        TreeNode p7 = TreeNode.createInstance(new String[] {"1","2","2","#","3","3","#"});
-        assertEquals(true, instance.isSymmetric(p7));
+        TreeNode root7 = TreeNode.createInstance(new String[] {"1","2","2","#","3","3","#"});
+        assertEquals(true, instance.isSymmetric(root7));
     }
 }

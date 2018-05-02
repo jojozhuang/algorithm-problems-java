@@ -38,5 +38,5 @@ public class Solution112 {
         }
         
         return false;
-    }   
+    }
 }

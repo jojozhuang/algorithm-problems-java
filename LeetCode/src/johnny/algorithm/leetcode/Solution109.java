@@ -10,7 +10,7 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * 
  * @author Johnny
  */
-public class Solution109 {    
+public class Solution109 {
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
             return null;

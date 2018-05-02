@@ -10,7 +10,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution070 {
-    public int climbStairs(int n) {
+    public int climbStairs2(int n) {
         if (n <= 0) {
             return 0;
         }
@@ -18,44 +18,43 @@ public class Solution070 {
             return 1;
         }
         // Define function, f[i] is the count of ways to climb to level i. 
-        // f[i] = f[i-1] + f[i-2]
-        int[] f = new int[n];
+        // dp[i] = dp[i-1] + dp[i-2]
+        int[] dp = new int[n];
         // Initial
-        f[0] = 1;
-        f[1] = 2;
+        dp[0] = 1;
+        dp[1] = 2;
         // Calculate f[i]
-        int i = 2;
-        while(i < n) {
-            f[i] = f[i-1] + f[i-2];
-            i++;
+        for (int i=2; i<n; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
         }
         // Get result;
-        return f[n - 1];        
+        return dp[n - 1];
     }
     
-    /*public int climbStairs(int n) {
+    public int climbStairs(int n) {
         if (n <= 0) {
             return 0;
         }
-        
         if (n == 1) {
             return 1;
-        } else if (n == 2) {
+        }
+        if (n == 2) {
             return 2;
         }
-        
-        int[] steps = new int[n];
-        steps[0] = 1;
-        steps[1] = 2;
-        for (int i = 2; i < n; i++) {
-            steps[i] = steps[i - 1] + steps[i - 2];
+        int first = 1;
+        int second = 2;
+        int res = 0;
+
+        for (int i=2; i<n; i++) {
+            res = first + second;
+            first = second;
+            second = res;
         }
-        return steps[n-1];
-    } */
+
+        return res;
+    }
     
-    
-    /*
-    public int climbStairs(int n) {
+    public int climbStairs3(int n) {
         if (n<=0)
             return 0;
         if (n==1)
@@ -65,23 +64,4 @@ public class Solution070 {
         
         return climbStairs(n-1) + climbStairs(n-2);
     }
-    
-    public int climbStairs2(int n) {
-        if (n<=0)
-            return 0;
-        if (n==1)
-            return 1;
-        if (n==2)
-            return 2;
-        
-        int[] ret = new int[n+1];
-        ret[0] = 0;
-        ret[1] = 1;
-        ret[2] = 2;
-        
-        for (int i=3; i<=n; i++) {
-            ret[i] = ret[i-1] + ret[i-2];
-        }
-        return ret[n];
-    }*/
 }

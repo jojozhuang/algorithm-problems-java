@@ -37,5 +37,8 @@ public class Solution031Test extends JunitBase {
         int[] nums8 = new int[]{1,1,5};
         instance.nextPermutation(nums8);
         assertArrayEquals(new int[]{1,5,1}, nums8);
+        int[] nums9 = new int[]{1,5,8,4,7,6,5,3,1};
+        instance.nextPermutation(nums9);
+        assertArrayEquals(new int[]{1,5,8,5,1,3,4,6,7}, nums9);
     }
 }

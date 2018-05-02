@@ -36,7 +36,7 @@ public class Solution071 {
                 }
             } else {
                 deque.offerLast(item);
-            }                
+            }
         }
         
         if (deque.isEmpty()) {

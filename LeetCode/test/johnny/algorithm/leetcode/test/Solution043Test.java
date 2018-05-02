@@ -13,8 +13,8 @@ public class Solution043Test extends JunitBase {
         Solution043 instance = new Solution043();
 
         assertEquals(null,  instance.multiply(null, null));
-        assertEquals("", instance.multiply("", ""));
-        assertEquals("", instance.multiply("11", ""));
+        assertEquals("0", instance.multiply("", ""));
+        assertEquals("0", instance.multiply("11", ""));
         assertEquals("0", instance.multiply("1", "0"));
         assertEquals("2", instance.multiply("1", "2"));
         assertEquals("81", instance.multiply("9", "9"));

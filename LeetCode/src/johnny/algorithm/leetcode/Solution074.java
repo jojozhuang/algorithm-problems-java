@@ -21,7 +21,27 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution074 {
+    //Use binary search.
+    //n * m matrix convert to an array => matrix[x][y] => a[x * m + y]
+    //an array convert to n * m matrix => a[x] =>matrix[x / m][x % m];
     public boolean searchMatrix(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return false;
+        }
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int l = 0, r = m * n - 1;
+        while (l != r){
+            int mid = (l + r - 1) >> 1;
+            if (matrix[mid / m][mid % m] < target)
+                l = mid + 1;
+            else 
+                r = mid;
+        }
+        return matrix[r / m][r % m] == target;
+    }
+
+    public boolean searchMatrix2(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }

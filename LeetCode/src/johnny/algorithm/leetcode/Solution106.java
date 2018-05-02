@@ -18,7 +18,7 @@ public class Solution106 {
             return null;
         }
         
-        return helper(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1); 
+        return helper(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
     }
     
     private TreeNode helper(int[] inorder, int instart, int inend,
@@ -29,7 +29,7 @@ public class Solution106 {
         
         int rootvalue = postorder[postend];
         TreeNode root = new TreeNode(rootvalue);
-        int index = -1;
+        int index = -1; //Index of current root in inorder
         for (int i = instart; i <= inend; i++) {
             if (inorder[i] == rootvalue) {
                 index = i;

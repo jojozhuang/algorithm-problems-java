@@ -64,7 +64,7 @@ public class Solution051 {
             res.add(list);
         } else{
             for(int i = 0; i < n; i++){
-                columnVal[row] = i;                
+                columnVal[row] = i;
                 if(isValid(row, columnVal)) {
                     dfs(n, row + 1, columnVal, res);
                 }

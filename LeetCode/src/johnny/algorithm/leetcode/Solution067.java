@@ -27,7 +27,7 @@ public class Solution067 {
         
         StringBuilder sb = new StringBuilder();
         int carry = 0;
-        while(i >= 0 || j >= 0) {
+        while (i >= 0 || j >= 0) {
             int val1 = (i < 0) ? 0 : arr1[i] - '0';
             int val2 = (j < 0) ? 0 : arr2[j] - '0';
             int sum = val1 + val2 + carry;

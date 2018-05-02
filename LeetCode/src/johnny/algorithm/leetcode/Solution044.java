@@ -61,8 +61,8 @@ public class Solution044 {
         }
         
         char[] arrs = s.toCharArray();
-        char[] arrp = p.toCharArray();        
-        //remove duplicated *       
+        char[] arrp = p.toCharArray();
+        //remove duplicated *
         int index = 0;
         boolean first = true;
         for (int i = 0; i < arrp.length; i++) {

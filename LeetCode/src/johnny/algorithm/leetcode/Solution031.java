@@ -21,7 +21,24 @@ package johnny.algorithm.leetcode;
  */
 public class Solution031 {
     //http://fisherlei.blogspot.com/2012/12/leetcode-next-permutation.html
-    public void nextPermutation(int[] nums) {        
+    public void nextPermutation(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int i = nums.length - 2;
+        while (i >= 0 && nums[i + 1] <= nums[i]) {
+            i--;
+        }
+        if (i >= 0) {
+            int j = nums.length - 1;
+            while (j >= 0 && nums[j] <= nums[i]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+        reverse(nums, i + 1, nums.length - 1);
+    }
+    public void nextPermutation2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return;
         }
@@ -55,20 +72,17 @@ public class Solution031 {
     }
     
     private void reverse(int[] nums, int start, int end) {
-        if (nums == null || nums.length == 0 || end <= start) {
-            return;
-        }
-        
-        while(start < end) {
-            swap(nums, start, end);
-            start++;
-            end--;
+        int i = start, j = end;
+        while(i < j) {
+            swap(nums, i, j);
+            i++;
+            j--;
         }
     }
     
-    private void swap(int[] nums, int first, int second) {
-        int temp = nums[first];
-        nums[first] = nums[second];
-        nums[second] = temp;
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
