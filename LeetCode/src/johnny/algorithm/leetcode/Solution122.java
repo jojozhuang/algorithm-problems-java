@@ -28,5 +28,5 @@ public class Solution122 {
         }
         
         return profit;
-    }  
+    }
 }

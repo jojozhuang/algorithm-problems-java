@@ -26,7 +26,7 @@ public class Solution167 {
         }
         
         int start = 0;
-        int end = numbers.length - 1;        
+        int end = numbers.length - 1;
         int sum = 0;
         
         while (start < end) {

@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -21,6 +22,33 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution140 {
+    public List<String> wordBreak(String s, List<String> wordDict) {
+        List<String> result = new LinkedList<String>();
+        if (s == null || s.isEmpty()) {
+            return result;
+        }
+        return word_Break(s, wordDict, 0, new HashMap<>());
+    }
+ 
+    public List<String> word_Break(String s, List<String> wordDict, int start, HashMap<Integer, List<String>> map) {
+        if (map.containsKey(start)) {
+            return map.get(start);
+        }
+        LinkedList<String> res = new LinkedList<>();
+        if (start == s.length()) {
+            res.add("");
+        }
+        for (int end = start + 1; end <= s.length(); end++) {
+            if (wordDict.contains(s.substring(start, end))) {
+                List<String> list = word_Break(s, wordDict, end, map);
+                for (String l : list) {
+                    res.add(s.substring(start, end) + (l.equals("") ? "" : " ") + l);
+                }
+            }
+        }
+        map.put(start, res);
+        return res;
+    }
     //http://www.programcreek.com/2014/03/leetcode-word-break-ii-java/
     /*public List<String> wordBreak(String s, Set<String> dict) {
         List<String> res = new ArrayList<String>();
@@ -68,7 +96,7 @@ public class Solution140 {
     }*/
     
     
-    public List<String> wordBreak(String s, Set<String> dict) {
+    public List<String> wordBreak2(String s, List<String> dict) {
         List<String> result = new LinkedList<String>();
         if (s == null || s.isEmpty()) {
             return result;

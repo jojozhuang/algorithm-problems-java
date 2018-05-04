@@ -21,10 +21,37 @@ public class Solution150 {
             return 0;
         }
         
+        Stack<Integer> stack = new Stack<Integer>();
+        for (String str : tokens) {
+            int result = 0;
+            if (str.equals("+")) {
+                result = stack.pop() + stack.pop();
+            } else if (str.equals("-")) {
+                result = -stack.pop() + stack.pop();
+            } else if (str.equals("*")) {
+                result = stack.pop() * stack.pop();
+            } else if (str.equals("/")) {
+                int a = stack.pop();
+                int b = stack.pop();
+                result = b / a;
+            } else { 
+                result = Integer.parseInt(str);
+            }
+            stack.push(result);
+        }
+        
+        return stack.pop();
+    }
+    
+    public int evalRPN2(String[] tokens) {
+        if (tokens == null || tokens.length == 0) {
+            return 0;
+        }
+        
         Stack<String> stack = new Stack<String>();
         int index = 0;
         while (index < tokens.length) {
-            String str = tokens[index];            
+            String str = tokens[index];
             if (isOperator(str)) {
                 int val1 = Integer.parseInt(stack.pop());
                 int val2 = Integer.parseInt(stack.pop());

@@ -35,7 +35,6 @@ public class Solution168 {
         return sb.toString();
     }
     
-    
     public String convertToTitle2(int n) {
         if (n<=0)
             return "";

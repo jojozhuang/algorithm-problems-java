@@ -15,19 +15,22 @@ public class Solution160Test extends JunitBase {
 
         assertEquals(null, instance.getIntersectionNode(null, null));
 
-        ListNode headA1 = ListNode.createInstance(new int[]{1});
-        ListNode headB1 = ListNode.createInstance(new int[]{1});
-        ListNode expect1 = ListNode.createInstance(new int[]{1});
-        assertTrue(ListNode.isSame(expect1, instance.getIntersectionNode(headA1, headB1)));
+        ListNode tail1 = ListNode.createInstance(new int[]{1});
+        ListNode headA1 = tail1;
+        ListNode headB1 = tail1;
+        assertTrue(ListNode.isSame(tail1, instance.getIntersectionNode(headA1, headB1)));
 
-        ListNode headA2 = ListNode.createInstance(new int[]{1});
-        ListNode headB2 = ListNode.createInstance(new int[]{1,2});
-        ListNode expect2 = null;
-        assertTrue(ListNode.isSame(expect2, instance.getIntersectionNode(headA2, headB2)));
+        ListNode tail2 = ListNode.createInstance(new int[]{2});
+        ListNode headA2 = tail2;
+        ListNode headB2 = ListNode.createInstance(new int[]{1});
+        headB2.next = tail2;
+        assertTrue(ListNode.isSame(tail2, instance.getIntersectionNode(headA2, headB2)));
 
-        ListNode headA3 = ListNode.createInstance(new int[]{1,2,11,12,13});
-        ListNode headB3 = ListNode.createInstance(new int[]{3,4,5,11,12,13});
-        ListNode expect3 = ListNode.createInstance(new int[]{11,12,13});
-        assertTrue(ListNode.isSame(expect3, instance.getIntersectionNode(headA3, headB3)));
+        ListNode tail3 = ListNode.createInstance(new int[]{1,2,11,12,13});
+        ListNode headA3 = ListNode.createInstance(new int[]{1,2});
+        headA3.next = tail3;
+        ListNode headB3 = ListNode.createInstance(new int[]{3,4,5});
+        headB3.next = tail3;
+        assertTrue(ListNode.isSame(tail3, instance.getIntersectionNode(headA3, headB3)));
     }
 }

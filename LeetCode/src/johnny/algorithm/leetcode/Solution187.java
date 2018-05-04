@@ -2,7 +2,9 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Repeated DNA Sequences.
@@ -23,31 +25,57 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution187 {
-    //http://yuanhsh.iteye.com/blog/2185976
     public List<String> findRepeatedDnaSequences(String s) {
         List<String> res = new ArrayList<String>();
         if (s == null || s.length() == 0) {
             return res;
         }
         
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        map.put('A', 0);
-        map.put('C', 1);
-        map.put('G', 2);
-        map.put('T', 3);
+        Set<String> seen = new HashSet<String>(); 
+        Set<String> repeated = new HashSet<String>();
+        for (int i = 0; i + 9 < s.length(); i++) {
+            String ten = s.substring(i, i + 10);
+            if (!seen.add(ten))
+                repeated.add(ten);
+        }
+        return new ArrayList<String>(repeated);
+    }
+    //http://yuanhsh.iteye.com/blog/2185976
+    //There are only four letters ACGT. The total combination is 4^10 = 1048576. Encode ACGT as
+    //A = 00
+    //C = 01
+    //G = 10
+    //T = 11
+    // eg: AAACCC = 00 00 00 01 01 01(Binary) = 21(Decimal)
+    // Each DNA(10 letters) can be represented as binary code. Each letter occupies 2 bits.
+    // So, we need 20 bits to generate one DNA substring. Use 0xFFFFF as mask to eliminate
+    // the first 10 bits. Use hashmap to store the encoded DNA substring. Compare new one with
+    // existing one in the hashmap to get the substrings that occur more than once.
+    public List<String> findRepeatedDnaSequences2(String s) {
+        List<String> res = new ArrayList<String>();
+        if (s == null || s.length() == 0) {
+            return res;
+        }
         
-        HashMap<Integer, Integer> sumMap = new HashMap<Integer, Integer>();
+        HashMap<Character, Integer> codeMap = new HashMap<Character, Integer>();
+        codeMap.put('A', 0); // 00
+        codeMap.put('C', 1); // 01
+        codeMap.put('G', 2); // 10
+        codeMap.put('T', 3); // 11
+        
+        HashMap<Integer, Integer> dnaMap = new HashMap<Integer, Integer>();
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
-            sum = ((sum << 2) + map.get(s.charAt(i))) & 0xFFFFF;
+            // use sum to keep the latest substring with 10 letters at most(20 bits)
+            sum = ((sum << 2) + codeMap.get(s.charAt(i))) & 0xFFFFF;
             if (i < 9) {
                 continue;
             }
-            if (!sumMap.containsKey(sum)) {
-                sumMap.put(sum, 1);
+            if (!dnaMap.containsKey(sum)) {
+                dnaMap.put(sum, 1);
             } else {
-                sumMap.put(sum, sumMap.get(sum) + 1);
-                if (sumMap.get(sum) == 2) {
+                dnaMap.put(sum, dnaMap.get(sum) + 1);
+                if (dnaMap.get(sum) == 2) {
                     res.add(s.substring(i - 9, i + 1));
                 }
             }

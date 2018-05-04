@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * Gas Station.
  * There are N gas stations along a circular route, where the amount of gas at 
@@ -44,10 +46,10 @@ public class Solution134 {
             return -1;
         }
         int sumRemaining = 0; // track current remaining
-	int total = 0; // track total remaining
-	int start = 0; 
+        int total = 0; // track total remaining
+        int start = 0; 
  
-	for (int i = 0; i < gas.length; i++) {
+        for (int i = 0; i < gas.length; i++) {
             int remaining = gas[i] - cost[i];
 
             //if sum remaining of (i-1) >= 0, continue 
@@ -59,12 +61,12 @@ public class Solution134 {
                 start = i;
             }
             total += remaining;
-	}
+        }
  
-	if (total >= 0){
+        if (total >= 0){
             return start;
-	} else{
+        } else{
             return -1;
-	}
+        }
     }
 }

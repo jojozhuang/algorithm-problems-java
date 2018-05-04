@@ -32,6 +32,24 @@ public class Solution119 {
         }
         return res;
     }
+    // no extra space
+    public List<Integer> getRow5(int rowIndex) {
+        List<Integer> res = new ArrayList<Integer>();
+        
+        if (rowIndex <= 0) {
+            res.add(1);
+            return res;
+        }
+        
+        res.add(1);
+        for(int i = 1; i <= rowIndex; i++) {
+            for (int j = res.size() - 2; j >=0 ; j--) {
+                res.set(j + 1, res.get(j) + res.get(j + 1));
+            }
+            res.add(1);
+        }
+        return res;
+    }
     //rowIndex starts from 0
     //just enhanced from Solution118 
     public List<Integer> getRow4(int rowIndex) {
@@ -93,7 +111,7 @@ public class Solution119 {
                 list.add(1);
                 previousRow.clear();
                 previousRow.add(list);
-            }            
+            }
         }
         
         return list;
@@ -122,7 +140,7 @@ public class Solution119 {
                     list.add((previous.get(j) + previous.get(j+1)));
                 }
                 list.add(1);
-            }            
+            }
         }
         
         return list;

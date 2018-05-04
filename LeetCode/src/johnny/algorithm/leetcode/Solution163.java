@@ -88,7 +88,7 @@ public class Solution163 {
                     res.add("" + lower + "->" + (nums[i] - 1));
                 }
                 lower = nums[i] + 1;
-            }            
+            }
         }
         
         if (nums[len - 1] < upper) {

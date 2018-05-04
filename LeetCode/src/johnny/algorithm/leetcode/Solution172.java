@@ -10,7 +10,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution172 {
-    public int trailingZeroes(int n) {
+    public int trailingZeroes4(int n) {
         return n <= 0 ? 0 : n / 5 + trailingZeroes(n / 5);
     }
     public int trailingZeroes2(int n) {
@@ -30,7 +30,7 @@ public class Solution172 {
         return ret;
     }   
     
-    public int trailingZeroes3(int n) {
+    public int trailingZeroes(int n) {
         if (n < 0) {
             return -1;
         }

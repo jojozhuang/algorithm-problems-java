@@ -22,7 +22,7 @@ public class Solution140Test extends JunitBase {
         assertEquals(expect1, instance.wordBreak("", null));
 
         List<String> expect2 = ListUtil.buildList(new String[] {"cats and dog","cat sand dog"});
-        Set<String> dict2 = SetUtil.buildList(new String[] {"cat","cats","and","sand","dog"});
+        List<String> dict2 = ListUtil.buildList(new String[] {"cat","cats","and","sand","dog"});
         List<String> result2 = instance.wordBreak("catsanddog", dict2);
         assertTrue(ListUtil.equalsIgnoreOrder(expect2, result2));
     }

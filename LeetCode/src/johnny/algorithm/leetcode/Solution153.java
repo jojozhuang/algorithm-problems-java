@@ -13,27 +13,27 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution153 {
-    public int findMin(int[] num) {
-        if (num == null || num.length == 0) {
+    public int findMin(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
         
         int start = 0;
-        int end = num.length - 1;
+        int end = nums.length - 1;
         
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
-            if (num[mid] > num[end]) {
+            if (nums[mid] > nums[end]) {
                 start = mid;
             } else {
                 end = mid;
             }
         }
         
-        if (num[start] > num[end]) {
-            return num[end];
+        if (nums[start] > nums[end]) {
+            return nums[end];
         } else {
-            return num[start];
-        }        
+            return nums[start];
+        }
     }
 }

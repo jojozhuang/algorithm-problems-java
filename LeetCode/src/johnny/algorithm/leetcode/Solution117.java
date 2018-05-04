@@ -36,7 +36,7 @@ public class Solution117 {
         TreeLinkNode head = null; //head of the next level
         TreeLinkNode prev = null; //the leading node on the next level
         TreeLinkNode cur = root;  //current node of current level
-        while (cur != null) {            
+        while (cur != null) {
             while (cur != null) { //iterate on the current level
                 //left child
                 if (cur.left != null) {
@@ -64,7 +64,7 @@ public class Solution117 {
             cur = head;
             head = null;
             prev = null;
-        }        
+        }
     }
     // level order traversal with queue
     public void connect2(TreeLinkNode root) {

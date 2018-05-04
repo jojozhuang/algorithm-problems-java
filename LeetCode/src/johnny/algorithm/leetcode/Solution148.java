@@ -25,7 +25,7 @@ public class Solution148 {
         ListNode right = sortList(rightnode);
         slow.next = null;
         ListNode left = sortList(head);
-        //merge        
+        //merge
         return mergeTwoLists(left, right);
     }  
     
@@ -39,7 +39,7 @@ public class Solution148 {
             } else {
                 curr.next = l2;
                 l2 = l2.next;
-            }            
+            }
             curr = curr.next;
         }
         if (l1 != null) {

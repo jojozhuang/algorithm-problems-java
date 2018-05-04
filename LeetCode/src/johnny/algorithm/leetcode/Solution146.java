@@ -58,7 +58,7 @@ public class Solution146 {
         return hs.get(key).value;
     }
     
-    public void set(int key, int value) {
+    public void put(int key, int value) {
         if (get(key) != -1) {
             hs.get(key).value = value;
             return;

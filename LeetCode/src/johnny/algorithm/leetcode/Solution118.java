@@ -24,23 +24,21 @@ public class Solution118 {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (numRows <= 0) {
             return res;
-        }        
+        }
         
-        for (int i = 1; i <= numRows; i++) {
+        res.add(new ArrayList<Integer>());
+        res.get(0).add(1);
+        
+        for (int i = 1; i < numRows; i++) {
             List<Integer> list = new ArrayList<Integer>();
-            if (i == 1) {
-                list.add(1);
-            } else if(i == 2) {
-                list.add(1);
-                list.add(1);
-            } else {
-                list.add(1);
-                List<Integer> previous = res.get(i - 2);
-                for (int j = 0; j < previous.size() - 1; j++) {
-                    list.add((previous.get(j) + previous.get(j + 1)));
-                }
-                list.add(1);
+            // The first row element is always 1.
+            list.add(1);
+            List<Integer> previous = res.get(i - 1);
+            for (int j = 1; j < previous.size(); j++) {
+                list.add((previous.get(j - 1) + previous.get(j)));
             }
+            // The last row element is always 1.
+            list.add(1);
             res.add(list);
         }
         

@@ -56,7 +56,7 @@ public class Solution129 {
         return sum;
     }
     public int sumNumbers3(TreeNode root) {
-        return dfs(root, 0);    
+        return dfs(root, 0);
     }
     private int dfs(TreeNode root, int num){
         if(root == null){

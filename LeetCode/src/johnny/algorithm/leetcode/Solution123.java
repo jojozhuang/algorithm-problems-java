@@ -15,8 +15,21 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution123 {
-    //http://www.programcreek.com/2014/02/leetcode-best-time-to-buy-and-sell-stock-iii-java/
     public int maxProfit(int[] prices) {
+        if (prices == null || prices.length <= 1) {
+            return 0;
+        }
+        int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE, release1 = Integer.MIN_VALUE, release2 = Integer.MIN_VALUE;
+        for (int i:prices){
+            hold1 = Math.max(hold1, -i);
+            release1 = Math.max(release1, hold1+i);
+            hold2 = Math.max(hold2, release1-i);
+            release2 = Math.max(release2, hold2+i);
+        }
+        return release2;
+    }
+    //http://www.programcreek.com/2014/02/leetcode-best-time-to-buy-and-sell-stock-iii-java/
+    public int maxProfit3(int[] prices) {
         if (prices == null || prices.length <= 1) {
             return 0;
         }

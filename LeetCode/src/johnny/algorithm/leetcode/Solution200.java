@@ -204,7 +204,7 @@ public class Solution200 {
             dfs(grid, i - 1, j); // up
             dfs(grid, i + 1, j); // down
             dfs(grid, i, j - 1); // left
-            dfs(grid, i, j + 1); // right            
+            dfs(grid, i, j + 1); // right
         }
     }
 }

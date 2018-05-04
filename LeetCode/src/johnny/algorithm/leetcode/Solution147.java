@@ -28,5 +28,5 @@ public class Solution147 {
         }
 
         return dummy.next;
-    }    
+    }
 }

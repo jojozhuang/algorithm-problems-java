@@ -29,5 +29,8 @@ public class Solution149Test extends JunitBase {
 
         Point[] points6 = Point.buildArray(new int[][] {{2,3},{3,3},{-5,3}});
         assertEquals(3, instance.maxPoints(points6));
+        
+        Point[] points7 = Point.buildArray(new int[][] {{0,0},{94911151,94911150},{94911152,94911151}});
+        assertEquals(2, instance.maxPoints(points7));
     }
 }

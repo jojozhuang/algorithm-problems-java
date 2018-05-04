@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * Maximum Gap.
  * Given an unsorted array, find the maximum difference between the successive 
@@ -60,5 +62,20 @@ public class Solution164 {
         }
         
         return gap;
+    }
+    // Sorting and Comparison: O(n)
+    public int maximumGap2(int[] nums) {
+        if (nums == null || nums.length < 2) {
+            return 0;
+        }
+        
+        Arrays.sort(nums);
+        
+        int maxGap = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            maxGap = Math.max(maxGap, nums[i + 1] - nums[i]);
+        }
+        
+        return maxGap;
     }
 }

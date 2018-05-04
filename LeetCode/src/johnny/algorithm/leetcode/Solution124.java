@@ -29,7 +29,7 @@ public class Solution124 {
     // [0]: single path, [1] max path
     private int[] helper(TreeNode root) {
         if (root == null) {
-            return new int[]{0,Integer.MIN_VALUE};
+            return new int[]{0, Integer.MIN_VALUE};
         }
         
         int[] left = helper(root.left);

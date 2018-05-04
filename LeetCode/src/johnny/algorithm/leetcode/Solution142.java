@@ -14,7 +14,7 @@ import johnny.algorithm.leetcode.common.ListNode;
  */
 public class Solution142 {
     //http://www.cnblogs.com/hiddenfox/p/3408931.html
-    public ListNode detectCycle(ListNode head) {        
+    public ListNode detectCycle(ListNode head) {
         if (head == null) {
             return null;
         }

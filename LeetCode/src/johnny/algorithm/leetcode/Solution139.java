@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,7 +18,25 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution139 {
-    public boolean wordBreak(String s, Set<String> wordDict) {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0){
+            return false;
+        }
+        Set<String> wordDictSet = new HashSet<String>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (dp[j] && wordDictSet.contains(s.substring(j, i))) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+    
+    public boolean wordBreak3(String s, List<String> wordDict) {
         if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0){
             return false;
         }
@@ -43,5 +63,24 @@ public class Solution139 {
         }
         
         return breakable[s.length()];
+    }
+    
+    // Brute Force 
+    public boolean wordBreak2(String s, List<String> wordDict) {
+        if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0){
+            return false;
+        }
+        return word_Break(s, new HashSet<String>(wordDict), 0);
+    }
+    public boolean word_Break(String s, Set<String> wordDict, int start) {
+        if (start == s.length()) {
+            return true;
+        }
+        for (int end = start + 1; end <= s.length(); end++) {
+            if (wordDict.contains(s.substring(start, end)) && word_Break(s, wordDict, end)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

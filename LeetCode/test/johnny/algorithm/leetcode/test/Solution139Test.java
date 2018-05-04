@@ -3,9 +3,11 @@ package johnny.algorithm.leetcode.test;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Set;
 
 import johnny.algorithm.leetcode.Solution139;
+import johnny.algorithm.leetcode.common.ListUtil;
 import johnny.algorithm.leetcode.common.SetUtil;
 
 public class Solution139Test extends JunitBase {
@@ -17,19 +19,19 @@ public class Solution139Test extends JunitBase {
 
         assertEquals(false, instance.wordBreak("", null));
 
-        Set<String> dict2 = SetUtil.buildList(new String[] {"a"});
+        List<String> dict2 = ListUtil.buildList(new String[] {"a"});
         assertEquals(true, instance.wordBreak("a", dict2));
 
-        Set<String> dict3 = SetUtil.buildList(new String[] {"b"});
+        List<String> dict3 = ListUtil.buildList(new String[] {"b"});
         assertEquals(false, instance.wordBreak("a", dict3));
 
-        Set<String> dict4 = SetUtil.buildList(new String[] {"cd","ap"});
+        List<String> dict4 = ListUtil.buildList(new String[] {"cd","ap"});
         assertEquals(false, instance.wordBreak("abcd", dict4));
 
-        Set<String> dict5 = SetUtil.buildList(new String[] {"cd","ap"});
+        List<String> dict5 = ListUtil.buildList(new String[] {"cd","ap"});
         assertEquals(true, instance.wordBreak("cdap", dict5));
 
-        Set<String> dict6 = SetUtil.buildList(new String[] {"leet","code"});
+        List<String> dict6 = ListUtil.buildList(new String[] {"leet","code"});
         assertEquals(true, instance.wordBreak("leetcode", dict6));
     }
 }

@@ -16,6 +16,19 @@ public class Solution121 {
         if (prices == null || prices.length <= 1) {
             return 0;
         }
+        int hold1 = Integer.MIN_VALUE;
+        int release1 = 0;
+        for(int i:prices){                              // Assume we only have 0 money at first
+            release1 = Math.max(release1, hold1+i);     // The maximum if we've just sold 1nd stock so far.
+            hold1    = Math.max(hold1,    -i);          // The maximum if we've just buy  1st stock so far. 
+        }
+        return release1; ///Since release1 is initiated as 0, so release2 will always higher than release1.
+    }
+
+    public int maxProfit2(int[] prices) {
+        if (prices == null || prices.length <= 1) {
+            return 0;
+        }
         
         int minPrice = Integer.MAX_VALUE;
         int profit = 0;

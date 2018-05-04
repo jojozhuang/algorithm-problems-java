@@ -20,7 +20,29 @@ import java.util.List;
 * 
  * @author Johnny
  */
-public class Solution120 {    
+public class Solution120 {
+    // DP, from bottom to top, space = O(n)
+    public int minimumTotal(List<List<Integer>> triangle) {
+        if (triangle == null || triangle.size() == 0 || triangle.get(0).size() == 0) {
+            return 0;
+        }
+        
+        int maxwidth = triangle.get(triangle.size() - 1).size();
+        int[] dp = new int[maxwidth];
+        // Initial
+        for (int i = 0; i < maxwidth; i++) {
+            // The minimum sum is it self for each point of the bottom line
+            dp[i] = triangle.get(triangle.size() - 1).get(i);
+        }
+        // Calculate from bottom to top
+        for (int i = triangle.size() - 2; i >= 0; i--) {
+            for(int j = 0; j < triangle.get(i).size(); j++) {
+                dp[j] = Math.min(dp[j], dp[j + 1]) + triangle.get(i).get(j);
+            }
+        }
+        // Get result
+        return dp[0];
+    }
     // Treat above triangle to another view
     // 2
     // 3 4
@@ -30,8 +52,8 @@ public class Solution120 {
     // down or right down.
     //
     
-    // Solution1: DP, from bottom to top
-    public int minimumTotal(List<List<Integer>> triangle) {
+    // Solution1: DP, from bottom to top, space= O(m*n)
+    public int minimumTotal2(List<List<Integer>> triangle) {
         if (triangle == null || triangle.size() == 0 || triangle.get(0).size() == 0) {
             return 0;
         }
@@ -39,21 +61,21 @@ public class Solution120 {
         int height = triangle.size();
         int maxwidth = triangle.get(height - 1).size();
         // Define f function, f[i][j] is the minimum sum from bottom to point i,j.
-        int[][] f = new int[height][maxwidth]; 
+        int[][] dp = new int[height][maxwidth]; 
         // Initial
         for (int i = 0; i < maxwidth; i++) {
             // The minimum sum is it self for each point of the bottom line
-            f[height - 1][i] = triangle.get(height - 1).get(i);
+            dp[height - 1][i] = triangle.get(height - 1).get(i);
         }
         // Calculate from bottom to top
         for (int i = height - 2; i >= 0; i--) {
             for(int j = 0; j < triangle.get(i).size(); j++) {
-                f[i][j] = Math.min(f[i + 1][j], f[i + 1][j + 1]) + triangle.get(i).get(j);
+                dp[i][j] = Math.min(dp[i + 1][j], dp[i + 1][j + 1]) + triangle.get(i).get(j);
             }
         }
         // Get result
-        return f[0][0];
-    }  
+        return dp[0][0];
+    }
     
     /*
     // Solution2: DP, from top to bottom

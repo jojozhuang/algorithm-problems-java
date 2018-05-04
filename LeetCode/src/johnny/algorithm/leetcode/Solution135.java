@@ -22,7 +22,7 @@ public class Solution135 {
         }
         
         int n = ratings.length;
-	if(n <= 1) {
+        if(n <= 1) {
             return n;
         }
         
@@ -32,7 +32,7 @@ public class Solution135 {
         for (int i = 1; i < n; i++) {
             if(ratings[i] > ratings[i-1]) {
                 candies[i] = candies[i - 1] + 1;
-            }                    
+            }
         }
         
         for (int i = n - 1; i > 0 ; i--) {
@@ -43,7 +43,7 @@ public class Solution135 {
         
         int result=0;
         for (int i = 0; i < n; i++) {
-            result += candies[i];               
+            result += candies[i];
         }
         return result;
     }
@@ -81,5 +81,30 @@ public class Solution135 {
         }
 
         return result;
+    }
+    
+    //Brute Force
+    public int candy3(int[] ratings) {
+        int[] candies = new int[ratings.length];
+        Arrays.fill(candies, 1);
+        boolean flag = true;
+        int sum = 0;
+        while (flag) {
+            flag = false;
+            for (int i = 0; i < ratings.length; i++) {
+                if (i != ratings.length - 1 && ratings[i] > ratings[i + 1] && candies[i] <= candies[i + 1]) {
+                    candies[i] = candies[i + 1] + 1;
+                    flag = true;
+                }
+                if (i > 0 && ratings[i] > ratings[i - 1] && candies[i] <= candies[i - 1]) {
+                    candies[i] = candies[i - 1] + 1;
+                    flag = true;
+                }
+            }
+        }
+        for (int candy : candies) {
+            sum += candy;
+        }
+        return sum;
     }
 }

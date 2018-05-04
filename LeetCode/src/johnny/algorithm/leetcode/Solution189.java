@@ -15,7 +15,7 @@ package johnny.algorithm.leetcode;
  */
 public class Solution189 { 
     public void rotate(int[] nums, int k) { 
-        if (nums == null || nums.length == 0 || nums.length == 1) {
+        if (nums == null || nums.length <= 1) {
             return;
         }
         
@@ -28,9 +28,12 @@ public class Solution189 {
         }
         
         //reverse in 3-steps
-        reverse(nums, 0, nums.length - k - 1);
-        reverse(nums, nums.length - k, nums.length - 1);
+        //reverse(nums, 0, nums.length - k - 1);
+        //reverse(nums, nums.length - k, nums.length - 1);
+        //reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
     }
     
     private void reverse(int[] nums, int start, int end) {
@@ -45,5 +48,21 @@ public class Solution189 {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+    
+    // Brute Force
+    public void rotate2(int[] nums, int k) {
+        if (nums == null || nums.length <= 1) {
+            return;
+        }
+        int temp, previous;
+        for (int i = 0; i < k; i++) {
+            previous = nums[nums.length - 1];
+            for (int j = 0; j < nums.length; j++) {
+                temp = nums[j];
+                nums[j] = previous;
+                previous = temp;
+            }
+        }
     }
 }

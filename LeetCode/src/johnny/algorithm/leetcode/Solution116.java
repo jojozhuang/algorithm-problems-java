@@ -44,6 +44,32 @@ public class Solution116 {
             return;
         }
         
+        TreeLinkNode level = root;
+        
+        while (level != null) {
+            // current level
+            TreeLinkNode curr = level;
+            while (curr != null) {
+                if (curr.left != null) {
+                    curr.left.next = curr.right;
+                }
+                
+                if (curr.right != null && curr.next != null) {
+                    curr.right.next = curr.next.left;
+                }
+                
+                curr = curr.next;
+            }
+            // next level
+            level = level.left;
+        }
+    }
+    
+    public void connect3(TreeLinkNode root) {
+        if (root == null || root.left == null) {
+            return;
+        }
+        
         //current level
         root.left.next = root.right;
         

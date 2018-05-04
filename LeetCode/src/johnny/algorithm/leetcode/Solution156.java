@@ -50,18 +50,19 @@ public class Solution156 {
             curr = next;
         }
         return prev;
-    }  
-    public TreeNode upsideDownBinaryTree2(TreeNode root) {  
+    }
+    
+    public TreeNode upsideDownBinaryTree2(TreeNode root) {
         if (root == null) {
             return null;
         }
-        TreeNode parent = root, left = root.left, right = root.right;  
-        if (left != null) {  
-            TreeNode res = upsideDownBinaryTree(left);  
-            left.left = right;  
-            left.right = parent;  
-            return res;  
-        }  
-        return root;  
+        TreeNode parent = root, left = root.left, right = root.right;
+        if (left != null) {
+            TreeNode res = upsideDownBinaryTree(left);
+            left.left = right;
+            left.right = parent;
+            return res;
+        }
+        return root;
     }
 }
