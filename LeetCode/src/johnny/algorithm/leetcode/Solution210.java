@@ -38,7 +38,7 @@ public class Solution210 {
         if (numCourses <= 0) {
             return res;
         }
-        if (prerequisites == null || prerequisites.length == 0) {              
+        if (prerequisites == null || prerequisites.length == 0) {
             for(int i = 0; i < numCourses; i++){
                 res[i] = i;
             }
@@ -62,7 +62,7 @@ public class Solution210 {
         
         int j = 0;
         while(!queue.isEmpty()) {
-            int course =  queue.poll();            
+            int course =  queue.poll();
             res[j] = course;
             j++;
             // find our any other course depends on it

@@ -29,25 +29,21 @@ public class Solution216 {
             return res;
         }
         
-        int[] candidates = new int[]{1,2,3,4,5,6,7,8,9};
-        Arrays.sort(candidates);
-        
         List<Integer> list = new ArrayList<Integer>();
-        helper(candidates, 0, k, n, list, res);  
+        helper(1, k, n, list, res);
         return res;
     }
     
-    private void helper(int[] candidates, int pos, int k, int n, List<Integer> list, List<List<Integer>> res) {
-        if (n <= 0 || k <= 0) {
-            if (n == 0 && k == 0) {
-                res.add(new ArrayList<Integer>(list));
-            }
+    private void helper(int pos, int k, int n, List<Integer> list, List<List<Integer>> res) {
+        if (list.size() == k && n == 0) {
+            List<Integer> li = new ArrayList<Integer>(list);
+            res.add(li);
             return;
         }
         
-        for (int i = pos; i < candidates.length; i++) {
-            list.add(candidates[i]);
-            helper(candidates, i + 1, k - 1, n - candidates[i], list, res);
+        for (int i = pos; i <= 9; i++) {
+            list.add(i);
+            helper(i + 1, k, n - i, list, res);
             list.remove(list.size() - 1);
         }
     }

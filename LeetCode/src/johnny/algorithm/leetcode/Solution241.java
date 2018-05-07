@@ -30,7 +30,42 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution241 {
+    // Recursive
     public List<Integer> diffWaysToCompute(String input) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (input == null || input.isEmpty()) {
+            return res;
+        }
+        for (int i=0; i<input.length(); i++) {
+            if (input.charAt(i) == '-' ||
+                input.charAt(i) == '*' ||
+                input.charAt(i) == '+' ) {
+                String part1 = input.substring(0, i);
+                String part2 = input.substring(i+1);
+                List<Integer> part1Ret = diffWaysToCompute(part1);
+                List<Integer> part2Ret = diffWaysToCompute(part2);
+                for (Integer p1 :   part1Ret) {
+                    for (Integer p2 :   part2Ret) {
+                        int c = 0;
+                        switch (input.charAt(i)) {
+                            case '+': c = p1+p2;
+                                break;
+                            case '-': c = p1-p2;
+                                break;
+                            case '*': c = p1*p2;
+                                break;
+                        }
+                        res.add(c);
+                    }
+                }
+            }
+        }
+        if (res.size() == 0) {
+            res.add(Integer.valueOf(input));
+        }
+        return res;
+    }
+    public List<Integer> diffWaysToCompute2(String input) {
         List<Integer> ret = new ArrayList<Integer>();
         if (input == null || input.isEmpty()) {
             return ret;
@@ -50,7 +85,7 @@ public class Solution241 {
                     int result = calculate(left.get(j), right.get(k), c);
                     ret.add(result);
                 }
-            }            
+            }
         }
         
         if (ret.isEmpty()) {

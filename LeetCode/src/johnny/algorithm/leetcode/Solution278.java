@@ -28,8 +28,7 @@ public class Solution278 extends VersionControl{
             testResult = super.isBadVersion(mid);
             if (testResult == true) {
                 end = mid;
-            }
-            else {
+            } else {
                 start = mid;
             }
         }

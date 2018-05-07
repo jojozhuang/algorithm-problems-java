@@ -25,15 +25,15 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * 
  */
 public class Solution226 {
+    // Iterative
     public TreeNode invertTree(TreeNode root) {
-        // write your code here
         if (root == null) {
             return null;
         }
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             TreeNode right = node.right;
             node.right = node.left;
@@ -47,15 +47,18 @@ public class Solution226 {
         }
         return root;
     }
+    
+    // Recursive
     public TreeNode invertTree2(TreeNode root) {
         if (root == null) {
             return null;
         }
         
-        TreeNode left = invertTree2(root.right);
-        TreeNode right = invertTree2(root.left);
-        root.left = left;
-        root.right = right;
+        TreeNode left = invertTree(root.left);
+        TreeNode right = invertTree(root.right);
+        
+        root.left = right;
+        root.right = left;
         
         return root;
     }

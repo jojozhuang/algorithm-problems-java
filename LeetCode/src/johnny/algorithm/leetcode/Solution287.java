@@ -19,9 +19,32 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution287 {
+    //Floyd's Tortoise and Hare
+    public int findDuplicate(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        // Find the intersection point of the two runners.
+        int tortoise = nums[0];
+        int hare = nums[0];
+        do {
+            tortoise = nums[tortoise];
+            hare = nums[nums[hare]];
+        } while (tortoise != hare);
+
+        // Find the "entrance" to the cycle.
+        int ptr1 = nums[0];
+        int ptr2 = tortoise;
+        while (ptr1 != ptr2) {
+            ptr1 = nums[ptr1];
+            ptr2 = nums[ptr2];
+        }
+
+        return ptr1;
+    }
     //http://bookshadow.com/weblog/2015/09/28/leetcode-find-duplicate-number/
     // binary
-    public int findDuplicate(int[] nums) {
+    public int findDuplicate4(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -38,11 +61,12 @@ public class Solution287 {
             if (cnt > mid) {
                 high = mid - 1;
             } else {
-                low = mid + 1;                
+                low = mid + 1;
             }
         }
         return low;
     }
+    //Floyd's Tortoise and Hare
     public int findDuplicate3(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -54,7 +78,7 @@ public class Solution287 {
     
         // Keep advancing 'slow' by one step and 'fast' by two steps until they
         // meet inside the loop.
-        while (1==1) {
+        while (true) {
             slow = nums[slow];
             fast = nums[nums[fast]];
     
@@ -73,10 +97,11 @@ public class Solution287 {
             // If the two hit, the intersection index is the duplicate element.
             if (slow == finder) {
                 return slow;
-            }               
+            }
         }
     }
     
+    // Hashset, time: O(n), space: O(n)
     public int findDuplicate2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;

@@ -22,15 +22,15 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution281 {
-    LinkedList<Iterator> list;
+    LinkedList<Iterator<Integer>> list;
     public Solution281(List<Integer> v1, List<Integer> v2) {
-        list = new LinkedList<Iterator>();
+        list = new LinkedList<Iterator<Integer>>();
         if(!v1.isEmpty()) list.add(v1.iterator());
         if(!v2.isEmpty()) list.add(v2.iterator());
     }
 
     public int next() {
-        Iterator poll = list.remove();
+        Iterator<Integer> poll = list.remove();
         int result = (Integer)poll.next();
         if(poll.hasNext()) list.add(poll);
         return result;

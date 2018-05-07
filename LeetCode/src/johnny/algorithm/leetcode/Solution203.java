@@ -13,7 +13,8 @@ import johnny.algorithm.leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution203 {
-    public ListNode removeElements(ListNode head, int val) {
+    // Iterative
+    public ListNode removeElements2(ListNode head, int val) {
         if(head == null) {
             return null;
         }
@@ -21,15 +22,23 @@ public class Solution203 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode prev = dummy;
-        while(head != null) {
+        while (head != null) {
             if (head.val == val) {
-                prev.next = head.next;                
-            } else {                
+                prev.next = head.next;
+            } else {
                 prev = prev.next;
             }
             head = head.next;
         }
         
         return dummy.next;
+    }
+    // Recursive
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) {
+            return null;
+        }
+        head.next = removeElements(head.next, val);
+        return head.val == val ? head.next : head;
     }
 }

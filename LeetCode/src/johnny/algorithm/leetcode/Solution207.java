@@ -2,8 +2,10 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  * Course Schedule.
@@ -30,12 +32,87 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution207 {
-    //http://www.programcreek.com/2014/05/leetcode-course-schedule-java/
+    // BFS
+    public boolean canFinish3(int numCourses, int[][] prerequisites) {
+        if (numCourses <= 0) {
+            return false;
+        }
+        if (prerequisites == null || prerequisites.length == 0) {
+            return true;
+        }
+        int[][] matrix = new int[numCourses][numCourses]; // i -> j
+        int[] indegree = new int[numCourses];
+        
+        for (int i=0; i<prerequisites.length; i++) {
+            int ready = prerequisites[i][0];
+            int pre = prerequisites[i][1];
+            if (matrix[pre][ready] == 0)
+                indegree[ready]++; //duplicate case
+            matrix[pre][ready] = 1;
+        }
+        
+        int count = 0;
+        Queue<Integer> queue = new LinkedList<Integer>();
+        for (int i=0; i<indegree.length; i++) {
+            if (indegree[i] == 0) queue.offer(i);
+        }
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            count++;
+            for (int i=0; i<numCourses; i++) {
+                if (matrix[course][i] != 0) {
+                    if (--indegree[i] == 0)
+                        queue.offer(i);
+                }
+            }
+        }
+        return count == numCourses;
+    }
+    // DFS
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         if (numCourses <= 0) {
             return false;
         }
-        if (prerequisites == null || prerequisites.length == 0) {              
+        if (prerequisites == null || prerequisites.length == 0) {
+            return true;
+        }
+        ArrayList[] graph = new ArrayList[numCourses];
+        for(int i=0;i<numCourses;i++)
+            graph[i] = new ArrayList();
+            
+        boolean[] visited = new boolean[numCourses];
+        for(int i=0; i<prerequisites.length;i++){
+            graph[prerequisites[i][1]].add(prerequisites[i][0]);
+        }
+
+        for(int i=0; i<numCourses; i++){
+            if(!dfs(graph,visited,i))
+                return false;
+        }
+        return true;
+    }
+
+    private boolean dfs(ArrayList[] graph, boolean[] visited, int course){
+        if(visited[course])
+            return false;
+        else
+            visited[course] = true;;
+
+        for(int i=0; i<graph[course].size();i++){
+            if(!dfs(graph,visited,(int)graph[course].get(i)))
+                return false;
+        }
+        visited[course] = false;
+        return true;
+    }
+    
+    //DFS
+    //http://www.programcreek.com/2014/05/leetcode-course-schedule-java/
+    public boolean canFinish2(int numCourses, int[][] prerequisites) {
+        if (numCourses <= 0) {
+            return false;
+        }
+        if (prerequisites == null || prerequisites.length == 0) {
             return true;
         }
         
@@ -43,7 +120,7 @@ public class Solution207 {
         for (int i = 0; i < prerequisites.length; i++) {
             int[] pre = prerequisites[i];
             if (!map.containsKey(pre[1])) {
-                map.put(pre[1], new ArrayList<Integer>());                
+                map.put(pre[1], new ArrayList<Integer>());
             }
             map.get(pre[1]).add(pre[0]);
         }

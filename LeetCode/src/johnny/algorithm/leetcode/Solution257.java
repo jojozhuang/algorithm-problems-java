@@ -21,30 +21,30 @@ import java.util.*;
  */
 public class Solution257 {
     public List<String> binaryTreePaths(TreeNode root) {
-        List<String> result = new ArrayList<String>();
+        List<String> res = new ArrayList<String>();
         if (root == null) {
-            return result;
+            return res;
         }
         
         List<String> left = binaryTreePaths(root.left);
         List<String> right = binaryTreePaths(root.right);
         
         if (left.size() == 0 && right.size() == 0) {
-            result.add(String.valueOf(root.val));
+            res.add(String.valueOf(root.val));
         } else {
             String path = "";
             for(String item: left) {
                 path = String.valueOf(root.val) + "->";
                 path = path + item;
-                result.add(path);
+                res.add(path);
             }
             for(String item: right) {
                 path = String.valueOf(root.val) + "->";
                 path = path + item;
-                result.add(path);
+                res.add(path);
             }
-        }       
+        }
         
-        return result;
-    }    
+        return res;
+    }
 }

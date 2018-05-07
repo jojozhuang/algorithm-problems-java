@@ -14,9 +14,18 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution233 {
+    public int countDigitOne(int n)
+    {
+        int countr = 0;
+        for (long i = 1; i <= n; i *= 10) {
+            long divider = i * 10;
+            countr += (n / divider) * i + Math.min(Math.max(n % divider - i + 1, 0L), i);
+        }
+        return countr;
+    }
     //https://discuss.leetcode.com/topic/18054/4-lines-o-log-n-c-java-python/2
     //http://www.cnblogs.com/grandyang/p/4629032.html
-    public int countDigitOne(int n) {
+    public int countDigitOne4(int n) {
         if (n <= 0) {
             return 0;
         }

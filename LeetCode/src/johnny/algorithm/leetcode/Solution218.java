@@ -52,7 +52,57 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution218 {
+  //https://segmentfault.com/a/1190000003786782
     public List<int[]> getSkyline(int[][] buildings) {
+        List<int[]> res = new ArrayList<int[]>();
+        if (buildings == null || buildings.length == 0 || buildings[0].length == 0) {
+            return res;
+        }
+        List<int[]> result = new ArrayList<>();
+        List<int[]> height = new ArrayList<>();
+        for(int[] b:buildings) {
+            // start point has negative height value
+            height.add(new int[]{b[0], -b[2]});
+            // end point has normal height value
+            height.add(new int[]{b[1], b[2]}); 
+        }
+
+        // sort $height, based on the first value, if necessary, use the second to
+        // break ties
+        Collections.sort(height, (a, b) -> {
+                if(a[0] != b[0]) 
+                    return a[0] - b[0];
+                return a[1] - b[1];
+        });
+
+        // Use a maxHeap to store possible heights
+        Queue<Integer> pq = new PriorityQueue<>((a, b) -> (b - a));
+
+        // Provide a initial value to make it more consistent
+        pq.offer(0);
+
+        // Before starting, the previous max height is 0;
+        int prev = 0;
+
+        // visit all points in order
+        for(int[] h:height) {
+            if(h[1] < 0) { // a start point, add height
+                pq.offer(-h[1]);
+            } else {  // a end point, remove height
+                pq.remove(h[1]);
+            }
+            int cur = pq.peek(); // current max height;
+      
+            // compare current max height with previous max height, update result and 
+            // previous max height if necessary
+            if(prev != cur) {
+                result.add(new int[]{h[0], cur});
+                prev = cur;
+            }
+        }
+        return result;
+    }
+    public List<int[]> getSkyline3(int[][] buildings) {
         List<int[]> res = new ArrayList<int[]>();
         if (buildings == null || buildings.length == 0 || buildings[0].length == 0) {
             return res;
@@ -112,59 +162,7 @@ public class Solution218 {
             this.height = height;
         }
     }
-    //https://segmentfault.com/a/1190000003786782
-    public List<int[]> getSkyline9(int[][] buildings) {
-        List<int[]> res = new ArrayList<int[]>();
-        if (buildings == null || buildings.length == 0 || buildings[0].length == 0) {
-            return res;
-        }
-        
-        List<int[]> result = new ArrayList<>();
-        List<int[]> height = new ArrayList<>();
-        // 拆解矩形，构建顶点的列表
-        for(int[] b:buildings) {
-            // 左顶点存为负数
-            height.add(new int[]{b[0], -b[2]});
-            // 右顶点存为正数
-            height.add(new int[]{b[1], b[2]});
-        }
-        // 根据横坐标对列表排序，相同横坐标的点纵坐标小的排在前面
-        Collections.sort(height, new Comparator<int[]>(){
-            public int compare(int[] a, int[] b){
-                if(a[0] != b[0]){
-                    return a[0] - b[0];
-                } else {
-                    return a[1] - b[1];
-                }
-            }
-        });
-        // 构建堆，按照纵坐标来判断大小
-        Queue<Integer> pq = new PriorityQueue<Integer>(11, new Comparator<Integer>(){
-            public int compare(Integer i1, Integer i2){
-                return i2 - i1;
-            }
-        });
-        // 将地平线值9先加入堆中
-        pq.offer(0);
-        // prev用于记录上次keypoint的高度
-        int prev = 0;
-        for(int[] h:height) {
-            // 将左顶点加入堆中
-            if(h[1] < 0) {
-                pq.offer(-h[1]);
-            } else {
-            // 将右顶点对应的左顶点移去
-                pq.remove(h[1]);
-            }
-            int cur = pq.peek();
-            // 如果堆的新顶部和上个keypoint高度不一样，则加入一个新的keypoint
-            if(prev != cur) {
-                result.add(new int[]{h[0], cur});
-                prev = cur;
-            }
-        }
-        return result;
-    }
+    
     //http://www.cnblogs.com/easonliu/p/4531020.html
     //http://www.programcreek.com/2014/06/leetcode-the-skyline-problem-java/
     public List<int[]> getSkyline2(int[][] buildings) {

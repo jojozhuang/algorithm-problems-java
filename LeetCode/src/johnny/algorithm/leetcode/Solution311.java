@@ -27,6 +27,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution311 {
+    // Optimize by switching order of iterations over j and k 
     public int[][] multiply(int[][] A, int[][] B) {
         int[][] res = new int[][]{};
         if (A == null || A.length == 0 || A[0].length == 0 ||
@@ -38,16 +39,20 @@ public class Solution311 {
         int[][] C = new int[m][nB];
 
         for(int i = 0; i < m; i++) {
-            for(int k = 0; k < n; k++) {
+            for(int k = 0; k < n; k++) { // iterating k first
                 if (A[i][k] != 0) {
                     for (int j = 0; j < nB; j++) {
-                        if (B[k][j] != 0) C[i][j] += A[i][k] * B[k][j];
+                        if (B[k][j] != 0) {
+                            C[i][j] += A[i][k] * B[k][j];
+                        }
                     }
                 }
             }
         }
-        return C;   
+        return C;
     }
+    
+    // Brute force
     public int[][] multiply2(int[][] A, int[][] B) {
         int[][] res = new int[][]{};
         if (A == null || A.length == 0 || A[0].length == 0 ||

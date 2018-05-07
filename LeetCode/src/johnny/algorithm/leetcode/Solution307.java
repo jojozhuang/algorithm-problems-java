@@ -27,6 +27,7 @@ public class Solution307 {
     int[] BITree;
     int n = 0;
 
+    // Segment tree
     public Solution307(int[] nums)
     {
         this.nums = nums;

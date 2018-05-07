@@ -58,7 +58,7 @@ public class Solution313 {
             for (int i = 0; i < primes.length; i++) {
                 int next = res[index[i]] * primes[i];
                 if (next < min) {
-                    min = next;                    
+                    min = next;
                     pos = i;
                 }
             }

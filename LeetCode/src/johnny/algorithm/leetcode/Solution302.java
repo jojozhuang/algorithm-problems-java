@@ -21,83 +21,58 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution302 {
+
     //http://www.cnblogs.com/yrbbest/p/5050022.html
+    // nlog(n)
     public int minArea(char[][] image, int x, int y) {
+        if(image == null || image.length == 0) {
+            return 0;
+        }
+        int rowNum = image.length, colNum = image[0].length;
+        int left = binarySearch(image, 0, y, 0, rowNum, true, true);
+        int right = binarySearch(image, y + 1, colNum, 0, rowNum, true, false);
+        int top = binarySearch(image, 0, x, left, right, false, true);
+        int bot = binarySearch(image, x + 1, rowNum, left, right, false, false);
+        
+        return (right - left) * (bot - top);
+    }
+    
+    private int binarySearch(char[][] image, int lo, int hi, int min, int max, boolean searchHorizontal, boolean searchLo) {
+        while(lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            boolean hasBlackPixel = false;
+            for(int i = min; i < max; i++) {
+                if((searchHorizontal ? image[i][mid] : image[mid][i]) == '1') {
+                    hasBlackPixel = true;
+                    break;
+                }
+            }
+            if(hasBlackPixel == searchLo) {
+                hi = mid;
+            } else {
+                lo = mid + 1;
+            }
+        }
+        return lo;
+    }
+    
+    // Naive Linear Search, search boundaries, O(n^2)
+    public int minArea2(char[][] image, int x, int y) {
         if (image == null || image.length == 0 || image[0].length == 0) {
             return 0;
         }
-        
-        int m = image.length;
-        int n = image[0].length;
-        if (x < 0 || x >=m || y < 0 || y >= n) {
-            return 0;
+        int top = x, bottom = x;
+        int left = y, right = y;
+        for (x = 0; x < image.length; ++x) {
+            for (y = 0; y < image[0].length; ++y) {
+                if (image[x][y] == '1') {
+                    top = Math.min(top, x);
+                    bottom = Math.max(bottom, x + 1);
+                    left = Math.min(left, y);
+                    right = Math.max(right, y + 1);
+                }
+            }
         }
-        
-        int left = searchHorizontal(image, 0, y, true); // find the first 1;
-        int right = searchHorizontal(image, y + 1, n, false); // find the last 1;
-        int top = searchVertical(image, 0, x, true); // find the first 1;
-        int bottom = searchVertical(image, x + 1, m, false); // find the last 1;
-        
-        //no need to minus 1, because right and bottom is one more large.
         return (right - left) * (bottom - top);
-    }
-    
-    private int searchHorizontal(char[][] image, int low, int high, boolean firstlast) {
-        int m = image.length;
-        
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            boolean found = false;
-            for (int i = 0; i < m; i++) {
-                if (image[i][mid] == '1') {
-                    found = true;
-                    break;
-                }
-            }
-            if (firstlast) {// search first
-                if (found) {
-                    high = mid;
-                } else {
-                    low = mid + 1;
-                }
-            } else {
-                if (found) {
-                    low = mid + 1;
-                } else {
-                    high = mid;
-                }
-            }
-        }
-        // for left, image[i][low] = 1;  for right, image[i][low] = 0;
-        return low; 
-    }
-    private int searchVertical(char[][] image, int low, int high, boolean firstlast) {
-        int n = image[0].length;
-        
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            boolean found = false;
-            for (int j = 0; j < n; j++) {
-                if (image[mid][j] == '1') {
-                    found = true;
-                    break;
-                }
-            }
-            if (firstlast) {// search first
-                if (found) {
-                    high = mid;
-                } else {
-                    low = mid + 1;
-                }
-            } else {
-                if (found) {
-                    low = mid + 1;
-                } else {
-                    high = mid;
-                }
-            }
-        }
-        // for top, image[low][j] = 1;  for bottom, image[low][j] = 0;
-        return low; 
     }
 }

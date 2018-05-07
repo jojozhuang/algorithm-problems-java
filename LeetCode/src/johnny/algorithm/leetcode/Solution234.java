@@ -48,12 +48,12 @@ public class Solution234 {
             }
         }
         
-        return true;        
+        return true;
     }
     
-    private ListNode reverse(ListNode head) {        
+    private ListNode reverse(ListNode head) {
         ListNode prev = null;
-        while(head != null) {
+        while (head != null) {
             ListNode next = head.next;
             head.next = prev;
             prev = head;

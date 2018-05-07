@@ -16,7 +16,21 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution242 {
-    public boolean isAnagram(String s, String t) {
+    public boolean isAnagram2(String s, String t) {
+        if (s == null || t == null) {
+            return false;
+        }
+        if (s.length() != t.length()) {
+            return false;
+        }
+        char[] str1 = s.toCharArray();
+        char[] str2 = t.toCharArray();
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+        return Arrays.equals(str1, str2);
+    }
+    
+    public boolean isAnagram3(String s, String t) {
         if (s == null || t == null) {
             return false;
         }
@@ -40,13 +54,13 @@ public class Solution242 {
         return false;
     }
     
-    public boolean isAnagram2(String s, String t) {
+    public boolean isAnagram(String s, String t) {
         if (s == null || t == null) {
             return false;
         }
         
         if (s.length() == 0 && t.length() == 0 ) {
-            return false;
+            return true;
         }
         
         if (s.length() != t.length()) {

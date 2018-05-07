@@ -102,7 +102,7 @@ public class Solution297 {
         
         StringBuilder sb = new StringBuilder();
         helper(root, sb);
-        return sb.substring(0, sb.length() - 1);        
+        return sb.substring(0, sb.length() - 1);
     }   
     
     private void helper(TreeNode root, StringBuilder sb) {

@@ -8,7 +8,8 @@ import johnny.algorithm.leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution206 {
-    public ListNode reverseList(ListNode head) {
+    // Iterative
+    public ListNode reverseList2(ListNode head) {
         ListNode prev = null;
         while (head != null) {
             ListNode next = head.next;
@@ -17,5 +18,17 @@ public class Solution206 {
             head = next;
         }
         return prev;
+    }
+    
+    // Recursive
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        
+        ListNode next = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return next;
     }
 }

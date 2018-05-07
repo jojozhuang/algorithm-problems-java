@@ -17,11 +17,12 @@ import johnny.algorithm.leetcode.common.TrieNode;
 public class Solution208 {
     private TrieNode root;
 
+    /** Initialize your data structure here. */
     public Solution208() {
         root = new TrieNode();
     }
 
-    // Inserts a word into the trie.
+    /** Inserts a word into the trie. */
     public void insert(String word) {
         HashMap<Character, TrieNode> children = root.children;
  
@@ -40,12 +41,12 @@ public class Solution208 {
  
             //set leaf node
             if(i == word.length() - 1) {
-                t.isLeaf = true;    
+                t.isLeaf = true;
             }
         }
     }
 
-    // Returns if the word is in the trie.
+    /** Returns if the word is in the trie. */
     public boolean search(String word) {
         TrieNode t = searchNode(word);
  
@@ -56,8 +57,7 @@ public class Solution208 {
         }
     }
 
-    // Returns if there is any word in the trie
-    // that starts with the given prefix.
+    /** Returns if there is any word in the trie that starts with the given prefix. */
     public boolean startsWith(String prefix) {
         if(searchNode(prefix) == null) {
             return false;

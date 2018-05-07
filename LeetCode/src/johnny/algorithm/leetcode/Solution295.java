@@ -2,6 +2,7 @@ package johnny.algorithm.leetcode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * Find Median from Data Stream.
@@ -30,9 +31,26 @@ import java.util.PriorityQueue;
  * @author Johnny
  */
 public class Solution295 {
+    private Queue<Long> small = new PriorityQueue<Long>(),
+            large = new PriorityQueue<Long>();
+
+    public void addNum(int num) {
+        large.add((long) num);
+        small.add(-large.poll());
+        if (large.size() < small.size()) {
+            large.add(-small.poll());
+        }
+    }
+    
+    public double findMedian() {
+        return large.size() > small.size()
+           ? large.peek()
+           : (large.peek() - small.peek()) / 2.0;
+    }
     //http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
     //https://segmentfault.com/a/1190000003709954
     //left: maxHeap, right: minHeap
+    /*
     PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
     PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(new MedianComparator());
 
@@ -75,4 +93,5 @@ public class Solution295 {
             return i2 - i1;
         }
     }
+    */
 }

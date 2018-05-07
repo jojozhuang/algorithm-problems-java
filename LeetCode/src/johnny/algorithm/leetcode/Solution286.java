@@ -52,10 +52,10 @@ public class Solution286 {
     }
     public void dfs(int[][] rooms, int i, int j, int distance) {
         if (i < 0 || i >= rooms.length || j < 0 ||  j >= rooms[0].length) {
-            return ;
+            return;
         }
         if (rooms[i][j] < distance) {
-            return ;
+            return;
         }
 
         rooms[i][j] = distance;

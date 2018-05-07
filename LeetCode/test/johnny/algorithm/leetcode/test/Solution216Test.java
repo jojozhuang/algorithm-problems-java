@@ -25,5 +25,8 @@ public class Solution216Test extends JunitBase {
 
         List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][]{{1,2,6},{1,3,5},{2,3,4}});
         assertEquals(expect3, instance.combinationSum3(3, 9));
+
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][]{{1,5,9},{1,6,8},{2,4,9},{2,5,8},{2,6,7},{3,4,8},{3,5,7},{4,5,6}});
+        assertEquals(expect4, instance.combinationSum3(3, 15));
     }
 }

@@ -3,6 +3,7 @@ package johnny.algorithm.leetcode.test;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import johnny.algorithm.leetcode.Solution281;
@@ -24,7 +25,14 @@ public class Solution281Test extends JunitBase {
             result1.add(instance.next());
         }
         assertEquals(expect1, result1);
+    }
+    
+    @Test
+    public void testKList() {
+        System.out.println("ZigzagIterator-KList");
 
+        Solution281 instance = new Solution281(new ArrayList<Integer>(), new ArrayList<Integer>());
+        
         List<List<Integer>> klist1 = ListUtil.buildList2(new Integer[][] {{1,2,3},{4,5,6,7},{8,9}});
         Solution281.KList instance2 = instance.new KList(klist1);
 

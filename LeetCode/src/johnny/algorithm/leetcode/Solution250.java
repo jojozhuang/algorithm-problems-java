@@ -21,36 +21,28 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution250 {
-    //http://www.voidcn.com/blog/pointbreak1/article/p-4357160.html
-    private int count = 0;
     public int countUnivalSubtrees(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        isUniSubtree(root);
-        return count;
+        int[] count = new int[1];
+        helper(root, count);
+        return count[0];
     }
     
-    private boolean isUniSubtree(TreeNode root) {
-        if (root == null) {
+    private boolean helper(TreeNode node, int[] count) {
+        if (node == null) {
             return true;
         }
-        
-        if (root.left == null && root.right == null) {
-            count++;
+        boolean left = helper(node.left, count);
+        boolean right = helper(node.right, count);
+        if (left && right) {
+            if (node.left != null && node.val != node.left.val) {
+                return false;
+            }
+            if (node.right != null && node.val != node.right.val) {
+                return false;
+            }
+            count[0]++;
             return true;
         }
-        
-        boolean left = isUniSubtree(root.left);
-        boolean right = isUniSubtree(root.right);
-        
-        if (left && right && 
-                (root.left == null || root.val == root.left.val) && 
-                (root.right == null || root.val == root.right.val)) {
-            count++;
-            return true;
-        }
-        
         return false;
     }
 }

@@ -1,7 +1,9 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Contains Duplicate II.
@@ -13,7 +15,26 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution219 {
+    // sliding window with length k
     public boolean containsNearbyDuplicate(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return false;
+        }
+        
+        Set<Integer> set = new HashSet<Integer>();
+        for (int i = 0; i < nums.length; i++){
+            if(i > k) {
+                set.remove(nums[i-k-1]);  // keep sliding window with size k
+            }
+            if(set.contains(nums[i])) {
+                return true;
+            } else {
+                set.add(nums[i]);
+            }
+        }
+        return false;
+    }
+    public boolean containsNearbyDuplicate2(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k <= 0) {
             return false;
         }
@@ -33,6 +54,5 @@ public class Solution219 {
         }
         
         return false;
-        
     }
 }

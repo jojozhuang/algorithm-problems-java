@@ -28,7 +28,7 @@ public class Solution259 {
             int left = i+1, right = len-1;
             while(left < right) {
                 if(nums[i] + nums[left] + nums[right] < target) {
-                    count += right-left;
+                    count += right-left; // all the nums between right and left are satisfied
                     left++;
                 } else {
                     right--;

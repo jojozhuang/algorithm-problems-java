@@ -32,6 +32,26 @@ public class Solution205 {
             return true;
         }
         
+        int[] m1 = new int[256], m2 = new int[256]; 
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            if (m1[s.charAt(i)] != m2[t.charAt(i)]) {
+                return false;
+            }
+            m1[s.charAt(i)] = i + 1;
+            m2[t.charAt(i)] = i + 1;
+        }
+        return true;
+    }
+    //HashMap
+    public boolean isIsomorphic2(String s, String t) {
+        if (s == null || t == null || s.length() != t.length()) {
+            return false;
+        }
+        if (s.isEmpty() && t.isEmpty()) {
+            return true;
+        }
+        
         Map<Character, Character> map = new HashMap<Character, Character>();
         
         for (int i = 0; i < s.length(); i++) {

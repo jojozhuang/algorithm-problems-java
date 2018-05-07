@@ -50,7 +50,7 @@ public class Solution315 {
                 }
             }
             res.add(0, end);
-            sorted.add(end, nums[i]);            
+            sorted.add(end, nums[i]);
         }
         
         return res;
@@ -65,7 +65,7 @@ public class Solution315 {
         int min = Integer.MAX_VALUE;
         for (int i = nums.length - 1; i >= 0; i--) {
             if (nums[i] < min) {
-                res.add(0);                
+                res.add(0);
             } else {
                 SortedSet<Integer> subSet = set.subSet(min, nums[i]);
                 res.add(subSet.size());
@@ -76,6 +76,6 @@ public class Solution315 {
         
         Collections.reverse(res);
         
-        return res;        
+        return res;
     }
 }

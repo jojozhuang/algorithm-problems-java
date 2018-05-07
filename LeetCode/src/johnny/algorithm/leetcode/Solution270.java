@@ -17,14 +17,27 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution270 {
-    //https://segmentfault.com/a/1190000003797291
-    // no recursion
     public int closestValue(TreeNode root, double target) {
         if (root == null) {
             return Integer.MAX_VALUE;
         }
         int closest = root.val;
-        while(root != null){            
+        
+        TreeNode curr = root;
+        while (curr != null){
+            closest = Math.abs(closest - target) < Math.abs(curr.val - target) ? closest : curr.val;
+            curr = target < curr.val ? curr.left : curr.right;
+        }
+        return closest;
+    }
+    //https://segmentfault.com/a/1190000003797291
+    // no recursion
+    public int closestValue4(TreeNode root, double target) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        int closest = root.val;
+        while(root != null){
             closest = Math.abs(closest - target) < Math.abs(root.val - target) ? closest : root.val;
             root = target < root.val ? root.left : root.right;
         }

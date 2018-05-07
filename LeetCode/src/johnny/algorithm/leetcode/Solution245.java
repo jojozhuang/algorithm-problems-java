@@ -31,25 +31,25 @@ import java.util.List;
  */
 public class Solution245 {
     public int shortestWordDistance(String[] words, String word1, String word2) {
-        int posA = -1;
-        int posB = -1;
+        int index1 = -1;
+        int index2 = -1;
         int minDistance = Integer.MAX_VALUE;
          
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
              
             if (word.equals(word1)) {
-                posA = i;
+                index1 = i;
             } else if (word.equals(word2)) {
-                posB = i;
+                index2 = i;
             }
              
-            if (posA != -1 && posB != -1 && posA != posB) {
-                minDistance = Math.min(minDistance, Math.abs(posA - posB));
+            if (index1 != -1 && index2 != -1 && index1 != index2) {
+                minDistance = Math.min(minDistance, Math.abs(index1 - index2));
             }
              
             if (word1.equals(word2)) {
-                posB = posA;
+                index2 = index1;
             }
         }
          

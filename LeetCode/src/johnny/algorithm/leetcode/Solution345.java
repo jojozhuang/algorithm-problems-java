@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 /**
@@ -21,17 +22,7 @@ public class Solution345 {
             return s;
         }
         
-        HashSet<Character> set = new HashSet<Character>();
-        set.add('a');
-        set.add('e');
-        set.add('i');
-        set.add('o');
-        set.add('u');
-        set.add('A');
-        set.add('E');
-        set.add('I');
-        set.add('O');
-        set.add('U');
+        HashSet<Character> set = new HashSet<Character>(Arrays.asList(new Character[] {'a','e','i','o','u','A','E','I','O','U'}));
         
         char[] chars = s.toCharArray();
         int start = 0;

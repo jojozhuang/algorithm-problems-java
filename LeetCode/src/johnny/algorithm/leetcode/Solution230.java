@@ -19,8 +19,30 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution230 {
+    public int kthSmallest(TreeNode root, int k) {
+        if (root == null) {
+            return Integer.MIN_VALUE;
+        }
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode p = root;
+        int count = 0;
+        
+        while(!stack.isEmpty() || p != null) {
+            if(p != null) {
+                stack.push(p);  // Just like recursion
+                p = p.left;
+                
+            } else {
+               TreeNode node = stack.pop();
+               if(++count == k) return node.val; 
+               p = node.right;
+            }
+        }
+        
+        return Integer.MIN_VALUE;
+    }
     //inorder
-    public int kthSmallest2(TreeNode root, int k) {
+    public int kthSmallest3(TreeNode root, int k) {
         if (root == null) {
             return Integer.MIN_VALUE;
         }
@@ -49,7 +71,7 @@ public class Solution230 {
         return Integer.MIN_VALUE;
     }
     
-    public int kthSmallest(TreeNode root, int k) {
+    public int kthSmallest2(TreeNode root, int k) {
         if (root == null) {
             return Integer.MIN_VALUE;
         }

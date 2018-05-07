@@ -41,6 +41,6 @@ public class Solution243 {
             }
         }
         
-        return dist;    
+        return dist;
     }
 }

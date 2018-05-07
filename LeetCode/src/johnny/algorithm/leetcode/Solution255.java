@@ -32,6 +32,7 @@ public class Solution255 {
         return true;
     }
     
+    // Recursive
     public boolean verifyPreorder2(int[] preorder) {
         if (preorder == null || preorder.length == 0) {
             return false;
@@ -45,7 +46,7 @@ public class Solution255 {
             return true;
         }
         
-        int root = preorder[start];        
+        int root = preorder[start];
         if (root < min || root > max) {
             return false;
         }

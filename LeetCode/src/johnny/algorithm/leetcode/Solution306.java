@@ -52,7 +52,7 @@ public class Solution306 {
                     return true;
                 }
             }
-        }        
+        }
         return false;
-    }   
+    }
 }

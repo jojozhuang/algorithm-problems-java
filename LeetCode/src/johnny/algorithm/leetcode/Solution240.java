@@ -21,6 +21,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution240 {
+    // Scan from bottom left to top right, O(m + n)
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;

@@ -49,7 +49,7 @@ public class Solution264 {
             i++;
             if (isUgly(i)) {
                 kth++;
-            }            
+            }
         }
         return i;
     }

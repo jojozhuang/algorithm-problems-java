@@ -24,13 +24,13 @@ import java.util.Iterator;
 // Java Iterator interface reference:
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 public class Solution284 implements Iterator<Integer> {
-    private Iterator<Integer> itor;
+    private Iterator<Integer> iter;
     private Integer next; //cache the next peek
     public Solution284(Iterator<Integer> iterator) {
         // initialize any member here.
-        itor = iterator;
-        if (itor.hasNext()) {
-            next = itor.next();
+        iter = iterator;
+        if (iter.hasNext()) {
+            next = iter.next();
         }
     }
 
@@ -43,13 +43,13 @@ public class Solution284 implements Iterator<Integer> {
     // Override them if needed.
     @Override
     public Integer next() {
-        Integer ret = next;
-        if (itor.hasNext()) {
-            next = itor.next();
+        Integer res = next;
+        if (iter.hasNext()) {
+            next = iter.next();
         } else {
             next = null;
         }
-        return ret;
+        return res;
     }
 
     @Override

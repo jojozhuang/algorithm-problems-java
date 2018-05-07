@@ -16,10 +16,19 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * 
  * @author Johnny
  */
-public class Solution222 {    
+public class Solution222 {
+    int height(TreeNode root) {
+        return root == null ? -1 : 1 + height(root.left);
+    }
+    public int countNodes(TreeNode root) {
+        int h = height(root);
+        return h < 0 ? 0 :
+               height(root.right) == h-1 ? (1 << h) + countNodes(root.right)
+                                         : (1 << h-1) + countNodes(root.left);
+    }
     // left is complete tree or right is complete tree
     // https://leetcode.com/discuss/101234/java-concise-solution
-    public int countNodes(TreeNode root) {
+    public int countNodes4(TreeNode root) {
         if (root == null) {
             return 0;
         }

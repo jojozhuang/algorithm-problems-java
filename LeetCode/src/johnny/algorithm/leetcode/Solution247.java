@@ -20,19 +20,23 @@ public class Solution247 {
     }
 
     private List<String> helper(int remain, int level) {
-        if (remain == 0) { return new ArrayList<String>(Arrays.asList("")); }
-        if (remain == 1) { return new ArrayList<String>(Arrays.asList("0", "1", "8")); }
-        List<String> curResults = new ArrayList<>();
-        List<String> prevResults = helper(remain - 2, level + 1);
-        for (String s: prevResults) {
-            if (level > 0) { 
-                curResults.add("0" + s + "0"); 
-            }
-            curResults.add("1" + s + "1");
-            curResults.add("6" + s + "9");
-            curResults.add("8" + s + "8");
-            curResults.add("9" + s + "6");
+        if (remain == 0) {
+            return new ArrayList<String>(Arrays.asList(""));
         }
-        return curResults;
+        if (remain == 1) {
+            return new ArrayList<String>(Arrays.asList("0", "1", "8"));
+        }
+        List<String> res = new ArrayList<>();
+        List<String> prev = helper(remain - 2, level + 1);
+        for (String s: prev) {
+            if (level > 0) { 
+                res.add("0" + s + "0");
+            }
+            res.add("1" + s + "1");
+            res.add("6" + s + "9");
+            res.add("8" + s + "8");
+            res.add("9" + s + "6");
+        }
+        return res;
     }
 }

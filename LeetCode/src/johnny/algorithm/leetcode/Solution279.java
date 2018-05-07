@@ -17,14 +17,14 @@ public class Solution279 {
         if (n < 1) {
             return 0;
         }
-        int ret = n;
+        int res = n;
         int num = 2;
         while (num * num <= n) {
             int a = n / (num * num);
             int b = n % (num * num);
-            ret = Math.min(ret, a + numSquares(b));
+            res = Math.min(res, a + numSquares(b));
             ++num;
         }
-        return ret;
+        return res;
     }
 }

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * H-Index.
  * 
@@ -20,9 +22,20 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution274 {
+    //https://www.youtube.com/watch?v=N2XJ7-Ta0QE
+    public int hIndex(int[] citations) {
+        // sorting the citations in ascending order
+        Arrays.sort(citations);
+        // finding h-index by linear search
+        int i = 0;
+        while (i < citations.length && citations[citations.length - 1 - i] > i) {
+            i++;
+        }
+        return i; // after the while loop, i = i' + 1
+    }
     //http://blog.welkinlan.com/2015/11/05/h-index-i-ii-leetcode-java/
     //https://segmentfault.com/a/1190000003794831
-    public int hIndex(int[] citations) {
+    public int hIndex2(int[] citations) {
         if (citations == null || citations.length == 0) {
             return 0;
         }       

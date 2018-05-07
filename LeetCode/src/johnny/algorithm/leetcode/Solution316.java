@@ -19,6 +19,7 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution316 {
+    // stack
     public String removeDuplicateLetters(String s) {
         if (s == null || s.isEmpty()) {
             return "";

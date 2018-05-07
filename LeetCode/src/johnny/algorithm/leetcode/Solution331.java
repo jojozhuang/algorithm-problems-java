@@ -54,12 +54,12 @@ public class Solution331 {
             diff--;
             if (diff < 0) {
                 return false;
-            }           
+            }
             if (!item.equals("#")) {
                 diff += 2;
             }
         }
         
-        return diff == 0;        
-    }    
+        return diff == 0;
+    }
 }

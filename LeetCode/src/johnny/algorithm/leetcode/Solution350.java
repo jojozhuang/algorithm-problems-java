@@ -46,7 +46,7 @@ public class Solution350 {
             } else {
                 j++;
             }
-        }      
+        }
         
         int[] res = new int[list.size()];
         for (i = 0; i < list.size(); i++) {

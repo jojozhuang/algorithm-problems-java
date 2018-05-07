@@ -18,8 +18,29 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution209 {
-    //http://www.cnblogs.com/grandyang/p/4501934.html
+    // Two pointers
     public int minSubArrayLen(int s, int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int left = 0, right = 0;
+        
+        int sum = 0;
+        int min = nums.length + 1;
+        while (right < nums.length) {
+            sum += nums[right++];
+            while (sum >= s){
+                min = Math.min(min, right - left);
+                sum -= nums[left];
+                left++;
+            }
+        }
+       
+        return nums.length + 1 == min ? 0: min;
+    }
+    //http://www.cnblogs.com/grandyang/p/4501934.html
+    public int minSubArrayLen2(int s, int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -34,8 +55,8 @@ public class Solution209 {
                 sum += nums[right];
                 right++;
             }
-            while (sum >= s && left < len){                
-                min = Math.min(min, right - left);                
+            while (sum >= s && left < len){
+                min = Math.min(min, right - left);
                 sum -= nums[left];
                 left++;
             }

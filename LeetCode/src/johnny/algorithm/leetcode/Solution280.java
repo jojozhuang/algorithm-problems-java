@@ -14,7 +14,7 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution280 {
-    //http://www.cnblogs.com/jcliBlogger/p/4797531.html
+    // One pass, O(n)
     public void wiggleSort(int[] nums) {
         if (nums == null || nums.length == 0) {
             return;
@@ -24,12 +24,12 @@ public class Solution280 {
         for (int i = 1; i < n; i++) {
             if (((i % 2 == 1) && nums[i] < nums[i - 1]) || 
                 ((i % 2 == 0) && nums[i] > nums[i - 1])) {
-                int temp = nums[i];
-                nums[i] = nums[i - 1];
-                nums[i - 1] = temp;
+                swap(nums, i - 1, i);
             }
         }
     }
+    
+    // Naive, sorting, nlog(n)
     public void wiggleSort2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return;
@@ -37,10 +37,14 @@ public class Solution280 {
         
         Arrays.sort(nums);
         
-        for(int i = 2; i < nums.length; i = i + 2) {
-            int temp = nums[i];
-            nums[i] = nums[i - 1];
-            nums[i - 1] = temp;
+        for (int i = 2; i < nums.length; i = i + 2) {
+            swap(nums, i - 1, i);
         }
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }

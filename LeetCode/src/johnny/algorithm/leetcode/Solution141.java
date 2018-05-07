@@ -12,6 +12,7 @@ import johnny.algorithm.leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution141 {
+    //Floyd Cycle detection algorithm, another sample is question 202: Happy Number
     public boolean hasCycle(ListNode head) {
         if (head == null) {
             return false;
