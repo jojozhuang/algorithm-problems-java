@@ -26,18 +26,36 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution493 {
-    public int reversePairs(int[] nums) {
+    public int reversePairs2(int[] nums) {
         return mergeSort(nums, 0, nums.length-1);
     }
     private int mergeSort(int[] nums, int s, int e){
-        if(s>=e) return 0; 
-        int mid = s + (e-s)/2; 
-        int cnt = mergeSort(nums, s, mid) + mergeSort(nums, mid+1, e); 
+        if(s>=e) return 0;
+        int mid = s + (e-s)/2;
+        int cnt = mergeSort(nums, s, mid) + mergeSort(nums, mid+1, e);
         for(int i = s, j = mid+1; i<=mid; i++){
-            while(j<=e && nums[i]/2.0 > nums[j]) j++; 
-            cnt += j-(mid+1); 
+            while(j<=e && nums[i]/2.0 > nums[j]) j++;
+            cnt += j-(mid+1);
         }
-        Arrays.sort(nums, s, e+1); 
-        return cnt; 
+        Arrays.sort(nums, s, e+1);
+        return cnt;
+    }
+    
+    // Brute force
+    public int reversePairs(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int res = 0;
+        for (int j = nums.length - 1; j > 0; j--) {
+            for (int i = j - 1; i >=0; i--) {
+                if (nums[i] > 2*nums[j]) {
+                    res++;
+                }
+            }
+        }
+        
+        return res;
     }
 }

@@ -16,5 +16,6 @@ public class Solution488Test extends JunitBase {
         assertEquals(2, instance.findMinStep("WWRRBBWW", "WRBRW"));
         assertEquals(2, instance.findMinStep("G", "GGGGG"));
         assertEquals(3, instance.findMinStep("RBYYBBRRB", "YRBGB"));
+        assertEquals(2, instance.findMinStep("RRWWRRBBRR", "WB"));
     }
 }

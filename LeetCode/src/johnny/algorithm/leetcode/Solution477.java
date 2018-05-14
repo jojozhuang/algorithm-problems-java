@@ -24,14 +24,32 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution477 {
-    public int totalHammingDistance(int[] nums) {
-        int total = 0, n = nums.length;
-        for (int j=0;j<32;j++) {
+    public int totalHammingDistance2(int[] nums) {
+        int total = 0;
+        int n = nums.length;
+        
+        for (int i=0; i<32; i++) {
             int bitCount = 0;
-            for (int i=0;i<n;i++) 
-                bitCount += (nums[i] >> j) & 1;
+            for (int j=0; j<n; j++) {
+                bitCount += (nums[j] >> i) & 1;
+            }
             total += bitCount*(n - bitCount);
         }
+        
         return total;
+    }
+    
+    // Brute Force
+    public int totalHammingDistance(int[] nums) {
+        int res = 0;
+        
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                int xor = nums[i] ^ nums[j];
+                res += Integer.bitCount(xor);
+            }
+        }
+        
+        return res;
     }
 }

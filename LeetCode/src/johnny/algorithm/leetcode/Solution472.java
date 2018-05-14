@@ -60,11 +60,13 @@ public class Solution472 {
         dp[0] = true;
         for (int i = 1; i <= word.length(); i++) {
             for (int j = 0; j < i; j++) {
-            if (!dp[j]) continue;
-            if (dict.contains(word.substring(j, i))) {
-                dp[i] = true;
-                break;
-            }
+                if (!dp[j]) {
+                    continue;
+                }
+                if (dict.contains(word.substring(j, i))) {
+                    dp[i] = true;
+                    break;
+                }
             }
         }
         return dp[word.length()];

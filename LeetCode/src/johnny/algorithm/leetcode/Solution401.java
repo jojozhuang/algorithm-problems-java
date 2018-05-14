@@ -31,6 +31,15 @@ import java.util.List;
  */
 public class Solution401 {
     public List<String> readBinaryWatch(int num) {
+        List<String> times = new ArrayList<>();
+        for (int h=0; h<12; h++)
+            for (int m=0; m<60; m++)
+                if (Integer.bitCount(h * 64 + m) == num)
+                    times.add(String.format("%d:%02d", h, m));
+        return times;
+    }
+    
+    public List<String> readBinaryWatch2(int num) {
         List<String> res = new ArrayList<>();
         int[] nums1 = new int[]{8, 4, 2, 1}, nums2 = new int[]{32, 16, 8, 4, 2, 1};
         for(int i = 0; i <= num; i++) {

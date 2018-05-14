@@ -44,19 +44,25 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution495 {
+    // Two pointers
     public int findPoisonedDuration(int[] timeSeries, int duration) {
-        if (timeSeries == null || timeSeries.length == 0 || duration == 0) return 0;
+        if (timeSeries == null || timeSeries.length == 0 || duration == 0) {
+            return 0;
+        }
         
-        int result = 0, start = timeSeries[0], end = timeSeries[0] + duration;
+        int res = 0;
+        int start = timeSeries[0];
+        int end = timeSeries[0] + duration;
+        
         for (int i = 1; i < timeSeries.length; i++) {
             if (timeSeries[i] > end) {
-                result += end - start;
+                res += end - start;
                 start = timeSeries[i];
             }
             end = timeSeries[i] + duration;
         }
-        result += end - start;
+        res += end - start;
         
-        return result;
-    }  
+        return res;
+    }
 }

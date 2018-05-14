@@ -28,18 +28,76 @@ import java.util.Map;
  */
 public class Solution523 {
     public boolean checkSubarraySum(int[] nums, int k) {
+        if (nums == null || nums.length < 2) {
+            return false;
+        }
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         map.put(0,-1);
-        int runningSum = 0;
-        for (int i=0;i<nums.length;i++) {
-            runningSum += nums[i];
-            if (k != 0) runningSum %= k; 
-            Integer prev = map.get(runningSum);
-            if (prev != null) {
-                if (i - prev > 1) return true;
+        int sum = 0;
+        for (int i = 0;i < nums.length; i++) {
+            sum += nums[i];
+            if (k != 0) {
+                sum %= k; 
             }
-            else map.put(runningSum, i);
+            if (!map.containsKey(sum)) {
+                map.put(sum, i);
+            } else {
+                Integer index = map.get(sum);
+                if (i - index > 1) {
+                    return true;
+                }
+            }
         }
         return false;
-    }  
+    }
+    
+    // Brute force, sum array, O(n^2)
+    public boolean checkSubarraySum2(int[] nums, int k) {
+        if (nums == null || nums.length < 2) {
+            return false;
+        }
+
+        int[] sum = new int[nums.length];
+        sum[0] = nums[0];
+        for (int i= 1; i < nums.length; i++) {
+            sum[i] = sum[i - 1] + nums[i];
+            if (k == 0 && sum[i] == 0 && sum[i - 1] == 0) {
+                return true;
+            }
+        }
+        
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (k != 0 && (sum[j] % k == 0 || (sum[j]- sum[i]) % k == 0)) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+    
+    // Brute force, O(n^3)
+    public boolean checkSubarraySum3(int[] nums, int k) {
+        if (nums == null || nums.length < 2) {
+            return false;
+        }
+        
+        for (int start = 0; start < nums.length - 1; start++) {
+            if (k == 0 && nums[start] == 0 && nums[start + 1] == 0) {
+                return true;
+            }
+            for (int end = start + 1; end < nums.length; end++) {
+                int sum = 0;
+                for (int i = start; i <= end; i++) {
+                    sum += nums[i];
+                }
+                if (k != 0 && (sum == k || sum % k == 0)) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
 }

@@ -28,6 +28,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution365 {
+    //GCD: greatest common divisor
     //http://www.cnblogs.com/grandyang/p/5628836.html
     public boolean canMeasureWater(int x, int y, int z) {
         return z == 0 || (x + y >= z && z % gcd(x, y) == 0);

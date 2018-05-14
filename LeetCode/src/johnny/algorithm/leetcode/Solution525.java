@@ -24,7 +24,7 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution525 {
-    public int findMaxLength(int[] nums) {
+    public int findMaxLength2(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) nums[i] = -1;
         }
@@ -44,5 +44,5 @@ public class Solution525 {
         }
         
         return max;
-    }  
+    }
 }

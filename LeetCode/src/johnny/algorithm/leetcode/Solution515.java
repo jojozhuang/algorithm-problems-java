@@ -29,19 +29,18 @@ public class Solution515 {
         helper(root, res, 0);
         return res;
     }
-    private void helper(TreeNode root, List<Integer> res, int d){
-        if(root == null){
+    private void helper(TreeNode root, List<Integer> res, int depth){
+        if (root == null){
             return;
         }
-       //expand list size
-        if(d == res.size()){
+        if (depth == res.size()){
+            //expand list size
             res.add(root.val);
+        } else {
+            //or set value
+            res.set(depth, Math.max(res.get(depth), root.val));
         }
-        else{
-        //or set value
-            res.set(d, Math.max(res.get(d), root.val));
-        }
-        helper(root.left, res, d+1);
-        helper(root.right, res, d+1);
+        helper(root.left, res, depth + 1);
+        helper(root.right, res, depth + 1);
     }
 }

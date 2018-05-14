@@ -57,7 +57,7 @@ public class Solution456 {
                     stack.pop();
                     stack.push(nums[j]);
                 } else {
-                    int top = stack.pop();                    
+                    int top = stack.pop();
                     while (!stack.isEmpty()) {
                         int small = stack.peek();
                         int k = j;

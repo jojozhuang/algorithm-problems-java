@@ -50,19 +50,25 @@ All characters have an ASCII value in [35, 126].
  */
 public class Solution443 {
     public int compress(char[] chars) {
-        int indexAns = 0, index = 0;
-        while(index < chars.length){
-            char currentChar = chars[index];
+        if (chars == null || chars.length == 0) {
+            return 0;
+        }
+        int slow = 0;
+        int fast = 0;
+        while (fast < chars.length){
+            char c = chars[fast];
             int count = 0;
-            while(index < chars.length && chars[index] == currentChar){
-                index++;
+            while (fast < chars.length && chars[fast] == c){
+                fast++;
                 count++;
             }
-            chars[indexAns++] = currentChar;
-            if(count != 1)
-                for(char c : Integer.toString(count).toCharArray()) 
-                    chars[indexAns++] = c;
+            chars[slow++] = c;
+            if(count != 1) {
+                for(char numc : Integer.toString(count).toCharArray()) {
+                    chars[slow++] = numc;
+                }
+            }
         }
-        return indexAns;
+        return slow;
     }
 }

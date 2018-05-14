@@ -24,7 +24,7 @@ import java.util.Comparator;
  * 
  * @author Johnny
  */
-public class Solution506 {    
+public class Solution506 {
     public String[] findRelativeRanks(int[] nums) {
         if (nums == null || nums.length == 0) {
             return new String[]{};

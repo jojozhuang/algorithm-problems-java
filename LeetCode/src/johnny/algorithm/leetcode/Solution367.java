@@ -16,7 +16,8 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution367 {
-    public boolean isPerfectSquare(int num) {
+    // Binary search, log(n)
+    public boolean isPerfectSquare2(int num) {
         if (num < 0) {
             return false;
         }
@@ -40,5 +41,14 @@ public class Solution367 {
         }
         
         return false;
+    }
+    
+    // Newton Method
+    public boolean isPerfectSquare(int num) {
+        long x = num;
+        while (x * x > num) {
+            x = (x + num / x) >> 1;
+        }
+        return x * x == num;
     }
 }

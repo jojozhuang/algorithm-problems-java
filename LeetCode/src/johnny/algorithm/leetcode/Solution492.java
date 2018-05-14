@@ -45,6 +45,6 @@ public class Solution492 {
             w--;
         }
         
-        return new int[]{area / w, w}; 
+        return new int[]{area / w, w};
     }  
 }

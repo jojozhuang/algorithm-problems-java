@@ -30,6 +30,46 @@ package johnny.algorithm.leetcode;
  */
 public class Solution466 {
     public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
+        int res = 0;
+        int index1 = 0;
+        int index2 = 0;
+        int i = 0, j = 0;
+        int len = s2.length() * n2;
+        while (i < n1 && j < n2) {
+            while (index1 < s1.length() && (index2 % n2) < s2.length()) {
+                if (s1.charAt(index1) == s2.charAt(index2)) {
+                    index2++;
+                }
+                index1++;
+            }
+            
+            if (index2 == len - 1) {
+                res++;
+                index2 = 0;
+            }
+            if (index1 > s1.length()) {
+                index1 = 0;
+                i++;
+            }
+        }
+
+        
+        return res;
+    }
+    
+    private boolean find(String s1, int index1, String s2, int index2) {
+        if (index1 >= s1.length() || index2 >= s2.length()) {
+            return false;
+        }
+        
+        if (s1.charAt(index1) == s2.charAt(index2)) {
+            return true;
+        }
+        return false;
+    }
+    
+    
+    public int getMaxRepetitions2(String s1, int n1, String s2, int n2) {
         int[] reps = new int[102];
         int[] rests = new int[102];
         int posRest=0, repTime=0;

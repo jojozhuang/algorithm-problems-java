@@ -22,11 +22,11 @@ package johnny.algorithm.leetcode;
 public class Solution389 {
     public char findTheDifference(String s, String t) {
         if (s == null || t == null || t.isEmpty() ||
-                s.length() != t.length() - 1) {
+            s.length() != t.length() - 1) {
             return ' ';
         }
         
-        // Apperence times for each letter
+        // Appearance times for each letter
         int[] countArray = new int[26];
         
         for (int i = 0; i < s.length(); i++) {

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -33,17 +35,60 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution524 {
-    public String findLongestWord(String s, List<String> d) {
+    // O(n*l), n is the size of the list, l is the average length of strings in list d.
+    public String findLongestWord2(String s, List<String> d) {
+        if (s == null || s.length() == 0 || d == null || d.size() == 0) {
+            return "";
+        }
+        
         String longest = "";
         for (String dictWord : d) {
             int i = 0;
-            for (char c : s.toCharArray()) 
-                if (i < dictWord.length() && c == dictWord.charAt(i)) i++;
+            for (char c : s.toCharArray()) {
+                if (i >= dictWord.length()) {
+                    break;
+                }
+                if (c == dictWord.charAt(i)) {
+                    i++;
+                }
+            }
 
-            if (i == dictWord.length() && dictWord.length() >= longest.length()) 
-                if (dictWord.length() > longest.length() || dictWord.compareTo(longest) < 0)
+            if (i == dictWord.length()) {
+                if (longest == "" || dictWord.length() > longest.length()) {
                     longest = dictWord;
+                } else {
+                    if (dictWord.length() == longest.length() && dictWord.compareTo(longest) < 0) {
+                        longest = dictWord;
+                    }
+                }
+            }
         }
         return longest;
-    }  
+    }
+
+    // Sorting, O(nlog(n)), n is the size of list
+    public String findLongestWord(String s, List <String> d) {
+        Collections.sort(d, new Comparator < String > () {
+            public int compare(String s1, String s2) {
+                // sort by length first, then by letters
+                return s2.length() != s1.length() ? s2.length() - s1.length() : s1.compareTo(s2);
+            }
+        });
+        for (String str: d) {
+            if (isSubsequence(str, s)) {
+                return str;
+            }
+        }
+        return "";
+    }
+    
+    private boolean isSubsequence(String str, String s) {
+        int j = 0;
+        for (int i = 0; i < s.length() && j < str.length(); i++) {
+            if (str.charAt(j) == s.charAt(i)) {
+                j++;
+            }
+        }
+        return j == str.length();
+    }
 }

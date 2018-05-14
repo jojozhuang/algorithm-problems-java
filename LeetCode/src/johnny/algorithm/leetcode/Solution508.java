@@ -38,18 +38,16 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution508 {
-    Map<Integer, Integer> sumToCount;
-    int maxCount;
-    
+    int maxCount = 0;
+
     public int[] findFrequentTreeSum(TreeNode root) {
-        maxCount = 0;
-        sumToCount = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         
-        postOrder(root);
+        postOrder(root, map);
         
         List<Integer> res = new ArrayList<>();
-        for (int key : sumToCount.keySet()) {
-            if (sumToCount.get(key) == maxCount) {
+        for (int key : map.keySet()) {
+            if (map.get(key) == maxCount) {
                 res.add(key);
             }
         }
@@ -61,18 +59,20 @@ public class Solution508 {
         return result;
     }
     
-    private int postOrder(TreeNode root) {
-        if (root == null) return 0;
+    private int postOrder(TreeNode root, Map<Integer, Integer> map) {
+        if (root == null) {
+            return 0;
+        }
         
-        int left = postOrder(root.left);
-        int right = postOrder(root.right);
+        int left = postOrder(root.left, map);
+        int right = postOrder(root.right, map);
         
         int sum = left + right + root.val;
-        int count = sumToCount.getOrDefault(sum, 0) + 1;
-        sumToCount.put(sum, count);
+        int count = map.getOrDefault(sum, 0) + 1;
+        map.put(sum, count);
         
         maxCount = Math.max(maxCount, count);
         
         return sum;
-    } 
+    }
 }
