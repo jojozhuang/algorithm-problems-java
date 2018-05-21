@@ -28,7 +28,7 @@ public class ListNode {
     }
     
     public static ListNode[] createList(int[][] arr) {  
-        if (arr == null || arr.length == 0 || arr[0].length == 0) {
+        if (arr == null || arr.length == 0) {
             return null;
         }
         

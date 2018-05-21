@@ -18,15 +18,28 @@ The string will only contain lowercase characters a-z. The maximum length of the
  */
 public class Solution680{
     public boolean validPalindrome(String s) {
-        int l = -1, r = s.length();
-        while (++l < --r) 
-            if (s.charAt(l) != s.charAt(r)) return isPalindromic(s, l, r+1) || isPalindromic(s, l-1, r);
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return isPalindrome(s, left, right + 1) || isPalindrome(s, left - 1, right);
+            }
+            left++;
+            right--;
+        }
         return true;
     }
-
-    public boolean isPalindromic(String s, int l, int r) {
-        while (++l < --r) 
-            if (s.charAt(l) != s.charAt(r)) return false;
+    
+    private boolean isPalindrome(String str, int left, int right) {
+        left++;
+        right--;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
         return true;
     }
 }

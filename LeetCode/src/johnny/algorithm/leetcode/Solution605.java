@@ -32,38 +32,41 @@ public class Solution605 {
             return false;
         }
         
-        int i = 0;
-        int count = 0;
-        boolean left = true; // The left is 1, the current position is not valid
-        while (i < flowerbed.length) {
-            if (flowerbed[i] == 0) {
-                if (!left) {
-                    left = true;
-                    i++;
-                    continue;
-                }
-                if (i + 1 < flowerbed.length) {
-                    if (flowerbed[i + 1] == 0) {
-                        count++;
-                        i += 2;
-                        left = true;
-                    } else {
-                        i += 2;
-                        left = false;
-                    }
-                } else {
-                    count++;
-                    break;
-                }
-            } else {
-                left = false;
-                i++;
-            }
-            if (count >= n) {
-                return true;
-            }
+        if (n == 0) {
+            return true;
         }
         
+        int i = 0, count = 0;
+        while (i < flowerbed.length) {
+            if (flowerbed[i] == 0 && (i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.length - 1 || flowerbed[i + 1] == 0)) {
+                flowerbed[i] = 1;
+                count++;
+                if (count >= n) {
+                    return true;
+                }
+            }
+            i++;
+        }
+        return false;
+    }
+    
+    public boolean canPlaceFlowers2(int[] flowerbed, int n) {
+        if (flowerbed == null || flowerbed.length == 0 || n > flowerbed.length) {
+            return false;
+        }
+        
+        if (n == 0) {
+            return true;
+        }
+        
+        int i = 0, count = 0;
+        while (i < flowerbed.length) {
+            if (flowerbed[i] == 0 && (i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.length - 1 || flowerbed[i + 1] == 0)) {
+                flowerbed[i] = 1;
+                count++;
+            }
+            i++;
+        }
         return count >= n;
     }
 }

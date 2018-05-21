@@ -37,6 +37,38 @@ k will be an integer in the range [1, 50].
  * @author Johnny
  */
 public class Solution725 {
+    public ListNode[] splitListToParts2(ListNode root, int k) {
+        if (k < -1) {
+            return new ListNode[] {};
+        }
+        ListNode[] parts = new ListNode[k];
+        
+        // get full length
+        int len = 0;
+        ListNode curr = root;
+        while (curr != null) {
+            len++;
+            curr = curr.next;
+        }
+
+        int size = len / k, r = len % k; // n : minimum guaranteed part size; r : extra nodes spread to the first r parts;
+        curr = root;
+        ListNode prev = null;
+        int i = 0;
+        while (curr != null && i < k) {
+            parts[i] = curr;
+            int j = 0;
+            while (j < size + (r > 0 ? 1 : 0)) { // if there is reminder, add additional one node to the first few parts
+                prev = curr;
+                curr = curr.next;
+                j++;
+            }
+            r--;
+            prev.next = null;
+            i++;
+        }
+        return parts;
+    }
     public ListNode[] splitListToParts(ListNode root, int k) {
         ListNode[] parts = new ListNode[k];
         int len = 0;

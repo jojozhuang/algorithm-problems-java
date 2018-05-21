@@ -45,12 +45,13 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution370 {
-    public int[] getModifiedArray(int length, int[][] updates) {  
+    // O(n + m)
+    public int[] getModifiedArray2(int length, int[][] updates) {
         int[] res = new int[length];
         for(int[] update : updates) {
-           int value = update[2];
            int start = update[0];
            int end = update[1];
+           int value = update[2];
            
            res[start] += value;
            
@@ -63,6 +64,22 @@ public class Solution370 {
        for(int i = 0; i < length; i++) {
            sum += res[i];
            res[i] = sum;
+       }
+       
+       return res;
+    }
+    
+    // Naive, O(n*m), n is the length of matrix, m is the length
+    public int[] getModifiedArray(int length, int[][] updates) {
+        int[] res = new int[length];
+        for(int[] update : updates) {
+           int start = update[0];
+           int end = update[1];
+           int value = update[2];
+           
+           for (int i = start; i <= end; i++) {
+               res[i] += value;
+           }
        }
        
        return res;

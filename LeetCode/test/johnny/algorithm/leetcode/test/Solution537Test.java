@@ -12,7 +12,7 @@ public class Solution537Test extends JunitBase {
         System.out.println("complexNumberMultiply");
         Solution537 instance = new Solution537();
 
-        assertEquals("0+2i", instance.complexNumberMultiply("1+1i", "1+1i"));
+        assertEquals("0+2i", instance.complexNumberMultiply("1+1i3", "1+1i"));
         assertEquals("0+-2i", instance.complexNumberMultiply("1+-1i", "1+-1i"));
     }
 }

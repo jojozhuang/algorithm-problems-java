@@ -30,6 +30,18 @@ import java.util.List;
  */
 public class Solution624 {
     public int maxDistance(List<List<Integer>> arrays) {
+        int res = 0;
+        int min = arrays.get(0).get(0);
+        int max = arrays.get(0).get(arrays.get(0).size() - 1);
+        for (int i = 1; i < arrays.size(); i++) {
+            res = Math.max(res, Math.max(Math.abs(arrays.get(i).get(arrays.get(i).size() - 1) - min), Math.abs(max - arrays.get(i).get(0))));
+            min = Math.min(min, arrays.get(i).get(0));
+            max = Math.max(max, arrays.get(i).get(arrays.get(i).size() - 1));
+        }
+        
+        return res;
+    }
+    public int maxDistance2(List<List<Integer>> arrays) {
         int result = Integer.MIN_VALUE;
         int max = arrays.get(0).get(arrays.get(0).size() - 1);
         int min = arrays.get(0).get(0);
@@ -42,5 +54,16 @@ public class Solution624 {
         }
         
         return result;
+    }
+    
+    public int maxDistance3(List<List<Integer>> arrays) {
+        int res = 0;
+        for (int i = 0; i < arrays.size() - 1; i++) {
+            for (int j = i + 1; j < arrays.size(); j++) {
+                res = Math.max(res, Math.abs(arrays.get(i).get(0) - arrays.get(j).get(arrays.get(j).size() - 1)));
+                res = Math.max(res, Math.abs(arrays.get(j).get(0) - arrays.get(i).get(arrays.get(i).size() - 1)));
+            }
+        }
+        return res;
     }
 }

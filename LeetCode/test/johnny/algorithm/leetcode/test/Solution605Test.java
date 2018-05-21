@@ -23,5 +23,6 @@ public class Solution605Test extends JunitBase {
         assertEquals(true, instance.canPlaceFlowers(new int[]{1,0,0,0,1}, 1));
         assertEquals(false, instance.canPlaceFlowers(new int[]{1,0,0,0,1}, 2));
         assertEquals(true, instance.canPlaceFlowers(new int[]{1,0,0,0,0,0,1}, 2));
+        assertEquals(true, instance.canPlaceFlowers(new int[]{1,0,1,0,1,0,1}, 0));
     }
 }

@@ -35,19 +35,19 @@ public class Solution724 {
         
         int len = nums.length;
         
-        int[] sumLeft = new int[len];
-        sumLeft[0] = 0;
+        int[] left = new int[len];
+        left[0] = nums[0];
         for (int i = 1; i < len; i++) {
-            sumLeft[i] = sumLeft[i - 1] + nums[i - 1];
+            left[i] = left[i - 1] + nums[i];
         }
-        int[] sumRight = new int[len];
-        sumRight[len - 1] = 0;
+        int[] right = new int[len];
+        right[len - 1] = nums[len - 1];
         for (int i = len - 2; i >= 0; i--) {
-            sumRight[i] = sumRight[i + 1] + nums[i + 1];
+            right[i] = right[i + 1] + nums[i];
         }
         
         for (int i = 0; i < len; i++) {
-            if (sumLeft[i] == sumRight[i]) {
+            if (left[i] == right[i]) {
                 return i;
             }
         }

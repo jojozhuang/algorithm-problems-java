@@ -21,5 +21,20 @@ public class Solution624Test extends JunitBase {
             {1,2,3}
         });
         assertEquals(4, instance.maxDistance(arrays1));
+        
+        List<List<Integer>> arrays2 = ListUtil.buildList2(new Integer[][] {
+            {1},{2}
+        });
+        assertEquals(1, instance.maxDistance(arrays2));
+        
+        List<List<Integer>> arrays3 = ListUtil.buildList2(new Integer[][] {
+            {1, 4},{0, 5}
+        });
+        assertEquals(4, instance.maxDistance(arrays3));
+        
+        List<List<Integer>> arrays4 = ListUtil.buildList2(new Integer[][] {
+            {1, 5},{3, 4}
+        });
+        assertEquals(3, instance.maxDistance(arrays4));
     }
 }

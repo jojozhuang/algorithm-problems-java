@@ -29,7 +29,7 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution127 {
-    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    public int ladderLength2(String beginWord, String endWord, List<String> wordList) {
         if (beginWord.isEmpty() || endWord.isEmpty() || wordList == null || wordList.isEmpty()) {
             return 0;
         }
@@ -59,7 +59,7 @@ public class Solution127 {
         return distance;
     }
     
-    public int ladderLength2(String beginWord, String endWord, List<String> wordList) {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         if (beginWord.isEmpty() || endWord.isEmpty() || wordList == null || wordList.isEmpty()) {
             return 0;
         }

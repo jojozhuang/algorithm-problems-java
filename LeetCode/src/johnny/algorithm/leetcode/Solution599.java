@@ -1,11 +1,10 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 /**
  * Minimum Index Sum of Two Lists
@@ -43,35 +42,26 @@ import java.util.TreeMap;
  */
 public class Solution599 {
     public String[] findRestaurant(String[] list1, String[] list2) {
-        
         Map<String, Integer> map1 = new HashMap<String, Integer>();
         for (int i = 0; i < list1.length; i++) {
             map1.put(list1[i], i);
         }
         
-        Map<String, Integer> map2 = new HashMap<String, Integer>();
+        List<String> res = new ArrayList<String>();
+        int min = Integer.MAX_VALUE;
         for (int j = 0; j < list2.length; j++) {
             if (map1.containsKey(list2[j])) {
-                map2.put(list2[j], map1.get(list2[j]) + j);
+                if (map1.get(list2[j]) + j < min) {
+                    min = map1.get(list2[j]) + j;
+                    res.clear();
+                    res.add(list2[j]);
+                } else if (map1.get(list2[j]) + j == min) {
+                    res.add(list2[j]);
+                }
             }
         }
         
-        SortedMap<Integer, List<String>> sortMap = new TreeMap<Integer, List<String>>();
-        for (String str : map2.keySet()) {
-            int index = map2.get(str);
-            List<String> list;
-            if (!sortMap.containsKey(index)) {
-                list = new ArrayList<String>();
-            } else {
-                list = sortMap.get(index);
-            }
-            list.add(str);
-            sortMap.put(index, list);
-            //sortMap.put(map.get(str), (sortMap.getOrDefault(map.get(str), new ArrayList<String>()).add(str)));
-        }
-        
-        
-        List<String> largest = sortMap.get(sortMap.firstKey());
-        return largest.toArray(new String[largest.size()]);
+        Collections.sort(res);
+        return res.toArray(new String[res.size()]);
     }
 }

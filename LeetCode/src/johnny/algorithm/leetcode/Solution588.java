@@ -91,34 +91,25 @@ public class Solution588 {
     public void mkdir(String path) {
         String[] dirs = path.split("/");
         File node = root;
-        for (String dir : dirs) {
-            if (dir.length() == 0) continue;
-            if (!node.children.containsKey(dir)) {
-                File file = new File();
-                node.children.put(dir, file);
-            }
-            node = node.children.get(dir);
-        }
+        node = search(node, dirs);
     }
     
-    public void addContentToFile(String filePath, String content) {
-        String[] dirs = filePath.split("/");
+    public void addContentToFile(String path, String content) {
+        String[] dirs = path.split("/");
         File node = root;
-        for (String dir : dirs) {
-            if (dir.length() == 0) continue;
-            if (!node.children.containsKey(dir)) {
-                File file = new File();
-                node.children.put(dir, file);
-            }
-            node = node.children.get(dir);
-        }
+        node = search(node, dirs);
         node.isFile = true;
         node.content += content;
     }
     
-    public String readContentFromFile(String filePath) {
-        String[] dirs = filePath.split("/");
+    public String readContentFromFile(String path) {
+        String[] dirs = path.split("/");
         File node = root;
+        node = search(node, dirs);
+        return node.content;
+    }
+    
+    private File search(File node, String[] dirs) {
         for (String dir : dirs) {
             if (dir.length() == 0) continue;
             if (!node.children.containsKey(dir)) {
@@ -127,8 +118,7 @@ public class Solution588 {
             }
             node = node.children.get(dir);
         }
-
-        return node.content;
+        return node;
     }
 }
 

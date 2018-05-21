@@ -14,5 +14,6 @@ public class Solution665Test extends JunitBase {
 
         assertEquals(true, instance.checkPossibility(new int[] {4,2,3}));
         assertEquals(false, instance.checkPossibility(new int[] {4,2,1}));
+        assertEquals(false, instance.checkPossibility(new int[] {3,4,2,3}));
     }
 }

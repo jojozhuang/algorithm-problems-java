@@ -29,7 +29,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution466 {
-    public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
+    public int getMaxRepetitions2(String s1, int n1, String s2, int n2) {
         int res = 0;
         int index1 = 0;
         int index2 = 0;
@@ -69,7 +69,7 @@ public class Solution466 {
     }
     
     
-    public int getMaxRepetitions2(String s1, int n1, String s2, int n2) {
+    public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
         int[] reps = new int[102];
         int[] rests = new int[102];
         int posRest=0, repTime=0;

@@ -40,22 +40,24 @@ public class Solution757 {
             }
         });
         
-        int m = 0, largest = -1, second = -1;
+        int res = 0, largest = -1, second = -1;
         
         for (int[] interval : intervals) {
-            int a = interval[0], b = interval[1];
+            int a = interval[0];
+            int b = interval[1];
         
-        boolean is_largest_in = (a <= largest);
+            boolean is_largest_in = (a <= largest);
             boolean is_second_in = (a <= second);
-        
-        if (is_largest_in && is_second_in) continue;
             
-            m += (is_largest_in ? 1 : 2);
-            
-        second = (is_largest_in ? largest : b - 1);
-        largest = b;
+            if (is_largest_in && is_second_in) {
+                continue;
+            }
+
+            res += (is_largest_in ? 1 : 2);
+            second = (is_largest_in ? largest : b - 1);
+            largest = b;
         }
         
-        return m;
+        return res;
     }
 }

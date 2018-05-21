@@ -29,12 +29,23 @@ bits[i] is always 0 or 1.
  * @author Johnny
  */
 public class Solution717 {
-    public boolean isOneBitCharacter(int[] bits) {
-        int n = bits.length, i = 0;
-        while (i < n - 1) {
-            if (bits[i] == 0) i++;
-            else i += 2;
+    public boolean isOneBitCharacter2(int[] bits) {
+        int i = 0;
+        while (i < bits.length - 1) {
+            i += bits[i] + 1;
         }
-        return i == n - 1;
+        return i == bits.length - 1;
+    }
+    
+    public boolean isOneBitCharacter(int[] bits) {
+        int i = 0;
+        while (i < bits.length - 1) {
+            if (bits[i] == 0) {
+                i++;
+            } else {
+                i += 2;
+            }
+        }
+        return i == bits.length - 1;
     }
 }

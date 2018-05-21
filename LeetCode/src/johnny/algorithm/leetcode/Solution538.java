@@ -32,10 +32,12 @@ public class Solution538 {
     }
     
     public void convert(TreeNode cur) {
-        if (cur == null) return;
+        if (cur == null) {
+            return;
+        }
         convert(cur.right);
         cur.val += sum;
         sum = cur.val;
         convert(cur.left);
-    } 
+    }
 }

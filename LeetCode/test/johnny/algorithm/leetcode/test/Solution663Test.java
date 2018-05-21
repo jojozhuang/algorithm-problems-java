@@ -18,5 +18,8 @@ public class Solution663Test extends JunitBase {
 
         TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","10","#","#","2","20"});
         assertEquals(false, instance.checkEqualTree(root2));
+        
+        TreeNode root3 = TreeNode.createInstance(new String[] {"0","-1","1"});
+        assertEquals(false, instance.checkEqualTree(root3));
     }
 }

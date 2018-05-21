@@ -39,6 +39,8 @@ public class Solution676 {
     }
     
     /** Build a dictionary through a list of words */
+    //ello, hllo, helo, hell 
+    //eetcode, letcode, leecode,leetode, leetcde, leetcoe, leetcod
     public void buildDict(String[] dict) {
         for (String s : dict) {
             for (int i = 0; i < s.length(); i++) {
@@ -59,7 +61,9 @@ public class Solution676 {
             String key = word.substring(0, i) + word.substring(i + 1);
             if (map.containsKey(key)) {
                 for (int[] pair : map.get(key)) {
-                    if (pair[0] == i && pair[1] != word.charAt(i)) return true;
+                    if (pair[0] == i && pair[1] != word.charAt(i)) {
+                        return true;
+                    }
                 }
             }
         }

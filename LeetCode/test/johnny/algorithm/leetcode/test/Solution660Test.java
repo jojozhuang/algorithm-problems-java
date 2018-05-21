@@ -13,5 +13,6 @@ public class Solution660Test extends JunitBase {
         Solution660 instance = new Solution660();
 
         assertEquals(10, instance.newInteger(9));
+        assertEquals(31, instance.newInteger(28));
     }
 }

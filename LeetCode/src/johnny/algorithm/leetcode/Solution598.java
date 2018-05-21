@@ -44,41 +44,39 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution598 {
+    // O(k)
     public int maxCount(int m, int n, int[][] ops) {
         if (ops== null || ops.length == 0 || ops[0].length == 0) {
             return m * n;
         }
-        if (m <= 0 || n <= 0 || ops[0].length != 2) {
-            return 0;
+        
+        for (int[] op: ops) {
+            m = Math.min(m, op[0]);
+            n = Math.min(n, op[1]);
+        }
+        return m * n;
+    }
+    // Brute force, m*n*k, k is the length of ops.
+    public int maxCount2(int m, int n, int[][] ops) {
+        if (ops== null || ops.length == 0 || ops[0].length == 0) {
+            return m * n;
         }
         
-        int[] rows = new int[m];
-        int[] cols = new int[n];
-        for (int i = 0; i < ops.length; i++) {
-            rows[0]++;
-            cols[0]++;
-            for (int j = 1; j < ops[i][0]; j++) {
-                rows[j]++;
-            }
-            for (int k = 1; k < ops[i][1]; k++) {
-                cols[k]++;
+        int[][] arr = new int[m][n];
+        for (int[] op: ops) {
+            for (int i = 0; i < op[0]; i++) {
+                for (int j = 0; j < op[1]; j++) {
+                    arr[i][j] += 1;
+                }
             }
         }
-        
-        int rowLen = 1;
-        for (int i = 1; i < rows.length; i++) {
-            if (rows[i] == rows[0]) {
-                rowLen++;
+        int count = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (arr[i][j] == arr[0][0])
+                    count++;
             }
         }
-        
-        int colLen = 1;
-        for (int i = 1; i < cols.length; i++) {
-            if (cols[i] == cols[0]) {
-                colLen++;
-            }
-        }
-        
-        return rowLen * colLen;
+        return count;
     }
 }

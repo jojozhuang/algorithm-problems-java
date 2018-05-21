@@ -30,7 +30,8 @@ The size of the given array will be in the range [1,1000].
  * @author Johnny
  */
 public class Solution654 {
-    public TreeNode constructMaximumBinaryTree(int[] nums) {
+    // Stack, O(n)
+    public TreeNode constructMaximumBinaryTree2(int[] nums) {
         Deque<TreeNode> stack = new LinkedList<>();
         for(int i = 0; i < nums.length; i++) {
             TreeNode curr = new TreeNode(nums[i]);
@@ -44,5 +45,45 @@ public class Solution654 {
         }
         
         return stack.isEmpty() ? null : stack.removeLast();
+    }
+    
+    // Naive, divide and conquer,O(n*l), l is the depth of tree.
+    public TreeNode constructMaximumBinaryTree(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        return helper(nums, 0, nums.length - 1);
+    }
+    
+    private TreeNode helper(int[] nums, int start, int end) {
+        if (start < 0 || end >= nums.length || start > end) {
+            return null;
+        }
+        
+        int indexMax = getLarget(nums, start, end);
+        if (indexMax == -1) {
+            return null;
+        }
+        TreeNode root = new TreeNode(nums[indexMax]);
+        root.left = helper(nums, start, indexMax - 1);
+        root.right = helper(nums, indexMax+1, end);
+        
+        return root;
+    }
+    
+    private int getLarget(int[] nums, int start, int end) {
+        if (start < 0 || end >= nums.length || start > end) {
+            return -1;
+        }
+        
+        int max = Integer.MIN_VALUE;
+        int index = -1;
+        for (int i = start; i <= end; i++) {
+            if (nums[i] > max) {
+                index = i;
+                max = nums[i];
+            }
+        }
+        return index;
     }
 }

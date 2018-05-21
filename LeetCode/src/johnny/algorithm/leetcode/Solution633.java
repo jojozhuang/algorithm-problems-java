@@ -35,4 +35,14 @@ public class Solution633 {
         }
         return false;
     }
+    // Brute force
+    public boolean judgeSquareSum2(int c) {
+        for (long a = 0; a * a <= c; a++) {
+            for (long b = 0; b * b <= c; b++) {
+                if (a * a + b * b == c)
+                    return true;
+            }
+        }
+        return false;
+    }
 }

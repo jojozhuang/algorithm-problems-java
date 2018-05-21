@@ -21,6 +21,9 @@ Hint: n will not exceed 9 x 10^8.
  */
 public class Solution660 {
     public int newInteger(int n) {
+        return Integer.parseInt(Integer.toString(n, 9));
+    }
+    public int newInteger2(int n) {
         int ans = 0;
         int base = 1;
             

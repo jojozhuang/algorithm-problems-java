@@ -21,17 +21,48 @@ Note:
  * @author Johnny
  */
 public class Solution713 {
+    // Sliding Window, O(n)
     public int numSubarrayProductLessThanK(int[] nums, int k) {
-        if (k == 0) return 0;
-        int cnt = 0;
-        int pro = 1;
-        for (int i = 0, j = 0; j < nums.length; j++) {
-            pro *= nums[j];
-            while (i <= j && pro >= k) {
-                pro /= nums[i++];
-            }
-            cnt += j - i + 1;
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return 0;
         }
-        return cnt;
+        int res = 0;
+        int product = 1;
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            product *= nums[right];
+            while (product >= k && left <= right) { // keep removing the left element if product is larger than k
+                product /= nums[left];
+                left++;
+            }
+            res += right - left + 1;
+        }
+        return res;
+    }
+
+    // Naive, O(n^2)
+    public int numSubarrayProductLessThanK2(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return 0;
+        }
+        
+        int res = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= k) {
+                continue;
+            }
+            long product = nums[i];
+            res++;
+            for (int j = i + 1; j < nums.length; j++) {
+                product *= nums[j];
+                if (product < k) {
+                    res++;
+                } else {
+                    break;
+                }
+            }
+        }
+        
+        return res;
     }
 }

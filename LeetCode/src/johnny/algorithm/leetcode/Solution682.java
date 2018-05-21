@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  *682. Baseball Game
@@ -44,6 +45,34 @@ Every integer represented in the list will be between -30000 and 30000.
  */
 public class Solution682 {
     public int calPoints(String[] ops) {
+        if (ops == null || ops.length == 0) {
+            return 0;
+        }
+
+        Stack<Integer> stack = new Stack<Integer>();
+        for (String op : ops) {
+            if (op.equals("C")) {
+                stack.pop();
+            } else if (op.equals("D")) {
+                stack.push(stack.peek() * 2);
+            } else if (op.equals("+")) {
+                int last = stack.pop();
+                int newtop = last + stack.peek();
+                stack.push(last);
+                stack.push(newtop);
+            } else {
+                stack.push(Integer.parseInt(op));
+            }
+        }
+        
+        int sum = 0;
+        while (!stack.isEmpty()) {
+            sum += stack.pop();
+        }
+
+        return sum;
+    }
+    public int calPoints2(String[] ops) {
         int sum = 0;
         LinkedList<Integer> list = new LinkedList<>();
         for (String op : ops) {

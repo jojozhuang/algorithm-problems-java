@@ -39,6 +39,17 @@ R - L will be at most 10000.
  */
 public class Solution762 {
     public int countPrimeSetBits(int L, int R) {
+        int res = 0;
+        Set<Integer> listPrimes = new HashSet<>(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19)); //10^6 has maximum 20 bits.
+        for(int i = L; i <= R; i++){
+            if(listPrimes.contains(Integer.bitCount(i))){
+                res++;
+            }
+        }
+        return res;
+    }
+    
+    public int countPrimeSetBits2(int L, int R) {
         int cnt = 0;
         Set<Integer> listPrimes = new HashSet<>(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29 ));
         int[] res = countBits(R);
@@ -48,7 +59,7 @@ public class Solution762 {
             }
         }
         return cnt;
-    }    
+    }
     
     public int[] countBits(int num) {
         if(num == 0)

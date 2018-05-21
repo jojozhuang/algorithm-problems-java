@@ -1,6 +1,8 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,7 +27,66 @@ Absolute value of elements in the array and x will not exceed 104
  * @author Johnny
  */
 public class Solution658 {
-    public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
+    // Binary search, log(n) + k
+    public List<Integer> findClosestElements(int[] arr, int k, int x) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (arr == null || arr.length == 0) {
+            return res;
+        }
+        
+        List<Integer> nums = new ArrayList<Integer>();
+        for (int i : arr)
+        {
+            nums.add(i);
+        }
+        
+        if (x <= arr[0]) { // x is smaller than all the elements
+            return nums.subList(0, k);
+        } else if (arr[arr.length - 1] <= x) { // x is larger than all the elements
+            return nums.subList(arr.length - k, arr.length);
+        } else {
+            int start = 0, end = nums.size() - 1;
+            int index = Collections.binarySearch(nums, x);
+            if (index < 0) { // not found
+                index = -index - 1;
+                
+            } 
+            start = Math.max(0, index - k - 1);
+            end = Math.min(nums.size() - 1, index + k - 1);
+            
+            while (end - start > k - 1) {
+                if (start < 0 || (x - nums.get(start)) <= (nums.get(end) - x))
+                    end--;
+                else if (end > nums.size() - 1 || (x - nums.get(start)) > (nums.get(end) - x))
+                    start++;
+                else
+                    System.out.println("unhandled case: " + start + " " + end);
+            }
+            res = nums.subList(start, end + 1);
+        }
+
+        return res;
+    }
+    
+    // Sorting, nlog(n)
+    public List<Integer> findClosestElements3(int[] arr, int k, int x) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (arr == null || arr.length == 0) {
+            return res;
+        }
+        
+        List<Integer> nums = new ArrayList<Integer>();
+        for (int i : arr)
+        {
+            nums.add(i);
+        }
+        Collections.sort(nums, (a,b) -> a == b ? a - b : Math.abs(a-x) - Math.abs(b-x));
+        res = nums.subList(0, k);
+        Collections.sort(res);
+        return res;
+    }
+    
+    public List<Integer> findClosestElements2(List<Integer> arr, int k, int x) {
         List<Integer> res = new ArrayList<Integer>();
         if (arr == null || arr.size() == 0) {
             return res;

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+
 /**
  *771. Jewels and Stones
 You're given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of the stones you have are also jewels.
@@ -22,6 +24,26 @@ The characters in J are distinct.
  */
 public class Solution771 {
     public int numJewelsInStones(String J, String S) {
+        if (J == null || J.length() == 0 || S == null || S.length() == 0) {
+            return 0;
+        }
+        
+        HashSet<Character> set = new HashSet<Character>();
+        for (char c : J.toCharArray()) {
+            set.add(c);
+        }
+        
+        int res = 0;
+        for (char c : S.toCharArray()) {
+            if (set.contains(c)) {
+                res++;
+            }
+        }
+        
+        return res;
+    }
+    
+    public int numJewelsInStones2(String J, String S) {
         return S.replaceAll("[^" + J + "]", "").length();
     }
 }

@@ -12,6 +12,7 @@ public class Solution824Test extends JunitBase {
         System.out.println("minimumLengthEncoding");
         Solution824 instance = new Solution824();
 
-        assertEquals(0, instance.dummy());
+        assertEquals("Imaa peaksmaaa oatGmaaaa atinLmaaaaa", instance.toGoatLatin("I speak Goat Latin"));
+        assertEquals("heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa", instance.toGoatLatin("The quick brown fox jumped over the lazy dog"));
     }
 }

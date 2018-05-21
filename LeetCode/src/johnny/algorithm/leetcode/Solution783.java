@@ -29,8 +29,27 @@ The BST is always valid, each node's value is an integer, and each node's value 
  * @author Johnny
  */
 public class Solution783 {
-    Integer res = Integer.MAX_VALUE, pre = null;
+    // In-order traversal
+    Integer prev, ans;
     public int minDiffInBST(TreeNode root) {
+        prev = null;
+        ans = Integer.MAX_VALUE;
+        dfs(root);
+        return ans;
+    }
+
+    public void dfs(TreeNode node) {
+        if (node == null) return;
+        dfs(node.left);
+        if (prev != null) {
+            ans = Math.min(ans, node.val - prev);
+        }
+        prev = node.val;
+        dfs(node.right);
+    }
+    
+    Integer res = Integer.MAX_VALUE, pre = null;
+    public int minDiffInBST2(TreeNode root) {
         if (root.left != null) minDiffInBST(root.left);
         if (pre != null) res = Math.min(res, root.val - pre);
         pre = root.val;

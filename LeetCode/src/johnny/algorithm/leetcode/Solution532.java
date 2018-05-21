@@ -1,6 +1,8 @@
 package johnny.algorithm.leetcode;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * K-diff Pairs in an Array
@@ -35,7 +37,8 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution532 {
-    public int findPairs(int[] nums, int k) {
+    // Two pointers, time: nlog(n), space: O(1)
+    public int findPairs2(int[] nums, int k) {
         if (nums == null || nums.length <= 1) {
             return 0;
         }
@@ -71,5 +74,33 @@ public class Solution532 {
         }
         
         return res;
-    }   
+    }
+    
+    // Hashmap, time: O(n), space: O(n)
+    public int findPairs(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k < 0) {
+            return 0;
+        }
+        
+        Map<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+        for (int i : nums) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+        
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (k == 0) {
+                //count how many elements in the array that appear more than twice.
+                if (entry.getValue() >= 2) {
+                    count++;
+                } 
+            } else {
+                if (map.containsKey(entry.getKey() - k)) {
+                    count++;
+                }
+            }
+        }
+        
+        return count;
+    }
 }

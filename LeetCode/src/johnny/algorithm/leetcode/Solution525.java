@@ -24,7 +24,7 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution525 {
-    public int findMaxLength2(int[] nums) {
+    public int findMaxLength(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) nums[i] = -1;
         }
@@ -37,8 +37,7 @@ public class Solution525 {
             sum += nums[i];
             if (sumToIndex.containsKey(sum)) {
                 max = Math.max(max, i - sumToIndex.get(sum));
-            }
-            else {
+            } else {
                 sumToIndex.put(sum, i);
             }
         }

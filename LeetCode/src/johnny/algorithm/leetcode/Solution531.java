@@ -21,19 +21,34 @@ The range of width and height of the input 2D array is [1,500].
  * @author Johnny
  */
 public class Solution531 {
+    // Time: O(n*m), Space: O(n+m)
     public int findLonelyPixel(char[][] picture) {
-        int n = picture.length, m = picture[0].length;
+        if (picture == null || picture.length == 0) {
+            return 0;
+        }
+        int n = picture.length;
+        int m = picture[0].length;
         
-        int[] rowCount = new int[n], colCount = new int[m];
-        for (int i=0;i<n;i++) 
-            for (int j=0;j<m;j++) 
-                if (picture[i][j] == 'B') { rowCount[i]++; colCount[j]++; }
+        int[] rowCount = new int[n];
+        int[] colCount = new int[m];
+        for (int i = 0;i < n; i++) {
+            for (int j = 0; j < m; j++) { 
+                if (picture[i][j] == 'B') { 
+                    rowCount[i]++;
+                    colCount[j]++;
+                }
+            }
+        }
 
         int count = 0;
-        for (int i=0;i<n;i++) 
-            for (int j=0;j<m;j++) 
-                if (picture[i][j] == 'B' && rowCount[i] == 1 && colCount[j] == 1) count++;
-                    
+        for (int i = 0;i < n; i++) { 
+            for (int j = 0;j < m; j++) { 
+                if (picture[i][j] == 'B' && rowCount[i] == 1 && colCount[j] == 1) {
+                    count++;
+                }
+            }
+        }
+
         return count;
     }
 }
