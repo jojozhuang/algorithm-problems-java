@@ -2,8 +2,11 @@ package johnny.algorithm.leetcode;
 
 import johnny.algorithm.leetcode.common.TreeNode;
 import java.util.List;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -24,7 +27,53 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution145 {
-    // divide and conquer
+    public List<Integer> postorderTraversal(TreeNode root) {
+        LinkedList<Integer> res = new LinkedList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode curr = root;
+        while(!stack.isEmpty() || curr != null) {
+            if(curr != null) {
+                stack.push(curr);
+                res.addFirst(curr.val);     // Reverse the process of preorder
+                curr = curr.right;          // Reverse the process of preorder
+            } else {
+                TreeNode node = stack.pop();
+                curr = node.left;           // Reverse the process of preorder
+            }
+        }
+        return res;
+    }
+    public List<Integer> postorderTraversal6(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        
+        if (root == null) {
+            return res;
+        }
+        
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.peek();
+            if (node.left == null && node.right == null) {
+                node = stack.pop();
+                res.add(node.val);
+                continue;
+            }
+            
+            if (node.right != null) {
+                stack.push(node.right);
+                node.right = null;
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+                node.left = null;
+            }
+        }
+        
+        return res;
+    }
+    // Recursion
     public List<Integer> postorderTraversal2(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         
@@ -67,7 +116,7 @@ public class Solution145 {
         return res;
     }
     
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal5(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         
         if (root == null) {
@@ -94,43 +143,9 @@ public class Solution145 {
                 } 
                 stack.push(node.left);
                 node.left = null;
-            }            
+            }
         }
         
         return res;
     }
-    public List<Integer> postorderTraversal4(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        
-        if (root == null) {
-            return result;
-        }
-        
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode prev = null;
-        TreeNode curr = root;
-        
-        stack.push(root);
-        while(!stack.empty()) {
-            curr = stack.peek();
-            if (prev == null || prev.left == curr || prev.right == curr) { //Traverse down the tree
-                if (curr.left != null) {
-                    stack.push(curr.left);
-                } else if (curr.right != null) {
-                    stack.push(curr.right);
-                }
-            }
-            else if (curr.left == prev) { // Traverse up the tree from the left
-                if (curr.right != null) {
-                    stack.push(curr.right);
-                }
-            }
-            else { // Traverse up the tree from the right
-                result.add(curr.val);
-                stack.pop();
-            }
-            prev = curr;
-        }
-        return result;
-    }    
 }

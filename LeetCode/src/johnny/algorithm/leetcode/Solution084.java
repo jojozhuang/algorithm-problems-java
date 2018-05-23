@@ -18,8 +18,27 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution084 {
+    public int largestRectangleArea(int[] heights) {
+        if (heights == null || heights.length == 0) {
+            return 0;
+        }
+        int len = heights.length;
+        Stack<Integer> s = new Stack<Integer>();
+        int maxArea = 0;
+        for(int i = 0; i <= len; i++){
+            int h = (i == len ? 0 : heights[i]);
+            if(s.isEmpty() || h >= heights[s.peek()]){
+                s.push(i);
+            }else{
+                int tp = s.pop();
+                maxArea = Math.max(maxArea, heights[tp] * (s.isEmpty() ? i : i - 1 - s.peek()));
+                i--;
+            }
+        }
+        return maxArea;
+    }
     //http://www.programcreek.com/2014/05/leetcode-largest-rectangle-in-histogram-java/
-    public int largestRectangleArea3(int[] heights) {
+    public int largestRectangleArea4(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;
         }
@@ -54,7 +73,7 @@ public class Solution084 {
     }
     
     //Brute Force
-    public int largestRectangleArea(int[] heights) {
+    public int largestRectangleArea3(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;
         }

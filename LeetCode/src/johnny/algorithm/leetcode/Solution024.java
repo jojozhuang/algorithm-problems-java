@@ -14,7 +14,31 @@ import johnny.algorithm.leetcode.common.ListNode;
  * @author Johnny
  */
 public class Solution024 {
+    // Iteration
     public ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        
+        ListNode prev = dummy;
+        ListNode curr = head;
+        
+        while (curr != null && curr.next != null) {
+            prev.next = curr.next;
+            curr.next = curr.next.next;
+            prev.next.next = curr;
+            curr = curr.next;
+            prev = prev.next.next;
+        }
+        
+        return dummy.next;
+    }
+    
+    // Recursion
+    public ListNode swapPairs2(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }

@@ -34,17 +34,17 @@ Output: [[3,5],[6,9],[12,14]]
  */
 public class Solution830 {
     public List<List<Integer>> largeGroupPositions(String S) {
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
-        int i = 0, N = S.length(); // i is the start of each group
-        for (int j = 0; j < N; ++j) {
-            if (j == N-1 || S.charAt(j) != S.charAt(j+1)) {
-                // Here, [i, j] represents a group.
-                if (j-i+1 >= 3)
-                    ans.add(Arrays.asList(new Integer[]{i, j}));
-                i = j + 1;
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        int j = 0;
+        for (int i = 0; i < S.length(); i++) {
+            if (i == S.length() - 1 || S.charAt(i) != S.charAt(i + 1)) {
+                if (i - j + 1 >= 3) {
+                    res.add(Arrays.asList(new Integer[] {j, i}));
+                }
+                j = i + 1;
             }
         }
 
-        return ans;
+        return res;
     }
-}
+ }

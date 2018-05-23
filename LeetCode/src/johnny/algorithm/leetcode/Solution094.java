@@ -2,7 +2,9 @@ package johnny.algorithm.leetcode;
 
 import johnny.algorithm.leetcode.common.TreeNode;
 import java.util.List;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -25,26 +27,25 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution094 {
-    //divide and conquer
-    public List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
-        
-        if (root == null) {
-            return res;
+    // Iteration with Stack
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode curr = root;
+        while(!stack.isEmpty() || curr != null) {
+            if(curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            } else {
+                TreeNode node = stack.pop();
+                res.add(node.val);  // Add after all left children
+                curr = node.right;
+            }
         }
-        
-        List<Integer> left = inorderTraversal(root.left);
-        List<Integer> right = inorderTraversal(root.right);
-        
-        res.addAll(left);
-        res.add(root.val);
-        res.addAll(right);
-        
         return res;
     }
     
-    // stack
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal3(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         
         if (root == null) {
@@ -65,4 +66,23 @@ public class Solution094 {
         }
         return res;
     }
+    
+    // Recursion
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        
+        if (root == null) {
+            return res;
+        }
+        
+        List<Integer> left = inorderTraversal(root.left);
+        List<Integer> right = inorderTraversal(root.right);
+        
+        res.addAll(left);
+        res.add(root.val);
+        res.addAll(right);
+        
+        return res;
+    }
+
 }

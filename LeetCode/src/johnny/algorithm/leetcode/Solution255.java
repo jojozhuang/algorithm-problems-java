@@ -15,18 +15,21 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution255 {
+    // Stack
     public boolean verifyPreorder(int[] preorder) {
         if (preorder == null || preorder.length == 0) {
             return true;
         }
         int low = Integer.MIN_VALUE;
         Stack<Integer> stack = new Stack<>();
-        for(int i : preorder) {
-            if(i < low)
+        for (int num : preorder) {
+            if (num < low) {
                 return false;
-            while(!stack.isEmpty() && i > stack.peek())
+            }
+            while (!stack.isEmpty() && num > stack.peek()) {
                 low = stack.pop();
-            stack.push(i);
+            }
+            stack.push(num);
         }
         
         return true;

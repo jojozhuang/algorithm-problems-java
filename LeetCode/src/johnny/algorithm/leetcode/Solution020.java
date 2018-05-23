@@ -24,14 +24,15 @@ public class Solution020 {
         
         Stack<Character> stack = new Stack<Character>();
         for (char c : s.toCharArray()) {
-            if (c == '(')
+            if (c == '(') {
                 stack.push(')');
-            else if (c == '{')
+            } else if (c == '{') {
                 stack.push('}');
-            else if (c == '[')
+            } else if (c == '[') {
                 stack.push(']');
-            else if (stack.isEmpty() || stack.pop() != c)
+            } else if (stack.isEmpty() || stack.pop() != c) {
                 return false;
+            }
         }
         return stack.isEmpty();
     }

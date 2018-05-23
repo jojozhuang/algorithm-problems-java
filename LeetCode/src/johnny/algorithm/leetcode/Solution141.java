@@ -17,21 +17,19 @@ public class Solution141 {
         if (head == null) {
             return false;
         }
-        
-        ListNode fast = new ListNode(0);
-        fast.next = head;
-        ListNode slow = new ListNode(1);
-        slow.next = head;
+
+        ListNode fast = head;
+        ListNode slow = head;
         
         while(fast != null) {
             if (fast.next == null) {
                 return false;
-            } else {
-                fast = fast.next.next;
-                slow = slow.next;
-                if (fast == slow) { // Compare object, not its value. Nodes with same value may exist.
-                    return true;
-                }
+            }
+            
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) { // Compare object, not its value. Nodes with same value may exist.
+                return true;
             }
         }
         

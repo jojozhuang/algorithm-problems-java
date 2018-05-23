@@ -25,15 +25,20 @@ public class Solution328 {
             return head;
         }
         
-        ListNode odd = head, oddhead = head;
-        ListNode even = head.next, evenhead = head.next;
-        while(even != null && even.next != null) {
+        ListNode oddHead = head;
+        ListNode evenHead = head.next;
+        ListNode odd = head;
+        ListNode even = head.next;
+        
+        while (even != null && even.next != null) {
             odd.next = even.next;
+            even.next = even.next.next;
             odd = odd.next;
-            even.next = odd.next;
             even = even.next;
         }
-        odd.next = evenhead;
-        return oddhead;
+        
+        odd.next = evenHead;
+       
+        return oddHead;
     }
 }

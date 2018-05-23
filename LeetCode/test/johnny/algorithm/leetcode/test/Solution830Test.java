@@ -24,5 +24,8 @@ public class Solution830Test extends JunitBase {
 
         List<List<Integer>> expect3 = ListUtil.buildList2(new Integer[][] {{3,5},{6,9},{12,14}});
         assertEquals(expect3, instance.largeGroupPositions("abcdddeeeeaabbbcd"));
+
+        List<List<Integer>> expect4 = ListUtil.buildList2(new Integer[][] {{0,2}});
+        assertEquals(expect4, instance.largeGroupPositions("aaa"));
     }
 }

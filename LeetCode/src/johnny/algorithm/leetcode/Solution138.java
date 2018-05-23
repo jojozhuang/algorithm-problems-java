@@ -35,20 +35,19 @@ public class Solution138 {
         }
         // restore and split out the new list from the current list
         RandomListNode dummy = new RandomListNode(0);
+        RandomListNode copyCurr = dummy;
         curr = head;
-        RandomListNode copy, next, copyIter = dummy;
         while (curr != null) {
-            next = curr.next.next;
+            RandomListNode next = curr.next.next;
 
             // extract the copy
-            copy = curr.next;
-            copyIter.next = copy;
-            copyIter = copy;
+            copyCurr.next = curr.next;
+            copyCurr = copyCurr.next;
 
             // restore the original list
             curr.next = next;
 
-            curr = next;
+            curr = curr.next;
         }
 
         return dummy.next;

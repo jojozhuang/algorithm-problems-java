@@ -27,8 +27,12 @@ public class Solution024Test extends JunitBase {
         ListNode expect4 = ListNode.createInstance(new int[]{2,1,3});
         assertTrue(ListNode.isSame(expect4, instance.swapPairs(head4)));
 
-        ListNode head5 = ListNode.createInstance(new int[]{1,2,3,4,5,6});
-        ListNode expect5 = ListNode.createInstance(new int[]{2,1,4,3,6,5});
+        ListNode head5 = ListNode.createInstance(new int[]{1,2,3,4});
+        ListNode expect5 = ListNode.createInstance(new int[]{2,1,4,3});
         assertTrue(ListNode.isSame(expect5, instance.swapPairs(head5)));
+
+        ListNode head6 = ListNode.createInstance(new int[]{1,2,3,4,5,6});
+        ListNode expect6 = ListNode.createInstance(new int[]{2,1,4,3,6,5});
+        assertTrue(ListNode.isSame(expect6, instance.swapPairs(head6)));
     }
 }

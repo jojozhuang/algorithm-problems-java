@@ -20,8 +20,50 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution224 {
-    //https://segmentfault.com/a/1190000003796804
     public int calculate(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<Integer>();
+        int res = 0;
+        int number = 0;
+        int sign = 1;
+        for(int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            if(Character.isDigit(c)){
+                number = 10 * number + (c - '0');
+            }else if(c == '+'){
+                res += sign * number;
+                number = 0;
+                sign = 1;
+            }else if(c == '-'){
+                res += sign * number;
+                number = 0;
+                sign = -1;
+            }else if(c == '('){
+                //we push the result first, then sign;
+                stack.push(res);
+                stack.push(sign);
+                //reset the sign and result for the value in the parenthesis
+                sign = 1;
+                res = 0;
+            }else if(c == ')'){
+                res += sign * number;
+                number = 0;
+                res *= stack.pop();    //stack.pop() is the sign before the parenthesis
+                res += stack.pop();   //stack.pop() now is the result calculated before the parenthesis
+            }
+        }
+        
+        if (number != 0) {
+            res += sign * number;
+        }
+        
+        return res;
+    }
+    
+    //https://segmentfault.com/a/1190000003796804
+    public int calculate2(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
         }

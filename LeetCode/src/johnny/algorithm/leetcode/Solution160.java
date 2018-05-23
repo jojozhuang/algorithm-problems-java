@@ -27,6 +27,9 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution160 {
+    // without knowing the length.
+    // a1, a2, c1, c2, c3, b1, b2, b3, c1, c2, c3
+    // b1, b2, b3, c1, c2, c3, a1, a2, c1, c2, c3
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         //boundary check
         if(headA == null || headB == null) return null;

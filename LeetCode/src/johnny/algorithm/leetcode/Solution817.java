@@ -39,19 +39,21 @@ G is a subset of all values in the linked list.
  */
 public class Solution817 {
     public int numComponents(ListNode head, int[] G) {
-        Set<Integer> Gset = new HashSet<Integer>();
-        for (int x: G) Gset.add(x);
+        Set<Integer> sets = new HashSet<Integer>();
+        for (int x: G) {
+            sets.add(x);
+        }
 
+        int res = 0;
         ListNode cur = head;
-        int ans = 0;
 
         while (cur != null) {
-            if (Gset.contains(cur.val) &&
-                    (cur.next == null || !Gset.contains(cur.next.val)))
-                ans++;
+            if (sets.contains(cur.val) && (cur.next == null || !sets.contains(cur.next.val))) {
+                res++;
+            }
             cur = cur.next;
         }
 
-        return ans;
+        return res;
     }
 }

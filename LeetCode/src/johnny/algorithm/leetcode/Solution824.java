@@ -37,27 +37,29 @@ Output: "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaa
 public class Solution824 {
     public String toGoatLatin(String S) {
         Set<Character> vowel = new HashSet<Character>();
-        for (char c: new char[]{'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'})
+        for (char c: new char[]{'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}) {
             vowel.add(c);
+        }
 
         int t = 1;
-        StringBuilder ans = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (String word: S.split(" ")) {
             char first = word.charAt(0);
             if (vowel.contains(first)) {
-                ans.append(word);
+                sb.append(word);
             } else {
-                ans.append(word.substring(1));
-                ans.append(word.substring(0, 1));
+                sb.append(word.substring(1) + word.substring(0, 1));
             }
-            ans.append("ma");
-            for (int i = 0; i < t; i++)
-                ans.append("a");
+            sb.append("ma");
+            for (int i = 0; i < t; i++) {
+                sb.append("a");
+            }
+
             t++;
-            ans.append(" ");
+            sb.append(" ");
         }
 
-        ans.deleteCharAt(ans.length() - 1);
-        return ans.toString();
+        sb.deleteCharAt(sb.length() - 1); // delete the last space.
+        return sb.toString();
     }
 }
