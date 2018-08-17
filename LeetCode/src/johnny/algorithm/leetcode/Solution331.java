@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Stack;
+
 /**
  * Verify Preorder Serialization of a Binary Tree.
  * 
@@ -42,7 +44,6 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution331 {
-    //https://www.hrwhisper.me/leetcode-verify-preorder-serialization-of-a-binary-tree/
     public boolean isValidSerialization(String preorder) {
         if (preorder == null || preorder.isEmpty()) {
             return false;
@@ -50,7 +51,7 @@ public class Solution331 {
         
         String[] list = preorder.split(",");
         int diff = 1; //root
-        for(String item: list) {
+        for (String item: list) {
             diff--;
             if (diff < 0) {
                 return false;
@@ -61,5 +62,31 @@ public class Solution331 {
         }
         
         return diff == 0;
+    }
+
+    // using a stack, scan left to right
+    // case 1: we see a number, just push it to the stack
+    // case 2: we see #, check if the top of stack is also #
+    // if so, pop #, pop the number in a while loop, until top of stack is not #
+    // if not, push it to stack
+    // in the end, check if stack size is 1, and stack top is #
+    public boolean isValidSerialization2(String preorder) {
+        if (preorder == null) {
+            return false;
+        }
+        Stack<String> st = new Stack<>();
+        String[] strs = preorder.split(",");
+        for (int pos = 0; pos < strs.length; pos++) {
+            String curr = strs[pos];
+            while (curr.equals("#") && !st.isEmpty() && st.peek().equals(curr)) {
+                st.pop();
+                if (st.isEmpty()) {
+                    return false;
+                }
+                st.pop();
+            }
+            st.push(curr);
+        }
+        return st.size() == 1 && st.peek().equals("#");
     }
 }

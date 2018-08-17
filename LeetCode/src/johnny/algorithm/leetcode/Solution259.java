@@ -24,10 +24,10 @@ public class Solution259 {
         Arrays.sort(nums);
         int len = nums.length;
     
-        for(int i=0; i<len-2; i++) {
-            int left = i+1, right = len-1;
-            while(left < right) {
-                if(nums[i] + nums[left] + nums[right] < target) {
+        for (int i = 0; i < len-2; i++) {
+            int left = i + 1, right = len - 1;
+            while (left < right) {
+                if (nums[i] + nums[left] + nums[right] < target) {
                     count += right-left; // all the nums between right and left are satisfied
                     left++;
                 } else {

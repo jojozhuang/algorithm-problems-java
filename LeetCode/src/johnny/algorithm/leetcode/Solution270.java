@@ -17,28 +17,19 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution270 {
-    public int closestValue(TreeNode root, double target) {
+    // no recursion, log(n), binary, the root node is the pivot
+    public int closestValue2(TreeNode root, double target) {
         if (root == null) {
             return Integer.MAX_VALUE;
         }
         int closest = root.val;
-        
-        TreeNode curr = root;
-        while (curr != null){
-            closest = Math.abs(closest - target) < Math.abs(curr.val - target) ? closest : curr.val;
-            curr = target < curr.val ? curr.left : curr.right;
-        }
-        return closest;
-    }
-    //https://segmentfault.com/a/1190000003797291
-    // no recursion
-    public int closestValue4(TreeNode root, double target) {
-        if (root == null) {
-            return Integer.MAX_VALUE;
-        }
-        int closest = root.val;
-        while(root != null){
-            closest = Math.abs(closest - target) < Math.abs(root.val - target) ? closest : root.val;
+        while (root != null){
+            if (Math.abs(root.val - target) < Math.abs(closest - target)) {
+                closest = root.val;
+            }
+            if (closest == target){
+                break;
+            }
             root = target < root.val ? root.left : root.right;
         }
         return closest;
@@ -50,15 +41,16 @@ public class Solution270 {
             return Integer.MAX_VALUE;
         }
         
-        TreeNode kid = target < root.val ? root.left : root.right;
-        if(kid == null) {
+        TreeNode child = target < root.val ? root.left : root.right;
+        if(child == null) {
             return root.val;
         }
-        int closest = closestValue(kid, target);
+        int closest = closestValue(child, target);
         return Math.abs(root.val - target) < Math.abs(closest - target) ? root.val : closest;
     }
+
     // recursion, also valid for Binary Search, not only for BST
-    public int closestValue2(TreeNode root, double target) {
+    public int closestValue(TreeNode root, double target) {
         if (root == null) {
             return Integer.MAX_VALUE;
         }
@@ -74,10 +66,10 @@ public class Solution270 {
         double diffleft = Math.abs(left - target);
         double diffright = Math.abs(right - target);
         
-        if (diffroot < diffleft) {
-            return diffroot < diffright ? root.val : right;
+        if (diffroot <= diffleft) {
+            return diffroot <= diffright ? root.val : right;
         } else {
-            return diffleft < diffright ? left : right;
+            return diffleft <= diffright ? left : right;
         }
     }
 }

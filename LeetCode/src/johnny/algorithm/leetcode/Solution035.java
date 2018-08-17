@@ -43,7 +43,7 @@ public class Solution035 {
         }
         
         if (nums[end] < target){
-            return end + 1;
+            return end + 1; // or return nums.length
         } else {
             return end;
         }

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Stack;
+
 /**
  * Trapping Rain Water. (picture not downloaded)
  * Given n non-negative integers representing an elevation map where the width 
@@ -15,59 +17,96 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution042 {
-    // two points
-    // http://www.jiuzhang.com/solutions/trapping-rain-water/
-    public int trap(int[] height) {
+    // two points, O(n)
+    public int trap2(int[] height) {
         if (height == null || height.length == 0) {
             return 0;
         }
         int start = 0;
         int end = height.length - 1;
-        int smaller = 0;
+        int leftmax = 0;
+        int rightmax = 0;
         int water = 0;
         while (start < end) {
-            if (height[start] < height[end]) {
-                smaller = height[start];
-                while (start < end && height[start] <= smaller) {
-                    water += smaller - height[start];
-                    start++;
-                }
+            leftmax = Math.max(leftmax, height[start]);
+            rightmax = Math.max(rightmax, height[end]);
+            if (leftmax < rightmax) {
+                water += leftmax - height[start];
+                start++;
             } else {
-                smaller = height[end];
-                while (start < end && height[end] <= smaller) {
-                    water += smaller - height[end];
-                    end--;
-                }
+                water += rightmax - height[end];
+                end--;
             }
         }
         return water;
     }
-    //http://bangbingsyb.blogspot.com/2014/11/leetcode-trapping-rain-water.html
-    public int trap2(int[] height) {
+    
+    // Stack, O(n)
+    public int trap(int[] height) {
         if (height == null || height.length == 0) {
             return 0;
         }
-        
-        int n = height.length;
-        int[] left = new int[n];
-        int[] right = new int[n];
-        
-        //scan from left to right to find the maximum left height
-        for (int i = 1; i < n; i++) {
-            left[i] = Math.max(left[i - 1], height[i - 1]);
-        }
-        
-        int water = 0;
-        //scan from right to left to find the maximum right height
-        for (int i = n - 2; i >= 0; i--) {
-            right[i] = Math.max(right[i + 1], height[i + 1]);
-            // water for each position
-            int min = Math.min(left[i], right[i]); // the highest water level depends on the lower height
-            if (min > height[i]) { // it must higher than the current height.
-                water += min - height[i];
+        Stack<Integer> stack = new Stack<Integer>();
+        int i = 0, maxWater = 0, maxBotWater = 0;
+        while (i < height.length){
+            if (stack.isEmpty() || height[i] <= height[stack.peek()]){
+                stack.push(i++);
+            }
+            else {
+                int bot = stack.pop();
+                maxBotWater = stack.isEmpty()? // empty means no il
+                0:(Math.min(height[stack.peek()],height[i])-height[bot])*(i-stack.peek()-1);
+                maxWater += maxBotWater;
             }
         }
+        return maxWater;
+    }
+    // DP, 3 times of O(n), space O(n)
+    public int trap3(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+
+        int[] left = new int[height.length];
+        int[] right = new int[height.length];
+
+        //scan from left to find the maximum left height
+        for (int i = 1; i < height.length; i++) {
+            left[i] = Math.max(left[i - 1], height[i]);
+        }
+
+        //scan from right to find the maximum right height
+        for (int i = height.length - 2; i >= 0; i--) {
+            right[i] = Math.max(right[i + 1], height[i]);
+        }
         
-        return water;
+        // water for each position
+        int res = 0;
+        for (int i = 1; i < height.length - 1; i++) {
+            res += Math.min(left[i], right[i]) - height[i];
+        }
+        
+        return res;
+    }
+    
+    // Brute force, O(n^2)
+    public int trap4(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        int res = 0;
+        for (int i = 1; i < height.length - 1; i++) {
+            int leftmax = 0, rightmax = 0;
+            //Search the left part for max bar size
+            for (int j = 0; j <= i; j++) { 
+                leftmax = Math.max(leftmax, height[j]);
+            }
+            //Search the right part for max bar size
+            for (int j = i; j < height.length; j++) { 
+                rightmax = Math.max(rightmax, height[j]);
+            }
+            res += Math.min(leftmax, rightmax) - height[i];
+        }
+        return res;
     }
 }
