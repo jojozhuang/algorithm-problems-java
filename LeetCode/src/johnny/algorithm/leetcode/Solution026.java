@@ -16,7 +16,7 @@ package johnny.algorithm.leetcode;
  */
 public class Solution026 {
     // Two pointers
-    public int removeDuplicates(int[] nums) {
+    public int removeDuplicates9(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -33,5 +33,53 @@ public class Solution026 {
         }
         
         return j + 1;
+    }
+    
+    // no duplicate
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int i = 0;
+        for (int n : nums) {
+            if (i == 0 || n > nums[i - 1]) {
+                nums[i] = n;
+                i++;
+            }
+        }
+        return i;
+    }
+    
+    // only one duplicate allowed
+    public int removeDuplicates2(int[] nums) {
+        if (nums == null) {
+            return 0;
+        }
+
+        int i = 0;
+        for (int n : nums) {
+            if (i < 2 || n > nums[i - 2]) {
+                nums[i] = n;
+                i++;
+            }
+        }
+        return i;
+    }
+    
+    // two duplicates allowed
+    public int removeDuplicates3(int[] nums) {
+        if (nums == null) {
+            return 0;
+        }
+
+        int i = 0;
+        for (int n : nums) {
+            if (i < 3 || n > nums[i - 3]) {
+                nums[i] = n;
+                i++;
+            }
+        }
+        return i;
     }
 }

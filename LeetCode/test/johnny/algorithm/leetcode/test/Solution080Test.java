@@ -13,6 +13,7 @@ public class Solution080Test extends JunitBase {
         Solution080 instance = new Solution080();
 
         assertEquals(0, instance.removeDuplicates(null));
+        assertEquals(1, instance.removeDuplicates(new int[] {1}));
         assertEquals(2, instance.removeDuplicates(new int[] {1,2}));
         assertEquals(3, instance.removeDuplicates(new int[] {1,2,2}));
         assertEquals(3, instance.removeDuplicates(new int[] {1,2, 3}));

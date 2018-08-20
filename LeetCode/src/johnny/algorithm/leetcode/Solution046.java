@@ -15,19 +15,19 @@ import java.util.List;
  */
 public class Solution046 {
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (nums == null || nums.length == 0) {
-            return ret;
+            return res;
         }
         
         List<Integer> list = new ArrayList<Integer>();
-        helper(ret, list, nums);
-        return ret;
+        helper(nums, list, res);
+        return res;
     }
     
-    private void helper(List<List<Integer>> ret, List<Integer> list, int[] nums) {
+    private void helper(int[] nums,List<Integer> list, List<List<Integer>> res) {
         if (list.size() == nums.length) {
-            ret.add(new ArrayList<Integer>(list));
+            res.add(new ArrayList<Integer>(list));
         }
         
         for (int i = 0; i < nums.length; i++) {
@@ -35,7 +35,7 @@ public class Solution046 {
                 continue;
             }
             list.add(nums[i]);
-            helper(ret, list, nums);
+            helper(nums, list, res);
             list.remove(list.size() - 1);
         }
     }

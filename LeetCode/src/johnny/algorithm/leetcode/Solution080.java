@@ -14,12 +14,13 @@ package johnny.algorithm.leetcode;
  */
 public class Solution080 {
     public int removeDuplicates(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null) {
             return 0;
         }
+
         int i = 0;
         for (int n : nums) {
-            if (i < 2 || n > nums[i-2]) {
+            if (i < 2 || n > nums[i - 2]) {
                 nums[i] = n;
                 i++;
             }
