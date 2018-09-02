@@ -16,7 +16,6 @@ public class Solution889 {
         return helper(pre, 0, pre.length - 1, post, 0, post.length - 1); 
     }
     
-    
     private TreeNode helper(int[] pre, int prestart, int preend,
                              int[] post, int poststart, int postend) {
         if (prestart > preend || poststart > postend) {
@@ -29,6 +28,7 @@ public class Solution889 {
         if (prestart + 1 > preend) {
             return root;
         }
+
         int index  = -1; // index of left child in post order
         for (int i = poststart; i <= postend; i++) {
             if (post[i] == pre[prestart + 1]) {

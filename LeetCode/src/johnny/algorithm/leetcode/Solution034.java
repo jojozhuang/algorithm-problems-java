@@ -22,36 +22,35 @@ public class Solution034 {
             return res;
         }
 
-        int leftIdx = extremeInsertionIndex(nums, target, true);
+        int leftIndex = firstGreaterEqual(nums, target);
 
         // assert that `leftIdx` is within the array bounds and that `target`
         // is actually in `nums`.
-        if (leftIdx == nums.length || nums[leftIdx] != target) {
+        if (leftIndex == nums.length || nums[leftIndex] != target) {
             return res;
         }
+        
+        int rightIndex = firstGreaterEqual(nums, target + 1) - 1;
 
-        res[0] = leftIdx;
-        res[1] = extremeInsertionIndex(nums, target, false)-1;
-
+        res[0] = leftIndex;
+        res[1] = rightIndex;
         return res;
     }
-    // returns leftmost (or rightmost) index at which `target` should be
-    // inserted in sorted array `nums` via binary search.
-    private int extremeInsertionIndex(int[] nums, int target, boolean left) {
-        int lo = 0;
-        int hi = nums.length;
-
-        while (lo < hi) {
-            int mid = (lo+hi)/2;
-            if (nums[mid] > target || (left && target == nums[mid])) {
-                hi = mid;
-            }
-            else {
-                lo = mid+1;
+    
+    // find the number from left side, which is equal or larger than the target
+    private int firstGreaterEqual(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] < target) {
+                start = mid + 1;
+            } else {
+                end = mid;
             }
         }
         
-        return lo;
+        return start;
     }
     
     public int[] searchRange2(int[] nums, int target) {

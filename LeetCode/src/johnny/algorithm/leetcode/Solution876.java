@@ -33,6 +33,22 @@ The number of nodes in the given list will be between 1 and 100.
  */
 public class Solution876 {
     public ListNode middleNode(ListNode head) {
-        return null;
+        if (head == null) {
+            return null;
+        }
+
+        // define fast and slow pointers
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next; // two steps for each pace
+            slow = slow.next;      // one step for each pace
+        }
+        
+        if (fast == null) {
+            return slow;
+        } else {
+            return slow.next;
+        }
     }
 }

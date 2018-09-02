@@ -16,6 +16,7 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution242 {
+    // sort and compare
     public boolean isAnagram2(String s, String t) {
         if (s == null || t == null) {
             return false;
@@ -67,13 +68,14 @@ public class Solution242 {
             return false;
         }
         
-        int[] sCount = new int[256];
+        int[] count = new int[256];
         for (int i = 0; i < s.length(); i++) {
-            sCount[s.charAt(i)]++;
+            count[s.charAt(i)]++;
+            count[t.charAt(i)]--;
         }
         
-        for (int j = 0; j < t.length(); j++) {
-            if(--sCount[t.charAt(j)] < 0) {
+        for (int i = 0; i < count.length; i++) {
+            if(count[i] != 0) {
                 return false;
             }
         }

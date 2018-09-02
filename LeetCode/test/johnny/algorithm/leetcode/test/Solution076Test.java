@@ -14,6 +14,7 @@ public class Solution076Test extends JunitBase {
 
         assertEquals("", instance.minWindow("", ""));
         assertEquals("a", instance.minWindow("a", "a"));
+        assertEquals("ACB", instance.minWindow("ABAACBAB", "ABC"));
         assertEquals("BANC", instance.minWindow("ADOBECODEBANC", "ABC"));
     }
 }

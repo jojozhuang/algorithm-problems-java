@@ -89,7 +89,7 @@ public class AllSorting {
             }
         }
       
-        return nums;        
+        return nums;
     }
     
     public int[] heapSort(int nums[]) {
@@ -179,11 +179,37 @@ public class AllSorting {
             else{
                 nums[k] = copy[right];
                 right++;
-            }                
+            }
         }
     }
     
-    public void merge2(int[] nums, int start, int mid, int end) {
+    // less space
+    private void merge2(int[] nums, int start, int mid, int end) {
+        int[] copy = Arrays.copyOfRange(nums, start, end + 1);
+        
+        int left = start;
+        int right = mid + 1;
+        for (int i = start; i <= end; i++) {
+            if (left > mid) { // no item at left
+                nums[i] = copy[right - start];
+                right++;
+            }
+            else if(right > end) { // no item at right
+                nums[i] = copy[left - start];
+                left++;
+            }
+            else if (copy[left - start] <= copy[right - start]) {
+                nums[i] = copy[left - start];
+                left++;
+            }
+            else{
+                nums[i] = copy[right - start];
+                right++;
+            }
+        }
+    }
+    
+    public void merge3(int[] nums, int start, int mid, int end) {
         int[] mergeArr = new int[nums.length];
         for (int i = start; i <= end; i++) {
             mergeArr[i] = nums[i];

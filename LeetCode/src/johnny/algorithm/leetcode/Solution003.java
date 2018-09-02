@@ -2,63 +2,83 @@ package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
  * Longest Substring Without Repeating Characters.
- * Given a string, find the length of the longest substring without repeating 
- * characters. For example, the longest substring without repeating letters for 
- * "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring
- * is "b", with the length of 1.
+Given a string, find the length of the longest substring without repeating characters.
+
+Example 1:
+
+Input: "abcabcbb"
+Output: 3 
+Explanation: The answer is "abc", which the length is 3.
+Example 2:
+
+Input: "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3. 
+Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  * 
  * @author Johnny
  */
 public class Solution003 {
-    // Sliding Window
+    // template
+    // https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
     public int lengthOfLongestSubstring(String s) {
-        // Empty check
-        if (s == null || s.length() == 0){
+        if (s == null || s.length() == 0) {
             return 0;
         }
+        
+        HashMap<Character, Integer> map = new HashMap<>();
+        int longest = 0, count = 0, left = 0, right = 0;
 
-        Map<Character, Integer> map = new HashMap<>(); // Store the index of each character
-        // Initialization, which also handles the case that s has only one character
-        map.put(s.charAt(0), 0);
-        int max = 1;
-        
-        // Define the sliding window with i and j
-        for (int i = 0, j = 1; j < s.length(); j++) {
-            char c = s.charAt(j);
-            if (map.containsKey(c) && map.get(c) >= i) {  // must compare with the current i, example case: s="abcdba"
-                i = map.get(c) + 1;
+        while (right < s.length()) {
+            char ch = s.charAt(right);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+            if(map.get(ch) > 1) {
+                count++;
             }
-            map.put(c, j);
-            max = Math.max(max, j - i + 1);
+            right++;
+            // count > 0 means repeating character
+            while (count > 0) {
+                char chLeft = s.charAt(left);
+                if (map.get(chLeft) > 1) {
+                    count--;
+                }
+                map.put(chLeft, map.get(chLeft) - 1);
+                left++;
+            }
+            longest = Math.max(longest, right - left);
         }
-        return max;
+        
+        return longest;
     }
+    // Sliding Window
     public int lengthOfLongestSubstring3(String s) {
-        if (s == null || s.length() == 0){
+        if (s == null || s.length() == 0) {
             return 0;
         }
-   
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        map.put(s.charAt(0), 0);
         
-        int start = 0, end = 1;
-        int max = 1;
-        
-        while (end < s.length()){
-            char c = s.charAt(end);
-            if (map.containsKey(c) && map.get(c) >= start){
-                start = map.get(c) + 1;
+        int longest = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        int left = 0, right = 0;
+        while (right < s.length()) {
+            char ch = s.charAt(right);
+            if (map.containsKey(ch) && map.get(ch) >= left) { // index must be within the range of the sliding window
+                left = map.get(ch) + 1;
             }
-            map.put(c, end);
-            max = Math.max(max, end - start + 1);
-            end++;
+            map.put(ch, right);
+            longest = Math.max(longest, right - left + 1);
+            right++;
         }
-        return max;
+        
+        return longest;
     }
     
     //Brute Force
@@ -70,7 +90,9 @@ public class Solution003 {
         int ans = 0;
         for (int i = 0; i < n; i++)
             for (int j = i + 1; j <= n; j++)
-                if (allUnique(s, i, j)) ans = Math.max(ans, j - i);
+                if (allUnique(s, i, j)) {
+                    ans = Math.max(ans, j - i);
+                }
         return ans;
     }
 
@@ -78,7 +100,9 @@ public class Solution003 {
         Set<Character> set = new HashSet<>();
         for (int i = start; i < end; i++) {
             Character ch = s.charAt(i);
-            if (set.contains(ch)) return false;
+            if (set.contains(ch)) {
+                return false;
+            }
             set.add(ch);
         }
         return true;
