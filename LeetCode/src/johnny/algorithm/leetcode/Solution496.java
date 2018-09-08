@@ -43,7 +43,7 @@ public class Solution496 {
         }
         
         Map<Integer, Integer> greaterMap = new HashMap<Integer, Integer>();
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<Integer>(); // keep ascending order for the elements at right side
         
         for (int i = nums.length - 1; i >= 0; i--) {
             while (!stack.isEmpty() && nums[i] > stack.peek()) {
@@ -65,5 +65,121 @@ public class Solution496 {
         }
         
         return res; 
-    }  
+    }
+    
+    /* next larger at right side
+       input:  [1,3, 4, 2]
+       output: [3,4,-1,-1]
+    */
+    public int[] nextRightLarge(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{};
+        }
+        
+        int[] res = new int[nums.length];
+        Stack<Integer> stack = new Stack<Integer>(); // keep ascending order for the elements at right side
+        
+        for (int i = nums.length - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && nums[i] > stack.peek()) {
+                stack.pop();
+            }
+           
+            if (stack.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = stack.peek();
+            }
+            
+            stack.push(nums[i]);
+        }
+        
+        return res;
+    }
+    
+    /* next smaller at right side
+       input:  [1,3, 4, 2]
+       output: [-1,2,2,-1]
+    */
+    public int[] nextRightSmall(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{};
+        }
+        
+        int[] res = new int[nums.length];
+        Stack<Integer> stack = new Stack<Integer>(); // keep descending order for the elements at right side
+        
+        for (int i = nums.length - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && nums[i] < stack.peek()) {
+                stack.pop();
+            }
+           
+            if (stack.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = stack.peek();
+            }
+            
+            stack.push(nums[i]);
+        }
+        
+        return res;
+    }
+    
+    /* next larger at left side
+       input:  [1, 3, 4, 2]
+       output: [-1,-1,-1,4]
+    */
+    public int[] nextLeftLarge(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{};
+        }
+        
+        int[] res = new int[nums.length];
+        Stack<Integer> stack = new Stack<Integer>(); // keep descending order for the elements at right side
+        
+        for (int i = 0; i < nums.length; i++) {
+            while (!stack.isEmpty() && nums[i] > stack.peek()) {
+                stack.pop();
+            }
+           
+            if (stack.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = stack.peek();
+            }
+            
+            stack.push(nums[i]);
+        }
+        
+        return res;
+    }
+
+    /* next smaller at left side
+       input:  [1, 3,4,2]
+       output: [-1,1,3,1]
+    */
+    public int[] nextLeftSmall(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{};
+        }
+        
+        int[] res = new int[nums.length];
+        Stack<Integer> stack = new Stack<Integer>(); // keep ascending order for the elements at right side
+        
+        for (int i = 0; i < nums.length; i++) {
+            while (!stack.isEmpty() && nums[i] < stack.peek()) {
+                stack.pop();
+            }
+           
+            if (stack.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = stack.peek();
+            }
+            
+            stack.push(nums[i]);
+        }
+        
+        return res;
+    }
 }

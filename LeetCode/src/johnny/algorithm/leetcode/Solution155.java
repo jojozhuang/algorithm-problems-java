@@ -15,8 +15,15 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution155 {
-    private Stack<Integer> stack1 = new Stack<Integer>();
-    private Stack<Integer> stack2 = new Stack<Integer>();
+    private Stack<Integer> stack1; // normal item
+    private Stack<Integer> stack2; // minimum item only
+    
+    /** initialize your data structure here. */
+    public Solution155() {
+        stack1 = new Stack<Integer>();
+        stack2 = new Stack<Integer>();
+    }
+    
     public void push(int x) {
         stack1.push(x);
         if (x <= min()) {
@@ -46,28 +53,4 @@ public class Solution155 {
             return stack2.peek();
         }
     }
-
-    /*private Stack<Integer> stack1 = new Stack<Integer>();
-    private Stack<Integer> stack2 = new Stack<Integer>();
-    public void push(int x) {
-        stack1.push(x);
-        if (stack2.isEmpty()) {
-            stack2.push(x);
-        } else {
-            stack2.push(Math.min(x, stack2.peek()));
-        }
-    }
-
-    public void pop() {
-        stack2.pop();
-        stack1.pop();
-    }
-
-    public int top() {
-        return stack1.peek();
-    }
-
-    public int getMin() {
-        return stack2.peek();
-    }*/
 }

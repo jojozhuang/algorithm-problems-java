@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -37,7 +38,7 @@ public class Solution020 {
         return stack.isEmpty();
     }
     
-    public boolean isValid2(String s) {
+    public boolean isValid2(String s, HashMap<Character, Character> map) {
         if (s == null || s.isEmpty()) {
             return true;
         }
@@ -47,25 +48,13 @@ public class Solution020 {
         }
         
         Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < s.length(); i++) {
-            char current = s.charAt(i);
-            if (current == '(' || current == '{' || current == '[') {
-                stack.push(current);
-            } else if (current == ')' || current == '}' || current == ']') {
-                if (stack.empty()) {
-                    return false;
-                }
-                char top = stack.pop();
-                if ((current == ')' && top == '(') ||
-                    (current == '}' && top == '{') ||
-                    (current == ']' && top == '[')) {
-                    continue;
-                } else {
-                    return false;
-                }
+        for (char c : s.toCharArray()) {
+            if (map.containsKey(c)) {
+                stack.push(map.get(c));
+            } else if (stack.isEmpty() || stack.pop() != c) {
+                return false;
             }
         }
-        
-       return stack.isEmpty();
+        return stack.isEmpty();
     }
 }

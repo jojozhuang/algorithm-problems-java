@@ -2,7 +2,9 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -34,51 +36,98 @@ import java.util.stream.Collectors;
  * @author Johnny
  */
 public class Solution648 {
+    // HashSet
+    public String replaceWords2(List<String> dict, String sentence) {
+        if (dict == null || sentence == null || sentence.isEmpty()) {
+            return null;
+        }
+        
+        Set<String> set = new HashSet<>();
+        for (String word : dict) {
+            set.add(word);
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        String[] words = sentence.split(" ");
+        
+        for (String word : words) {
+            if (word.isEmpty()) {
+                continue;
+            }
+            
+            String prefix = "";
+            for (int i = 1; i <= word.length(); i++) {
+                prefix = word.substring(0, i);
+                if (set.contains(prefix)) {
+                    break;
+                }
+            }
+            sb.append(prefix);
+            sb.append(" ");
+        }
+        
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
+    
+    // Trie
     public String replaceWords(List<String> dict, String sentence) {
-        Trie trie = new Trie(256);
-        dict.forEach(s -> trie.insert(s));
-        List<String> res = new ArrayList<>();
-        Arrays.stream(sentence.split(" ")).forEach(str -> res.add(trie.getShortestPrefix(str)));
-        return res.stream().collect(Collectors.joining(" "));
+        String[] tokens = sentence.split(" ");
+        TrieNode trie = buildTrie(dict);
+        return replaceWords(tokens, trie);
     }
 
-
-    class Trie {
-        private int R;
-        private TrieNode root;
-
-        public Trie(int R) {
-            this.R = R;
-            root = new TrieNode();
+    private String replaceWords(String[] tokens, TrieNode root) {
+        StringBuilder sb = new StringBuilder();
+        for (String token : tokens) {
+            sb.append(getShortestReplacement(token, root));
+            sb.append(" ");
         }
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
 
-        // Returns the shortest prefix of the word that is there in the trie
-        // If no such prefix exists, return the original word
-        public String getShortestPrefix(String word) {
-            int len =  getShortestPrefix(root, word, -1);
-            return (len < 1) ? word : word.substring(0, len);
+    private String getShortestReplacement(String token, final TrieNode root) {
+        TrieNode node = root;
+        StringBuilder sb = new StringBuilder();
+        for (char c : token.toCharArray()) {
+            sb.append(c);
+            if (node.children[c - 'a'] != null) {
+                if (node.children[c - 'a'].isWord) {
+                    return sb.toString();
+                }
+                node = node.children[c - 'a'];
+            } else {
+                return token;
+            }
         }
+        return token;
+    }
+    
+    private class TrieNode {
+        char val;
+        TrieNode[] children;
+        boolean isWord;
 
-        private int getShortestPrefix(TrieNode root, String word, int res) {
-            if(root == null || word.isEmpty()) return 0;
-            if(root.isWord) return res + 1;
-            return getShortestPrefix(root.next[word.charAt(0)], word.substring(1), res+1);
+        public TrieNode(char val) {
+            this.val = val;
+            this.children = new TrieNode[26];
+            this.isWord = false;
         }
-
-        // Inserts a word into the trie.
-        public void insert(String word) {
-            insert(root, word);
+    }
+    
+    private TrieNode buildTrie(List<String> dict) {
+        TrieNode root = new TrieNode(' ');
+        for (String word : dict) {
+            TrieNode node = root;
+            for (char c : word.toCharArray()) {
+                if (node.children[c - 'a'] == null) {
+                    node.children[c - 'a'] = new TrieNode(c);
+                }
+                node = node.children[c - 'a'];
+            }
+            node.isWord = true;
         }
-
-        private void insert(TrieNode root, String word) {
-            if (word.isEmpty()) { root.isWord = true; return; }
-            if (root.next[word.charAt(0)] == null) root.next[word.charAt(0)] = new TrieNode();
-            insert(root.next[word.charAt(0)], word.substring(1));
-        }
-
-        private class TrieNode {
-            private TrieNode[] next = new TrieNode[R];
-            private boolean isWord;
-        }
+        return root;
     }
 }

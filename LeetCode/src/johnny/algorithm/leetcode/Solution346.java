@@ -25,7 +25,7 @@ public class Solution346 {
             queue.poll();
         }
         int sum = 0;
-        for(int i: queue){
+        for (int i: queue) {
             sum = sum + i;
         }
  

@@ -22,9 +22,16 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution225 {
-    Queue<Integer> queue1 = new LinkedList<Integer>(); // Q1 always has all of the elements
-    Queue<Integer> queue2 = new LinkedList<Integer>(); // Q2 always be empty after pop or top.
+    Queue<Integer> queue1; // Q1 always has all of the elements
+    Queue<Integer> queue2; // Q2 always be empty after pop or top.
     int lastnum = 0;
+    
+    /** Initialize your data structure here. */
+    public Solution225() {
+        queue1 = new LinkedList<Integer>();
+        queue2 = new LinkedList<Integer>();
+    }
+    
     // Push element x onto stack.
     public void push(int x) {
         queue1.offer(x);
@@ -32,7 +39,7 @@ public class Solution225 {
 
     // Removes the element on top of the stack and returns that element.
     public int pop() {
-        while(!queue1.isEmpty()) {
+        while (!queue1.isEmpty()) {
             lastnum = queue1.poll();
             if (!queue1.isEmpty()) {
                 queue2.offer(lastnum);
@@ -46,7 +53,7 @@ public class Solution225 {
 
     // Get the top element.
     public int top() {
-        while(!queue1.isEmpty()) {
+        while (!queue1.isEmpty()) {
             lastnum = queue1.poll();
             queue2.offer(lastnum);
         }

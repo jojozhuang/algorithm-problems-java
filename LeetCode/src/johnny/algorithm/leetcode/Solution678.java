@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Stack;
+
 /**
  *678. Valid Parenthesis String
 Given a string containing only three types of characters: '(', ')' and '*', write a function to check whether this string is valid. We define the validity of a string by these rules:
@@ -25,7 +27,7 @@ The string size will be in the range [1, 100].
  * @author Johnny
  */
 public class Solution678 {
-    public boolean checkValidString(String s) {
+    public boolean checkValidString2(String s) {
         int low = 0;
         int high = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -48,5 +50,34 @@ public class Solution678 {
             }
         }
         return low == 0;
+    }
+    
+    // two stacks, store the index of left parenthesis and star
+    public boolean checkValidString(String s) {
+        Stack<Integer> leftID = new Stack<>();
+        Stack<Integer> starID = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == '(') {
+                leftID.push(i);
+            } else if (ch == '*') {
+                starID.push(i);
+            } else {
+                if (leftID.isEmpty() && starID.isEmpty()) {
+                    return false;
+                }
+                if (!leftID.isEmpty()) {
+                    leftID.pop();
+                } else {
+                    starID.pop();
+                }
+            }
+        }
+        while (!leftID.isEmpty() && !starID.isEmpty()) {
+            if (leftID.pop() > starID.pop()) {
+                return false;
+            }
+        }
+        return leftID.isEmpty();
     }
 }

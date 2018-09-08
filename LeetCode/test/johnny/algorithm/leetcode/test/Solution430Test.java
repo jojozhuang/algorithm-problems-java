@@ -12,6 +12,6 @@ public class Solution430Test extends JunitBase {
         System.out.println("dummy");
         Solution430 instance = new Solution430();
 
-        assertEquals(0, instance.dummy());
+        assertEquals(0, instance.flatten(null));
     }
 }

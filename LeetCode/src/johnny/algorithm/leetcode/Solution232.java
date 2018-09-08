@@ -23,14 +23,21 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution232 {
-    private Stack<Integer> stack1 = new Stack<Integer>(); // s1 stores new elements
-    private Stack<Integer> stack2 = new Stack<Integer>(); // s2 stores old elements
+    private Stack<Integer> stack1; // s1 stores new elements
+    private Stack<Integer> stack2; // s2 stores old elements
     
+    /** Initialize your data structure here. */
+    public Solution232() {
+        stack1 = new Stack<Integer>();
+        stack2 = new Stack<Integer>();
+    }
+    
+    /** Push element x to the back of queue. */
     public void push(int x) {
         stack1.push(x);
     }
 
-    // Removes the element from in front of queue and returns that element. 
+    /** Removes the element from in front of queue and returns that element. */
     public int pop() {
         if (!stack2.isEmpty()) {
             return stack2.pop();
@@ -41,7 +48,7 @@ public class Solution232 {
         return stack2.pop();
     }
 
-    // Get the front element.
+    /** Get the front element. */
     public int peek() {
         if (!stack2.isEmpty()) {
             return stack2.peek();
@@ -52,42 +59,8 @@ public class Solution232 {
         return stack2.peek();
     }
 
-    // Return whether the queue is empty.
+    /** Returns whether the queue is empty. */
     public boolean empty() {
         return stack1.isEmpty() && stack2.empty();
     }
-    
-    /*
-    private Stack<Integer> stack1 = new Stack<Integer>();
-    private Stack<Integer> stack2 = new Stack<Integer>();
-    
-    public void push(int x) {
-        while (!stack1.isEmpty()) {
-            stack2.push(stack1.pop());
-        }
-        stack2.push(x);
-        while (!stack2.isEmpty()) {
-            stack1.push(stack2.pop());
-        }
-    }
-
-    // Removes the element from in front of queue.
-    public void pop() {
-        if (!stack1.isEmpty()) {
-            stack1.pop();
-        }
-    }
-
-    // Get the front element.
-    public int peek() {
-        if (!stack1.isEmpty()) {
-            return stack1.peek();
-        }
-        return -1;
-    }
-
-    // Return whether the queue is empty.
-    public boolean empty() {
-        return stack1.isEmpty();
-    }*/
 }

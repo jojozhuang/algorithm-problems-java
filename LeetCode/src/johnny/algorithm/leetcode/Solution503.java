@@ -24,7 +24,33 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution503 {
+    // input:  [1,3, 4, 2], output: [3,4,-1,3]
     public int[] nextGreaterElements(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{};
+        }
+        
+        int[] res = new int[nums.length];
+        Stack<Integer> stack = new Stack<Integer>(); // keep ascending order for the elements at right side
+        
+        for (int i = nums.length - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && nums[i] > stack.peek()) {
+                stack.pop();
+            }
+           
+            if (stack.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = stack.peek();
+            }
+            
+            stack.push(nums[i]);
+        }
+        
+        return res;
+    }
+    
+    public int[] nextGreaterElements2(int[] nums) {
         int n = nums.length;
         int[] next = new int[n];
         Arrays.fill(next, -1);
@@ -36,5 +62,5 @@ public class Solution503 {
             if (i < n) stack.push(i);
         }   
         return next;
-    }  
+    }
 }
