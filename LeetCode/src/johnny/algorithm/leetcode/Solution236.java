@@ -34,14 +34,11 @@ public class Solution236 {
         
         if (left != null && right == null) {
             return left;
-        }
-        else if (left == null && right != null) {
+        } else if (left == null && right != null) {
             return right;
-        }
-        else if (left != null && right != null) {
+        } else if (left != null && right != null) {
             return root;
-        }
-        else {
+        } else {
             return null;
         }
     }

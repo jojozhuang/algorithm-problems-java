@@ -33,14 +33,14 @@ import johnny.algorithm.leetcode.common.TreeNode;
  */
 public class Solution298 {
     public int longestConsecutive(TreeNode root) {
-        if(root == null){
+        if (root == null){
             return 0;
         }
         return findLongest(root, 0, root.val - 1);
     }
     
     private int findLongest(TreeNode root, int length, int preVal){
-        if(root == null){
+        if (root == null){
             return length;
         }
         

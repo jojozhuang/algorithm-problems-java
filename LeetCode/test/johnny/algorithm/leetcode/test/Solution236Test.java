@@ -15,23 +15,17 @@ public class Solution236Test extends JunitBase {
 
         assertEquals(null, instance.lowestCommonAncestor(null, null, null));
 
-        TreeNode root1 = new TreeNode(1);
-        TreeNode p1 = new TreeNode(2);
-        root1.left = p1;
-        assertEquals(root1, instance.lowestCommonAncestor(root1, root1, p1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"1","2","#"});
+        assertEquals(root1, instance.lowestCommonAncestor(root1, root1, root1.left));
 
-        TreeNode root2 = new TreeNode(1);
-        TreeNode p2 = new TreeNode(2);
-        root2.left = p2;
-        TreeNode q2 = new TreeNode(3);
-        root2.right = q2;
-        assertEquals(root2, instance.lowestCommonAncestor(root2, p2, q2));
+        TreeNode root2 = TreeNode.createInstance(new String[] {"1","2","3"});
+        assertEquals(root2, instance.lowestCommonAncestor(root2, root2.left, root2.right));
 
-        TreeNode root3 = new TreeNode(1);
-        TreeNode p3 = new TreeNode(2);
-        root3.left = p3;
-        TreeNode q3 = new TreeNode(3);
-        root3.right = q3;
-        assertEquals(root3, instance.lowestCommonAncestor(root3, p3, q3));
+        TreeNode root3 = TreeNode.createInstance(new String[] {"3","5","1","6","2","0","8","#","#","7","4"});
+        assertEquals(root3, instance.lowestCommonAncestor(root3, root3.left, root3.right));
+        assertEquals(root3.left, instance.lowestCommonAncestor(root3, root3.left, root3.left.right));
+        assertEquals(root3, instance.lowestCommonAncestor(root3, root3.left.right.right, root3.right.right));
+        assertEquals(root3.left.right, instance.lowestCommonAncestor(root3, root3.left.right.left, root3.left.right.right));
+        assertEquals(root3.left, instance.lowestCommonAncestor(root3, root3.left.left, root3.left.right.right));
     }
 }

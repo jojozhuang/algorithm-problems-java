@@ -29,11 +29,11 @@ public class Solution112 {
             return root.val == sum;
         }
 
-        if(root.left != null && hasPathSum(root.left, sum - root.val)) {
+        if (root.left != null && hasPathSum(root.left, sum - root.val)) {
             return true;
         }
 
-        if(root.right != null && hasPathSum(root.right, sum - root.val)) {
+        if (root.right != null && hasPathSum(root.right, sum - root.val)) {
             return true;
         }
         

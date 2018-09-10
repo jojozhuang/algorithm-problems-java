@@ -6,12 +6,24 @@ import org.junit.Test;
 import johnny.algorithm.leetcode.Solution428;
 
 public class Solution428Test extends JunitBase {
-
+    
     @Test
-    public void test() {
-        System.out.println("dummy");
+    public void testSerialize() {
+        System.out.println("serialize");
         Solution428 instance = new Solution428();
 
-        assertEquals(0, instance.dummy());
+        assertEquals("", instance.serialize(null));
+
+        Solution428.Node root2 = instance.deserialize("1,0");
+        assertEquals("1,0", instance.serialize(root2));
+
+        Solution428.Node root3 = instance.deserialize("1,1,4,0");
+        assertEquals("1,1,4,0", instance.serialize(root3));
+
+        Solution428.Node root4 = instance.deserialize("1,2,2,0,3,0");
+        assertEquals("1,2,2,0,3,0", instance.serialize(root4));
+
+        Solution428.Node root5 = instance.deserialize("1,3,3,2,5,0,6,0,2,0,4,0");
+        assertEquals("1,3,3,2,5,0,6,0,2,0,4,0", instance.serialize(root5));
     }
 }

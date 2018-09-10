@@ -32,8 +32,8 @@ public class Solution094 {
         List<Integer> res = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode curr = root;
-        while(!stack.isEmpty() || curr != null) {
-            if(curr != null) {
+        while (!stack.isEmpty() || curr != null) {
+            if (curr != null) {
                 stack.push(curr);
                 curr = curr.left;
             } else {

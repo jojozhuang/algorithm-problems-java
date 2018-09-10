@@ -31,8 +31,8 @@ public class Solution145 {
         LinkedList<Integer> res = new LinkedList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode curr = root;
-        while(!stack.isEmpty() || curr != null) {
-            if(curr != null) {
+        while (!stack.isEmpty() || curr != null) {
+            if (curr != null) {
                 stack.push(curr);
                 res.addFirst(curr.val);     // Reverse the process of preorder
                 curr = curr.right;          // Reverse the process of preorder
@@ -90,7 +90,7 @@ public class Solution145 {
         return res;
     }
     
-    // reverse mid->right-left => left-right-mid
+    // reverse mid->right-left => left-right-mid, similar with preorder
     public List<Integer> postorderTraversal3(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         

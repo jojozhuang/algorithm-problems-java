@@ -1,7 +1,5 @@
 package johnny.algorithm.leetcode;
 
-import java.util.Arrays;
-
 /**
  * Matchsticks to Square
  * 

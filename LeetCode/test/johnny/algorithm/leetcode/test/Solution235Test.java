@@ -15,39 +15,17 @@ public class Solution235Test extends JunitBase {
 
         assertEquals(null, instance.lowestCommonAncestor(null, null, null));
 
-        TreeNode root1 = new TreeNode(1);
-        TreeNode p1 = new TreeNode(2);
-        root1.right = p1;
-        assertEquals(root1, instance.lowestCommonAncestor(root1, root1, p1));
+        TreeNode root1 = TreeNode.createInstance(new String[] {"1","#","2"});
+        assertEquals(root1, instance.lowestCommonAncestor(root1, root1, root1.right));
 
-        TreeNode root2 = new TreeNode(2);
-        TreeNode p2 = new TreeNode(1);
-        root2.left = p2;
-        TreeNode q2 = new TreeNode(3);
-        root2.right = q2;
-        assertEquals(root2, instance.lowestCommonAncestor(root2, p2, q2));
+        TreeNode root2 = TreeNode.createInstance(new String[] {"2","1","3"});
+        assertEquals(root2, instance.lowestCommonAncestor(root2, root2.left, root2.right));
 
-        TreeNode root3 = new TreeNode(6);
-        TreeNode n2 = new TreeNode(2);
-        root3.left = n2;
-        TreeNode n0 = new TreeNode(0);
-        n2.left = n0;
-        TreeNode n4 = new TreeNode(4);
-        n2.right = n4;
-        TreeNode n3 = new TreeNode(3);
-        n4.left = n3;
-        TreeNode n5 = new TreeNode(5);
-        n4.right = n5;
-        TreeNode n8 = new TreeNode(8);
-        root3.right = n8;
-        TreeNode n7 = new TreeNode(7);
-        n8.left = n7;
-        TreeNode n9 = new TreeNode(9);
-        n8.right = n9;
-        assertEquals(root3, instance.lowestCommonAncestor(root3, n2, n8));
-        assertEquals(n2, instance.lowestCommonAncestor(root3, n2, n4));
-        assertEquals(root3, instance.lowestCommonAncestor(root3, n5, n9));
-        assertEquals(n4, instance.lowestCommonAncestor(root3, n3, n5));
-        assertEquals(n2, instance.lowestCommonAncestor(root3, n0, n5));
+        TreeNode root3 = TreeNode.createInstance(new String[] {"6","2","8","0","4","7","9","#","#","3","5"});
+        assertEquals(root3, instance.lowestCommonAncestor(root3, root3.left, root3.right));
+        assertEquals(root3.left, instance.lowestCommonAncestor(root3, root3.left, root3.left.right));
+        assertEquals(root3, instance.lowestCommonAncestor(root3, root3.left.right.right, root3.right.right));
+        assertEquals(root3.left.right, instance.lowestCommonAncestor(root3, root3.left.right.left, root3.left.right.right));
+        assertEquals(root3.left, instance.lowestCommonAncestor(root3, root3.left.left, root3.left.right.right));
     }
 }
