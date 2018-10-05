@@ -30,15 +30,12 @@ public class Solution091 {
             return 0;
         }
         
-        int[] dp = new int[s.length() + 1];
+        int n = s.length();
+        int[] dp = new int[n + 1];
         dp[0] = 1;
+        dp[1] = s.charAt(0) != '0' ? 1 : 0;
         
-        if (isValid(s.substring(0, 1))) {
-            dp[1] = 1;
-        } else {
-            dp[1] = 0;
-        }
-        for (int i = 2; i <= s.length(); i++) {
+        for (int i = 2; i <= n; i++) {
             if (isValid(s.substring(i - 1, i))) {
                 dp[i] += dp[i - 1];
             }
@@ -47,7 +44,7 @@ public class Solution091 {
             }
         }
         
-        return dp[dp.length - 1];
+        return dp[n];
     }
     
     private boolean isValid(String s) {

@@ -10,6 +10,30 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution070 {
+    // Fibonacci Number
+    public int climbStairs(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        if (n == 2) {
+            return 2;
+        }
+        int first = 1;
+        int second = 2;
+        int third = 0;
+
+        for (int i = 2; i < n; i++) {
+            third = first + second;
+            first = second;
+            second = third;
+        }
+
+        return third;
+    }
+    // DP
     public int climbStairs2(int n) {
         if (n <= 0) {
             return 0;
@@ -24,42 +48,20 @@ public class Solution070 {
         dp[0] = 1;
         dp[1] = 2;
         // Calculate f[i]
-        for (int i=2; i<n; i++) {
+        for (int i = 2; i < n; i++) {
             dp[i] = dp[i-1] + dp[i-2];
         }
-        // Get result;
+        // Get result
         return dp[n - 1];
     }
     
-    public int climbStairs(int n) {
-        if (n <= 0) {
-            return 0;
-        }
-        if (n == 1) {
-            return 1;
-        }
-        if (n == 2) {
-            return 2;
-        }
-        int first = 1;
-        int second = 2;
-        int res = 0;
-
-        for (int i=2; i<n; i++) {
-            res = first + second;
-            first = second;
-            second = res;
-        }
-
-        return res;
-    }
-    
+    // Recursion
     public int climbStairs3(int n) {
-        if (n<=0)
+        if (n <= 0)
             return 0;
-        if (n==1)
+        if (n == 1)
             return 1;
-        if (n==2)
+        if (n == 2)
             return 2;
         
         return climbStairs(n-1) + climbStairs(n-2);

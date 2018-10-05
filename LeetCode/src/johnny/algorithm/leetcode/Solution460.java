@@ -46,7 +46,7 @@ public class Solution460 {
         vals = new HashMap<>();
         counts = new HashMap<>();
         lists = new HashMap<>();
-        lists.put(1, new LinkedHashSet<>());
+        lists.put(0, new LinkedHashSet<>());
     }
     
     public int get(int key) {
@@ -75,10 +75,11 @@ public class Solution460 {
             int evit = lists.get(min).iterator().next();
             lists.get(min).remove(evit);
             vals.remove(evit);
+            counts.remove(evit);
         }
         vals.put(key, value);
-        counts.put(key, 1);
-        min = 1;
-        lists.get(1).add(key);
+        counts.put(key, 0);
+        min = 0;
+        lists.get(0).add(key);
     }
 }

@@ -48,7 +48,6 @@ public class FBStringComparatorTest {
     @Test
     public void testComparator() {
         System.out.println("FBStringComparator");
-        String s = "";
         FBStringComparator comparator = new FBStringComparator();
         
         String[] list1 = new String[] {"photo1","photo10","photo2"};

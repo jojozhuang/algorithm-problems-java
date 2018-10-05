@@ -46,12 +46,12 @@ public class Solution051 {
     }
     
     private void dfs(int n, int row, int[] columnVal, List<List<String>> res){
-        if(row == n){
+        if (row == n){
             List<String> list = new ArrayList<String>();
-            for(int i = 0; i < n; i++){
+            for (int i = 0; i < n; i++) {
                 StringBuilder sb = new StringBuilder();
-                for(int j = 0; j < n; j++){
-                    if(j == columnVal[i]) {
+                for (int j = 0; j < n; j++) {
+                    if (j == columnVal[i]) {
                         sb.append("Q");
                     } else {
                         sb.append(".");
@@ -62,10 +62,10 @@ public class Solution051 {
             }
             
             res.add(list);
-        } else{
-            for(int i = 0; i < n; i++){
+        } else {
+            for (int i = 0; i < n; i++) {
                 columnVal[row] = i;
-                if(isValid(row, columnVal)) {
+                if (isValid(row, columnVal)) {
                     dfs(n, row + 1, columnVal, res);
                 }
             }
@@ -73,8 +73,8 @@ public class Solution051 {
     }
     
     private boolean isValid(int row, int[] columnVal){
-        for(int i = 0; i < row; i++){
-            if(columnVal[row] == columnVal[i] || 
+        for (int i = 0; i < row; i++){
+            if (columnVal[row] == columnVal[i] || 
                Math.abs(columnVal[row]-columnVal[i]) == row - i)
                return false;
         }
