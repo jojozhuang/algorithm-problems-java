@@ -30,6 +30,31 @@ S doesn't contain \ or "
  */
 public class Solution917 {
     public String reverseOnlyLetters(String S) {
-        return "";
+        if (S == null || S.length() == 0) {
+            return S;
+        }
+        
+        int left = 0;
+        int right = S.length() - 1;
+        
+        char[] arr = S.toCharArray();
+        while(left < right) {
+            while (left < S.length() && !Character.isLetter(arr[left])) {
+                left++;
+            }
+            while (right >= 0 && !Character.isLetter(arr[right])) {
+                right--;
+            }
+            if (left >= right) {
+                break;
+            }
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+        
+        return new String(arr);
     }
 }

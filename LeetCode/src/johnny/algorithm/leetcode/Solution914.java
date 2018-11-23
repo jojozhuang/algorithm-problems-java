@@ -1,5 +1,12 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * 914. X of a Kind in a Deck of Cards
 
@@ -46,6 +53,48 @@ Note:
  */
 public class Solution914 {
     public boolean hasGroupsSizeX(int[] deck) {
-        return false;
+        if (deck == null || deck.length < 2) {
+            return false;
+        }
+        
+        // number, count
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < deck.length; i++) {
+            if (map.containsKey(deck[i])) {
+                map.put(deck[i], map.get(deck[i]) + 1);
+            } else {
+                map.put(deck[i], 1);
+            }
+        }
+        
+        if (map.size() == 1) {
+            if (map.get(deck[0]) > 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        // count (unique only)
+        Set<Integer> set = new HashSet<>();
+        for(Integer i : map.values()) {
+            set.add(i);
+        }
+        
+        List<Integer> list = new ArrayList<>(set);
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i; j < list.size(); j++) {
+                if (gcd(list.get(i), list.get(j)) == 1) {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+    // greatest common divisor
+    private int gcd(int x, int y) {
+        return y == 0 ? x : gcd(y, x % y);
     }
 }

@@ -33,6 +33,26 @@ S only contains characters "I" or "D".
  */
 public class Solution942 {
     public int[] diStringMatch(String S) {
-        return null;
+        if (S == null || S.length() == 0) {
+            return null;
+        }
+        
+        int left = 0;
+        int right = S.length();
+        int[] res = new int[S.length() + 1];
+        int index = 0;
+        for (int i = 0; i < S.length(); i++) {
+            char c = S.charAt(i);
+            if (c == 'I') {
+                res[index] = left;
+                left++;
+            } else {
+                res[index] = right;
+                right--;
+            }
+            index++;
+        }
+        res[index] = left;
+        return res;
     }
 }

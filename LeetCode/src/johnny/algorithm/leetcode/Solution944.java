@@ -39,6 +39,21 @@ Note:
  */
 public class Solution944 {
     public int minDeletionSize(String[] A) {
-        return 0;
+        if (A == null || A.length == 0) {
+            return 0;
+        }
+        
+        int len = A[0].length();
+        int count = 0;
+        for (int col = 0; col < len; col++) {
+            for (int row = 1; row < A.length; row++) {
+                if (A[row].charAt(col) < A[row - 1].charAt(col)) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        
+        return count;
     }
 }

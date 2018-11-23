@@ -35,6 +35,26 @@ Note:
  */
 public class Solution941 {
     public boolean validMountainArray(int[] A) {
-        return false;
+        if (A == null || A.length < 3) {
+            return false;
+        }
+        
+        boolean peekFound = false;
+        for (int i = 1; i < A.length; i++) {
+            if (!peekFound) {
+                if (A[i] <= A[i - 1]) {
+                    return false;
+                }
+                if (A[i - 1] < A[i] && (i + 1 < A.length) && A[i] > A[i + 1]) {
+                    peekFound = true;
+                }
+            } else {
+                if (A[i] >= A[i - 1]) {
+                    return false;
+                }
+            }
+        }
+        
+        return peekFound;
     }
 }

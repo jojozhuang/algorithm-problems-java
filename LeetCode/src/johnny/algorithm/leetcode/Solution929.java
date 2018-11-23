@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 929. Unique Email Addresses
 Every email consists of a local name and a domain name, separated by the @ sign.
@@ -35,6 +38,25 @@ Each emails[i] contains exactly one '@' character.
  */
 public class Solution929 {
     public int numUniqueEmails(String[] emails) {
-        return 0;
+        if (emails == null || emails.length == 0) {
+            return 0;
+        }
+        
+        Set<String> set = new HashSet<String>();
+        for (int i = 0; i < emails.length; i++) {
+            String email = emails[i];
+            String local = email.substring(0, email.indexOf("@"));
+            String domain = email.substring(email.indexOf("@"), email.length());
+            if (local.contains("+")) {
+                local = local.substring(0, local.indexOf("+"));
+            }
+            if (local.contains(".")) {
+                local = local.replaceAll("\\.","");
+            }
+            email = local + domain;
+            set.add(email);
+        }
+        
+        return set.size();
     }
 }

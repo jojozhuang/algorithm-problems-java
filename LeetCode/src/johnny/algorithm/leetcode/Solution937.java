@@ -1,5 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * 937. Reorder Log Files
 You have an array of logs.  Each log is a space delimited string of words.
@@ -32,6 +37,40 @@ logs[i] is guaranteed to have an identifier, and a word after the identifier.
  */
 public class Solution937 {
     public String[] reorderLogFiles(String[] logs) {
-        return null;
+        if (logs == null || logs.length == 0) {
+            return null;
+        }
+        
+        List<String> letter = new ArrayList<String>();
+        List<String> digit = new ArrayList<String>();
+        
+        for (int i = 0; i < logs.length; i++) {
+            if (isLetter(logs[i])) {
+                letter.add(logs[i]);
+            } else {
+                digit.add(logs[i]);
+            }
+        }
+        Collections.sort(letter, new LogComparator());
+        
+        List<String> res = new ArrayList<String>();
+        res.addAll(letter);
+        res.addAll(digit);
+        
+        String[] arrLog = new String[res.size()];
+        return res.toArray(arrLog);
+    }
+    
+    private boolean isLetter(String log) {
+        char ch = log.charAt(log.indexOf(" ") + 1);
+        return Character.isLetter(ch);
+    }
+    
+    private class LogComparator implements Comparator<String> {
+        public int compare(String s1, String s2) {
+            String sub1 = s1.substring(s1.indexOf(" ") + 1, s1.length());
+            String sub2 = s2.substring(s2.indexOf(" ") + 1, s2.length());
+            return sub1.compareTo(sub2);
+        }
     }
 }

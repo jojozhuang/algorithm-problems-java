@@ -28,6 +28,30 @@ A.length % 2 == 0
  */
 public class Solution922 {
     public int[] sortArrayByParityII(int[] A) {
-        return null;
+        if (A == null || A.length < 2) {
+            return A;
+        }
+        
+        int odd = 0; // find odd
+        int even = 1; // find even
+        
+        while (odd < A.length && even < A.length) {
+            while (odd < A.length && A[odd] % 2 == 0) {
+                odd = odd + 2;
+            }
+            while (even < A.length && A[even] % 2 != 0) {
+                even = even + 2;
+            }
+            if (odd >= A.length || even >= A.length) {
+                break;
+            }
+            int temp = A[odd];
+            A[odd] = A[even];
+            A[even] = temp;
+            odd = odd + 2;
+            even = even + 2;
+        }
+        
+        return A;
     }
 }

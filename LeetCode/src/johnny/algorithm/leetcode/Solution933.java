@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 933. Number of Recent Calls
 Write a class RecentCounter to count recent requests.
@@ -29,11 +32,20 @@ Each call to ping will have 1 <= t <= 10^9.
  * @author Johnny
  */
 public class Solution933 {
+    Queue<Integer> queue;
     public Solution933() {
-        
+        queue = new LinkedList<Integer>();
     }
     
     public int ping(int t) {
-        return 0;
+        queue.offer(t);
+        while (!queue.isEmpty()) {
+            if (t - 3000 > queue.peek()) {
+                queue.poll();
+            } else {
+                break;
+            }
+        }
+        return queue.size();
     }
 }

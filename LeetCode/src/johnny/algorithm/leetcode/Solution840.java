@@ -36,6 +36,49 @@ Note:
  */
 public class Solution840 {
     public int numMagicSquaresInside(int[][] grid) {
-        return 0;
+        if (grid == null || grid.length < 3 || grid[0].length < 3) {
+            return 0;
+        }
+        
+        int count = 0;
+        for (int i = 0; i < grid.length - 2; i++) {
+            for (int j = 0; j < grid[0].length - 2; j++) {
+                int sum = grid[i][j] + grid[i + 1][j + 1] + grid[i + 2][j + 2];
+                if (isMagic(grid, i, j, sum)) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    
+    private boolean isMagic(int[][] grid, int row, int col, int sum) {
+        for (int i = row; i < row + 3; i++) {
+            int temp = 0;
+            for (int j = col; j < col + 3; j++) {
+                if (grid[i][j] < 1 || grid[i][j] > 9) {
+                    return false;
+                }
+                temp+=grid[i][j];
+            }
+            if (temp != sum) {
+                return false;
+            }
+        }
+        for (int j = col; j < col + 3; j++) {
+            int temp = 0;
+            for (int i = row; i < row + 3; i++) {
+                temp+=grid[i][j];
+            }
+            if (temp != sum) {
+                return false;
+            }
+        }
+        
+        int temp1 = grid[row+2][col] + grid[row + 1][col + 1] + grid[row][col + 2];
+        if (temp1 != sum) {
+            return false;
+        }
+        return true;
     }
 }

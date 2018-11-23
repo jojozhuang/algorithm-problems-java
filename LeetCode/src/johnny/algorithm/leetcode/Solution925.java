@@ -39,6 +39,39 @@ The characters of name and typed are lowercase letters.
  */
 public class Solution925 {
     public boolean isLongPressedName(String name, String typed) {
+        if (name == null || name.length() == 0 || typed == null || typed.length() == 0
+                || name.length() > typed.length()) {
+             return false;
+        }
+        
+        int i = 0;
+        int j = 0;
+        while (i < name.length() && j < typed.length()) {
+            char n = name.charAt(i);
+            char t = typed.charAt(j);
+            if (n == t) {
+                i++;
+                j++;
+            } else {
+                if (j > 0 && t == typed.charAt(j - 1)) {
+                    j++;
+                } else {
+                    return false;
+                }
+            }
+        }
+        
+        if (i == name.length()) {
+            while(j < typed.length()) {
+                if (name.charAt(name.length() - 1) != typed.charAt(j)) {
+                    return false;
+                } else {
+                    j++;
+                }
+            }
+            return true;
+        } 
+
         return false;
     }
 }
