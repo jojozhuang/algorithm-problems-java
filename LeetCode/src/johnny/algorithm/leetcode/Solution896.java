@@ -41,6 +41,32 @@ Note:
  */
 public class Solution896 {
     public boolean isMonotonic(int[] A) {
-        return false;
+        if (A == null || A.length == 0) {
+            return false;
+        }
+        
+        if (A.length == 1) {
+            return true;
+        }
+        
+        int flag = 0; // 0: same, 1: increasing, 2: decreasing
+        
+        for (int i = 1; i < A.length; i++) {
+            if (A[i] > A[i - 1]) {
+                if (flag == 2) {
+                    return false;
+                } else {
+                    flag = 1;
+                }
+            } else if (A[i] < A[i - 1]) {
+                if (flag == 1) {
+                    return false;
+                } else {
+                    flag = 2;
+                }
+            }
+        }
+        
+        return true;
     }
 }

@@ -51,6 +51,40 @@ Note:
  */
 public class Solution883 {
     public int projectionArea(int[][] grid) {
-        return 0 ;
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
+        //xy
+        int xy = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] > 0) {
+                    xy++;
+                }
+            }
+        }
+        
+        // xz
+        int xz = 0;
+        for (int i = 0; i < grid.length; i++) {
+            int max = 0;
+            for (int j = 0; j < grid[i].length; j++) {
+                max = Math.max(max, grid[i][j]);
+            }
+            xz += max;
+        }
+        
+        // yz
+        int yz = 0;
+        for (int j = 0; j < grid[0].length; j++) {
+            int max = 0;
+            for (int i = 0; i < grid.length; i++) {
+                max = Math.max(max, grid[i][j]);
+            }
+            xz += max;
+        }
+        
+        return xy + xz + yz;
     }
 }

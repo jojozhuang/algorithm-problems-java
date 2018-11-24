@@ -37,6 +37,27 @@ Note:
  */
 public class Solution908 {
     public int smallestRangeI(int[] A, int K) {
-        return 0;
+        if (A == null || A.length == 0) {
+            return 0;
+        }
+        
+        if (A.length == 1) {
+            return 0;
+        }
+        
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        
+        for (int i = 0; i < A.length; i++) {
+            min = Math.min(min, A[i]);
+            max = Math.max(max, A[i]);
+        }
+        
+        double diff = (double)(min + max) / 2;
+        if (diff - min <= K) {
+            return 0;
+        } else {
+            return (int)((diff - min - K) * 2);
+        }
     }
 }
