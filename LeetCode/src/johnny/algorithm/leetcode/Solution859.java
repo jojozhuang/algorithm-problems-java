@@ -39,6 +39,58 @@ A and B consist only of lowercase letters.
  */
 public class Solution859 {
     public boolean buddyStrings(String A, String B) {
-        return false;
+        if (A.length() == 0 && B.length() == 0) {
+            return false;
+        }
+        if (A.length() != B.length()) {
+            return false;
+        }
+        
+        boolean allsame = true;
+        char firstLetter = A.charAt(0);
+        int diff = 0;
+        int first = -1;
+        int second = -1;
+        
+        int i = 0;
+        int j = 0;
+        while(i < A.length() && j < B.length()) {
+            if (A.charAt(i) != firstLetter || B.charAt(i) != firstLetter) {
+                allsame = false;
+            }
+            char ch1 = A.charAt(i);
+            char ch2 = B.charAt(j);
+            if (ch1 == ch2) {
+                i++;
+                j++;
+            } else {
+                if (diff >= 2) {
+                    return false;
+                } else {
+                    diff++;
+                    if (diff == 1) {
+                        first = i;
+                    } else {
+                        second = i;
+                    }
+                    i++;
+                    j++;
+                }
+            }
+        }
+        
+        if (allsame) {
+            return true;
+        }
+        
+        if (diff != 2) {
+            return false;
+        }
+        
+        if (A.charAt(first) == B.charAt(second) && A.charAt(second) == B.charAt(first)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

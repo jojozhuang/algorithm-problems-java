@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import johnny.algorithm.leetcode.common.TreeNode;
 
 /**
@@ -33,16 +36,40 @@ Every value of a given or inserted node is between 0 and 5000.
  * @author Johnny
  */
 public class Solution919 {
+    private TreeNode root;
+    private Queue<TreeNode> queue;
+    
     public Solution919(TreeNode root) {
-        
+        this.root = root;
+        queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.peek();
+            if (node.left != null && node.right != null) {
+                queue.poll();
+                queue.offer(node.left);
+                queue.offer(node.right);
+            } else {
+                break;
+            }
+        }
     }
     
     public int insert(int v) {
-        return 0;
+        TreeNode node = queue.peek();
+        if (node.left == null) {
+            node.left = new TreeNode(v);
+        } else {
+            node.right = new TreeNode(v);
+            queue.poll();
+            queue.offer(node.left);
+            queue.offer(node.right);
+        }
+        return node.val;
     }
     
     public TreeNode get_root() {
-        return null;
+        return root;
     }
 }
 

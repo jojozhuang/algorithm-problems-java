@@ -40,11 +40,34 @@ Each call to RLEIterator.next(int n) will have 1 <= n <= 10^9.
  * @author Johnny
  */
 public class Solution900 {
+    int[] arr;
+    int index = 0;
     public Solution900(int[] A) {
-        
+        arr = A;
     }
     
     public int next(int n) {
-        return 0;
+        int i = index;
+        int count = n;
+        while (i < arr.length) {
+            if (arr[i] == 0) {
+                i += 2;
+                continue;
+            }
+            if (count <= arr[i]) {
+                arr[i] -= count;
+                if (arr[i] == 0) {
+                    index = i + 2;
+                }
+                return arr[i + 1];
+            } else {
+                count -= arr[i];
+                i = i + 2;
+                index = i;
+            }
+            
+        }
+        
+        return -1;
     }
 }

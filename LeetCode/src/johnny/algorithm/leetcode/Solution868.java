@@ -48,6 +48,18 @@ Note:
  */
 public class Solution868 {
     public int binaryGap(int N) {
-        return 0;
+        String bit = Integer.toBinaryString(N);
+        
+        int distance = 0;
+        int one = 0;
+        for (int i = 1; i < bit.length(); i++) {
+            char ch = bit.charAt(i);
+            if (ch == '1') {
+                distance = Math.max(distance, i - one);
+                one = i;
+            }
+        }
+        
+        return distance;
     }
 }

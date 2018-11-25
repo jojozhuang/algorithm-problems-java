@@ -139,4 +139,9 @@ import java.util.Queue;
     private static void print(String msg) {
         System.out.print(msg);
     }
+    
+    @Override
+    public String toString() {
+        return val + "";
+    }
  }

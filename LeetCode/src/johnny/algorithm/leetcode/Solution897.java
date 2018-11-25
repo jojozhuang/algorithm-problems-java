@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Stack;
+
 import johnny.algorithm.leetcode.common.TreeNode;
 
 /**
@@ -46,6 +48,33 @@ Each node will have a unique integer value from 0 to 1000.
  */
 public class Solution897 {
     public TreeNode increasingBST(TreeNode root) {
-        return null;
+        if (root == null) {
+            return null;
+        }
+        
+        TreeNode newRoot = null;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        TreeNode previous = null;
+        while (curr != null || !stack.empty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            if (newRoot == null) {
+                newRoot = curr;
+                previous = newRoot;
+            } else {
+                previous.left = null;
+                curr.left = null;
+                previous.right = curr;
+                previous = previous.right;
+            }
+            
+            curr = curr.right;
+        }
+        
+        return newRoot;
     }
 }

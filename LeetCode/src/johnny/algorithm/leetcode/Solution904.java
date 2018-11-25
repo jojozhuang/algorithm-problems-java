@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 904. Fruit Into Baskets
 In a row of trees, the i-th tree produces fruit with type tree[i].
@@ -49,6 +52,46 @@ Note:
  */
 public class Solution904 {
     public int totalFruit(int[] tree) {
-        return 0;
+        if (tree == null || tree.length == 0) {
+            return 0;
+        }
+        
+        int max = 0;
+        int left = 0;
+        int right = 0;
+        Set<Integer> set = new HashSet<Integer>();
+        while (right < tree.length) {
+            if (set.contains(tree[right])) {
+                right++;
+            } else {
+                if (set.size() < 2) {
+                    set.add(tree[right]);
+                    right++;
+                } else {
+                    max = Math.max(max, right - left);
+                    // backward
+                    set.clear();
+                    set.add(tree[right]);
+                    left = right - 1;
+                    while (left >= 0) {
+                        if (set.contains(tree[left])) {
+                            left--;
+                        } else {
+                            if (set.size() < 2) {
+                                set.add(tree[left]);
+                                left--;
+                            } else {
+                                left++;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        max = Math.max(max, right - left);
+        
+        return max;
     }
 }

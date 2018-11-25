@@ -29,6 +29,17 @@ The final answer is guaranteed to be less than 2^31.
  */
 public class Solution938 {
     public int rangeSumBST(TreeNode root, int L, int R) {
-        return 0;
+        if (root == null || root.val < L || root.val > R) {
+            return 0;
+        }
+        
+        if (root.left == null && root.right == null) {
+            return root.val;
+        }
+        
+        int left = rangeSumBST(root.left, L, root.val);
+        int right = rangeSumBST(root.right, root.val, R);
+        
+        return root.val + left + right;
     }
 }
