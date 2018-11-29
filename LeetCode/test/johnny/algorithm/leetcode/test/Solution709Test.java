@@ -9,9 +9,13 @@ public class Solution709Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("dummy");
+        System.out.println("toLowerCase");
         Solution709 instance = new Solution709();
 
-        assertEquals(0, instance.dummy());
+        assertEquals("", instance.toLowerCase(""));
+        assertEquals("z", instance.toLowerCase("Z"));
+        assertEquals("hello", instance.toLowerCase("Hello"));
+        assertEquals("here", instance.toLowerCase("here"));
+        assertEquals("lovely", instance.toLowerCase("LOVELY"));
     }
 }

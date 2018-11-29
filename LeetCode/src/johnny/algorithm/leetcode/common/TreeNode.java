@@ -48,6 +48,19 @@ import java.util.Queue;
         return root;
     }
     
+    // str = "10,5,15,3,7,null,18"
+    // or str = "10,5,15,3,7,#,18"
+    public static TreeNode createInstance(String str) {
+        if (str == null || str.length() == 0) {
+            return null;
+        }
+        
+        String[] arr = str.replaceAll("null", "#").split(",");
+        return createInstance(arr);
+        
+    }
+    
+    // arr = new String[] {"10","5","15","3","7","#","18"}
     public static TreeNode createInstance(String[] arr) {
         if(arr == null || arr.length == 0) {
             return null;
