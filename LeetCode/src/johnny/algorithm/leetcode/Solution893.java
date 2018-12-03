@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 893. Groups of Special-Equivalent Strings
 You are given an array A of strings.
@@ -46,6 +50,20 @@ All A[i] consist of only lowercase letters.
  */
 public class Solution893 {
     public int numSpecialEquivGroups(String[] A) {
-        return 0;
+        Set<String> set= new HashSet<>();
+        for (String s: A){
+            int[] odd= new int[26];
+            int[] even= new int[26];
+            for (int i=0; i<s.length(); i++){
+                if (i%2==1) {
+                    odd[s.charAt(i)-'a']++;
+                } else {
+                    even[s.charAt(i)-'a']++;
+                }
+            }
+            String sig= Arrays.toString(odd)+Arrays.toString(even);
+            set.add(sig);
+        }
+        return set.size();
     }
 }

@@ -9,9 +9,16 @@ public class Solution705Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("dummy");
-        Solution705 instance = new Solution705();
+        System.out.println("HashSet");
+        Solution705 hashSet = new Solution705();
 
-        assertEquals(0, instance.dummy());
+        hashSet.add(1);
+        hashSet.add(2);
+        assertEquals(true, hashSet.contains(1));     // returns true
+        assertEquals(false, hashSet.contains(3));    // returns false (not found)
+        hashSet.add(2);
+        assertEquals(true, hashSet.contains(2));     // returns true
+        hashSet.remove(2);
+        assertEquals(false, hashSet.contains(2));    // returns false (already removed)
     }
 }
