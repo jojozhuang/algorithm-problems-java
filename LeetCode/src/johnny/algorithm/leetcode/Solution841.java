@@ -1,6 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * 841. Keys and Rooms
@@ -39,6 +41,31 @@ The number of keys in all rooms combined is at most 3000.
  */
 public class Solution841 {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-        return false;
+        Queue<Integer> keys = new LinkedList<>();
+        
+        for (Integer key : rooms.get(0)) {
+            keys.offer(key);
+        }
+        
+        boolean[] visited = new boolean[rooms.size()];
+        visited[0] = true;
+        while (!keys.isEmpty()) {
+            int key = keys.poll();
+            if (!visited[key]) {
+                visited[key] = true;
+                for (Integer k : rooms.get(key)) {
+                    if (!visited[k]) {
+                        keys.offer(k);
+                    }
+                }
+            }
+        }
+        
+        for (boolean v : visited) {
+            if (v == false) {
+                return false;
+            }
+        }
+        return true;
     }
 }

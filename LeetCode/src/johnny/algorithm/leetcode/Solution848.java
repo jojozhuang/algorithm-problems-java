@@ -31,6 +31,21 @@ Note:
  */
 public class Solution848 {
     public String shiftingLetters(String S, int[] shifts) {
-        return "";
+        char[] letters = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        if (shifts.length == 0) {
+            return S;
+        }
+        
+        for (int i = shifts.length - 2; i >= 0; i--) {
+            shifts[i] += shifts[i + 1];
+            shifts[i] = shifts[i] % 26;
+        }
+
+        char[] array = S.toCharArray();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = letters[(array[i] - 'a' + shifts[i]) % 26];
+        }
+        
+        return new String(array);
     }
 }

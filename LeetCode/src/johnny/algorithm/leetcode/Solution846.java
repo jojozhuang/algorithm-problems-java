@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.TreeMap;
+
 /**
  * 846. Hand of Straights
  * 
@@ -33,6 +35,35 @@ Note:
  */
 public class Solution846 {
     public boolean isNStraightHand(int[] hand, int W) {
-        return false;
+        if (W > hand.length) {
+            return false;
+        }
+        if (hand.length % W != 0) {
+            return false;
+        }
+        
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+        
+        for (int card : hand) {
+            if (!treeMap.containsKey(card)) {
+                treeMap.put(card, 0);
+            }
+            treeMap.put(card, treeMap.get(card) + 1);
+        }
+        
+        while (treeMap.size() >= W) {
+            int first = treeMap.firstKey(); // the smallest one
+            for (int i = first; i < first + W; i++) {
+                if (!treeMap.containsKey(i)) {
+                    return false;
+                }
+                treeMap.put(i, treeMap.get(i) - 1);
+                if (treeMap.get(i) == 0) {
+                    treeMap.remove(i);
+                }
+            }
+        }
+        
+        return treeMap.isEmpty();
     }
 }

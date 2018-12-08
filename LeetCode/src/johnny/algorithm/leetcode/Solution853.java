@@ -1,5 +1,12 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * 853. Car Fleet
  * 
@@ -41,7 +48,64 @@ All initial positions are different.
  * @author Johnny
  */
 public class Solution853 {
+    // target = 12, position = [10,8,0,5,3], speed = [2,4,1,1,3]
     public int carFleet(int target, int[] position, int[] speed) {
-        return 0;
+        int len = position.length;
+        
+        // position = [10,8,5,3,0]
+        Integer[] position2 = new Integer[position.length];
+        for (int i = 0; i < position.length; i++) {
+            position2[i] = position[i];
+        }
+        Arrays.sort(position2, Collections.reverseOrder());
+
+        // speed = [2,4,1,3,1]
+        Integer[] index = new Integer[position.length];
+        for (int i = 0; i < position.length; i++) {
+            index[i] = i;
+        }
+
+        Arrays.sort(index, new Comparator<Integer>() {
+            public int compare(Integer i1, Integer i2) {
+                return position[i2] - position[i1];
+            }
+        });
+
+        Integer[] speed2 = new Integer[position.length];
+        for (int i = 0; i < len; i++) {
+            speed2[i] = speed[index[i]];
+        }
+        
+        // distance to target = [2, 4, 7, 9, 12]
+        int[] distance = new int[len];
+        for (int i = 0; i < distance.length; i++) {
+            distance[i] = target - position2[i];
+        }
+        // time required = [1,1,7,3,12]
+        double[] time = new double[len];
+        for (int i = 0; i < distance.length; i++) {
+            time[i] = (double)distance[i] / (double)speed2[i];
+        }
+        
+        Queue<Double> queue = new LinkedList<>();
+        for (double t : time) {
+            queue.offer(t);
+        }
+        
+        // each round, find the smaller or equal number against the first element
+        int round = 0;
+        while (!queue.isEmpty()) {
+            double first = queue.poll();
+            round++;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                double item = queue.poll();
+                if (item > first) {
+                    queue.offer(item);
+                }
+            }
+        }
+        
+        return round;
     }
 }

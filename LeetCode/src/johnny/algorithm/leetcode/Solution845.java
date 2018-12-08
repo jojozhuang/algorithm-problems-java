@@ -36,6 +36,48 @@ Can you solve it in O(1) space?
  */
 public class Solution845 {
     public int longestMountain(int[] A) {
-        return 0;
+        if (A == null || A.length < 3) {
+            return 0;
+        }
+        
+        int longest = 0;
+        int left = -1, right = -1;
+        boolean peekFound = false;
+        
+        for (int i = 1; i < A.length; i++) {
+            if (!peekFound) {
+                if (A[i] > A[i - 1]) {
+                    if (left == -1) {
+                        left = i - 1;
+                    }
+                } else if (A[i] == A[i-1]) {
+                    left = -1;
+                } else {
+                    if (left != -1) {
+                        peekFound = true;
+                        right = i;
+                    }
+                }
+            } else {
+                if (A[i] < A[i - 1]) {
+                    right = i;
+                } else if (A[i] == A[i-1]) {
+                    longest = Math.max(longest, right - left + 1);
+                    left = -1;
+                    right = -1;
+                    peekFound = false;
+                } else {
+                    longest = Math.max(longest, right - left + 1);
+                    left = i - 1;
+                    right = -1;
+                    peekFound = false;
+                }
+            }
+        }
+        
+        if (left != -1 && right != -1) {
+            longest = Math.max(longest, right - left + 1);
+        }
+        return longest;
     }
 }

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Stack;
+
 /**
  * 946. Validate Stack Sequences
 
@@ -32,6 +34,21 @@ pushed and popped have distinct values.
  */
 public class Solution946 {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
-        return false;
+        Stack<Integer> stack = new Stack<>();
+        
+        int j = 0;
+        for (int i = 0; i < pushed.length; i++) {
+            stack.push(pushed[i]);
+            while (!stack.isEmpty() && j < popped.length) {
+                if (stack.peek() == popped[j]) {
+                    stack.pop();
+                    j++;
+                } else {
+                    break;
+                }
+            }
+        }
+        
+        return stack.isEmpty();
     }
 }

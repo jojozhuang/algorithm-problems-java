@@ -1,5 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  * 859. Buddy Strings
  * 
@@ -42,55 +47,31 @@ public class Solution859 {
         if (A.length() == 0 && B.length() == 0) {
             return false;
         }
+        
         if (A.length() != B.length()) {
             return false;
         }
         
-        boolean allsame = true;
-        char firstLetter = A.charAt(0);
-        int diff = 0;
-        int first = -1;
-        int second = -1;
-        
-        int i = 0;
-        int j = 0;
-        while(i < A.length() && j < B.length()) {
-            if (A.charAt(i) != firstLetter || B.charAt(i) != firstLetter) {
-                allsame = false;
-            }
-            char ch1 = A.charAt(i);
-            char ch2 = B.charAt(j);
-            if (ch1 == ch2) {
-                i++;
-                j++;
-            } else {
-                if (diff >= 2) {
-                    return false;
+        if (A.equals(B)) {
+            Set<Character> set = new HashSet<>();
+            for (Character c : A.toCharArray()) {
+                if (set.contains(c)) {
+                    return true;
                 } else {
-                    diff++;
-                    if (diff == 1) {
-                        first = i;
-                    } else {
-                        second = i;
-                    }
-                    i++;
-                    j++;
+                    set.add(c);
                 }
             }
-        }
-        
-        if (allsame) {
-            return true;
-        }
-        
-        if (diff != 2) {
+            
             return false;
         }
         
-        if (A.charAt(first) == B.charAt(second) && A.charAt(second) == B.charAt(first)) {
-            return true;
-        } else {
-            return false;
+        List<Integer> diff = new ArrayList<>();
+        for (int i = 0; i < A.length(); i++) {
+            if (A.charAt(i) != B.charAt(i)) {
+                diff.add(i);
+            }
         }
+        
+        return diff.size() == 2 && A.charAt(diff.get(0)) == B.charAt(diff.get(1)) && A.charAt(diff.get(1)) ==  B.charAt(diff.get(0));
     }
 }

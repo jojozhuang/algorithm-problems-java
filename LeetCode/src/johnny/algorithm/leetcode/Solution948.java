@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 948. Bag of Tokens
  * You have an initial power P, an initial score of 0 points, and a bag of tokens.
@@ -36,6 +38,32 @@ tokens.length <= 1000
  */
 public class Solution948 {
     public int bagOfTokensScore(int[] tokens, int P) {
-        return 0;
+        if (tokens == null || tokens.length == 0) {
+            return 0;
+        }
+        
+        Arrays.sort(tokens);
+        int start = 0, end = tokens.length - 1;
+        int power = P, point = 0;
+        while (start <= end) {
+            while (start <= end && tokens[start] <= power) {
+                power -= tokens[start];
+                point++;
+                start++;
+            }
+            
+            if (start >= end) {
+                break;
+            }
+            
+            if (point > 0) {
+                power += tokens[end];
+                point--;
+                end--;
+            } else {
+                break;
+            }
+        }
+        return point;
     }
 }

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 945. Minimum Increment to Make Array Unique
  * 
@@ -31,6 +33,15 @@ Note:
  */
 public class Solution945 {
     public int minIncrementForUnique(int[] A) {
-        return 0;
+        Arrays.sort(A);
+        int count = 0;
+        for (int i = 1; i < A.length; i++) {
+            while (A[i] <= A[i - 1]) {
+                A[i]++;
+                count++;
+            }
+        }
+        
+        return count;
     }
 }

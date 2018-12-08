@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,6 +49,93 @@ S contains only digits.
  */
 public class Solution842 {
     public List<Integer> splitIntoFibonacci(String S) {
-        return null;
+        List<Integer> res = new ArrayList<>();
+        if (S == null || S.length() < 3) {
+            return res;
+        }
+        
+        int len = S.length();
+        for (int offset = 1; offset < len; offset++) {
+            if (!isValid(S.substring(0, offset))) {
+                continue;
+            }
+            for (int offset2 = 1; offset + offset2 < len; offset2++) {
+                if (!isValid(S.substring(offset, offset + offset2))) {
+                    continue;
+                }
+                res.clear();
+                int first = Integer.parseInt(S.substring(0, offset));
+                res.add(first);
+                int second = Integer.parseInt(S.substring(offset, offset + offset2));
+                res.add(second);
+                boolean finish = helper(first, second, S, offset + offset2, res);
+                if (finish && res.size() >= 3) {
+                    return res;
+                }
+            }
+        }
+        
+        res.clear();
+        return res;
+    }
+    
+    private boolean helper(int first, int second, String S, int pos, List<Integer> list) {
+        if (pos > S.length()) {
+            list.clear();
+            return false;
+        }
+        
+        int sum = first + second;
+        String sumStr = "" + sum;
+        if (pos + sumStr.length() > S.length()) {
+            list.clear();
+            return false;
+        }
+        
+        for (int offset = sumStr.length(); offset <= 10 && offset <= S.length() - sumStr.length(); offset++) {
+            if (pos + offset <= S.length()) {
+                if (!isValid(S.substring(pos, pos + offset))) {
+                    continue;
+                }
+                int third = Integer.parseInt(S.substring(pos, pos + offset));
+                if (sum == third) {
+                    list.add((int)third);
+                    if (pos + offset == S.length()) {
+                        return true;
+                    } else {
+                        boolean finished = helper(second, third, S, pos + offset, list);
+                        if (finished) {
+                            return true;
+                        }
+                    }
+                } else {
+                    list.clear();
+                    return false;
+                }
+            } else {
+                list.clear();
+                return false;
+            }
+        }
+        
+        return false;
+    }
+    
+    private boolean isValid(String str) {
+        if (str.startsWith("0") && str.length() > 1) {
+            return false;
+        }
+        
+        String max = "" + Integer.MAX_VALUE;
+        if (str.length() > max.length()) {
+            return false;
+        } else if (str.length() == max.length()) {
+            long num = Long.parseLong(str);
+            if (num > Integer.MAX_VALUE) {
+                return false;
+            }
+        }
+        
+        return true;
     }
 }
