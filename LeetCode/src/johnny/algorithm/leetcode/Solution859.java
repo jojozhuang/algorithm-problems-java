@@ -52,7 +52,7 @@ public class Solution859 {
             return false;
         }
         
-        if (A.equals(B)) {
+        if (A.equals(B)) { // abab, abab
             Set<Character> set = new HashSet<>();
             for (Character c : A.toCharArray()) {
                 if (set.contains(c)) {
@@ -65,6 +65,7 @@ public class Solution859 {
             return false;
         }
         
+        // ab, ba
         List<Integer> diff = new ArrayList<>();
         for (int i = 0; i < A.length(); i++) {
             if (A.charAt(i) != B.charAt(i)) {

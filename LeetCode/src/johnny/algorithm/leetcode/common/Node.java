@@ -42,6 +42,33 @@ public class Node {
         return dummy.next;
     }
     
+    public static Node createInstanceDoubly(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+        
+        Node dummy = new Node(0);
+        Node curr = dummy;
+        //Node tail = dummy;
+        for (int i = 0; i < arr.length; i++) {
+            curr.next = new Node(arr[i]);
+            curr = curr.next;
+            //tail = curr;
+        }
+        
+        //tail.next = dummy.next;
+        
+        // set previous
+        curr = dummy.next;
+        Node previous = null;
+        for (int i = 0; i < arr.length; i++) {
+            curr.prev = previous;
+            previous = curr;
+            curr = curr.next;
+        }
+        return dummy.next;
+    }
+    
     public static String getText(Node head) {
         if (head == null) {
             return "";
@@ -58,5 +85,27 @@ public class Node {
             curr = curr.next;
         }
         return sb.toString();
+    }
+    
+    public static boolean isSame(Node node1, Node node2) {
+        Node curr1 = node1;
+        Node curr2 = node2;
+        while (curr1 != null) {
+            if (curr2 == null) {
+                return false;
+            }
+            if (curr1.val != curr2.val) {
+                return false;
+            }
+            
+            curr1 = curr1.next;
+            curr2 = curr2.next;
+        }
+        
+        if (curr2 != null) {
+            return false;
+        }
+        
+        return true;
     }
 }

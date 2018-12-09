@@ -24,27 +24,39 @@ Output:
  */
 public class Solution430 {
     public Node flatten(Node head) {
-        if (head == null || head.next == null) {
+        if (head == null) {
             return head;
         }
         
         Node dummy = new Node(0, null, null, null);
         dummy.next = head;
-        
-        while (head != null) {
-            if (head.child == null) {
-                head = head.next;
+        Node curr = head;
+        while (curr != null) {
+            if (curr.child == null) {
+                curr = curr.next;
             } else {
-                Node nextNode = head.next;
-                Node child = flatten(head.child);
-                child.prev = head;
-                head.next = child;
-                head.child = null;
-                child.next = nextNode;
-                nextNode.prev = child;
-                head = nextNode;
+                Node nextNode = curr.next;
+                Node[] children = getChild(curr.child);
+                curr.next = children[0];
+                children[0].prev = curr;
+                children[1].next = nextNode;
+                if (nextNode != null) {
+                    nextNode.prev = children[1];
+                }
+                curr.child = null;
+                curr = curr.next;
             }
         }
         return dummy.next;
+    }
+    
+    private Node[] getChild(Node child) {
+        Node head = child;
+        Node curr = head;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+        Node tail = curr;
+        return new Node[]{head, tail};
     }
 }
