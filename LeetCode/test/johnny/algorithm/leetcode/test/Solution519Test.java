@@ -9,9 +9,10 @@ public class Solution519Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("dummy");
-        Solution519 instance = new Solution519();
+        System.out.println("519. Random Flip Matrix");
+        
+        Solution519 random1 = new Solution519(2,3);
 
-        assertEquals(0, instance.dummy());
+        assertEquals(2, random1.flip().length);
     }
 }

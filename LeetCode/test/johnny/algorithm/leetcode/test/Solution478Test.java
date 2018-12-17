@@ -9,9 +9,11 @@ public class Solution478Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("Solution478");
-        Solution478 instance = new Solution478();
+        System.out.println("Generate Random Point in a Circle");
+        
+        Solution478 instance1 = new Solution478(1,0,0);
+        double[] result1 = instance1.randPoint();
 
-        assertEquals(0, instance.dummy());
+        assertTrue(Math.sqrt(Math.pow(result1[0],2) + Math.pow(result1[1], 2)) <= 1.0);
     }
 }
