@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,6 +39,45 @@ A[i] is a permutation of [1, 2, ..., A.length]
  */
 public class Solution969 {
     public List<Integer> pancakeSort(int[] A) {
-        return null;
+        List<Integer> res = new ArrayList<Integer>();
+        int i = A.length - 1;
+        while (i >= 0) {
+            int index = findMax(A, i);
+            if (index == i) {
+                i--;
+                continue;
+            } else if (index > 0) {
+                res.add(index + 1);
+                swap(A, 0, index);
+            } else {
+                res.add(i + 1);
+                swap(A, 0, i);
+                i--;
+            }
+        }
+     
+        return res;
+    }
+    
+    private int findMax(int[] A, int end) {
+        int max = Integer.MIN_VALUE;
+        int index = -1;
+        for (int i = 0; i <= end; i++) {
+            if (A[i] > max) {
+                index = i;
+                max = A[i];
+            }
+        }
+        return index;
+    }
+    
+    private void swap(int[] A, int from, int to) {
+        while(from < to) {
+            int temp = A[from];
+            A[from] = A[to];
+            A[to] = temp;
+            from++;
+            to--;
+        }
     }
 }

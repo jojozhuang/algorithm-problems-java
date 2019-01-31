@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  * 970. Powerful Integers
@@ -43,10 +45,46 @@ Note:
  * @author Johnny
  */
 public class Solution970 {
+    public List<Integer> powerfulIntegers2(int x, int y, int bound) {
+        List<Integer> xlist = powList(x, bound);
+        List<Integer> ylist = powList(y, bound);
+        
+        SortedSet<Integer> set = new TreeSet<Integer>();
+        for (int i = 0; i < xlist.size(); i++) {
+            for (int j = 0; j < ylist.size(); j++) {
+                int sum = xlist.get(i) + ylist.get(j);
+                if (sum > bound) {
+                    break;
+                }
+                if (!set.contains(sum)) {
+                    set.add(sum);
+                }
+            }
+        }
+
+        List<Integer> res = new ArrayList<Integer>(set);
+        return res;
+    }
     
-    // time out
+    private List<Integer> powList(int val, int bound) {
+        List<Integer> list = new ArrayList<Integer>();
+        int i = 0;
+        double pow = Math.pow(val, i);
+        while (pow <= bound) {
+            list.add((int)pow);
+            if (val == 1) {
+                break;
+            }
+            i++;
+            pow = Math.pow(val, i);
+        }
+        return list;
+    }
+    
+    // without helper method
     public List<Integer> powerfulIntegers(int x, int y, int bound) {
         Set<Integer> set = new HashSet<Integer>();
+        //SortedSet<Integer> set = new TreeSet<Integer>();
         int i = 0;
         while (i >= 0) {
             double pow1 = Math.pow(x, i);
@@ -62,6 +100,12 @@ public class Solution970 {
                     set.add((int)sum);
                     j++;
                 }
+                if (y == 1) {
+                    break;
+                }
+            }
+            if (x == 1) {
+                break;
             }
             i++;
         }

@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 964. Least Operators to Express Number
 Given a single positive integer x, we will write an expression of the form x (op1) x (op2) x (op3) x ... where each operator op1, op2, etc. is either addition, subtraction, multiplication, or division (+, -, *, or /).  For example, with x = 3, we might write 3 * 3 / 3 + 3 - 3 which is a value of 3.
@@ -39,7 +42,38 @@ Note:
  * @author Johnny
  */
 public class Solution964 {
-    public int leastOpsExpressTarget(int x, int target) {
-        return 0;
+    Map<String, Integer> memo;
+    int x;
+    public int leastOpsExpressTarget(int x, int target) { // copy
+        memo = new HashMap();
+        this.x = x;
+        return dp(0, target) - 1;
+    }
+
+    public int dp(int i, int target) {
+        String code = "" + i + "#" + target;
+        if (memo.containsKey(code))
+            return memo.get(code);
+
+        int ans;
+        if (target == 0) {
+            ans = 0;
+        } else if (target == 1) {
+            ans = cost(i);
+        } else if (i >= 39) {
+            ans = target + 1;
+        } else {
+            int t = target / x;
+            int r = target % x;
+            ans = Math.min(r * cost(i) + dp(i+1, t),
+                           (x-r) * cost(i) + dp(i+1, t+1));
+        }
+
+        memo.put(code, ans);
+        return ans;
+    }
+
+    public int cost(int x) {
+        return x > 0 ? x : 2;
     }
 }
