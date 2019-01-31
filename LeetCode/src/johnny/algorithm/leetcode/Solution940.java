@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 940. Distinct Subsequences II
 Given a string S, count the number of distinct, non-empty subsequences of S .
@@ -36,6 +38,25 @@ S contains only lowercase letters.
  */
 public class Solution940 {
     public int distinctSubseqII(String S) {
-        return 0;
+        int MOD = 1_000_000_007;
+        int N = S.length();
+        int[] dp = new int[N+1];
+        dp[0] = 1;
+
+        int[] last = new int[26];
+        Arrays.fill(last, -1);
+
+        for (int i = 0; i < N; ++i) {
+            int x = S.charAt(i) - 'a';
+            dp[i+1] = dp[i] * 2 % MOD;
+            if (last[x] >= 0)
+                dp[i+1] -= dp[last[x]];
+            dp[i+1] %= MOD;
+            last[x] = i;
+        }
+
+        dp[N]--;
+        if (dp[N] < 0) dp[N] += MOD;
+        return dp[N];
     }
 }
