@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 962. Maximum Width Ramp
 Given an array A of integers, a ramp is a tuple (i, j) for which i < j and A[i] <= A[j].  The width of such a ramp is j - i.
@@ -31,6 +33,20 @@ Note:
  */
 public class Solution962 {
     public int maxWidthRamp(int[] A) {
-        return 0;
+        int N = A.length;
+        Integer[] B = new Integer[N];
+        for (int i = 0; i < N; ++i)
+            B[i] = i;
+
+        Arrays.sort(B, (i, j) -> ((Integer) A[i]).compareTo(A[j]));
+
+        int ans = 0;
+        int m = N;
+        for (int i: B) {
+            ans = Math.max(ans, i - m);
+            m = Math.min(m, i);
+        }
+
+        return ans;
     }
 }

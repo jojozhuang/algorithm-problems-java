@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * 981. Time Based Key-Value Store
 Create a timebased key-value store class TimeMap, that supports two operations.
@@ -44,18 +48,25 @@ TimeMap.set and TimeMap.get functions will be called a total of 120000 times (co
  * @author Johnny
  */
 public class Solution981 {
-
+    private Map<String,TreeMap<Integer,String>> map;
     /** Initialize your data structure here. */
     public Solution981() {
-        
+        map = new HashMap<>();
     }
     
     public void set(String key, String value, int timestamp) {
-        
+        if(!map.containsKey(key)){
+            map.put(key,new TreeMap<>());
+        }
+        map.get(key).put(timestamp,value);
     }
     
     public String get(String key, int timestamp) {
-        return "";
+        if(!map.containsKey(key)){
+            return "";
+        }
+        Map.Entry<Integer,String> entry = map.get(key).floorEntry(timestamp);
+        return (entry!= null)?entry.getValue():"";
     }
 }
 /**
