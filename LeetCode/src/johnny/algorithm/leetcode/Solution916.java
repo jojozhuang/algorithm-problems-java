@@ -55,7 +55,7 @@ public class Solution916 {
                 bmax[i] = Math.max(bmax[i], bCount[i]);
         }
 
-        List<String> ans = new ArrayList();
+        List<String> ans = new ArrayList<String>();
         search: for (String a: A) {
             int[] aCount = count(a);
             for (int i = 0; i < 26; ++i)

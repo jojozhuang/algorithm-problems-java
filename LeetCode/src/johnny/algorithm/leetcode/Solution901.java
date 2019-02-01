@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Stack;
+
 /**
  * 901. Online Stock Span
 Write a class StockSpanner which collects daily price quotes for some stock, and returns the span of that stock's price for the current day.
@@ -37,11 +39,22 @@ The total time limit for this problem has been reduced by 75% for C++, and 50% f
  * @author Johnny
  */
 public class Solution901 {
+    Stack<Integer> prices, weights;
+
     public Solution901() {
-        
+        prices = new Stack();
+        weights = new Stack();
     }
-    
+
     public int next(int price) {
-        return 0;
+        int w = 1;
+        while (!prices.isEmpty() && prices.peek() <= price) {
+            prices.pop();
+            w += weights.pop();
+        }
+
+        prices.push(price);
+        weights.push(w);
+        return w;
     }
 }
