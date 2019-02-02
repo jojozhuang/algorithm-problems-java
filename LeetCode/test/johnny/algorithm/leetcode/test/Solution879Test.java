@@ -4,15 +4,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import johnny.algorithm.leetcode.Solution853;
+import johnny.algorithm.leetcode.Solution879;
 
-public class Solution853Test extends JunitBase {
+public class Solution879Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("carFleet");
-        Solution853 instance = new Solution853();
+        System.out.println("profitableSchemes");
+        Solution879 instance = new Solution879();
 
-        assertEquals(3, instance.carFleet(12, new int[] {10,8,0,5,3}, new int[] {2,4,1,1,3}));
+        assertEquals(2, instance.profitableSchemes(5, 3, new int[] {2,2}, new int[] {2,3}));
+        assertEquals(7, instance.profitableSchemes(10, 5, new int[] {2,3,5}, new int[] {6,7,8}));
     }
 }

@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 /**
  * 895. Maximum Frequency Stack
 Implement FreqStack, a class which simulates the operation of a stack-like data structure.
@@ -44,15 +48,30 @@ The total number of FreqStack.push and FreqStack.pop calls will not exceed 15000
  * @author Johnny
  */
 public class Solution895 {
+    Map<Integer, Integer> freq;
+    Map<Integer, Stack<Integer>> group;
+    int maxfreq;
+
     public Solution895() {
-        
+        freq = new HashMap();
+        group = new HashMap();
+        maxfreq = 0;
     }
-    
+
     public void push(int x) {
-        
+        int f = freq.getOrDefault(x, 0) + 1;
+        freq.put(x, f);
+        if (f > maxfreq)
+            maxfreq = f;
+
+        group.computeIfAbsent(f, z-> new Stack()).push(x);
     }
-    
+
     public int pop() {
-        return 0;
+        int x = group.get(maxfreq).pop();
+        freq.put(x, freq.get(x) - 1);
+        if (group.get(maxfreq).size() == 0)
+            maxfreq--;
+        return x;
     }
 }
