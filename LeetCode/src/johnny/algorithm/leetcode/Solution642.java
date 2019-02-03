@@ -66,11 +66,11 @@ public class Solution642 {
     private class TrieNode {
         Map<Character, TrieNode> children;
         Map<String, Integer> counts;
-        boolean isWord;
+        //boolean isWord;
         public TrieNode() {
             children = new HashMap<Character, TrieNode>();
             counts = new HashMap<String, Integer>();
-            isWord = false;
+            //isWord = false;
         }
     }
     
@@ -105,7 +105,7 @@ public class Solution642 {
             curr = next;
             curr.counts.put(s, curr.counts.getOrDefault(s, 0) + count);
         }
-        curr.isWord = true;
+        //curr.isWord = true;
     }
     
     public List<String> input(char c) {

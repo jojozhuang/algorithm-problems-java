@@ -43,7 +43,7 @@ public class Solution862 {
 
         // Want smallest y-x with P[y] - P[x] >= K
         int ans = N+1; // N+1 is impossible
-        Deque<Integer> monoq = new LinkedList(); //opt(y) candidates, as indices of P
+        Deque<Integer> monoq = new LinkedList<Integer>(); //opt(y) candidates, as indices of P
 
         for (int y = 0; y < P.length; ++y) {
             // Want opt(y) = largest x with P[x] <= P[y] - K;

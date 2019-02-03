@@ -45,8 +45,8 @@ public class Solution934 {
         int R = A.length, C = A[0].length;
         int[][] colors = getComponents(A);
 
-        Queue<Node> queue = new LinkedList();
-        Set<Integer> target = new HashSet();
+        Queue<Node> queue = new LinkedList<Node>();
+        Set<Integer> target = new HashSet<Integer>();
 
         for (int r = 0; r < R; ++r)
             for (int c = 0; c < C; ++c) {
@@ -82,7 +82,7 @@ public class Solution934 {
             for (int c0 = 0; c0 < C; ++c0)
                 if (colors[r0][c0] == 0 && A[r0][c0] == 1) {
                     // Start dfs
-                    Stack<Integer> stack = new Stack();
+                    Stack<Integer> stack = new Stack<Integer>();
                     stack.push(r0 * C + c0);
                     colors[r0][c0] = ++t;
 
@@ -104,7 +104,7 @@ public class Solution934 {
 
     public List<Integer> neighbors(int[][] A, int r, int c) {
         int R = A.length, C = A[0].length;
-        List<Integer> ans = new ArrayList();
+        List<Integer> ans = new ArrayList<Integer>();
         if (0 <= r-1) ans.add((r-1) * R + c);
         if (0 <= c-1) ans.add(r * R + (c-1));
         if (r+1 < R) ans.add((r+1) * R + c);

@@ -38,7 +38,7 @@ The tree will have between 1 and 100 nodes.
  */
 public class Solution958 {
     public boolean isCompleteTree(TreeNode root) {
-        List<ANode> nodes = new ArrayList();
+        List<ANode> nodes = new ArrayList<ANode>();
         nodes.add(new ANode(root, 1));
         int i = 0;
         while (i < nodes.size()) {

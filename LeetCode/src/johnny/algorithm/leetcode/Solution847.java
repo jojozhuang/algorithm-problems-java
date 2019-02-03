@@ -37,7 +37,7 @@ Note:
 public class Solution847 {
     public int shortestPathLength(int[][] graph) {
         int N = graph.length;
-        Queue<State> queue = new LinkedList();
+        Queue<State> queue = new LinkedList<State>();
         int[][] dist = new int[1<<N][N];
         for (int[] row: dist) Arrays.fill(row, N*N);
 

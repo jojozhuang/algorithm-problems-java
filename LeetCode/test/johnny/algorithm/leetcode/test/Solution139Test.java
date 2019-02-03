@@ -4,11 +4,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Set;
 
 import johnny.algorithm.leetcode.Solution139;
 import johnny.algorithm.leetcode.common.ListUtil;
-import johnny.algorithm.leetcode.common.SetUtil;
 
 public class Solution139Test extends JunitBase {
 

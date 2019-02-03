@@ -55,7 +55,7 @@ public class Solution451 {
                 map.put(c, 1);
             }
         }
-        List<Character> [] bucket = new List[s.length() + 1];
+        List<Character>[] bucket = new ArrayList[s.length() + 1];
         for (char key : map.keySet()) {
             int frequency = map.get(key);
             if (bucket[frequency] == null) {

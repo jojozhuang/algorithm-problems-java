@@ -45,7 +45,7 @@ public class Solution964 {
     Map<String, Integer> memo;
     int x;
     public int leastOpsExpressTarget(int x, int target) { // copy
-        memo = new HashMap();
+        memo = new HashMap<String, Integer>();
         this.x = x;
         return dp(0, target) - 1;
     }

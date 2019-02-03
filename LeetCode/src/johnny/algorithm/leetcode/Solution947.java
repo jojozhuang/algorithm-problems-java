@@ -43,7 +43,7 @@ public class Solution947 {
         for (int[] stone: stones)
             dsu.union(stone[0], stone[1] + 10000);
 
-        Set<Integer> seen = new HashSet();
+        Set<Integer> seen = new HashSet<Integer>();
         for (int[] stone: stones)
             seen.add(dsu.find(stone[0]));
 

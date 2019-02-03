@@ -53,8 +53,8 @@ public class Solution895 {
     int maxfreq;
 
     public Solution895() {
-        freq = new HashMap();
-        group = new HashMap();
+        freq = new HashMap<Integer, Integer>();
+        group = new HashMap<Integer, Stack<Integer>>();
         maxfreq = 0;
     }
 
@@ -64,7 +64,7 @@ public class Solution895 {
         if (f > maxfreq)
             maxfreq = f;
 
-        group.computeIfAbsent(f, z-> new Stack()).push(x);
+        group.computeIfAbsent(f, z-> new Stack<Integer>()).push(x);
     }
 
     public int pop() {

@@ -71,7 +71,7 @@ public class Solution975 {
         boolean[] even = new boolean[N];
         odd[N-1] = even[N-1] = true;
 
-        TreeMap<Integer, Integer> vals = new TreeMap();
+        TreeMap<Integer, Integer> vals = new TreeMap<Integer, Integer>();
         vals.put(A[N-1], N-1);
         for (int i = N-2; i >= 0; --i) {
             int v = A[i];

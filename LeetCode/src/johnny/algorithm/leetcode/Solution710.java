@@ -1,12 +1,8 @@
 package johnny.algorithm.leetcode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 /**
 *
@@ -23,7 +19,7 @@ public class Solution710 {
     Map<Integer, Integer> map;
 
     public Solution710(int N, int[] blacklist) {
-        map = new HashMap();
+        map = new HashMap<Integer, Integer>();
         for (int b : blacklist) // O(B)
             map.put(b, -1);
         M = N - map.size();

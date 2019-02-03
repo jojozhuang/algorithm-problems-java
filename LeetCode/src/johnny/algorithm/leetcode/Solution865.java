@@ -44,7 +44,7 @@ public class Solution865 {
     Map<TreeNode, Integer> depth;
     int max_depth;
     public TreeNode subtreeWithAllDeepest(TreeNode root) {
-        depth = new HashMap();
+        depth = new HashMap<TreeNode, Integer>();
         depth.put(null, -1);
         dfs(root, null);
         max_depth = -1;

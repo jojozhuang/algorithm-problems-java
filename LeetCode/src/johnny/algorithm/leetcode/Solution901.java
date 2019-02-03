@@ -42,8 +42,8 @@ public class Solution901 {
     Stack<Integer> prices, weights;
 
     public Solution901() {
-        prices = new Stack();
-        weights = new Stack();
+        prices = new Stack<Integer>();
+        weights = new Stack<Integer>();
     }
 
     public int next(int price) {

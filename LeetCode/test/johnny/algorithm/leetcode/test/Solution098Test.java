@@ -11,7 +11,6 @@ public class Solution098Test extends JunitBase {
     @Test
     public void testIsValidBST() {
         System.out.println("isValidBST");
-        TreeNode root = null;
         Solution098 instance = new Solution098();
 
         assertEquals(true, instance.isValidBST(null));

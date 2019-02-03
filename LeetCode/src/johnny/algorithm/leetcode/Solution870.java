@@ -42,11 +42,11 @@ public class Solution870 {
         Arrays.sort(sortedB);
 
         // assigned[b] = list of a that are assigned to beat b
-        Map<Integer, Deque<Integer>> assigned = new HashMap();
-        for (int b: B) assigned.put(b, new LinkedList());
+        Map<Integer, Deque<Integer>> assigned = new HashMap<Integer, Deque<Integer>>();
+        for (int b: B) assigned.put(b, new LinkedList<Integer>());
 
         // remaining = list of a that are not assigned to any b
-        Deque<Integer> remaining = new LinkedList();
+        Deque<Integer> remaining = new LinkedList<Integer>();
 
         // populate (assigned, remaining) appropriately
         // sortedB[j] is always the smallest unassigned element in B

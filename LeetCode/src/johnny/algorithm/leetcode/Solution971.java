@@ -46,7 +46,7 @@ public class Solution971 {
     int[] voyage;
 
     public List<Integer> flipMatchVoyage(TreeNode root, int[] voyage) { //copy
-        flipped = new ArrayList();
+        flipped = new ArrayList<Integer>();
         index = 0;
         this.voyage = voyage;
 

@@ -33,7 +33,7 @@ Note:
 public class Solution932 {
     Map<Integer, int[]> memo;
     public int[] beautifulArray(int N) {
-        memo = new HashMap();
+        memo = new HashMap<Integer, int[]>();
         return f(N);
     }
 

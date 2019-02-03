@@ -40,14 +40,14 @@ public class OutputCollector<K, V> {
             return false;
         }
         
-        Iterator it1 = output1.map.entrySet().iterator();
+        Iterator<Map.Entry<K, List<V>>> it1 = output1.map.entrySet().iterator();
         while (it1.hasNext()) {
-            Map.Entry entry = (Map.Entry)it1.next();
+            Map.Entry<K, List<V>> entry = (Map.Entry<K, List<V>>)it1.next();
             if (!output2.map.containsKey(entry.getKey())) {
                 return false;
             }
-            List list1 = (List)entry.getValue();
-            List list2 = (List)output2.map.get(entry.getKey()); 
+            List<V> list1 = entry.getValue();
+            List<V> list2 = output2.map.get(entry.getKey()); 
             
             if(!list1.containsAll(list2) || !list2.containsAll(list1)) {
                 return false;

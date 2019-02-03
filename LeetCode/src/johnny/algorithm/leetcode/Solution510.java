@@ -80,7 +80,7 @@ public class Solution510 {
         
         return cur.parent; // returns null incase of root
     }
-    class Node {
+    public class Node {
         public int val;
         public Node left;
         public Node right;

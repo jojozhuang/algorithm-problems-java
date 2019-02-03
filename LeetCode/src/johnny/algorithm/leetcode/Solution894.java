@@ -33,11 +33,11 @@ Note:
  * @author Johnny
  */
 public class Solution894 {
-    Map<Integer, List<TreeNode>> memo = new HashMap();
+    Map<Integer, List<TreeNode>> memo = new HashMap<Integer, List<TreeNode>>();
 
     public List<TreeNode> allPossibleFBT(int N) {
         if (!memo.containsKey(N)) {
-            List<TreeNode> ans = new LinkedList();
+            List<TreeNode> ans = new LinkedList<TreeNode>();
             if (N == 1) {
                 ans.add(new TreeNode(0));
             } else if (N % 2 == 1) {

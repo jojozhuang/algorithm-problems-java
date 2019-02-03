@@ -66,7 +66,7 @@ public class Solution913 {
             }
 
         // enqueued : all nodes that are colored
-        Queue<int[]> queue = new LinkedList();
+        Queue<int[]> queue = new LinkedList<int[]>();
         for (int i = 0; i < N; ++i)
             for (int t = 1; t <= 2; ++t) {
                 color[0][i][t] = MOUSE;
@@ -110,7 +110,7 @@ public class Solution913 {
     // What nodes could play their turn to
     // arrive at node (m, c, t) ?
     public List<int[]> parents(int[][] graph, int m, int c, int t) {
-        List<int[]> ans = new ArrayList();
+        List<int[]> ans = new ArrayList<int[]>();
         if (t == 2) {
             for (int m2: graph[m])
                 ans.add(new int[]{m2, c, 3-t});

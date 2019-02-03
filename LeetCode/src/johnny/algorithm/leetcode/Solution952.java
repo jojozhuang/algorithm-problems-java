@@ -64,7 +64,7 @@ public class Solution952 {
         }
 
         // primesL : a list of all primes that occur in factored
-        Set<Integer> primes = new HashSet();
+        Set<Integer> primes = new HashSet<Integer>();
         for (List<Integer> facs: factored)
             for (int x: facs)
                 primes.add(x);
@@ -75,7 +75,7 @@ public class Solution952 {
             primesL[t++] = x;
 
         // primeToIndex.get(v) == i  iff  primes[i] = v
-        Map<Integer, Integer> primeToIndex = new HashMap();
+        Map<Integer, Integer> primeToIndex = new HashMap<Integer, Integer>();
         for (int i = 0; i < primesL.length; ++i)
             primeToIndex.put(primesL[i], i);
 

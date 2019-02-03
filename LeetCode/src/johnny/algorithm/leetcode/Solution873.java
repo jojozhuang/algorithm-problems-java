@@ -42,11 +42,11 @@ Note:
 public class Solution873 {
     public int lenLongestFibSubseq(int[] A) {
         int N = A.length;
-        Map<Integer, Integer> index = new HashMap();
+        Map<Integer, Integer> index = new HashMap<Integer, Integer>();
         for (int i = 0; i < N; ++i)
             index.put(A[i], i);
 
-        Map<Integer, Integer> longest = new HashMap();
+        Map<Integer, Integer> longest = new HashMap<Integer, Integer>();
         int ans = 0;
 
         for (int k = 0; k < N; ++k)

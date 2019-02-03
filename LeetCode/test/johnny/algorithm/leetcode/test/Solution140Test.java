@@ -5,11 +5,9 @@ import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import johnny.algorithm.leetcode.Solution140;
 import johnny.algorithm.leetcode.common.ListUtil;
-import johnny.algorithm.leetcode.common.SetUtil;
 
 public class Solution140Test extends JunitBase {
 

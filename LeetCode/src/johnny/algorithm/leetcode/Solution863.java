@@ -48,14 +48,14 @@ The target node is a node in the tree.
 public class Solution863 {
     Map<TreeNode, TreeNode> parent;
     public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
-        parent = new HashMap();
+        parent = new HashMap<TreeNode, TreeNode>();
         dfs(root, null);
 
-        Queue<TreeNode> queue = new LinkedList();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(null);
         queue.add(target);
 
-        Set<TreeNode> seen = new HashSet();
+        Set<TreeNode> seen = new HashSet<TreeNode>();
         seen.add(target);
         seen.add(null);
 
@@ -64,7 +64,7 @@ public class Solution863 {
             TreeNode node = queue.poll();
             if (node == null) {
                 if (dist == K) {
-                    List<Integer> ans = new ArrayList();
+                    List<Integer> ans = new ArrayList<Integer>();
                     for (TreeNode n: queue)
                         ans.add(n.val);
                     return ans;

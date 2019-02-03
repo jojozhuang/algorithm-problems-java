@@ -75,10 +75,10 @@ public class TopKFrequentWordsTest {
         TopKFrequentWords.Reduce reduce = new TopKFrequentWords.Reduce();
         reduce.setup(2);
         
-        Iterator it1 = output1.map.entrySet().iterator();
+        Iterator<Map.Entry<String, List<Integer>>> it1 = output1.map.entrySet().iterator();
         while (it1.hasNext()) {
-            Map.Entry entry = (Map.Entry)it1.next();
-            reduce.reduce((String)entry.getKey(), ((List)entry.getValue()).iterator());
+            Map.Entry<String, List<Integer>> entry = it1.next();
+            reduce.reduce((String)entry.getKey(), (entry.getValue()).iterator());
         }
         
         OutputCollector<String, Integer> output2 = new OutputCollector<String, Integer>();
@@ -123,10 +123,10 @@ public class TopKFrequentWordsTest {
         TopKFrequentWords.Reduce reduce = new TopKFrequentWords.Reduce();
         reduce.setup(3);
         
-        Iterator it1 = output1.map.entrySet().iterator();
+        Iterator<Map.Entry<String, List<Integer>>> it1 = output1.map.entrySet().iterator();
         while (it1.hasNext()) {
-            Map.Entry entry = (Map.Entry)it1.next();
-            reduce.reduce((String)entry.getKey(), ((List)entry.getValue()).iterator());
+            Map.Entry<String, List<Integer>> entry = it1.next();
+            reduce.reduce((String)entry.getKey(), (entry.getValue()).iterator());
         }
         
         OutputCollector<String, Integer> output2 = new OutputCollector<String, Integer>();
@@ -170,10 +170,10 @@ public class TopKFrequentWordsTest {
         TopKFrequentWords.Reduce reduce = new TopKFrequentWords.Reduce();
         reduce.setup(2);
         
-        Iterator it1 = output1.map.entrySet().iterator();
+        Iterator<Map.Entry<String, List<Integer>>> it1 = output1.map.entrySet().iterator();
         while (it1.hasNext()) {
-            Map.Entry entry = (Map.Entry)it1.next();
-            reduce.reduce((String)entry.getKey(), ((List)entry.getValue()).iterator());
+            Map.Entry<String, List<Integer>> entry = it1.next();
+            reduce.reduce((String)entry.getKey(), (entry.getValue()).iterator());
         }
         
         OutputCollector<String, Integer> output2 = new OutputCollector<String, Integer>();

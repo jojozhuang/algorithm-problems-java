@@ -50,7 +50,7 @@ public class Solution887 {
         return dp(K, N);
     }
 
-    Map<Integer, Integer> memo = new HashMap();
+    Map<Integer, Integer> memo = new HashMap<Integer, Integer>();
     public int dp(int K, int N) {
         if (!memo.containsKey(N * 100 + K)) {
             int ans;

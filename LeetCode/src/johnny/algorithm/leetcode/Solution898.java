@@ -43,11 +43,11 @@ Note:
  */
 public class Solution898 {
     public int subarrayBitwiseORs(int[] A) {
-        Set<Integer> ans = new HashSet();
-        Set<Integer> cur = new HashSet();
+        Set<Integer> ans = new HashSet<Integer>();
+        Set<Integer> cur = new HashSet<Integer>();
         cur.add(0);
         for (int x: A) {
-            Set<Integer> cur2 = new HashSet();
+            Set<Integer> cur2 = new HashSet<Integer>();
             for (int y: cur)
                 cur2.add(x | y);
             cur2.add(x);

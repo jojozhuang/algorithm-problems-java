@@ -76,9 +76,9 @@ public class Solution207 {
         if (prerequisites == null || prerequisites.length == 0) {
             return true;
         }
-        ArrayList[] graph = new ArrayList[numCourses];
+        ArrayList<Integer>[] graph = new ArrayList[numCourses];
         for(int i=0;i<numCourses;i++)
-            graph[i] = new ArrayList();
+            graph[i] = new ArrayList<Integer>();
             
         boolean[] visited = new boolean[numCourses];
         for(int i=0; i<prerequisites.length;i++){
@@ -92,7 +92,7 @@ public class Solution207 {
         return true;
     }
 
-    private boolean dfs(ArrayList[] graph, boolean[] visited, int course){
+    private boolean dfs(ArrayList<Integer>[] graph, boolean[] visited, int course){
         if(visited[course])
             return false;
         else

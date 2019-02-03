@@ -51,9 +51,9 @@ public class Solution966 {
     Map<String, String> words_vow;
 
     public String[] spellchecker(String[] wordlist, String[] queries) { //copy
-        words_perfect = new HashSet();
-        words_cap = new HashMap();
-        words_vow = new HashMap();
+        words_perfect = new HashSet<String>();
+        words_cap = new HashMap<String, String>();
+        words_vow = new HashMap<String, String>();
 
         for (String word: wordlist) {
             words_perfect.add(word);

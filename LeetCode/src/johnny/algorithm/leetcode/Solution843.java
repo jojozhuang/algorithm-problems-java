@@ -50,15 +50,15 @@ public class Solution843 {
                 H[i][j] = H[j][i] = match;
             }
 
-        List<Integer> possible = new ArrayList();
-        List<Integer> path = new ArrayList();
+        List<Integer> possible = new ArrayList<Integer>();
+        List<Integer> path = new ArrayList<Integer>();
         for (int i = 0; i < N; ++i) possible.add(i);
 
         while (!possible.isEmpty()) {
             int guess = solve(possible, path);
             int matches = master.guess(wordlist[guess]);
             if (matches == wordlist[0].length()) return;
-            List<Integer> possible2 = new ArrayList();
+            List<Integer> possible2 = new ArrayList<Integer>();
             for (Integer j: possible) if (H[guess][j] == matches) possible2.add(j);
             possible = possible2;
             path.add(guess);

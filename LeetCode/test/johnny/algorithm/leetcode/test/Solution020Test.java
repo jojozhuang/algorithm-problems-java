@@ -30,7 +30,7 @@ public class Solution020Test extends JunitBase {
         System.out.println("isValid2");
         Solution020 instance = new Solution020();
 
-        HashMap<Character, Character> map = new HashMap();
+        HashMap<Character, Character> map = new HashMap<Character, Character>();
         map.put('(', ')');
         map.put('[', ']');
         map.put('{', '}');

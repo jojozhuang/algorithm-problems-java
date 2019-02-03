@@ -55,10 +55,10 @@ public class Solution928 {
         // 'seen': all nodes not in initial that it can reach.
         ArrayList<Integer>[] infectedBy = new ArrayList[N];
         for (int i = 0; i < N; ++i)
-            infectedBy[i] = new ArrayList();
+            infectedBy[i] = new ArrayList<Integer>();
 
         for (int u: initial) {
-            Set<Integer> seen = new HashSet();
+            Set<Integer> seen = new HashSet<Integer>();
             dfs(graph, clean, u, seen);
             for (int v: seen)
                 infectedBy[v].add(u);

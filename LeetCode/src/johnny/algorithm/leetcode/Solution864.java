@@ -55,7 +55,7 @@ public class Solution864 {
         C = grid[0].length();
 
         //location['a'] = the coordinates of 'a' on the grid, etc.
-        location = new HashMap();
+        location = new HashMap<Character, Point>();
         for (int r = 0; r < R; ++r)
             for (int c = 0; c < C; ++c) {
                 char v = grid[r].charAt(c);
@@ -102,7 +102,7 @@ public class Solution864 {
         boolean[][] seen = new boolean[R][C];
         seen[sr][sc] = true;
         int curDepth = 0;
-        Queue<Point> queue = new LinkedList();
+        Queue<Point> queue = new LinkedList<Point>();
         queue.offer(new Point(sr, sc));
         queue.offer(null);
 
@@ -136,7 +136,7 @@ public class Solution864 {
     }
 
     public List<String> permutations(String[] alphabet, int used, int size) {
-        List<String> ans = new ArrayList();
+        List<String> ans = new ArrayList<String>();
         if (size == 0) {
             ans.add(new String(""));
             return ans;

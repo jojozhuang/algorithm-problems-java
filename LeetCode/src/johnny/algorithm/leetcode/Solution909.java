@@ -52,10 +52,10 @@ public class Solution909 {
     public int snakesAndLadders(int[][] board) {
         int N = board.length;
 
-        Map<Integer, Integer> dist = new HashMap();
+        Map<Integer, Integer> dist = new HashMap<Integer, Integer>();
         dist.put(1, 0);
 
-        Queue<Integer> queue = new LinkedList();
+        Queue<Integer> queue = new LinkedList<Integer>();
         queue.add(1);
 
         while (!queue.isEmpty()) {

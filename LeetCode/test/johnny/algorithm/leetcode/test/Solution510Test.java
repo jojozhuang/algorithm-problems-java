@@ -9,9 +9,18 @@ public class Solution510Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("dummy");
+        System.out.println("inorderSuccessor");
         Solution510 instance = new Solution510();
 
-        assertEquals(0, instance.dummy());
+        Solution510.Node node1 = instance.new Node();
+        node1.val = 1;
+        node1.left = instance.new Node();
+        node1.left.val = 2;
+        node1.left.parent = node1;
+        node1.right = instance.new Node();
+        node1.right.val = 3;
+        node1.right.parent = node1;
+        Solution510.Node result1 = instance.inorderSuccessor(node1);
+        assertEquals(3, result1.val);
     }
 }

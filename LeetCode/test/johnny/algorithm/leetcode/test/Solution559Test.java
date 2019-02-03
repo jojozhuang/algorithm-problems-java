@@ -2,13 +2,10 @@ package johnny.algorithm.leetcode.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
 
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution559;
-import johnny.algorithm.leetcode.Solution590;
-import johnny.algorithm.leetcode.common.ListUtil;
 
 public class Solution559Test extends JunitBase {
 

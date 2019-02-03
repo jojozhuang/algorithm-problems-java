@@ -1,8 +1,5 @@
 package johnny.algorithm.leetcode;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Maximum XOR of Two Numbers in an Array.
  * 

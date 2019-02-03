@@ -39,8 +39,8 @@ TopVotedCandidate.q(int t) is always called with t >= times[0].
 public class Solution911 {
     List<List<Vote>> A;
     public Solution911(int[] persons, int[] times) {
-        A = new ArrayList();
-        Map<Integer, Integer> count = new HashMap();
+        A = new ArrayList<List<Vote>>();
+        Map<Integer, Integer> count = new HashMap<Integer, Integer>();
         for (int i = 0; i < persons.length; ++i) {
             int p = persons[i], t = times[i];
             int c = count.getOrDefault(p, 0) + 1;

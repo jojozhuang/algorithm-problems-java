@@ -50,7 +50,7 @@ cells[i] is in {0, 1}
  */
 public class Solution957 {
     public int[] prisonAfterNDays(int[] cells, int N) {
-        Map<Integer, Integer> seen = new HashMap();
+        Map<Integer, Integer> seen = new HashMap<Integer, Integer>();
 
         // state  = integer representing state of prison
         int state = 0;

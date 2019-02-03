@@ -51,20 +51,20 @@ A reachable node is a node that can be travelled to using at most M moves starti
  */
 public class Solution882 {
     public int reachableNodes(int[][] edges, int M, int N) {
-        Map<Integer, Map<Integer, Integer>> graph = new HashMap();
+        Map<Integer, Map<Integer, Integer>> graph = new HashMap<Integer, Map<Integer, Integer>>();
         for (int[] edge: edges) {
             int u = edge[0], v = edge[1], w = edge[2];
-            graph.computeIfAbsent(u, x->new HashMap()).put(v, w);
-            graph.computeIfAbsent(v, x->new HashMap()).put(u, w);
+            graph.computeIfAbsent(u, x->new HashMap<Integer, Integer>()).put(v, w);
+            graph.computeIfAbsent(v, x->new HashMap<Integer, Integer>()).put(u, w);
         }
 
         PriorityQueue<ANode> pq = new PriorityQueue<ANode>(
             (a, b) -> Integer.compare(a.dist, b.dist));
         pq.offer(new ANode(0, 0));
 
-        Map<Integer, Integer> dist = new HashMap();
+        Map<Integer, Integer> dist = new HashMap<Integer, Integer>();
         dist.put(0, 0);
-        Map<Integer, Integer> used = new HashMap();
+        Map<Integer, Integer> used = new HashMap<Integer, Integer>();
         int ans = 0;
 
         while (!pq.isEmpty()) {

@@ -31,7 +31,7 @@ public class Solution907 {
 
         // prev has i* - 1 in increasing order of A[i* - 1]
         // where i* is the answer to query j
-        Stack<Integer> stack = new Stack();
+        Stack<Integer> stack = new Stack<Integer>();
         int[] prev = new int[N];
         for (int i = 0; i < N; ++i) {
             while (!stack.isEmpty() && A[i] <= A[stack.peek()])
@@ -42,7 +42,7 @@ public class Solution907 {
 
         // next has k* + 1 in increasing order of A[k* + 1]
         // where k* is the answer to query j
-        stack = new Stack();
+        stack = new Stack<Integer>();
         int[] next = new int[N];
         for (int k = N-1; k >= 0; --k) {
             while (!stack.isEmpty() && A[k] < A[stack.peek()])

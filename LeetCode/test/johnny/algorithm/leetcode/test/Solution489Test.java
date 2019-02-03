@@ -4,14 +4,16 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.algorithm.leetcode.Solution489;
+import johnny.algorithm.leetcode.common.RobotImp;
 
 public class Solution489Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("Solution489");
+        System.out.println("cleanRoom");
         Solution489 instance = new Solution489();
 
-        assertEquals(0, instance.dummy());
+        RobotImp ri = new RobotImp();
+        instance.cleanRoom(ri);
     }
 }

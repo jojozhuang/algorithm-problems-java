@@ -49,14 +49,14 @@ public class Solution886 {
     public boolean possibleBipartition(int N, int[][] dislikes) {
         graph = new ArrayList[N+1];
         for (int i = 1; i <= N; ++i)
-            graph[i] = new ArrayList();
+            graph[i] = new ArrayList<Integer>();
 
         for (int[] edge: dislikes) {
             graph[edge[0]].add(edge[1]);
             graph[edge[1]].add(edge[0]);
         }
 
-        color = new HashMap();
+        color = new HashMap<Integer, Integer>();
         for (int node = 1; node <= N; ++node)
             if (!color.containsKey(node) && !dfs(node, 0))
                 return false;

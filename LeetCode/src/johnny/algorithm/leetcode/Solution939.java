@@ -36,14 +36,14 @@ All points are distinct.
  */
 public class Solution939 {
     public int minAreaRect(int[][] points) {
-        Map<Integer, List<Integer>> rows = new TreeMap();
+        Map<Integer, List<Integer>> rows = new TreeMap<Integer, List<Integer>>();
         for (int[] point: points) {
             int x = point[0], y = point[1];
-            rows.computeIfAbsent(x, z-> new ArrayList()).add(y);
+            rows.computeIfAbsent(x, z-> new ArrayList<Integer>()).add(y);
         }
 
         int ans = Integer.MAX_VALUE;
-        Map<Integer, Integer> lastx = new HashMap();
+        Map<Integer, Integer> lastx = new HashMap<Integer, Integer>();
         for (int x: rows.keySet()) {
             List<Integer> row = rows.get(x);
             Collections.sort(row);

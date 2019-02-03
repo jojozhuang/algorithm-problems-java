@@ -39,7 +39,7 @@ A.length is even
 public class Solution954 {
     public boolean canReorderDoubled(int[] A) {
         // count[x] = the number of occurrences of x in A
-        Map<Integer, Integer> count = new HashMap();
+        Map<Integer, Integer> count = new HashMap<Integer, Integer>();
         for (int x: A)
             count.put(x, count.getOrDefault(x, 0) + 1);
 

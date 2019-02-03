@@ -39,10 +39,10 @@ A and B contain only lowercase letters from the set {'a', 'b', 'c', 'd', 'e', 'f
  */
 public class Solution854 {
     public int kSimilarity(String A, String B) {
-        Queue<String> queue = new ArrayDeque();
+        Queue<String> queue = new ArrayDeque<String>();
         queue.offer(A);
 
-        Map<String, Integer> dist = new HashMap();
+        Map<String, Integer> dist = new HashMap<String, Integer>();
         dist.put(A, 0);
 
         while (!queue.isEmpty()) {
@@ -60,7 +60,7 @@ public class Solution854 {
     }
 
     public List<String> neighbors(String S, String target) {
-        List<String> ans = new ArrayList();
+        List<String> ans = new ArrayList<String>();
         int i = 0;
         for (; i < S.length(); ++i) {
             if (S.charAt(i) != target.charAt(i)) break;

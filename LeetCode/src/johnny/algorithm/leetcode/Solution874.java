@@ -50,7 +50,7 @@ public class Solution874 {
         int x = 0, y = 0, di = 0;
 
         // Encode obstacles (x, y) as (x+30000) * (2^16) + (y+30000)
-        Set<Long> obstacleSet = new HashSet();
+        Set<Long> obstacleSet = new HashSet<Long>();
         for (int[] obstacle: obstacles) {
             long ox = (long) obstacle[0] + 30000;
             long oy = (long) obstacle[1] + 30000;

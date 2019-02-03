@@ -41,7 +41,7 @@ public class Solution855 {
 
     public Solution855(int N) {
         this.N = N;
-        students = new TreeSet();
+        students = new TreeSet<Integer>();
     }
 
     public int seat() {

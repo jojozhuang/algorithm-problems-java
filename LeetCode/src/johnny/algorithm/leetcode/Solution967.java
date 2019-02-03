@@ -35,12 +35,12 @@ Note:
  */
 public class Solution967 {
     public int[] numsSameConsecDiff(int N, int K) { //copy
-        Set<Integer> cur = new HashSet();
+        Set<Integer> cur = new HashSet<Integer>();
         for (int i = 1; i <= 9; ++i)
             cur.add(i);
 
         for (int steps = 1; steps <= N-1; ++steps) {
-            Set<Integer> cur2 = new HashSet();
+            Set<Integer> cur2 = new HashSet<Integer>();
             for (int x: cur) {
                 int d = x % 10;
                 if (d-K >= 0)
