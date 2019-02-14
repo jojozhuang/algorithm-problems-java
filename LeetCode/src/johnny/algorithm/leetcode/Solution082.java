@@ -15,6 +15,35 @@ import johnny.algorithm.leetcode.common.ListNode;
  */
 public class Solution082 {
     public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode previous = dummy;
+        ListNode curr = head;
+        while (curr != null) {
+            if (curr.next == null) {
+                break;
+            }
+            if (curr.val != curr.next.val) {
+                previous = previous.next;
+                curr = curr.next;
+            } else {
+                while (curr.next != null && curr.val == curr.next.val) {
+                    curr = curr.next;
+                } 
+
+                previous.next = curr.next;
+                curr = curr.next;
+            }
+        }
+        
+        return dummy.next;
+    }
+    
+    public ListNode deleteDuplicates2(ListNode head) {
         if (head == null) {
             return null;
         }

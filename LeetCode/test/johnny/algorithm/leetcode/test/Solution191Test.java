@@ -25,7 +25,10 @@ public class Solution191Test extends JunitBase {
         assertEquals(2, instance.hammingWeight(10));
         assertEquals(3, instance.hammingWeight(11));
         assertEquals(31, instance.hammingWeight(2147483647));
+        assertEquals(32, instance.hammingWeight(-1));
+        assertEquals(31, instance.hammingWeight(-2));
+        assertEquals(31, instance.hammingWeight(-3));
+        assertEquals(2, instance.hammingWeight(-2147483647));
         assertEquals(1, instance.hammingWeight(-2147483648));
-        //assertEquals(1, instance.hammingWeight(2147483648l));
     }
 }

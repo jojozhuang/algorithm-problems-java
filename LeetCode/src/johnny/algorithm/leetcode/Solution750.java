@@ -38,17 +38,70 @@ Explanation: Rectangles must have four distinct corners.
  * @author Johnny
  */
 public class Solution750 {
+    // two rows first, then combination, O(n^2*m)
     public int countCornerRectangles(int[][] grid) {
         int ans = 0;
+        // first line
         for (int i = 0; i < grid.length - 1; i++) {
+            // second line
             for (int j = i + 1; j < grid.length; j++) {
                 int counter = 0;
+                // scan column
                 for (int k = 0; k < grid[0].length; k++) {
-                    if (grid[i][k] == 1 && grid[j][k] == 1) counter++;
+                    if (grid[i][k] == 1 && grid[j][k] == 1) {
+                        counter++;
+                    }
                 }
-                if (counter > 0) ans += counter * (counter - 1) / 2;
+                // combination
+                if (counter > 0) {
+                    ans += counter * (counter - 1) / 2;
+                }
             }
         }
         return ans;
+    }
+    
+    // brute force, O((n*m)^2)
+    public int countCornerRectangles2(int[][] grid) {
+        if (grid == null || grid.length <= 1 || grid[0].length <= 1) {
+            return 0;
+        } 
+        
+        int ans = 0;
+        for (int i = 0; i < grid.length - 1; i++) {
+            for (int j = 0; j < grid[0].length - 1; j++) {
+                ans += isRectangle(grid, i, j);
+            }
+        }
+        
+        return ans;
+    }
+    
+    private int isRectangle(int[][] grid, int row, int col) {
+        int n = grid.length;
+        int m = grid[0].length;
+        
+        // top left
+        if (grid[row][col] == 0) {
+            return 0;
+        }
+        
+        int count = 0;
+        for (int j = col + 1; j < m; j++) {
+            // top right
+            if (grid[row][j] == 1) {
+                for (int i = row + 1; i < n; i++) {
+                    // bottom right
+                    if (grid[i][j] == 1) {
+                        // bottom left
+                        if (grid[i][col] == 1) {
+                            count++;
+                        }
+                    }
+                }
+            }
+        }
+        
+        return count;
     }
 }

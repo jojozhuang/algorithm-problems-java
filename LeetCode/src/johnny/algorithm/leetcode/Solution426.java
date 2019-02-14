@@ -35,7 +35,47 @@ public class Solution426 {
         }
     };
     
+    // recursive
     public Node treeToDoublyList(Node root) {
+        if (root == null) {
+            return null;
+        }
+        
+        Node[] node = helper(root);
+        node[0].left = node[1];
+        node[1].right = node[0];
+        return node[0];
+    }
+    
+    private Node[] helper(Node root) {
+        if (root == null) {
+            return null;
+        }
+        
+        Node dummy = new Node();
+        // left
+        Node[] left = helper(root.left);
+        if (left != null) {
+            left[1].right = root;
+            root.left = left[1];
+            dummy.right = left[0];
+        } else {
+            dummy.right = root;
+        }
+        // right
+        Node tail = null;
+        Node[] right = helper(root.right);
+        if (right != null) {
+            root.right = right[0];
+            right[0].left = root;
+            tail = right[1];
+        } else {
+            tail = root;
+        }
+        return new Node[]{dummy.right, tail};
+    }
+    
+    public Node treeToDoublyList2(Node root) {
         if (root == null) {
             return null;
         }

@@ -23,13 +23,78 @@ Output:
  * @author Johnny
  */
 public class Solution430 {
+    // recursive, like dfs
     public Node flatten(Node head) {
         if (head == null) {
             return head;
         }
         
-        Node dummy = new Node(0, null, null, null);
-        dummy.next = head;
+        Node[] children = helper(head);
+        
+        return children[0];
+    }
+    private Node[] helper(Node head) {
+        Node curr = head;
+        Node tail = head;
+        while (curr != null) {
+            tail = curr;
+            if (curr.child == null) {
+                curr = curr.next;
+            } else {
+                Node next = curr.next;
+                Node[] children = helper(curr.child);
+                curr.next = children[0];
+                children[0].prev = curr;
+                tail = children[1];
+                tail.next = next;
+                if (next != null) {
+                    next.prev = tail;
+                }
+                curr.child = null;
+                curr = curr.next;
+            }
+        }
+        
+        return new Node[] {head, tail};
+    }
+    
+    // straight forward
+    public Node flatten3(Node head) {
+        if (head == null || (head.next == null && head.child == null)) {
+            return head;
+        }
+        
+        Node curr = head;
+        while (curr != null) {
+            if (curr.child == null) {
+                curr = curr.next;
+            } else {
+                Node next = curr.next;
+                Node child = flatten(curr.child);
+                curr.next = child;
+                child.prev = curr;
+                Node tail = child;
+                while (tail != null && tail.next != null) {
+                    tail = tail.next;
+                }
+                tail.next = next;
+                if (next != null) {
+                    next.prev = tail;
+                }
+                curr.child = null;
+                curr = curr.next;
+            }
+        }
+        
+        return head;
+    }
+    
+    // like bfs
+    public Node flatten2(Node head) {
+        if (head == null) {
+            return head;
+        }
+        
         Node curr = head;
         while (curr != null) {
             if (curr.child == null) {
@@ -47,7 +112,7 @@ public class Solution430 {
                 curr = curr.next;
             }
         }
-        return dummy.next;
+        return head;
     }
     
     private Node[] getChild(Node child) {

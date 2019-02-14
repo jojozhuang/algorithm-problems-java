@@ -19,24 +19,23 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution303 {
-    private int[] sum;
+    int[] preSum;
     public Solution303(int[] nums) {
         if (nums == null || nums.length == 0) {
-            sum = new int[] {0, 0};            
-        } else {
-            sum = new int[nums.length + 1];
-            sum[0] = 0;
-            for (int i = 0; i < nums.length; i++) {
-                sum[i + 1] = sum[i] + nums[i];
-            }
+            return;
+        }
+        preSum = new int[nums.length];
+        preSum[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            preSum[i] = preSum[i - 1] + nums[i];
         }
     }
-
+    
     public int sumRange(int i, int j) {
-        if (i < 0 || j > sum.length - 2 || i > j) {
-            return 0;
+        if (i == 0) {
+            return preSum[j];
+        } else {
+            return preSum[j] - preSum[i - 1];
         }
-        
-        return sum[j + 1] - sum[i];       
     }
 }

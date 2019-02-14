@@ -23,14 +23,18 @@ Every cost[i] will be an integer in the range [0, 999].
  */
 public class Solution746 {
     public int minCostClimbingStairs(int[] cost) {
-        int [] dp = new int[cost.length + 1];
+        int n = cost.length;
+        int[] dp = new int[n];
         dp[0] = cost[0];
         dp[1] = cost[1];
-        
-        for (int i = 2; i <= cost.length; i++){
-            int curr = (i == cost.length) ? 0 : cost[i];
-            dp[i] = Math.min(dp[i-1] + curr, dp[i-2] + curr);
+        for (int i = 2; i < n; i++) {
+            if (i == n - 1) {
+                dp[i] = Math.min(dp[i - 1], dp[i - 2] + cost[i]);
+            } else {
+                dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i];
+            }
         }
-        return dp[cost.length];
+        
+        return dp[n - 1];
     }
 }

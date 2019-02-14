@@ -37,6 +37,43 @@ k will be an integer in the range [1, 50].
  * @author Johnny
  */
 public class Solution725 {
+    public ListNode[] splitListToParts(ListNode root, int k) {
+        if (root == null) {
+            return new ListNode[3];
+        }
+        
+        // get length
+        ListNode curr = root;
+        int len = 0;
+        while (curr != null) {
+            len++;
+            curr = curr.next;
+        }
+        
+        int average = len / k;
+        int remain = len % k;
+        
+        ListNode[] parts = new ListNode[k];
+        curr = root;
+        int i = 0;
+        while (curr != null) {
+            ListNode part = curr;
+            int count = average + (remain > 0 ? 1 : 0);
+            for (int j = 1; j < count; j++) {
+                part = part.next;
+            }
+            if (remain > 0) {
+                remain--;
+            }
+            ListNode next = part.next;
+            part.next = null;
+            parts[i++] = curr;
+            curr = next;
+        }
+        
+        return parts;
+    }
+    
     public ListNode[] splitListToParts2(ListNode root, int k) {
         if (k < -1) {
             return new ListNode[] {};
@@ -69,7 +106,7 @@ public class Solution725 {
         }
         return parts;
     }
-    public ListNode[] splitListToParts(ListNode root, int k) {
+    public ListNode[] splitListToParts3(ListNode root, int k) {
         ListNode[] parts = new ListNode[k];
         int len = 0;
         for (ListNode node = root; node != null; node = node.next)

@@ -18,19 +18,64 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution053 {
+    // time: O(n), space O(1) 
     public int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int[] sum = new int[nums.length];
-        sum[0] = nums[0];
+        int n = nums.length;
+        int sum = nums[0];
         int max = nums[0];
         
-        for (int i = 1; i < nums.length; i++) {
-            sum[i] = Math.max(nums[i], nums[i] + sum[i - 1]);
-            max = Math.max(max, sum[i]);
+        for (int i = 1; i < n; i++) {
+            sum = Math.max(nums[i], nums[i] + sum);
+            max = Math.max(max, sum);
         }
         
         return max;
+    }
+    // dp, time: O(n), space: O(n), one loop
+    public int maxSubArray2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int n = nums.length;
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        int ans = nums[0];
+        for (int i = 1; i < n; i++) {
+            dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+            ans = Math.max(ans, dp[i]);
+        }
+
+        return ans;
+    }
+    // dp, time: O(n), space: O(n), two loops
+    public int maxSubArray3(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int n = nums.length;
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            if (dp[i - 1] < 0) {
+                dp[i] = nums[i];
+            } else {
+                dp[i] = dp[i - 1] + nums[i];
+            }
+            // same as
+            // dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+        }
+        
+        // scan to find the maximum
+        int ans = nums[0];
+        for (int i = 1; i < n; i++) {
+            ans = Math.max(ans, dp[i]);
+        }
+
+        return ans;
     }
 }

@@ -27,7 +27,7 @@ public class Solution369 {
         if (plusOneHelper(head) == 0) {
             return head;
         }
-        //need addtional node
+        //need additional node
         ListNode newHead = new ListNode(1);
         newHead.next = head;
         return newHead;
@@ -57,10 +57,10 @@ public class Solution369 {
                 break;
             }
             
-            int sum = rev.val + carry;            
+            int sum = rev.val + carry;
             if (sum >= 10) {
                 rev.val = sum % 10;
-                carry = 1;                
+                carry = 1;
                 if (rev.next == null) {
                     rev.next = new ListNode(1);
                     break;
@@ -71,7 +71,7 @@ public class Solution369 {
                 rev.val = sum;
                 carry = 0;
                 break;
-            }            
+            }
         }
         
         return reverse(tail);

@@ -18,6 +18,36 @@ public class Solution138 {
         }
         
         RandomListNode curr = head;
+        while (curr != null) {
+            RandomListNode next = curr.next;
+            curr.next = new RandomListNode(curr.label);
+            curr.next.next = next;
+            if (curr.random != null) {
+                curr.next.random = curr.random;
+            }
+            curr = curr.next.next;
+        }
+        
+        curr = head;
+        RandomListNode dummy = new RandomListNode(0);
+        RandomListNode newCurr = dummy;
+        while (curr != null) {
+            RandomListNode next = curr.next.next;
+            newCurr.next = curr.next;
+            newCurr = newCurr.next;
+            curr.next = next;
+            curr = curr.next;
+        }
+        
+        return dummy.next;
+    }
+    
+    public RandomListNode copyRandomList2(RandomListNode head) {
+        if (head == null) {
+            return head;
+        }
+        
+        RandomListNode curr = head;
         // create each new node behind its old node
         while(curr != null) {
             RandomListNode copy = new RandomListNode(curr.label);

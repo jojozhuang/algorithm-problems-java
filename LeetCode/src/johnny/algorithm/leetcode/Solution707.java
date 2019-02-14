@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
 * 707. Design Linked List
@@ -30,54 +31,54 @@ Please do not use the built-in LinkedList library.
  * @author Johnny
  */
 public class Solution707 {
-    class DoublyNode {
-        public int val;
-        public DoublyNode prev;
-        public DoublyNode next;
-        public DoublyNode(int val) {
+    public class ListNode {
+        int val = 0;
+        ListNode previous = null;
+        ListNode next = null;
+        public ListNode(int val) {
             this.val = val;
         }
     }
     
-    private DoublyNode head;
-    private DoublyNode tail;
-    private ArrayList<DoublyNode> list;
+    private ListNode head;
+    private ListNode tail;
+    List<ListNode> list;
     /** Initialize your data structure here. */
     public Solution707() {
-        list = new ArrayList<DoublyNode>();
+        list = new ArrayList<ListNode>();
     }
     
     /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
     public int get(int index) {
-        if (list.isEmpty() || index < 0 || index > list.size() - 1) {
+        if (index < 0 || index >= list.size()) {
             return -1;
         }
+        
         return list.get(index).val;
     }
     
     /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
     public void addAtHead(int val) {
-        DoublyNode node = new DoublyNode(val);
         if (head == null) {
-            head = node;
-            tail = node;
+            head = new ListNode(val);
+            tail = head;
             list.add(head);
         } else {
+            ListNode node = new ListNode(val);
             node.next = head;
-            head.prev = node;
             head = node;
-            list.add(0,  head);
+            list.add(0, head);
         }
     }
     
     /** Append a node of value val to the last element of the linked list. */
     public void addAtTail(int val) {
-        DoublyNode node = new DoublyNode(val);
         if (tail == null) {
-            head = node;
-            tail = node;
+            tail = new ListNode(val);
+            head = tail;
+            list.add(tail);
         } else {
-            tail.next = node;
+            tail.next = new ListNode(val);
             tail = tail.next;
             list.add(tail);
         }
@@ -85,42 +86,40 @@ public class Solution707 {
     
     /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
     public void addAtIndex(int index, int val) {
-        if (index < 0) {
+        if (index < 0 || index > list.size()) {
             return;
         }
+        
         if (index == 0) {
             addAtHead(val);
-        } else if (index > list.size() - 1) {
+        } else if (index == list.size()) {
             addAtTail(val);
         } else {
-            DoublyNode prev = list.get(index - 1);
-            DoublyNode curr = list.get(index);
-            DoublyNode node = new DoublyNode(val);
-            prev.next = node;
-            node.prev = prev;
-            node.next = curr;
-            curr.prev = node;
-            list.add(index, node);
+            ListNode node = list.get(index - 1);
+            ListNode next = node.next;
+            node.next = new ListNode(val);
+            node.next.next = next;
+            list.add(index, node.next);
         }
     }
     
     /** Delete the index-th node in the linked list, if the index is valid. */
     public void deleteAtIndex(int index) {
-        if (index < 0 || index > list.size() - 1) {
+        if (index < 0 || index >= list.size()) {
             return;
         }
         
         if (index == 0) {
             head = head.next;
-            head.prev = null;
             list.remove(0);
+        } else if (index == list.size() - 1) {
+            ListNode node = list.get(index - 1);
+            node.next = null;
+            tail = node;
+            list.remove(index);
         } else {
-            DoublyNode prev = list.get(index - 1);
-            DoublyNode curr = list.get(index);
-            prev.next = curr.next;
-            if (curr.next != null && curr.next.prev != null ) {
-                curr.next.prev = prev;
-            }
+            ListNode node = list.get(index - 1);
+            node.next = node.next.next;
             list.remove(index);
         }
     }

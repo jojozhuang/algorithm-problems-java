@@ -9,7 +9,35 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution005 {
+    private int low = 0, maxLen = 0;
     public String longestPalindrome(String s) {
+        if (s == null || s.length() < 2) {
+            return s;
+        }
+        for (int i = 0; i < s.length() - 1; i++) {
+            extendPalindrome(s, i, i + 1);     // even
+            extendPalindrome(s, i, i);         // odd
+        }
+        return s.substring(low, low + maxLen);
+    }
+    
+    private void extendPalindrome(String s, int left, int right) {
+        while (left >= 0 && right < s.length()) {
+            if (s.charAt(left) == s.charAt(right)) {
+                left--;
+                right++;
+            } else {
+                break;
+            }
+        }
+        
+        if (maxLen < right - left - 1) { // this also covers the scenario that left != right at first place
+            low = left + 1;
+            maxLen = right - left - 1;
+        }
+    }
+    
+    public String longestPalindrome44(String s) {
         if (s == null || s.length() == 0) {
             return s;
         }

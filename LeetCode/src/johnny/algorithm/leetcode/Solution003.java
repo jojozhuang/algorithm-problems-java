@@ -2,6 +2,7 @@ package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -28,9 +29,37 @@ Note that the answer must be a substring, "pwke" is a subsequence and not a subs
  * @author Johnny
  */
 public class Solution003 {
+    public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        if (s.length() == 1) {
+            return 1;
+        }
+        int left = 0;
+        int right = 1;
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        map.put(s.charAt(0), 0);
+        int longest = 1;
+        while (right < s.length()) {
+            if (!map.containsKey(s.charAt(right))) {
+                longest = Math.max(longest, right - left + 1);
+            } else {
+                int prev = map.get(s.charAt(right));
+                for (int i = left; i <= prev; i++) {
+                    map.remove(s.charAt(i));
+                }
+                left = prev + 1;
+            }
+            map.put(s.charAt(right), right);
+            right++;
+        }
+        
+        return longest;
+    }
     // template
     // https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring4(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }

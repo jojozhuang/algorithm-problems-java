@@ -25,6 +25,44 @@ import johnny.algorithm.leetcode.common.ListNode;
  */
 public class Solution025 {
     public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null || head.next == null || k == 1) {
+            return head;
+        }
+        
+        // get length
+        int len = 0;
+        ListNode curr = head;
+        while (curr != null) {
+            len++;
+            curr = curr.next;
+        }
+        int count = len / k;
+        
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        curr = head;
+        while (curr != null && count > 0) {
+            reverse(curr, k);
+            count--;
+        }
+        
+        return dummy.next;
+    }
+    
+    private void reverse(ListNode head, int k) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null && k > 0) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            k--;
+        }
+        head.next = curr;
+    }
+    
+    public ListNode reverseKGroup3(ListNode head, int k) {
         if (head == null || k <= 1) {
             return head;
         }

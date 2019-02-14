@@ -20,6 +20,34 @@ The new node should insert between node 1 and node 3. After the insertion, the l
  */
 public class Solution708 {
     public Node insert(Node head, int insertVal) {
+        if (head == null) {
+            head = new Node(insertVal);
+            head.next = head;
+            return head;
+        }
+        
+        Node curr = head;
+        while (curr != null) {
+            if (insertVal >= curr.val && insertVal <= curr.next.val ||
+                curr.val > curr.next.val && (insertVal >= curr.val || insertVal <= curr.next.val)) {
+                Node insertNode = new Node(insertVal);
+                insertNode.next = curr.next;
+                curr.next = insertNode;
+                break;
+            } else {
+                curr = curr.next;
+                if (curr == head) {
+                    Node insertNode = new Node(insertVal);
+                    insertNode.next = curr.next;
+                    curr.next = insertNode;
+                    break;
+                }
+            }
+        }
+        
+        return head;
+    }
+    public Node insert2(Node head, int insertVal) {
         // head is null
         if (head == null) {
             Node node = new Node(insertVal, null);
