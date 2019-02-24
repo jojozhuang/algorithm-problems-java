@@ -26,6 +26,34 @@ package johnny.algorithm.leetcode;
  */
 public class Solution520 {
     public boolean detectCapitalUse(String word) {
+        char[] letters = word.toCharArray();
+        boolean upper = (letters[0] >= 'A' && letters[0] <= 'Z');
+        boolean hasUpper = false;
+        boolean hasLower = false;
+        for (int i = 1; i < letters.length; i++) {
+            char c = letters[i];
+            if (c >= 'a' && c <= 'z') {
+                hasLower = true;
+            }
+            if (c >= 'A' && c <= 'Z') {
+                hasUpper = true;
+            }
+        }
+        
+        if (upper) {
+            if (hasLower && hasUpper) {
+                return false;
+            }
+        } else {
+            if (hasUpper) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public boolean detectCapitalUse2(String word) {
         if (word == null || word.isEmpty()) {
             return true;
         }

@@ -1,7 +1,11 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 import johnny.algorithm.leetcode.common.Employee;
 
@@ -26,36 +30,60 @@ The maximum number of employees won't exceed 2000.
  * @author Johnny
  */
 public class Solution690 {
+ // bfs
     public int getImportance(List<Employee> employees, int id) {
         if (employees == null || employees.size() == 0) {
             return 0;
         }
         
-        int importance = getImportance(employees, id, 0);
-                
-        return importance;
+        Map<Integer, Employee> map = new HashMap<Integer, Employee>();
+        for (Employee e : employees) {
+            map.put(e.id, e);
+        }
+        
+        if (!map.containsKey(id)) {
+            return 0;
+        }
+        
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.offer(id);
+        int sum = 0;
+        while (!queue.isEmpty()) {
+            Employee emp = map.get(queue.poll());
+            sum += emp.importance;
+            for (Integer i : emp.subordinates) {
+                queue.offer(i);
+            }
+        }
+        
+        return sum;
+    }
+    // dfs
+    public int getImportance2(List<Employee> employees, int id) {
+        if (employees == null || employees.size() == 0) {
+            return 0;
+        }
+        
+        Map<Integer, Employee> map = new HashMap<Integer, Employee>();
+        for (Employee e : employees) {
+            map.put(e.id, e);
+        }
+        
+        return dfs(map, id);
     }
     
-    private int getImportance(List<Employee> employees, int id, int index) {
-        List<Integer> sublist = new ArrayList<Integer>();
-        int importance = 0;
-        int newIndex = 0;
-        for (newIndex = index; newIndex < employees.size(); newIndex++) {
-            Employee emp = employees.get(newIndex);
-            if (emp.id == id) {
-                sublist = emp.subordinates;
-                importance += emp.importance;
-                break;
-            }
+    private int dfs(Map<Integer, Employee> map, int id) {
+        if (!map.containsKey(id)) {
+            return 0;
         }
         
-        if (sublist.size() != 0) {
-            for (int i = 0; i < sublist.size(); i++) {
-                importance += getImportance(employees, sublist.get(i), index);
-            }
+        Employee emp = map.get(id);
+        int sum = emp.importance;
+        for (Integer subid : emp.subordinates) {
+            sum += dfs(map, subid);
         }
         
-        return importance;
+        return sum;
     }
 }
     

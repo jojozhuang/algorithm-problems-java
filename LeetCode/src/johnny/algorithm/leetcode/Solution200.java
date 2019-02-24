@@ -25,8 +25,80 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution200 {
-    //https://discuss.leetcode.com/topic/47691/easy-to-understand-simplify-java-union-find-version
     public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
+        int m = grid.length;
+        int n = grid[0].length;
+        boolean[][] visited = new boolean[m][n];
+        
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(dfs(grid, i, j, visited)) {
+                    ans++;
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    private boolean dfs(char[][] grid, int r, int c, boolean[][] visited) {
+        int m = grid.length;
+        int n = grid[0].length;
+        if (r < 0 || r >= m || c < 0 || c >= n || visited[r][c] || grid[r][c] == '0') {
+            return false;
+        }
+        
+        visited[r][c] = true;
+        dfs(grid, r - 1, c, visited);
+        dfs(grid, r + 1, c, visited);
+        dfs(grid, r, c - 1, visited);
+        dfs(grid, r, c + 1, visited);
+        return true;
+    }
+    
+    public int numIslands5(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
+        int m = grid.length;
+        int n = grid[0].length;
+        boolean[][] visited = new boolean[m][n];
+        
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1' && !visited[i][j]) {
+                    dfs2(grid, i, j, visited);
+                    ans++;
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    private void dfs2(char[][] grid, int r, int c, boolean[][] visited) {
+        int m = grid.length;
+        int n = grid[0].length;
+        if (r < 0 || r >= m || c < 0 || c >= n || visited[r][c] || grid[r][c] == '0') {
+            return;
+        }
+        
+        visited[r][c] = true;
+        dfs(grid, r - 1, c, visited);
+        dfs(grid, r + 1, c, visited);
+        dfs(grid, r, c - 1, visited);
+        dfs(grid, r, c + 1, visited);
+    }
+    
+    //https://discuss.leetcode.com/topic/47691/easy-to-understand-simplify-java-union-find-version
+    public int numIslands4(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }

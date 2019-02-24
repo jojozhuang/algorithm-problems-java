@@ -1,6 +1,8 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 import johnny.algorithm.leetcode.common.TreeNode;
@@ -63,6 +65,35 @@ Note: Answer will in the range of 32-bit signed integer
  */
 public class Solution662 {
     public int widthOfBinaryTree(TreeNode root) {
+        if (root == null) {
+            return 1;
+        }
+        
+        int ans = 1;
+        Deque<TreeNode> deque = new LinkedList<>();
+        root.val = 1;
+        deque.offerLast(root);
+        while (!deque.isEmpty()) {
+            int size = deque.size();
+            ans = Math.max(ans, deque.peekLast().val - deque.peekFirst().val + 1);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = deque.pollFirst();
+                if (node.left != null) {
+                    node.left.val = node.val * 2 - 1;
+                    deque.offerLast(node.left);
+                }
+                if (node.right != null) {
+                    node.right.val = node.val * 2;
+                    deque.offerLast(node.right);
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    
+    public int widthOfBinaryTree2(TreeNode root) {
         return dfs(root, 0, 1, new ArrayList<Integer>(), new ArrayList<Integer>());
     }
     

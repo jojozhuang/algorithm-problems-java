@@ -38,6 +38,21 @@ A and B both contain only spaces and lowercase letters.
  */
 public class Solution884 {
     public String[] uncommonFromSentences(String A, String B) {
+        Map<String, Integer> count = new HashMap<>();
+        for (String word: A.split(" "))
+            count.put(word, count.getOrDefault(word, 0) + 1);
+        for (String word: B.split(" "))
+            count.put(word, count.getOrDefault(word, 0) + 1);
+
+        List<String> ans = new ArrayList<>();
+        for (String word: count.keySet())
+            if (count.get(word) == 1)
+                ans.add(word);
+
+        return ans.toArray(new String[ans.size()]);
+    }
+    
+    public String[] uncommonFromSentences2(String A, String B) {
         String[] words1 = A.split(" ");
         String[] words2 = B.split(" ");
         
@@ -46,18 +61,10 @@ public class Solution884 {
         Map<String, Integer> map2 = new HashMap<>();
         
         for (int i = 0; i < words1.length; i++) {
-            if (map1.containsKey(words1[i])) {
-                map1.put(words1[i], map1.get(words1[i]) + 1);
-            } else {
-                map1.put(words1[i], 1);
-            }
+            map1.put(words1[i], map1.getOrDefault(words1[i],0) + 1);
         }
         for (int j = 0; j < words2.length; j++) {
-            if (map2.containsKey(words2[j])) {
-                map2.put(words2[j], map2.get(words2[j]) + 1);
-            } else {
-                map2.put(words2[j], 1);
-            }
+            map2.put(words2[j], map2.getOrDefault(words2[j], 0) + 1);
         }
         
         for (String s : map1.keySet()) {

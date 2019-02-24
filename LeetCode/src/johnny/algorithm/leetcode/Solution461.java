@@ -28,6 +28,16 @@ package johnny.algorithm.leetcode;
  */
 public class Solution461 {
     public int hammingDistance(int x, int y) {
+        int xor = x ^ y;
+        int ans = 0;
+        while (xor > 0) {
+            ans += (xor & 1);
+            xor = xor >>> 1;
+        }
+        
+        return ans;
+    }
+    public int hammingDistance2(int x, int y) {
         return Integer.bitCount(x ^ y);
     }   
 }

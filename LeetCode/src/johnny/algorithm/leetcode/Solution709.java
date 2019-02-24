@@ -22,6 +22,25 @@ Output: "lovely"
  */
 public class Solution709 {
     public String toLowerCase(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        
+        char[] lower = new char[str.length()];
+        int i = 0;
+        for (char c : str.toCharArray()) {
+            if (c >= 'A' && c <= 'Z') {
+                lower[i] = (char)(c - 'A' + 'a');
+            } else {
+                lower[i] = c;
+            }
+            i++;
+        }
+        
+        return new String(lower);
+    }
+    
+    public String toLowerCase2(String str) {
         char[] lower = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         
         char[] input = str.toCharArray();

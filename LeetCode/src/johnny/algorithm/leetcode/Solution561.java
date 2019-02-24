@@ -23,20 +23,47 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution561 {
+    // counting sort, time: O(n), space: O(n)
     public int arrayPairSum(int[] nums) {
+        if (nums == null || nums.length == 0 || nums.length % 2 != 0) {
+            return 0;
+        }
+        
+        int[] count = new int[20001];
+        for (int i = 0; i < nums.length; i++) {
+            count[nums[i] + 10000]++;
+        }
+        
+        int ans = 0;
+        boolean isFirst = true;
+        int i = 0;
+        while (i < count.length) {
+            if (count[i] > 0) {
+                if (isFirst) {
+                    ans += i - 10000;
+                }
+                isFirst = !isFirst;
+                count[i]--;
+            } else {
+                i++;
+            }
+        }
+         
+        return ans;
+    }
+    // sort, time: n(log(n)), space: O(1)
+    public int arrayPairSum2(int[] nums) {
         if (nums == null || nums.length == 0 || nums.length % 2 != 0) {
             return 0;
         }
         
         Arrays.sort(nums);
         
-        int sum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i % 2 == 0) {
-                sum += nums[i];
-            }
+        int ans = 0;
+        for (int i = 0; i < nums.length; i = i + 2) {
+            ans += nums[i];
         }
         
-        return sum;
+        return ans;
     }
 }

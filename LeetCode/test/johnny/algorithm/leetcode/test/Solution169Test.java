@@ -12,7 +12,8 @@ public class Solution169Test extends JunitBase {
         System.out.println("majorityElement");
         Solution169 instance = new Solution169();
 
-        assertEquals(Integer.MIN_VALUE, instance.majorityElement(null));
+        assertEquals(3, instance.majorityElement(new int[] {3,2,3}));
+        assertEquals(2, instance.majorityElement(new int[] {2,2,1,1,1,2,2}));
         assertEquals(1, instance.majorityElement(new int[] {1}));
         assertEquals(1, instance.majorityElement(new int[] {1,1}));
         assertEquals(3, instance.majorityElement(new int[] {1,3,3,3,5}));

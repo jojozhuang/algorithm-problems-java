@@ -37,6 +37,42 @@ Note:
  */
 public class Solution985 {
     public int[] sumEvenAfterQueries(int[] A, int[][] queries) {
+        if (A == null || A.length == 0) {
+            return A;
+        }
+        
+        int sum = 0;
+        for (int val : A) {
+            if (val % 2 == 0) {
+                sum += val;
+            }
+        }
+        
+        int[] ans = new int[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            int[] query = queries[i];
+            int previous = A[query[1]];
+            A[query[1]] += query[0];
+            if (A[query[1]] % 2 == 0) {
+                if (previous % 2 != 0) {
+                    sum += A[query[1]];
+                } else {
+                    sum += query[0];
+                }
+            } else {
+                if (previous % 2 != 0) {
+                    sum += 0;
+                } else {
+                    sum -= previous;
+                }
+            }
+            ans[i] = sum;
+        }
+        
+        return ans;
+    }
+    
+    public int[] sumEvenAfterQueries2(int[] A, int[][] queries) {
         int S = 0;
         for (int x: A)
             if (x % 2 == 0)

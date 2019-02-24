@@ -41,25 +41,25 @@ public class Solution025 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         curr = head;
+        ListNode prev = dummy;
         while (curr != null && count > 0) {
-            reverse(curr, k);
+            ListNode right = curr;
+            int i = k;
+            while (i > 1) {
+                right = right.next;
+                i--;
+            }
+            ListNode next = right.next;
+            right.next = null;
+            ListNode temp = prev.next;
+            prev.next = reverse(curr);
+            temp.next = next;
+            prev = temp;
+            curr = next;
             count--;
         }
         
         return dummy.next;
-    }
-    
-    private void reverse(ListNode head, int k) {
-        ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null && k > 0) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-            k--;
-        }
-        head.next = curr;
     }
     
     public ListNode reverseKGroup3(ListNode head, int k) {

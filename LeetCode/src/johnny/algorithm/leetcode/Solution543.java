@@ -25,21 +25,27 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution543 {
-    int max = 0;
-    
     public int diameterOfBinaryTree(TreeNode root) {
-        maxDepth(root);
-        return max;
+        if (root == null) {
+            return 0;
+        }
+        // length = count of nodes - 1
+        return helper(root)[1] - 1;
     }
     
-    private int maxDepth(TreeNode root) {
-        if (root == null) return 0;
+    // returns the count of nodes
+    private int[] helper(TreeNode root) {
+        // ans[0] is the count of nodes on the single path
+        // ans[1] is the count of nodes on the longest path
+        int[] ans = new int[]{0,0}; 
+        if (root == null) {
+            return ans;
+        }
         
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-        
-        max = Math.max(max, left + right);
-        
-        return Math.max(left, right) + 1;
-    } 
+        int[] left = helper(root.left);
+        int[] right = helper(root.right);
+        ans[0] = Math.max(left[0],right[0]) + 1;
+        ans[1] = Math.max(left[0]+right[0] + 1, Math.max(left[1], right[1]));
+        return ans;
+    }
 }

@@ -14,9 +14,36 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution169 {
+    public int majorityElement(int[] nums) {
+        int n = nums.length;
+        if (n == 1) {
+            return nums[0];
+        }
+        
+        int major = nums[0];
+        int count = 1;
+        
+        for (int i = 1; i < n; i++) {
+            if (nums[i] == major) {
+                count++;
+                if (count > n / 2) {
+                    return major;
+                }
+            } else {
+                if (count > 0) {
+                    count--;
+                } else {
+                    major = nums[i];
+                    count = 1;
+                }
+            }
+        }
+        
+        return major;
+    }
     //http://www.programcreek.com/2014/02/leetcode-majority-element-java/
     //vote
-    public int majorityElement(int[] nums) {
+    public int majorityElement4(int[] nums) {
         if (nums == null || nums.length == 0) {
             return Integer.MIN_VALUE;
         }

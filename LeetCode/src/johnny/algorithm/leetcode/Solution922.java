@@ -32,24 +32,20 @@ public class Solution922 {
             return A;
         }
         
-        int odd = 0; // find odd
-        int even = 1; // find even
-        
-        while (odd < A.length && even < A.length) {
-            while (odd < A.length && A[odd] % 2 == 0) {
-                odd = odd + 2;
+        int even = 0;
+        int odd = 1;
+        while (even < A.length && odd < A.length) {
+            while (even < A.length && A[even] % 2 == 0) {
+                even += 2;
             }
-            while (even < A.length && A[even] % 2 != 0) {
-                even = even + 2;
+            while (odd < A.length && A[odd] % 2 != 0) {
+                odd += 2;
             }
-            if (odd >= A.length || even >= A.length) {
-                break;
+            if (even < A.length && odd < A.length) {
+                int temp = A[even];
+                A[even] = A[odd];
+                A[odd] = temp;
             }
-            int temp = A[odd];
-            A[odd] = A[even];
-            A[even] = temp;
-            odd = odd + 2;
-            even = even + 2;
         }
         
         return A;

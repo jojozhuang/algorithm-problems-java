@@ -29,7 +29,7 @@ import java.util.Stack;
 public class Solution094 {
     // Iteration with Stack
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
+        List<Integer> ans = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode curr = root;
         while (!stack.isEmpty() || curr != null) {
@@ -38,18 +38,18 @@ public class Solution094 {
                 curr = curr.left;
             } else {
                 TreeNode node = stack.pop();
-                res.add(node.val);  // Add after all left children
+                ans.add(node.val);  // Add after all left children
                 curr = node.right;
             }
         }
-        return res;
+        return ans;
     }
     
     public List<Integer> inorderTraversal3(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<Integer>();
         
         if (root == null) {
-            return res;
+            return ans;
         }
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -61,28 +61,28 @@ public class Solution094 {
                 curr = curr.left;
             }
             curr = stack.pop();
-            res.add(curr.val);
+            ans.add(curr.val);
             curr = curr.right;
         }
-        return res;
+        return ans;
     }
     
     // Recursion
     public List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<Integer>();
         
         if (root == null) {
-            return res;
+            return ans;
         }
         
         List<Integer> left = inorderTraversal(root.left);
         List<Integer> right = inorderTraversal(root.right);
         
-        res.addAll(left);
-        res.add(root.val);
-        res.addAll(right);
+        ans.addAll(left);
+        ans.add(root.val);
+        ans.addAll(right);
         
-        return res;
+        return ans;
     }
 
 }

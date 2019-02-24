@@ -33,18 +33,21 @@ public class Solution509 {
         if (N == 0) {
             return 0;
         }
+        
         if (N == 1) {
             return 1;
         }
-        int pre1 = 0;
-        int pre2 = 1;
-        int sum = 0;
-        for (int i = 2; i <= N; i++) {
-            sum = pre1 + pre2;
-            pre1 = pre2;
-            pre2 = sum;
+        
+        int first = 0;
+        int second = 1;
+        int i = 2;
+        while (i <= N) {
+            int third = first + second;
+            first = second;
+            second = third;
+            i++;
         }
         
-        return pre2;
+        return second;
     }
 }

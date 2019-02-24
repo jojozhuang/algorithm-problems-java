@@ -37,6 +37,49 @@ All characters in words[i] and order are english lowercase letters.
  */
 public class Solution953 {
     public boolean isAlienSorted(String[] words, String order) {
+        Map<Character, Integer> map = new HashMap<>();
+        int i = 0;
+        for (Character c : order.toCharArray()) {
+            map.put(c, i++);
+        }
+        for (i = 0; i< words.length - 1; i++) {
+            int res = compare(words[i], words[i+1], map);
+            if (res <= 0) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    private int compare(String s1, String s2, Map<Character, Integer> map) {
+        int i = 0;
+        int j = 0;
+        while (i < s1.length() || j < s2.length()) {
+            if (i >= s1.length()) {
+                return -1;
+            }
+            if (j >= s2.length()) {
+                return 1;
+            }
+            int index1 = map.get(s1.charAt(i));
+            int index2 = map.get(s2.charAt(j));
+            if (index1 == index2) {
+                i++;
+                j++;
+                continue;
+            } else if (index1 < index2) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
+        return 0;
+    }
+    
+    public boolean isAlienSorted2(String[] words, String order) {
         if (words.length < 2) {
             return true;
         }

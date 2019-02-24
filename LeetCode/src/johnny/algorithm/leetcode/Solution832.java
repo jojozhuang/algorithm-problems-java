@@ -35,4 +35,32 @@ public class Solution832 {
         }
         return A;
     }
+    
+    public int[][] flipAndInvertImage2(int[][] A) {
+        if (A == null || A.length == 0 || A[0].length == 0) {
+            return A;
+        }
+        
+        // flip
+        for (int[] row : A) {
+            int left = 0;
+            int right = row.length - 1;
+            while (left < right) {
+                int temp = row[left];
+                row[left] = row[right];
+                row[right] = temp;
+                left++;
+                right--;
+            }
+        }
+        
+        // invert
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[0].length; j++) {
+                A[i][j] = A[i][j] == 0 ? 1 : 0;
+            }
+        }
+        
+        return A;
+    }
 }

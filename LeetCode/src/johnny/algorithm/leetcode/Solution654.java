@@ -32,58 +32,44 @@ The size of the given array will be in the range [1,1000].
 public class Solution654 {
     // Stack, O(n)
     public TreeNode constructMaximumBinaryTree2(int[] nums) {
-        Deque<TreeNode> stack = new LinkedList<>();
-        for(int i = 0; i < nums.length; i++) {
+        Deque<TreeNode> deque = new LinkedList<>();
+        for (int i = 0; i < nums.length; i++) {
             TreeNode curr = new TreeNode(nums[i]);
-            while(!stack.isEmpty() && stack.peek().val < nums[i]) {
-                curr.left = stack.pop();
+            while (!deque.isEmpty() && deque.peek().val < nums[i]) {
+                curr.left = deque.pop();
             }
-            if(!stack.isEmpty()) {
-                stack.peek().right = curr;
+            if(!deque.isEmpty()) {
+                deque.peek().right = curr;
             }
-            stack.push(curr);
+            deque.push(curr);
         }
         
-        return stack.isEmpty() ? null : stack.removeLast();
+        return deque.isEmpty() ? null : deque.pollLast();
     }
     
     // Naive, divide and conquer,O(n*l), l is the depth of tree.
     public TreeNode constructMaximumBinaryTree(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return null;
-        }
         return helper(nums, 0, nums.length - 1);
     }
     
     private TreeNode helper(int[] nums, int start, int end) {
-        if (start < 0 || end >= nums.length || start > end) {
+        if (start > end) {
             return null;
-        }
-        
-        int indexMax = getLarget(nums, start, end);
-        if (indexMax == -1) {
-            return null;
-        }
-        TreeNode root = new TreeNode(nums[indexMax]);
-        root.left = helper(nums, start, indexMax - 1);
-        root.right = helper(nums, indexMax+1, end);
-        
-        return root;
-    }
-    
-    private int getLarget(int[] nums, int start, int end) {
-        if (start < 0 || end >= nums.length || start > end) {
-            return -1;
         }
         
         int max = Integer.MIN_VALUE;
         int index = -1;
+        // find the maximum
         for (int i = start; i <= end; i++) {
             if (nums[i] > max) {
-                index = i;
                 max = nums[i];
+                index = i;
             }
         }
-        return index;
+        
+        TreeNode root = new TreeNode(max);
+        root.left = helper(nums, start, index - 1);
+        root.right = helper(nums, index + 1, end);
+        return root;
     }
 }

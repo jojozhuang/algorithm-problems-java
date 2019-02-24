@@ -29,6 +29,38 @@ Each element nums[i] will be an integer in the range [-1000, 1000].
  */
 public class Solution724 {
     public int pivotIndex(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        
+        int[] sum1 = new int[nums.length];
+        int[] sum2 = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            sum1[i] += nums[i];
+        }
+        for (int i = nums.length - 1; i >= 0; i--) {
+            sum2[i] += nums[i];
+        }
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            if (sum1[left] < sum2[right]) {
+                left++;
+            } else if (sum1[left] > sum2[right]) {
+                right--;
+            } else {
+                if (right - left == 2) {
+                    return left + 1;
+                }
+                left++;
+                right--;
+            }
+        }
+        
+        return -1;
+    }
+    
+    public int pivotIndex2(int[] nums) {
         if (nums == null || nums.length < 3) {
             return -1;
         }

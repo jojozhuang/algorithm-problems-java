@@ -41,7 +41,69 @@ A[i][j] == 0 or A[i][j] == 1
  * @author Johnny
  */
 public class Solution934 {
+    //https://www.youtube.com/watch?v=JU-g1mNUaSE
     public int shortestBridge(int[][] A) {
+        if (A == null || A.length == 0 || A[0].length == 0) {
+            return 0;
+        }
+        
+        int m = A.length;
+        int n = A[0].length;
+        Queue<int[]> queue = new LinkedList<int[]>();
+        // add any node of the first island into queue 
+        boolean found = false;
+        for (int i = 0; i < m && !found; i++) {
+            for (int j = 0; j < n && !found; j++) {
+                if (A[i][j] == 1) {
+                    dfs(A, m, n, i, j, queue);
+                    found = true; // only one node is enough
+                }
+            }
+        }
+        
+        int[] dr = new int[]{0, -1, 0, 1};
+        int[] dc = new int[]{1, 0, -1, 0};
+        
+        int ans = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size > 0) {
+                int[] pos = queue.poll();
+                for (int i = 0; i < 4; i++) {
+                    int r = pos[0] + dr[i];
+                    int c = pos[1] + dc[i];
+                    if (r < 0 || r >= m || c < 0 || c >= n || A[r][c] == 2) {
+                        continue;
+                    }
+                    
+                    if (A[r][c] == 1) {
+                        return ans;
+                    }
+                    
+                    A[r][c] = 2;
+                    queue.offer(new int[] {r,c});
+                }
+                size--;
+            }
+            ans++;
+        }
+        
+        return ans;
+    }
+    
+    private void dfs(int[][] grid, int m, int n, int i, int j, Queue<int[]> queue) {
+        if (i < 0 || i >= m || j < 0 || j >= n || grid[i][j] != 1) {
+            return;
+        }
+        grid[i][j] = 2; // mark as growing
+        queue.offer(new int[]{i, j});
+        dfs(grid, m, n, i - 1, j, queue);
+        dfs(grid, m, n, i + 1, j, queue);
+        dfs(grid, m, n, i, j - 1, queue);
+        dfs(grid, m, n, i, j + 1, queue);
+    }
+    
+    public int shortestBridge2(int[][] A) {
         int R = A.length, C = A[0].length;
         int[][] colors = getComponents(A);
 

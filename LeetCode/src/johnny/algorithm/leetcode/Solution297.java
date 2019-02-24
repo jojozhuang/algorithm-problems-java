@@ -105,10 +105,11 @@ public class Solution297 {
         return sb.substring(0, sb.length() - 1);
     }   
     
+    // preorder
     private void helper(TreeNode root, StringBuilder sb) {
         if (root == null) {
             sb.append("#,");
-        } else {        
+        } else {
             sb.append(root.val).append(",");
             helper(root.left, sb);
             helper(root.right, sb);

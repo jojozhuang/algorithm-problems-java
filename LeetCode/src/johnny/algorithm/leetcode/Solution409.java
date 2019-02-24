@@ -25,37 +25,63 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution409 {
+    // 128 array
     public int longestPalindrome(String s) {
-        if (s == null || s.isEmpty()) {
+        if (s == null || s.length() == 0) {
             return 0;
         }
         
-        int[] counts = new int[52];
+        int[] count = new int[128];
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 'A']++;
+        }
+        int ans = 0;
+        boolean hasOdd = false;
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] % 2 == 0) {
+                ans += count[i];
+            } else {
+                hasOdd = true;
+                ans += count[i] - 1;
+            }
+        }
+        if (hasOdd) {
+            ans++;
+        }
         
+        return ans;
+    }
+    // 52 array
+    public int longestPalindrome2(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        
+        int[] count = new int[52];
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c >= 'A' && c <= 'Z') {
-                counts[s.charAt(i) - 'A']++;
-            } else {
-                counts[s.charAt(i) - 'a' + 26]++;
+            if (c >= 'a' && c <= 'z') {
+                count[c - 'a']++;
+            } else if (c >= 'A' && c <= 'Z'){
+                count[c - 'A' + 26]++;
             }
         }
         
-        int result = 0;
-        boolean odd = false;
-        for (int i = 0; i < counts.length; i++) {
-            if (counts[i] % 2 == 0) {
-                result += counts[i];
+        int ans = 0;
+        boolean hasOdd = false;
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] % 2 == 0) {
+                ans += count[i];
             } else {
-                result += counts[i] - 1;
-                odd = true;
+                hasOdd = true;
+                ans += count[i] - 1;
             }
         }
         
-        if (odd) {
-            return result + 1;
-        } else {
-            return result;
+        if (hasOdd) {
+            ans++;
         }
+        
+        return ans;
     }  
 }

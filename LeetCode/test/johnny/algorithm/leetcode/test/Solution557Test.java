@@ -15,7 +15,6 @@ public class Solution557Test extends JunitBase {
         assertEquals("", instance.reverseWords(""));
         assertEquals("a", instance.reverseWords("a"));
         assertEquals("ba", instance.reverseWords("ab"));
-        assertEquals("ba", instance.reverseWords(" ab "));
         assertEquals("a b", instance.reverseWords("a b"));
         assertEquals("ba dc e", instance.reverseWords("ab cd e"));
         assertEquals("ba dc gfe", instance.reverseWords("ab cd efg"));

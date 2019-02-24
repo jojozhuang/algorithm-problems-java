@@ -20,20 +20,21 @@ public class Solution339 {
     public int depthSum(List<NestedInteger> nestedList) {
         return helper(nestedList, 1);
     }
-
-    private int helper(List<NestedInteger> nestedList, int depth){
-        if(nestedList == null || nestedList.size() ==0 ) {
+    
+    private int helper(List<NestedInteger> nestedList, int depth) {
+        if (nestedList == null || nestedList.size() == 0) {
             return 0;
         }
-        int sum=0;
-        for(NestedInteger ni: nestedList){
-            if(ni.isInteger()){
+        
+        int sum = 0;
+        for (NestedInteger ni : nestedList) {
+            if (ni.isInteger()) {
                 sum += ni.getInteger() * depth;
-            }else{
-                sum += helper(ni.getList(), depth + 1);
+            } else {
+                sum += helper(ni.getList(), depth+1);
             }
         }
-
+        
         return sum;
     }
 }

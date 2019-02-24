@@ -14,5 +14,7 @@ public class Solution680Test extends JunitBase {
 
         assertEquals(true, instance.validPalindrome("aba"));
         assertEquals(true, instance.validPalindrome("abca"));
+        assertEquals(true, instance.validPalindrome("deeeee"));
+        assertEquals(false, instance.validPalindrome("abc"));
     }
 }

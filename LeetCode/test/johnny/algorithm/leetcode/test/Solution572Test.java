@@ -36,5 +36,9 @@ public class Solution572Test extends JunitBase {
         TreeNode s6 = TreeNode.createInstance(new String[] {"3","4","5","1","2","#","#","#","#","0","#"});
         TreeNode t6 = TreeNode.createInstance(new String[] {"4","1","2"});
         assertEquals(false, instance.isSubtree(s6, t6));
+        
+        TreeNode s7 = TreeNode.createInstance("1,1,#");
+        TreeNode t7 = TreeNode.createInstance(new String[] {"1"});
+        assertEquals(true, instance.isSubtree(s7, t7));
     }
 }

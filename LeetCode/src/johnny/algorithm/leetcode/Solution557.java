@@ -17,6 +17,32 @@ package johnny.algorithm.leetcode;
  */
 public class Solution557 {
     public String reverseWords(String s) {
+        if (s == null || s.length() <= 1) {
+            return s;
+        }
+        
+        int len = s.length();
+        int slow = 0;
+        int fast = 1;
+        char[] chs = s.toCharArray();
+        while (slow < len && fast < len) {
+            while (fast < len) {
+                if (chs[fast] == ' ') {
+                    reverse(chs, slow, fast - 1);
+                    break;
+                } else if (fast == len - 1) {
+                    reverse(chs, slow, fast);
+                    break;
+                }
+                fast++;
+            }
+            slow = fast;
+        }
+        
+        return new String(chs);
+    }
+    
+    public String reverseWords2(String s) {
         if (s == null || s.isEmpty()) {
             return "";
         }

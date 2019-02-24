@@ -31,6 +31,42 @@ matrix[i][j] will be integers in range [0, 99].
  */
 public class Solution766 {
     public boolean isToeplitzMatrix(int[][] matrix) {
+        if (matrix.length == 1 || matrix[0].length == 1) {
+            return true;
+        }
+        
+        int m = matrix.length;
+        int n = matrix[0].length;
+        for (int k = m - 1; k >= 0; k--) {
+            int first = matrix[k][0];
+            int i = k;
+            int j = 0;
+            while (i < m && j < n) {
+                if (matrix[i][j] != first) {
+                    return false;
+                }
+                i++;
+                j++;
+            }
+        }
+        
+        for (int k = 1; k < n; k++) {
+            int first = matrix[0][k];
+            int i = 0;
+            int j = k;
+            while (i < m && j < n) {
+                if (matrix[i][j] != first) {
+                    return false;
+                }
+                i++;
+                j++;
+            }
+        }
+        
+        return true;
+    }
+    
+    public boolean isToeplitzMatrix2(int[][] matrix) {
         if (matrix == null) {
             return false;
         }

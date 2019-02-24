@@ -19,7 +19,41 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution404 {
+    // recursive, no helper
     public int sumOfLeftLeaves(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int sum = 0;
+        if (root.left != null && root.left.left == null && root.left.right == null) {
+            sum = root.left.val;
+        }
+        return sum + sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+    }
+    
+    // recursive
+    public int sumOfLeftLeaves3(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return helper(root.left, true) + helper(root.right, false);
+    }
+    
+    private int helper(TreeNode root, boolean isLeft) {
+        if (root == null) {
+            return 0;
+        }
+        
+        if (root.left == null && root.right == null && isLeft) {
+            return root.val;
+        }
+        int left = helper(root.left, true);
+        int right = helper(root.right, false);
+        return left + right;
+    }
+    
+    // iterative
+    public int sumOfLeftLeaves2(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -39,6 +73,6 @@ public class Solution404 {
             }
         }
         
-        return leftSum + rightSum;   
+        return leftSum + rightSum;
     } 
 }

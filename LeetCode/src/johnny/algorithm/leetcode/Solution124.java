@@ -19,7 +19,31 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution124 {
+    // similar solution for 543. Diameter of Binary Tree
     public int maxPathSum(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return helper(root)[1];
+    }
+    
+    private int[] helper(TreeNode root) {
+        // ans[0] is the maximum for the single path
+        // ans[1] is the maximum for the path which may cross the root
+        int[] ans = new int[]{0, Integer.MIN_VALUE}; 
+        if (root == null) {
+            return ans;
+        }
+        
+        int[] left = helper(root.left);
+        int[] right = helper(root.right);
+        ans[0] = Math.max(left[0],right[0]) + root.val;
+        ans[0] = Math.max(ans[0], 0); // abandon negative value
+        ans[1] = Math.max(left[0]+right[0] + root.val, Math.max(left[1], right[1]));
+        return ans;
+    }
+    
+    public int maxPathSum3(TreeNode root) {
         if (root == null) {
             return Integer.MIN_VALUE;
         }
@@ -27,7 +51,7 @@ public class Solution124 {
     }
     
     // [0]: single path, [1] max path
-    private int[] helper(TreeNode root) {
+    private int[] helper2(TreeNode root) {
         if (root == null) {
             return new int[]{0, Integer.MIN_VALUE};
         }

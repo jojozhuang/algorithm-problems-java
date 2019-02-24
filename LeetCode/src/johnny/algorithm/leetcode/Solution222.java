@@ -73,7 +73,7 @@ public class Solution222 {
             return (int)Math.pow(2, high1) - 1;
         }
         
-        return countNodes(root.left) + countNodes(root.right) + 1;        
+        return countNodes(root.left) + countNodes(root.right) + 1;
     }
     //timeout
     public int countNodes2(TreeNode root) {

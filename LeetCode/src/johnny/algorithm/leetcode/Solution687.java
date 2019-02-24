@@ -40,8 +40,34 @@ Note: The given binary tree has not more than 10000 nodes. The height of the tre
  * @author Johnny
  */
 public class Solution687 {
-    int len = 0; // global variable
     public int longestUnivaluePath(TreeNode root) {
+        int[] ans = new int[1];
+        helper(root, ans);
+        return ans[0];
+    }
+    
+    private int helper(TreeNode root, int[] ans) {
+        if (root == null) {
+            return 0;
+        }
+        
+        int left = helper(root.left, ans);
+        int right = helper(root.right, ans);
+        int pl = 0;
+        int pr = 0;
+        
+        if (root.left != null && root.left.val == root.val) {
+            pl = left + 1;
+        }
+        if (root.right != null && root.right.val == root.val) {
+            pr = right + 1;
+        }
+        ans[0] = Math.max(ans[0], pl + pr);
+        return Math.max(pl, pr);
+    }
+    
+    int len = 0; // global variable
+    public int longestUnivaluePath2(TreeNode root) {
         if (root == null) return 0;
         len = 0;
         getLen(root, root.val);

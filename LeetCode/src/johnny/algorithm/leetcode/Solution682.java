@@ -44,33 +44,65 @@ Every integer represented in the list will be between -30000 and 30000.
  * @author Johnny
  */
 public class Solution682 {
+    // one pass
     public int calPoints(String[] ops) {
         if (ops == null || ops.length == 0) {
             return 0;
         }
-
-        Stack<Integer> stack = new Stack<Integer>();
-        for (String op : ops) {
-            if (op.equals("C")) {
-                stack.pop();
-            } else if (op.equals("D")) {
-                stack.push(stack.peek() * 2);
-            } else if (op.equals("+")) {
-                int last = stack.pop();
-                int newtop = last + stack.peek();
-                stack.push(last);
-                stack.push(newtop);
+        
+        int ans = 0;
+        Stack<Integer> stack = new Stack<>();
+        for (String s : ops) {
+            if (s.equals("+")) {
+                int num1 = stack.pop();
+                int sum = num1 + stack.peek();
+                stack.push(num1);
+                stack.push(sum);
+                ans += sum;
+            } else if (s.equals("D")) {
+                int score = stack.peek() * 2;
+                ans += score;
+                stack.push(score);
+            } else if (s.equals("C")) {
+                ans -= stack.pop();
             } else {
-                stack.push(Integer.parseInt(op));
+                int score = Integer.parseInt(s);
+                ans += score;
+                stack.push(score);
             }
         }
         
-        int sum = 0;
-        while (!stack.isEmpty()) {
-            sum += stack.pop();
+        return ans;
+    }
+    
+    // two pass
+    public int calPoints3(String[] ops) {
+        if (ops == null || ops.length == 0) {
+            return 0;
         }
-
-        return sum;
+        
+        Stack<Integer> stack = new Stack<>();
+        for (String s : ops) {
+            if (s.equals("+")) {
+                int num1 = stack.pop();
+                int sum = num1 + stack.peek();
+                stack.push(num1);
+                stack.push(sum);
+            } else if (s.equals("D")) {
+                stack.push(stack.peek() * 2);
+            } else if (s.equals("C")) {
+                stack.pop();
+            } else {
+                stack.push(Integer.parseInt(s));
+            }
+        }
+        
+        int ans = 0;
+        while (!stack.isEmpty()) {
+            ans += stack.pop();
+        }
+        
+        return ans;
     }
     public int calPoints2(String[] ops) {
         int sum = 0;

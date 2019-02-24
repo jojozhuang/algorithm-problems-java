@@ -21,45 +21,45 @@ Note: Recursive solution is trivial, could you do it iteratively?
 public class Solution590 {
     // iteration
     public List<Integer> postorder(Node root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<>();
         if (root == null) {
-            return res;
+            return ans;
         }
         
-        Stack<Node> stack = new Stack<Node>();
+        Stack<Node> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             Node node = stack.peek();
-            if (node.children != null && node.children.size() > 0) {
-                for (int i = node.children.size() - 1; i >=0; i--) {
+            if (node.children == null || node.children.size() == 0) {
+                ans.add(node.val);
+                stack.pop();
+            } else {
+                for (int i = node.children.size() - 1; i >= 0 ; i--) {
                     stack.push(node.children.get(i));
                 }
-                node.children = null;
-            } else {
-                stack.pop();
-                res.add(node.val);
+                node.children.clear();
             }
         }
         
-        return res;
+        return ans;
     }
     
     // recurison
     public List<Integer> postorder2(Node root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<Integer>();
         if (root == null) {
-            return res;
+            return ans;
         }
         
         if (root.children != null) {
             for (Node node : root.children) {
-                res.addAll(postorder(node));
+                ans.addAll(postorder(node));
             }
         }
         
-        res.add(root.val);
+        ans.add(root.val);
         
-        return res;
+        return ans;
     }
     
     public class Node {

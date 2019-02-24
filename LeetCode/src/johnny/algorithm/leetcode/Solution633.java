@@ -19,6 +19,17 @@ package johnny.algorithm.leetcode;
  */
 public class Solution633 {
     public boolean judgeSquareSum(int c) {
+        int root = (int)Math.sqrt(c);
+        for (int a = 0; a <= root; a++) {
+            int b = (int)Math.sqrt(c - a * a);
+            if (a*a + b*b == c) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    public boolean judgeSquareSum3(int c) {
         if (c < 0) {
             return false;
         }

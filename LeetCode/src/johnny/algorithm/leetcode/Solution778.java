@@ -1,6 +1,9 @@
 package johnny.algorithm.leetcode;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 /**
  *778. Swim in Rising Water
@@ -40,8 +43,41 @@ grid[i][j] is a permutation of [0, ..., N*N - 1].
  * @author Johnny
  */
 public class Solution778 {
-    final static int[][] steps = {{0,1},{0,-1}, {1,0},{-1,0}};
     public int swimInWater(int[][] grid) {
+        int n = grid.length;
+        Set<Integer> set = new HashSet<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>((k1, k2) -> grid[k1/n][k1%n] - grid[k2/n][k2%n]);
+        pq.offer(0);
+        int ans = 0;
+        
+        int[] dr = new int[]{1,-1,0,0};
+        int[] dc = new int[]{0,0,1,-1};
+        while (!pq.isEmpty()) {
+            int k = pq.poll();
+            int r = k / n;
+            int c = k % n;
+            ans = Math.max(ans, grid[r][c]);
+            if (r == n - 1 && c == n - 1) {
+                return ans;
+            }
+            
+            for (int i = 0; i < 4; i++) {
+                int nr = r + dr[i];
+                int nc = c + dc[i];
+                int ck = nr * n + nc;
+                if (nr < 0 || nr >= n || nc < 0 || nc >= n || set.contains(ck)) {
+                    continue;
+                }
+                pq.offer(ck);
+                set.add(ck);
+            }
+        }
+        
+        throw null;
+    }
+    
+    final static int[][] steps = {{0,1},{0,-1}, {1,0},{-1,0}};
+    public int swimInWater2(int[][] grid) {
         int n = grid.length;
         int[][] max = new int[n][n];
         for(int[] line : max)

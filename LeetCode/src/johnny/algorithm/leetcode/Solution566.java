@@ -54,27 +54,21 @@ public class Solution566 {
             return nums;
         }
         
-        int rows = nums.length;
-        int cols = nums[0].length;
-        
-        if (r * c > rows * cols) {
+        int m = nums.length;
+        int n = nums[0].length;
+        if (m * n != r * c) {
             return nums;
         }
         
-        int[][] res = new int[r][c];
-        int k = 0; 
-        int l = 0;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (l == c) {
-                    l = 0;
-                    k++;
-                }
-                res[k][l] = nums[i][j];
-                l++;                
+        int[][] ans = new int[r][c];
+        int index = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                ans[index / c][index % c] = nums[i][j];
+                index++;
             }
         }
         
-        return res;
+        return ans;
     }
 }

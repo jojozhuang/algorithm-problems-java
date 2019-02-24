@@ -30,6 +30,43 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution295 {
+    PriorityQueue<Integer> min; // stores half numbers which are larger
+    PriorityQueue<Integer> max; // stores half numbers which are smaller
+    /** initialize your data structure here. */
+    public Solution295() {
+        min = new PriorityQueue<>();
+        max = new PriorityQueue<>((a,b)->b-a);
+    }
+    
+    public void addNum(int num) {
+        if (min.isEmpty()) {
+            min.add(num);
+            return;
+        }
+        
+        if (num > min.peek()) {
+            min.add(num);
+        } else {
+            max.add(num);
+        }
+        if (min.size() > max.size() + 1) {
+            max.add(min.poll());
+        } else if (max.size() > min.size() + 1) {
+            min.add(max.poll());
+        }
+    }
+    
+    public double findMedian() {
+        if (min.size() == max.size()) {
+            return ((double)min.peek() + (double)max.peek()) / 2;
+        } else if (min.size() == max.size() + 1) {
+            return (double)min.peek();
+        } else {
+            return (double)max.peek();
+        }
+    }
+    
+    /*
     private Queue<Long> small = new PriorityQueue<Long>(),
             large = new PriorityQueue<Long>();
 
@@ -46,6 +83,8 @@ public class Solution295 {
            ? large.peek()
            : (large.peek() - small.peek()) / 2.0;
     }
+    */
+    
     //http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
     //https://segmentfault.com/a/1190000003709954
     //left: maxHeap, right: minHeap

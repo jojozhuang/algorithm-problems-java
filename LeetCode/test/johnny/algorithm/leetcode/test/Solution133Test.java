@@ -17,5 +17,6 @@ public class Solution133Test extends JunitBase {
         UndirectedGraphNode node2 = new UndirectedGraphNode(2);
         UndirectedGraphNode result2 = instance.cloneGraph(node2);
         assertEquals(result2.label, node2.label);
+        
     }
 }

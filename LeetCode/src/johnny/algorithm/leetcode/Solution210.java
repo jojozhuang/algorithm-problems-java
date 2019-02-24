@@ -1,7 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Course Schedule II.
@@ -32,7 +35,71 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution210 {
+    // https://www.youtube.com/watch?v=ddTC4Zovtbc
+    // https://www.youtube.com/watch?v=Qqgck2ijUjU
     public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] ans = new int[]{};
+        if (numCourses <= 0) {
+            return ans;
+        }
+        if (prerequisites == null || prerequisites.length == 0) {
+            ans = new int[numCourses];
+            for (int i = 0; i < numCourses; i++) {
+                ans[i] = i;
+            }
+            return ans;
+        }
+        
+        List<List<Integer>> graph = new ArrayList<List<Integer>>();
+        for (int i = 0; i < numCourses; i++) {
+            graph.add(new ArrayList<Integer>());
+        }
+        
+        for (int[] prer : prerequisites) {
+            graph.get(prer[1]).add(prer[0]);
+        }
+        
+        // status: 0-initial, 1-visiting, 2-visited
+        int[] visited = new int[numCourses];
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i < numCourses; i++) {
+            if (dfs(graph, visited, i, stack)) {
+                return ans;
+            }
+        }
+        
+        ans = new int[numCourses];
+        int i = 0;
+        while (!stack.isEmpty()) {
+            ans[i] = stack.pop();
+            i++;
+        }
+        return ans;
+    }
+    
+    // true - cycle found, false - not found yet
+    private boolean dfs (List<List<Integer>> graph, int[] visited, int index, Stack stack) {
+        if (visited[index] == 1) {
+            return true;
+        }
+        if (visited[index] == 2) {
+            return false;
+        }
+        visited[index] = 1;
+        
+        // neighbors
+        for (Integer i : graph.get(index)) {
+            if (dfs(graph, visited, i, stack)) {
+                return true;
+            }
+        }
+        
+        visited[index] = 2;
+        stack.push(index);
+        return false;
+    }
+    
+    public int[] findOrder2(int numCourses, int[][] prerequisites) {
         int[] res = new int[numCourses];
         
         if (numCourses <= 0) {

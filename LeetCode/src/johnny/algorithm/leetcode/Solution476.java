@@ -26,6 +26,15 @@ package johnny.algorithm.leetcode;
  */
 public class Solution476 {
     public int findComplement(int num) {
+        long pow = 1;
+        while (pow <= num) {
+            pow = pow << 1;
+        }
+        // eg. 16-1-8=7, 10000-1=1111->1111-1000=111
+        return (int)(pow -1 - num);
+    }
+    
+    public int findComplement2(int num) {
         int highest = Integer.highestOneBit(num);
         int mask = highest - 1;
         num = ~num;

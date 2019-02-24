@@ -13,8 +13,6 @@ public class Solution124Test extends JunitBase {
         System.out.println("maxPathSum");
         Solution124 instance = new Solution124();
 
-        assertEquals(Integer.MIN_VALUE, instance.maxPathSum(null));
-
         TreeNode root1 = new TreeNode(1);
         assertEquals(1, instance.maxPathSum(root1));
 

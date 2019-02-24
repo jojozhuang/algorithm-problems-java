@@ -28,6 +28,34 @@ package johnny.algorithm.leetcode;
 public class Solution551 {
     public boolean checkRecord(String s) {
         if (s == null || s.isEmpty()) {
+            return true;
+        }
+        
+        int a = 0;
+        int l = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'A') {
+                a++;
+                if (a > 1) {
+                    return false;
+                }
+            } else if (s.charAt(i) == 'L') {
+                l++;
+                if (l == 3) {
+                    if (s.charAt(i - 1) == 'L' && s.charAt(i - 2) == 'L') {
+                        return false;
+                    } else {
+                        l = 2;
+                    }
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+    public boolean checkRecord2(String s) {
+        if (s == null || s.isEmpty()) {
             return false;
         }
         

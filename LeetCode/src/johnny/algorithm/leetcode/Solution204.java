@@ -19,6 +19,30 @@ import java.util.ArrayList;
  */
 public class Solution204 {
     public int countPrimes(int n) {
+        if (n < 2) {
+            return 0;
+        }
+        
+        boolean[] notPrime = new boolean[n];
+        notPrime[0] = true;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (!notPrime[i]) {
+                for (int j = 2; i*j < n; j++) {
+                    notPrime[i*j] = true;
+                }
+            }
+        }
+        
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            if (!notPrime[i]) {
+                ans++;
+            }
+        }
+        
+        return ans -1;
+    }
+    public int countPrimes9(int n) {
         boolean[] notPrime = new boolean[n];
         int count = 0;
         for (int i = 2; i < n; i++) {

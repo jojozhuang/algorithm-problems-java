@@ -1,6 +1,9 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
 import johnny.algorithm.leetcode.common.UndirectedGraphNode;
 
 /**
@@ -36,8 +39,9 @@ import johnny.algorithm.leetcode.common.UndirectedGraphNode;
  * @author Johnny
  */
 public class Solution133 {
-    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        if(node == null) {
+    // dfs, hashmap
+    public UndirectedGraphNode cloneGraph2(UndirectedGraphNode node) {
+        if (node == null) {
             return null;
         }
               
@@ -50,7 +54,7 @@ public class Solution133 {
     }
 
     private void DFS(HashMap<UndirectedGraphNode, UndirectedGraphNode> map, UndirectedGraphNode node){
-        if(node == null) {
+        if (node == null) {
             return;
         }
             
@@ -62,5 +66,32 @@ public class Solution133 {
             }
             map.get(node).neighbors.add(map.get(neighbor));
         }
+    }
+    
+    // bfs
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        if (node == null) {
+            return null;
+        }
+        
+        Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+        queue.offer(node);
+
+        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        UndirectedGraphNode clone = new UndirectedGraphNode(node.label);
+        map.put(node, clone);
+        
+        while (!queue.isEmpty()) {
+            UndirectedGraphNode ugn = queue.poll();
+            for (UndirectedGraphNode neighbor : ugn.neighbors) {
+                if (!map.containsKey(neighbor)) {
+                    map.put(neighbor, new UndirectedGraphNode(neighbor.label));
+                    queue.offer(neighbor);
+                }
+                map.get(ugn).neighbors.add(map.get(neighbor));
+            }
+        }
+        
+        return map.get(node);
     }
 }

@@ -20,6 +20,44 @@ All letters in S and C are lowercase.
 public class Solution821 {
     public int[] shortestToChar(String S, char C) {
         int n = S.length();
+        int[] ans = new int[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = Integer.MAX_VALUE;
+        }
+
+        // left -> right
+        int index = -1;
+        for (int i = 0; i < n; i++) {
+            char ch = S.charAt(i);
+            if (ch == C) {
+                ans[i] = 0;
+                index = i;
+            } else {
+                if (index >= 0) {
+                    ans[i] = i - index;
+                }
+            }
+        }
+        
+        // right to left
+        index = -1;
+        for (int i = n - 1; i >= 0; i--) {
+            char ch = S.charAt(i);
+            if (ch == C) {
+                ans[i] = 0;
+                index = i;
+            } else {
+                if (index >= 0) {
+                    ans[i] = Math.min(ans[i], index - i);
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    public int[] shortestToChar2(String S, char C) {
+        int n = S.length();
         int[] res = new int[n];
         int pos = -n;
         for (int i = 0; i < n; ++i) {

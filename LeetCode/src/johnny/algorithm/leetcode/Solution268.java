@@ -17,6 +17,34 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution268 {
+    // swap, check position
+    public int missingNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == i) {
+                continue;
+            }
+            int index = i;
+            while (nums[index] != i && nums[index] < nums.length) {
+                int temp = nums[nums[index]];
+                nums[nums[index]] = nums[index];
+                nums[index] = temp;
+            }
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i) {
+                return i;
+            }
+        }
+        
+        return nums[nums.length-1] + 1;
+    }
+    
+    // sum, math formula
     public int missingNumber2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -29,7 +57,8 @@ public class Solution268 {
         return len * (len + 1) / 2 - sum;
     }
     
-    public int missingNumber(int[] nums) {
+    // xor
+    public int missingNumber3(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

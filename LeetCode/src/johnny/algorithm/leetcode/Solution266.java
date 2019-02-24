@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Palindrome Permutation.
@@ -25,23 +26,18 @@ public class Solution266 {
             return false;
         }
         
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (!map.containsKey(c)) {
-                map.put(c, 0);
-            }
-            map.put(c, map.get(c) + 1);
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
         
-        boolean odd = false;
-        for(Integer val: map.values()) {
-            if (val % 2 == 1) {
-                if (odd == true) {
-                    return false;
-                } else {
-                    odd = true;
-                }
+        int odd = 0;
+        for (Integer i : map.values()) {
+            if (i % 2 == 1) {
+                odd++;
+            }
+            if (odd > 1) {
+                return false;
             }
         }
         

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import johnny.algorithm.leetcode.common.TreeNode;
 
@@ -38,9 +39,50 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution508 {
+    public int[] findFrequentTreeSum(TreeNode root) {
+        Map<Integer, Integer> map = new HashMap<>();
+        helper(root, map);
+        int max = Integer.MIN_VALUE;
+        for (Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > max) {
+                max = entry.getValue();
+            }
+        }
+        
+        List<Integer> list = new ArrayList<>();
+        for (Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == max) {
+                list.add(entry.getKey());
+            }
+        }
+        
+        int[] ans = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            ans[i] = list.get(i);
+        }
+        return ans;
+    }
+    
+    private int helper(TreeNode root, Map<Integer, Integer> map) {
+        if (root == null) {
+            return 0;
+        }
+        /*
+        if (root.left == null && root.right == null) {
+            map.put(root.val, map.getOrDefault(root.val, 0) + 1)
+            return root.val;
+        }*/
+        
+        int left = helper(root.left, map);
+        int right = helper(root.right, map);
+        int sum = root.val + left + right;
+        map.put(sum, map.getOrDefault(sum, 0) + 1);
+        return sum;
+    }
+    
     int maxCount = 0;
 
-    public int[] findFrequentTreeSum(TreeNode root) {
+    public int[] findFrequentTreeSum2(TreeNode root) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         
         postOrder(root, map);

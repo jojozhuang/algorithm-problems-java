@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -25,6 +26,35 @@ S will consist only of letters or digits.
  */
 public class Solution784 {
     public List<String> letterCasePermutation(String S) {
+        List<String> ans = new ArrayList<>();
+        ans.add("");
+        
+        for (int i = 0; i < S.length(); i++) {
+            ans = helper(S, i, ans);
+        }
+        
+        return ans;
+    }
+    
+    private List<String> helper(String S, int pos, List<String> list) {
+        if (pos >= S.length()) {
+            return list;
+        }
+        List<String> ans = new ArrayList<>();
+        char c = S.charAt(pos);
+        for (String s : list) {
+            if (Character.isDigit(c)) {
+                ans.add(s + String.valueOf(c));
+            } else {
+                ans.add(s + String.valueOf(Character.toLowerCase(c)));
+                ans.add(s + String.valueOf(Character.toUpperCase(c)));
+            }
+        }
+        
+        return ans;
+    }
+    
+    public List<String> letterCasePermutation2(String S) {
         if (S == null) {
             return new LinkedList<>();
         }

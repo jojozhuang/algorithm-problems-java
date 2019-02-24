@@ -22,42 +22,37 @@ Note: Recursive solution is trivial, could you do it iteratively?
 public class Solution589 {
     // iteration
     public List<Integer> preorder(Node root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<>();
         if (root == null) {
-            return res;
+            return ans;
         }
         
-        Stack<Node> stack = new Stack<Node>();
+        Stack<Node> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             Node node = stack.pop();
-            res.add(node.val);
+            ans.add(node.val);
             if (node.children != null) {
-                for (int i = node.children.size() - 1; i >=0; i--) {
+                for (int i = node.children.size() - 1; i >= 0; i--) {
                     stack.push(node.children.get(i));
                 }
             }
         }
-        
-        return res;
+        return ans;
     }
     
     // recursion
     public List<Integer> preorder2(Node root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<>();
         if (root == null) {
-            return res;
+            return ans;
         }
         
-        res.add(root.val);
-        
-        if (root.children != null) {
-            for (Node node : root.children) {
-                res.addAll(preorder(node));
-            }
+        ans.add(root.val);
+        for (Node child : root.children) {
+            ans.addAll(preorder(child));
         }
-        
-        return res;
+        return ans;
     }
 
     public class Node {

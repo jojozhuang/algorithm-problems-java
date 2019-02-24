@@ -19,6 +19,24 @@ package johnny.algorithm.leetcode;
  */
 public class Solution504 {
     public String convertToBase7(int num) {
+        if (num == 0) {
+            return "0";
+        }
+        boolean isNeg = num < 0 ? true : false;
+        num = isNeg ? -num : num;
+        StringBuilder sb = new StringBuilder();
+        while (num > 0) {
+            sb.append(num % 7);
+            num = num / 7;
+        }
+        if (isNeg) {
+            return "-" + sb.reverse().toString();
+        } else {
+            return sb.reverse().toString();
+        }
+    }
+    
+    public String convertToBase72(int num) {
         if (num < 0)
             return '-' + convertToBase7(-num);
         if (num < 7)

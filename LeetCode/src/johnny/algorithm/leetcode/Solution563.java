@@ -32,16 +32,12 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution563 {
-    int totalTilt = 0;
     public int findTilt(TreeNode root) {
         if (root == null) {
             return 0;
         }
         
-        totalTilt = 0;
-        helper(root);
-        
-        return totalTilt;
+        return helper(root)[1];
     }
     
     private int[] helper(TreeNode root) {
@@ -49,13 +45,15 @@ public class Solution563 {
             return new int[]{0,0};
         }
         
-        int[] res = new int[2];
+        if (root.left == null && root.right == null) {
+            return new int[]{root.val, 0};
+        }
+        
         int[] left = helper(root.left);
         int[] right = helper(root.right);
         
-        res[0] = left[0] + right[0] + root.val;
-        res[1] = Math.abs(left[0] - right[0]);
-        totalTilt += res[1];
-        return res;
+        int sum = root.val + left[0] + right[0];
+        int tilt = left[1]+right[1]+Math.abs(left[0] - right[0]);
+        return new int[]{sum, tilt};
     }
 }

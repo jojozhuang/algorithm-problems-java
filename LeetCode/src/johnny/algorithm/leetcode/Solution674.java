@@ -17,7 +17,70 @@ Note: Length of the array will not exceed 10,000.
  * @author Johnny
  */
 public class Solution674 {
+    // optimized dp
     public int findLengthOfLCIS(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int count = 1;
+        int ans = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i-1]) {
+                count++;
+                ans = Math.max(ans, count);
+            } else {
+                count = 1;
+            }
+        }
+        
+        return ans;
+    }
+    // dp
+    public int findLengthOfLCIS4(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int[] dp = new int[nums.length];
+        dp[0] = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i-1]) {
+                dp[i] = dp[i-1] + 1;
+            } else {
+                dp[i] = 1;
+            }
+        }
+        int ans = 0;
+        for (int i = 0; i < dp.length; i++) {
+            ans = Math.max(ans, dp[i]);
+        }
+        
+        return ans;
+    }
+    // two points
+    public int findLengthOfLCIS3(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int left = 0;
+        int right = 1;
+        int ans = 0;
+        while (right < nums.length) {
+            if (nums[right] <= nums[right - 1]) {
+                ans = Math.max(ans, right - left);
+                left = right;
+            }
+            right++;
+        }
+        
+        ans = Math.max(ans, right - left);
+        
+        return ans;
+    }
+    
+    public int findLengthOfLCIS2(int[] nums) {
         int res = 0;
         int count = 0;
         for (int i = 0; i < nums.length; i++){

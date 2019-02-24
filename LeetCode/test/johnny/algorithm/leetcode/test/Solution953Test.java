@@ -10,7 +10,7 @@ public class Solution953Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("flipEquiv");
+        System.out.println("isAlienSorted");
         Solution953 instance = new Solution953();
 
         assertEquals(true, instance.isAlienSorted(new String[] {"hello","leetcode"}, "hlabcdefgijkmnopqrstuvwxyz"));

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  *811. Subdomain Visit Count
@@ -41,6 +42,31 @@ The answer output can be returned in any order.
  */
 public class Solution811 {
     public List<String> subdomainVisits(String[] cpdomains) {
+        List<String> ans = new ArrayList<>();
+        if (cpdomains == null || cpdomains.length == 0) {
+            return ans;
+        }
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < cpdomains.length; i++) {
+            String domain = cpdomains[i];
+            int index = domain.indexOf(" ");
+            int count = Integer.parseInt(domain.substring(0, index));
+            domain = domain.substring(index + 1, domain.length());
+            map.put(domain, map.getOrDefault(domain, 0)+ count);
+            while (domain.indexOf(".") > 0) {
+                index = domain.indexOf(".");
+                domain = domain.substring(index + 1, domain.length());
+                map.put(domain, map.getOrDefault(domain, 0)+ count);
+            }
+        }
+        
+        for (Entry<String, Integer> entry : map.entrySet()) {
+            ans.add(entry.getValue() + " " + entry.getKey());
+        }
+        
+        return ans;
+    }
+    public List<String> subdomainVisits2(String[] cpdomains) {
         Map<String, Integer> counts = new HashMap<String, Integer>();
         for (String domain: cpdomains) {
             String[] cpinfo = domain.split("\\s+");

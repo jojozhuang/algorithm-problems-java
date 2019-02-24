@@ -29,7 +29,29 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution102 {
+    // DFS, recursive
     public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        
+        helper(root, ans, 0);
+        
+        return ans;
+    }
+    private void helper(TreeNode root, List<List<Integer>> list, int height) {
+        if (root == null) {
+            return;
+        }
+        
+        if (height >= list.size()) {
+            list.add(new ArrayList<Integer>());
+        }
+        list.get(height).add(root.val);
+        helper(root.left, list, height + 1);
+        helper(root.right, list, height + 1);
+    }
+    
+    // BFS, queue
+    public List<List<Integer>> levelOrder2(TreeNode root) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         
         if (root == null) {

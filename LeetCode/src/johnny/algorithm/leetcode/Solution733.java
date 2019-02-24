@@ -29,17 +29,30 @@ The value of each color in image[i][j] and newColor will be an integer in [0, 65
  */
 public class Solution733 {
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-        if (image[sr][sc] == newColor) return image;
-        fill(image, sr, sc, image[sr][sc], newColor);
+        if (image[sr][sc] == newColor) {
+            return image;
+        }
+        
+        int m = image.length;
+        int n = image[0].length;
+        dfs(image, sr, sc, m, n, image[sr][sc], newColor);
         return image;
     }
     
-    private void fill(int[][] image, int sr, int sc, int color, int newColor) {
-        if (sr < 0 || sr >= image.length || sc < 0 || sc >= image[0].length || image[sr][sc] != color) return;
+    private void dfs(int[][] image, int sr, int sc, int m, int n, int orgColor, int newColor) {
+        if (sr < 0 || sr >= m || sc < 0 || sc >= n) {
+            return;
+        }
+        
+        if (image[sr][sc] != orgColor) {
+            // this pixel is different with original one, they are not connected(not in the same 'group')
+            return;
+        }
+        
         image[sr][sc] = newColor;
-        fill(image, sr + 1, sc, color, newColor);
-        fill(image, sr - 1, sc, color, newColor);
-        fill(image, sr, sc + 1, color, newColor);
-        fill(image, sr, sc - 1, color, newColor);
+        dfs(image, sr - 1, sc, m, n, orgColor, newColor);
+        dfs(image, sr + 1, sc, m, n, orgColor, newColor);
+        dfs(image, sr, sc - 1, m, n, orgColor, newColor);
+        dfs(image, sr, sc +  1, m, n, orgColor, newColor);
     }
 }

@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -38,6 +39,38 @@ logs[i] is guaranteed to have an identifier, and a word after the identifier.
 public class Solution937 {
     public String[] reorderLogFiles(String[] logs) {
         if (logs == null || logs.length == 0) {
+            return logs;
+        }
+        
+        Arrays.sort(logs, new LogComparator());
+        
+        return logs;
+    }
+    
+    private class LogComparator implements Comparator<String> {
+        public int compare(String s1, String s2) {
+            String log1 = s1.substring(s1.indexOf(" ") + 1);
+            String log2 = s2.substring(s2.indexOf(" ") + 1);
+            boolean isNumber1 = log1.charAt(0) >= '0' && log1.charAt(0) <= '9';
+            boolean isNumber2 = log2.charAt(0) >= '0' && log2.charAt(0) <= '9';
+            if (isNumber1) {
+                if (isNumber2) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            } else {
+                if (isNumber2) {
+                    return -1;
+                } else {
+                    return log1.compareTo(log2);
+                }
+            }
+        }
+    }
+    
+    public String[] reorderLogFiles2(String[] logs) {
+        if (logs == null || logs.length == 0) {
             return null;
         }
         
@@ -66,7 +99,7 @@ public class Solution937 {
         return Character.isLetter(ch);
     }
     
-    private class LogComparator implements Comparator<String> {
+    private class LogComparator2 implements Comparator<String> {
         public int compare(String s1, String s2) {
             String sub1 = s1.substring(s1.indexOf(" ") + 1, s1.length());
             String sub2 = s2.substring(s2.indexOf(" ") + 1, s2.length());

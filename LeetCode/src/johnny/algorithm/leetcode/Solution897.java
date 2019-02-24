@@ -51,6 +51,39 @@ public class Solution897 {
         if (root == null) {
             return null;
         }
+        return helper(root)[0];
+    }
+    
+    private TreeNode[] helper(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        
+        TreeNode[] res = new TreeNode[2];
+        // left
+        TreeNode[] left = helper(root.left);
+        if (left != null) {
+            left[1].right = root;
+            res[0] = left[0];
+            root.left = null; // must set to null
+        } else {
+            res[0] = root;
+        }
+        // right
+        TreeNode[] right = helper(root.right);
+        if (right != null) {
+            root.right = right[0];
+            res[1] = right[1];
+        } else {
+            res[1] = root;
+        }
+        
+        return res;
+    }
+    public TreeNode increasingBST2(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
         
         TreeNode newRoot = null;
         Stack<TreeNode> stack = new Stack<>();

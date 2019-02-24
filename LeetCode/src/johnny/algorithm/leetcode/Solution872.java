@@ -28,6 +28,25 @@ Both of the given trees will have between 1 and 100 nodes.
  */
 public class Solution872 {
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        List<Integer> leaves1 = helper(root1);
+        List<Integer> leaves2 = helper(root2);
+        return leaves1.equals(leaves2);
+    }
+    
+    private List<Integer> helper(TreeNode root) {
+        List<Integer> leaves = new ArrayList<>();
+        if (root == null) {
+            return leaves;
+        }
+        if (root.left == null && root.right == null) {
+            leaves.add(root.val);
+        } else {
+            leaves.addAll(helper(root.left));
+            leaves.addAll(helper(root.right));
+        }
+        return leaves;
+    }
+    public boolean leafSimilar2(TreeNode root1, TreeNode root2) {
         List<Integer> list1 = leaves(root1);
         List<Integer> list2 = leaves(root2);
         

@@ -43,17 +43,16 @@ public class Solution944 {
             return 0;
         }
         
-        int len = A[0].length();
-        int count = 0;
-        for (int col = 0; col < len; col++) {
-            for (int row = 1; row < A.length; row++) {
-                if (A[row].charAt(col) < A[row - 1].charAt(col)) {
-                    count++;
+        int ans = 0;
+        for (int i = 0; i < A[0].length(); i++) {
+            for (int j = 0; j < A.length - 1; j++) {
+                if (A[j].charAt(i) > A[j + 1].charAt(i)) {
+                    ans++;
                     break;
                 }
             }
         }
         
-        return count;
+        return ans;
     }
 }

@@ -25,9 +25,9 @@ public class Solution500 {
     public String[] findWords(String[] words) {
         int[] lineArray = new int[]{2,3,3,2,1,2,2,2,1,2,2,2,3,3,1,1,1,1,2,1,1,3,1,3,1,3};
         
-        List<String> res = new ArrayList<String>();
+        List<String> ans = new ArrayList<String>();
         if (words == null || words.length == 0) {
-            return res.toArray(new String[0]);
+            return ans.toArray(new String[0]);
         }
         
         for (int i = 0; i < words.length; i++) {
@@ -40,10 +40,10 @@ public class Solution500 {
                 }
             }
             if (allsame) {
-                res.add(words[i]);
+                ans.add(words[i]);
             }
         }
         
-        return res.toArray(new String[0]);
+        return ans.toArray(new String[0]);
     } 
 }

@@ -17,5 +17,7 @@ public class Solution709Test extends JunitBase {
         assertEquals("hello", instance.toLowerCase("Hello"));
         assertEquals("here", instance.toLowerCase("here"));
         assertEquals("lovely", instance.toLowerCase("LOVELY"));
+        assertEquals("al&phabet", instance.toLowerCase("al&phaBET"));
+        
     }
 }

@@ -24,33 +24,24 @@ The boundaries of each input argument are 1 <= left <= right <= 10000.
  */
 public class Solution728 {
     public List<Integer> selfDividingNumbers(int left, int right) {
-        List<Integer> res = new ArrayList<Integer>();
-        if (left < 1 || right > 10000 || left > right) {
-            return res;
-        }
-        
+        List<Integer> ans = new ArrayList<Integer>();
         for (int i = left; i <= right; i++) {
-            if (isDividingNumber(i)) {
-                res.add(i);
+            int num = i;
+            while (num > 0) {
+                int last = num % 10;
+                if (last == 0) {
+                    break;
+                }
+                if (i % last != 0) {
+                    break;
+                }
+                num = num / 10;
+            }
+            if (num == 0) {
+                ans.add(i);
             }
         }
         
-        return res;
-       
-    }
-    
-    private boolean isDividingNumber(int num) {
-        int original = num;
-        while (num > 0) {
-            int remainder = num % 10;
-            if (remainder == 0) {
-                return false;
-            }
-            if (original % remainder != 0) {
-                return false;
-            }
-            num = num / 10;
-        }
-        return true;
+        return ans;
     }
 }

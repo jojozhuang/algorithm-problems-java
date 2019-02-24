@@ -27,7 +27,37 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution145 {
+    // use curr node
     public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<Integer>();
+        
+        if (root == null) {
+            return ans;
+        }
+        
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode curr = root;
+        
+        while (curr != null || !stack.empty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.peek();
+            if (curr.right == null) {
+                stack.pop();
+                ans.add(curr.val);
+                curr = null;
+            } else {
+                TreeNode right = curr.right;
+                curr.right = null; // avoid being added to stack again.
+                curr = right;
+            } 
+        }
+        return ans;
+    }
+    
+    public List<Integer> postorderTraversal8(TreeNode root) {
         LinkedList<Integer> res = new LinkedList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode curr = root;

@@ -27,46 +27,66 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution333 {
-    //http://buttercola.blogspot.com/2016/02/leetcode-largest-bst-subtree.html
-    int max = 0;
+    // array with 3 variables
     public int largestBSTSubtree(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-         
-        helper(root);
-         
-        return max;
+        return helper(root)[2];
     }
     
-    private State helper(TreeNode root) {
-        State curr = new State();
+    private int[] helper(TreeNode root) {
+        // ans[0], max of subtree
+        // ans[1], min of subtree
+        // ans[2], size
+        int[] ans = new int[]{Integer.MIN_VALUE,Integer.MAX_VALUE,0};
         if (root == null) {
-            curr.isBST = true;
-            return curr;
+            return ans;
         }
-         
-        State left = helper(root.left);
-        State right = helper(root.right);
-         
-        curr.lower = Math.min(root.val, Math.min(left.lower, right.lower));
-        curr.upper = Math.max(root.val, Math.max(left.upper, right.upper));
-         
-        if (left.isBST && root.val > left.upper && right.isBST && root.val < right.lower) {
-            curr.size = left.size + right.size + 1;
-            curr.isBST = true;
-            max = Math.max(max, curr.size);
+        
+        int[] left = helper(root.left);
+        int[] right = helper(root.right);
+        if (root.val >= right[1] ||
+            root.val <= left[0]) {
+            ans[0] = Integer.MAX_VALUE; // for next round comparison, equivalent to isBTS = false
+            ans[1] = Integer.MIN_VALUE; // for next round comparison, equivalent to isBTS = false
+            ans[2] = Math.max(left[2], right[2]);
         } else {
-            curr.size = 0;
+            ans[0] = Math.max(root.val, right[0]);
+            ans[1] = Math.min(root.val, left[1]);
+            ans[2] = left[2] + right[2] + 1;
         }
-         
-        return curr;
+        return ans;
     }
     
-    private class State {
-        int size = 0;
-        int lower = Integer.MAX_VALUE;
-        int upper = Integer.MIN_VALUE;
-        boolean isBST = false;
+    // array with 4 variables
+    // https://www.youtube.com/watch?v=4fiDs7CCxkc
+    public int largestBSTSubtree2(TreeNode root) {
+        return helper(root)[2];
+    }
+    
+    private int[] helper2(TreeNode root) {
+        // ans[0], max of subtree
+        // ans[1], min of subtree
+        // ans[2], size
+        // ans[3], isBST, 1=yes,-1=no
+        int[] ans = new int[]{Integer.MIN_VALUE,Integer.MAX_VALUE,0,0};
+        if (root == null) {
+            return ans;
+        }
+        
+        int[] left = helper(root.left);
+        int[] right = helper(root.right);
+        if (left[3] == -1 || right[3] == -1 || 
+            root.val >= right[1] ||
+            root.val <= left[0]) {
+            ans[0] = 0; // can be any value
+            ans[1] = 0; // can be any value
+            ans[2] = Math.max(left[2], right[2]);
+            ans[3] = -1;
+        } else {
+            ans[0] = Math.max(root.val, right[0]);
+            ans[1] = Math.min(root.val, left[1]);
+            ans[2] = left[2] + right[2] + 1;
+            ans[3] = 1;
+        }
+        return ans;
     }
 }

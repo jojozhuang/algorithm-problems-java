@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Graph Valid Tree.
  * Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each 
@@ -28,8 +31,56 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution261 {
-    //http://blog.csdn.net/pointbreak1/article/details/48796691
+    // Graph, DFS solution with adjacency list
     public boolean validTree(int n, int[][] edges) {
+        if (n <= 0 || edges == null) {
+            return false;
+        }
+        List<List<Integer>> graph = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<Integer>());
+        }
+        
+        for (int[] edge : edges) {
+            graph.get(edge[0]).add(edge[1]);
+            graph.get(edge[1]).add(edge[0]);
+        }
+        
+        boolean[] visited = new boolean[n];
+        // no cycle
+        if (hasCycle(graph, visited, 0, -1)) {
+            return false;
+        }
+        
+        // all vertices are connected
+        for (boolean v : visited) {
+            if (!v) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    // true - cycle found, false - not found yet
+    private boolean hasCycle (List<List<Integer>> graph, boolean[] visited, int index, int parent) {
+        visited[index] = true;
+        
+        // edges
+        for (Integer i : graph.get(index)) {
+            if (visited[i] && parent != i) {
+                return true;
+            }
+            if (!visited[i] && hasCycle(graph, visited, i, index)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    //http://blog.csdn.net/pointbreak1/article/details/48796691
+    public boolean validTree2(int n, int[][] edges) {
         if (n <= 0 || edges == null) {
             return false;
         }

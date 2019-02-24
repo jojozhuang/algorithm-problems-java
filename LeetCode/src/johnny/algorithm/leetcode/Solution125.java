@@ -18,8 +18,35 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution125 {
-    // two pointers
     public boolean isPalindrome(String s) {
+        if (s == null || s.isEmpty()) {
+            return true;
+        }
+        
+        int left = 0;
+        int right = s.length() - 1;
+        
+        while (left < right) {
+            while (left < s.length() && !Character.isLetterOrDigit(s.charAt(left))) {
+                left++;
+            }
+            while (right >= 0 && !Character.isLetterOrDigit(s.charAt(right))) {
+                right--;
+            }
+            if (left < right) {
+                if (Character.toLowerCase(s.charAt(left))
+                    != Character.toLowerCase(s.charAt(right))) {
+                    return false;
+                }
+                left++;
+                right--;
+            }
+        }
+        
+        return true;
+    }
+    // two pointers
+    public boolean isPalindrome2(String s) {
         if(s == null || s.isEmpty()) {
             return true;
         }

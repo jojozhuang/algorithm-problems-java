@@ -9,9 +9,9 @@ import java.util.LinkedList;
  * @author Johnny
  */
 public class Solution346 {
-    //http://www.programcreek.com/2014/05/leetcode-moving-average-from-data-stream-java/
     LinkedList<Integer> queue;
     int size;
+    int sum = 0;
  
     /** Initialize your data structure here. */
     public Solution346(int size) {
@@ -21,14 +21,11 @@ public class Solution346 {
  
     public double next(int val) {
         queue.offer(val);
-        if (queue.size() > this.size){
-            queue.poll();
+        sum += val;
+        if (queue.size() > size) {
+            sum -= queue.poll();
         }
-        int sum = 0;
-        for (int i: queue) {
-            sum = sum + i;
-        }
- 
+        
         return (double)sum / queue.size();
     }
 }

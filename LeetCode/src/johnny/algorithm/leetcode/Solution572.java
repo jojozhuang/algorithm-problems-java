@@ -82,6 +82,6 @@ public class Solution572 {
             return false;
         }
         
-        return isSame(t1.left, t2.left) && isSame(t1.right, t2.right);        
+        return isSame(t1.left, t2.left) && isSame(t1.right, t2.right);
     }
 }

@@ -45,12 +45,23 @@ import java.util.Arrays;
  */
 public class Solution455 {
     public int findContentChildren(int[] g, int[] s) {
+        if (s == null || s.length == 0) {
+            return 0;
+        }
+        
         Arrays.sort(g);
         Arrays.sort(s);
         int i = 0;
-        for(int j=0;i<g.length && j<s.length;j++) {
-            if(g[i]<=s[j]) i++;
+        int j = 0;
+        int ans = 0;
+        while (i < g.length && j < s.length) {
+            if (g[i] <= s[j]) {
+                ans++;
+                i++;
+            }
+            j++;
         }
-        return i;
+        
+        return ans;
     }
 }
