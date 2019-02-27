@@ -37,7 +37,7 @@ public class Solution674 {
         return ans;
     }
     // dp
-    public int findLengthOfLCIS4(int[] nums) {
+    public int findLengthOfLCIS2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -78,19 +78,5 @@ public class Solution674 {
         ans = Math.max(ans, right - left);
         
         return ans;
-    }
-    
-    public int findLengthOfLCIS2(int[] nums) {
-        int res = 0;
-        int count = 0;
-        for (int i = 0; i < nums.length; i++){
-            if (i == 0 || nums[i] > nums[i - 1]) {
-                count++;
-                res = Math.max(res, count);
-            } else {
-                count = 1;
-            }
-        }
-        return res;
     }
 }

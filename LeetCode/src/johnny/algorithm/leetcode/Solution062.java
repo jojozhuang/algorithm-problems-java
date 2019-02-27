@@ -20,28 +20,18 @@ package johnny.algorithm.leetcode;
 public class Solution062 {
     // space: O(n)
     public int uniquePaths(int m, int n) {
-        if (m <= 0 || n <= 0) {
-            return 0;
-        }
-        
         int[] dp = new int[n];
         dp[0] = 1;
         for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (j > 0) {
-                    dp[j] = dp[j] + dp[j - 1];
-                }
+            for (int j = 1; j < n; j++) {
+                dp[j] = dp[j] + dp[j - 1];
             }
         }
         
         return dp[n - 1];
     }
     // space: O(n)
-    public int uniquePaths4(int m, int n) {
-        if (m <= 0 || n <= 0) {
-            return 0;
-        }
-        
+    public int uniquePaths2(int m, int n) {
         int[] dp = new int[n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -58,10 +48,6 @@ public class Solution062 {
     
     // space, O(m*n)
     public int uniquePaths3(int m, int n) {
-        if (m <= 0 || n <= 0) {
-            return 0;
-        }
-        
         int[][] dp = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -77,11 +63,7 @@ public class Solution062 {
     }
     
     // space, O(m*n)
-    public int uniquePaths2(int m, int n) {
-        if (m <= 0 || n <= 0) {
-            return 0;
-        }
-        
+    public int uniquePaths4(int m, int n) {
         // Define function, f[i][j] if the count of possible path from start point
         // to point [i][j], f[i][j] = f[i][j-1] + f[i-1][j]
         int[][] f = new int[m][n];
@@ -100,5 +82,14 @@ public class Solution062 {
         }
         
         return f[m - 1][n - 1];
+    }
+    // recursive
+    public int uniquePaths5(int m, int n) {
+        if (m <= 1 || n <= 1) {
+            return 1;
+        }
+        int left = uniquePaths(m, n - 1);
+        int up = uniquePaths5(m - 1, n);
+        return left + up;
     }
 }

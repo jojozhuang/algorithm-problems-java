@@ -18,10 +18,39 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution139 {
+    // optimized
     public boolean wordBreak(String s, List<String> wordDict) {
         if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0){
             return false;
         }
+        
+        // optimize, check the longest word in dict
+        int maxLen = 0;
+        for (String str: wordDict) {
+            maxLen = Math.max(maxLen, str.length());
+        }
+        
+        Set<String> wordDictSet = new HashSet<String>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = i - 1; j >= 0; j--) { // reverse sequence
+                if (i - j > maxLen) { // no need to continue if exceed the max word length
+                    break;
+                }
+                if (dp[j] && wordDictSet.contains(s.substring(j, i))) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+    public boolean wordBreak4(String s, List<String> wordDict) {
+        if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0){
+            return false;
+        }
+        
         Set<String> wordDictSet = new HashSet<String>(wordDict);
         boolean[] dp = new boolean[s.length() + 1];
         dp[0] = true;
@@ -65,19 +94,19 @@ public class Solution139 {
         return breakable[s.length()];
     }
     
-    // Brute Force 
+    // Recursive
     public boolean wordBreak2(String s, List<String> wordDict) {
-        if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0){
+        if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0) {
             return false;
         }
-        return word_Break(s, new HashSet<String>(wordDict), 0);
+        return helper(s, 0, new HashSet<String>(wordDict));
     }
-    public boolean word_Break(String s, Set<String> wordDict, int start) {
+    public boolean helper(String s, int start, Set<String> wordDict) {
         if (start == s.length()) {
             return true;
         }
         for (int end = start + 1; end <= s.length(); end++) {
-            if (wordDict.contains(s.substring(start, end)) && word_Break(s, wordDict, end)) {
+            if (wordDict.contains(s.substring(start, end)) && helper(s, end, wordDict)) {
                 return true;
             }
         }

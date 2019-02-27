@@ -31,5 +31,11 @@ public class Solution139Test extends JunitBase {
 
         List<String> dict6 = ListUtil.buildList(new String[] {"leet","code"});
         assertEquals(true, instance.wordBreak("leetcode", dict6));
+
+        List<String> dict7 = ListUtil.buildList(new String[] {"a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"});
+        assertEquals(true, instance.wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", dict7));
+
+        List<String> dict8 = ListUtil.buildList(new String[] {"a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"});
+        assertEquals(true, instance.wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", dict8));
     }
 }

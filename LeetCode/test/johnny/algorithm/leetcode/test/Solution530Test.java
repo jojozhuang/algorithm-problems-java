@@ -21,5 +21,8 @@ public class Solution530Test extends JunitBase {
 
         TreeNode r3 = TreeNode.createInstance(new String[] {"1","#", "3", "2","#"});
         assertEquals(1, instance.getMinimumDifference(r3));
+
+        TreeNode r4 = TreeNode.createInstance("543,384,652,null,445,null,699");
+        assertEquals(47, instance.getMinimumDifference(r4));
     }
 }

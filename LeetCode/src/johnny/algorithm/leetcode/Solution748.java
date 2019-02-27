@@ -33,32 +33,41 @@ Every words[i] will consist of lowercase letters, and have length in range [1, 1
  */
 public class Solution748 {
     public String shortestCompletingWord(String licensePlate, String[] words) {
-        String target = licensePlate.toLowerCase();
-        int [] charMap = new int[26];
-        // Construct the character map
-        for(int i = 0 ; i < target.length(); i++){
-            if(Character.isLetter(target.charAt(i))) charMap[target.charAt(i) - 'a']++;
-        }
-        int minLength = Integer.MAX_VALUE;
-        String result = null;
-        for (int i = 0; i < words.length; i++){
-            String word = words[i].toLowerCase();
-            if(matches(word, charMap) && word.length() < minLength) {
-                minLength = word.length();
-                result  = words[i];
+        char[] license = countByChar(licensePlate);
+        
+        String ans = "";
+        int len = Integer.MAX_VALUE;
+        for (String word: words) {
+            if (word.length() >= len) {
+                continue;
+            }
+            char[] wordArr = countByChar(word);
+            if (match(license, wordArr)) {
+                ans = word;
+                len = word.length();
             }
         }
-        return result;
+        
+        return ans;
     }
-    private boolean matches(String word, int[] charMap){
-        int [] targetMap = new int[26];
-        for(int i = 0; i < word.length(); i++){
-            if(Character.isLetter(word.charAt(i))) targetMap[word.charAt(i) - 'a']++;
+    
+    private boolean match(char[] license, char[] word) {
+        for (int i = 0; i < license.length; i++) {
+            if (license[i] > word[i]) {
+                return false;
+            }
         }
         
-        for(int i = 0; i < 26; i++){
-            if(charMap[i]!=0 && targetMap[i]<charMap[i]) return false;
-        }
         return true;
+    }
+    
+    private char[] countByChar(String s) {
+        char[] count = new char[26];
+        for (char c: s.toCharArray()) {
+            if (Character.isLetter(c)) {
+                count[Character.toLowerCase(c) - 'a']++;
+            }
+        }
+        return count;
     }
 }

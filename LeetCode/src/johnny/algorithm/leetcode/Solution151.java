@@ -33,7 +33,7 @@ public class Solution151 {
         if (s.indexOf(" ") == -1) { // only one word
             return s;
         }
-        char[] chs = s.trim().toCharArray();
+        char[] chs = s.toCharArray();
         reverse(chs, 0, chs.length - 1);
         
         StringBuilder sb = new StringBuilder();

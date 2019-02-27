@@ -21,8 +21,50 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution120 {
-    // DP, from bottom to top, space = O(n)
+ // space: O(n)
     public int minimumTotal(List<List<Integer>> triangle) {
+        if (triangle == null) {
+            return 0;
+        }
+        int m = triangle.size();
+        int n = triangle.get(m - 1).size();
+        int[] dp = new int[n];
+        for (int i = 0; i < n; i++) {
+            dp[i] = triangle.get(m-1).get(i);
+        }
+        
+        for (int i = m - 2; i >= 0; i--) {
+            List<Integer> row = triangle.get(i);
+            for (int j = 0; j < row.size(); j++) {
+                dp[j] = Math.min(dp[j], dp[j+1]) + row.get(j);
+            }
+        }
+        
+        return dp[0];
+    }
+    // space: O(m*n)
+    public int minimumTotal4(List<List<Integer>> triangle) {
+        if (triangle == null) {
+            return 0;
+        }
+        int m = triangle.size();
+        int n = triangle.get(m - 1).size();
+        int[][] dp = new int[m][n];
+        for (int i = 0; i < n; i++) {
+            dp[m - 1][i] = triangle.get(m-1).get(i);
+        }
+        
+        for (int i = m - 2; i >= 0; i--) {
+            List<Integer> row = triangle.get(i);
+            for (int j = 0; j < row.size(); j++) {
+                dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1]) + row.get(j);
+            }
+        }
+        
+        return dp[0][0];
+    }
+    // DP, from bottom to top, space = O(n)
+    public int minimumTotal3(List<List<Integer>> triangle) {
         if (triangle == null || triangle.size() == 0 || triangle.get(0).size() == 0) {
             return 0;
         }

@@ -44,6 +44,7 @@ target is a lowercase letter.
  * @author Johnny
  */
 public class Solution744 {
+    // binary search, time: O(log(n)), O(1)
     public char nextGreatestLetter(char[] letters, char target) {
         if (letters == null || letters.length == 0) {
             return target;
@@ -66,5 +67,16 @@ public class Solution744 {
         } else {
             return letters[0];
         }
+    }
+    
+    // time: O(n), space: O(1)
+    public char nextGreatestLetter2(char[] letters, char target) {
+        for (int i = 0; i < letters.length; i++) {
+            if (letters[i] > target) {
+                return letters[i];
+            }
+        }
+        
+        return letters[0];
     }
 }

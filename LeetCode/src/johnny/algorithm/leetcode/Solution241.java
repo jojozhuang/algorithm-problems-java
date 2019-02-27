@@ -1,7 +1,9 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Different Ways to Add Parentheses.
@@ -30,8 +32,52 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution241 {
-    // Recursive
     public List<Integer> diffWaysToCompute(String input) {
+        if (input == null || input.isEmpty()) {
+            return new ArrayList<>();
+        }
+        return helper(input, new HashMap<String, List<Integer>>());
+    }
+    
+    private List<Integer> helper(String s, Map<String, List<Integer>> map) {
+        if (map.containsKey(s)) {
+            return map.get(s);
+        }
+        List<Integer> ans = new ArrayList<>();
+        
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '+' || c == '-' || c == '*') {
+                String left = s.substring(0, i);
+                String right = s.substring(i + 1);
+                List<Integer> listLeft = helper(left, map);
+                List<Integer> listRight = helper(right, map);
+                for (Integer l : listLeft) {
+                    for (Integer r : listRight) {
+                        int res = 0;
+                        if (c == '+') {
+                            res = l + r;
+                        } else if (c == '-') {
+                            res = l - r;
+                        } else if (c == '*') {
+                            res = l * r;
+                        }
+                        ans.add(res);
+                    }
+                }
+            }
+        }
+        
+        if (ans.isEmpty()) { // single number
+            ans.add(Integer.parseInt(s));
+        }
+        
+        map.put(s, ans);
+        return ans;
+    }
+    
+    // Recursive
+    public List<Integer> diffWaysToCompute3(String input) {
         List<Integer> res = new ArrayList<Integer>();
         if (input == null || input.isEmpty()) {
             return res;
@@ -44,8 +90,8 @@ public class Solution241 {
                 String part2 = input.substring(i+1);
                 List<Integer> part1Ret = diffWaysToCompute(part1);
                 List<Integer> part2Ret = diffWaysToCompute(part2);
-                for (Integer p1 :   part1Ret) {
-                    for (Integer p2 :   part2Ret) {
+                for (Integer p1 : part1Ret) {
+                    for (Integer p2 : part2Ret) {
                         int c = 0;
                         switch (input.charAt(i)) {
                             case '+': c = p1+p2;

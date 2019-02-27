@@ -22,6 +22,39 @@ public class Solution557 {
         }
         
         int len = s.length();
+        int left = 0;
+        int right = 1;
+        char[] chs = s.toCharArray();
+        while (left < len && right < len) {
+            // find the last character of the word
+            while (right < len && chs[right] != ' ') {
+                right++;
+            }
+            // swap the word by in-place
+            int end = right-1;
+            while (left < end) {
+                char temp = chs[left];
+                chs[left] = chs[end];
+                chs[end] = temp;
+                left++;
+                end--;
+            }
+            // find the start character of next word
+            while (right < len && chs[right] == ' ') {
+                right++;
+            }
+            left = right;
+        }
+        
+        return new String(chs);
+    }
+    
+    public String reverseWords3(String s) {
+        if (s == null || s.length() <= 1) {
+            return s;
+        }
+        
+        int len = s.length();
         int slow = 0;
         int fast = 1;
         char[] chs = s.toCharArray();

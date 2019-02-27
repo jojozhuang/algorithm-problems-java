@@ -42,7 +42,48 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution438 {
+ // slide window + hashtable
     public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> ans = new ArrayList<>();
+        int[] count = new int[26];
+        for (char c : p.toCharArray()) {
+            count[c - 'a']++;
+        }
+        
+        int fast = 0;
+        int slow = 0;
+        int[] window = new int[26];
+        while (fast < s.length()) {
+            window[s.charAt(fast) - 'a']++;
+            if (fast - slow > p.length() - 1) {
+                window[s.charAt(slow) - 'a']--;
+                slow++;
+            }
+            if (fast - slow + 1 == p.length() &&
+                isSame(count, window)) {
+                ans.add(slow);
+            }
+            fast++;
+        }
+        
+        return ans;
+    }
+    
+    private boolean isSame(int[] a1, int[] a2) {
+        if (a1.length != a2.length) {
+            return false;
+        }
+        
+        for (int i = 0; i < a1.length; i++) {
+            if (a1[i] != a2[i]) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public List<Integer> findAnagrams2(String s, String p) {
         List<Integer> res = new ArrayList<Integer>();
         if (s == null || s.isEmpty() || p.length() > s.length()) {
             return res;

@@ -24,6 +24,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution063 {
+    // space: O(n)
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
             return 0;
@@ -46,6 +47,7 @@ public class Solution063 {
         return dp[n - 1];
     }
     
+    // space: O(m*n)
     public int uniquePathsWithObstacles2(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
             return 0;

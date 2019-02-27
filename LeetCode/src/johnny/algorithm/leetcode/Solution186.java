@@ -17,23 +17,23 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution186 {
-    public void reverseWords(char[] s) {
-        if (s == null || s.length == 0) {
+    public void reverseWords(char[] str) {
+        if (str == null || str.length == 0) {
             return;
         }
         
-        reverse(s, 0, s.length - 1);
+        reverse(str, 0, str.length - 1);
         
         int i = 0;
         int start = 0;
-        while (i < s.length) {
-            if (s[i] == ' ') {
-                reverse(s, start, i - 1);
+        while (i < str.length) {
+            if (str[i] == ' ') {
+                reverse(str, start, i - 1);
                 start = i + 1;
             }
             i++;
         }
-        reverse(s, start, s.length - 1);
+        reverse(str, start, str.length - 1);
     }
     
     private void reverse(char[] arr, int start, int end) {

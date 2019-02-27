@@ -2,6 +2,8 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
+
 import johnny.algorithm.leetcode.common.TreeNode;
 
 /**
@@ -32,37 +34,75 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution530 {
+    int ans = Integer.MAX_VALUE;
+    int prev = 0;
+    boolean isFirst = true;
+    // recursive
     public int getMinimumDifference(TreeNode root) {
+        ans = Integer.MAX_VALUE;
+        isFirst = true;
+        inorderHelper(root);
+        return ans;
+    }
+    private void inorderHelper(TreeNode root) {
         if (root == null) {
-            return Integer.MAX_VALUE;
+            return;
         }
         
-        int diff = Integer.MAX_VALUE;
-        
-        List<Integer> list = inorderTraversal(root);
-        Integer[] array = new Integer[list.size()];
-        array = list.toArray(array);
-        for (int i = 1; i < array.length; i++) {
-            diff = Math.min(array[i] - array[i - 1], diff);
+        inorderHelper(root.left);
+        if (isFirst) {
+            isFirst = false;
+        } else {
+            ans = Math.min(ans, root.val - prev);
+        }
+        prev = root.val;
+        inorderHelper(root.right);
+    }
+    // inorder, iterative, time: O(n): space: O(1)
+    public int getMinimumDifference3(TreeNode root) {
+        int ans = Integer.MAX_VALUE;
+        int prev = root.val;
+        boolean isFirst = true;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            if (isFirst) {
+                isFirst = false;
+            } else {
+                ans = Math.min(ans, curr.val - prev);
+            }
+            prev = curr.val;
+            curr = curr.right;
         }
         
-        return diff;        
+        return ans;
+    }
+    // inorder, time: O(n), space: O(n)
+    public int getMinimumDifference2(TreeNode root) {
+        List<Integer> list = inorder(root);
+        int ans = Integer.MAX_VALUE;
+        for (int i = 1; i < list.size(); i++) {
+            ans = Math.min(ans, list.get(i) - list.get(i-1));
+        }
+        return ans;
     }
     
-    private List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        
+    private List<Integer> inorder(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
         if (root == null) {
-            return result;
+            return list;
         }
         
-        List<Integer> left = inorderTraversal(root.left);
-        List<Integer> right = inorderTraversal(root.right);
-        
-        result.addAll(left);
-        result.add(root.val);
-        result.addAll(right);
-        
-        return result;        
+        List<Integer> left = inorder(root.left);
+        List<Integer> right = inorder(root.right);
+        list.addAll(left);
+        list.add(root.val);
+        list.addAll(right);
+        return list;
     }
 }

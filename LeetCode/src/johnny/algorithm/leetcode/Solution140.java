@@ -2,8 +2,11 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Word Break II.
@@ -21,132 +24,84 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution140 {
+    // memorization
     public List<String> wordBreak(String s, List<String> wordDict) {
-        List<String> result = new LinkedList<String>();
-        if (s == null || s.isEmpty()) {
-            return result;
+        List<String> ans = new ArrayList<>();
+        if (s == null || s.length() == 0 ||
+            wordDict == null || wordDict.size() == 0) {
+            return ans;
         }
-        return word_Break(s, wordDict, 0, new HashMap<>());
+        Set<String> set = new HashSet<>(wordDict);
+        return helper(s, set, new HashMap<String, List<String>>());
     }
- 
-    public List<String> word_Break(String s, List<String> wordDict, int start, HashMap<Integer, List<String>> map) {
-        if (map.containsKey(start)) {
-            return map.get(start);
+    private List<String> helper(String s, Set<String> set, Map<String, List<String>> map) {
+        
+        if (map.containsKey(s)) {
+            //System.out.println("s="+s);
+            //System.out.println("map.get()="+map.get(s));
+            return map.get(s);
         }
-        LinkedList<String> res = new LinkedList<>();
-        if (start == s.length()) {
-            res.add("");
+        
+        List<String> list = new ArrayList<>();
+        if (set.contains(s)) {
+            list.add(s);
         }
-        for (int end = start + 1; end <= s.length(); end++) {
-            if (wordDict.contains(s.substring(start, end))) {
-                List<String> list = word_Break(s, wordDict, end, map);
-                for (String l : list) {
-                    res.add(s.substring(start, end) + (l.equals("") ? "" : " ") + l);
+        
+        for (String word : set) {
+            if (s.startsWith(word)) {
+                List<String> rest = helper(s.substring(word.length()), set, map);
+                for (String sub : rest) {
+                    if (sub.isEmpty()) {
+                        list.add(word);
+                    } else {
+                        list.add(word + " " + sub);
+                    }
+                    
                 }
             }
         }
-        map.put(start, res);
-        return res;
+        map.put(s, list);
+        return list;
     }
-    //http://www.programcreek.com/2014/03/leetcode-word-break-ii-java/
-    /*public List<String> wordBreak(String s, Set<String> dict) {
-        List<String> res = new ArrayList<String>();
-        if (s == null || s.isEmpty()) {
-            return res;
+    // no memorization, TLE
+    public List<String> wordBreak2(String s, List<String> wordDict) {
+        List<String> ans = new ArrayList<>();
+        if (s == null || s.length() == 0 ||
+            wordDict == null || wordDict.size() == 0) {
+            return ans;
         }
         
-        List<String> list = new ArrayList();
-        helper(s, dict, 0, list, res);
+        Set<String> set = new HashSet<>(wordDict);
+        for (String word : wordDict) {
+            if (word.length() <= s.length() &&
+                s.startsWith(word)) {
+                List<String> list = new ArrayList<>();
+                dfs(s, 0, word.length(), set, list, ans);
+            }
+        }
         
-        return res;
+        return ans;
     }
     
-    private void helper(String s, Set<String> dict, int pos, List<String> list, List<String> res) {
-        if (pos >= s.length()) {
+    private void dfs(String s, int i, int j, Set<String> set, List<String> list, List<String> ans) {
+        //System.out.println("i="+i+",j="+j + ",s.length" + s.length() + ",list:"+list);
+        list.add(s.substring(i,j));
+        if (j == s.length()) {
             StringBuilder sb = new StringBuilder();
             for (String str: list) {
                 sb.append(str);
                 sb.append(" ");
             }
-            sb.deleteCharAt(sb.length() - 1);
-            res.add(sb.toString());
+            sb.setLength(sb.length() - 1);
+            ans.add(sb.toString());
             return;
-        } 
+        }
         
-        for (int i = pos; i < s.length(); i++) {
-            int j = 1;
-            boolean newword = false;
-            String str = "";
-            while(i + j <= s.length()) {
-                str = s.substring(i, i + j);
-                if (dict.contains(str)) {
-                    newword = true;                    
-                    break;
-                }
-                j++;
-            }
-            if (newword) {
-                list.add(str);
-                helper(s, dict, pos + j, list, res);
+        for (int k = j + 1; k <= s.length(); k++) {
+            if (set.contains(s.substring(j, k))) {
+                dfs(s, j, k, set, list, ans);
                 list.remove(list.size() - 1);
-                pos -= j;
-            }        
-        }
-    }*/
-    
-    
-    public List<String> wordBreak2(String s, List<String> dict) {
-        List<String> result = new LinkedList<String>();
-        if (s == null || s.isEmpty()) {
-            return result;
-        }
-        //create an array of ArrayList<String>
-        List<String> dp[] = new ArrayList[s.length()+1];
-        dp[0] = new ArrayList<String>();
-
-        for(int i=0; i<s.length(); i++){
-            if( dp[i] == null ) 
-                continue; 
-
-            for(String word:dict){
-                int len = word.length();
-                int end = i+len;
-                if(end > s.length()) 
-                    continue;
-
-                if(s.substring(i,end).equals(word)){
-                    if(dp[end] == null){
-                        dp[end] = new ArrayList<String>();
-                    }
-                    dp[end].add(word);
-                }
             }
-        }
-        
-        if(dp[s.length()] == null) 
-            return result; 
-
-        ArrayList<String> temp = new ArrayList<String>();
-        dfs(dp, s.length(), result, temp);
-
-        return result;
-    }
-
-    private void dfs(List<String> dp[],int end,List<String> result, ArrayList<String> tmp){
-        if(end <= 0){
-            String path = tmp.get(tmp.size()-1);
-            for(int i=tmp.size()-2; i>=0; i--){
-                path += " " + tmp.get(i) ;
-            }
-
-            result.add(path);
-            return;
-        }
-
-        for(String str : dp[end]){
-            tmp.add(str);
-            dfs(dp, end-str.length(), result, tmp);
-            tmp.remove(tmp.size()-1);
         }
     }
 }
