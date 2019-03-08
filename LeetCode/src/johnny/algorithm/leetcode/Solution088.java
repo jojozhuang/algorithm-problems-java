@@ -13,32 +13,23 @@ package johnny.algorithm.leetcode;
  */
 public class Solution088 {
     public void merge(int nums1[], int m, int nums2[], int n) {
-        if(nums1 == null || nums1.length == 0) {
-            return;
-        }
-        if(nums2 == null || nums2.length == 0) {
-            return;
-        }
-        
         int i = m - 1;
         int j = n - 1;
-        int end = m + n - 1;
+        int k = nums1.length - 1;
         while (i >= 0 && j >= 0) {
-            if (nums1[i] > nums2[j]) {
-                nums1[end] = nums1[i];
-                i--;
-            } else {
-                nums1[end] = nums2[j];
+            if (nums2[j] >= nums1[i]) {
+                nums1[k] = nums2[j];
                 j--;
+            } else {
+                nums1[k] = nums1[i];
+                i--;
             }
-            end--;
+            k--;
         }
-        
-        if (j >= 0) {
-            for (int k = j; k >= 0; k--) {
-                nums1[end] = nums2[k];
-                end--;
-            }
+        while (j >= 0) {
+            nums1[k] = nums2[j];
+            j--;
+            k--;
         }
     }
 }

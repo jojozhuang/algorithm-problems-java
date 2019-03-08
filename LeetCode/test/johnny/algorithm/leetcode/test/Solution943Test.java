@@ -15,5 +15,6 @@ public class Solution943Test extends JunitBase {
 
         assertEquals("alexlovesleetcode", instance.shortestSuperstring(new String[] {"alex","loves","leetcode"}));
         assertEquals("gctaagttcatgcatc", instance.shortestSuperstring(new String[] {"catg","ctaagt","gcta","ttca","atgcatc"}));
+        assertEquals("dsksssvq", instance.shortestSuperstring(new String[] {"sssv","svq","dskss","sksss"}));
     }
 }

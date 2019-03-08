@@ -1,5 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
 /**
  * Number of Islands.
  * Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. 
@@ -25,6 +30,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution200 {
+    // BFS: change values of given grid, space: min(m,n), time: (m*n)
     public int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
@@ -32,36 +38,82 @@ public class Solution200 {
         
         int m = grid.length;
         int n = grid[0].length;
-        boolean[][] visited = new boolean[m][n];
-        
+        int[] dr = new int[]{0, -1, 0, 1};
+        int[] dc = new int[]{1, 0, -1, 0};
         int ans = 0;
+        
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if(dfs(grid, i, j, visited)) {
+                if (grid[i][j] == '1') {
                     ans++;
+                    Queue<int[]> queue = new LinkedList<>();
+                    queue.offer(new int[] {i, j});
+                    while (!queue.isEmpty()) {
+                        Set<Integer> set = new HashSet<>();
+                        int size = queue.size();
+                        for (int k = 0; k < size; k++) {
+                            int[] pos = queue.poll();
+                            grid[pos[0]][pos[1]] = '0';
+                            for (int p = 0; p < 4; p++) {
+                                int r = pos[0] + dr[p];
+                                int c = pos[1] + dc[p];
+                                if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] == '0') {
+                                    continue;
+                                }
+                                if (!set.contains(r * n + c)) {
+                                    queue.offer(new int[] {r, c});
+                                    set.add(r * n + c);
+                                }
+                            }
+                        }
+                    }
                 }
             }
+        }  
+        
+        return ans;
+    }
+    // DFS: change values of given grid, space: O(1), time: (m*n)
+    public int numIslands2(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
         }
+        
+        int m = grid.length;
+        int n = grid[0].length;
+        int ans = 0;
+        
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    ans++;
+                    dfs(grid, i, j);
+                }
+            }
+        }  
         
         return ans;
     }
     
-    private boolean dfs(char[][] grid, int r, int c, boolean[][] visited) {
+    // set adjacent cell to 0
+    private void dfs(char[][] grid, int i, int j) {
         int m = grid.length;
         int n = grid[0].length;
-        if (r < 0 || r >= m || c < 0 || c >= n || visited[r][c] || grid[r][c] == '0') {
-            return false;
+        if (i < 0 || i >= m || j < 0 || j >= n) {
+            return;
         }
         
-        visited[r][c] = true;
-        dfs(grid, r - 1, c, visited);
-        dfs(grid, r + 1, c, visited);
-        dfs(grid, r, c - 1, visited);
-        dfs(grid, r, c + 1, visited);
-        return true;
+        if (grid[i][j] == '1') {
+            grid[i][j] = '0';
+            dfs(grid, i - 1, j); // up
+            dfs(grid, i + 1, j); // down
+            dfs(grid, i, j - 1); // left
+            dfs(grid, i, j + 1); // right
+        }
     }
     
-    public int numIslands5(char[][] grid) {
+    // DFS: space: O(m*n), time: (m*n)
+    public int numIslands3(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }
@@ -74,7 +126,7 @@ public class Solution200 {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1' && !visited[i][j]) {
-                    dfs2(grid, i, j, visited);
+                    dfs(grid, i, j, visited);
                     ans++;
                 }
             }
@@ -83,7 +135,7 @@ public class Solution200 {
         return ans;
     }
     
-    private void dfs2(char[][] grid, int r, int c, boolean[][] visited) {
+    private void dfs(char[][] grid, int r, int c, boolean[][] visited) {
         int m = grid.length;
         int n = grid[0].length;
         if (r < 0 || r >= m || c < 0 || c >= n || visited[r][c] || grid[r][c] == '0') {
@@ -91,12 +143,13 @@ public class Solution200 {
         }
         
         visited[r][c] = true;
-        dfs(grid, r - 1, c, visited);
-        dfs(grid, r + 1, c, visited);
-        dfs(grid, r, c - 1, visited);
-        dfs(grid, r, c + 1, visited);
+        dfs(grid, r - 1, c, visited); // up
+        dfs(grid, r + 1, c, visited); // down
+        dfs(grid, r, c - 1, visited); // left
+        dfs(grid, r, c + 1, visited); // right
     }
     
+    // union find
     //https://discuss.leetcode.com/topic/47691/easy-to-understand-simplify-java-union-find-version
     public int numIslands4(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -175,108 +228,6 @@ public class Solution200 {
                 parent[root1] = root2;
                 count--;
             }
-        }
-    }
-    /*class UF {
-        int count = 0;
-        int[] parent;
-        UF(char[][] grid, int x, int y) {
-            parent = new int[x * y];
-            for (int i = 0; i < x * y; i++) {
-                parent[i] = i;
-            }
-            for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid[0].length; j++) {
-                    if (grid[i][j] == '1') {
-                        count++;
-                    }
-                }
-            }
-        }
-        public int find(int x) {
-            while(x != parent[x]) {
-                parent[x] = parent[parent[x]];
-                x = parent[x];
-            }
-            return x;
-        }
-        public void union(int x, int y) {
-            int px = find(x);
-            int py = find(y);
-            if (px == py) {
-                return;
-            } else {
-                parent[px] = py;
-                count--;
-            }
-        }
-    }
-    public int numIslands(char[][] grid) {
-        if (grid == null || grid.length == 0 || grid[0].length == 0) {
-            return 0;
-        }
-        int m = grid.length;
-        int n = grid[0].length;
-        UF uf = new UF(grid, m, n);
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (grid[i][j] == '1') {
-                    if (i > 0 && grid[i - 1][j] == '1') {
-                        uf.union(i * n + j, (i - 1)*n + j );
-                    }
-                    if (i < m - 1 && grid[i + 1][j] == '1') {
-                        uf.union(i *n + j, (i + 1)*n + j);
-                    }
-                    if (j > 0 && grid[i][j - 1] == '1') {
-                        uf.union(i*n + j, i*n + j - 1);
-                    }
-                    if (j < n -1 && grid[i][j + 1] == '1') {
-                        uf.union(i*n + j, i*n + j + 1);
-                    }
-
-                }
-            }
-        }
-        return uf.count;
-
-    }*/
-    
-    public int numIslands2(char[][] grid) {
-        if (grid == null || grid.length == 0 || grid[0].length == 0) {
-            return 0;
-        }
-        
-        int m = grid.length;
-        int n = grid[0].length;
-        int res = 0;
-        
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (grid[i][j] != '1') {
-                    continue;
-                }
-                res++;
-                dfs(grid, i, j);
-            }
-        }  
-        
-        return res;
-    }
-    
-    // set adjacent cell to 0
-    private void dfs(char[][] grid, int i, int j) {
-        int m = grid.length;
-        int n = grid[0].length;
-        if (i < 0 || i >= m || j < 0 || j >= n) {
-            return;
-        }
-        
-        if (grid[i][j] == '1') {
-            grid[i][j] = '0';
-            dfs(grid, i - 1, j); // up
-            dfs(grid, i + 1, j); // down
-            dfs(grid, i, j - 1); // left
-            dfs(grid, i, j + 1); // right
         }
     }
 }

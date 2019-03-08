@@ -18,7 +18,7 @@ public class Solution141 {
             return false;
         }
 
-        ListNode fast = head;
+        ListNode fast = head.next;
         ListNode slow = head;
         
         while(fast != null) {

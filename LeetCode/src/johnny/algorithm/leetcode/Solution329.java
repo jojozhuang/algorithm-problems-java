@@ -34,8 +34,86 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution329 {
-    //https://leetcode.com/discuss/90455/neat-java-dfs-solution-with-memoization
+    // dfs + memorization
     public int longestIncreasingPath(int[][] matrix) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return 0;
+        }
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] cache = new int[m][n];
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                ans = Math.max(ans, dfs(matrix, i, j, cache));
+            }
+        }
+        
+        return ans;
+    }
+    
+    private int dfs(int[][] matrix, int i, int j, int[][] cache) {
+        if (cache[i][j] > 0) {
+            return cache[i][j];
+        }
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[] dr = new int[]{-1,1,0,0};
+        int[] dc = new int[]{0,0,-1,1};
+        cache[i][j] = 1;
+        for (int k = 0; k < 4; k++) {
+            int r = i + dr[k];
+            int c = j + dc[k];
+            if (r < 0 || r >= m || c < 0 || c >= n || matrix[r][c] <= matrix[i][j]) {
+                continue;
+            }
+            cache[i][j] = Math.max(cache[i][j], 1 + dfs(matrix, r, c, cache));
+        }
+        return cache[i][j];
+    }
+    
+    // brute force, TLE
+    public int longestIncreasingPath3(int[][] matrix) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return 0;
+        }
+        int m = matrix.length;
+        int n = matrix[0].length;
+        boolean[][] visited = new boolean[m][n];
+        int[] max = new int[1];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                visited[i][j] = true;
+                dfs(matrix, i, j, visited, 1, max);
+            }
+        }
+        
+        return max[0];
+    }
+    
+    private void dfs(int[][] matrix, int sr, int sc, boolean[][] visited, int steps, int[] max) {
+        if (steps > max[0]) {
+            max[0] = steps;
+        }
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[] dr = new int[]{-1,1,0,0};
+        int[] dc = new int[]{0,0,-1,1};
+        for (int i = 0; i < 4; i++) {
+            int r = sr + dr[i];
+            int c = sc + dc[i];
+            if (r < 0 || r >= m || c < 0 || c >= n || matrix[r][c] <= matrix[sr][sc]) {
+                continue;
+            }
+            visited[r][c] = true;
+            dfs(matrix, r, c, visited, steps+1, max);
+            visited[r][c] = false;
+        }
+    }
+    
+    /*
+    //https://leetcode.com/discuss/90455/neat-java-dfs-solution-with-memoization
+    public int longestIncreasingPath2(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return 0;
         }
@@ -53,7 +131,7 @@ public class Solution329 {
         
         return max;
     }
-    
+
     private int dfs(int[][] matrix, int i, int j, int[][] cache) {
         if (cache[i][j] > 0) {
             return cache[i][j];
@@ -77,5 +155,5 @@ public class Solution329 {
         }
         cache[i][j] = longest + 1;
         return longest + 1;
-    }
+    }*/
 }

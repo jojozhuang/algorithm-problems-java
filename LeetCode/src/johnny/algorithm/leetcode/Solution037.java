@@ -19,6 +19,64 @@ public class Solution037 {
         if (board == null || board.length == 0 || board[0].length == 0) {
             return;
         }
+        int[][] row = new int[9][9];
+        int[][] col = new int[9][9];
+        int[][] box = new int[9][9];
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                char c = board[i][j];
+                if (c != '.') {
+                    int val = c - '0';
+                    row[i][val - 1] = 1;
+                    col[j][val - 1] = 1;
+                    int bx = i / 3;
+                    int by = j / 3;
+                    box[bx * 3 + by][val - 1] = 1;
+                }
+            }
+        }
+        
+        fill(board, 0, 0, row, col, box);
+    }
+    
+    private boolean fill(char[][] board, int x, int y, int[][] row, int[][] col, int[][] box) {
+        if (x == 9) {
+            return true;
+        }
+        
+        // next position, from left to right, and up to down
+        int nc = (y + 1) % 9;           // column of next position
+        int nr = (nc == 0) ? x + 1 : x; // row of next position
+        if (board[x][y] != '.') {
+            return fill(board, nr, nc, row, col, box);
+        }
+        
+        // board[x][y] == '.'
+        for (int i = 0; i < 9; i++) {
+            int bx = x / 3;
+            int by = y / 3;
+            int boxkey = bx * 3 + by;
+            if (row[x][i] == 0 && col[y][i] == 0 && box[boxkey][i] == 0) {
+                row[x][i] = 1;
+                col[y][i] = 1;
+                box[boxkey][i] = 1;
+                board[x][y] = (char)(i + 1 + '0');
+                if (fill(board, nr, nc, row, col, box)) {
+                    return true;
+                }
+                board[x][y] = '.';
+                box[boxkey][i] = 0;
+                col[y][i] = 0;
+                row[x][i] = 0;
+            }
+        }
+        
+        return false;
+    }
+    public void solveSudoku2(char[][] board) {
+        if (board == null || board.length == 0 || board[0].length == 0) {
+            return;
+        }
         
         helper(board);
     }

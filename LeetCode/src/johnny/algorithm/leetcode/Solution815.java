@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 /**
  *815. Bus Routes
@@ -29,6 +32,49 @@ Note:
  */
 public class Solution815 {
     public int numBusesToDestination(int[][] routes, int S, int T) {
+        if (S == T) {
+            return 0;
+        }
+        
+        // map, stop -> buses
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int i = 0; i < routes.length; i++) {
+            for (int stop : routes[i]) {
+                List<Integer> buses = map.getOrDefault(stop, new ArrayList<>());
+                buses.add(i);
+                map.put(stop, buses);
+            }
+        }
+        // visited bus
+        boolean[] visited = new boolean[routes.length];
+
+        int ans = 0;
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(S);
+        
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            ans++;
+            for (int i = 0; i < size; i++) {
+                int curr = queue.poll();
+                for (int bus : map.get(curr)) {
+                    if (visited[bus]) {
+                        continue;
+                    }
+                    visited[bus] = true;
+                    for (int stop : routes[bus]) {
+                        if (stop == T) {
+                            return ans;
+                        }
+                        queue.offer(stop);
+                    }
+                }
+            }
+        }
+        
+        return -1;
+    }
+    public int numBusesToDestination2(int[][] routes, int S, int T) {
         HashSet<Integer> visited = new HashSet<>();
         Queue<Integer> q = new LinkedList<>();
         HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();

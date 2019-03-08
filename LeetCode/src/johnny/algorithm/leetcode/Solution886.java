@@ -2,6 +2,7 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -43,34 +44,44 @@ There does not exist i != j for which dislikes[i] == dislikes[j].
  * @author Johnny
  */
 public class Solution886 {
-    ArrayList<Integer>[] graph;
-    Map<Integer, Integer> color;
-
     public boolean possibleBipartition(int N, int[][] dislikes) {
-        graph = new ArrayList[N+1];
-        for (int i = 1; i <= N; ++i)
+        if (dislikes == null) {
+            return false;
+        }
+        
+        List<Integer>[] graph = new ArrayList[N];
+        int[] colors = new int[N]; // 0: initial, not colored, 1: colored to blue, -1: colored to red.
+        
+        for (int i = 0; i < N; i++) {
             graph[i] = new ArrayList<Integer>();
-
-        for (int[] edge: dislikes) {
-            graph[edge[0]].add(edge[1]);
-            graph[edge[1]].add(edge[0]);
         }
 
-        color = new HashMap<Integer, Integer>();
-        for (int node = 1; node <= N; ++node)
-            if (!color.containsKey(node) && !dfs(node, 0))
+        for (int[] edge: dislikes) {
+            graph[edge[0] - 1].add(edge[1] - 1);
+            graph[edge[1] - 1].add(edge[0] - 1);
+        }
+        
+        for (int i = 0; i < N; i++) {
+            if (colors[i] == 0 && !dfs(graph, colors, 1, i)) {
                 return false;
+            }
+        }
+        
         return true;
     }
-
-    public boolean dfs(int node, int c) {
-        if (color.containsKey(node))
-            return color.get(node) == c;
-        color.put(node, c);
-
-        for (int nei: graph[node])
-            if (!dfs(nei, c ^ 1))
+    
+    private boolean dfs(List<Integer>[] graph, int[] colors, int color, int node) {
+        if (colors[node] != 0) {
+            return colors[node] == color;
+        }
+        
+        colors[node] = color;
+        for (int next : graph[node]) {
+            if (!dfs(graph, colors, -color, next)) {
                 return false;
+            }
+        }
+        
         return true;
     }
 }

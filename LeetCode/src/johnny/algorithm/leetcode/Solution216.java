@@ -23,26 +23,30 @@ import java.util.List;
  */
 public class Solution216 {
     public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (k <= 0 || n <= 0) {
-            return res;
+            return ans;
         }
         
-        List<Integer> list = new ArrayList<Integer>();
-        helper(1, k, n, list, res);
-        return res;
+        List<Integer> list = new ArrayList<>();
+        dfs(k, n, 1, list, ans);
+        return ans;
     }
     
-    private void helper(int pos, int k, int n, List<Integer> list, List<List<Integer>> res) {
-        if (list.size() == k && n == 0) {
-            List<Integer> li = new ArrayList<Integer>(list);
-            res.add(li);
+    private void dfs(int k, int n, int pos, List<Integer> list, List<List<Integer>> ans) {
+        if (n <= 0 || k <= 0) {
+            if (n == 0 && k == 0) {
+                ans.add(new ArrayList<>(list));
+            }
             return;
         }
         
         for (int i = pos; i <= 9; i++) {
+            if (i > n) { 
+                break;
+            }
             list.add(i);
-            helper(i + 1, k, n - i, list, res);
+            dfs(k-1, n - i, i + 1, list, ans);
             list.remove(list.size() - 1);
         }
     }

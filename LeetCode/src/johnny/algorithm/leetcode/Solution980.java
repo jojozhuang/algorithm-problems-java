@@ -44,6 +44,52 @@ Note:
  * @author Johnny
  */
 public class Solution980 {
+    public int uniquePathsIII(int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
+        int m = grid.length;
+        int n = grid[0].length;
+        int count = 1; // not 0, because the start point is included
+        int sr = -1;
+        int sc = -1;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    sr = i;
+                    sc = j;
+                } else if (grid[i][j] == 0) {
+                    count++;
+                }
+            }
+        }
+        
+        int[] ans = new int[1]; // avoid defining global variable
+        dfs(grid, m, n, sr, sc, count, ans);
+        return ans[0];
+    }
+    
+    private void dfs(int[][] grid, int m, int n, int i, int j, int count, int[] ans) {
+        if (i < 0 || i >= m || j < 0 || j >= n || grid[i][j] == -1) {
+            return;
+        }
+
+        if (grid[i][j] == 2) {
+            if (count == 0) {
+                ans[0]++;
+            }
+            return;
+        }
+        
+        grid[i][j] = -1;
+        dfs(grid, m, n, i - 1, j, count - 1, ans);
+        dfs(grid, m, n, i + 1, j, count - 1, ans);
+        dfs(grid, m, n, i, j - 1, count - 1, ans);
+        dfs(grid, m, n, i, j + 1, count - 1, ans);
+        grid[i][j] = 0;
+    }
+    /*
     int ans;
     int[][] grid;
     int tr, tc;
@@ -96,5 +142,5 @@ public class Solution980 {
             }
         }
         grid[r][c] = 0;
-    }
+    }*/
 }

@@ -42,110 +42,61 @@ The number of keys is in [1, 6].  Each key has a different letter and opens exac
  * @author Johnny
  */
 public class Solution864 {
-    int INF = Integer.MAX_VALUE;
-    String[] grid;
-    int R, C;
-    Map<Character, Point> location;
-    int[] dr = new int[]{-1, 0, 1, 0};
-    int[] dc = new int[]{0, -1, 0, 1};
-
     public int shortestPathAllKeys(String[] grid) {
-        this.grid = grid;
-        R = grid.length;
-        C = grid[0].length();
-
-        //location['a'] = the coordinates of 'a' on the grid, etc.
-        location = new HashMap<Character, Point>();
-        for (int r = 0; r < R; ++r)
-            for (int c = 0; c < C; ++c) {
-                char v = grid[r].charAt(c);
-                if (v != '.' && v != '#')
-                    location.put(v, new Point(r, c));
-            }
-
-        int ans = INF;
-        int num_keys = location.size() / 2;
-        String[] alphabet = new String[num_keys];
-        for (int i = 0; i < num_keys; ++i)
-            alphabet[i] = Character.toString((char)('a' + i));
-        //alphabet = ["a", "b", "c"], if there were 3 keys
-
-        search: for (String cand: permutations(alphabet, 0, num_keys)) {
-            //bns : the built candidate answer, consisting of the sum
-            //of distances of the segments from '@' to cand[0] to cand[1] etc.
-            int bns = 0;
-            for (int i = 0; i < num_keys; ++i) {
-                char source = i > 0 ? cand.charAt(i-1) : '@';
-                char target = cand.charAt(i);
-
-                //keymask : an integer with the 0-th bit set if we picked up
-                // key 'a', the 1-th bit set if we picked up key 'b', etc.
-                int keymask = 0;
-                for (int j = 0; j < i; ++j)
-                    keymask |= 1 << (cand.charAt(j) - 'a');
-                int d = bfs(source, target, keymask);
-                if (d == INF) continue search;
-                bns += d;
-                if (bns >= ans) continue search;
-            }
-            ans = bns;
-        }
-
-        return ans < INF ? ans : -1;
-    }
-
-    public int bfs(char source, char target, int keymask) {
-        int sr = location.get(source).x;
-        int sc = location.get(source).y;
-        int tr = location.get(target).x;
-        int tc = location.get(target).y;
-        boolean[][] seen = new boolean[R][C];
-        seen[sr][sc] = true;
-        int curDepth = 0;
-        Queue<Point> queue = new LinkedList<Point>();
-        queue.offer(new Point(sr, sc));
-        queue.offer(null);
-
-        while (!queue.isEmpty()) {
-            Point p = queue.poll();
-            if (p == null) {
-                curDepth++;
-                if (!queue.isEmpty())
-                    queue.offer(null);
-                continue;
-            }
-            int r = p.x, c = p.y;
-            if (r == tr && c == tc) return curDepth;
-            for (int i = 0; i < 4; ++i) {
-                int cr = r + dr[i];
-                int cc = c + dc[i];
-                if (0 <= cr && cr < R && 0 <= cc && cc < C && !seen[cr][cc]){
-                    char cur = grid[cr].charAt(cc);
-                    if (cur != '#') {
-                        if (Character.isUpperCase(cur) && (((1 << (cur - 'A')) & keymask) <= 0))
-                            continue; // at lock and don't have key
-
-                        queue.offer(new Point(cr, cc));
-                        seen[cr][cc] = true;
-                    }
+        int sr = -1;
+        int sc = -1;
+        int keys = 0;
+        
+        int m = grid.length;
+        int n = grid[0].length();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                char c = grid[i].charAt(j);
+                if (c == '@') {
+                    sr = i;
+                    sc = j;
+                } else if (c >= 'a' && c <= 'f') {
+                    keys |= (1 << (c - 'a')); // 000011, a,b
                 }
             }
         }
-
-        return INF;
-    }
-
-    public List<String> permutations(String[] alphabet, int used, int size) {
-        List<String> ans = new ArrayList<String>();
-        if (size == 0) {
-            ans.add(new String(""));
-            return ans;
+        
+        int steps = 0;
+        int[] dr = new int[]{-1,1,0,0};
+        int[] dc = new int[]{0,0,-1,1};
+        int[][][] visited = new int[m][n][64];
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{sr, sc, 0});
+        visited[sr][sc][0] = 1;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int q = 0; q < size; q++) {
+                int[] point = queue.poll();
+                if (point[2] == keys) {
+                    return steps;
+                }
+                for (int i = 0; i < 4; i++) {
+                    int r = point[0] + dr[i];
+                    int c = point[1] + dc[i];
+                    if (r < 0 || r >= m || c < 0 || c >= n || grid[r].charAt(c) == '#') {
+                        continue;
+                    }
+                    char ch = grid[r].charAt(c);
+                    if (ch >= 'A' && ch <= 'F' && (point[2] & (1<<(ch - 'A'))) == 0) {
+                        continue;
+                    }
+                    if (ch >= 'a' && ch <= 'f') {
+                        point[2] |= (1<<(ch -'a'));
+                    }
+                    if (visited[r][c][point[2]] == 1) {
+                        continue;
+                    }
+                    queue.offer(new int[]{r,c, point[2]});
+                    visited[r][c][point[2]] = 1;
+                }
+            }
+            steps++;
         }
-
-        for (int b = 0; b < alphabet.length; ++b)
-            if (((used >> b) & 1) == 0)
-                for (String rest: permutations(alphabet, used | (1 << b), size - 1))
-                    ans.add(alphabet[b] + rest);
-        return ans;
+        return -1;
     }
 }

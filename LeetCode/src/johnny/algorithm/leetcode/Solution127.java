@@ -3,6 +3,7 @@ package johnny.algorithm.leetcode;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
 /**
@@ -29,6 +30,44 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution127 {
+    // bfs with queue
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        if (beginWord.isEmpty() || endWord.isEmpty() || wordList == null || wordList.isEmpty()) {
+            return 0;
+        }
+        Set<String> set = new HashSet<>();
+        for (String s : wordList) {
+            set.add(s);
+        }
+        if (!set.contains(endWord)) {
+            return 0;
+        }
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+        int steps = 0;
+        while (!queue.isEmpty()) {
+            steps++;
+            int size = queue.size();
+            for (int s = 0; s < size; s++) {
+                String word = queue.poll();
+                for (int i = 0; i < word.length(); i++) {
+                    for (int j = 'a'; j <= 'z'; j++) {
+                        String newWord = word.substring(0, i) + (char)(j) + word.substring(i + 1);
+                        if (newWord.equals(endWord)) {
+                            return steps + 1;
+                        }
+                        if (!set.contains(newWord)) {
+                            continue;
+                        }
+                        set.remove(newWord);
+                        queue.offer(newWord);
+                    }
+                }
+            }
+        }
+        
+        return 0;
+    }
     public int ladderLength2(String beginWord, String endWord, List<String> wordList) {
         if (beginWord.isEmpty() || endWord.isEmpty() || wordList == null || wordList.isEmpty()) {
             return 0;
@@ -59,7 +98,7 @@ public class Solution127 {
         return distance;
     }
     
-    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    public int ladderLength3(String beginWord, String endWord, List<String> wordList) {
         if (beginWord.isEmpty() || endWord.isEmpty() || wordList == null || wordList.isEmpty()) {
             return 0;
         }

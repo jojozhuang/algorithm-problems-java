@@ -29,34 +29,34 @@ import java.util.List;
  */
 public class Solution040 {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (candidates == null || candidates.length == 0) {
-            return res;
+            return ans;
         }
         
         Arrays.sort(candidates);
-        List<Integer> list = new ArrayList<Integer>();
-        helper(candidates, 0, target, list, res);
-        
-        HashSet<List<Integer>> set = new HashSet<List<Integer>>(res); 
-        //remove duplicate lists
-        res.clear();
-        res.addAll(set);
-    
-        return res;
+        List<Integer> list = new ArrayList<>();
+        dfs(candidates, target, 0, list, ans);
+        return ans;
     }
     
-    private void helper(int[] candidates, int pos, int target, List<Integer> list, List<List<Integer>> res) {
+    private void dfs(int[] candidates, int target, int pos, List<Integer> list, List<List<Integer>> ans) {
         if (target <= 0) {
             if (target == 0) {
-                res.add(new ArrayList<Integer>(list));
+                ans.add(new ArrayList<>(list));
             }
             return;
         }
         
         for (int i = pos; i < candidates.length; i++) {
+            if (i > pos && candidates[i] == candidates[i-1]) {
+                continue;
+            }
+            if (candidates[i] > target) { 
+                break;
+            }
             list.add(candidates[i]);
-            helper(candidates, i + 1, target - candidates[i], list, res);
+            dfs(candidates, target - candidates[i], i + 1, list, ans);
             list.remove(list.size() - 1);
         }
     }

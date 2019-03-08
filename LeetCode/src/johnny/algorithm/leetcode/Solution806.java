@@ -39,16 +39,17 @@ widths[i] will be in the range of [2, 10].
  */
 public class Solution806 {
     public int[] numberOfLines(int[] widths, String S) {
-        int lines = 1, width = 0;
-        for (char c: S.toCharArray()) {
-            int w = widths[c - 'a'];
-            width += w;
-            if (width > 100) {
+        int lines = 1;
+        int count = 0;
+        for (char c : S.toCharArray()) {
+            int width = widths[c - 'a'];
+            if (count + width <= 100) {
+                count += width;
+            } else {
                 lines++;
-                width = w;
+                count = width;
             }
         }
-
-        return new int[]{lines, width};
+        return new int[]{lines, count};
     }
 }

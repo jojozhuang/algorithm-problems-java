@@ -23,6 +23,7 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution232 {
+    // push: O(1), pop: O(1), worst O(n)
     private Stack<Integer> stack1; // s1 stores new elements
     private Stack<Integer> stack2; // s2 stores old elements
     
@@ -39,23 +40,18 @@ public class Solution232 {
 
     /** Removes the element from in front of queue and returns that element. */
     public int pop() {
-        if (!stack2.isEmpty()) {
-            return stack2.pop();
-        }
-        while (!stack1.isEmpty()) {
-            stack2.push(stack1.pop());
-        }
+        peek();
         return stack2.pop();
     }
 
     /** Get the front element. */
     public int peek() {
-        if (!stack2.isEmpty()) {
-            return stack2.peek();
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
         }
-        while (!stack1.isEmpty()) {
-            stack2.push(stack1.pop());
-        }
+        
         return stack2.peek();
     }
 

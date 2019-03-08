@@ -47,6 +47,68 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution488 {
+    public int findMinStep2(String board, String hand) {
+        int[] hands = new int[26];
+        for (char c : hand.toCharArray()) {
+            hands[c - 'A']++;
+        }
+        
+        return dfs(board, hands);
+    }
+    
+    private int dfs(String board, int[] hands) {
+        int n = board.length();
+        if (n == 0) {
+            return 0;
+        }
+        
+        int ans = Integer.MAX_VALUE;
+        int i = 0;
+        while (i < board.length()) {
+            int j = i;
+            while (j < n && board.charAt(i) == board.charAt(j)) {
+                j++;
+            }
+            int b = 3 - (j - i);
+            if (hands[board.charAt(i) - 'A'] >= b) { // have sufficient balls on hand
+                String nb = board.substring(0,i) + board.substring(j);
+                nb = shrink(nb);
+                hands[board.charAt(i) - 'A'] -= b;
+                int next = dfs(nb, hands);
+                if (next >= 0) {
+                    ans = Math.min(ans, next + b);
+                } 
+                
+                hands[board.charAt(i) - 'A'] += b;
+            }
+            i = j;
+        }
+        
+        if (ans == Integer.MAX_VALUE) {
+            return -1;
+        }
+        
+        return ans;
+    }
+    
+    private String shrink(String board) {
+        int i = 0;
+        while (i < board.length()) {
+            int j = i;
+            while (j < board.length() && board.charAt(i) == board.charAt(j)) {
+                j++;
+            }
+            if (j - i >= 3) {
+                board = board.substring(0,i) + board.substring(j);
+                i = 0;
+            } else {
+                i = j;
+            }
+        }
+        
+        return board;
+    }
+    
     private int aux(String s, int[] c){
         if("".equals(s)) return 0;
 //worst case, every character needs 2 characters; plus one to make it impossible, ;-)

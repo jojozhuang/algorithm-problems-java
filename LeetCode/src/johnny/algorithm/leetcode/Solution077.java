@@ -24,26 +24,26 @@ import java.util.List;
  */
 public class Solution077 {
     public List<List<Integer>> combine(int n, int k) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (n <= 0 || k <= 0 || n < k) {
-            return res;
+            return ans;
         }
 
         List<Integer> list = new ArrayList<Integer>();
-        dfs(n, k, 1, list, res);
+        dfs(n, k, 1, list, ans);
 
-        return res;
+        return ans;
     }
     
-    private void dfs(int n, int k, int pos, List<Integer> list, List<List<Integer>> res) {
+    private void dfs(int n, int k, int pos, List<Integer> list, List<List<Integer>> ans) {
         if (list.size() == k) {
-            res.add(new ArrayList<Integer>(list));
+            ans.add(new ArrayList<Integer>(list));
             return;
         }
         
         for(int i = pos; i <= n; i++) {
             list.add(i);
-            dfs(n, k, i + 1, list, res);
+            dfs(n, k, i + 1, list, ans);
             list.remove(list.size() - 1);
         }
     }

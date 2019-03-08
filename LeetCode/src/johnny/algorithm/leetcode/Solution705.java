@@ -32,10 +32,86 @@ Please do not use the built-in HashSet library.
  * @author Johnny
  */
 public class Solution705 {
+    // node
+    class HashNode {
+        int key;
+        HashNode next;
+
+        HashNode(int key) {
+            this.key = key;
+        }
+    }
+    
+    HashNode[] bucket;
+    public Solution705() {
+        bucket = new HashNode[1000000];
+    }
+    
+    public void add(int key) {
+        int hash = hashFunc(key);
+        if (bucket[hash] == null) {
+            bucket[hash] = new HashNode(key);
+        } else {
+            HashNode header = bucket[hash];
+            while (header != null) {
+                if (header.key == key) {
+                    return;
+                }
+                if (header.next == null) {
+                    header.next = new HashNode(key);
+                } else {
+                    header = header.next;
+                }
+            }
+        }
+    }
+    
+    public void remove(int key) {
+        int hash = hashFunc(key);
+        if (bucket[hash] == null) {
+            return;
+        } else {
+            HashNode dummy = new HashNode(0);
+            dummy.next = bucket[hash];
+            HashNode prev = dummy;
+            HashNode curr = dummy.next;
+            while (curr != null) {
+                if (curr.key == key) {
+                    prev.next = curr.next;
+                    break;
+                }
+                curr = curr.next;
+                prev = prev.next;
+            }
+            bucket[hash] = dummy.next;
+        }
+    }
+    
+    /** Returns true if this set contains the specified element */
+    public boolean contains(int key) {
+        int hash = hashFunc(key);
+        if (bucket[hash] == null) {
+            return false;
+        } else {
+            HashNode header = bucket[hash];
+            while (header != null) {
+                if (header.key == key) {
+                    return true;
+                }
+                header = header.next;
+            }
+            return false;
+        }
+    }
+    
+    private int hashFunc(int key) {
+        return key % 1000000;
+    }
+    /* array
     int[] arr;
     private int capacity = 1000000;
     
-    /** Initialize your data structure here. */
+    // Initialize your data structure here.
     public Solution705() {
         arr = new int[capacity];
         // Create empty chains
@@ -45,26 +121,25 @@ public class Solution705 {
     }
     
     public void add(int key) {
-        int hashCode = hashFunc(key);
-        arr[hashCode] = key;
+        int hash = hashFunc(key);
+        arr[hash] = key;
     }
     
     public void remove(int key) {
-        int hashCode = hashFunc(key);
-        if (arr[hashCode] == key) {
-            arr[hashCode] = Integer.MIN_VALUE;
+        int hash = hashFunc(key);
+        if (arr[hash] == key) {
+            arr[hash] = Integer.MIN_VALUE;
         }
     }
     
-    /** Returns true if this set contains the specified element */
     public boolean contains(int key) {
-        int hashCode = hashFunc(key);
-        return arr[hashCode] != Integer.MIN_VALUE;
+        int hash = hashFunc(key);
+        return arr[hash] != Integer.MIN_VALUE;
     }
     
     // hash function 
     private int hashFunc(int key) {
-        int index = key % capacity;
-        return index;
+        return key % capacity;
     }
+    */
 }

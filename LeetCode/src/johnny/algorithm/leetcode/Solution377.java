@@ -33,7 +33,7 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution377 {
-    public int combinationSum4(int[] nums, int target) {
+    public int combinationSum43(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -72,5 +72,30 @@ public class Solution377 {
             }
         }
         return res;
+    }
+    
+    // dfs
+    public int combinationSum4(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        Arrays.sort(nums);
+        int[] ans = new int[1];
+        dfs(nums, target, ans);
+        return ans[0];
+    }
+    
+    private void dfs(int[] nums, int target, int[] ans) {
+        if (target <= 0) {
+            if (target == 0) {
+                ans[0]++;
+            }
+            return;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            dfs(nums, target - nums[i], ans);
+        }
     }
 }

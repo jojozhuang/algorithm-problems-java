@@ -1,6 +1,8 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -8,6 +10,32 @@ import java.util.HashMap;
  */
 public class Solution888 {
     public int[] fairCandySwap(int[] A, int[] B) {
+        int sum1 = 0;
+        Set<Integer> set1 = new HashSet<>();
+        for (int i : A) {
+            sum1 += i;
+            set1.add(i);
+        }
+        int sum2 = 0;
+        Set<Integer> set2 = new HashSet<>();
+        for (int i : B) {
+            sum2 += i;
+            set2.add(i);
+        }
+        
+        int avg = (sum1 + sum2) / 2;
+        for (int i = 0; i < A.length; i++) {
+            if (sum1 - A[i] < avg) {
+                if (set2.contains(avg - (sum1 - A[i]))) {
+                    return new int[]{A[i], avg - (sum1 - A[i])};
+                }
+            }
+        }
+        
+        return new int[]{-1,-1};
+    }
+    
+    public int[] fairCandySwap2(int[] A, int[] B) {
         int sum1 = 0, sum2 = 0;
         for (int i : A) {
             sum1 += i;

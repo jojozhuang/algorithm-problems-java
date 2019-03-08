@@ -21,6 +21,21 @@ package johnny.algorithm.leetcode;
  */
 public class Solution171 {
     public int titleToNumber(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        
+        int ans = 0;
+        char[] chs = s.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            ans = 26* ans;
+            ans += chs[i] - 'A' + 1;
+        }
+        
+        return ans;
+    }
+    
+    public int titleToNumber2(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
         }

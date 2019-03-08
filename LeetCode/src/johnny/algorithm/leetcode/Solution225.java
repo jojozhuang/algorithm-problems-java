@@ -22,49 +22,77 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution225 {
-    Queue<Integer> queue1; // Q1 always has all of the elements
-    Queue<Integer> queue2; // Q2 always be empty after pop or top.
-    int lastnum = 0;
+    // One queue: push: O(n), pop: O(1), peek: O(1)
+    private LinkedList<Integer> queue;
     
     /** Initialize your data structure here. */
+    public Solution225() {
+        queue = new LinkedList<>();
+    }
+    
+    /** Push element x onto stack. */
+    public void push(int x) {
+        queue.add(x);
+        int sz = queue.size();
+        while (sz > 1) {
+            queue.add(queue.remove());
+            sz--;
+        }
+    }
+
+    /** Removes the element on top of the stack and returns that element. */
+    public int pop() {
+        return queue.remove();
+    }
+
+    /** Get the top element. */
+    public int top() {
+        return queue.peek();
+    }
+
+    /** Returns whether the stack is empty. */
+    public boolean empty() {
+        return queue.isEmpty();
+    }
+    
+    // Two queue: push: O(1), pop: O(n), peek: O(1)
+    /*
+    Queue<Integer> queue1; // Q1 always has all of the elements
+    Queue<Integer> queue2; // Q2 always be empty after pop
+    int top = 0;
+    
+    // Initialize your data structure here. 
     public Solution225() {
         queue1 = new LinkedList<Integer>();
         queue2 = new LinkedList<Integer>();
     }
     
-    // Push element x onto stack.
+    // Push element x onto stack. 
     public void push(int x) {
         queue1.offer(x);
+        top = x;
     }
 
-    // Removes the element on top of the stack and returns that element.
+    // Removes the element on top of the stack and returns that element. 
     public int pop() {
-        while (!queue1.isEmpty()) {
-            lastnum = queue1.poll();
-            if (!queue1.isEmpty()) {
-                queue2.offer(lastnum);
-            }
+        while (queue1.size() > 1) {
+            top = queue1.poll();
+            queue2.offer(top);
         }
+        int res = queue1.poll();
         Queue<Integer> temp = queue1;
         queue1 = queue2;
-        queue2 = temp; 
-        return lastnum;
+        queue2 = temp;
+        return res;
     }
 
     // Get the top element.
     public int top() {
-        while (!queue1.isEmpty()) {
-            lastnum = queue1.poll();
-            queue2.offer(lastnum);
-        }
-        Queue<Integer> temp = queue1;
-        queue1 = queue2;
-        queue2 = temp;
-        return lastnum;
+        return top;
     }
 
-    // Return whether the stack is empty.
+    // Returns whether the stack is empty.
     public boolean empty() {
         return queue1.isEmpty();
-    }
+    }*/
 }

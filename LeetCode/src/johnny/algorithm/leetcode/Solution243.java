@@ -21,6 +21,32 @@ package johnny.algorithm.leetcode;
  */
 public class Solution243 {
     public int shortestDistance(String[] words, String word1, String word2) {
+        int index1 = 0;
+        int index2 = 0;
+        int n = words.length;
+        int min = Integer.MAX_VALUE;
+        while (index1 < n && index2 < n) {
+            while (index1 < n && words[index1] != word1) {
+                index1++;
+            }
+            while (index2 < n && words[index2] != word2) {
+                index2++;
+            }
+            if (index1 >=n || index2 >= n) {
+                break;
+            }
+            min = Math.min(min, Math.abs(index1-index2));
+            if (index1 < index2) {
+                index1++;
+            } else {
+                index2++;
+            }
+        }
+        
+        return min;
+    }
+    
+    public int shortestDistance2(String[] words, String word1, String word2) {
         if (words == null || words.length == 0 || word1 == null || word1.isEmpty() ||
                 word2 == null || word2.isEmpty() || word1.equals(word2)) {
             return 0;

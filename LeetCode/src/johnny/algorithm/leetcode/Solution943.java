@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -28,7 +30,127 @@ Note:
  * @author Johnny
  */
 public class Solution943 {
+    // permutation with memory
     public String shortestSuperstring(String[] A) {
+        if (A == null || A.length == 0) {
+            return "";
+        }
+        
+        int n = A.length;
+        
+        String[][] memo = new String[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                memo[i][j] = merge(A[i], A[j]);
+                memo[j][i] = memo[i][j];
+            }
+        }
+        boolean[] used = new boolean[n];
+        List<List<String>> words = new ArrayList<>();
+        permute(A, used, new ArrayList<>(), words);
+        
+        String ans = "";
+        int min_length = Integer.MAX_VALUE;
+        for (List<String> list : words) {
+            if (list.get(0).equals("dskss") &&
+                list.get(1).equals("sksss") &&
+                list.get(2).equals("sssv") &&
+                list.get(3).equals("svq")) {
+                int ix = 0;
+                ix++;
+            }
+
+            String str = "";
+            for (int i = 0; i < list.size(); i++) {
+                str = merge(str, list.get(i));
+            }
+            if (str.length() < min_length) {
+                ans = str;
+                min_length  = str.length();
+            }
+        }
+        return ans;
+    }
+    
+    // brute force, permutation
+    public String shortestSuperstring3(String[] A) {
+        if (A == null || A.length == 0) {
+            return "";
+        }
+        
+        String ans = "";
+        int n = A.length;
+        boolean[] used = new boolean[n];
+        List<List<String>> words = new ArrayList<>();
+        permute(A, used, new ArrayList<>(), words);
+        
+        int min_length = Integer.MAX_VALUE;
+        for (List<String> list : words) {
+            if (list.get(0).equals("dskss") &&
+                list.get(1).equals("sksss") &&
+                list.get(2).equals("sssv") &&
+                list.get(3).equals("svq")) {
+                int ix = 0;
+                ix++;
+            }
+
+            String str = "";
+            for (int i = 0; i < list.size(); i++) {
+                str = merge(str, list.get(i));
+            }
+            if (str.length() < min_length) {
+                ans = str;
+                min_length  = str.length();
+            }
+        }
+        return ans;
+    }
+    
+    private void permute(String[] A, boolean[] used, List<String> list, List<List<String>> words) {
+        if (list.size() == A.length) {
+            words.add(new ArrayList<>(list));
+            return;
+        }
+        
+        for (int i = 0; i < A.length; i++) {
+            if (used[i]) {
+                continue;
+            }
+            used[i] = true;
+            list.add(A[i]);
+            permute(A, used, list, words);
+            list.remove(list.size() - 1);
+            used[i] = false;
+        }
+    }
+    
+    private String merge(String s1, String s2) {
+        if (s1 == null || s1.length() == 0) {
+            return s2;
+        }
+        if (s2 == null || s2.length() == 0) {
+            return s1;
+        }
+        int end = s1.length() - 1;
+        int start = -1;
+        while (end >= 0) {
+            if (s1.length() - end > s2.length()) {
+                break;
+            }
+            if (s2.startsWith(s1.substring(end))) {
+                start = end;
+            }
+            end--;
+        }
+        
+        if (start != -1) {
+            return s1.substring(0, start) + s2;
+        }
+        
+        return s1 + s2;
+    }
+    
+    public String shortestSuperstring2(String[] A) {
         int N = A.length;
 
         // Populate overlaps

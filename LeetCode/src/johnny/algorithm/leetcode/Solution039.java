@@ -25,28 +25,28 @@ import java.util.List;
  */
 public class Solution039 {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (candidates == null || candidates.length == 0) {
-            return res;
+            return ans;
         }
         
         Arrays.sort(candidates);
-        List<Integer> list = new ArrayList<Integer>();
-        helper(candidates, 0, target, list, res);
-        return res;
+        List<Integer> list = new ArrayList<>();
+        dfs(candidates, target, 0, list, ans);
+        return ans;
     }
     
-    private void helper(int[] candidates, int pos, int target, List<Integer> list, List<List<Integer>> res) {
+    private void dfs(int[] candidates, int target, int pos, List<Integer> list, List<List<Integer>> ans) {
         if (target <= 0) {
             if (target == 0) {
-                res.add(new ArrayList<Integer>(list));
+                ans.add(new ArrayList<>(list));
             }
             return;
         }
         
         for (int i = pos; i < candidates.length; i++) {
             list.add(candidates[i]);
-            helper(candidates, i, target - candidates[i], list, res);
+            dfs(candidates, target - candidates[i], i, list, ans);
             list.remove(list.size() - 1);
         }
     }

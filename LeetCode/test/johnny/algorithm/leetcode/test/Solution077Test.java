@@ -32,5 +32,8 @@ public class Solution077Test extends JunitBase {
 
         List<List<Integer>> expect5 =  ListUtil.buildList2(new Integer[][] {{1,2},{1,3},{2,3}});
         assertEquals(expect5, instance.combine(3, 2));
+        
+        List<List<Integer>> expect6 =  ListUtil.buildList2(new Integer[][] {{1,2,3}});
+        assertEquals(expect6, instance.combine(3, 3));
     }
 }

@@ -55,6 +55,45 @@ public class Solution883 {
             return 0;
         }
         
+        int m = grid.length;
+        int n = grid[0].length;
+        
+        int ans = 0;
+        // xy
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] > 0) {
+                    ans++;
+                }
+            }
+        }
+        
+        // xz, largest in each row
+        for (int i = 0; i < m; i++) {
+            int max = Integer.MIN_VALUE;
+            for (int j = 0; j < n; j++) {
+                max = Math.max(max, grid[i][j]);
+            }
+            ans += max;
+        }
+        
+        // yz, largest in each column
+        for (int j = 0; j < n; j++) {
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < m; i++) {
+                max = Math.max(max, grid[i][j]);
+            }
+            ans += max;
+        }
+        
+        return ans;
+    }
+    
+    public int projectionArea2(int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
         //xy
         int xy = 0;
         for (int i = 0; i < grid.length; i++) {

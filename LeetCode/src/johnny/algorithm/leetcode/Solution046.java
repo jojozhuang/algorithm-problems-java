@@ -15,19 +15,49 @@ import java.util.List;
  */
 public class Solution046 {
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (nums == null || nums.length == 0) {
-            return res;
+            return ans;
         }
         
-        List<Integer> list = new ArrayList<Integer>();
-        helper(nums, list, res);
-        return res;
+        boolean[] visited = new boolean[nums.length];
+        dfs(nums, visited, new ArrayList<>(), ans);
+        return ans;
     }
     
-    private void helper(int[] nums,List<Integer> list, List<List<Integer>> res) {
+    private void dfs(int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> ans) {
         if (list.size() == nums.length) {
-            res.add(new ArrayList<Integer>(list));
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (visited[i]) {
+                continue;
+            }
+            visited[i] = true;
+            list.add(nums[i]);
+            dfs(nums, visited, list, ans);
+            list.remove(list.size() - 1);
+            visited[i] = false;
+        }
+    }
+    /*
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return ans;
+        }
+        
+        List<Integer> list = new ArrayList<>();
+        dfs(nums, list, ans);
+        return ans;
+    }
+    
+    private void dfs(int[] nums, List<Integer> list, List<List<Integer>> ans) {
+        if (list.size() == nums.length) {
+            ans.add(new ArrayList<>(list));
+            return;
         }
         
         for (int i = 0; i < nums.length; i++) {
@@ -35,8 +65,8 @@ public class Solution046 {
                 continue;
             }
             list.add(nums[i]);
-            helper(nums, list, res);
+            dfs(nums, list, ans);
             list.remove(list.size() - 1);
         }
-    }
+    }*/
 }

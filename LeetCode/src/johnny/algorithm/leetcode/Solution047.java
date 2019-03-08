@@ -17,21 +17,22 @@ import java.util.List;
  */
 public class Solution047 {
     public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (nums == null || nums.length == 0) {
-            return res;
+            return ans;
         }
         
         Arrays.sort(nums);
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         boolean[] visited = new boolean[nums.length];
-        helper(nums, visited, list, res);
-        return res;
+        dfs(nums, visited, list, ans);
+        return ans;
     }
     
-    private void helper(int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> res) {
+    private void dfs(int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> ans) {
         if (list.size() == nums.length) {
-            res.add(new ArrayList<Integer>(list));
+            ans.add(new ArrayList<>(list));
+            return;
         }
         
         for (int i = 0; i < nums.length; i++) {
@@ -40,7 +41,7 @@ public class Solution047 {
             }
             visited[i] = true;
             list.add(nums[i]);
-            helper(nums, visited, list, res);
+            dfs(nums, visited, list, ans);
             list.remove(list.size() - 1);
             visited[i] = false;
         }

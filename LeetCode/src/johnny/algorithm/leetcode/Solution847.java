@@ -3,6 +3,8 @@ package johnny.algorithm.leetcode;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * 847. Shortest Path Visiting All Nodes
@@ -36,6 +38,35 @@ Note:
  */
 public class Solution847 {
     public int shortestPathLength(int[][] graph) {
+        int n = graph.length;
+        int mask = (1 << n) - 1; // eg. 1101 -> 0,2,3 are visited.
+        int[][] visited = new int[n][1<<n];
+        Queue<int[]> queue = new LinkedList<>();
+        for (int i = 0; i < n; i++) {
+            queue.offer(new int[] {i, 1 << i});
+        }
+        
+        int steps = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                int[] node = queue.poll(); // node[0] is the identity, node[1] is the state of visited nodes
+                if (node[1] == mask) {
+                    return steps;
+                }
+                if (visited[node[0]][node[1]] == 1) {
+                    continue;
+                }
+                visited[node[0]][node[1]] = 1;
+                for (int next : graph[node[0]]) {
+                    queue.offer(new int[] {next, node[1] | (1 << next)});
+                }
+            }
+            steps++;
+        }
+        return -1;
+    }
+    public int shortestPathLength2(int[][] graph) {
         int N = graph.length;
         Queue<State> queue = new LinkedList<State>();
         int[][] dist = new int[1<<N][N];
