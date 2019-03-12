@@ -36,15 +36,13 @@ package johnny.algorithm.leetcode;
  */
 public class Solution492 {
     public int[] constructRectangle(int area) {
-        if (area <= 0) {
-            return new int[]{};
+        int sqrt = (int)Math.sqrt(area);
+        for (int i = sqrt; i > 0; i--) {
+            if (area % i == 0 && i * (area / i) == area) {
+                return new int[]{area / i, i};
+            }
         }
         
-        int w = (int)Math.sqrt(area);
-        while (area % w != 0) {
-            w--;
-        }
-        
-        return new int[]{area / w, w};
+        return new int[]{-1,-1};
     }  
 }

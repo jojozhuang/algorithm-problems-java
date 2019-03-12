@@ -28,12 +28,38 @@ The time limit for this problem has been reduced.
  * @author Johnny
  */
 public class Solution775 {
+    //https://www.youtube.com/watch?v=3QHSJSFm0W0
     public boolean isIdealPermutation(int[] A) {
-        int cmax = 0;
-        for (int i = 0; i < A.length - 2; ++i) {
-            cmax = Math.max(cmax, A[i]);
-            if (cmax > A[i + 2]) return false;
+        for (int i = 0; i < A.length; i++) {
+            // For permutation list, global >= local. If abs(A[i] - i) > 1, there must be a global inversion 
+            // that is not a local inversion.
+            // Example, 1,0,2,5,3,4, 5 - 3 > 2
+            // Example, 0,2,3,1,5,4, 1 - 3 < -2
+            if (Math.abs(A[i] - i) > 1) {
+                return false;
+            }
         }
+        
         return true;
+    }
+    // brute force, time: O(n^2), space: O(1)
+    public boolean isIdealPermutation2(int[] A) {
+        int n = A.length;
+        int global = 0;
+        int local = 0;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i; j < n; j++) {
+                if (A[i] > A[j]) {
+                    global++;
+                    if (i == j - 1) {
+                        local++;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+        
+        return global == local;
     }
 }

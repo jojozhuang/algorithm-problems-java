@@ -26,28 +26,26 @@ import java.util.Stack;
 public class Solution503 {
     // input:  [1,3, 4, 2], output: [3,4,-1,3]
     public int[] nextGreaterElements(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return new int[]{};
+        int n = nums.length;
+        int[] result = new int[n];
+        
+        Stack<Integer> stack = new Stack<>();
+        for (int i = n - 1; i >= 0; i--) {
+            stack.push(i);
         }
         
-        int[] res = new int[nums.length];
-        Stack<Integer> stack = new Stack<Integer>(); // keep ascending order for the elements at right side
-        
-        for (int i = nums.length - 1; i >= 0; i--) {
-            while (!stack.isEmpty() && nums[i] > stack.peek()) {
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] = -1;
+            while (!stack.isEmpty() && nums[stack.peek()] <= nums[i]) {
                 stack.pop();
             }
-           
-            if (stack.isEmpty()) {
-                res[i] = -1;
-            } else {
-                res[i] = stack.peek();
+            if (!stack.isEmpty()){
+                result[i] = nums[stack.peek()];
             }
-            
-            stack.push(nums[i]);
+            stack.add(i);
         }
         
-        return res;
+        return result;
     }
     
     public int[] nextGreaterElements2(int[] nums) {

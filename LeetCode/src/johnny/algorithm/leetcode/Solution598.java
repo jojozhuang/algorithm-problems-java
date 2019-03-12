@@ -46,15 +46,14 @@ package johnny.algorithm.leetcode;
 public class Solution598 {
     // O(k)
     public int maxCount(int m, int n, int[][] ops) {
-        if (ops== null || ops.length == 0 || ops[0].length == 0) {
-            return m * n;
+        int minR = m;
+        int minC = n;
+        for (int[] op : ops) {
+            minR = Math.min(minR, op[0]);
+            minC = Math.min(minC, op[1]);
         }
         
-        for (int[] op: ops) {
-            m = Math.min(m, op[0]);
-            n = Math.min(n, op[1]);
-        }
-        return m * n;
+        return minR * minC;
     }
     // Brute force, m*n*k, k is the length of ops.
     public int maxCount2(int m, int n, int[][] ops) {

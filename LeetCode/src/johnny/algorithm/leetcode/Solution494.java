@@ -31,19 +31,49 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution494 {
-    public int findTargetSumWays(int[] nums, int s) {
+    //dp
+    public int findTargetSumWays(int[] nums, int S) {
         int sum = 0;
-        for (int n : nums)
-            sum += n;
-        return sum < s || (s + sum) % 2 > 0 ? 0 : subsetSum(nums, (s + sum) >>> 1); 
-    }   
-
-    public int subsetSum(int[] nums, int s) {
-        int[] dp = new int[s + 1]; 
-        dp[0] = 1;
-        for (int n : nums)
-            for (int i = s; i >= n; i--)
-                dp[i] += dp[i - n]; 
-        return dp[s];
+        for (int i : nums) {
+            sum += i;
+        }
+        
+        if (sum < S) {
+            return 0;
+        }
+        
+        int n = nums.length;
+        int[][] dp = new int[n+1][2*sum+1];
+        int offset = sum;
+        dp[0][offset] = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = nums[i]; j < 2*sum+1 - nums[i]; j++) {
+                if (dp[i][j] != 0) {
+                    dp[i + 1][j + nums[i]] += dp[i][j];
+                    dp[i + 1][j - nums[i]] += dp[i][j];
+                }
+            }
+        }
+        
+        return dp[n][offset+S];
     } 
+    
+    // recursion, O(2^n)
+    public int findTargetSumWays3(int[] nums, int S) {
+        int[] count = new int[1];
+        dfs(nums, 0, 0, S, count);
+        return count[0];
+    }
+    
+    private void dfs(int[] nums, int i, int sum, int S, int[] count) {
+        if (i == nums.length) {
+            if (sum == S) {
+                count[0]++;
+            }
+            return;
+        }
+        
+        dfs(nums, i + 1, sum + nums[i], S, count);
+        dfs(nums, i + 1, sum - nums[i], S, count);
+    }
 }

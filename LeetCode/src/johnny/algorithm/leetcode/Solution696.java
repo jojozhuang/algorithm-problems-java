@@ -28,16 +28,48 @@ s will only consist of "0" or "1" characters
  * @author Johnny
  */
 public class Solution696 {
+    // optimized with constant space
     public int countBinarySubstrings(String s) {
-        int prevRunLength = 0, curRunLength = 1, res = 0;
-        for (int i=1;i<s.length();i++) {
-            if (s.charAt(i) == s.charAt(i-1)) curRunLength++;
-            else {
-                prevRunLength = curRunLength;
-                curRunLength = 1;
+        int curr = 1;
+        int prev = 0;
+        int ans = 0;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == s.charAt(i-1)) {
+                curr++;
+            } else {
+                if (prev > 0) {
+                    ans += Math.min(prev, curr);
+                }
+                prev = curr;
+                curr = 1;
             }
-            if (prevRunLength >= curRunLength) res++;
         }
-        return res;
+        
+        ans += Math.min(prev, curr);
+        
+        return ans;
+    }
+    
+    // group by counting the same number, 00110->2,2,1
+    public int countBinarySubstrings2(String s) {
+        int n = s.length();
+        int[] group = new int[n];
+        group[0] = 1;
+        int index = 0;
+        for (int i = 1; i < n; i++) {
+            if (s.charAt(i) != s.charAt(i-1)) {
+                index++;
+                group[index] = 1;
+            } else {
+                group[index]++;
+            }
+        }
+        
+        int ans = 0;
+        for (int i = 1; i <= index; i++) {
+            ans += Math.min(group[i], group[i-1]);
+        }
+        
+        return ans;
     }
 }

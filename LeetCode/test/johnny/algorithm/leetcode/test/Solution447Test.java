@@ -13,5 +13,6 @@ public class Solution447Test extends JunitBase {
         Solution447 instance = new Solution447();
 
         assertEquals(2, instance.numberOfBoomerangs(new int[][]{{0,0},{1,0},{2,0}}));
+        assertEquals(2, instance.numberOfBoomerangs(new int[][]{{1,1},{2,2},{3,3}}));
     }
 }

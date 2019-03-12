@@ -32,37 +32,37 @@ public class Solution427 {
             return null;
         }
         
-        return construct(grid, 0, grid.length - 1, 0, grid[0].length - 1);
+        return dfs(grid, 0, 0, grid.length-1, grid[0].length-1);
     }
     
-    private QuadNode construct(int[][] grid, int r1, int r2, int c1, int c2) {
-        if (r1 > r2 || c1 > c2) {
+    private QuadNode dfs(int[][] grid, int top, int left, int bottom, int right) {
+        if (top > bottom || left > right) {
             return null;
         }
         
         QuadNode node = new QuadNode();
-        boolean isLeaf = isLeaf(grid, r1, r2, c1, c2);
-        int val = grid[r1][c1];
+        boolean isLeaf = isLeaf(grid, top, left, bottom, right);
+        int val = grid[top][left];
         if (isLeaf) {
             node = new QuadNode(val == 1, true, null, null, null, null);
         } else {
             node.isLeaf = false;
             node.val = false;
-            node.topLeft = construct(grid, r1, (r2+r1)/2, c1, (c2+c1)/2);
-            node.topRight = construct(grid, r1, (r2+r1)/2, (c2+c1)/2 + 1, c2);
-            node.bottomLeft = construct(grid, (r2+r1)/2+1, r2, c1, (c2+c1)/2);
-            node.bottomRight = construct(grid, (r2+r1)/2+1, r2, (c2+c1)/2 + 1, c2);
+            node.topLeft = dfs(grid, top, left, (bottom+top)/2, (right+left)/2);
+            node.topRight = dfs(grid, top, (right+left)/2 + 1, (bottom+top)/2,  right);
+            node.bottomLeft = dfs(grid, (bottom+top)/2+1, left, bottom, (right+left)/2);
+            node.bottomRight = dfs(grid, (bottom+top)/2+1, (right+left)/2 + 1, bottom, right);
         }
         
         return node;
     }
     
-    private boolean isLeaf(int[][] grid, int r1, int r2, int c1, int c2) {
-        int first = grid[r1][c1];
+    private boolean isLeaf(int[][] grid, int top, int left, int bottom, int right) {
+        int first = grid[top][left];
 
         boolean isLeaf = true;
-        for (int i = r1; i <= r2; i++) {
-            for (int j = c1; j <= c2; j++) {
+        for (int i = top; i <= bottom; i++) {
+            for (int j = left; j <= right; j++) {
                 if (grid[i][j] != first) {
                     isLeaf = false;
                     break;

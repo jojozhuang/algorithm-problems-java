@@ -28,7 +28,31 @@ Each element nums[i] will be an integer in the range [-1000, 1000].
  * @author Johnny
  */
 public class Solution724 {
+    // sum, on the fly
     public int pivotIndex(int[] nums) {
+        if (nums == null || nums.length < 3) {
+            return -1;
+        }
+        
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        
+        int left = 0;
+        int right = sum;
+        for (int i = 0; i < nums.length; i++) {
+            right -= nums[i];
+            if (left == right) {
+                return i;
+            }
+            left += nums[i];
+        }
+        
+        return -1;
+    }
+    // left sum + right sum
+    public int pivotIndex2(int[] nums) {
         if (nums == null || nums.length < 3) {
             return -1;
         }

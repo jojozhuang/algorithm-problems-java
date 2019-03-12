@@ -36,35 +36,26 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution496 {
-    public int[] nextGreaterElement(int[] findNums, int[] nums) {
-        if (findNums == null || findNums.length == 0 ||
-            nums == null || nums.length == 0 || findNums.length > nums.length) {
-            return new int[]{};
-        }
-        
-        Map<Integer, Integer> greaterMap = new HashMap<Integer, Integer>();
-        Stack<Integer> stack = new Stack<Integer>(); // keep ascending order for the elements at right side
-        
-        for (int i = nums.length - 1; i >= 0; i--) {
-            while (!stack.isEmpty() && nums[i] > stack.peek()) {
-                stack.pop();
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        Stack<Integer> stack = new Stack<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums2) {
+            while (!stack.isEmpty() && num > stack.peek()) {
+                map.put(stack.pop(), num);
             }
-            
-            if (stack.isEmpty()) {
-                greaterMap.put(nums[i], -1);
-            } else {
-                greaterMap.put(nums[i], stack.peek());
-            }
-            
-            stack.push(nums[i]);
+            stack.push(num);
         }
         
-        int[] res = new int[findNums.length];
-        for (int i = 0; i < findNums.length; i++) {
-            res[i] = greaterMap.get(findNums[i]);
+        while (!stack.isEmpty()) {
+            map.put(stack.pop(), -1);
         }
         
-        return res; 
+        int[] ans = new int[nums1.length];
+        for (int i = 0; i < nums1.length; i++) {
+            ans[i] = map.get(nums1[i]);
+        }
+        
+        return ans;
     }
     
     /* next larger at right side

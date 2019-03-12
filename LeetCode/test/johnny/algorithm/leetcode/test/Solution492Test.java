@@ -12,7 +12,7 @@ public class Solution492Test extends JunitBase {
         System.out.println("constructRectangle");
         Solution492 instance = new Solution492();
 
-        assertArrayEquals(new int[]{}, instance.constructRectangle(0));
+        //assertArrayEquals(new int[]{}, instance.constructRectangle(0));
         assertArrayEquals(new int[]{1,1}, instance.constructRectangle(1));
         assertArrayEquals(new int[]{2,1}, instance.constructRectangle(2));
         assertArrayEquals(new int[]{3,1}, instance.constructRectangle(3));

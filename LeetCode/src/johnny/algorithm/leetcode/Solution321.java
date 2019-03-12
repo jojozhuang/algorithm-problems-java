@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * Create Maximum Number.
  * 
@@ -30,10 +33,119 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution321 {
+    public int[] maxNumber(int[] nums1, int[] nums2, int k) {
+        int m = nums1.length;
+        int n = nums2.length;
+        
+        int[] ans = null;
+        for (int i = 0; i <= k; i++) {
+            if (i > m || k - i > n) {
+                continue;
+            }
+            int[] top1 = top(nums1, i);
+            int[] top2 = top(nums2, k - i);
+            int[] res = merge(top1, top2);
+            if (ans == null) {
+                ans = res;
+            } else {
+                if (isLarge(res, 0, ans, 0)) {
+                    ans = res;
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    private int[] top(int[] nums, int k) {
+        if (k >= nums.length) {
+            return nums;
+        }
+        if (k == 0) {
+            return new int[] {};
+        }
+        int pop = nums.length - k;
+        Deque<Integer> deque = new LinkedList<>();
+        for (int i = 0; i < nums.length; i++) {
+            while (!deque.isEmpty() && pop > 0) {
+                if (nums[i] > deque.peekLast()) {
+                    deque.pollLast();
+                    pop--;
+                } else {
+                    break;
+                }
+            }
+            deque.addLast(nums[i]);
+        }
+        int[] ans = new int[k];
+        int i = 0;
+        for (int num : deque) {
+            ans[i] = num;
+            i++;
+            if (i >= k) {
+                break;
+            }
+        }
+        return ans;
+    }
+    
+    private int[] merge(int[] nums1, int[] nums2) {
+        int m = nums1.length;
+        int n = nums2.length;
+        if (m == 0) {
+            return nums2;
+        }
+        if (n == 0) {
+            return nums1;
+        }
+        
+        int[] ans = new int[m+n];
+        
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < m || j < n) {
+            if (i >= m) {
+                ans[k] = nums2[j];
+                j++;
+            } else if (j >= n) {
+                ans[k] = nums1[i];
+                i++;
+            } else {
+                if (isLarge(nums1, i, nums2, j)) {
+                    ans[k] = nums1[i];
+                    i++;
+                } else {
+                    ans[k] = nums2[j];
+                    j++;
+                }
+            }
+            
+            k++;
+        }
+        
+        return ans;
+    }
+    
+    private boolean isLarge(int[] nums1, int i, int[] nums2, int j) {
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] == nums2[j]) {
+                i++;
+                j++;
+                continue;
+            } else if (nums1[i] > nums2[j]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        return true;
+    }
     //https://discuss.leetcode.com/topic/32272/share-my-greedy-solution
     //https://www.hrwhisper.me/leetcode-create-maximum-number/
     //http://blog.csdn.net/xyqzki/article/details/50405256
-    public int[] maxNumber(int[] nums1, int[] nums2, int k) {
+    public int[] maxNumber2(int[] nums1, int[] nums2, int k) {
         if (nums1 == null || nums2 == null) {
             return null;
         }

@@ -25,7 +25,47 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution091 {
+    //dp
     public int numDecodings(String s) {
+        if (s == null || s.length() == 0 || s.charAt(0) == '0') {
+            return 0;
+        }
+        
+        if (s.length() == 1) {
+            return 1;
+        }
+        
+        int n = s.length();
+        
+        char[] arr = s.toCharArray();
+        int[] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            if (!isValid(arr[i - 1]) && !isValid(arr[i - 2], arr[i - 1])) {
+                return 0;
+            }
+            if (isValid(arr[i - 1])) {
+                dp[i] = dp[i-1];
+            } 
+            if (isValid(arr[i - 2], arr[i - 1])) {
+                dp[i] += dp[i-2];
+            }
+        }
+        
+        return dp[n];
+    }
+    
+    private boolean isValid(char c) {
+        return c != '0';
+    }
+    private boolean isValid(char c1, char c2) {
+        int num = (c1 - '0') * 10 + (c2-'0');
+        return num >= 10 && num <= 26;
+    }
+    
+    // dp1
+    public int numDecodings2(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
         }
@@ -55,87 +95,41 @@ public class Solution091 {
         return val >= 1 && val <= 26;
     }
     
-    public int numDecodings2(String s) {
-        if (s == null || s.isEmpty()) {
-            return 0;
-        }        
-        
-        Map<String, Character> map = new HashMap<String, Character>();
-        char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-        for (int i = 0; i < alphabet.length; i++) {
-            map.put(String.valueOf(i + 1), alphabet[i]);
-        }
-        
-        List<Character> list = new ArrayList<Character>();
-        List<List<Character>> ret = new ArrayList<List<Character>>();
-        helper(s, 0, list, ret, map);
-        
-        return ret.size();
-    }
-    
-    private void helper(String s, int index, List<Character> list, List<List<Character>> ret, Map<String, Character> map) {
-        if (index >= s.length()) {
-            ret.add(new ArrayList<Character>(list));
-            return;
-        }
-        int len = s.length();
-        if (len - index > 1) {
-            String str = s.substring(index, index + 2);
-            if (map.containsKey(str)) {
-                list.add(map.get(str));
-                helper(s, index + 2, list, ret, map);
-                list.remove(list.size() - 1);
-            }
-        }
-        if (len - index > 0) {
-            String str = s.substring(index, index + 1);
-            if (map.containsKey(str)) {
-                list.add(map.get(str));
-                helper(s, index + 1, list, ret, map);
-                list.remove(list.size() - 1);
-            }
-        }
-    }
-    
-    
+    // recursion, string
     public int numDecodings3(String s) {
-        if (s==null||s.length()==0)
+        if (s == null || s.isEmpty() || s.charAt(0) == '0') {
             return 0;
-        else if (s.length()==1) {
-            if (s.equals("0"))
-                return Integer.MIN_VALUE; //invalid input
-            else
-                return 1;
         }
-        else {
-            String last = s.substring(s.length()-1, s.length());
-            String tail;
-            if (last.equals("0")) {
-                tail = s.substring(s.length()-2, s.length());
-                if (Integer.valueOf(tail)==10||Integer.valueOf(tail)==20) {
-                    int twobits = numDecodings(s.substring(0, s.length()-2));
-                    if (twobits==0)
-                        return 1;
-                    else
-                        return twobits;
-                }
-                else {
-                    return Integer.MIN_VALUE; //invalid input
-                }
-            }
-            else {
-                int onebit = numDecodings(s.substring(0, s.length()-1));
-                tail = s.substring(s.length()-2, s.length());
-                if (Integer.valueOf(tail)>=10&&Integer.valueOf(tail)<=26) {
-                    int twobits = numDecodings(s.substring(0, s.length()-2));
-                    if (twobits==0)
-                        return onebit + 1;
-                    else
-                        return onebit + twobits;
-                }
-                else
-                    return onebit;
-            }
+
+        Map<String, Integer> map = new HashMap<>();
+        
+        return dfs(s, map);
+    }
+    
+    private int dfs(String s, Map<String, Integer> map) {
+        if (map.containsKey(s)) {
+            return map.get(s);
         }
+        
+        if (s.isEmpty()) {
+            return 1;
+        }
+        
+        if (s.charAt(0) == '0') {
+            return 0;
+        }
+        
+        if (s.length() == 1) {
+            return 1;
+        }
+        
+        int ans = dfs(s.substring(1), map);
+        int prefix = Integer.parseInt(s.substring(0, 2));
+        if (prefix >= 10 && prefix <= 26) {
+            ans += dfs(s.substring(2), map);
+        }
+        
+        map.put(s, ans);
+        return ans;
     }
 }

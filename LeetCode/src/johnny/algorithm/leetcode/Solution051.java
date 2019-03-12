@@ -32,8 +32,67 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution051 {
-    //http://www.cnblogs.com/springfor/p/3870944.html
     public List<List<String>> solveNQueens(int n) {
+        List<List<String>> ans = new ArrayList<>();
+        if (n <= 0) {
+            return ans;
+        }
+        int[] cols = new int[n];
+        int[] diag1 = new int[2*n-1];
+        int[] diag2 = new int[2*n-1];
+        
+        List<List<Integer>> sol = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            List<Integer> list = new ArrayList<>();
+            list.add(i);
+            dfs(n, 0, i, cols, diag1, diag2, list, sol);
+        }
+        
+        // construct answer
+        for (List<Integer> list : sol) {
+            List<String> str = new ArrayList<>();
+            for (int i : list) {
+                str.add(build(i, n));
+            }
+            ans.add(str);
+        }
+        return ans;
+    }
+    
+    private void dfs(int n, int x, int y, int[] cols, int[] diag1, int[] diag2, List<Integer> list, List<List<Integer>> ans) {
+        if (x == n - 1) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        cols[y] = 1;
+        diag1[x+y] = 1;
+        diag2[y-x+(n-1)] = 1;
+        for (int i = 0; i < n; i++) {
+            if (cols[i] == 0 && diag1[x+1+i] == 0 && diag2[i-(x+1)+(n-1)] == 0) {
+                list.add(i);
+                dfs(n, x+1, i, cols, diag1, diag2, list, ans);
+                list.remove(list.size() - 1);
+            }
+        }
+        cols[y] = 0;
+        diag1[x+y] = 0;
+        diag2[y-x+(n-1)] = 0;
+    }
+    
+    private String build(int pos, int n) {
+        String s = "";
+        for (int i = 0; i < n; i++) {
+            if (i == pos) {
+                s += "Q";
+            } else {
+                s += ".";
+            }
+        }
+        return s;
+    }
+    
+    //http://www.cnblogs.com/springfor/p/3870944.html
+    public List<List<String>> solveNQueens2(int n) {
         List<List<String>> res = new ArrayList<List<String>>();
         if(n <= 0) {
             return res;

@@ -13,6 +13,7 @@ public class Solution091Test extends JunitBase {
         Solution091 instance = new Solution091();
 
         assertEquals(0, instance.numDecodings(""));
+        assertEquals(0, instance.numDecodings("0"));
         assertEquals(1, instance.numDecodings("1"));
         assertEquals(2, instance.numDecodings("12"));
         assertEquals(3, instance.numDecodings("123"));

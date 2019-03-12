@@ -70,7 +70,6 @@ public class Solution094 {
     // Recursion
     public List<Integer> inorderTraversal2(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        
         if (root == null) {
             return ans;
         }
@@ -81,7 +80,6 @@ public class Solution094 {
         ans.addAll(left);
         ans.add(root.val);
         ans.addAll(right);
-        
         return ans;
     }
 

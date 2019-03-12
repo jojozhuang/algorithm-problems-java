@@ -15,29 +15,31 @@ package johnny.algorithm.leetcode;
  */
 public class Solution072 {
     public int minDistance(String word1, String word2) {
-        int m = word1.length();
-        int n = word2.length();
+        int n1 = word1.length();
+        int n2 = word2.length();
+        int[][] dp = new int[n1 + 1][n2 + 1];
         
-        int[][] cost = new int[m + 1][n + 1];
-        for(int i = 0; i <= m; i++)
-            cost[i][0] = i;
-        for(int i = 1; i <= n; i++)
-            cost[0][i] = i;
+        dp[0][0] = 0;
+        for (int i = 1; i <= n1; i++) {
+            dp[i][0] = i;
+        }
+        for (int j = 1; j <= n2; j++) {
+            dp[0][j] = j;
+        }
         
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
-                if(word1.charAt(i) == word2.charAt(j))
-                    cost[i + 1][j + 1] = cost[i][j];
-                else {
-                    int a = cost[i][j];
-                    int b = cost[i][j + 1];
-                    int c = cost[i + 1][j];
-                    cost[i + 1][j + 1] = a < b ? (a < c ? a : c) : (b < c ? b : c);
-                    cost[i + 1][j + 1]++;
+        char[] arr1 = word1.toCharArray();
+        char[] arr2 = word2.toCharArray();
+        for (int i = 1; i <= n1; i++) {
+            for (int j= 1; j <= n2; j++) {
+                if (arr1[i-1] == arr2[j-1]) {
+                    dp[i][j] = dp[i-1][j-1];
+                } else {
+                    dp[i][j] = Math.min(dp[i-1][j-1], Math.min(dp[i-1][j], dp[i][j-1])) + 1;
                 }
             }
         }
-        return cost[m][n];
+        
+        return dp[n1][n2];
     }
     
     public int minDistance2(String word1, String word2) {

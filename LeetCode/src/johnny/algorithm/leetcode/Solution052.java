@@ -14,6 +14,42 @@ import java.util.List;
  */
 public class Solution052 {
     public int totalNQueens(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        int[] cols = new int[n];
+        int[] diag1 = new int[2*n-1];
+        int[] diag2 = new int[2*n-1];
+        
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            ans += dfs(n, 0, i, cols, diag1, diag2);
+        }
+        return ans;
+    }
+    
+    private int dfs(int n, int x, int y, int[] cols, int[] diag1, int[] diag2) {
+        if (x == n - 1) {
+            return 1;
+        }
+        int count = 0;
+        cols[y] = 1;
+        diag1[x+y] = 1;
+        diag2[y-x+(n-1)] = 1;
+        for (int i = 0; i < n; i++) {
+            if (cols[i] == 0 && diag1[x+1+i] == 0 && diag2[i-(x+1)+(n-1)] == 0) {
+                int res = dfs(n, x+1, i, cols, diag1, diag2);
+                count += res;
+            }
+        }
+        cols[y] = 0;
+        diag1[x+y] = 0;
+        diag2[y-x+(n-1)] = 0;
+        return count;
+    }
+    
+    
+    public int totalNQueens2(int n) {
         List<Integer> res = new ArrayList<>();
         if(n <= 0) {
             return 0;

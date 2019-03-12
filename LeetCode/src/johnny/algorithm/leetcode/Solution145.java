@@ -58,26 +58,26 @@ public class Solution145 {
     }
     
     public List<Integer> postorderTraversal8(TreeNode root) {
-        LinkedList<Integer> res = new LinkedList<>();
+        LinkedList<Integer> ans = new LinkedList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode curr = root;
         while (!stack.isEmpty() || curr != null) {
             if (curr != null) {
                 stack.push(curr);
-                res.addFirst(curr.val);     // Reverse the process of preorder
+                ans.addFirst(curr.val);     // Reverse the process of preorder
                 curr = curr.right;          // Reverse the process of preorder
             } else {
                 TreeNode node = stack.pop();
                 curr = node.left;           // Reverse the process of preorder
             }
         }
-        return res;
+        return ans;
     }
     public List<Integer> postorderTraversal6(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<Integer>();
         
         if (root == null) {
-            return res;
+            return ans;
         }
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -87,7 +87,7 @@ public class Solution145 {
             TreeNode node = stack.peek();
             if (node.left == null && node.right == null) {
                 node = stack.pop();
-                res.add(node.val);
+                ans.add(node.val);
                 continue;
             }
             
@@ -101,31 +101,30 @@ public class Solution145 {
             }
         }
         
-        return res;
+        return ans;
     }
     // Recursion
     public List<Integer> postorderTraversal2(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
-        
+        List<Integer> ans = new ArrayList<Integer>();
         if(root == null) {
-            return res;
+            return ans;
         }
         
         List<Integer> left = postorderTraversal(root.left);
         List<Integer> right = postorderTraversal(root.right);
         
-        res.addAll(left);
-        res.addAll(right);
-        res.add(root.val);
-        return res;
+        ans.addAll(left);
+        ans.addAll(right);
+        ans.add(root.val);
+        return ans;
     }
     
     // reverse mid->right-left => left-right-mid, similar with preorder
     public List<Integer> postorderTraversal3(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<Integer>();
         
         if (root == null) {
-            return res;
+            return ans;
         }
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -133,7 +132,7 @@ public class Solution145 {
         
         while(!stack.isEmpty()) {
             TreeNode node = stack.pop();
-            res.add(node.val);
+            ans.add(node.val);
             if (node.left != null) {
                 stack.push(node.left);
             }
@@ -141,16 +140,16 @@ public class Solution145 {
                 stack.push(node.right);
             }
         }
-        Collections.reverse(res);
+        Collections.reverse(ans);
         
-        return res;
+        return ans;
     }
     
     public List<Integer> postorderTraversal5(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<Integer>();
         
         if (root == null) {
-            return res;
+            return ans;
         }
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -163,7 +162,7 @@ public class Solution145 {
                     stack.push(node.right);
                     node.right = null;
                 } else {
-                    res.add(node.val);
+                    ans.add(node.val);
                     stack.pop();
                 }
             } else {
@@ -176,6 +175,6 @@ public class Solution145 {
             }
         }
         
-        return res;
+        return ans;
     }
 }

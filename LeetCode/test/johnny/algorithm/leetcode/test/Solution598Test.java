@@ -12,9 +12,6 @@ public class Solution598Test extends JunitBase {
         System.out.println("maxCount");
         Solution598 instance = new Solution598();
 
-        int[][] ops = null;
-        assertEquals(12, instance.maxCount(3, 4, ops));
-
         int[][] ops2 = new int[][]{{1,2}};
         assertEquals(2, instance.maxCount(3, 4, ops2));
 
@@ -24,7 +21,5 @@ public class Solution598Test extends JunitBase {
         int[][] ops4 = new int[][]{{2,2},{3,3}};
         assertEquals(4, instance.maxCount(3, 3, ops4));
 
-        int[][] ops5 = new int[][]{{}};
-        assertEquals(9, instance.maxCount(3, 3, ops5));
     }
 }
