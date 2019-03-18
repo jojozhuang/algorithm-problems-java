@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -38,6 +39,50 @@ Words only consist of letters, never apostrophes or other punctuation symbols.
  */
 public class Solution819 {
     public String mostCommonWord(String paragraph, String[] banned) {
+        Set<String> set = new HashSet<String>(Arrays.asList(banned));
+        Map<String, Integer> map = new HashMap<>();
+        int i = 0;
+        int j = -1;
+        
+        paragraph = paragraph.toLowerCase();
+        while (i < paragraph.length()) {
+            char c = paragraph.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                if (j == -1) {
+                    j = i;
+                }
+            } else {
+                if (j != -1) {
+                    String s = paragraph.substring(j, i);
+                    if (!set.contains(s)) {
+                        map.put(s, map.getOrDefault(s, 0) + 1);
+                    }
+                    j = -1;
+                }
+            }
+            i++;
+        }
+        
+        if (j != -1) {
+            String s = paragraph.substring(j, i);
+            if (!set.contains(s)) {
+                map.put(s, map.getOrDefault(s, 0) + 1);
+            }
+        }
+        
+        int max = 0;
+        String ans = "";
+        for (String s : map.keySet()) {
+            if (map.get(s) > max) {
+                max = map.get(s);
+                ans = s;
+            }
+        }
+        
+        return ans;
+    }
+    
+    public String mostCommonWord2(String paragraph, String[] banned) {
         if (paragraph == null || paragraph.length() == 0) {
             return "";
         }

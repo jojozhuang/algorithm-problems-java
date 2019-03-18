@@ -50,7 +50,7 @@ public class Solution414 {
                 first = nums[i];
             } else if (nums[i] != first && nums[i] > second){
                 third = second;
-                second = nums[i];               
+                second = nums[i];
             } else if (nums[i] != first && nums[i] != second && nums[i] > third){
                 third = nums[i];
             }

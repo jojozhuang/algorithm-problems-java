@@ -39,6 +39,42 @@ The characters of name and typed are lowercase letters.
  */
 public class Solution925 {
     public boolean isLongPressedName(String name, String typed) {
+        if (typed.length() < name.length()) {
+            return false;
+        }
+        
+        char[] letters1 = name.toCharArray();
+        char[] letters2 = typed.toCharArray();
+        int m = letters1.length;
+        int n = letters2.length;
+        int i = 0;
+        int k = 0;
+        int j = 0;
+        int s = 0;
+        while (i < m && j < n) {
+            k = i + 1;
+            while (k < m && letters1[i] == letters1[k]) {
+                k++;
+            }
+            
+            if (letters1[i] != letters2[j]) {
+                return false;
+            }
+            s = j + 1;
+            while (s < n && letters2[j] == letters2[s]) {
+                s++;
+            }
+            if (s - j < k - i) {
+                return false;
+            }
+            i = k;
+            j = s;
+        }
+        
+        return i == m && j == n;
+    }
+    
+    public boolean isLongPressedName2(String name, String typed) {
         if (name == null || name.length() == 0 || typed == null || typed.length() == 0
                 || name.length() > typed.length()) {
              return false;

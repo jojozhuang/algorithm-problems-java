@@ -24,23 +24,31 @@ Return false.
  */
 public class Solution408 {
     public boolean validWordAbbreviation(String word, String abbr) {
-        int i = 0, j = 0;
-        while (i < word.length() && j < abbr.length()) {
+        int m = word.length();
+        int n = abbr.length();
+        int i = 0;
+        int j = 0;
+        
+        while (i < m && j < n) {
             if (word.charAt(i) == abbr.charAt(j)) {
-                ++i;++j;
+                i++;
+                j++;
                 continue;
             }
-            if (abbr.charAt(j) <= '0' || abbr.charAt(j) > '9') {
+            
+            char c = abbr.charAt(j);
+            if (c <= '0' || c > '9') {
                 return false;
             }
-            int start = j;
-            while (j < abbr.length() && abbr.charAt(j) >= '0' && abbr.charAt(j) <= '9') {
-                ++j;
+            int sum = 0;
+            while (j < n && Character.isDigit(abbr.charAt(j))) {
+                sum = sum * 10 + (abbr.charAt(j) - '0');
+                j++;
             }
-            int num = Integer.valueOf(abbr.substring(start, j));
-            i += num;
+            i += sum;
         }
-        return i == word.length() && j == abbr.length();
+        
+        return i == m && j == n;
     }
 
 }

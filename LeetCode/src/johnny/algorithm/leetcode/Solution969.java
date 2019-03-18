@@ -39,7 +39,7 @@ A[i] is a permutation of [1, 2, ..., A.length]
  */
 public class Solution969 {
     public List<Integer> pancakeSort(int[] A) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<>();
         int i = A.length - 1;
         while (i >= 0) {
             int index = findMax(A, i);
@@ -47,20 +47,20 @@ public class Solution969 {
                 i--;
                 continue;
             } else if (index > 0) {
-                res.add(index + 1);
-                swap(A, 0, index);
+                ans.add(index + 1);
+                reverse(A, 0, index);
             } else {
-                res.add(i + 1);
-                swap(A, 0, i);
+                ans.add(i + 1);
+                reverse(A, 0, i);
                 i--;
             }
         }
      
-        return res;
+        return ans;
     }
     
     private int findMax(int[] A, int end) {
-        int max = Integer.MIN_VALUE;
+        int max = 0;
         int index = -1;
         for (int i = 0; i <= end; i++) {
             if (A[i] > max) {
@@ -71,13 +71,13 @@ public class Solution969 {
         return index;
     }
     
-    private void swap(int[] A, int from, int to) {
-        while(from < to) {
-            int temp = A[from];
-            A[from] = A[to];
-            A[to] = temp;
-            from++;
-            to--;
+    private void reverse(int[] A, int i, int j) {
+        while (i < j) {
+            int temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
+            i++;
+            j--;
         }
     }
 }

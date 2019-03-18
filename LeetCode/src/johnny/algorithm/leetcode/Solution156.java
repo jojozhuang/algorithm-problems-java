@@ -32,7 +32,7 @@ public class Solution156 {
     //https://leetcode.com/discuss/44718/clean-java-solution
     //http://bangbingsyb.blogspot.com/2014/11/leetcode-binary-tree-upside-down.html
     //http://blog.csdn.net/whuwangyi/article/details/43186045
-    public TreeNode upsideDownBinaryTree(TreeNode root) {
+    public TreeNode upsideDownBinaryTree2(TreeNode root) {
         TreeNode curr = root;
         TreeNode next = null;
         TreeNode temp = null;
@@ -52,17 +52,16 @@ public class Solution156 {
         return prev;
     }
     
-    public TreeNode upsideDownBinaryTree2(TreeNode root) {
-        if (root == null) {
-            return null;
+    public TreeNode upsideDownBinaryTree(TreeNode root) {
+        if(root == null || root.left == null) {
+            return root;
         }
-        TreeNode parent = root, left = root.left, right = root.right;
-        if (left != null) {
-            TreeNode res = upsideDownBinaryTree(left);
-            left.left = right;
-            left.right = parent;
-            return res;
-        }
-        return root;
+        
+        TreeNode newRoot = upsideDownBinaryTree(root.left);
+        root.left.left = root.right;   // node 2 left children
+        root.left.right = root;         // node 2 right children
+        root.left = null;
+        root.right = null;
+        return newRoot;
     }
 }

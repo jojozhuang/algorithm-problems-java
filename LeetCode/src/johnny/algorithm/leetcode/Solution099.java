@@ -42,7 +42,7 @@ public class Solution099 {
         if (prev == null) {
             prev = root;
         } else {
-            if (root.val < prev.val) {
+            if (root.val < prev.val) { // inorder, current must be larger than previous
                 if (first == null) {
                     first = prev;
                 }

@@ -3,7 +3,9 @@ package johnny.algorithm.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Intersection of Two Arrays II.
@@ -24,8 +26,38 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution350 {
-    // sorted and two points
     public int[] intersect(int[] nums1, int[] nums2) {
+        if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) {
+            return new int[]{};
+        }
+        Map<Integer, Integer> map1 = new HashMap<>();
+        Map<Integer, Integer> map2 = new HashMap<>();
+        
+        for (int n1 : nums1) {
+            map1.put(n1, map1.getOrDefault(n1, 0) + 1);
+        }
+        for (int n2 : nums2) {
+            map2.put(n2, map2.getOrDefault(n2, 0) + 1);
+        }
+        
+        List<Integer> ans = new LinkedList<>();
+        for (int num : map1.keySet()) {
+            while (map1.get(num) > 0 && map2.containsKey(num) && map2.get(num) > 0) {
+                ans.add(num);
+                map1.put(num, map1.get(num) - 1);
+                map2.put(num, map2.get(num) - 1);
+            }
+        }
+        
+        int[] res = new int[ans.size()];
+        for (int i = 0; i < ans.size(); i++) {
+            res[i] = ans.get(i);
+        }
+        return res;
+    }
+    
+    // sorted and two points
+    public int[] intersect3(int[] nums1, int[] nums2) {
         if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) {
             return new int[]{};
         }

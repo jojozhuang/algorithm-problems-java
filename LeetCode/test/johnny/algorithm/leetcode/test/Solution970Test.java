@@ -23,6 +23,7 @@ public class Solution970Test extends JunitBase {
         assertEquals(expect2, instance.powerfulIntegers(3,5,15));
         
         List<Integer> expect3 = ListUtil.buildList(new Integer[]{2,3,5,9,17,33,65});
-        assertEquals(expect3, instance.powerfulIntegers(1,2,100));
+        List<Integer> result3 = instance.powerfulIntegers(1,2,100);
+        assertEquals(true, expect3.containsAll(result3) && result3.containsAll(expect3));
     }
 }

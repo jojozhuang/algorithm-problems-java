@@ -42,26 +42,27 @@ import java.util.Map;
  */
 public class Solution599 {
     public String[] findRestaurant(String[] list1, String[] list2) {
-        Map<String, Integer> map1 = new HashMap<String, Integer>();
-        for (int i = 0; i < list1.length; i++) {
-            map1.put(list1[i], i);
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        for (int i = 0; i < list2.length; i++) {
+            map.put(list2[i], i);
         }
         
-        List<String> res = new ArrayList<String>();
-        int min = Integer.MAX_VALUE;
-        for (int j = 0; j < list2.length; j++) {
-            if (map1.containsKey(list2[j])) {
-                if (map1.get(list2[j]) + j < min) {
-                    min = map1.get(list2[j]) + j;
-                    res.clear();
-                    res.add(list2[j]);
-                } else if (map1.get(list2[j]) + j == min) {
-                    res.add(list2[j]);
+        List<String> ans = new ArrayList<String>();
+        int min = list1.length + list2.length;
+        for (int i = 0; i < list1.length; i++) {
+            if (map.containsKey(list1[i])) {
+                int sum = map.get(list1[i]) + i;
+                if (sum < min) {
+                    min = sum;
+                    ans.clear();
+                    ans.add(list1[i]);
+                } else if (sum == min) {
+                    ans.add(list1[i]);
                 }
             }
         }
         
-        Collections.sort(res);
-        return res.toArray(new String[res.size()]);
+        Collections.sort(ans);
+        return ans.toArray(new String[ans.size()]);
     }
 }

@@ -13,10 +13,13 @@ public class Solution202Test extends JunitBase {
         Solution202 instance = new Solution202();
 
         assertEquals(false, instance.isHappy(0));
+        assertEquals(true, instance.isHappy(1));
+        assertEquals(false, instance.isHappy(2));
         assertEquals(true, instance.isHappy(7));
         assertEquals(true, instance.isHappy(10));
         assertEquals(true, instance.isHappy(19));
         assertEquals(false, instance.isHappy(33));
         assertEquals(false, instance.isHappy(11));
+        assertEquals(true, instance.isHappy(1111111));
     }
 }

@@ -18,5 +18,7 @@ public class Solution925Test extends JunitBase {
         assertEquals(true, instance.isLongPressedName("leelee", "lleeelee"));
         assertEquals(false, instance.isLongPressedName("dfuyalc", "fuuyallc"));
         assertEquals(true, instance.isLongPressedName("vtkgn", "vttkgnn"));
+        
+        assertEquals(false, instance.isLongPressedName("pyplrz", "ppyypllr"));
     }
 }

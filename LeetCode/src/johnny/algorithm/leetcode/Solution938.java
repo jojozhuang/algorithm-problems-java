@@ -37,14 +37,12 @@ public class Solution938 {
         if (root.val >= L && root.val <= R) {
             sum += root.val;
         }
-        if (root.left != null) {
+        if (root.val > L) {
             sum += rangeSumBST(root.left, L, R);
         }
-        
-        if (root.right != null) {
+        if (root.val < R) {
             sum += rangeSumBST(root.right, L, R);
         }
-        
         return sum;
     }
 }

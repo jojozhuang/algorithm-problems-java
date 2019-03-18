@@ -1,6 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -38,6 +40,40 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution604 {
+    int index = 0;
+    List<Character> chars = new ArrayList<>();
+    List<Integer> count = new ArrayList<>();
+    public Solution604(String compressedString) {
+        int i = 0;
+        while (i < compressedString.length()) {
+            chars.add(compressedString.charAt(i));
+            i++;
+            int sum = 0;
+            while (i < compressedString.length() && Character.isDigit(compressedString.charAt(i))) {
+                sum = sum * 10 + (compressedString.charAt(i) - '0');
+                i++;
+            }
+            count.add(sum);
+        }
+    }
+    
+    public char next() {
+        if (index >= chars.size()) {
+            return ' ';
+        }
+        char c = chars.get(index);
+        count.set(index, count.get(index) - 1);
+        if (count.get(index) == 0) {
+            index++;
+        }
+        return c;
+    }
+    
+    public boolean hasNext() {
+        return index < chars.size();
+    }
+    
+    /*
     Queue<int[]> queue = new LinkedList<>();
     
     public Solution604(String s) {
@@ -59,7 +95,7 @@ public class Solution604 {
     
     public boolean hasNext() {
         return !queue.isEmpty();
-    }
+    }*/
 }
 /**
  * Your StringIterator object will be instantiated and called as such:

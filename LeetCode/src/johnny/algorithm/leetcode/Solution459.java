@@ -32,18 +32,27 @@ package johnny.algorithm.leetcode;
  */
 public class Solution459 {
     public boolean repeatedSubstringPattern(String s) {
-        int l = s.length();
-        for(int i=l/2;i>=1;i--) {
-            if(l%i==0) {
-                int m = l/i;
-                String subS = s.substring(0,i);
-                StringBuilder sb = new StringBuilder();
-                for(int j=0;j<m;j++) {
-                    sb.append(subS);
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+        
+        int n = s.length();
+        for (int i = 0; i < n / 2; i++) {
+            if ((n % (i + 1)) != 0) {
+                continue;
+            }
+            String pattern = s.substring(0, i + 1);
+            int j = i + 1;
+            for (; j < n; j += pattern.length()) {
+                if (!s.substring(j, j + pattern.length()).equals(pattern)) {
+                    break;
                 }
-                if(sb.toString().equals(s)) return true;
+            }
+            if (j >= n) {
+                return true;
             }
         }
+        
         return false;
     }
 }

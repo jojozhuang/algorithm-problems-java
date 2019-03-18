@@ -48,33 +48,27 @@ import java.util.Set;
  */
 public class Solution582 {
     public List<Integer> killProcess(List<Integer> pid, List<Integer> ppid, int kill) {
-        if (kill == 0) return pid;
-        
-        int n = pid.size();
-        Map<Integer, Set<Integer>> tree = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            tree.put(pid.get(i), new HashSet<Integer>());
-        }
-        for (int i = 0; i < n; i++) {
-            if (tree.containsKey(ppid.get(i))) {
-                Set<Integer> children = tree.get(ppid.get(i));
-                children.add(pid.get(i));
-                tree.put(ppid.get(i), children);
+        List<Integer> ans = new ArrayList<>();
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int i = 0; i < pid.size(); i++) {
+            if (!map.containsKey(ppid.get(i))) {
+                map.put(ppid.get(i), new ArrayList<Integer>());
             }
+            map.get(ppid.get(i)).add(pid.get(i));
         }
-        
-        List<Integer> result = new ArrayList<>();
-        traverse(tree, result, kill);
-        
-        return result;
+        ans.add(kill);
+        helper(map, kill, ans);
+        return ans;
     }
     
-    private void traverse(Map<Integer, Set<Integer>> tree, List<Integer> result, int pid) {
-        result.add(pid);
+    private void helper(Map<Integer, List<Integer>> map, int kill, List<Integer> ans) {
+        if (!map.containsKey(kill)) {
+            return;
+        }
         
-        Set<Integer> children = tree.get(pid);
-        for (Integer child : children) {
-            traverse(tree, result, child);
+        for (Integer process : map.get(kill)) {
+            ans.add(process);
+            helper(map, process, ans);
         }
     }
 }

@@ -21,27 +21,20 @@ package johnny.algorithm.leetcode;
  */
 public class Solution541 {
     public String reverseStr(String s, int k) {
-        if (s == null || s.isEmpty()) {
-            return "";
-        }
-        if (k < 2) {
+        if (k <= 0) {
             return s;
         }
         
-        char[] letters = s.toCharArray();
-        
-        for (int i = 0; i < letters.length; i += 2*k) {
-            reverseHelper(letters, i, Math.min(letters.length - 1,  i + k - 1));
+        char[] arr = s.toCharArray();
+        for (int i = 0; i < s.length(); i+=2*k) {
+            reverse(arr, i, i+k-1);
         }
         
-        return String.valueOf(letters);
+        return new String(arr);
     }
     
-    private void reverseHelper(char[] arr, int start, int end) {
-        if (start >= arr.length || end > arr.length) {
-            return;
-        }
-        
+    private void reverse(char[] arr, int start, int end) {
+        end = Math.min(arr.length - 1, end);
         while (start < end) {
             char temp = arr[start];
             arr[start] = arr[end];

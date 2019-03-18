@@ -33,7 +33,7 @@ Note:
  * @author Johnny
  */
 public class Solution894 {
-    Map<Integer, List<TreeNode>> memo = new HashMap<Integer, List<TreeNode>>();
+    Map<Integer, List<TreeNode>> memo = new HashMap<>();
 
     public List<TreeNode> allPossibleFBT(int N) {
         if (!memo.containsKey(N)) {
@@ -41,15 +41,16 @@ public class Solution894 {
             if (N == 1) {
                 ans.add(new TreeNode(0));
             } else if (N % 2 == 1) {
-                for (int x = 0; x < N; ++x) {
-                    int y = N - 1 - x;
-                    for (TreeNode left: allPossibleFBT(x))
-                        for (TreeNode right: allPossibleFBT(y)) {
+                for (int i = 0; i < N; i++) {
+                    int j = N - 1 - i;
+                    for (TreeNode left: allPossibleFBT(i)) {
+                        for (TreeNode right: allPossibleFBT(j)) {
                             TreeNode bns = new TreeNode(0);
                             bns.left = left;
                             bns.right = right;
                             ans.add(bns);
                         }
+                    }
                 }
             }
             memo.put(N, ans);

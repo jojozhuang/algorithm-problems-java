@@ -17,68 +17,31 @@ package johnny.algorithm.leetcode;
  */
 public class Solution415 {
     public String addStrings(String num1, String num2) {
-        StringBuilder sb = new StringBuilder();
-        int carry = 0;
-        for(int i = num1.length() - 1, j = num2.length() - 1; i >= 0 || j >= 0 || carry == 1; i--, j--){
-            int x = i < 0 ? 0 : num1.charAt(i) - '0';
-            int y = j < 0 ? 0 : num2.charAt(j) - '0';
-            sb.append((x + y + carry) % 10);
-            carry = (x + y + carry) / 10;
-        }
-        return sb.reverse().toString();
-    }
-    public String addStrings2(String num1, String num2) {
-        if (num1 == null || num1.isEmpty()) {
+        if (num1 == null || num1.length() == 0) {
             return num2;
         }
-        if (num2 == null || num2.isEmpty()) {
+        if (num2 == null || num2.length() == 0) {
             return num1;
         }
         
-        int len1 = num1.length();
-        int len2 = num2.length();
+        int i = num1.length() - 1;
+        int j = num2.length() - 1;
+        int carry = 0;
         
-        if (len2 > len1) {
-            String temp = num1;
-            num1 = num2;
-            num2 = temp;
-            len1 = num1.length();
-            len2 = num2.length();
-        }
-        
-        int index1 = len1 - 1;
-        int index2 = len2 - 1;
-        int extra = 0;
         StringBuilder sb = new StringBuilder();
-        while(index2 >= 0) {
-            int bit1 = Integer.parseInt(String.valueOf(num1.charAt(index1)));
-            int bit2 = Integer.parseInt(String.valueOf(num2.charAt(index2)));
-            int sum = bit1 + bit2 + extra;
-            sb.append(sum%10);
-            extra = sum / 10;
-            index1--;
-            index2--;
+        while (i >= 0 || j >= 0) {
+            int v1 = (i < 0) ? 0 : num1.charAt(i) - '0';
+            int v2 = (j < 0) ? 0 : num2.charAt(j) - '0';
+            int sum = v1 + v2 + carry;
+            sb.append(sum % 10);
+            carry = sum / 10;
+            i--;
+            j--;
+        }
+        if (carry > 0) {
+            sb.append(carry);
         }
         
-        while(index1 >= 0) {
-            if (extra == 0) {
-                break;
-            }
-            int bit1 = Integer.parseInt(String.valueOf(num1.charAt(index1)));
-            int sum = bit1 + extra;
-            sb.append(sum%10);
-            extra = sum / 10;
-            index1--;
-        }
-        
-        String res = sb.reverse().toString();
-        if (index1 >= 0) {
-            res = num1.substring(0, index1 + 1) + res;
-        }
-        if (extra > 0) {
-            res = String.valueOf(extra) + res;
-        }
-        
-        return res;
+        return sb.reverse().toString();
     }
 }

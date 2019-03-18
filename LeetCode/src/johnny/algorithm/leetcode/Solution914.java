@@ -53,6 +53,35 @@ Note:
  */
 public class Solution914 {
     public boolean hasGroupsSizeX(int[] deck) {
+        if (deck.length == 1) {
+            return false;
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int card : deck) {
+            map.put(card, map.getOrDefault(card, 0) + 1);
+        }
+        
+        int[] count = new int[map.size()];
+        int i = 0;
+        for (int value : map.values()) {
+            if (value == 1) {
+                return false;
+            }
+            count[i] = value;
+            i++;
+        }
+        
+        for (i = 0; i < count.length; i++) {
+            for (int j = i + 1; j < count.length; j++) {
+                if (gcd(count[i], count[j]) == 1) {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    }
+    public boolean hasGroupsSizeX2(int[] deck) {
         if (deck == null || deck.length < 2) {
             return false;
         }

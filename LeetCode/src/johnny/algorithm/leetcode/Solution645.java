@@ -25,6 +25,25 @@ import java.util.Set;
  */
 public class Solution645 {
     public int[] findErrorNums(int[] nums) {
+        int[] bucket = new int[nums.length];
+        int dup = -1;
+        int missing = -1;
+        for (int num : nums) {
+            if (bucket[num - 1] != 0) {
+                dup = num;
+            }
+            bucket[num - 1] = num;
+        }
+        for (int i = 0; i < bucket.length; i++) {
+            if (bucket[i] == 0) {
+                missing = i + 1;
+            }
+        }
+        
+        return new int[]{dup, missing};
+    }
+    
+    public int[] findErrorNums2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return new int[2];
         }

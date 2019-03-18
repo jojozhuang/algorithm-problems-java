@@ -15,7 +15,7 @@ public class Solution119Test extends JunitBase {
         System.out.println("getRow");
         Solution119 instance = new Solution119();
 
-        List<Integer> expect1 = ListUtil.buildList(new Integer[] {1});
+        List<Integer> expect1 = ListUtil.buildList(new Integer[] {});
         assertEquals(expect1, instance.getRow(-1));
 
         List<Integer> expect2 = ListUtil.buildList(new Integer[]{1});

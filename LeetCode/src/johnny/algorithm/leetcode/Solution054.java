@@ -22,6 +22,52 @@ import java.util.List;
  */
 public class Solution054 {
     public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> ans = new ArrayList<>();
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return ans;
+        }
+        int m = matrix.length;
+        int n = matrix[0].length;
+        
+        int i = 0;
+        int top = 0;
+        int bottom = m - 1;
+        int left = 0;
+        int right = n - 1;
+        while (i < m * n) {
+            // left->right
+            for (int k = left; k <= right; k++) {
+                ans.add(matrix[top][k]);
+                i++;
+            }
+            top++;
+            // top->bottom
+            for (int k = top; k <= bottom; k++) {
+                ans.add(matrix[k][right]);
+                i++;
+            }
+            right--;
+            if (i >= m * n) {
+                break;
+            }
+            // right->left
+            for (int k = right; k >= left; k--) {
+                ans.add(matrix[bottom][k]);
+                i++;
+            }
+            bottom--;
+            // bottom->top
+            for (int k = bottom; k >= top; k--) {
+                ans.add(matrix[k][left]);
+                i++;
+            }
+            left++;
+        }
+        
+        return ans;
+    }
+    
+    public List<Integer> spiralOrder2(int[][] matrix) {
         List<Integer> res = new ArrayList<Integer>();
         if (matrix == null || matrix.length == 0) {
             return new ArrayList<Integer>();

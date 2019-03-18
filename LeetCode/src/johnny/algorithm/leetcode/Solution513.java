@@ -37,21 +37,23 @@ import johnny.algorithm.leetcode.common.TreeNode;
  */
 public class Solution513 {
     public int findBottomLeftValue(TreeNode root) {
-        return findBottomLeftValue(root, 1, new int[]{0,0});
+        int[] ans = new int[]{0,0}; // level + value
+        helper(root, 1, ans);
+        return ans[1];
     }
-    private int findBottomLeftValue(TreeNode root, int depth, int[] res) {
-        if (res[1] < depth) {
-            res[0] = root.val;
-            res[1] = depth;
+    
+    private void helper(TreeNode root, int level, int[] ans) {
+        if (level > ans[0]) {
+            ans[0] = level;
+            ans[1] = root.val;
         }
+        
         if (root.left != null) {
-            findBottomLeftValue(root.left, depth + 1, res);
+            helper(root.left, level + 1, ans);
         }
-        // If found in the left child, then the right child will be ignored.
         if (root.right != null) {
-            findBottomLeftValue(root.right, depth + 1, res);
+            helper(root.right, level + 1, ans);
         }
-        return res[0];
     }
     
     public int findBottomRightValue(TreeNode root) {

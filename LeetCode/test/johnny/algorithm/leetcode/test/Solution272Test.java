@@ -60,5 +60,10 @@ public class Solution272Test extends JunitBase {
         TreeNode root9 = TreeNode.createInstance(new String[] {"4","1","7"});
         List<Integer> result9 = instance.closestKValues(root9, 3, 3);
         assertTrue(ListUtil.equalsIgnoreOrder(expect9, result9));
+        
+        List<Integer> expect10 = ListUtil.buildList(new Integer[] {2,1,3});
+        TreeNode root10 = TreeNode.createInstance("3,2,4,1,#");
+        List<Integer> result10 = instance.closestKValues(root10, 2, 3);
+        assertTrue(ListUtil.equalsIgnoreOrder(expect10, result10));
     }
 }

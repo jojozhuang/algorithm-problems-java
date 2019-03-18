@@ -13,7 +13,7 @@ public class Solution890Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("numSimilarGroups");
+        System.out.println("findAndReplacePattern");
         Solution890 instance = new Solution890();
 
         String[] words1 = new String[] {"abc","deq","mee","aqq","dkd","ccc"};

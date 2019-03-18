@@ -13,36 +13,27 @@ package johnny.algorithm.leetcode;
  */
 public class Solution067 {
     public String addBinary(String a, String b) {
-        if (a == null || a.isEmpty()) {
-            return b;
-        }
-        if (b == null || b.isEmpty()) {
-            return a;
-        }
-        
-        char[] arr1 = a.toCharArray();
-        char[] arr2 = b.toCharArray();
-        int i = arr1.length - 1;
-        int j = arr2.length - 1;
-        
-        StringBuilder sb = new StringBuilder();
+        char[] nums1 = a.toCharArray();
+        char[] nums2 = b.toCharArray();
+        int i = nums1.length - 1;
+        int j = nums2.length - 1;
         int carry = 0;
+        int sum = 0;
+        StringBuilder sb = new StringBuilder();
         while (i >= 0 || j >= 0) {
-            int val1 = (i < 0) ? 0 : arr1[i] - '0';
-            int val2 = (j < 0) ? 0 : arr2[j] - '0';
-            int sum = val1 + val2 + carry;
-            int curr = sum % 2;
-            carry = sum >= 2 ? 1 : 0;
-            sb.append(curr);
+            int c1 = (i >= 0) ? nums1[i] - '0' : 0;
+            int c2 = (j >= 0) ? nums2[j] - '0' : 0;
+            sum = c1 + c2 + carry;
+            sb.append(sum % 2);
+            carry = sum / 2;
             i--;
             j--;
         }
+        
         if (carry > 0) {
             sb.append(carry);
         }
         
-        sb.reverse();
-        
-        return sb.toString();
+        return sb.reverse().toString();
     }   
 }

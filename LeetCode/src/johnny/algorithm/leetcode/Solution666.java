@@ -37,37 +37,42 @@ The path sum is (3 + 1) = 4.
  * @author Johnny
  */
 public class Solution666 {
-    int sum = 0;
-    Map<Integer, Integer> tree = new HashMap<>();
-    
     public int pathSum(int[] nums) {
-        if (nums == null || nums.length == 0) return 0;
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
         
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
             int key = num / 10;
             int value = num % 10;
-            tree.put(key, value);
+            map.put(key, value);
         }
         
-        traverse(nums[0] / 10, 0);
+        int[] sum = new int[1];
+        dfs(nums[0] / 10, 0, map, sum);
         
-        return sum;
+        return sum[0];
     }
     
-    private void traverse(int root, int preSum) {
+    private void dfs(int root, int preSum, Map<Integer, Integer> map, int[] sum) {
         int level = root / 10;
         int pos = root % 10;
         int left = (level + 1) * 10 + pos * 2 - 1;
         int right = (level + 1) * 10 + pos * 2;
         
-        int curSum = preSum + tree.get(root);
+        int curSum = preSum + map.get(root);
         
-        if (!tree.containsKey(left) && !tree.containsKey(right)) {
-            sum += curSum;
+        if (!map.containsKey(left) && !map.containsKey(right)) {
+            sum[0] += curSum;
             return;
         }
         
-        if (tree.containsKey(left)) traverse(left, curSum);
-        if (tree.containsKey(right)) traverse(right, curSum);
+        if (map.containsKey(left)) {
+            dfs(left, curSum, map, sum);
+        }
+        if (map.containsKey(right)) {
+            dfs(right, curSum, map, sum);
+        }
     }
 }

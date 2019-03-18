@@ -20,7 +20,7 @@ public class Solution988Test extends JunitBase {
         TreeNode root2 = TreeNode.createInstance("25,1,3,1,3,0,2");
         assertEquals("adz", instance.smallestFromLeaf(root2));
         
-        //TreeNode root3 = TreeNode.createInstance("2,2,1,null,1,0,null,0");
-        //assertEquals("abc", instance.smallestFromLeaf(root3));
+        TreeNode root3 = TreeNode.createInstance("2,2,1,null,1,0,null,0,null,null,null");
+        assertEquals("abc", instance.smallestFromLeaf(root3));
     }
 }

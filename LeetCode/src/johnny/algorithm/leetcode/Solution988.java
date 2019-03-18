@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import johnny.algorithm.leetcode.common.TreeNode;
 
 /**
@@ -40,8 +44,35 @@ Each node in the tree will have a value between 0 and 25.
  * @author Johnny
  */
 public class Solution988 {
-    String ans = "~";
     public String smallestFromLeaf(TreeNode root) {
+        List<String> words = helper(root);
+        Collections.sort(words);
+        return words.get(0);
+    }
+    
+    private List<String> helper(TreeNode root) {
+        List<String> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
+        
+        if (root.left == null && root.right == null) {
+            ans.add(String.valueOf((char)(root.val+'a')));
+            return ans;
+        }
+        List<String> left = helper(root.left);
+        List<String> right = helper(root.right);
+        for (String s1 : left) {
+            ans.add(s1 + String.valueOf((char)(root.val+'a')));
+        }
+        for (String s2 : right) {
+            ans.add(s2 + String.valueOf((char)(root.val+'a')));
+        }
+        return ans;
+    }
+    
+    String ans = "~";
+    public String smallestFromLeaf2(TreeNode root) {
         dfs(root, new StringBuilder());
         return ans;
     }

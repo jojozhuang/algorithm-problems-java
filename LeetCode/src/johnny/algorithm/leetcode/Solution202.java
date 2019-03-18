@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Happy Number.
@@ -25,6 +26,26 @@ public class Solution202 {
     //https://leetcode.com/problems/happy-number/discuss/56917/My-solution-in-C(-O(1)-space-and-no-magic-math-property-involved-)
     //Floyd Cycle detection algorithm
     public boolean isHappy(int n) {
+        Set<Integer> set = new HashSet<>();
+        while (n != 1) {
+            int sum = 0;
+            while (n > 0) {
+                sum += (n % 10) * (n % 10);
+                n = n / 10;
+            }
+            if (sum == 1) {
+                return true;
+            }
+            if (set.contains(sum)) {
+                return false;
+            }
+            set.add(sum);
+            n = sum;
+        }
+        
+        return n == 1;
+    }
+    public boolean isHappy3(int n) {
         int slow, fast;
         slow = fast = n;
         do {

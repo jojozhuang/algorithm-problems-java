@@ -1,7 +1,9 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Isomorphic Strings.
@@ -24,7 +26,34 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution205 {
+    // hashset + hashmap
     public boolean isIsomorphic(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        
+        Map<Character, Character> map = new HashMap<>();
+        Set<Character> set = new HashSet<>(); // black list, values in map
+        for (int i = 0; i < s.length(); i++) {
+            char cs = s.charAt(i);
+            char ct = t.charAt(i);
+            if (!map.containsKey(cs)) {
+                if (set.contains(ct)) {
+                    return false;
+                }
+                map.put(cs, ct);
+                set.add(ct);
+            } else {
+                if (map.get(cs) != ct) {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+    public boolean isIsomorphic3(String s, String t) {
         if (s == null || t == null || s.length() != t.length()) {
             return false;
         }

@@ -12,7 +12,6 @@ public class Solution747Test extends JunitBase {
         System.out.println("dominantIndex");
         Solution747 instance = new Solution747();
 
-        assertEquals(-1, instance.dominantIndex(null));
         assertEquals(0, instance.dominantIndex(new int[] {1}));
         assertEquals(-1, instance.dominantIndex(new int[] {2, 3}));
         assertEquals(1, instance.dominantIndex(new int[] {0, 4}));

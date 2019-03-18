@@ -40,7 +40,25 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution482 {
-    public String licenseKeyFormatting(String s, int k) {
+    public String licenseKeyFormatting(String S, int K) {
+        S = S.replace("-","").toUpperCase();
+        if (S.isEmpty()) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        // first
+        int len = S.length() % K == 0 ? K : S.length() % K;
+        sb.append(S.substring(0, len));
+        // rest
+        for (int i = len; i < S.length(); i += K) {
+            sb.append("-");
+            sb.append(S.substring(i, i + K));
+        }
+        
+        return sb.toString();
+    }
+    
+    public String licenseKeyFormatting2(String s, int k) {
         StringBuilder sb = new StringBuilder();
         for (int i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) != '-') {

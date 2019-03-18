@@ -20,5 +20,8 @@ public class Solution958Test extends JunitBase {
         TreeNode root2 = TreeNode.createInstance("1,2,3,4,5,#,7");
         assertEquals(false, instance.isCompleteTree(root2));
         
+        TreeNode root3 = TreeNode.createInstance("1,2,3,4,5,6,7,8,9,10,11,12,13,null,null,15,null");
+        assertEquals(false, instance.isCompleteTree(root3));
+        
     }
 }

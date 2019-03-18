@@ -12,7 +12,7 @@ public class Solution246Test extends JunitBase {
         System.out.println("isStrobogrammatic");
         Solution246 instance = new Solution246();
 
-        assertEquals(false, instance.isStrobogrammatic(""));
+        assertEquals(true, instance.isStrobogrammatic(""));
         assertEquals(true, instance.isStrobogrammatic("69"));
         assertEquals(true, instance.isStrobogrammatic("88"));
         assertEquals(true, instance.isStrobogrammatic("818"));

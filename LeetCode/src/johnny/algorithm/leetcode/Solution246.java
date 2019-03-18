@@ -17,8 +17,36 @@ import java.util.HashMap;
  */
 public class Solution246 {
     public boolean isStrobogrammatic(String num) {
+        if (num == null || num.length() == 0) {
+            return true;
+        }
+        int left = 0;
+        int right = num.length() - 1;
+        
+        while (left <= right) {
+            char c1 = num.charAt(left);
+            char c2 = num.charAt(right);
+            if (c1 == '2' || c1 == '3' || c1 == '4' || c1 == '5' || c1 == '7') {
+                return false;
+            }
+            if (c2 == '2' || c2 == '3' || c2 == '4' || c2 == '5' || c2 == '7') {
+                return false;
+            }
+            if (c1 == '6' && c2 != '9' || c1 == '9' && c2 != '6') {
+                return false;
+            }
+            if (c1 == '0' && c2 != '0' || c1 == '1' && c2 != '1' || c1 == '8' && c2 != '8') {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        
+        return true;
+    }
+    public boolean isStrobogrammatic2(String num) {
         if (num == null || num.isEmpty()) {
-            return false;
+            return true;
         }
         
         HashMap<Character, Character> map = new HashMap<Character, Character>();

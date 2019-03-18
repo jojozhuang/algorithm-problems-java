@@ -25,30 +25,32 @@ import java.util.List;
  */
 public class Solution442 {
     public List<Integer> findDuplicates(int[] nums) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<>();
         if (nums == null || nums.length == 0) {
-            return res;
+            return ans;
         }
         
         for (int i = 0; i < nums.length; i++) {
             while (nums[i] != i + 1) {
-                if (nums[i] == nums[nums[i] - 1]) {
+                if (nums[nums[i] - 1] == nums[i]) {
                     break;
                 }
-                int temp = nums[nums[i] - 1] ;
-                nums[nums[i] - 1] = nums[i];
-                nums[i] = temp;
+                swap(nums, i, nums[i] - 1);
             }
         }
         
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1) {
-                res.add(nums[i]);
+                ans.add(nums[i]);
             }
         }
         
-        Collections.sort(res);
-        
-        return res;
+        return ans;
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }

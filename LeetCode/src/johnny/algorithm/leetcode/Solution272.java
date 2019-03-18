@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.TreeMap;
+
 import johnny.algorithm.leetcode.common.TreeNode;
 
 /**
@@ -39,9 +41,41 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution272 {
+    public List<Integer> closestKValues(TreeNode root, double target, int k) {
+        TreeMap<Double, List<Integer>> map = new TreeMap<>();
+        List<Integer> list = inorder(root);
+        for (int i : list) {
+            double diff = Math.abs((double)i - target);
+            if (!map.containsKey(diff)) {
+                map.put(diff, new ArrayList<>());
+            }
+            map.get(diff).add(i);
+            if (map.size() > k) {
+                map.remove(map.lastKey());
+            }
+        }
+
+        List<Integer> ans = new ArrayList<>();
+        for (List<Integer> nums : map.values()) {
+            ans.addAll(nums);
+        }
+        return ans;
+    }
+    
+    public List<Integer> inorder(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+        list.addAll(inorder(root.left));
+        list.add(root.val);
+        list.addAll(inorder(root.right));
+        return list;
+    }
+    
     //http://www.cnblogs.com/jcliBlogger/p/4771342.html
     //https://segmentfault.com/a/1190000003797291
-    public List<Integer> closestKValues(TreeNode root, double target, int k) {
+    public List<Integer> closestKValues2(TreeNode root, double target, int k) {
         if (root == null) {
             return new ArrayList<Integer>();
         }

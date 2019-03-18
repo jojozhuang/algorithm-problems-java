@@ -15,6 +15,34 @@ import java.util.Stack;
  */
 public class Solution020 {
     public boolean isValid(String s) {
+        if (s.length() % 2 != 0) {
+            return false;
+        }
+        
+        Stack<Character> stack = new Stack<>();
+        for (Character c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                char match = stack.pop();
+                if (c == ')' && match != '(') {
+                    return false;
+                }
+                if (c == ']' && match != '[') {
+                    return false;
+                }
+                if (c == '}' && match != '{') {
+                    return false;
+                }
+            }
+        }
+        
+        return stack.isEmpty();
+    }
+    public boolean isValid3(String s) {
         if (s == null || s.isEmpty()) {
             return true;
         }

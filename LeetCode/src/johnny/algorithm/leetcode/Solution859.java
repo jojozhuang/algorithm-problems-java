@@ -44,6 +44,52 @@ A and B consist only of lowercase letters.
  */
 public class Solution859 {
     public boolean buddyStrings(String A, String B) {
+        if (A.length() != B.length()) {
+            return false;
+        }
+        
+        if (A.equals(B)) { // abab, abab
+            Set<Character> set = new HashSet<>();
+            for (Character c : A.toCharArray()) {
+                if (set.contains(c)) {
+                    return true;
+                } else {
+                    set.add(c);
+                }
+            }
+            
+            return false;
+        }
+        
+        int diff = 0;
+        int index1 = -1;
+        int index2 = -1;
+        for (int i = 0; i < A.length(); i++) {
+            if (A.charAt(i) != B.charAt(i)) {
+                diff++;
+                if (diff == 1) {
+                    index1 = i;
+                } else if (diff == 2) {
+                    index2 = i;
+                } else if (diff > 2) {
+                    return false;
+                }
+            }
+        }
+
+        if (diff != 2) {
+            return false;
+        }
+        
+        if (A.charAt(index1) != B.charAt(index2) ||
+            A.charAt(index2) != B.charAt(index1)) {
+            return false;
+        }
+        
+        return true;
+    }
+    
+    public boolean buddyStrings2(String A, String B) {
         if (A.length() == 0 && B.length() == 0) {
             return false;
         }

@@ -16,5 +16,6 @@ public class Solution345Test extends JunitBase {
         assertEquals("holle", instance.reverseVowels("hello"));
         assertEquals("leotcede", instance.reverseVowels("leetcode"));
         assertEquals("a.b,.", instance.reverseVowels("a.b,."));
+        assertEquals("Aa", instance.reverseVowels("aA"));
     }
 }

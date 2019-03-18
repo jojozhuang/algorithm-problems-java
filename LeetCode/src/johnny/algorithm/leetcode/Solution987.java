@@ -2,7 +2,9 @@ package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeMap;
 
 import johnny.algorithm.leetcode.common.TreeNode;
 
@@ -52,55 +54,56 @@ Each node's value will be between 0 and 1000.
  * @author Johnny
  */
 public class Solution987 {
-    List<Location> locations;
     public List<List<Integer>> verticalTraversal(TreeNode root) {
-        // Each location is a node's x position, y position, and value
-        locations = new ArrayList<Location>();
-        dfs(root, 0, 0);
-        Collections.sort(locations);
-
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
-        ans.add(new ArrayList<Integer>());
-
-        int prev = locations.get(0).x;
-
-        for (Location loc: locations) {
-            // If the x value changed, it's part of a new report.
-            if (loc.x != prev) {
-                prev = loc.x;
-                ans.add(new ArrayList<Integer>());
+        TreeMap<Integer, List<Node>> map = new TreeMap<>();
+        helper(root, 0, 0, map);
+        
+        List<List<Integer>> ans = new ArrayList<>();
+        for (List<Node> list : map.values()) {
+            Collections.sort(list, new NodeComparator());
+            List<Integer> res = new ArrayList<>();
+            for (Node node : list) {
+                res.add(node.val);
             }
-
-            // We always add the node's value to the latest report.
-            ans.get(ans.size() - 1).add(loc.val);
+            ans.add(res);
         }
-
         return ans;
     }
-
-    public void dfs(TreeNode node, int x, int y) {
-        if (node != null) {
-            locations.add(new Location(x, y, node.val));
-            dfs(node.left, x-1, y+1);
-            dfs(node.right, x+1, y+1);
+    
+    private void helper(TreeNode root, int x, int y, TreeMap<Integer, List<Node>> map) {
+        if (root == null) {
+            return;
+        }
+        if (!map.containsKey(x)) {
+            map.put(x, new ArrayList<>());
+        }
+        map.get(x).add(new Node(x, y, root.val));
+        helper(root.left, x - 1, y + 1, map);
+        helper(root.right, x + 1, y + 1, map);
+    }
+    
+    class NodeComparator implements Comparator<Node> {
+        public int compare(Node n1, Node n2) {
+            if (n1.x == n2.x) {
+                if (n1.y == n2.y) {
+                    return n1.val - n2.val;
+                } else {
+                    return n1.y - n2.y;
+                }
+            } else {
+                return n1.x - n2.x;
+            }
         }
     }
-    class Location implements Comparable<Location>{
-        int x, y, val;
-        Location(int x, int y, int val) {
+    
+    class Node {
+        public int x;
+        public int y;
+        public int val;
+        public Node(int x, int y, int val) {
             this.x = x;
             this.y = y;
             this.val = val;
-        }
-
-        @Override
-        public int compareTo(Location that) {
-            if (this.x != that.x)
-                return Integer.compare(this.x, that.x);
-            else if (this.y != that.y)
-                return Integer.compare(this.y, that.y);
-            else
-                return Integer.compare(this.val, that.val);
         }
     }
 }

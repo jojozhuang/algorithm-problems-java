@@ -31,10 +31,10 @@ public class Solution095 {
     }
     
     private List<TreeNode> helper(int start, int end) {
-        List<TreeNode> res = new ArrayList<TreeNode>();
+        List<TreeNode> ans = new ArrayList<>();
         if (start > end) {
-            res.add(null);
-            return res;
+            ans.add(null);
+            return ans;
         }
         
         for (int i = start; i <= end; i++) {
@@ -45,11 +45,11 @@ public class Solution095 {
                     TreeNode node = new TreeNode(i);
                     node.left = left;
                     node.right = right;
-                    res.add(node);
+                    ans.add(node);
                 }
             }
         }
         
-        return res;
+        return ans;
     }
 }

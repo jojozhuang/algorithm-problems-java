@@ -1,7 +1,9 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import johnny.algorithm.leetcode.common.TreeNode;
 
@@ -38,25 +40,16 @@ The tree will have between 1 and 100 nodes.
  */
 public class Solution958 {
     public boolean isCompleteTree(TreeNode root) {
-        List<ANode> nodes = new ArrayList<ANode>();
-        nodes.add(new ANode(root, 1));
-        int i = 0;
-        while (i < nodes.size()) {
-            ANode anode = nodes.get(i++);
-            if (anode.node != null) {
-                nodes.add(new ANode(anode.node.left, anode.code * 2));
-                nodes.add(new ANode(anode.node.right, anode.code * 2 + 1));
-            }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (queue.peek() != null) {
+            TreeNode node = queue.poll();
+            queue.offer(node.left);
+            queue.offer(node.right);
         }
-
-        return nodes.get(i-1).code == nodes.size();
-    }
-}
-class ANode {  // Annotated Node
-    TreeNode node;
-    int code;
-    ANode(TreeNode node, int code) {
-        this.node = node;
-        this.code = code;
+        while (!queue.isEmpty() && queue.peek() == null) {
+            queue.poll();
+        }
+        return queue.isEmpty();
     }
 }

@@ -42,6 +42,22 @@ S only consists of '(' and ')' characters.
  */
 public class Solution921 {
     public int minAddToMakeValid(String S) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : S.toCharArray()) {
+            if (stack.isEmpty()) {
+                stack.push(c);
+                continue;
+            }
+            if (c == ')' && stack.peek() == '(') {
+                stack.pop();
+            } else {
+                stack.push(c);
+            }
+        }
+        
+        return stack.size();
+    }
+    public int minAddToMakeValid2(String S) {
         if (S == null || S.length() == 0) {
             return 0;
         }

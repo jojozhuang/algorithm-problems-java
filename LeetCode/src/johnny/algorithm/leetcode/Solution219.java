@@ -55,4 +55,21 @@ public class Solution219 {
         
         return false;
     }
+    
+    // naive, O(n^2)
+    public boolean containsNearbyDuplicate3(int[] nums, int k) {
+        if (nums == null || nums.length < 2 || k < 0) {
+            return false;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length && j <= i + k; j++) {
+                if (nums[i] == nums[j]) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
 }

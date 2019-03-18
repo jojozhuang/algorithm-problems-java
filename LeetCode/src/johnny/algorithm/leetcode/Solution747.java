@@ -25,28 +25,20 @@ Every nums[i] will be an integer in the range [0, 99].
  */
 public class Solution747 {
     public int dominantIndex(int[] nums) {
-        if (nums == null || nums.length < 1) {
-            return -1;
-        }
-        
-        if (nums.length == 1) {
-            return 0;
-        }
-        
-        int largest = Integer.MIN_VALUE;
-        int largest2 = Integer.MIN_VALUE;
+        int first = -1;
+        int second = -1;
         int index = -1;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > largest) {
-                largest2 = largest;
-                largest = nums[i];
+            if (nums[i] > first) {
+                second = first;
+                first = nums[i];
                 index = i;
-            } else {
-                largest2 = Math.max(largest2, nums[i]);
+            } else if (nums[i] > second) {
+                second = nums[i];
             }
         }
         
-        if (largest / 2 >= largest2) {
+        if (first >= 2*second) {
             return index;
         } else {
             return -1;

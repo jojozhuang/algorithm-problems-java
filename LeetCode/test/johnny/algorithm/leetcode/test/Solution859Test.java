@@ -20,5 +20,6 @@ public class Solution859Test extends JunitBase {
         assertEquals(true, instance.buddyStrings("aaaaaaabc","aaaaaaacb"));
         assertEquals(false, instance.buddyStrings("","aa"));
         assertEquals(true, instance.buddyStrings("abab","abab"));
+        assertEquals(true, instance.buddyStrings("acccccb","bccccca"));
     }
 }

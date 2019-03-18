@@ -21,6 +21,28 @@ import java.util.List;
  */
 public class Solution118 {
     public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (numRows <= 0) {
+            return ans;
+        }
+        
+        List<Integer> prev = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) {
+            List<Integer> list = new ArrayList<>();
+            list.add(1);
+            for (int j = 1; j < prev.size(); j++) {
+                list.add(prev.get(j-1)+prev.get(j));
+            }
+            if (i > 0) {
+                list.add(1);
+            }
+            ans.add(new ArrayList<Integer>(list));
+            prev = list;
+        }
+        
+        return ans;
+    }
+    public List<List<Integer>> generate2(int numRows) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (numRows <= 0) {
             return res;

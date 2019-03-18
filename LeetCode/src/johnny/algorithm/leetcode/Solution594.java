@@ -23,22 +23,22 @@ import java.util.Map;
  */
 public class Solution594 {
     public int findLHS(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
         
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-        }
-        
-        int res = 0;
-        for (Integer num: map.keySet()) {
+        int ans = 0;
+        for (int num : map.keySet()) {
+            /*
+            if (map.containsKey(num - 1)) {
+                ans = Math.max(ans, map.get(num) + map.get(num - 1));
+            }*/
             if (map.containsKey(num + 1)) {
-                res = Math.max(res, map.get(num) + map.get(num + 1));
+                ans = Math.max(ans, map.get(num) + map.get(num + 1));
             }
         }
         
-        return res;
+        return ans;
     }
 }

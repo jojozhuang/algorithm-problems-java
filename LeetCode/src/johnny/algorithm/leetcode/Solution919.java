@@ -36,6 +36,56 @@ Every value of a given or inserted node is between 0 and 5000.
  * @author Johnny
  */
 public class Solution919 {
+    Queue<TreeNode> queue = new LinkedList<>();
+    TreeNode root = null;
+    public Solution919(TreeNode root) {
+        this.root = root;
+        find(root);
+    }
+    
+    public int insert(int v) {
+        int res = 0;
+        TreeNode node = new TreeNode(v);
+        if (queue.isEmpty()) {
+            this.root = node;
+        } else {
+            TreeNode first = queue.peek();
+            res = first.val;
+            if (first.left == null) {
+                first.left = node;
+            } else {
+                first.right = node;
+                queue.poll();
+            }
+        }
+        queue.offer(node);
+        return res;
+    }
+    
+    public TreeNode get_root() {
+        return this.root;
+    }
+    
+    private void find(TreeNode root) {
+        Queue<TreeNode> level = new LinkedList<>();
+        level.offer(root);
+        while (!level.isEmpty()) {
+            int size = level.size();
+            while (size-- > 0) {
+                TreeNode node = level.poll();
+                if (node.left == null || node.right == null) {
+                    queue.offer(node);
+                }
+                if (node.left != null) {
+                    level.offer(node.left);
+                }
+                if (node.right != null) {
+                    level.offer(node.right);
+                }
+            }
+        }
+    }
+    /*
     private TreeNode root;
     private Queue<TreeNode> queue;
     
@@ -70,7 +120,7 @@ public class Solution919 {
     
     public TreeNode get_root() {
         return root;
-    }
+    }*/
 }
 
 /**

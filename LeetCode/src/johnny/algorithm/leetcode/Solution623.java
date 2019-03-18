@@ -72,6 +72,35 @@ import johnny.algorithm.leetcode.common.TreeNode;
  */
 public class Solution623 {
     public TreeNode addOneRow(TreeNode root, int v, int d) {
+        if (d == 1) {
+            TreeNode newRoot = new TreeNode(v);
+            newRoot.left = root;
+            return newRoot;
+        }
+        
+        helper(root, v, d - 2);
+        
+        return root;
+    }
+    
+    private void helper(TreeNode root, int v, int level) {
+        if (root == null) {
+            return;
+        }
+        if (level == 0) {
+            TreeNode left = root.left;
+            TreeNode right = root.right;
+            root.left = new TreeNode(v);
+            root.left.left = left;
+            root.right = new TreeNode(v);
+            root.right.right = right;
+        } else {
+            helper(root.left, v, level-1);
+            helper(root.right, v, level-1);
+        }
+    }
+    
+    public TreeNode addOneRow2(TreeNode root, int v, int d) {
         if (d == 0 || d == 1) {
             TreeNode newroot = new TreeNode(v);
             newroot.left = d == 1 ? root : null;

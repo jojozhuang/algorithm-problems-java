@@ -41,41 +41,36 @@ Note:
  * @author Johnny
  */
 public class Solution971 {
-    List<Integer> flipped;
-    int index;
-    int[] voyage;
-
-    public List<Integer> flipMatchVoyage(TreeNode root, int[] voyage) { //copy
-        flipped = new ArrayList<Integer>();
-        index = 0;
-        this.voyage = voyage;
-
-        dfs(root);
-        if (!flipped.isEmpty() && flipped.get(0) == -1) {
-            flipped.clear();
-            flipped.add(-1);
+    public List<Integer> flipMatchVoyage(TreeNode root, int[] voyage) {
+        List<Integer> ans = new ArrayList<>();
+        dfs(root, new int[1], voyage, ans);
+        if (ans.size() != 0 && ans.get(0) == -1) {
+            ans.clear();
+            ans.add(-1);
         }
-
-        return flipped;
+        
+        return ans;
     }
-
-    public void dfs(TreeNode node) {
-        if (node != null) {
-            if (node.val != voyage[index++]) {
-                flipped.clear();
-                flipped.add(-1);
-                return;
-            }
-
-            if (index < voyage.length && node.left != null &&
-                    node.left.val != voyage[index]) {
-                flipped.add(node.val);
-                dfs(node.right);
-                dfs(node.left);
-            } else {
-                dfs(node.left);
-                dfs(node.right);
-            }
+    
+    private void dfs(TreeNode root, int[] index, int[] voyage, List<Integer> ans) {
+        if (root == null) {
+            return;
+        }
+        
+        if (root.val != voyage[index[0]]) {
+            ans.clear();
+            ans.add(-1);
+            return;
+        }
+        
+        index[0]++;
+        if (index[0] < voyage.length && root.left != null && root.left.val != voyage[index[0]]) {
+            ans.add(root.val);
+            dfs(root.right, index, voyage, ans);
+            dfs(root.left, index, voyage, ans);
+        } else {
+            dfs(root.left, index, voyage, ans);
+            dfs(root.right, index, voyage, ans);
         }
     }
 }

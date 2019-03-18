@@ -69,7 +69,7 @@ public class Solution401 {
         }
         
         for(int i = pos; i < nums.length; i++) {
-            generateDigitHelper(nums, count - 1, i + 1, sum + nums[i], res);    
+            generateDigitHelper(nums, count - 1, i + 1, sum + nums[i], res);
         }
     }
 }

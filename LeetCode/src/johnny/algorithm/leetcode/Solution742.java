@@ -1,8 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -60,49 +62,60 @@ There exists some node in the given binary tree for which node.val == k.
  * @author Johnny
  */
 public class Solution742 {
+    TreeNode nodeK = null;
     public int findClosestLeaf(TreeNode root, int k) {
-        Map<TreeNode, TreeNode> backMap = new HashMap<>();   // store all edges that trace node back to its parent
-        Queue<TreeNode> queue = new LinkedList<>();          // the queue used in BFS
-        Set<TreeNode> visited = new HashSet<>();             // store all visited nodes
+        Map<TreeNode, List<TreeNode>> map = new HashMap<>();
+        dfs(map, root, k);
+        Set<TreeNode> set = new HashSet<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(nodeK);
         
-        // DFS: search for node whoes val == k
-        TreeNode kNode = DFS(root, k, backMap);
-        queue.add(kNode);
-        visited.add(kNode);
-        
-        // BFS: find the shortest path
-        while(!queue.isEmpty()) {
-            TreeNode curr = queue.poll();
-            if(curr.left == null && curr.right == null) {
-                return curr.val;
-            }
-            if(curr.left != null && visited.add(curr.left)) {
-                queue.add(curr.left);
-            }
-            if(curr.right != null && visited.add(curr.right)) {
-                queue.add(curr.right);
-            }
-            if(backMap.containsKey(curr) && visited.add(backMap.get(curr))) {  // go alone the back edge
-                queue.add(backMap.get(curr));
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                TreeNode node = queue.poll();
+                if (node.left == null && node.right == null) {
+                    return node.val;
+                }
+                set.add(node);
+                List<TreeNode> neis = map.get(node);
+                for (TreeNode nei : neis) {
+                    if (!set.contains(nei)) {
+                        queue.offer(nei);
+                    }
+                }
             }
         }
-        return -1; // never hit
+        
+        return 0;
     }
-    
-    private TreeNode DFS(TreeNode root, int k, Map<TreeNode, TreeNode> backMap) {
-        if(root.val == k) {
-            return root;
+
+    private void dfs(Map<TreeNode, List<TreeNode>> map, TreeNode root, int k) {
+        if (root == null) {
+            return;
         }
-        if(root.left != null) {
-            backMap.put(root.left, root);        // add back edge
-            TreeNode left = DFS(root.left, k, backMap);
-            if(left != null) return left;
+        
+        if (root.val == k) {
+            nodeK = root;
         }
-        if(root.right != null) {
-            backMap.put(root.right, root);       // add back edge
-            TreeNode right = DFS(root.right, k, backMap);
-            if(right != null) return right;
+        if (!map.containsKey(root)) {
+            map.put(root, new ArrayList<TreeNode>());
         }
-        return null;
+        if (root.left != null) {
+            if (!map.containsKey(root.left)) {
+                map.put(root.left, new ArrayList<TreeNode>());
+            }
+            map.get(root).add(root.left);
+            map.get(root.left).add(root);
+            dfs(map, root.left, k);
+        }
+        if (root.right != null) {
+            if (!map.containsKey(root.right)) {
+                map.put(root.right, new ArrayList<TreeNode>());
+            }
+            map.get(root).add(root.right);
+            map.get(root.right).add(root);
+            dfs(map, root.right, k);
+        }
     }
 }

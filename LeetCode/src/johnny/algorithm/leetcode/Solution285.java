@@ -12,36 +12,20 @@ import johnny.algorithm.leetcode.common.TreeNode;
  * @author Johnny
  */
 public class Solution285 {
-    //http://www.cnblogs.com/jcliBlogger/p/4829200.html
-    //http://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        if (root == null || p == null) {
+        if (root == null) {
             return null;
-        }        
-        
-        // first case: p.right is not null
-        if (p.right != null) {
-            //find the leftmost
-            TreeNode curr = p.right;
-            while (curr != null && curr.left != null) {
-                curr = curr.left;
-            }
-            return curr;            
         }
         
-        //another case: p.right is null
-        TreeNode succ = p.right;
-        while (root != null) {
-            if (root.val == p.val) {
-                break;
-            } else if (root.val < p.val) {
-                root = root.right;
-            } else {
-                succ = root;
-                root = root.left;
-            }
+        if (p.val >= root.val) {
+            return inorderSuccessor(root.right, p);
         }
         
-        return succ;
+        TreeNode left = inorderSuccessor(root.left, p);
+        if (left != null) {
+            return left;
+        } else {
+            return root;
+        }
     }
 }

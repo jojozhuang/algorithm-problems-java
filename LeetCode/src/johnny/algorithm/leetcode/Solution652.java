@@ -1,7 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import johnny.algorithm.leetcode.common.TreeNode;
@@ -36,29 +36,24 @@ import johnny.algorithm.leetcode.common.TreeNode;
  */
 public class Solution652 {
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        List<TreeNode> res = new LinkedList<TreeNode>();
-        if (root == null) {
-            return res;
-        }
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        preorder(root, map, res);
-        return res;
+        List<TreeNode> ans = new ArrayList<>();
+        Map<String, Integer> map = new HashMap<>();
+        preorder(root, map, ans);
+        return ans;
     }
     
-    // generate preoder key of each node
-    private String preorder(TreeNode root, Map<String, Integer> map, List<TreeNode> res) {
+    private String preorder(TreeNode root, Map<String, Integer> map, List<TreeNode> ans) {
         if (root == null) {
             return "#";
         }
-        String path = root.val + "," + preorder(root.left, map, res) + "," + preorder(root.right, map, res);
-        if (!map.containsKey(path)) {
-            map.put(path, 0);
-        } else {
-            map.put(path, map.get(path) + 1);
+        
+        String path = root.val + "," + preorder(root.left, map, ans) + "," + preorder(root.right, map, ans);
+        map.put(path, map.getOrDefault(path, 0) + 1);
+        
+        if (map.get(path) == 2) {
+            ans.add(root);
         }
-        if (map.get(path) == 1) {
-            res.add(root);
-        }
+        
         return path;
     }
 }
