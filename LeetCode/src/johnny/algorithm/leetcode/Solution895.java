@@ -48,6 +48,39 @@ The total number of FreqStack.push and FreqStack.pop calls will not exceed 15000
  * @author Johnny
  */
 public class Solution895 {
+    Map<Integer, Integer> map; // value, frequency
+    Map<Integer, Stack<Integer>> freqMap; // frequency, value stack
+    int maxFreq;
+    public Solution895() {
+        map = new HashMap<>();
+        freqMap = new HashMap<>();
+        maxFreq = 0;
+    }
+    
+    public void push(int x) {
+        int freq = map.getOrDefault(x, 0) + 1;
+        map.put(x, freq);
+        if (freq > maxFreq) {
+            maxFreq = freq;
+        }
+        
+        if (!freqMap.containsKey(freq)) {
+            freqMap.put(freq, new Stack<Integer>());
+        }
+        
+        freqMap.get(freq).push(x);
+    }
+    
+    public int pop() {
+        int res = freqMap.get(maxFreq).pop();
+        map.put(res, map.get(res) - 1);
+        if (freqMap.get(maxFreq).size() == 0) {
+            maxFreq--;
+        }
+        return res;
+    }
+    
+    /*
     Map<Integer, Integer> freq;
     Map<Integer, Stack<Integer>> group;
     int maxfreq;
@@ -73,5 +106,5 @@ public class Solution895 {
         if (group.get(maxfreq).size() == 0)
             maxfreq--;
         return x;
-    }
+    }*/
 }

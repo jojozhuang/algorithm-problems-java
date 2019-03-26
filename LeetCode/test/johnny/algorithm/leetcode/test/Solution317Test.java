@@ -20,5 +20,12 @@ public class Solution317Test extends JunitBase {
             {0,0,1,0,0}
         };
         assertEquals(7, instance.shortestDistance(grid2));
+        
+        int[][] grid3 = new int[][] {
+            {0,2,1},
+            {1,0,2},
+            {0,1,0}
+        };
+        assertEquals(-1, instance.shortestDistance(grid3));
     }
 }

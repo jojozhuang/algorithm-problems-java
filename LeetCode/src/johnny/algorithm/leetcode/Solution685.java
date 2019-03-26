@@ -2,6 +2,8 @@ package johnny.algorithm.leetcode;
 
 import java.util.Arrays;
 
+import johnny.algorithm.leetcode.Solution684.DSU;
+
 /**
  *685. Redundant Connection II
  In this problem, a rooted tree is a directed graph such that, there is exactly one node
@@ -43,7 +45,85 @@ Every integer represented in the 2D-array will be between 1 and N, where N is th
  * @author Johnny
  */
 public class Solution685 {
+    class DSU {
+        int[] rank;
+        int[] parent;
+        int[] roots; // tree node's parent
+        
+        // candidate edge to be deleted
+        public int[] ans1 = null;
+        public int[] ans2 = null;
+        
+        public DSU(int size) {
+            parent = new int[size];
+            for (int i = 0; i < size; i++) {
+                parent[i] = i;
+            }
+            rank = new int[size];
+            roots = new int[size];
+        }
+        
+        // find node who has duplicated parents, aka. indegree = 2 
+        public void findNodeWithDuplicateParent(int[] edge) {
+            int u = edge[0];
+            int v = edge[1];
+            if (roots[v] > 0) {
+                ans1 = new int[] {roots[v], v};
+                // delete the later edge
+                ans2 = new int[] {u, v};
+                edge[0] = -1;
+                edge[1] = -1;
+            }
+            roots[v] = u;
+        }
+
+        public int find(int i) {
+            while (parent[i] != i) {
+                parent[i] = parent[parent[i]];
+                i = parent[i];
+            }
+            return parent[i];
+        }
+
+        public boolean union(int u, int v) {
+            if (u < 0 || v < 0) {
+                return false;
+            }
+            int pu = find(u);
+            int pv = find(v);
+            if (pu == pv) {
+                if (ans1 == null) {
+                    ans1 = new int[] {u,v};
+                }
+                return true;
+            } else if (rank[pu] < rank[pv]) {
+                parent[pu] = pv;
+            } else if (rank[pu] > rank[pv]) {
+                parent[pv] = pu;
+            } else {
+                parent[pv] = pu;
+                rank[pu]++;
+            }
+            return false;
+        }
+    }
+    
     public int[] findRedundantDirectedConnection(int[][] edges) {
+        DSU dsu = new DSU(edges.length + 1);
+        for (int[] edge: edges) {
+            dsu.findNodeWithDuplicateParent(edge);
+        }
+        
+        for (int[] edge: edges) {
+            if (dsu.union(edge[0], edge[1])) {
+                return dsu.ans1;
+            }
+        }
+        
+        return dsu.ans2;
+    }
+    
+    public int[] findRedundantDirectedConnection2(int[][] edges) {
         int n = edges.length;
         int[] parent = new int[n+1], ds = new int[n+1];
         Arrays.fill(parent, -1);

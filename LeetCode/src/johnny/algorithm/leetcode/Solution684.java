@@ -1,5 +1,12 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 /**
  *684. Redundant Connection
  *In this problem, a tree is an undirected graph that is connected and has no cycles.
@@ -43,7 +50,124 @@ We have overhauled the problem description + test cases and specified clearly th
  * @author Johnny
  */
 public class Solution684 {
+    class DSU {
+        int[] rank;
+        int[] parent;
+        public DSU(int size) {
+            parent = new int[size];
+            for (int i = 0; i < size; i++) {
+                parent[i] = i;
+            }
+            rank = new int[size];
+        }
+
+        public int find(int i) {
+            while (parent[i] != i) {
+                parent[i] = parent[parent[i]];
+                i = parent[i];
+            }
+            return parent[i];
+        }
+
+        public boolean union(int i, int j) {
+            int p1 = find(i);
+            int p2 = find(j);
+            if (p1 == p2) {
+                return false;
+            } else if (rank[p1] < rank[p2]) {
+                parent[p1] = p2;
+            } else if (rank[p1] > rank[p2]) {
+                parent[p2] = p1;
+            } else {
+                parent[p2] = p1;
+                rank[p1]++;
+            }
+            return true;
+        }
+    }
+    
     public int[] findRedundantConnection(int[][] edges) {
+        DSU dsu = new DSU(edges.length + 1);
+        for (int[] edge: edges) {
+            if (!dsu.union(edge[0], edge[1])) {
+                return edge;
+            }
+        }
+        return new int[] {0,0};
+    }
+    
+    public int[] findRedundantConnection4(int[][] edges) {
+        int[] parents = new int[edges.length + 1];
+        for (int i = 0; i < parents.length; i++) {
+            parents[i] = i;
+        }
+        
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            int pu = find(u, parents);
+            int pv = find(v, parents);
+            if (pu == pv) {
+                return edge;
+            }
+            parents[pv] = pu;
+        }
+        
+        return new int[] {0,0};
+    }
+    
+    private int find(int curr, int[] parents) {
+        while (parents[curr] != curr) {
+            parents[curr] = parents[parents[curr]];
+            curr = parents[curr];
+        }
+        
+        return curr;
+    }
+    // dfs
+    public int[] findRedundantConnection3(int[][] edges) {
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int[] edge : edges) {
+            if (!map.containsKey(edge[0])) {
+                map.put(edge[0], new ArrayList<Integer>());
+            }
+            if (!map.containsKey(edge[1])) {
+                map.put(edge[1], new ArrayList<Integer>());
+            }
+            Set<Integer> visited = new HashSet<>();
+            if (dfs(map, edge[0], edge[1], visited)) {
+                return edge;
+            }
+            map.get(edge[0]).add(edge[1]);
+            map.get(edge[1]).add(edge[0]);
+        }
+        
+        return new int[]{0,0};
+    }
+    
+    private boolean dfs(Map<Integer, List<Integer>> map, int start, int target, Set<Integer> visited) {
+        
+        if (start == target) {
+            return true;
+        }
+        visited.add(start);
+        if (!map.containsKey(start) || !map.containsKey(target)) {
+            return false;
+        }
+        for (int nei : map.get(start)) {
+            if (visited.contains(nei)) {
+                continue;
+            }
+            if (dfs(map, nei, target, visited)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    // union find
+    public int[] findRedundantConnection2(int[][] edges) {
         int[] parent = new int[2001];
         for (int i = 0; i < parent.length; i++) parent[i] = i;
         

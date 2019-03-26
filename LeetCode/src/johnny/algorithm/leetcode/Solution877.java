@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 877. Stone Game
  * 
@@ -35,21 +37,76 @@ sum(piles) is odd.
  * @author Johnny
  */
 public class Solution877 {
+    // similar question 486. Predict the Winner
+    // optimized dp, O(n^2) , space, O(n)
     public boolean stoneGame(int[] piles) {
-        int N = piles.length;
-
-        // dp[i+1][j+1] = the value of the game [piles[i], ..., piles[j]].
-        int[][] dp = new int[N+2][N+2];
-        for (int size = 1; size <= N; ++size)
-            for (int i = 0; i + size <= N; ++i) {
-                int j = i + size - 1;
-                int parity = (j + i + N) % 2;  // j - i - N; but +x = -x (mod 2)
-                if (parity == 1)
-                    dp[i+1][j+1] = Math.max(piles[i] + dp[i+2][j+1], piles[j] + dp[i+1][j]);
-                else
-                    dp[i+1][j+1] = Math.min(-piles[i] + dp[i+2][j+1], -piles[j] + dp[i+1][j]);
+        int n = piles.length;
+        int[] dp = new int[n];
+        for (int i = 0; i < n; i++) {
+            dp[i] = piles[i];
+        }
+        
+        for (int len = 2; len <= n; len++) {
+            for (int i = 0; i < n - len + 1; i++) {
+                dp[i] = Math.max(piles[i] - dp[i + 1], piles[len + i - 1] - dp[i]);
             }
+        }
+        
+        return dp[0] > 0;
+    }
+    // dp, O(n^2) , space, O(n^2)
+    public boolean stoneGame5(int[] piles) {
+        int n = piles.length;
+        int[][] dp = new int[n][n]; // dp[i][j], largest score when pick piles from i to j
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = piles[i];
+        }
+        
+        for (int len = 2; len <= n; len++) {
+            for (int i = 0; i < n - len + 1; i++) {
+                int j = len + i - 1;
+                dp[i][j] = Math.max(piles[i] - dp[i + 1][j], piles[j] - dp[i][j - 1]);
+            }
+        }
+        
+        return dp[0][n-1] > 0;
+    }
+    // recursion + memorization, TLE
+    public boolean stoneGame3(int[] piles) {
+        int n = piles.length;
+        int[][] memo = new int[n][n];
+        Arrays.stream(memo).forEach(row -> Arrays.fill(row, Integer.MIN_VALUE));
+        return helper(piles, 0, piles.length - 1, memo) > 0;
+    }
+    
+    private int helper(int[] piles, int l, int r, int[][] memo) {
+        if (l == r) {
+            return piles[l];
+        }
+        
+        if (memo[l][r] != Integer.MIN_VALUE) {
+            return memo[l][r];
+        }
 
-        return dp[1][N] > 0;
+        int left = piles[l] - helper(piles, l + 1, r);
+        int right = piles[r] - helper(piles, l, r - 1);
+        
+        memo[l][r] = Math.max(left, right);
+        return memo[l][r];
+    }
+    
+    // brute force, recursion, TLC
+    public boolean stoneGame2(int[] piles) {
+        return helper(piles, 0, piles.length - 1) > 0;
+    }
+    
+    private int helper(int[] piles, int l, int r) {
+        if (l == r) {
+            return piles[l];
+        }
+        
+        int left = piles[l] - helper(piles, l + 1, r);
+        int right = piles[r] - helper(piles, l, r - 1);
+        return Math.max(left, right);
     }
 }

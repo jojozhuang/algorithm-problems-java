@@ -34,25 +34,23 @@ import johnny.algorithm.leetcode.common.Interval;
  * @author Johnny
  */
 public class Solution435 {
+    //https://leetcode.com/problems/non-overlapping-intervals/discuss/91713/Java%3A-Least-is-Most
+    // the problem is the same as "Given a collection of intervals, find the maximum number of intervals that are non-overlapping."
     public int eraseOverlapIntervals(Interval[] intervals) {
-        if (intervals.length == 0)  return 0;
-
-        Arrays.sort(intervals, new myComparator());
+        if (intervals == null || intervals.length == 0) {
+            return 0;
+        }
+        Arrays.sort(intervals, (a,b)->(a.end - b.end));
+        
+        int count = 1;
         int end = intervals[0].end;
-        int count = 1;        
-
         for (int i = 1; i < intervals.length; i++) {
             if (intervals[i].start >= end) {
                 end = intervals[i].end;
                 count++;
             }
         }
+        
         return intervals.length - count;
-    }
-    
-    class myComparator implements Comparator<Interval> {
-        public int compare(Interval a, Interval b) {
-            return a.end - b.end;
-        }
     }
 }

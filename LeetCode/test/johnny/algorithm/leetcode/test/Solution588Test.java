@@ -19,6 +19,8 @@ public class Solution588Test extends JunitBase {
         assertEquals(result1, instance.ls("/"));
         instance.mkdir("/a/b/c");
         instance.addContentToFile("/a/b/c/d","hello");
+        List<String> result2 = ListUtil.buildList(new String[] {"a"});
+        assertEquals(result2, instance.ls("/"));
         assertEquals("hello", instance.readContentFromFile("/a/b/c/d"));
     }
 }

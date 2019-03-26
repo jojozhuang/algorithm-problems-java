@@ -1,7 +1,9 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 873. Length of Longest Fibonacci Subsequence
@@ -41,6 +43,32 @@ Note:
  */
 public class Solution873 {
     public int lenLongestFibSubseq(int[] A) {
+        int n = A.length;
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < A.length; i++) {
+            set.add(A[i]);
+        }
+        
+        int max = 0;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int a = A[i];
+                int b = A[j];
+                int len = 2;
+                while (set.contains(a + b)) {
+                     // a, b -> b, a + b
+                    int temp = a;
+                    a = b;
+                    b = temp + b;
+                    len++;
+                }
+                max = Math.max(max,  len);
+            }
+        }
+        
+        return max > 2 ? max : 0;
+    }
+    public int lenLongestFibSubseq2(int[] A) {
         int N = A.length;
         Map<Integer, Integer> index = new HashMap<Integer, Integer>();
         for (int i = 0; i < N; ++i)

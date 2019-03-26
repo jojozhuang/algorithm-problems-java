@@ -1,8 +1,11 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -35,9 +38,80 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution269 {
+    public String alienOrder(String[] words) {
+        if (words == null || words.length == 0) {
+            return "";
+        }
+        // build graph
+        Map<Character, List<Character>> graph = new HashMap<>();
+        for (int i = 1; i < words.length; i++) {
+            String s1 = words[i - 1];
+            String s2 = words[i];
+            for (int j = 0; j < Math.min(s1.length(), s2.length()); j++) {
+                if (s1.charAt(j) != s2.charAt(j)) {
+                    if (!graph.containsKey(s1.charAt(j))) {
+                        graph.put(s1.charAt(j), new ArrayList<Character>());
+                    }
+                    graph.get(s1.charAt(j)).add(s2.charAt(j));
+                    break;
+                }
+            }
+        }
+        
+        // calculate indegree
+        //Map<Character, Integer> degree = new HashMap<>();
+        int[] degree = new int[26];
+        Arrays.fill(degree, -1); // -1: no apprearance, 0: indegree = 0; 1 or larger: has indegree
+        // if character appears, set count to 0;
+        for (int i = 0; i < words.length; i++) {
+            for (char c : words[i].toCharArray()) {
+                degree[c - 'a'] = 0;
+            }
+        }
+        // if character is after other characters
+        for (List<Character> list : graph.values()) {
+            for (Character c : list) {
+                degree[c - 'a']++;
+            }
+        }
+        
+        // BFS
+        // add character whose indegree is zero to queue
+        Queue<Character> queue = new LinkedList<>();
+        for (int i = 0; i < degree.length; i++) {
+            if (degree[i] == 0) {
+                queue.offer((char)(i + 'a'));
+            }
+        }
+        
+        // search
+        String ans = "";
+        while (!queue.isEmpty()) {
+            Character c = queue.poll();
+            ans = ans + String.valueOf(c);
+            if (graph.containsKey(c)) {
+                for (Character next : graph.get(c)) {
+                    degree[next - 'a']--;
+                    if (degree[next - 'a'] == 0) {
+                        queue.offer(next);
+                    }
+                }
+            }
+        }
+        
+        // 
+        for (int d : degree) {
+            if (d > 0) {
+                return "";
+            }
+        }
+        
+        return ans;
+    }
+    
     //http://www.cnblogs.com/jcliBlogger/p/4758761.html
     //https://segmentfault.com/a/1190000003795463
-    public String alienOrder(String[] words) {
+    public String alienOrder2(String[] words) {
         Map<Character, Set<Character>> map=new HashMap<Character, Set<Character>>();
         Map<Character, Integer> degree=new HashMap<Character, Integer>();
         String result="";

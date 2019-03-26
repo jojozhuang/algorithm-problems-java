@@ -48,25 +48,35 @@ TimeMap.set and TimeMap.get functions will be called a total of 120000 times (co
  * @author Johnny
  */
 public class Solution981 {
-    private Map<String,TreeMap<Integer,String>> map;
+    Map<String, TreeMap<Integer, String>> map; // key, <time, value>
     /** Initialize your data structure here. */
     public Solution981() {
         map = new HashMap<>();
     }
     
     public void set(String key, String value, int timestamp) {
-        if(!map.containsKey(key)){
-            map.put(key,new TreeMap<>());
+        if (!map.containsKey(key)) {
+            map.put(key, new TreeMap<Integer, String>());
         }
-        map.get(key).put(timestamp,value);
+        
+        map.get(key).put(timestamp, value);
     }
     
     public String get(String key, int timestamp) {
-        if(!map.containsKey(key)){
+        if (!map.containsKey(key)) {
             return "";
         }
-        Map.Entry<Integer,String> entry = map.get(key).floorEntry(timestamp);
-        return (entry!= null)?entry.getValue():"";
+        TreeMap<Integer, String> treemap = map.get(key);
+        if (treemap.containsKey(timestamp)) {
+            return treemap.get(timestamp);
+        } else {
+            Map.Entry<Integer, String> low = treemap.lowerEntry(timestamp);
+            if (low == null) {
+                return "";
+            } else {
+                return low.getValue();
+            }
+        }
     }
 }
 /**

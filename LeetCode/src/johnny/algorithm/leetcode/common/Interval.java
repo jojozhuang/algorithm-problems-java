@@ -50,4 +50,9 @@ public class Interval {
         Interval c = (Interval)o;
         return start == c.start && end == c.end;
     }
+    
+    @Override
+    public String toString() {
+        return "["+start + "," + end +"]";
+    }
 }

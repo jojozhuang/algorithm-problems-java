@@ -19,57 +19,50 @@ import johnny.algorithm.leetcode.common.Interval;
  * @author Johnny
  */
 public class Solution253 {
+    // PriorityQueue, store the end value
     public int minMeetingRooms(Interval[] intervals) {  
         if (intervals == null || intervals.length == 0) {
             return 0;
         }
         
-        Arrays.sort(intervals, new IntervalComparator());
+        Arrays.sort(intervals, (a, b)->(a.start - b.start));
          
-        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();  
-        for(int i = 0; i < intervals.length; i++) {  
-            if(minHeap.size() == 0) {  
-                minHeap.add(intervals[i].end);  
-                continue;  
-            }  
-            if(minHeap.peek() <= intervals[i].start) {  
-                minHeap.poll();  
-                minHeap.add(intervals[i].end);  
-            } else {  
-                minHeap.add(intervals[i].end);  
-            }  
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.offer(intervals[0].end);
+        for (int i = 1; i < intervals.length; i++) {
+            int first = pq.peek();
+            Interval curr = intervals[i];
+            if (first <= curr.start) {
+                pq.poll();
+                pq.offer(curr.end);
+            } else {
+                pq.offer(curr.end);
+            }
         }  
-        return minHeap.size(); 
+        
+        return pq.size(); 
     }
+    
+    // PriorityQueue, store intervals
     public int minMeetingRooms2(Interval[] intervals) {  
         if (intervals == null || intervals.length == 0) {
             return 0;
         }
         
-        Arrays.sort(intervals, new IntervalComparator());
+        Arrays.sort(intervals, (a, b)->(a.start - b.start));
          
-        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();  
-        int rooms = 0;  
-        for(int i = 0; i < intervals.length; i++) {  
-            if(minHeap.size() == 0) {  
-                minHeap.add(intervals[i].end);  
-                rooms++;  
-                continue;  
-            }  
-            if(minHeap.peek() <= intervals[i].start) {  
-                minHeap.poll();  
-                minHeap.add(intervals[i].end);  
-            } else {  
-                minHeap.add(intervals[i].end);  
-                rooms++;  
-            }  
+        PriorityQueue<Interval> pq = new PriorityQueue<>((a, b)->(a.end - b.end));
+        pq.offer(intervals[0]);
+        for (int i = 1; i < intervals.length; i++) {
+            Interval first = pq.poll(); // take the first one which as the smallest end value
+            Interval curr = intervals[i];
+            if (first.end <= curr.start) {
+                first.end = curr.end;
+            } else {
+                pq.offer(curr);
+            }
+            pq.offer(first);
         }  
-        return rooms; 
-    }
-    
-    private class IntervalComparator implements Comparator<Interval> {
-        public int compare(Interval i1, Interval i2) {
-            return i1.start - i2.start;
-        }
+        return pq.size(); 
     }
 }

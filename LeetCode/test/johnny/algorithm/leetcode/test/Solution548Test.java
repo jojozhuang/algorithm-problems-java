@@ -13,5 +13,7 @@ public class Solution548Test extends JunitBase {
         Solution548 instance = new Solution548();
 
         assertEquals(true, instance.splitArray(new int[] {1,2,1,2,1,2,1}));
+        assertEquals(false, instance.splitArray(new int[] {1,2,1,2,1,2,1,2}));
+        
     }
 }

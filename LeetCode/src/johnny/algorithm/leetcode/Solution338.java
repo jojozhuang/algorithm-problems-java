@@ -22,8 +22,36 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution338 {
-    //https://www.hrwhisper.me/leetcode-counting-bits/
+    /* 0000
+     * 0001
+     * 0010
+     * 0011
+     * 0100
+     * 0101
+     * 0110
+     * 0111
+     * 1000
+     * 1001
+     * ...
+    */
     public int[] countBits(int num) {
+        if (num == 0) {
+            return new int[]{0};
+        }
+        int[] ans = new int[num + 1];
+        ans[0] = 0;
+        ans[1] = 1;
+        int offset = 0;
+        for (int i = 2; i <= num; i++) {
+            if ((i&(i-1)) == 0) { // i is power of 2, eg, 2,4,8,16,...
+                offset = i;
+            }
+            ans[i] = ans[i - offset] + 1;
+        }
+        return ans;
+    }
+    //https://www.hrwhisper.me/leetcode-counting-bits/
+    public int[] countBits3(int num) {
         int[] res = new int[num + 1];
         res[0] = 0;
         

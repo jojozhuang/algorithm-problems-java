@@ -31,22 +31,31 @@ Note:
  */
 public class Solution931 {
     public int minFallingPathSum(int[][] A) {
-        int N = A.length;
-        for (int r = N-2; r >= 0; --r) {
-            for (int c = 0; c < N; ++c) {
-                // best = min(A[r+1][c-1], A[r+1][c], A[r+1][c+1])
-                int best = A[r+1][c];
-                if (c > 0)
-                    best = Math.min(best, A[r+1][c-1]);
-                if (c+1 < N)
-                    best = Math.min(best, A[r+1][c+1]);
-                A[r][c] += best;
+        int n = A.length;
+        if (n == 1) {
+            return A[0][0];
+        }
+        int[][] dp = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            dp[0][i] = A[0][i];
+        }
+        
+        int min = Integer.MAX_VALUE;
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j == 0) {
+                    dp[i][j] = Math.min(dp[i - 1][j], dp[i - 1][j + 1]) + A[i][j];
+                } else if (j == n - 1) {
+                    dp[i][j] = Math.min(dp[i - 1][j - 1], dp[i - 1][j]) + A[i][j];
+                } else {
+                    dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1], dp[i - 1][j]), dp[i - 1][j + 1]) + A[i][j];
+                }
+                if (i == n - 1) {
+                    min = Math.min(min, dp[i][j]);
+                }
             }
         }
-
-        int ans = Integer.MAX_VALUE;
-        for (int x: A[0])
-            ans = Math.min(ans, x);
-        return ans;
+        
+        return min;
     }
 }

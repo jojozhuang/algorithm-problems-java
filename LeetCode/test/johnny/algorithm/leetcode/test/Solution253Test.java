@@ -18,7 +18,10 @@ public class Solution253Test extends JunitBase {
         Interval[] intervals2 = Interval.buildArray(new int[][] {{0,30},{5,10},{15,20}});
         assertEquals(2, instance.minMeetingRooms(intervals2));
 
-         Interval[] intervals3 =Interval.buildArray(new int[][] {{5,10},{15,20}});
+        Interval[] intervals3 =Interval.buildArray(new int[][] {{5,10},{15,20}});
         assertEquals(1, instance.minMeetingRooms(intervals3));
+        
+        Interval[] intervals4 = Interval.buildArray(new int[][]{{2,15},{36,45},{9,29},{16,23},{4,9}});
+        assertEquals(2, instance.minMeetingRooms(intervals4));
     }
 }

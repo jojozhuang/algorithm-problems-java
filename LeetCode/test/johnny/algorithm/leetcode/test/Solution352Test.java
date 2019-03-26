@@ -67,5 +67,25 @@ public class Solution352Test extends JunitBase {
         List<Interval> expect32 = Interval.buildList(new int[][] {{6,6}});
         List<Interval> result32 = instance3.getIntervals();
         assertEquals(expect32, result32);
+        
+        Solution352 instance4 = new Solution352();
+        instance4.addNum(1);
+        instance4.addNum(0);
+        List<Interval> expect41 = Interval.buildList(new int[][] {{0,1}});
+        List<Interval> result41 = instance4.getIntervals();
+        assertEquals(expect41, result41);
+
+        instance4.addNum(4);
+        instance4.addNum(5);
+        instance4.addNum(9);
+        instance4.addNum(10);
+        List<Interval> expect42 = Interval.buildList(new int[][] {{0,1},{4,5},{9,10}});
+        List<Interval> result42 = instance4.getIntervals();
+        assertEquals(expect42, result42);
+        
+        instance4.addNum(6);
+        List<Interval> expect43 = Interval.buildList(new int[][] {{0,1},{4,6},{9,10}});
+        List<Interval> result43 = instance4.getIntervals();
+        assertEquals(expect43, result43);
     }
 }

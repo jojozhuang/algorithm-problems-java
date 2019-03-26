@@ -27,7 +27,50 @@ import java.util.Comparator;
  * @author Johnny
  */
 public class Solution646 {
+    // dp
     public int findLongestChain(int[][] pairs) {
+        if (pairs == null || pairs.length == 0) {
+            return 0;
+        }
+        
+        Arrays.sort(pairs, (a, b)->(a[0]-b[0]));
+        
+        int n = pairs.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        for (int j = 1; j < n; j++) {
+            for (int i = 0; i < j; i++) {
+                if (pairs[i][1] < pairs[j][0]) {
+                    dp[j] = Math.max(dp[j], dp[i] + 1);
+                }
+            }
+        }
+        return dp[n - 1];
+    }
+    public int findLongestChain3(int[][] pairs) {
+        if (pairs == null || pairs.length == 0) {
+            return 0;
+        }
+        
+        Arrays.sort(pairs, (a, b)->(a[0]==b[0]?a[1]-b[1]:a[0]-b[0]));
+        
+        int count = 1;
+        int[] prev = pairs[0];
+        for (int i = 1; i < pairs.length; i++) {
+            //[[-9, 8], [-6, -2], [-6, 9], [-5, 3], [-1, 4], [0, 3], [1, 6], [8, 10]]
+            int[] curr = pairs[i];
+            if (prev[1] >= curr[1]) { // [-9, 8], [-6, -2]
+                prev = curr;
+                continue;
+            }
+            if (curr[0] > prev[1]) {
+                count++;
+                prev = pairs[i];
+            }
+        }
+        return count;
+    }
+    public int findLongestChain2(int[][] pairs) {
         if (pairs == null || pairs.length == 0 || pairs[0].length != 2) {
             return 0;
         }

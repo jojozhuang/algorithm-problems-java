@@ -21,5 +21,8 @@ public class Solution436Test extends JunitBase {
 
         Interval[] intervals3 = Interval.buildArray(new int[][] { {1,4}, {2,3}, {3,4} });
         assertArrayEquals(new int[] {-1, 2, -1}, instance.findRightInterval(intervals3));
+
+        Interval[] intervals4 = Interval.buildArray(new int[][] { {4,5}, {2,3}, {1,2} });
+        assertArrayEquals(new int[] {-1, 0, 1}, instance.findRightInterval(intervals4));
     }
 }

@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -44,6 +46,49 @@ import johnny.algorithm.leetcode.common.Interval;
  */
 public class Solution436 {
     public int[] findRightInterval(Interval[] intervals) {
+        if (intervals == null || intervals.length == 0) {
+            return new int[]{};
+        }
+        
+        int[] ans = new int[intervals.length];
+        Arrays.fill(ans, -1); // default value
+        // clone and sort
+        Interval[] clone = intervals.clone();
+        Arrays.sort(clone, (a,b)->(a.start - b.start));
+        // original position
+        Map<Interval, Integer> map = new HashMap<>();
+        for (int i = 0; i < intervals.length; i++) {
+            map.put(intervals[i], i);
+        }
+        
+        // find right for each interval
+        for (int i = 0; i < intervals.length; i++) {
+            Interval curr = intervals[i];
+            // binary search
+            int start = 0;
+            int end = clone.length - 1;
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+                Interval midIntv = clone[mid];
+                if (curr.end == midIntv.start) {
+                    ans[i] = map.get(midIntv);
+                    break; // must be the exact candidate, can stop searching
+                } else if (midIntv.end < curr.start) {
+                    start = mid + 1;
+                } else if (midIntv.start > curr.end) {
+                    ans[i] = map.get(midIntv); // can be a candidate
+                    end = mid - 1;
+                } else { // has intersection, cannot be the candidate
+                    start = mid + 1;
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    
+    public int[] findRightInterval2(Interval[] intervals) {
         int[] result = new int[intervals.length];
         java.util.NavigableMap<Integer, Integer> intervalMap = new TreeMap<>();
         

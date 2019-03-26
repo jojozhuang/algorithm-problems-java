@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  *548. Split Array with Equal Sum
@@ -24,25 +25,66 @@ Elements in the given array will be in range [-1,000,000, 1,000,000].
  * @author Johnny
  */
 public class Solution548 {
+    // Hashset, O(n^2)
     public boolean splitArray(int[] nums) {
-        if (nums.length < 7)
+        if (nums == null || nums.length < 7) {
             return false;
-        int[] sum = new int[nums.length];
+        }
+        
+        int n = nums.length;
+        int[] sum = new int[n];
         sum[0] = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            sum[i] = sum[i - 1] + nums[i];
+        for (int i = 1; i < n; i++) {
+            sum[i] = sum[i-1] + nums[i];
         }
-        for (int j = 3; j < nums.length - 3; j++) {
-            HashSet <Integer> set = new HashSet<>();
+        
+        // j is the middle cut, if all four parts are same, then the sum of first two parts are same with the sum of last two parts
+        for (int j = 1; j < n - 3; j++) {
+            Set<Integer> set = new HashSet<>();
+            // left
             for (int i = 1; i < j - 1; i++) {
-                if (sum[i - 1] == sum[j - 1] - sum[i])
+                if (sum[i - 1] == sum[j - 1] - sum[i]) {
                     set.add(sum[i - 1]);
+                }
             }
-            for (int k = j + 2; k < nums.length - 1; k++) {
-                if (sum[nums.length - 1] - sum[k] == sum[k - 1] - sum[j] && set.contains(sum[k - 1] - sum[j]))
+            
+            // right
+            for (int k = j + 2; k < n - 1; k++) {
+                if (sum[k - 1] - sum[j] == sum[n - 1] - sum[k] && set.contains(sum[n - 1] - sum[k])) {
                     return true;
+                }
             }
         }
+        
+        return false;
+    }
+    
+    // brute force, pre sum, O(n^3)
+    public boolean splitArray2(int[] nums) {
+        if (nums == null || nums.length < 7) {
+            return false;
+        }
+        
+        int n = nums.length;
+        int[] sum = new int[n];
+        sum[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            sum[i] = sum[i-1] + nums[i];
+        }
+        
+        for (int i = 1; i < n - 5; i++) {
+            for (int j = i + 2; j < n - 3; j++) {
+                if (sum[i - 1] == sum[j - 1] - sum[i]) {
+                    for (int k = j + 2; k < n - 1; k++) {
+                        if (sum[i - 1] == sum[k - 1] - sum[j] &&
+                            sum[i - 1] == sum[n - 1] - sum[k]) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        
         return false;
     }
 }

@@ -1,5 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Friend Circles
  * 
@@ -43,6 +46,134 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution547 {
+    public class DSU { // Disjoint Set Union with Rank
+        public int[] parents;
+        public int[] rank;
+
+        public DSU(int size) {
+            parents = new int[size];
+            for (int i = 0; i < parents.length; i++) {
+                // Initially, all elements are in their own set.
+                parents[i] = i;
+            }
+            rank = new int[size];
+        }
+
+        // Path Compression
+        public int find(int i) {
+            while (parents[i] != i) {
+                parents[i] = parents[parents[i]];
+                i = parents[i];
+            }
+            return parents[i];
+        }
+
+        // Union by rank
+        public void union(int i, int j) {
+            int p1 = find(i);
+            int p2 = find(j);
+            if (p1 == p2) {
+                return;
+            }
+
+            // If root1’s rank is less than root2’s rank
+            if (rank[p1] < rank[p2]) {
+                // Then move root1 under root2
+                parents[p1] = p2;
+            // If root1’s rank is larger than root2’s rank
+            } else if (rank[p1] > rank[p2]) {
+                // Then move root2 under root1
+                parents[p2] = p1;
+            // if ranks are the same
+            } else {
+                // Then move root1 under root2 (doesn't matter which one goes where)
+                parents[p1] = p2;
+                rank[p2]++;
+            }
+        }
+    }
+    
+    public int findCircleNum(int[][] M) {
+        DSU dsu = new DSU(M.length);
+        for (int i = 0; i < M.length - 1; i++) {
+            for (int j = i + 1; j < M.length; j++) {
+                if (M[i][j] == 1) {
+                    dsu.union(i, j);
+                }
+            }
+        }
+        
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < M.length; i++) {
+            set.add(dsu.find(i));
+        }
+        
+        return set.size();
+    }
+    /*
+    public class DSU { // Disjoint Set Union with Rank
+        public int count;
+        public int[] parents;
+        public int[] rank;
+
+        public DSU(int size) {
+            count = size;
+            parents = new int[size];
+            for (int i = 0; i < parents.length; i++) {
+                // Initially, all elements are in their own set.
+                parents[i] = i;
+            }
+            rank = new int[size];
+        }
+
+        // Path Compression
+        public int find(int i) {
+            while (parents[i] != i) {
+                parents[i] = parents[parents[i]];
+                i = parents[i];
+            }
+            return parents[i];
+        }
+
+        // Union by rank
+        public void union(int i, int j) {
+            int p1 = find(i);
+            int p2 = find(j);
+            if (p1 == p2) {
+                return;
+            }
+
+            // If root1’s rank is less than root2’s rank
+            if (rank[p1] < rank[p2]) {
+                // Then move root1 under root2
+                parents[p1] = p2;
+            // If root1’s rank is larger than root2’s rank
+            } else if (rank[p1] > rank[p2]) {
+                // Then move root2 under root1
+                parents[p2] = p1;
+            // if ranks are the same
+            } else {
+                // Then move root1 under root2 (doesn't matter which one goes where)
+                parents[p1] = p2;
+                rank[p2]++;
+            }
+            count--;
+        }
+    }
+    
+    public int findCircleNum(int[][] M) {
+        DSU dsu = new DSU(M.length);
+        for (int i = 0; i < M.length - 1; i++) {
+            for (int j = i + 1; j < M.length; j++) {
+                if (M[i][j] == 1) {
+                    dsu.union(i, j);
+                }
+            }
+        }
+        
+        return dsu.count;
+    }*/
+    
     public int findCircleNum2(int[][] M) {
         int[] visited = new int[M.length];
         int count = 0;
@@ -64,7 +195,7 @@ public class Solution547 {
     }
     
     // change original matrix
-    public int findCircleNum(int[][] M) {
+    public int findCircleNum3(int[][] M) {
         if (M == null || M.length == 0 || M[0].length == 0) {
             return 0;
         }

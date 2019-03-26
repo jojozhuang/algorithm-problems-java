@@ -37,7 +37,25 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution486 {
+    // dp
     public boolean PredictTheWinner(int[] nums) {
+        if (nums.length == 1) {
+            return true;
+        }
+        
+        int n = nums.length;
+        int[][] dp = new int[n + 1][n]; //dp[i][j], the maximum score possible for the nums[i,j]
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i + 1; j < n; j++) {
+                int left = nums[i] - dp[i + 1][j];
+                int right = nums[j] - dp[i][j - 1];
+                dp[i][j] = Math.max(left, right);
+            }
+        }
+        
+        return dp[0][n- 1] >= 0;
+    }
+    public boolean PredictTheWinner3(int[] nums) {
         int n = nums.length;
         int[][] dp = new int[n][n];
         for (int i = 0; i < n; i++) { dp[i][i] = nums[i]; }
@@ -48,5 +66,50 @@ public class Solution486 {
             }
         }
         return dp[0][n - 1] >= 0;
+    }
+    
+    // recursion, memorization, O(n^2)
+    public boolean PredictTheWinner2(int[] nums) {
+        if (nums.length == 1) {
+            return true;
+        }
+        
+        int n = nums.length;
+        int[][] memo = new int[n][n];
+        return helper(nums, 0, n - 1, memo) >= 0;
+    }
+    
+    // maximum diff score(my_score - op_score) can be obtained
+    private int helper(int[] nums, int l, int r, int[][] memo) {
+        if (l == r) {
+            return nums[l];
+        }
+        
+        if (memo[l][r] > 0) {
+            return memo[l][r];
+        }
+        
+        memo[l][r] = Math.max(nums[l] - helper(nums, l + 1, r, memo), 
+                           nums[r] - helper(nums, l, r - 1, memo));
+        return memo[l][r];
+    }  
+    
+    // recursion, O(2^n)
+    public boolean PredictTheWinner4(int[] nums) {
+        if (nums.length == 1) {
+            return true;
+        }
+        
+        return helper4(nums, 0, nums.length - 1) >= 0;
+    }
+    
+    // maximum diff score(my_score - op_score) can be obtained
+    private int helper4(int[] nums, int l, int r) {
+        if (l == r) {
+            return nums[l];
+        }
+        
+        return Math.max(nums[l] - helper4(nums, l + 1, r), 
+                        nums[r] - helper4(nums, l, r - 1));
     }
 }

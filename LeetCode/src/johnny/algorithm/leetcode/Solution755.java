@@ -122,34 +122,40 @@ K will be in range [0, heights.length - 1].
  */
 public class Solution755 {
     public int[] pourWater(int[] heights, int V, int K) {
-        if (heights == null || heights.length == 0 || V == 0) {
+        if (heights == null || heights.length == 0 || K >= heights.length || V <= 0) {
             return heights;
         }
-        int index;
+        
         while (V > 0) {
-            index = K;
+            //scan left
+            int index = K;
             for (int i = K - 1; i >= 0; i--) {
-                if (heights[i] > heights[index]) {
-                    break;
-                } else if (heights[i] < heights[index]) {
+                if (heights[index] > heights[i]) {
                     index = i;
+                } else if (heights[index] < heights[i]) {
+                    break;
                 }
             }
-            if (index != K) {
+            
+            if (index < K) { // drop is in left
                 heights[index]++;
                 V--;
                 continue;
             }
+            
+            // scan right
+            // index must be K
             for (int i = K + 1; i < heights.length; i++) {
-                if (heights[i] > heights[index]) {
-                    break;
-                } else if (heights[i] < heights[index]) {
+                if (heights[index] > heights[i]) {
                     index = i;
+                } else if (heights[index] < heights[i]) {
+                    break;
                 }
             }
             heights[index]++;
             V--;
         }
+        
         return heights;
     }
 }

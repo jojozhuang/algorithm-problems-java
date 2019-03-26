@@ -43,6 +43,24 @@ public class Solution381Test extends JunitBase {
     public void testGetRandom2() {
         System.out.println("getRandom2");
         Solution381 collection = new Solution381();
+        collection.insert(0);
+        collection.remove(0);
+        collection.insert(-1);
+        collection.remove(0);
+        assertTrue(collection.getRandom() == -1);
+        assertTrue(collection.getRandom() == -1);
+        assertTrue(collection.getRandom() == -1);
+        assertTrue(collection.getRandom() == -1);
+        assertTrue(collection.getRandom() == -1);
+        assertTrue(collection.getRandom() == -1);
+        assertTrue(collection.getRandom() == -1);
+        assertTrue(collection.getRandom() == -1);
+    }
+    
+    @Test
+    public void testGetRandom3() {
+        System.out.println("getRandom3");
+        Solution381 collection = new Solution381();
         collection.insert(10);
         collection.insert(10);
         collection.insert(20);
@@ -61,5 +79,20 @@ public class Solution381Test extends JunitBase {
         assertTrue(collection.getRandom() == 20);
         assertTrue(collection.getRandom() == 20);
         assertTrue(collection.getRandom() == 20);
+    }
+    
+    @Test
+    public void testGetRandom4() {
+        System.out.println("getRandom4");
+        Solution381 collection = new Solution381();
+        assertTrue(collection.insert(4));
+        assertTrue(collection.insert(3));
+        assertFalse(collection.insert(4));
+        assertTrue(collection.insert(2));
+        assertFalse(collection.insert(4));
+        assertTrue(collection.remove(4));
+        assertTrue(collection.remove(3));
+        assertTrue(collection.remove(4));
+        assertTrue(collection.remove(4));
     }
 }

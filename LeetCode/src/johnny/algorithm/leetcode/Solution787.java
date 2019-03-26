@@ -1,6 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -43,7 +46,47 @@ There will not be any duplicated flights or self cycles.
  * @author Johnny
  */
 public class Solution787 {
-    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+    // bfs
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
+        if (flights.length == 0 || flights[0].length == 0) {
+            return 0;
+        }
+        // construct graph
+        List<List<int[]>> graph = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<int[]>());
+        }
+        for (int[] flight : flights) {
+            graph.get(flight[0]).add(new int[]{flight[1], flight[2]});
+        }
+        
+        int ans = Integer.MAX_VALUE;
+        int count = 0;
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[] {src, 0});
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                int[] flight = queue.poll();
+                if (flight[0] == dst) {
+                    ans = Math.min(ans, flight[1]);
+                }
+                for (int[] next : graph.get(flight[0])) {
+                    if (flight[1] + next[1] > ans) {
+                        continue;// pruning
+                    }
+                    queue.offer(new int[] {next[0], flight[1] + next[1]});
+                }
+            }
+            count++;
+            if (count > K + 1) {
+                break;
+            }
+        }
+        
+        return ans == Integer.MAX_VALUE ? -1 : ans;
+    }
+    public int findCheapestPrice2(int n, int[][] flights, int src, int dst, int k) {
         Map<Integer, Map<Integer, Integer>> prices = new HashMap<>();
         for (int[] f : flights) {
             if (!prices.containsKey(f[0])) prices.put(f[0], new HashMap<>());
@@ -65,5 +108,50 @@ public class Solution787 {
             }
         }
         return -1;
+    }
+    
+    // dfs
+    public int findCheapestPrice3(int n, int[][] flights, int src, int dst, int K) {
+        if (flights.length == 0 || flights[0].length == 0) {
+            return 0;
+        }
+        // construct graph
+        List<List<int[]>> graph = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<int[]>());
+        }
+        for (int[] flight : flights) {
+            graph.get(flight[0]).add(new int[]{flight[1], flight[2]});
+        }
+        
+        // search via DFS
+        int[] ans = new int[] {Integer.MAX_VALUE};
+        boolean[] visited = new boolean[n];
+        dfs(graph, src, dst, 0, 0, visited, K, ans);
+        
+        return ans[0] == Integer.MAX_VALUE ? -1 : ans[0];
+    }
+    
+    private void dfs(List<List<int[]>> graph, int src, int dst, int cost, int count, boolean[] visited, int K, int[] ans) {
+        if (count > K + 1) {
+            return;
+        }
+        
+        if (src == dst) {
+            if (cost < ans[0]) {
+                ans[0] = cost;
+            }
+            return;
+        }
+        
+        visited[src] = true;
+        for (int[] flight : graph.get(src)) {
+            if (cost > ans[0] || visited[flight[0]]) { // pruning
+                continue;
+            }
+            dfs(graph, flight[0], dst, cost + flight[1], count + 1, visited, K, ans);
+        }
+        
+        visited[src] = false;
     }
 }

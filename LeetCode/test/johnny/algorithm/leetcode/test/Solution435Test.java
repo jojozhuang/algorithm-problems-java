@@ -21,5 +21,11 @@ public class Solution435Test extends JunitBase {
 
         Interval[] intervals3 = Interval.buildArray(new int[][] { {1,2}, {2,3} });
         assertEquals(0, instance.eraseOverlapIntervals(intervals3));
+
+        Interval[] intervals4 = Interval.buildArray(new int[][] {{1,2}});
+        assertEquals(0, instance.eraseOverlapIntervals(intervals4));
+        
+        Interval[] intervals5 = Interval.buildArray(new int[][] {{1,100},{11,22},{1,11},{2,12}});
+        assertEquals(2, instance.eraseOverlapIntervals(intervals5));
     }
 }

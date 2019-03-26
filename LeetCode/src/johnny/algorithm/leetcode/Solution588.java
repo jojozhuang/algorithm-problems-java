@@ -48,6 +48,82 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution588 {
+    File root = null;
+
+    public Solution588() {
+        root = new File();
+    }
+    
+    public List<String> ls(String path) {
+        String[] dirs = path.split("/");
+        File node = root;
+        String name = "";
+        List<String> ans = new ArrayList<>();
+        for (String dir : dirs) {
+            if (dir.length() == 0) {
+                continue;
+            }
+            if (!node.children.containsKey(dir)) {
+                return ans;
+            }
+            node = node.children.get(dir);
+            name = dir;
+        }
+        if (node.isFile) {
+            ans.add(name);
+            return ans;
+        }
+        for (String str : node.children.keySet()) {
+            ans.add(str);
+        }
+        
+        Collections.sort(ans);
+        
+        return ans;
+    }
+    
+    public void mkdir(String path) {
+        String[] dirs = path.split("/");
+        File node = root;
+        search(node, dirs);
+    }
+    
+    public void addContentToFile(String filePath, String content) {
+        String[] dirs = filePath.split("/");
+        File node = root;
+        node = search(node, dirs);
+        node.isFile = true;
+        node.content += content;
+    }
+    
+    public String readContentFromFile(String filePath) {
+        String[] dirs = filePath.split("/");
+        File node = root;
+        node = search(node, dirs);
+        return node.content;
+    }
+    
+    private File search(File node, String[] dirs) {
+        for (String dir : dirs) {
+            if (dir.length() == 0) {
+                continue;
+            }
+            if (!node.children.containsKey(dir)) {
+                node.children.put(dir, new File());
+            }
+            node = node.children.get(dir);
+        }
+        
+        return node;
+    }
+    
+    // everything is file
+    class File {
+        boolean isFile = false;
+        Map<String, File> children = new HashMap<>();
+        String content = "";
+    }
+    /*
     class File {
         boolean isFile = false;
         Map<String, File> children = new HashMap<>();
@@ -119,7 +195,7 @@ public class Solution588 {
             node = node.children.get(dir);
         }
         return node;
-    }
+    }*/
 }
 
 /**

@@ -24,8 +24,25 @@ import java.util.Arrays;
  * @author Johnny
  */
 public class Solution322 {
-    //https://discuss.leetcode.com/topic/43276/dp-ac-java-solution-18ms-beating-95/2
     public int coinChange(int[] coins, int amount) {
+        if (coins == null || coins.length == 0 || amount <= 0) {
+            return 0;
+        }
+        
+        // dp[i] = min coins to make up to amount i
+        int[] dp = new int[amount + 1]; 
+        Arrays.fill(dp, amount + 1);
+        dp[0] = 0;
+        for (int coin : coins) {
+            for (int i = coin; i <= amount; i++) {
+                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+            }
+        }
+        return dp[amount] >= amount + 1 ? -1 : dp[amount];
+    }
+    
+    //https://discuss.leetcode.com/topic/43276/dp-ac-java-solution-18ms-beating-95/2
+    public int coinChange2(int[] coins, int amount) {
         if (coins == null || coins.length == 0 || amount <= 0) {
             return 0;
         }

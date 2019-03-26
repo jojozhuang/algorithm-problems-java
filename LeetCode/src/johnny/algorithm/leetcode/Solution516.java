@@ -25,16 +25,41 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution516 {
+    // dp
     public int longestPalindromeSubseq(String s) {
-        return helper(s, 0, s.length() - 1, new Integer[s.length()][s.length()]);
+        int n = s.length();
+        int[][] dp = new int[n][n];
+        
+        for (int i = n - 1; i >= 0; i--) {
+            dp[i][i] = 1;
+            for (int j = i + 1; j < n; j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j - 1] + 2;
+                } else {
+                    dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        
+        return dp[0][n - 1];
+    }
+    // recursion + memo
+    public int longestPalindromeSubseq2(String s) {
+        int n = s.length();
+        Integer[][] memo = new Integer[n][n];
+        return helper(s, 0, n - 1, memo);
     }
     
     private int helper(String s, int i, int j, Integer[][] memo) {
         if (memo[i][j] != null) {
             return memo[i][j];
         }
-        if (i > j)      return 0;
-        if (i == j)     return 1;
+        if (i > j) {
+            return 0;
+        }
+        if (i == j) {
+            return 1;
+        }
         
         if (s.charAt(i) == s.charAt(j)) {
             memo[i][j] = helper(s, i + 1, j - 1, memo) + 2;

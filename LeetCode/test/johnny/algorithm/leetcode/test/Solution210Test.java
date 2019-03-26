@@ -16,6 +16,6 @@ public class Solution210Test extends JunitBase {
         assertArrayEquals(new int[]{0,1}, instance.findOrder(2, new int[][]{}));
         assertArrayEquals(new int[]{0,1}, instance.findOrder(2, new int[][]{{1,0}}));
         assertArrayEquals(new int[]{}, instance.findOrder(2, new int[][]{{1,0},{0,1}}));
-        assertArrayEquals(new int[]{0,1,2,3}, instance.findOrder(4, new int[][]{{1,0},{2,0},{3,1},{3,2}}));
+        assertArrayEquals(new int[]{0,2,1,3}, instance.findOrder(4, new int[][]{{1,0},{2,0},{3,1},{3,2}}));
     }
 }

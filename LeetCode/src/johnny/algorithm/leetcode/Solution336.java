@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,81 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution336 {
+    public List<List<Integer>> palindromePairs(String[] words) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (words == null || words.length == 0) {
+            return ans;
+        }
+        
+        // create map for checking if word is itself
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < words.length; i++) {
+            map.put(words[i], i);
+        }
+        
+        // case 1: empty + palindrome string
+        if (map.containsKey("")) {
+            int blankIdx = map.get("");
+            for (int i = 0; i < words.length; i++) {
+                if (isPalindrome(words[i])) {
+                    if (i != blankIdx) {
+                        ans.add(Arrays.asList(i, blankIdx));
+                        ans.add(Arrays.asList(blankIdx, i));
+                    }
+                }
+            }
+        }
+        // case 2: string + reversed string
+        for (int i = 0; i < words.length; i++) {
+            String rev = reverse(words[i]);
+            if (map.containsKey(rev) && map.get(rev) != i) {
+                ans.add(Arrays.asList(i, map.get(rev)));
+            }
+        }
+        // case 3: first part of string is palindrome
+        // case 4: last part of string is palindrome
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            for (int j = 1; j < word.length(); j++) {
+                // case 3
+                if (isPalindrome(word.substring(0, j))) {
+                    String rev = reverse(word.substring(j));
+                    if (map.containsKey(rev) && map.get(rev) != i) {
+                        ans.add(Arrays.asList(map.get(rev), i));
+                    }
+                }
+                // case 4
+                if (isPalindrome(word.substring(j))) {
+                    String rev = reverse(word.substring(0,j));
+                    if (map.containsKey(rev) && map.get(rev) != i) {
+                        ans.add(Arrays.asList(i, map.get(rev)));
+                    }
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    private String reverse(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        return sb.reverse().toString();
+    }
+    
+    private boolean isPalindrome(String s) {
+        int start = 0;
+        int end = s.length() - 1;
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        
+        return true;
+    }
+    /*
     public List<List<Integer>> palindromePairs(String[] words) {
         List<List<Integer>> ret = new ArrayList<>(); 
         if (words == null || words.length < 2) return ret;
@@ -67,5 +143,5 @@ public class Solution336 {
             if (str.charAt(left++) !=  str.charAt(right--)) return false;
         }
         return true;
-    }
+    }*/
 }

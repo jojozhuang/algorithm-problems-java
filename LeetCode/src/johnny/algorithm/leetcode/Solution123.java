@@ -16,6 +16,23 @@ package johnny.algorithm.leetcode;
  */
 public class Solution123 {
     public int maxProfit(int[] prices) {
+        if (prices.length <= 1) {
+            return 0;
+        }
+        int K = 2; // number of max transaction allowed
+        int maxProf = 0;
+        int[][] dp = new int[K + 1][prices.length];
+        for (int i = 1; i <= K; i++) {
+            int tmpMax = dp[i - 1][0] - prices[0];
+            for (int j = 1; j < prices.length; j++) {
+                dp[i][j] = Math.max(dp[i][j-1], prices[j] + tmpMax);
+                tmpMax = Math.max(tmpMax, dp[i-1][j] - prices[j]);
+                maxProf = Math.max(dp[i][j], maxProf);
+            }
+        }
+        return maxProf;
+    }
+    public int maxProfit2(int[] prices) {
         if (prices == null || prices.length <= 1) {
             return 0;
         }

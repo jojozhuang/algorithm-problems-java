@@ -37,5 +37,8 @@ public class Solution658Test extends JunitBase {
 
         List<Integer> expect7 = ListUtil.buildList(new Integer[]{1,3});
         assertEquals(expect7, instance.findClosestElements(new int[]{0,0,0,1,3,5,6,7,8,8}, 2, 2));
+
+        List<Integer> expect8 = ListUtil.buildList(new Integer[]{3,3});
+        assertEquals(expect8, instance.findClosestElements(new int[]{1,1,2,2,2,2,2,3,3}, 2, 3));
     }
 }

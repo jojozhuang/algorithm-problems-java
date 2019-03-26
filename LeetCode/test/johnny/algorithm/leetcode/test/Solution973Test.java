@@ -15,5 +15,6 @@ public class Solution973Test extends JunitBase {
 
         assertArrayEquals(new int[][] {{-2,2}}, instance.kClosest(new int[][] {{1,3},{-2,2}}, 1));
         assertArrayEquals(new int[][] {{3,3},{-2,4}}, instance.kClosest(new int[][] {{3,3},{5,-1},{-2,4}}, 2));
+        assertArrayEquals(new int[][] {{0,1},{1,0}}, instance.kClosest(new int[][] {{0,1},{1,0}}, 2));
     }
 }

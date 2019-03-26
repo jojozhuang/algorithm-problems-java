@@ -29,38 +29,71 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution410 {
+    // binary search
     public int splitArray(int[] nums, int m) {
-        int max = 0; long sum = 0;
-        for (int num : nums) {
-            max = Math.max(num, max);
-            sum += num;
+        int sum = 0;
+        int max = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            max = Math.max(max, nums[i]);
         }
-        if (m == 1) return (int)sum;
-        //binary search
-        long l = max; long r = sum;
-        while (l <= r) {
-            long mid = (l + r)/ 2;
-            if (valid(mid, nums, m)) {
-                r = mid - 1;
+        
+        if (m == 1) {
+            return sum;
+        }
+        
+        int start = max;
+        int end = sum;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (isValid(nums, m, mid)) {
+                end = mid - 1;
             } else {
-                l = mid + 1;
+                start = mid + 1;
             }
         }
-        return (int)l;
+        
+        return start;
     }
-    public boolean valid(long target, int[] nums, int m) {
+    
+    private boolean isValid(int[] nums, int m, int target) {
         int count = 1;
-        long total = 0;
-        for(int num : nums) {
-            total += num;
+        int total = 0;
+        for (int i = 0; i < nums.length; i++) {
+            total += nums[i];
             if (total > target) {
-                total = num;
+                total = nums[i];
                 count++;
                 if (count > m) {
                     return false;
                 }
             }
         }
+        
         return true;
     }
+    
+    public int splitArray2(int[] nums, int m) {
+         int n = nums.length;
+         int[] sum = new int[n + 1];
+         for (int i = 0; i < n; i++) {
+             sum[i + 1] = sum[i] + nums[i];
+         }
+         int[][] dp = new int[n + 1][m + 1];
+         for (int i = 0; i <= n; i++) {
+             for (int j = 0; j <= m; j++) {
+                 dp[i][j] = Integer.MAX_VALUE;
+             }
+         }
+         dp[0][0] = 0;
+         for (int i = 1; i <= n; i++) {
+             for (int j = 1; j <= m; j++) {
+                 for (int k = 0; k < i; k++) {
+                     dp[i][j] = Math.min(dp[i][j], Math.max(dp[k][j - 1], sum[i] - sum[k]));
+                 }
+             }
+         }
+         return dp[n][m];
+     }
+    
 }

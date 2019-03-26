@@ -48,6 +48,25 @@ costs.length == 3
  */
 public class Solution983 {
     public int mincostTickets(int[] days, int[] costs) {
+        int[] dp = new int[366];
+        boolean[] isDays = new boolean[366];
+        for (int i = 0; i < days.length; i++) {
+            isDays[days[i]] = true;
+        }
+        for (int i = 1; i < 366; i++) {
+            if (!isDays[i]) {
+                dp[i] = dp[i - 1];
+                continue;
+            }
+            dp[i] = dp[i - 1] + costs[0];
+            dp[i] = Math.min(dp[i], dp[Math.max(0, i - 7)] + costs[1]);
+            dp[i] = Math.min(dp[i], dp[Math.max(0, i - 30)] + costs[2]);
+        }
+        
+        return dp[365];
+    }
+    
+    public int mincostTickets2(int[] days, int[] costs) {
         boolean[] dayIncluded = new boolean[366];
         for (int day : days) {
             dayIncluded[day] = true;

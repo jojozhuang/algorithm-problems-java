@@ -34,26 +34,27 @@ It is guaranteed there is at least one way to partition A as described.
  */
 public class Solution915 {
     public int partitionDisjoint(int[] A) {
-        int N = A.length;
-        int[] maxleft = new int[N];
-        int[] minright = new int[N];
-
-        int m = A[0];
-        for (int i = 0; i < N; ++i) {
-            m = Math.max(m, A[i]);
-            maxleft[i] = m;
+        int n = A.length;
+        int[] left = new int[n];
+        int[] right = new int[n];
+        
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            max = Math.max(max, A[i]);
+            left[i] = max;
         }
-
-        m = A[N-1];
-        for (int i = N-1; i >= 0; --i) {
-            m = Math.min(m, A[i]);
-            minright[i] = m;
+        int min = Integer.MAX_VALUE;
+        for (int i = n - 1; i >= 0; i--) {
+            min = Math.min(min, A[i]);
+            right[i] = min;
         }
-
-        for (int i = 1; i < N; ++i)
-            if (maxleft[i-1] <= minright[i])
+        
+        for (int i = 1; i < n; i++) {
+            if (left[i - 1] <= right[i]) {
                 return i;
-
-        throw null;
+            }
+        }
+        
+        return -1;
     }
 }

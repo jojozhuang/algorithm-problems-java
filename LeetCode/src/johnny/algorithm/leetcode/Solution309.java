@@ -22,7 +22,40 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution309 {
+    // optimized dp
     public int maxProfit(int[] prices) {
+        int n = prices.length;
+        int hold = Integer.MIN_VALUE; // can't sell until hold is valid(sell after buy)
+        int sold = 0;
+        int cooldown = 0;
+        for (int i = 0; i < n; i++) {
+            int old_sold = sold;
+            sold = hold+ prices[i];
+            hold = Math.max(hold, cooldown - prices[i]);
+            cooldown = Math.max(old_sold, cooldown);
+        }
+        
+        return Math.max(sold, cooldown);
+    }
+    // dp
+    public int maxProfit2(int[] prices) {
+        int n = prices.length;
+        int[] hold = new int[n + 1];
+        int[] sold = new int[n + 1];
+        int[] cooldown = new int[n + 1];
+        hold[0] = Integer.MIN_VALUE; // can't sell until hold is valid(sell after buy)
+        sold[0] = 0;
+        cooldown[0] = 0;
+        for (int i = 1; i <= n; i++) {
+            hold[i] = Math.max(hold[i - 1], cooldown[i - 1] - prices[i - 1]); 
+            sold[i] = hold[i - 1] + prices[i - 1];
+            cooldown[i] = Math.max(sold[i - 1], cooldown[i - 1]);
+        }
+        
+        return Math.max(sold[n], cooldown[n]);
+    }
+    
+    public int maxProfit3(int[] prices) {
         if (prices == null || prices.length <= 1) {
             return 0;
         }

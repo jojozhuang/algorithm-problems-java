@@ -17,33 +17,36 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution056 {
-    public List<Interval> merge(List<Interval> inervals) {
-        if (inervals == null || inervals.size() == 0) {
-            return inervals;
+    public List<Interval> merge(List<Interval> intervals) {
+        List<Interval> ans = new ArrayList<>();
+        if (intervals == null || intervals.size() == 0) {
+            return ans;
         }
         
-        Collections.sort(inervals, new IntervalComparator());
+        Collections.sort(intervals, new IntervalComparator());
         
-        List<Interval> res = new ArrayList<Interval>();
-        Interval prev = inervals.get(0);
-        
-        for (int i = 1; i < inervals.size(); i++) {
-            Interval curr = inervals.get(i);
-            if (prev.end < curr.start) {
-                res.add(prev);
-                prev = curr;
+        Interval curr = intervals.get(0);
+        for (int i = 1; i < intervals.size(); i++) {
+            Interval temp = intervals.get(i);
+            if (curr.end < temp.start) {
+                ans.add(curr);
+                curr = temp;
             } else {
-                prev.end = Math.max(prev.end, curr.end);
+                curr.end = temp.end;
             }
         }
-        res.add(prev);
         
-        return res;
+        ans.add(curr);
+        return ans;
     }
     
     private class IntervalComparator implements Comparator<Interval> {
         public int compare(Interval i1, Interval i2) {
-            return i1.start - i2.start;
+            if (i1.start == i2.start) {
+                return i1.end - i2.end;
+            } else {
+                return i1.start - i2.start;
+            }
         }
     }
 }

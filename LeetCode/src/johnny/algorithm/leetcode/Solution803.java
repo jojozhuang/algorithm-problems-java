@@ -33,6 +33,48 @@ An erasure may refer to a location with no brick - if it does, no bricks drop.
  * @author Johnny
  */
 public class Solution803 {
+    /*
+}
+    public int[] hitBricks(int[][] grid, int[][] hits) {
+        int[][] g = grid;
+        int m = grid.length;
+        int n = grid[0].length;
+        
+        int[] ans = new int[hits.length];
+        
+        for (int i = 0; i < hits.length; ++i)
+          ans[i] = hit(m, n, hits[i][1], hits[i][0]);
+        
+        return ans;
+    }
+      
+      private int hit(int m , int n, int x, int y) {
+        if (x < 0 || x >= n || y < 0 || y >= m || g[y][x] == 0) return 0;
+        g[y][x] = 0;
+        int ans = 0;
+        for (int i = 0; i < 4; ++i) {
+          ++seq;      
+          count = 0;
+          if (!fall(x + dirs[i], y + dirs[i + 1], false)) continue;
+          ans += count;
+          ++seq;
+          fall(x + dirs[i], y + dirs[i + 1], true);
+        }
+        return ans;
+      }
+      
+      private boolean fall(int x, int y, boolean clear) {
+        if (x < 0 || x >= n || y < 0 || y >= m) return true;
+        if (g[y][x] == seq || g[y][x] == 0) return true;
+        if (y == 0) return false;
+        g[y][x] = clear ? 0 : seq;
+        ++count;
+        for (int i = 0; i < 4; ++i)
+          if (!fall(x + dirs[i], y + dirs[i + 1], clear)) return false;
+        return true;
+      }
+      */
+      
     public int[] hitBricks(int[][] grid, int[][] hits) {
         if (hits.length == 0 || hits[0].length == 0) return null;
         removeHitBrick(grid, hits);

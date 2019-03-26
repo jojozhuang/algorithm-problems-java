@@ -37,21 +37,29 @@ All buildings in grid[i][j] occupy the entire grid cell: that is, they are a 1 x
  */
 public class Solution807 {
     public int maxIncreaseKeepingSkyline(int[][] grid) {
-        int N = grid.length;
-        int[] rowMaxes = new int[N];
-        int[] colMaxes = new int[N];
-
-        for (int r = 0; r < N; ++r)
-            for (int c = 0; c < N; ++c) {
-                rowMaxes[r] = Math.max(rowMaxes[r], grid[r][c]);
-                colMaxes[c] = Math.max(colMaxes[c], grid[r][c]);
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
         }
-
-        int ans = 0;
-        for (int r = 0; r < N; ++r)
-            for (int c = 0; c < N; ++c)
-                ans += Math.min(rowMaxes[r], colMaxes[c]) - grid[r][c];
-
-        return ans;
+        
+        int m = grid.length;
+        int n = grid[0].length;
+        int[] rowMaxes = new int[m]; // top bottom
+        int[] colMaxes = new int[n]; // left right
+        
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                rowMaxes[i] = Math.max(rowMaxes[i], grid[i][j]);
+                colMaxes[j] = Math.max(colMaxes[j], grid[i][j]);
+            }
+        }
+        
+        int sum = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                sum += Math.min(rowMaxes[i], colMaxes[j]) - grid[i][j];
+            }
+        }
+        
+        return sum;
     }
 }
