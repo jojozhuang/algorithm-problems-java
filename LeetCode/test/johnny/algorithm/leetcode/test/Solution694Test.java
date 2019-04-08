@@ -27,5 +27,14 @@ public class Solution694Test extends JunitBase {
             {1,1,0,1,1}
         };
         assertEquals(3, instance.numDistinctIslands(grid2));
+        
+        int[][] grid3 = new int[][] {
+            {1,1,0},
+            {0,1,1},
+            {0,0,0},
+            {1,1,1},
+            {0,1,0}
+        };
+        assertEquals(2, instance.numDistinctIslands(grid3));
     }
 }

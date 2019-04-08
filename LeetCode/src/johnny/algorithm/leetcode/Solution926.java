@@ -36,6 +36,27 @@ S only consists of '0' and '1' characters.
  */
 public class Solution926 {
     public int minFlipsMonoIncr(String S) {
+        int n = S.length();
+        int[] left = new int[n + 1];  // all zero, change 1 to 0
+        int[] right = new int[n + 1]; // all one, change 0 to 1
+        
+        left[0] = S.charAt(0) - '0';
+        for (int i = 1; i < n; i++) {
+            left[i] = left[i - 1] + (S.charAt(i) - '0');
+        }
+        right[n - 1] = '1' - S.charAt(n - 1);
+        for (int i = n - 2; i >= 0; i--) {
+            right[i] = right[i + 1] + ('1' - S.charAt(i));
+        }
+        
+        int min = right[0];
+        for (int i = 1; i <= n; i++) {
+            min = Math.min(min, left[i - 1] + right[i]);
+        }
+        
+        return min;
+    }
+    public int minFlipsMonoIncr2(String S) {
         int N = S.length();
         int[] P = new int[N + 1];
         for (int i = 0; i < N; ++i)

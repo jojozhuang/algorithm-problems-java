@@ -1,7 +1,10 @@
 package johnny.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+
 import johnny.algorithm.leetcode.common.NestedInteger;
 
 /**
@@ -28,6 +31,36 @@ import johnny.algorithm.leetcode.common.NestedInteger;
  */
 public class Solution364 {
     public int depthSumInverse(List<NestedInteger> nestedList) {
+        if (nestedList == null) {
+            return 0;
+        }
+        Queue<NestedInteger> queue = new LinkedList<>();
+        int prev = 0; // previous level
+        int total = 0;
+        for (NestedInteger next: nestedList) {
+            queue.offer(next);
+        }
+        
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            int levelSum = 0;
+            for (int i = 0; i < size; i++) {
+                NestedInteger current = queue.poll();
+                if (current.isInteger()) {
+                    levelSum += current.getInteger();
+                } else {
+                    List<NestedInteger> nextList = current.getList();
+                    for (NestedInteger next: nextList) {
+                        queue.offer(next);
+                    }
+                }
+            }
+            prev += levelSum;
+            total += prev;
+        }
+        return total;
+    }
+    public int depthSumInverse2(List<NestedInteger> nestedList) {
         if (nestedList == null || nestedList.size() == 0) {
             return 0;
         }

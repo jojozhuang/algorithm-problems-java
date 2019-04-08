@@ -18,5 +18,12 @@ public class Solution531Test extends JunitBase {
             {'B', 'W', 'W'}
         };
         assertEquals(3, instance.findLonelyPixel(picture1));
+        
+        char[][] picture2 = new char[][] {
+            {'B', 'B', 'B'},
+            {'B', 'B', 'B'},
+            {'B', 'B', 'B'}
+        };
+        assertEquals(0, instance.findLonelyPixel(picture2));
     }
 }

@@ -12,7 +12,10 @@ public class Solution287Test extends JunitBase {
         System.out.println("findDuplicate");
         Solution287 instance = new Solution287();
 
-        assertEquals(0, instance.findDuplicate(null));
+        assertEquals(-1, instance.findDuplicate(null));
+        assertEquals(-1, instance.findDuplicate(new int[] {}));
+        assertEquals(2, instance.findDuplicate(new int[]{1,3,4,2,2}));
+        assertEquals(3, instance.findDuplicate(new int[]{3,1,3,4,2}));
         assertEquals(5, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,5}));
         assertEquals(1, instance.findDuplicate(new int[]{1,1,2}));
         assertEquals(1, instance.findDuplicate(new int[]{2,3,4,6,7,1,5,1}));

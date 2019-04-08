@@ -36,28 +36,37 @@ Note: The length of each dimension in the given grid does not exceed 50.
  * @author Johnny
  */
 public class Solution694 {
-    private static int[][] delta = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
-
     public int numDistinctIslands(int[][] grid) {
-        int m = grid.length, n = grid[0].length;
-        Set<List<List<Integer>>> islands = new HashSet<>();
+        int m = grid.length;
+        int n = grid[0].length;
+        
+        boolean[][] visited = new boolean[m][n];
+        Set<List<Integer>> set = new HashSet<>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                List<List<Integer>> island = new ArrayList<>();
-                if (dfs(i, j, i, j, grid, m, n, island))
-                    islands.add(island);
+                if (grid[i][j] == 1 && !visited[i][j]) {
+                    List<Integer> list = new ArrayList<>();
+                    dfs(grid, i, j, visited, list, 0);
+                    set.add(list);
+                }
             }
         }
-        return islands.size();
+        
+        return set.size();
     }
-
-    private boolean dfs(int i0, int j0, int i, int j, int[][] grid, int m, int n, List<List<Integer>> island) {
-        if (i < 0 || m <= i || j < 0 || n <= j || grid[i][j] <= 0) return false;
-        island.add(Arrays.asList(i - i0, j - j0));
-        grid[i][j] *= -1;
-        for (int d = 0; d < 4; d++) {
-            dfs(i0, j0, i + delta[d][0], j + delta[d][1], grid, m, n, island);
+    
+    private void dfs(int[][] grid, int x, int y, boolean[][] visited, List<Integer> list, int seq) {
+        int m = grid.length;
+        int n = grid[0].length;
+        if (x < 0 || x >= m || y < 0 || y >= n || visited[x][y] || grid[x][y] == 0) {
+            return;
         }
-        return true;
+        visited[x][y] = true;
+        list.add(seq);
+        dfs(grid, x + 1, y, visited, list, 1);
+        dfs(grid, x - 1, y, visited, list, 2);
+        dfs(grid, x, y + 1, visited, list, 3);
+        dfs(grid, x, y - 1, visited, list, 4);
+        list.add(5); //back
     }
 }

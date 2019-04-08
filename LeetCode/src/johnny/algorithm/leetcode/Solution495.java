@@ -50,19 +50,22 @@ public class Solution495 {
             return 0;
         }
         
-        int res = 0;
+        int ans = 0;
         int start = timeSeries[0];
-        int end = timeSeries[0] + duration;
-        
+        int end = start + duration;
         for (int i = 1; i < timeSeries.length; i++) {
-            if (timeSeries[i] > end) {
-                res += end - start;
-                start = timeSeries[i];
+            int time = timeSeries[i];
+            if (time >= end) {
+                ans += duration;
+            } else {
+                ans += time - start;
             }
-            end = timeSeries[i] + duration;
+            start = time;
+            end = start + duration;
         }
-        res += end - start;
         
-        return res;
+        ans += end - start;
+        
+        return ans;
     }
 }

@@ -1,7 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -45,7 +47,57 @@ public class Solution565 {
 //s5 = 5,6,2,0
 //s6 = 6,2,0,5
 
+    class DSU {
+        public int[] parents;
+        public DSU(int capacity) {
+            parents = new int[capacity];
+            for (int i = 0; i < parents.length; i++) {
+                parents[i] = i;
+            }
+        }
+        
+        public int find(int i) {
+            if (parents[i] != i) {
+                return find(parents[i]);
+            }
+            
+            return parents[i];
+        }
+        
+        public void union(int i, int j) {
+            int p1 = find(i);
+            int p2 = find(j);
+            parents[p1] = p2;
+        }
+    }
+    
     public int arrayNesting(int[] nums) {
+        int n = nums.length;
+        if (n <= 1) {
+            return n;
+        }
+        
+        DSU dsu = new DSU(n);
+        
+        for (int i = 0; i < n; i++) {
+            dsu.union(nums[i], i);
+        }
+        
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < dsu.parents.length; i++) {
+            int root = dsu.find(dsu.parents[i]);
+            map.put(root, map.getOrDefault(root, 0) + 1);
+        }
+        
+        int ans = 0;
+        for (Integer val : map.values()) {
+            ans = Math.max(ans, val);
+        }
+        
+        return ans;
+    }
+    
+    public int arrayNesting2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

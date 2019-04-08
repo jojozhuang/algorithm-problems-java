@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,10 +20,10 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution287 {
-    //Floyd's Tortoise and Hare
+    //Floyd's Tortoise and Hare, O(n), no modification to the original array
     public int findDuplicate(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return 0;
+            return -1;
         }
         // Find the intersection point of the two runners.
         int tortoise = nums[0];
@@ -42,69 +43,54 @@ public class Solution287 {
 
         return ptr1;
     }
-    //http://bookshadow.com/weblog/2015/09/28/leetcode-find-duplicate-number/
-    // binary
-    public int findDuplicate4(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int low = 1;
-        int high = nums.length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            int cnt = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] <= mid) {
-                    cnt++;
-                }
-            }
-            if (cnt > mid) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
-        }
-        return low;
-    }
-    //Floyd's Tortoise and Hare
-    public int findDuplicate3(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        //The "tortoise and hare" step.  We start at the end of the array and try
-        // to find an intersection point in the cycle.
-        int slow = 0;
-        int fast = 0;
     
-        // Keep advancing 'slow' by one step and 'fast' by two steps until they
-        // meet inside the loop.
-        while (true) {
-            slow = nums[slow];
-            fast = nums[nums[fast]];
-    
-            if (slow == fast) {
-                break;
-            }
-        }
-    
-        // Start up another pointer from the end of the array and march it forward
-        // until it hits the pointer inside the array.
-        int finder = 0;
-        while (true) {
-            slow = nums[slow];
-            finder = nums[finder];
-    
-            // If the two hit, the intersection index is the duplicate element.
-            if (slow == finder) {
-                return slow;
-            }
-        }
-    }
-    
-    // Hashset, time: O(n), space: O(n)
+    // Set to negative value, O(n), original array is modified. This approach won't work if zero is duplicated.
     public int findDuplicate2(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return 0;
+            return -1;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[Math.abs(nums[i])] >= 0) {
+                nums[Math.abs(nums[i])] = -nums[Math.abs(nums[i])];
+            } else {
+                // if it is negative, it must be set by some previous same element.
+                return Math.abs(nums[i]);
+            }
+        }
+        
+        return -1;
+    }
+
+    // Move element to its proper position, O(n), original array is modified
+    public int findDuplicate3(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] != i + 1) {
+                if (nums[nums[i] - 1] == nums[i]) {
+                    break;
+                }
+                int temp = nums[nums[i] - 1];
+                nums[nums[i] - 1] = nums[i];
+                nums[i] = temp;
+            }
+        }
+        
+        // scan to see which one is not in its position
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                return nums[i];
+            }
+        }
+        
+        return -1;
+    }
+    
+    // Hashset, time: O(n), space: O(n), no modification to the original array
+    public int findDuplicate4(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
         }
         
         Set<Integer> set = new HashSet<Integer>();
@@ -116,6 +102,40 @@ public class Solution287 {
             }
         }
         
-        return 0;
+        return -1;
+    }
+    
+    // Sorting, nLog(n), no modification to the original array
+    public int findDuplicate5(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        
+        Arrays.sort(nums);
+        
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                return nums[i];
+            }
+        }
+        
+        return -1;
+    }
+    
+    // Naive, Time: O(n^2), no modification to the original array
+    public int findDuplicate6(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] == nums[i]) {
+                    return nums[i];
+                }
+            }
+        }
+        
+        return -1;
     }
 }

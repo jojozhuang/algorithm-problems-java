@@ -28,6 +28,42 @@ Note: The length of each dimension in the given grid does not exceed 50.
  */
 public class Solution695 {
     public int maxAreaOfIsland(int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
+        int m = grid.length;
+        int n = grid[0].length;
+        
+        int area = 0;
+        boolean[][] visited = new boolean[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int[] count = new int[1];
+                dfs(grid, i, j, visited, count);
+                area = Math.max(area, count[0]);
+            }
+        }
+        
+        return area;
+    }
+    
+    private void dfs(int[][] grid, int x, int y, boolean[][] visited, int[] count) {
+        int m = grid.length;
+        int n = grid[0].length;
+        if (x < 0 || x >= m || y < 0 || y >= n || visited[x][y] || grid[x][y] == 0) {
+            return;
+        }
+        
+        count[0]++;
+        visited[x][y] = true;
+        dfs(grid, x - 1, y, visited, count);
+        dfs(grid, x + 1, y, visited, count);
+        dfs(grid, x, y - 1, visited, count);
+        dfs(grid, x, y + 1, visited, count);
+    }
+    
+    public int maxAreaOfIsland2(int[][] grid) {
         int max_area = 0;
         for(int i = 0; i < grid.length; i++)
             for(int j = 0; j < grid[0].length; j++)

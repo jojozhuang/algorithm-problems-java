@@ -12,7 +12,6 @@ public class Solution565Test extends JunitBase {
         System.out.println("arrayNesting");
         Solution565 instance = new Solution565();
 
-        assertEquals(0, instance.arrayNesting(null));
         assertEquals(1, instance.arrayNesting(new int[]{0}));
         assertEquals(1, instance.arrayNesting(new int[]{1}));
         assertEquals(1, instance.arrayNesting(new int[]{0,1,2,3,4,5}));

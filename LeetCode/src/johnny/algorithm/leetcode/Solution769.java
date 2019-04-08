@@ -28,6 +28,54 @@ arr[i] will be a permutation of [0, 1, ..., arr.length - 1].
  */
 public class Solution769 {
     public int maxChunksToSorted(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
+        
+        int ans = 0;
+        int max = 0;
+        
+        for (int i = 0; i < arr.length; ++i) {
+            max = Math.max(max, arr[i]);
+            if (max == i) {
+                ans++;
+            }
+        }
+        
+        return ans;
+    }
+    /* if the question is, find the least number of chunks.
+    public int maxChunksToSorted(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
+        
+        int len = arr.length;
+        int left = 0;
+        int right = len - 1;
+        
+        while (left < len - 1) {
+            if (arr[left] != left) {
+                break;
+            }
+            left++;
+        }
+        
+        while (right > 0) {
+            if (arr[right] != right) {
+                break;
+            }
+            right--;
+        }
+        
+        if (left > right) {
+            return 1;
+        }
+        
+        return (left + 1) + 1 + (len - right - 1);
+    }*/
+    
+    public int maxChunksToSorted2(int[] arr) {
         int n = arr.length;
         int[] maxOfLeft = new int[n];
         int[] minOfRight = new int[n];
