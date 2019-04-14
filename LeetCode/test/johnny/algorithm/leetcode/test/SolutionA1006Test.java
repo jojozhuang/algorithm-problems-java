@@ -10,7 +10,7 @@ public class SolutionA1006Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("largestSumAfterKNegations");
+        System.out.println("clumsy");
         SolutionA1006 instance = new SolutionA1006();
 
         assertEquals(7, instance.clumsy(4));

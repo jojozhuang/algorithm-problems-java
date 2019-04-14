@@ -2,59 +2,78 @@ package johnny.algorithm.leetcode;
 
 import java.util.Stack;
 
+import johnny.algorithm.leetcode.common.TreeNode;
+
 /**
- * 1021. Best Sightseeing Pair
-User Accepted: 810
-User Tried: 1449
-Total Accepted: 831
-Total Submissions: 2578
-Difficulty: Medium
-Given an array A of positive integers, A[i] represents the value of the i-th sightseeing spot, and two sightseeing spots i and j have distance j - i between them.
+ * 1028. Recover a Tree From Preorder Traversal
+ * 
+ * We run a preorder depth first search on the root of a binary tree.
 
-The score of a pair (i < j) of sightseeing spots is (A[i] + A[j] + i - j) : the sum of the values of the sightseeing spots, minus the distance between them.
+At each node in this traversal, we output D dashes (where D is the depth of this node), then we output the value of this node.  (If the depth of a node is D, the depth of its immediate child is D+1.  The depth of the root node is 0.)
 
-Return the maximum score of a pair of sightseeing spots.
+If a node has only one child, that child is guaranteed to be the left child.
 
- 
+Given the output S of this traversal, recover the tree and return its root.
 
 Example 1:
+Input: "1-2--3--4-5--6--7"
+Output: [1,2,5,3,4,6,7]
 
-Input: [8,1,5,2,6]
-Output: 11
-Explanation: i = 0, j = 2, A[i] + A[j] + i - j = 8 + 5 + 0 - 2 = 11
+Example 2:
+Input: "1-2--3---4-5--6---7"
+Output: [1,2,5,3,null,6,null,4,null,7]
  
-
+Example 3:
+Input: "1-401--349---90--88"
+Output: [1,401,null,349,88,90]
+ 
 Note:
 
-2 <= A.length <= 50000
-1 <= A[i] <= 1000
-
+The number of nodes in the original tree is between 1 and 1000. 
+Each node will have a value between 1 and 10^9.
  * @author Johnny
  */
 public class SolutionA1028 {
-    public String baseNeg2(int N) {
-        if (N == 0) {
-            return "0";
+    public TreeNode recoverFromPreorder(String S) {
+        if (S == null || S.length() == 0) {
+            return null;
         }
         
-        int negBase = -2;
-
-        String converted = ""; 
-        while (N != 0) { 
-            // Get remainder by negative base, it can be negative also 
-            int remainder = N % negBase; 
-            N /= negBase; 
-
-            // if remainder is negative, add abs(base) to it and add 1 to n 
-            if (remainder < 0) { 
-                remainder += (-negBase); 
-                N += 1; 
-            } 
-
-            // convert remainder to string add into the result 
-            converted = remainder + converted; 
+        if (S.indexOf("-") < 0) {
+            return new TreeNode(Integer.parseInt(S));
         }
         
-        return converted;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode root = new TreeNode(Integer.parseInt(S.substring(0, S.indexOf("-"))));
+        stack.push(root);
+        int i = S.indexOf("-") ;
+        while (i < S.length()) {
+            // get level
+            int level = 0;
+            while (i < S.length() && S.charAt(i) == '-') {
+                level++;
+                i++;
+            }
+            // get number
+            int start = i;
+            while (i < S.length() && S.charAt(i) != '-') {
+                i++;
+            }
+            int val = Integer.parseInt(S.substring(start, i));
+            if (level == stack.size()) {
+                TreeNode node = stack.peek();
+                node.left = new TreeNode(val);
+                stack.push(node.left);
+            } else { //level < stack.size()
+                while (level < stack.size()) {
+                    stack.pop();
+                }
+                TreeNode node = stack.peek();
+                node.right = new TreeNode(val);
+                stack.push(node.right);
+            }
+        }
+        
+        return root;
     }
 }

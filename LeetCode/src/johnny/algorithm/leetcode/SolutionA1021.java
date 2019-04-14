@@ -1,46 +1,73 @@
 package johnny.algorithm.leetcode;
 
-import java.util.Stack;
-
 /**
- * 1021. Best Sightseeing Pair
-User Accepted: 810
-User Tried: 1449
-Total Accepted: 831
-Total Submissions: 2578
-Difficulty: Medium
-Given an array A of positive integers, A[i] represents the value of the i-th sightseeing spot, and two sightseeing spots i and j have distance j - i between them.
+ * 1021. Remove Outermost Parentheses
 
-The score of a pair (i < j) of sightseeing spots is (A[i] + A[j] + i - j) : the sum of the values of the sightseeing spots, minus the distance between them.
+A valid parentheses string is either empty (""), "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.  For example, "", "()", "(())()", and "(()(()))" are all valid parentheses strings.
 
-Return the maximum score of a pair of sightseeing spots.
+A valid parentheses string S is primitive if it is nonempty, and there does not exist a way to split it into S = A+B, with A and B nonempty valid parentheses strings.
+
+Given a valid parentheses string S, consider its primitive decomposition: S = P_1 + P_2 + ... + P_k, where P_i are primitive valid parentheses strings.
+
+Return S after removing the outermost parentheses of every primitive string in the primitive decomposition of S.
 
  
 
 Example 1:
 
-Input: [8,1,5,2,6]
-Output: 11
-Explanation: i = 0, j = 2, A[i] + A[j] + i - j = 8 + 5 + 0 - 2 = 11
+Input: "(()())(())"
+Output: "()()()"
+Explanation: 
+The input string is "(()())(())", with primitive decomposition "(()())" + "(())".
+After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
+Example 2:
+
+Input: "(()())(())(()(()))"
+Output: "()()()()(())"
+Explanation: 
+The input string is "(()())(())(()(()))", with primitive decomposition "(()())" + "(())" + "(()(()))".
+After removing outer parentheses of each part, this is "()()" + "()" + "()(())" = "()()()()(())".
+Example 3:
+
+Input: "()()"
+Output: ""
+Explanation: 
+The input string is "()()", with primitive decomposition "()" + "()".
+After removing outer parentheses of each part, this is "" + "" = "".
  
 
 Note:
 
-2 <= A.length <= 50000
-1 <= A[i] <= 1000
+S.length <= 10000
+S[i] is "(" or ")"
+S is a valid parentheses string
 
  * @author Johnny
  */
 public class SolutionA1021 {
-    public int maxScoreSightseeingPair(int[] A) {
-        int max = 0;
-        int prev = 0;
-        for (int i = 1; i < A.length; i++) {
-            max = Math.max(max, A[i] + A[prev] - (i - prev));
-            if (A[i] >= A[prev] || A[i] >= A[prev] - (i - prev)) {
-                prev = i;
+    public String removeOuterParentheses(String S) {
+        if (S == null || S.length() == 0) {
+            return "";
+        }
+        
+        int n = S.length();
+        int left = 0;
+        int count = 1;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i < n; i++) {
+            char c = S.charAt(i);
+            if (c == '(') {
+                count++;
+            } else {
+                count--;
+            }
+            
+            if (count == 0) {
+                sb.append(S.substring(left + 1, i));
+                left = i + 1;
             }
         }
-        return max;
+        
+        return sb.toString();
     }
 }
