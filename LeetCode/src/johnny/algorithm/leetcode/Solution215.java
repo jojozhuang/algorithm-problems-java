@@ -1,5 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.PriorityQueue;
+import java.util.Comparator;
+
 /**
  * Kth Largest Element in an Array.
  * 
@@ -22,6 +27,7 @@ package johnny.algorithm.leetcode;
  * @author Johnny
  */
 public class Solution215 {
+    // quick sort partition
     public int findKthLargest(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -59,5 +65,40 @@ public class Solution215 {
         nums[start] = temp;
         
         return pivot;
+    }
+    // heap
+    public int findKthLargest2(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (pq.size() < k) {
+                pq.offer(nums[i]);
+            } else if (nums[i] >= pq.peek()) {
+                pq.offer(nums[i]);
+                pq.poll();
+            }
+        }
+        
+        return pq.poll();
+    }
+    
+    // sorting
+    public int findKthLargest3(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        Arrays.sort(nums);
+        
+        for (int i = nums.length - 1; i >= 0 ; i--) {
+            k--;
+            if (k == 0) {
+                return nums[i];
+            }
+        }
+        
+        return 0;
     }
 }

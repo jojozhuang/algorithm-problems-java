@@ -1,6 +1,7 @@
 package johnny.algorithm.leetcode;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
 *735. Asteroid Collision. 
@@ -44,6 +45,49 @@ Each asteroid will be a non-zero integer in the range [-1000, 1000]..
  */
 public class Solution735 {
     public int[] asteroidCollision(int[] asteroids) {
+        if (asteroids == null || asteroids.length == 0) {
+            return new int[]{};
+        }
+        
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < asteroids.length; i++) {
+            if (stack.isEmpty() || asteroids[i] > 0) {
+                stack.push(asteroids[i]);
+            } else {
+                while (!stack.isEmpty()) {
+                    if (stack.peek() < 0 ) {
+                        stack.push(asteroids[i]);
+                        break;
+                    } else {
+                        if (-asteroids[i] == stack.peek()) {
+                            stack.pop();
+                            break;
+                        } else if (-asteroids[i] > stack.peek()) {
+                            stack.pop();
+                            if (stack.isEmpty()) {
+                                stack.push(asteroids[i]);
+                                break;
+                            }
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+        int[] ans = new int[stack.size()];
+        
+        int i = ans.length - 1;
+        while (!stack.isEmpty()) {
+            ans[i] = stack.pop();
+            i--;
+        }
+        return ans;
+    }
+    
+    public int[] asteroidCollision2(int[] asteroids) {
         LinkedList<Integer> s = new LinkedList<>(); // use LinkedList to simulate stack so that we don't need to reverse at end.
         for (int i = 0; i < asteroids.length; i++) {
             if (asteroids[i] > 0 || s.isEmpty() || s.getLast() < 0)

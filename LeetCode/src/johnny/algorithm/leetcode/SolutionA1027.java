@@ -1,6 +1,8 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,43 +39,73 @@ Note:
  * @author Johnny
  */
 public class SolutionA1027 {
-    public int longestArithSeqLength2(int[] A) {
-        Map<Integer, Integer> map = new HashMap<>();
-        
-        for (int i = 0; i < A.length - 1; i++) {
-            for (int j = i + 1; j < A.length; j++) {
-                int diff = A[j] - A[i];
-                if (diff == 25) {
-                    int a = 1;
-                    a++;
-                }
-                map.put(diff, map.getOrDefault(diff, 1) + 1);
+    public int longestArithSeqLength(int[] A) {
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int i = 0; i < A.length; i++) {
+            if (!map.containsKey(A[i])) {
+                map.put(A[i], new ArrayList<>());
             }
+            map.get(A[i]).add(i);
         }
         
         int ans = 0;
-        for (Integer count : map.values()) {
-            ans = Math.max(ans, count);
+        for (int i = 0; i < A.length - 1; i++) {
+            for (int j = i + 1; j < A.length; j++) {
+                int diff = A[j] - A[i];
+                int next = A[j] + diff;
+                int count = 2;
+                int index = j;
+                while (map.containsKey(next)) {
+                    // binary search the minimum index which is larger than j
+                    List<Integer> list = map.get(next);
+                    if (list.get(0) > index) {
+                        count++;
+                        next += diff;
+                        index = list.get(0);
+                    } else if (list.get(list.size() - 1) < index) {
+                        break;
+                    } else {
+                        int start = 0;
+                        int end = list.size() - 1;
+                        while (start < end) {
+                            int mid = start + (end - start) / 2;
+                            if (list.get(mid) > index) {
+                                end = mid;
+                            } else {
+                                start = mid + 1;
+                            }
+                        }
+                        if (list.get(start) > index) {
+                            count++;
+                            next += diff;
+                            index = list.get(start);
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                ans = Math.max(ans, count);
+            }
         }
         
         return ans;
     }
-    public int longestArithSeqLength(int[] A) {
-        int ans = 1;
-        for (int i = 0; i < A.length - 2; i++) {
-            int count = 1;
-            for (int j = i + 1; j < A.length - 1; j++) {
+    
+    public int longestArithSeqLength2(int[] A) {
+        int ans = 0;
+        for (int i = 0; i < A.length - 1; i++) {
+            for (int j = i + 1; j < A.length; j++) {
                 int diff = A[j] - A[i];
                 int next = A[j] + diff;
+                int count = 2;
                 for (int k = j + 1; k < A.length; k++) {
                     if (A[k] == next) {
                         count++;
                         next = A[k] + diff;
                     }
                 }
+                ans = Math.max(ans, count);
             }
-            count++;
-            ans = Math.max(ans, count);
         }
         
         return ans;

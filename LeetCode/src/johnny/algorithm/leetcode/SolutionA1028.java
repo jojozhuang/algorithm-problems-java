@@ -55,21 +55,21 @@ public class SolutionA1028 {
                 i++;
             }
             // get number
-            int start = i;
+            int num = 0;
             while (i < S.length() && S.charAt(i) != '-') {
+                num = num * 10 + (S.charAt(i) - '0');
                 i++;
             }
-            int val = Integer.parseInt(S.substring(start, i));
             if (level == stack.size()) {
                 TreeNode node = stack.peek();
-                node.left = new TreeNode(val);
+                node.left = new TreeNode(num);
                 stack.push(node.left);
             } else { //level < stack.size()
                 while (level < stack.size()) {
                     stack.pop();
                 }
                 TreeNode node = stack.peek();
-                node.right = new TreeNode(val);
+                node.right = new TreeNode(num);
                 stack.push(node.right);
             }
         }

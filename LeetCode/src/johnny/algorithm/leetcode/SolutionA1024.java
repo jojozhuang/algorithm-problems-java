@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 1024. Video Stitching
 You are given a series of video clips from a sporting event that lasted T seconds.  These video clips can be overlapping with each other and have varied lengths.
@@ -49,6 +53,33 @@ Note:
  */
 public class SolutionA1024 {
     public int videoStitching(int[][] clips, int T) {
-        return 0;
+        Arrays.sort(clips, (a, b)->(a[0]==b[0]?a[1]-b[1]:a[0] - b[0]));
+        if (clips[0][0] != 0) {
+            return -1;
+        }
+        int[] ans = new int[]{Integer.MAX_VALUE};
+        List<int[]> list = new ArrayList<int[]>();
+        //list.add(clips[0]);
+        dfs(clips, 0, T, list, ans);
+        return ans[0] == Integer.MAX_VALUE? -1 : ans[0];
+    }
+    
+    private void dfs(int[][] clips, int pos, int T, List<int[]> list, int[] ans) {
+        if (pos >= clips.length) {
+            return;
+        }
+        if (clips[pos][1] >= T) {
+            list.add(clips[pos]);
+            ans[0] = Math.min(ans[0], list.size());
+            return;
+        }
+        
+        for (int i = pos; i < clips.length; i++) {
+            if (i > 0 && clips[i][0] <= clips[i-1][1]) {
+                list.add(clips[i]);
+                dfs(clips, i + 1, T, list, ans);
+                list.remove(list.size() - 1);
+            }
+        }
     }
 }

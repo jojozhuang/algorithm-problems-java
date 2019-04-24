@@ -16,5 +16,7 @@ public class Solution735Test extends JunitBase {
         assertArrayEquals(new int[] {}, instance.asteroidCollision(new int[] {8, -8}));
         assertArrayEquals(new int[] {10}, instance.asteroidCollision(new int[] {10, 2, -5}));
         assertArrayEquals(new int[] {-2, -1, 1, 2}, instance.asteroidCollision(new int[] {-2, -1, 1, 2}));
+        assertArrayEquals(new int[] {-2, -2, -2}, instance.asteroidCollision(new int[] {-2, -2, 1, -2}));
+        assertArrayEquals(new int[] {-2, -2, -2}, instance.asteroidCollision(new int[] {1, -2, -2, -2}));
     }
 }

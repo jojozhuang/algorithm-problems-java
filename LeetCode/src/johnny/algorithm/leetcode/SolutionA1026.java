@@ -27,27 +27,48 @@ Each node will have value between 0 and 100000.
  * @author Johnny
  */
 public class SolutionA1026 {
-    int max = 0;
     public int maxAncestorDiff(TreeNode root) {
         if (root == null) {
-            return max;
+            return global_max;
         }
-        helper(root, new int[]{root.val, root.val});
-        return max;
+        helper(root, root.val, root.val);
+        return global_max;
     }
     
-    private void helper(TreeNode root, int[] parent) {
+    private void helper(TreeNode root, int max, int min) {
         if (root == null) {
             return;
         }
         
-        max = Math.max(max, Math.abs(parent[0] - root.val));
-        max = Math.max(max, Math.abs(parent[1] - root.val));
+        global_max = Math.max(global_max, Math.abs(max - root.val));
+        global_max = Math.max(global_max, Math.abs(min - root.val));
         
-        int[] next = new int[2];
-        next[0] = Math.max(parent[0], root.val);
-        next[1] = Math.min(parent[1], root.val);
-        helper(root.left, next);
-        helper(root.right, next);
+        max = Math.max(max, root.val);
+        min = Math.min(min, root.val);
+        helper(root.left, max, min);
+        helper(root.right, max, min);
+    }
+    
+    int global_max = 0;
+    public int maxAncestorDiff2(TreeNode root) {
+        if (root == null) {
+            return global_max;
+        }
+        helper(root, root.val, root.val);
+        return global_max;
+    }
+    
+    private void helper2(TreeNode root, int max, int min) {
+        if (root == null) {
+            return;
+        }
+        
+        global_max = Math.max(global_max, Math.abs(max - root.val));
+        global_max = Math.max(global_max, Math.abs(min - root.val));
+        
+        int next_max = Math.max(max, root.val);
+        int next_min = Math.min(min, root.val);
+        helper(root.left, next_max, next_min);
+        helper(root.right, next_max, next_min);
     }
 }

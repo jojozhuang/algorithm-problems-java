@@ -30,9 +30,43 @@ The last four operations won't be called when stack is empty.
  * @author Johnny
  */
 public class Solution716 {
+    // one stack without supporting popMax
+    /*
+    private int max = Integer.MIN_VALUE;
+    private Stack<Integer> stack; 
+    
+    public Solution716() {
+        stack = new Stack<Integer>();
+    }
+    
+    public void push(int x) {
+        if (x >= max) {
+            stack.push(max);
+            max = x;
+        }
+        stack.push(x);
+    }
+
+    public int pop() {
+        int top = stack.pop();
+        if (top == max) {
+            max = stack.pop();
+        }
+        return top;
+    }
+
+    public int top() {
+        return stack.peek();
+    }
+
+    public int peekMax() {
+        return max;
+    }*/
+    
+    // two stacks
     Stack<Integer> stack;
     Stack<Integer> maxStack;
-    /** initialize your data structure here. */
+
     public Solution716() {
         stack = new Stack<>();
         maxStack = new Stack<>();
