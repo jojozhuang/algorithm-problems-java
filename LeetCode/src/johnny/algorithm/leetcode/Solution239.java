@@ -29,7 +29,76 @@ import java.util.LinkedList;
  * @author Johnny
  */
 public class Solution239 {
+    class MonotonicQueue {
+        Deque<Integer> deque;
+        int size;
+        public MonotonicQueue(int size) {
+            this.deque = new LinkedList<>();
+            this.size = size;
+        }
+        
+        public void push(int value) {
+            while (!deque.isEmpty() && value > deque.peekLast()) { // decreasing
+                deque.pollLast();
+            }
+            deque.offerLast(value);
+        }
+        
+        public int pop() {
+            return deque.pollFirst();
+        }
+        
+        public int max() {
+            return deque.peekFirst();
+        }
+    }
+    // Monotonic Queue
     public int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || k <= 0) {
+            return new int[] {};
+        }
+        
+        int n = nums.length;
+        int[] ans = new int[n - k + 1];
+        
+        MonotonicQueue mq = new MonotonicQueue(k);
+        for (int i = 0; i < k - 1; i++) {
+            mq.push(nums[i]);
+        }
+        
+        for (int i = k - 1; i < n; i++) {
+            mq.push(nums[i]);
+            ans[i - k + 1] = mq.max();
+            if (nums[i - k + 1] == mq.max()) { // out of window
+                mq.pop();
+            }
+        }
+        
+        return ans;
+    }
+    
+
+    // Brute force, O((n - k) * k)
+    public int[] maxSlidingWindow7(int[] nums, int k) {
+        if (nums == null || k <= 0) {
+            return new int[] {};
+        }
+        
+        int n = nums.length;
+        int[] ans = new int[n - k + 1];
+        
+        for (int i = 0; i < n - k + 1; i++) {
+            int max = nums[i];
+            for (int j = i + 1; j < i + k; j++) {
+                max = Math.max(max, nums[j]);
+            }
+            ans[i] = max;
+        }
+        
+        return ans;
+    }
+    
+    public int[] maxSlidingWindow5(int[] nums, int k) {
         if (nums == null || k <= 0) {
             return new int[0];
         }
