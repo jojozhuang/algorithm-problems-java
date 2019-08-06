@@ -36,9 +36,9 @@ import java.util.LinkedHashSet;
  * @author Johnny
  */
 public class Solution460 {
-    HashMap<Integer, Integer> vals;
-    HashMap<Integer, Integer> counts;
-    HashMap<Integer, LinkedHashSet<Integer>> lists;
+    HashMap<Integer, Integer> vals;   // <key, value>
+    HashMap<Integer, Integer> counts; // <key, frequency>
+    HashMap<Integer, LinkedHashSet<Integer>> lists; // <frequency, sorted keys>
     int cap;
     int min = -1;
     public Solution460(int capacity) {
@@ -50,28 +50,32 @@ public class Solution460 {
     }
     
     public int get(int key) {
-        if(!vals.containsKey(key))
+        if (!vals.containsKey(key)) {
             return -1;
+        }
         int count = counts.get(key);
-        counts.put(key, count+1);
+        counts.put(key, count + 1);
         lists.get(count).remove(key);
-        if(count==min && lists.get(count).size()==0)
+        if (count == min && lists.get(count).size() == 0) {
             min++;
-        if(!lists.containsKey(count+1))
-            lists.put(count+1, new LinkedHashSet<>());
-        lists.get(count+1).add(key);
+        }
+        if (!lists.containsKey(count + 1)) {
+            lists.put(count + 1, new LinkedHashSet<>());
+        }
+        lists.get(count + 1).add(key);
         return vals.get(key);
     }
     
     public void put(int key, int value) {
-        if(cap<=0)
+        if (cap <= 0) {
             return;
-        if(vals.containsKey(key)) {
+        }
+        if (vals.containsKey(key)) {
             vals.put(key, value);
             get(key);
             return;
         } 
-        if(vals.size() >= cap) {
+        if (vals.size() >= cap) {
             int evit = lists.get(min).iterator().next();
             lists.get(min).remove(evit);
             vals.remove(evit);
