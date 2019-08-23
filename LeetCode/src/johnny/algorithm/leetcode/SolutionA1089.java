@@ -31,6 +31,28 @@ Note:
  */
 public class SolutionA1089 {
     public void duplicateZeros(int[] arr) {
+        int i = 0;
+        int count = 0;
+        while (i < arr.length - count - 1) {
+            if (arr[i] == 0) {
+                count++;
+            }
+            i++;
+        }
         
+        int j = arr.length - 1;
+        i = arr.length - count - 1;
+        while (i >= 0 && j >= 0) {
+            if (arr[i] != 0) {
+                arr[j] = arr[i];
+                j--;
+            } else {
+                arr[j] = 0;
+                j--;
+                arr[j] = 0;
+                j--;
+            }
+            i--;
+        }
     }
 }

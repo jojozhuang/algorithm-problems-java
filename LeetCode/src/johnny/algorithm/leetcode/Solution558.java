@@ -97,6 +97,64 @@ public class Solution558 {
         if (quadTree2 == null) {
             return quadTree1;
         }
+        Node root = new Node();
+        if (quadTree1.isLeaf) {
+            if (quadTree2.isLeaf) {
+                root.val = quadTree1.val || quadTree2.val;
+                root.isLeaf = true;
+            } else {
+                if (quadTree1.val) {
+                    root.val = true;
+                    root.isLeaf = true;
+                } else {
+                    root.isLeaf = false;
+                    root.topLeft = quadTree2.topLeft;
+                    root.topRight = quadTree2.topRight;
+                    root.bottomLeft = quadTree2.bottomLeft;
+                    root.bottomRight = quadTree2.bottomRight;
+                }
+            }
+        } else {
+            if (quadTree2.isLeaf) {
+                if (quadTree2.val) {
+                    root.val = true;
+                    root.isLeaf = true;
+                } else {
+                    root.isLeaf = false;
+                    root.topLeft = quadTree1.topLeft;
+                    root.topRight = quadTree1.topRight;
+                    root.bottomLeft = quadTree1.bottomLeft;
+                    root.bottomRight = quadTree1.bottomRight;
+                }
+            } else {
+                root.isLeaf = false;
+                root.topLeft = intersect(quadTree1.topLeft, quadTree2.topLeft);
+                root.topRight = intersect(quadTree1.topRight, quadTree2.topRight);
+                root.bottomLeft = intersect(quadTree1.bottomLeft, quadTree2.bottomLeft);
+                root.bottomRight = intersect(quadTree1.bottomRight, quadTree2.bottomRight);
+            }
+        }
+        
+        // if all sub node are true, the parent should be true
+        if (root.topLeft != null && root.topLeft.val && root.topRight.val && root.bottomLeft.val && root.bottomRight.val) {
+            root.val = true;
+            root.isLeaf = true;
+            root.topLeft = null;
+            root.topRight = null;
+            root.bottomLeft = null;
+            root.bottomRight = null;
+        }
+        
+        return root;
+    }
+    
+    public Node intersect2(Node quadTree1, Node quadTree2) {
+        if (quadTree1 == null) {
+            return quadTree2;
+        }
+        if (quadTree2 == null) {
+            return quadTree1;
+        }
         
         Node node = new Node();
         if (quadTree1.isLeaf && quadTree1.val || 

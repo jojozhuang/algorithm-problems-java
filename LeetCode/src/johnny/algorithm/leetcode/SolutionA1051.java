@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 1051. Height Checker
 Students are asked to stand in non-decreasing order of heights for an annual photo.
@@ -25,6 +27,15 @@ Note:
  */
 public class SolutionA1051 {
     public int heightChecker(int[] heights) {
-        return 0;
+        int[] clone = heights.clone();
+        Arrays.sort(clone);
+        int ans = 0;
+        for (int i = 0; i < heights.length; i++) {
+            if (heights[i] != clone[i]) {
+                ans++;
+            }
+        }
+        
+        return ans;
     }
 }

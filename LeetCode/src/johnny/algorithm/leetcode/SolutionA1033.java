@@ -1,5 +1,9 @@
 package johnny.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 1033. Moving Stones Until Consecutive
 Three stones are on a number line at positions a, b, and c.
@@ -40,6 +44,22 @@ a != b, b != c, c != a
  */
 public class SolutionA1033 {
     public int[] numMovesStones(int a, int b, int c) {
-        return null;
+        List<Integer> list = new ArrayList<>();
+        list.add(a);
+        list.add(b);
+        list.add(c);
+        Collections.sort(list);
+        int dis1 = list.get(1) - list.get(0) - 1;
+        int dis2 = list.get(2) - list.get(1) - 1;
+        
+        int min = Math.min(dis1, dis2);
+        if (min == 0) {
+            if (dis1 == 0 && dis2 != 0 || dis1 != 0 && dis2 == 0) {
+                min = 1;
+            }
+        } else if (min > 2) {
+            min = 2;
+        }
+        return new int[]{min, dis1 + dis2};
     }
 }

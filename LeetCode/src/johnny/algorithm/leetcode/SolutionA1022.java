@@ -25,6 +25,25 @@ The answer will not exceed 2^31 - 1.
  */
 public class SolutionA1022 {
     public int sumRootToLeaf(TreeNode root) {
-        return 0;
+        if (root == null) {
+            return 0;
+        }
+        
+        return helper(root, 0);
+    }
+    
+    private int helper(TreeNode root, int prev) {
+        if (root == null) {
+            return 0;
+        }
+        
+        int curr = prev * 2 + root.val;
+        if (root.left == null && root.right == null) {
+            return curr;
+        }
+
+        int left = helper(root.left, curr);
+        int right = helper(root.right, curr);
+        return left + right;
     }
 }

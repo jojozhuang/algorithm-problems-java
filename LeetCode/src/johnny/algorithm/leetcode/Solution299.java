@@ -37,6 +37,29 @@ import java.util.Set;
  */
 public class Solution299 {
     public String getHint(String secret, String guess) {
+        // count map
+        Map<Character, Integer> map = new HashMap<>();
+        int bulls = 0; // exact match
+        for (int i = 0; i < secret.length(); i++) {
+            char c = secret.charAt(i);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            if (c == guess.charAt(i)) {
+                bulls++;
+            }
+        }
+        
+        int cows = 0;
+        for (int i = 0; i < guess.length(); i++) {
+            Character c = guess.charAt(i);
+            if (map.containsKey(c) && map.get(c) > 0) {
+                cows++;
+                map.put(c, map.get(c) - 1);
+            }
+        }
+        
+        return bulls + "A" + (cows - bulls) + "B";
+    }
+    public String getHint3(String secret, String guess) {
         int n = secret.length();
         int bulls = 0;
         int cows = 0;
