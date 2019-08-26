@@ -48,14 +48,17 @@ public class SolutionA1128 {
         int ans = 0;
         for (Map.Entry<List<Integer>, Integer> entry : map.entrySet()) {
             if (entry.getValue() > 1) {
-                //ans += factorial(entry.getValue());
-                ans += entry.getValue();
+                ans += combination(entry.getValue());
             }
         }
         
         return ans;
     }
     
+    private int combination(int n) {
+        return n * (n - 1) / 2;
+        //return (factorial(n)/factorial(2))/factorial(n-2);
+    }
     public int factorial(int n) {
         int fact = 1;
         for (int i = 2; i <= n; i++) {

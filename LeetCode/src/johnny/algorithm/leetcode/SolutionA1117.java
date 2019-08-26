@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * 1117. Building H2O
 There are two kinds of threads, oxygen and hydrogen. Your goal is to group these threads to form water molecules. There is a barrier where each thread has to wait until a complete molecule can be formed. Hydrogen and oxygen threads will be given releaseHydrogen and releaseOxygen methods respectively, which will allow them to pass the barrier. These threads should pass the barrier in groups of three, and they must be able to immediately bond with each other to form a water molecule. You must guarantee that all the threads from one molecule bond before any other threads from the next molecule do.
@@ -34,19 +36,23 @@ Total number of O will be n in the input string.
  * @author Johnny
  */
 public class SolutionA1117 {
+    Semaphore h, o;
     public SolutionA1117() {
-        
+        h = new Semaphore(2);
+        o = new Semaphore(0);
     }
 
     public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
-        
+        h.acquire();
         // releaseHydrogen.run() outputs "H". Do not change or remove this line.
         releaseHydrogen.run();
+        o.release();
     }
 
     public void oxygen(Runnable releaseOxygen) throws InterruptedException {
-        
+        o.acquire(2);
         // releaseOxygen.run() outputs "O". Do not change or remove this line.
         releaseOxygen.run();
+        h.release(2);
     }
 }

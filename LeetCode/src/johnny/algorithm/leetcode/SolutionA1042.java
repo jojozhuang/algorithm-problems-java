@@ -1,5 +1,10 @@
 package johnny.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * 1042. Flower Planting With No Adjacent
 You have N gardens, labelled 1 to N.  In each garden, you want to plant one of 4 types of flowers.
@@ -38,6 +43,24 @@ It is guaranteed an answer exists.
  */
 public class SolutionA1042 {
     public int[] gardenNoAdj(int N, int[][] paths) {
-        return null;
+        Map<Integer, Set<Integer>> graph = new HashMap<>();
+        for (int i = 0; i < N; i++) {
+            graph.put(i, new HashSet<>());
+        }
+        for (int[] p : paths) {
+            graph.get(p[0] - 1).add(p[1] - 1);
+            graph.get(p[1] - 1).add(p[0] - 1);
+        }
+        
+        int[] res = new int[N];
+        for (int i = 0; i < N; i++) {
+            int[] colors = new int[5];
+            for (int j : graph.get(i))
+                colors[res[j]] = 1;
+            for (int c = 4; c > 0; --c)
+                if (colors[c] == 0)
+                    res[i] = c;
+        }
+        return res;
     }
 }

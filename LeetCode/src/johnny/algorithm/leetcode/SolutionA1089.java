@@ -33,23 +33,26 @@ public class SolutionA1089 {
     public void duplicateZeros(int[] arr) {
         int i = 0;
         int count = 0;
+        int last = -1; // last position of valid zero
         while (i < arr.length - count - 1) {
-            if (arr[i] == 0) {
+            if (arr[i] == 0 && i + count + 1 <= arr.length) {
                 count++;
+                last = i;
             }
             i++;
         }
         
         int j = arr.length - 1;
         i = arr.length - count - 1;
-        while (i >= 0 && j >= 0) {
-            if (arr[i] != 0) {
-                arr[j] = arr[i];
+        while (i >= 0 && j >= 0 && count > 0) {
+            if (arr[i] == 0 && i <= last) {
+                arr[j] = 0;
                 j--;
+                arr[j] = 0;
+                j--;
+                count--;
             } else {
-                arr[j] = 0;
-                j--;
-                arr[j] = 0;
+                arr[j] = arr[i];
                 j--;
             }
             i--;

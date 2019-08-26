@@ -1,5 +1,7 @@
 package johnny.algorithm.leetcode;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * 1115. Print FooBar Alternately
 Suppose you are given the following code:
@@ -36,26 +38,30 @@ Explanation: "foobar" is being output 2 times.
  */
 public class SolutionA1115 {
     private int n;
-
+    Semaphore semp1, semp2;
     public SolutionA1115(int n) {
         this.n = n;
+        semp1 = new Semaphore(1);
+        semp2 = new Semaphore(0);
     }
 
     public void foo(Runnable printFoo) throws InterruptedException {
         
         for (int i = 0; i < n; i++) {
-            
+            semp1.acquire();
             // printFoo.run() outputs "foo". Do not change or remove this line.
             printFoo.run();
+            semp2.release();
         }
     }
 
     public void bar(Runnable printBar) throws InterruptedException {
         
         for (int i = 0; i < n; i++) {
-            
+            semp2.acquire();
             // printBar.run() outputs "bar". Do not change or remove this line.
             printBar.run();
+            semp1.release();
         }
     }
 }

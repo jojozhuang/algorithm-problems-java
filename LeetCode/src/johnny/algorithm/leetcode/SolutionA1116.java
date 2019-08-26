@@ -1,5 +1,6 @@
 package johnny.algorithm.leetcode;
 
+import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
 
 /**
@@ -35,21 +36,40 @@ Output: "0102030405"
  */
 public class SolutionA1116 {
     private int n;
-    
+    Semaphore semp1, semp2, semp3;
     public SolutionA1116(int n) {
         this.n = n;
+        semp1 = new Semaphore(1); // zero
+        semp2 = new Semaphore(0); // even
+        semp3 = new Semaphore(0); // odd
     }
 
     // printNumber.accept(x) outputs "x", where x is an integer.
     public void zero(IntConsumer printNumber) throws InterruptedException {
-        
+        for (int i = 0; i < n; i++) {
+            semp1.acquire();
+            printNumber.accept(0);
+            if (i % 2 == 1) {
+                semp2.release();
+            } else {
+                semp3.release();
+            }
+        }
     }
 
     public void even(IntConsumer printNumber) throws InterruptedException {
-        
+        for (int i = 2; i <= n; i+=2) {
+            semp2.acquire();
+            printNumber.accept(i);
+            semp1.release();
+        }
     }
 
     public void odd(IntConsumer printNumber) throws InterruptedException {
-        
+        for (int i = 1; i <= n; i+=2) {
+            semp3.acquire();
+            printNumber.accept(i);
+            semp1.release();
+        }
     }
 }
