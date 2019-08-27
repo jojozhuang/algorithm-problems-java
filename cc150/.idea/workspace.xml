@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04847710-fceb-46ab-bf8a-8dff75cf64f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/ArrayAndString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/ArrayQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/ArrayStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/BSTNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/BaseConvertor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/BinaryToString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/BitInsertion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/BitManipulation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/BitManipulation2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/CC150.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/CC189FixedMultiStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/CC189SetOfStacks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/ConvertIntegerAtoIntegerB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/LinkedListQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/LinkedListStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/NodeSuccessor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/RandomIntegerFromArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/SinglyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/SortStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/TreeToLevelLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/Trie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/common/DoublyListNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/common/ListNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/common/ListUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/johnny/algorithm/cc150/common/TreeNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/AllTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/ArrayAndStringTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/ArrayQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/ArrayStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/BaseConvertorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/BinaryToStringTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/BitInsertionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/BitManipulationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/CC189FixedMultiStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/CC189SetOfStacksTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/ConvertIntegerAtoIntegerBTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/LinkedListQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/LinkedListStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/NodeSuccessorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/RandomIntegerFromArrayTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/SinglyLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/SortStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/TreeToLevelLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/TrieTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/johnny/algorithm/cc150/test/common/DoublyListNodeTest.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="450991042">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="iml" value="1" />
+          <entry key="java" value="45" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="45" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="597641574">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/CC189SetOfStacksTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ConvertIntegerAtoIntegerBTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/LinkedListQueueTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/LinkedListStackTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/NodeSuccessorTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/RandomIntegerFromArrayTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/SinglyLinkedListTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/SortStackTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/TreeToLevelLinkedListTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/TrieTest.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/DoublyListNode.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/ListNode.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/ListUtil.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/TreeNode.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ArrayAndString.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ArrayQueue.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ArrayStack.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BaseConvertor.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BinaryToString.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BitInsertion.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BitManipulation.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BitManipulation2.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BSTNode.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/CC150.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/CC189FixedMultiStack.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/CC189SetOfStacks.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ConvertIntegerAtoIntegerB.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/LinkedListQueue.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/LinkedListStack.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/NodeSuccessor.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/RandomIntegerFromArray.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/SinglyLinkedList.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/SortStack.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/TreeToLevelLinkedList.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/Trie.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/common/DoublyListNodeTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ArrayAndStringTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ArrayQueueTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ArrayStackTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BaseConvertorTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BinaryToStringTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BitInsertionTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BitManipulationTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/CC189FixedMultiStackTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/CC189SetOfStacksTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ConvertIntegerAtoIntegerBTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/LinkedListQueueTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/LinkedListStackTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/NodeSuccessorTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/RandomIntegerFromArrayTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/SinglyLinkedListTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/SortStackTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/TreeToLevelLinkedListTest.java" />
+        <option value="$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/TrieTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="63" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="821" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CC150" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cc150-algorithm" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566886394505" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="johnny.cc150.algorithm.test in cc150-algorithm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cc150-algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="johnny.cc150.algorithm.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="johnny.cc150.algorithm.test" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.johnny.cc150.algorithm.test in cc150-algorithm" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04847710-fceb-46ab-bf8a-8dff75cf64f2" name="Default Changelist" comment="" />
+      <created>1566885795140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566885795140</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="johnny_cc150_algorithm_test_in_cc150-algorithm - 2019.08.26 at 23h 13m 07s.xml">
+      <configuration name="johnny.cc150.algorithm.test in cc150-algorithm" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/cc150-algorithm.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/DoublyListNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/ListNode.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/ListUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/common/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ArrayAndString.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ArrayQueue.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ArrayStack.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BaseConvertor.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BinaryToString.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BitInsertion.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BitManipulation.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BitManipulation2.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/BSTNode.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/CC150.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/CC189FixedMultiStack.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/CC189SetOfStacks.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/ConvertIntegerAtoIntegerB.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/LinkedListQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/LinkedListStack.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/NodeSuccessor.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/RandomIntegerFromArray.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/SinglyLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/SortStack.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/TreeToLevelLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/AllTests.java" />
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/src/johnny/cc150/algorithm/Trie.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/common/DoublyListNodeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ArrayAndStringTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ArrayQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ArrayStackTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BaseConvertorTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BinaryToStringTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BitInsertionTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/BitManipulationTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/CC189FixedMultiStackTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/CC189SetOfStacksTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/ConvertIntegerAtoIntegerBTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/LinkedListQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/LinkedListStackTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/NodeSuccessorTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/RandomIntegerFromArrayTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/SinglyLinkedListTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/SortStackTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/TreeToLevelLinkedListTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc150-algorithm/test/johnny/cc150/algorithm/test/TrieTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>cc150-algorithm</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
