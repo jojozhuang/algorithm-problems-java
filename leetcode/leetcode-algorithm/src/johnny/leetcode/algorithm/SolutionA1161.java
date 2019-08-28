@@ -1,6 +1,10 @@
 package johnny.leetcode.algorithm;
 
+import johnny.leetcode.algorithm.common.TreeNode;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -39,7 +43,35 @@ grid[i][j] is 0 or 1
  * @author Johnny
  */
 public class SolutionA1161 {
-    public int dummy() {
-        return 0;
+    public int maxLevelSum(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int sum = 0;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+                sum += node.val;
+            }
+            list.add(sum);
+        }
+
+        int max = list.get(0);
+        int level = 1;
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i) > max) {
+                max = list.get(i);
+                level = i + 1;
+            }
+        }
+
+        return level;
     }
 }

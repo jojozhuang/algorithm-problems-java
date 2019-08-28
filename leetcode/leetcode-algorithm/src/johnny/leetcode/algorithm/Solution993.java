@@ -33,6 +33,50 @@ Each node has a unique integer value from 1 to 100.
  */
 public class Solution993 {
     public boolean isCousins(TreeNode root, int x, int y) {
+        if (root == null) {
+            return false;
+        }
+
+        if (root.val == x || root.val == y) {
+            return false;
+        }
+
+        int[] find1 = helper(root.left, root, x, 0);
+        if (find1 == null) {
+            find1 = helper(root.right, root, x, 0);
+        }
+
+        int[] find2 = helper(root.left, root, y, 0);
+        if (find2 == null) {
+            find2 = helper(root.right, root, y, 0);
+        }
+
+        if (find1[0] != find2[0] && find1[1] == find2[1]) {
+            return true;
+        }
+
         return false;
+
+    }
+
+    private int[] helper(TreeNode root, TreeNode parent, int target, int depth) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root.val == target) {
+            return new int[]{parent.val, depth};
+        }
+
+        int[] left = helper(root.left, root, target, depth + 1);
+        if (left != null) {
+            return left;
+        }
+        int[] right = helper(root.right, root, target, depth + 1);
+        if (right != null) {
+            return right;
+        }
+
+        return null;
     }
 }

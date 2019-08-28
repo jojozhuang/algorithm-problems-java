@@ -42,6 +42,16 @@ Constraints:
  */
 public class SolutionA1103 {
     public int[] distributeCandies(int candies, int num_people) {
-        return null;
+        int[] ans = new int[num_people];
+
+        int i = 0;
+        while (candies > 0) {
+            int candy = Math.min(candies, i + 1);
+            ans[i%num_people] += candy;
+            candies -= candy;
+            i++;
+        }
+
+        return ans;
     }
 }

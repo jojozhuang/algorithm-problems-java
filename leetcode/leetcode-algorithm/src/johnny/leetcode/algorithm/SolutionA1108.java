@@ -26,6 +26,6 @@ The given address is a valid IPv4 address.
  */
 public class SolutionA1108 {
     public String defangIPaddr(String address) {
-        return "";
+        return address.replace(".","[.]");
     }
 }

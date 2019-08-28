@@ -1,5 +1,8 @@
 package johnny.leetcode.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 1078. Occurrences After Bigram
 Given words first and second, consider occurrences in some text of the form "first second third", where second comes immediately after first, and third comes immediately after second.
@@ -29,6 +32,16 @@ first and second consist of lowercase English letters.
  */
 public class SolutionA1078 {
     public String[] findOcurrences(String text, String first, String second) {
-        return null;
+        String[] words = text.split(" ");
+        List<String> ans = new ArrayList<>();
+        for (int i = 0; i < words.length - 2; i++) {
+            if (!words[i].isEmpty() && words[i].equals(first)) {
+                if (words[i + 1].equals(second)) {
+                    ans.add(words[i + 2]);
+                }
+            }
+        }
+
+        return ans.stream().toArray(String[]::new);
     }
 }

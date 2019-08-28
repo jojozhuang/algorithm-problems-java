@@ -1,5 +1,8 @@
 package johnny.leetcode.algorithm;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 994. Rotting Oranges
 In a given grid, each cell can have one of three values:
@@ -37,6 +40,70 @@ grid[i][j] is only 0, 1, or 2.
  */
 public class Solution994 {
     public int orangesRotting(int[][] grid) {
-        return 0;
+        int m = grid.length;
+        int n = grid[0].length;
+
+        int one = 0;
+        Queue<int[]> queue = new LinkedList<>();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 2) {
+                    queue.offer(new int[]{i,j});
+                }
+                if (grid[i][j] == 1) {
+                    one++;
+                }
+            }
+        }
+
+        // no 2
+        if (queue.isEmpty()) {
+            if (one == 0) {
+                return 0;
+            } else {
+                return -1;
+            }
+        } else {
+            // with 2 but no 1
+            if (one == 0) {
+                return 0;
+            }
+        }
+
+        int ans = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                int[] rotten = queue.poll();
+                int r = rotten[0];
+                int c = rotten[1];
+                rot(grid, r - 1, c, queue);
+                rot(grid, r + 1, c, queue);
+                rot(grid, r, c - 1, queue);
+                rot(grid, r, c + 1, queue);
+            }
+            ans++;
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    return -1;
+                }
+            }
+        }
+
+        return ans - 1;
+    }
+
+    private void rot(int[][] grid, int r, int c, Queue<int[]> queue) {
+        int m = grid.length;
+        int n = grid[0].length;
+        if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] == 0 || grid[r][c] == 2) {
+            return;
+        }
+
+        queue.offer(new int[]{r,c});
+        grid[r][c] = 2;
     }
 }

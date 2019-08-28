@@ -10,7 +10,7 @@ public class SolutionA1071Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("heightChecker");
+        System.out.println("gcdOfStrings");
         SolutionA1071 instance = new SolutionA1071();
 
         assertEquals("ABC",instance.gcdOfStrings("ABCABC", "ABC"));

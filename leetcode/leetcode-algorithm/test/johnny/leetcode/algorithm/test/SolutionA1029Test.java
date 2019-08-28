@@ -10,7 +10,7 @@ public class SolutionA1029Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("longestArithSeqLength");
+        System.out.println("twoCitySchedCost");
         SolutionA1029 instance = new SolutionA1029();
 
         assertEquals(110, instance.twoCitySchedCost(new int[][] {{10,20},{30,200},{400,50},{30,20}}));
