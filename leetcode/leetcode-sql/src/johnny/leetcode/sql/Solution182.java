@@ -1,4 +1,4 @@
-package johnny.leetcode.algorithm;
+package johnny.leetcode.sql;
 
 /**
  * 182. Duplicate Emails

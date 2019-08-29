@@ -1,8 +1,8 @@
-package johnny.leetcode.algorithm;
+package johnny.leetcode.sql;
 
 /**
- * 184. Department Highest Salary
- *The Employee table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.
+ * 185. Department Top Three Salaries
+ *The Employee table holds all employees. Every employee has an Id, and there is also a column for the department Id.
 
 +----+-------+--------+--------------+
 | Id | Name  | Salary | DepartmentId |
@@ -11,6 +11,8 @@ package johnny.leetcode.algorithm;
 | 2  | Henry | 80000  | 2            |
 | 3  | Sam   | 60000  | 2            |
 | 4  | Max   | 90000  | 1            |
+| 5  | Janet | 69000  | 1            |
+| 6  | Randy | 85000  | 1            |
 +----+-------+--------+--------------+
 The Department table holds all departments of the company.
 
@@ -20,22 +22,25 @@ The Department table holds all departments of the company.
 | 1  | IT       |
 | 2  | Sales    |
 +----+----------+
-Write a SQL query to find employees who have the highest salary in each of the departments. For the above tables, Max has the highest salary in the IT department and Henry has the highest salary in the Sales department.
+Write a SQL query to find employees who earn the top three salaries in each of the department. For the above tables, your SQL query should return the following rows.
 
 +------------+----------+--------+
 | Department | Employee | Salary |
 +------------+----------+--------+
 | IT         | Max      | 90000  |
+| IT         | Randy    | 85000  |
+| IT         | Joe      | 70000  |
 | Sales      | Henry    | 80000  |
+| Sales      | Sam      | 60000  |
 +------------+----------+--------+
  * @author Johnny
  */
-public class Solution184 {
+public class Solution185 {
     public int query() {
         return 0;
     }
     /*
-    USE `leetcode3`;
+    USE `leetcode4`;
     Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int);
     Create table If Not Exists Department (Id int, Name varchar(255));
     Truncate table Employee;
@@ -43,17 +48,29 @@ public class Solution184 {
     insert into Employee (Id, Name, Salary, DepartmentId) values ('2', 'Henry', '80000', '2');
     insert into Employee (Id, Name, Salary, DepartmentId) values ('3', 'Sam', '60000', '2');
     insert into Employee (Id, Name, Salary, DepartmentId) values ('4', 'Max', '90000', '1');
+    insert into Employee (Id, Name, Salary, DepartmentId) values ('5', 'Janet', '69000', '1');
+    insert into Employee (Id, Name, Salary, DepartmentId) values ('6', 'Randy', '85000', '1');
     Truncate table Department;
     insert into Department (Id, Name) values ('1', 'IT');
     insert into Department (Id, Name) values ('2', 'Sales');
     */
     
     /*
-    SELECT d.Name AS Department, e.Name AS Employee, e.Salary
-    FROM Employee e
-    JOIN Department d ON e.DepartmentId = d.Id
-    JOIN (SELECT Max(Salary) MaxSalary, DepartmentId
-    FROM Employee
-    GROUP BY DepartmentId) m ON e.Salary=m.MaxSalary and e.DepartmentId = m.DepartmentId
+    SELECT
+        d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+    FROM
+        Employee e1
+            JOIN
+        Department d ON e1.DepartmentId = d.Id
+    WHERE
+        3 > (SELECT
+                COUNT(DISTINCT e2.Salary)
+            FROM
+                Employee e2
+            WHERE
+                e2.Salary > e1.Salary
+                    AND e1.DepartmentId = e2.DepartmentId
+            );
     */
+
 }

@@ -1,4 +1,4 @@
-package johnny.leetcode.algorithm;
+package johnny.leetcode.sql;
 
 /**
  * 175. Combine Two Tables

@@ -1,4 +1,4 @@
-package johnny.leetcode.algorithm;
+package johnny.leetcode.sql;
 
 /**
  * 176. Second Highest Salary
@@ -31,13 +31,13 @@ public class Solution176 {
     insert into Employee (Id, Salary) values ('2', '200');
     insert into Employee (Id, Salary) values ('3', '300');
     */
-    
+
     /*
-    SELECT 
+    SELECT
         IFNULL(
             (SELECT DISTINCT Salary
              FROM Employee
-             WHERE Salary = (SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee))), NULL) 
+             WHERE Salary = (SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee))), NULL)
     AS SecondHighestSalary
     */
 }
