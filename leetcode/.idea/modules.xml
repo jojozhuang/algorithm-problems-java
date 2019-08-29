@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/leetcode-algorithm/leetcode-algorithm.iml" filepath="$PROJECT_DIR$/leetcode-algorithm/leetcode-algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode-concurrency/leetcode-concurrency.iml" filepath="$PROJECT_DIR$/leetcode-concurrency/leetcode-concurrency.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode-others/leetcode-others.iml" filepath="$PROJECT_DIR$/leetcode-others/leetcode-others.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode-shell/leetcode-shell.iml" filepath="$PROJECT_DIR$/leetcode-shell/leetcode-shell.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode-sql/leetcode-sql.iml" filepath="$PROJECT_DIR$/leetcode-sql/leetcode-sql.iml" />
     </modules>
   </component>

@@ -1,4 +1,4 @@
-package johnny.leetcode.algorithm;
+package johnny.leetcode.concurrency;
 
 import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;

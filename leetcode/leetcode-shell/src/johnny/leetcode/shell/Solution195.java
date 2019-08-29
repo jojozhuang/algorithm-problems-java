@@ -1,4 +1,4 @@
-package johnny.leetcode.algorithm;
+package johnny.leetcode.shell;
 
 /**
  * 195. Tenth Line
