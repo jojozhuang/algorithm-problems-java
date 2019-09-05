@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ZumeHttp {
@@ -100,7 +101,7 @@ public class ZumeHttp {
         }
     }
     
-    public List<Product> parse(String jsonStr) {
+    public List<Product> parse(String jsonStr) throws JSONException {
         //JSONObject obj = new JSONObject(str);
         List<Product> list = new ArrayList<>();
         JSONArray jsonarray = new JSONArray(jsonStr);

@@ -1,5 +1,6 @@
 package johnny.leetcode.advanced.test;
 
+import org.json.JSONException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,7 +44,7 @@ public class ZumeHttpTest {
      * Test of drop method, of class Zume.
      */
     @Test
-    public void testHttp() {
+    public void testHttp() throws JSONException {
         System.out.println("Http");
         ZumeHttp instance = new ZumeHttp();
 
