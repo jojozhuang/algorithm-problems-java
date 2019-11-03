@@ -28,6 +28,49 @@ Constraints:
  */
 public class SolutionA1128 {
     public int numEquivDominoPairs(int[][] dominoes) {
+        Map<String, Integer> map = new HashMap<>();
+        for (int[] domino : dominoes) {
+            String key = "";
+            if (domino[0] < domino[1]) {
+                key = domino[0] + "-" + domino[1];
+            } else {
+                key = domino[1] + "-" + domino[0];
+            }
+            map.put(key, map.getOrDefault(key, 0)+1);
+        }
+
+        int ans = 0;
+        for (int val : map.values()) {
+            if (val > 1) {
+                ans += val * (val - 1) / 2;
+            }
+        }
+
+        return ans;
+    }
+    public int numEquivDominoPairs3(int[][] dominoes) {
+        Map<String, Integer> map = new HashMap<>();
+        for (int[] domino : dominoes) {
+            String key = "";
+            if (domino[0] < domino[1]) {
+                key = domino[0] + "-" + domino[1];
+            } else {
+                key = domino[1] + "-" + domino[0];
+            }
+            map.put(key, map.getOrDefault(key, 0)+1);
+        }
+
+        int ans = 0;
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > 1) {
+                ans += combination(entry.getValue());
+            }
+        }
+
+        return ans;
+    }
+
+    public int numEquivDominoPairs2(int[][] dominoes) {
         Map<List<Integer>, Integer> map = new HashMap<>();
         for (int i = 0; i < dominoes.length; i++) {
             List<Integer> domino = new ArrayList<>();
@@ -57,7 +100,6 @@ public class SolutionA1128 {
     
     private int combination(int n) {
         return n * (n - 1) / 2;
-        //return (factorial(n)/factorial(2))/factorial(n-2);
     }
     public int factorial(int n) {
         int fact = 1;

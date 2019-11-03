@@ -1,5 +1,7 @@
 package johnny.leetcode.algorithm;
 
+import com.sun.tools.javac.util.ArrayUtils;
+
 import java.util.*;
 
 /**
@@ -26,39 +28,91 @@ Each arr2[i] is in arr1.
  * @author Johnny
  */
 public class SolutionA1122 {
+    // relative sort
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr2.length; i++) {
+            map.put(arr2[i], i);
+        }
+
+        Integer[] sorted = new Integer[arr1.length];
+        for (int i = 0; i < arr1.length; i++) {
+            sorted[i] = arr1[i];
+        }
+        Arrays.sort(sorted, new Comparator<Integer>() {
+            public int compare(Integer i1, Integer i2) {
+                int c1 = -1;
+                if (!map.containsKey(i1)) {
+                    c1 = i1 + 1000;
+                } else {
+                    c1 = map.get(i1);
+                }
+                int c2 = -1;
+                if (!map.containsKey(i2)) {
+                    c2 = i2 + 1000;
+                } else {
+                    c2 = map.get(i2);
+                }
+                return c1 - c2;
+            }
+        });
+
+        return arr1;
+    }
+
+    // counting sort
+    public int[] relativeSortArray3(int[] arr1, int[] arr2) {
+        int[] count = new int[1001];
+        for (int num : arr1) {
+            count[num]++;
+        }
+
+        int i = 0;
+        // build head
+        for(int num : arr2) {
+            while(count[num]-- > 0) {
+                arr1[i++] = num;
+            }
+        }
+        // build tail
+        for(int n = 0; n < count.length; n++) {
+            while(count[n]-- > 0) {
+                arr1[i++] = n;
+            }
+        }
+        return arr1;
+    }
+
+    // set + map + list
+    public int[] relativeSortArray2(int[] arr1, int[] arr2) {
         // convert arr2 to set
         Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < arr2.length; i++) {
-            set.add(arr2[i]);
+        for (int num : arr2) {
+            set.add(num);
         }
 
         // build map to store count of element in arr1
         List<Integer> list = new ArrayList<>();
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < arr1.length; i++) {
-            if (set.contains(arr1[i])) {
-                map.put(arr1[i], map.getOrDefault(arr1[i], 0) + 1);
-                arr1[i] = -1; // mark as deleted
-            } else {
-                list.add(arr1[i]);
+        for (int num : arr1) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+            if (!set.contains(num)) {
+                list.add(num);
             }
         }
 
         // put numbers which are not in arr2 to the tail of arr1
-        int j = arr1.length - 1;
         Collections.sort(list);
-        for (int i = list.size() - 1; i >=0; i--) {
-            arr1[j] = list.get(i);
-            j--;
+        int j = arr1.length - 1;
+        for (int i = list.size() - 1; i >= 0; i--) {
+            arr1[j--] = list.get(i);
         }
 
         // rebuild head of arr1
-        int i = 0;
-        for (j = 0; j < arr2.length; j++) {
-            for (int k = 0; k < map.get(arr2[j]); k++) {
-                arr1[i] = arr2[j];
-                i++;
+        j = 0;
+        for (int i = 0; i < arr2.length; i++) {
+            for (int k = 0; k < map.get(arr2[i]); k++) {
+                arr1[j++] = arr2[i];
             }
         }
 
