@@ -1,6 +1,8 @@
 package johnny.lintcode.algorithm.test;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,18 +46,25 @@ public class ZeroSubarraySumTest {
         System.out.println("subarraySum");
         int[] nums = null;
         ZeroSubarraySum instance = new ZeroSubarraySum();
-        ArrayList<Integer> expResult = null;
-        ArrayList<Integer> result = instance.subarraySum(nums);
-        assertEquals(expResult, result);
+        ArrayList<Integer> expect1 = new ArrayList<Integer>();
+        expect1.add(0);
+        expect1.add(0);
+        List<Integer> result1 = instance.subarraySum(nums);
+        assertEquals(expect1, result1);
         
-        ArrayList<Integer> expResult2 = new ArrayList<Integer>();
-        expResult2.add(0);
-        expResult2.add(2);
-        assertEquals(expResult2, instance.subarraySum(new int[] { -3, 1, 2, -3, 4}));
+        ArrayList<Integer> expect2 = new ArrayList<Integer>();
+        expect2.add(0);
+        expect2.add(2);
+        assertEquals(expect2, instance.subarraySum(new int[] { -3, 1, 2, -3, 4}));
         
-        ArrayList<Integer> expResult3 = new ArrayList<Integer>();
-        expResult3.add(1);
-        expResult3.add(3);
-        assertEquals(expResult3, instance.subarraySum(new int[] { 5, -1, 2, -1, 2}));
+        ArrayList<Integer> expect3 = new ArrayList<Integer>();
+        expect3.add(1);
+        expect3.add(3);
+        assertEquals(expect3, instance.subarraySum(new int[] { 5, -1, 2, -1, 2}));
+
+        ArrayList<Integer> expect4 = new ArrayList<Integer>();
+        expect4.add(0);
+        expect4.add(0);
+        assertEquals(expect4, instance.subarraySum(new int[] { 0 }));
     }
 }

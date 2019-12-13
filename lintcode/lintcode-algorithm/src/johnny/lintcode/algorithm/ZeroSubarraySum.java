@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,7 +18,40 @@ import java.util.Map;
  * @author Johnny
  */
 public class ZeroSubarraySum {
-    public ArrayList<Integer> subarraySum(int[] nums) {
+    public List<Integer> subarraySum(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        list.add(0);
+        list.add(0);
+        if (nums == null || nums.length == 0) {
+            return list;
+        }
+
+        int[] sum = new int[nums.length];
+        sum[0] = nums[0];
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(sum[0], 0);
+        for (int i = 1; i < nums.length; i++) {
+            sum[i] = sum[i - 1] + nums[i];
+            if (sum[i] == 0) {
+                list.clear();
+                list.add(0);
+                list.add(i);
+                return list;
+            }
+            if (map.containsKey(sum[i])) {
+                list.clear();
+                list.add(map.get(sum[i]) + 1);
+                list.add(i);
+                return list;
+            } else {
+                map.put(sum[i], i);
+            }
+        }
+
+        return list;
+
+    }
+    public ArrayList<Integer> subarraySum2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return null;
         }
