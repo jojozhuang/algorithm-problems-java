@@ -43,7 +43,8 @@ public class SwapBitsTest {
         System.out.println("swapOddEvenBits");
         SwapBits instance = new SwapBits();
 
-        //assertEquals(10, instance.swapOddEvenBits(5));
+        assertEquals(0, instance.swapOddEvenBits(0));
+        assertEquals(10, instance.swapOddEvenBits(5));
         assertEquals(-3, instance.swapOddEvenBits(-2));
     }
 }

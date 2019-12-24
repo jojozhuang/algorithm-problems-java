@@ -25,21 +25,44 @@ public class SpaceReplacement {
      * @return: The true length of new string
      */
     public int replaceBlank(char[] string, int length) {
+        int count = 0;
+        for (int i = 0; i < length; i++) {
+            if (string[i] == ' ') {
+                count++;
+            }
+        }
+
+        int j = length + count * 2 - 1;
+        for (int i = length - 1; i >= 0; i--) {
+            if (string[i] != ' ') {
+                string[j--] = string[i];
+            } else {
+                string[j--] = '0';
+                string[j--] = '2';
+                string[j--] = '%';
+            }
+        }
+
+        return length + count * 2;
+        
+    }
+
+    public int replaceBlank2(char[] string, int length) {
         if (string == null || string.length == 0) {
             return 0;
         }
-        
+
         int cnt = 0;
         for (int i = 0; i < length; i++) {
             if (string[i] == ' ') {
                 cnt++;
             }
         }
-        
+
         if (cnt == 0) {
             return length;
         }
-        
+
         int newlength = length + 2 * cnt;
         int k = newlength;
 
@@ -55,8 +78,8 @@ public class SpaceReplacement {
                 k = k - 1;
             }
         }
-        
-        return newlength;        
-        
+
+        return newlength;
+
     }
 }

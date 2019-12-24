@@ -14,6 +14,47 @@ package johnny.lintcode.algorithm;
  */
 public class SwapBits {
     public int swapOddEvenBits(int x) {
+        int num = x;
+        if (num >= 0) {
+            int count = 0;
+            while (num > 0) {
+                count++;
+                num = num >> 1;
+            }
+
+            if (count % 2 != 0) {
+                count++;
+            }
+
+            int mask = 1;
+            for (int i = 0; i < count; i++) {
+                mask = mask * 2;
+            }
+            mask--;
+
+            return x ^ mask;
+        } else {
+            int count = 0;
+            while (num != -1) {
+                count++;
+                num = num >> 1;
+            }
+
+            if (count % 2 != 0) {
+                count++;
+            }
+
+            int mask = 1;
+            for (int i = 0; i < count; i++) {
+                mask = mask * 2;
+            }
+            mask--;
+
+            return x ^ mask;
+        }
+    }
+
+    public int swapOddEvenBits2(int x) {
         int len = 0;
         int num = x;
         int res = 0;
