@@ -9,24 +9,24 @@ import java.util.Queue;
  *
  * @author Johnny
  */
- public class TreeNode {
+public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
-     
+
     public static TreeNode createInstance2(String[] arr) {
         List<String> serial = Arrays.asList(arr);
         if(serial == null || serial.size() == 0) {
             return null;
         }
-        
+
         Queue<String> queueString = new LinkedList<>(serial);
         Queue<TreeNode> queueNode = new LinkedList<>();
-        
+
         TreeNode root = new TreeNode(Integer.parseInt(serial.get(0)));
         queueNode.offer(root);
-        
+
         String str = "";
         queueString.remove(); // remove the first one, it is root;
         while(!queueString.isEmpty()) {
@@ -44,33 +44,33 @@ import java.util.Queue;
                 }
             }
         }
-        
+
         return root;
     }
-    
+
     // str = "10,5,15,3,7,null,18"
     // or str = "10,5,15,3,7,#,18"
     public static TreeNode createInstance(String str) {
         if (str == null || str.length() == 0) {
             return null;
         }
-        
+
         String[] arr = str.replaceAll("null", "#").split(",");
         return createInstance(arr);
-        
+
     }
-    
+
     // arr = new String[] {"10","5","15","3","7","#","18"}
     public static TreeNode createInstance(String[] arr) {
         if(arr == null || arr.length == 0) {
             return null;
         }
-        
+
         Queue<TreeNode> queueNode = new LinkedList<>();
-        
+
         TreeNode root = new TreeNode(Integer.parseInt(arr[0]));
         queueNode.offer(root);
-        
+
         int index = 0;
         while (index < arr.length - 1) {
             TreeNode node = queueNode.poll();
@@ -87,10 +87,10 @@ import java.util.Queue;
                 }
             }
         }
-        
+
         return root;
     }
-    
+
     public static boolean isSame(TreeNode t1, TreeNode t2) {
         boolean res = isSamePrint(t1, t2);
         if (!res) {
@@ -102,7 +102,7 @@ import java.util.Queue;
         }
         return res;
     }
-    
+
     private static boolean isSamePrint(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null) {
             return true;
@@ -116,21 +116,21 @@ import java.util.Queue;
         if (t1.val != t2.val) {
             return false;
         }
-        
+
         return isSamePrint(t1.left, t2.left) && isSamePrint(t1.right, t2.right);
     }
-    
+
     private static void print(TreeNode root) {
         if (root == null) {
             print(",null");
         }
-        
+
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
-        
+
         while (!queue.isEmpty()) {
             //List<Integer> level = new ArrayList<Integer>();
-            int size = queue.size(); 
+            int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 //level.add(node.val);
@@ -145,16 +145,16 @@ import java.util.Queue;
             //res.add(level);
         }
     }
-    
+
     private static void println(String msg) {
         System.out.println(msg);
     }
     private static void print(String msg) {
         System.out.print(msg);
     }
-    
+
     @Override
     public String toString() {
         return val + "";
     }
- }
+}
