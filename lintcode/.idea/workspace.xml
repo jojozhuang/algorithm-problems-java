@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8b4fdd9-e42b-4d57-a4d7-92544c1f4580" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/IsCompleteTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LengthOfLastWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/MyQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/ReverseInteger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/IsCompleteTreeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LengthOfLastWordTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/MyQueueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/ReverseIntegerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../leetcode/leetcode-algorithm/src/johnny/leetcode/algorithm/common/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../leetcode/leetcode-algorithm/src/johnny/leetcode/algorithm/common/TreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/common/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/common/TreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/ConvertBSTtoDoublyLinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/ConvertBSTtoDoublyLinkedListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/InsertNodeinaBinarySearchTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/InsertNodeinaBinarySearchTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SearchRangeinBinarySearchTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SearchRangeinBinarySearchTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SubtreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SubtreeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestConsecutive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LongestConsecutiveTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,24 +75,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="25" />
+          <entry key="java" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="25" />
+          <entry key="JAVA" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="909" />
+          <entry key="java" value="1131" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="909" />
+          <entry key="JAVA" value="1131" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -264,8 +251,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/IsCompleteTreeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="184">
+              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="52" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -276,8 +263,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SearchRangeinBinarySearchTreeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="1170">
               <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -285,8 +275,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SubtreeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
+            <state relative-caret-position="705">
               <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestWords.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestConsecutive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LongestWordsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LongestConsecutiveTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestSubstringWithoutRepeatingCharacters.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -336,7 +377,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/ReverseIntegerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -426,6 +467,8 @@
         <option value="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/IsCompleteTreeTest.java" />
         <option value="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LengthOfLastWordTest.java" />
         <option value="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/ReverseIntegerTest.java" />
+        <option value="$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LongestConsecutiveTest.java" />
+        <option value="$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestConsecutive.java" />
       </list>
     </option>
   </component>
@@ -462,13 +505,6 @@
             <path>
               <item name="lintcode" type="b2602c69:ProjectViewProjectNode" />
               <item name="lintcode-algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lintcode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lintcode-algorithm" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -476,6 +512,10 @@
               <item name="lintcode-algorithm" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lintcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -484,7 +524,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577469385810" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577599690085" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -510,7 +550,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InsertNodeinaBinarySearchTreeTest">
+  <component name="RunManager" selected="JUnit.LongestConsecutiveTest">
     <configuration name="InsertNodeinaBinarySearchTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lintcode-algorithm" />
       <extension name="coverage">
@@ -539,7 +579,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LengthOfLastWordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LongestConsecutiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lintcode-algorithm" />
       <extension name="coverage">
         <pattern>
@@ -548,7 +588,21 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="johnny.lintcode.algorithm.test" />
-      <option name="MAIN_CLASS_NAME" value="johnny.lintcode.algorithm.test.LengthOfLastWordTest" />
+      <option name="MAIN_CLASS_NAME" value="johnny.lintcode.algorithm.test.LongestConsecutiveTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LongestSubstringWithoutRepeatingCharactersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lintcode-algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="johnny.lintcode.algorithm.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="johnny.lintcode.algorithm.test" />
+      <option name="MAIN_CLASS_NAME" value="johnny.lintcode.algorithm.test.LongestSubstringWithoutRepeatingCharactersTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -567,34 +621,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseIntegerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lintcode-algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="johnny.lintcode.algorithm.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="johnny.lintcode.algorithm.test" />
-      <option name="MAIN_CLASS_NAME" value="johnny.lintcode.algorithm.test.ReverseIntegerTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.ReverseIntegerTest" />
-      <item itemvalue="JUnit.LengthOfLastWordTest" />
       <item itemvalue="JUnit.IsCompleteTreeTest" />
       <item itemvalue="JUnit.MyQueueTest" />
       <item itemvalue="JUnit.InsertNodeinaBinarySearchTreeTest" />
+      <item itemvalue="JUnit.LongestConsecutiveTest" />
+      <item itemvalue="JUnit.LongestSubstringWithoutRepeatingCharactersTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LongestConsecutiveTest" />
+        <item itemvalue="JUnit.LongestSubstringWithoutRepeatingCharactersTest" />
         <item itemvalue="JUnit.InsertNodeinaBinarySearchTreeTest" />
         <item itemvalue="JUnit.IsCompleteTreeTest" />
         <item itemvalue="JUnit.MyQueueTest" />
-        <item itemvalue="JUnit.LengthOfLastWordTest" />
-        <item itemvalue="JUnit.ReverseIntegerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -612,42 +652,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IsCompleteTreeTest - 2019.12.25 at 22h 43m 31s.xml">
-      <configuration name="IsCompleteTreeTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 13h 52m 09s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IsCompleteTreeTest - 2019.12.25 at 22h 44m 20s.xml">
-      <configuration name="IsCompleteTreeTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 21h 54m 15s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IsCompleteTreeTest - 2019.12.25 at 22h 44m 37s.xml">
-      <configuration name="IsCompleteTreeTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 21h 58m 10s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IsCompleteTreeTest - 2019.12.25 at 22h 45m 52s.xml">
-      <configuration name="IsCompleteTreeTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 21h 59m 11s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyQueueTest - 2019.12.27 at 09h 39m 18s.xml">
-      <configuration name="MyQueueTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 22h 03m 39s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyQueueTest - 2019.12.27 at 09h 40m 10s.xml">
-      <configuration name="MyQueueTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 22h 03m 46s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyQueueTest - 2019.12.27 at 09h 41m 06s.xml">
-      <configuration name="MyQueueTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 22h 06m 24s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyQueueTest - 2019.12.27 at 09h 42m 19s.xml">
-      <configuration name="MyQueueTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 22h 06m 33s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IsCompleteTreeTest - 2019.12.27 at 09h 54m 42s.xml">
-      <configuration name="IsCompleteTreeTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 22h 06m 41s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InsertNodeinaBinarySearchTreeTest - 2019.12.27 at 09h 54m 50s.xml">
-      <configuration name="InsertNodeinaBinarySearchTreeTest" configurationId="JUnit" />
+    <history-entry file="LongestConsecutiveTest - 2019.12.28 at 22h 07m 41s.xml">
+      <configuration name="LongestConsecutiveTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -656,8 +696,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28624535" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39900866" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28624535" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39900866" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -765,6 +805,24 @@
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestConsecutive.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LongestConsecutiveTest.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestConsecutive.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -804,9 +862,6 @@
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/KSubarraySum.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -885,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/statements/RunAfters.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -903,20 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SearchRangeinBinarySearchTreeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SubtreeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -969,16 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/IsCompleteTreeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LengthOfLastWordTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1000,6 +1024,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SearchRangeinBinarySearchTreeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/SubtreeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestSubstringWithoutRepeatingCharacters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestWords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LongestWordsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/IsCompleteTreeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="52" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/test/johnny/lintcode/algorithm/test/LongestConsecutiveTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lintcode-algorithm/src/johnny/lintcode/algorithm/LongestConsecutive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
         </state>
       </provider>
     </entry>
