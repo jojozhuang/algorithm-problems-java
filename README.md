@@ -5,7 +5,7 @@
 
 # Setup Locally
 ```bash
-git clone https://github.com/jojozhuang/algorithm-java.git
+git clone https://github.com/jojozhuang/algorithm-problems-java.git
 mvn install
 mvn test
 ```
