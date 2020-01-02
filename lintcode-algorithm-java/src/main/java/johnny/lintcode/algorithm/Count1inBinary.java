@@ -18,7 +18,7 @@ package johnny.lintcode.algorithm;
  * @author Johnny
  */
 public class Count1inBinary {
-    public int countOnes(int num) {        
+    public int countOnes(int num) {
         if (num >= 0) {
             int count = 0;
             while (num != 0) {

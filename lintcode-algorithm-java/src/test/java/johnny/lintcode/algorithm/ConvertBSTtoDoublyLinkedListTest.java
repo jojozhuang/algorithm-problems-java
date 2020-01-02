@@ -6,9 +6,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.ConvertBSTtoDoublyLinkedList;
-import johnny.lintcode.algorithm.common.DoublyListNode;
-import johnny.lintcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.DoublyListNode;
+import johnny.algorithm.common.TreeNode;
 
 import static org.junit.Assert.*;
 

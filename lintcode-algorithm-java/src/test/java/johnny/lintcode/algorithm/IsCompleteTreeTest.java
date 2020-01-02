@@ -1,7 +1,6 @@
 package johnny.lintcode.algorithm;
 
-import johnny.lintcode.algorithm.IsCompleteTree;
-import johnny.lintcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 import org.junit.*;
 
 import static org.junit.Assert.assertEquals;

@@ -7,8 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.TopologicalSorting;
-import johnny.lintcode.algorithm.common.DirectedGraphNode;
+import johnny.algorithm.common.DirectedGraphNode;
 
 import static org.junit.Assert.*;
 

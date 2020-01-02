@@ -9,8 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.ZeroSubarraySum;
-
 import static org.junit.Assert.*;
 
 /**

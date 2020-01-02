@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import johnny.lintcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 
 /**
  * Number of Airplanes in the Sky.

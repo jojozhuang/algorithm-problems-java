@@ -2,7 +2,7 @@ package johnny.lintcode.algorithm;
 
 import java.util.ArrayList;
 
-import johnny.lintcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Search Range in Binary Search Tree.

@@ -8,8 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.NumberofAirplanesintheSky;
-import johnny.lintcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 
 import static org.junit.Assert.*;
 

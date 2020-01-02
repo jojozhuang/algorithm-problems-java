@@ -6,8 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.IntersectionofTwoLinkedLists;
-import johnny.lintcode.algorithm.common.ListNode;
+import johnny.algorithm.common.ListNode;
 
 import static org.junit.Assert.*;
 

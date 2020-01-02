@@ -7,8 +7,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.PreviousPermutation;
-
 import static org.junit.Assert.*;
 
 /**

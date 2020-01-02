@@ -6,8 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.SegmentTreeNodeTutorial;
-import johnny.lintcode.algorithm.common.SegmentTreeNode;
+import johnny.algorithm.common.SegmentTreeNode;
 
 import static org.junit.Assert.*;
 

@@ -1,6 +1,6 @@
 package johnny.lintcode.algorithm;
 
-import johnny.lintcode.algorithm.common.SegmentTreeNode;
+import johnny.algorithm.common.SegmentTreeNode;
 
 /**
  *

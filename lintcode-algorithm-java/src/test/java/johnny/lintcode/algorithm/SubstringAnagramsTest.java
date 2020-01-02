@@ -8,8 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.SubstringAnagrams;
-import johnny.lintcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.ListUtil;
 
 import static org.junit.Assert.*;
 

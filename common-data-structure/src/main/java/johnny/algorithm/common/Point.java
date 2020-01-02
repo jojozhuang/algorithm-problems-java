@@ -1,4 +1,4 @@
-package johnny.lintcode.algorithm.common;
+package johnny.algorithm.common;
 
 /**
  *

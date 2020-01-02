@@ -1,6 +1,5 @@
 package johnny.lintcode.algorithm;
 
-import johnny.lintcode.algorithm.LengthOfLastWord;
 import org.junit.*;
 
 import static org.junit.Assert.assertEquals;

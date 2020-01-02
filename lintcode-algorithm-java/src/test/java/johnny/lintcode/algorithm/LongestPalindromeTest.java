@@ -2,8 +2,6 @@ package johnny.lintcode.algorithm;
 
 import org.junit.*;
 
-import java.util.ArrayList;
-
 import static org.junit.Assert.assertEquals;
 
 /**

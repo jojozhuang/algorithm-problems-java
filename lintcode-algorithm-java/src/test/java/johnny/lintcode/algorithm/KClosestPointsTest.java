@@ -6,8 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.KClosestPoints;
-import johnny.lintcode.algorithm.common.Point;
+import johnny.algorithm.common.Point;
 
 import static org.junit.Assert.*;
 

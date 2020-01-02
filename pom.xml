@@ -8,6 +8,7 @@
     <artifactId>algorithm-problems-java</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>common-data-structure</module>
         <module>cc150-algorithm-java</module>
         <module>hackerrank-algorithm-java</module>
         <module>lintcode-algorithm-java</module>

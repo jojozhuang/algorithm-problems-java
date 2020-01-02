@@ -1,4 +1,4 @@
-package johnny.lintcode.algorithm.common;
+package johnny.algorithm.common;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,6 +1,6 @@
 package johnny.lintcode.algorithm;
 
-import johnny.lintcode.algorithm.common.ListNode;
+import johnny.algorithm.common.ListNode;
 
 /**
  * Intersection of Two Linked Lists.

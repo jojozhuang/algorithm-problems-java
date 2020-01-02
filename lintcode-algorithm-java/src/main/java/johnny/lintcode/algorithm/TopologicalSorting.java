@@ -3,7 +3,7 @@ package johnny.lintcode.algorithm;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import johnny.lintcode.algorithm.common.DirectedGraphNode;
+import johnny.algorithm.common.DirectedGraphNode;
 
 /**
  * Topological Sorting.
@@ -16,8 +16,8 @@ public class TopologicalSorting {
             return null;
         }
 
-        ArrayList<DirectedGraphNode> res = new ArrayList<DirectedGraphNode>();
-        HashMap<DirectedGraphNode, Integer> map = new HashMap<DirectedGraphNode, Integer>();
+        ArrayList<DirectedGraphNode> res = new ArrayList<>();
+        HashMap<DirectedGraphNode, Integer> map = new HashMap<>();
         getInDegree(graph, map);
 
         for (DirectedGraphNode node : graph) {

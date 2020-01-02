@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.TopKFrequentWords;
 import johnny.lintcode.algorithm.common.Document;
 import johnny.lintcode.algorithm.common.OutputCollector;
 
