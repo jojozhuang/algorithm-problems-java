@@ -1,6 +1,6 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.common.ListNode;
+import johnny.algorithm.common.ListNode;
 
 /**
  * 23. Merge k Sorted Lists

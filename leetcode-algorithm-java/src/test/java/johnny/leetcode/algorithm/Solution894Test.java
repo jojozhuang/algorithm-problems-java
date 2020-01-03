@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution894;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 public class Solution894Test extends JunitBase {
 

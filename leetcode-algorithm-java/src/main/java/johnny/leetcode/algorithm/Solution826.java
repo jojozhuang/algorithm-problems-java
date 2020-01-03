@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 import java.util.Arrays;
 
-import johnny.leetcode.algorithm.common.Point;
+import johnny.algorithm.common.Point;
 
 /**
  * 826. Most Profit Assigning Work

@@ -1,7 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import java.util.Stack;
-import johnny.leetcode.algorithm.common.ListNode;
+import johnny.algorithm.common.ListNode;
 
 /**
  * Add Two Numbers II

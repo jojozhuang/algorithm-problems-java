@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 988. Smallest String Starting From Leaf

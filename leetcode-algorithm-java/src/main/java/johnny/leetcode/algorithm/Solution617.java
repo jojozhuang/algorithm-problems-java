@@ -1,6 +1,6 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Merge Two Binary Trees

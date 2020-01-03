@@ -1,6 +1,6 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 1022. Sum of Root To Leaf Binary Numbers

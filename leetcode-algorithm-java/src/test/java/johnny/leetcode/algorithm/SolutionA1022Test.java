@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.SolutionA1022;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 public class SolutionA1022Test extends JunitBase {
 

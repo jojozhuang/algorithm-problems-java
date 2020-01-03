@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution206;
-import johnny.leetcode.algorithm.common.ListNode;
+import johnny.algorithm.common.ListNode;
 
 public class Solution206Test extends JunitBase {
 

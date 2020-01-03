@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution652;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 public class Solution652Test extends JunitBase {
 

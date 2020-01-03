@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution364;
-import johnny.leetcode.algorithm.common.NestedInteger;
+import johnny.algorithm.common.NestedInteger;
 
 public class Solution364Test extends JunitBase {
 

@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.HashSet;
 import java.util.Set;
 
-import johnny.leetcode.algorithm.common.ListNode;
+import johnny.algorithm.common.ListNode;
 
 /**
  *817. Linked List Components

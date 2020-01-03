@@ -1,6 +1,6 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.common.RandomListNode;
+import johnny.algorithm.common.RandomListNode;
 
 /**
  * Copy List with Random Pointer.

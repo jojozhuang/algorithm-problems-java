@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution436;
-import johnny.leetcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 
 public class Solution436Test extends JunitBase {
 

@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import johnny.leetcode.algorithm.common.Point;
+import johnny.algorithm.common.Point;
 
 /**
  * Erect the Fence

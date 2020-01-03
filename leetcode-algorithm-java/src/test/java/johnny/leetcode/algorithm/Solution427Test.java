@@ -3,8 +3,7 @@ package johnny.leetcode.algorithm;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution427;
-import johnny.leetcode.algorithm.common.QuadNode;
+import johnny.algorithm.common.QuadNode;
 
 public class Solution427Test extends JunitBase {
 

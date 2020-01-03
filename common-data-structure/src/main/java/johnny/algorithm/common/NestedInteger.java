@@ -1,4 +1,4 @@
-package johnny.leetcode.algorithm.common;
+package johnny.algorithm.common;
 
 import java.util.ArrayList;
 import java.util.List;

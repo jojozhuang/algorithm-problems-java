@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import johnny.leetcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 import java.util.List;
 
 /**

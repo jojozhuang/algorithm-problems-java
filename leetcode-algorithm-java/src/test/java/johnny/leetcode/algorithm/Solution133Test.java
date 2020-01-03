@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution133;
-import johnny.leetcode.algorithm.common.UndirectedGraphNode;
+import johnny.algorithm.common.UndirectedGraphNode;
 
 public class Solution133Test extends JunitBase {
 

@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution970;
-import johnny.leetcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.ListUtil;
 
 public class Solution970Test extends JunitBase {
 

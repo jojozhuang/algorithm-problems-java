@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution187;
-import johnny.leetcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.ListUtil;
 
 public class Solution187Test extends JunitBase {
 

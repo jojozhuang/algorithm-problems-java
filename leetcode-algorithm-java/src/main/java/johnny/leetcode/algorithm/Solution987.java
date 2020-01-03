@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.TreeMap;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 987. Vertical Order Traversal of a Binary Tree

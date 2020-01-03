@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-import johnny.leetcode.algorithm.common.Point;
+import johnny.algorithm.common.Point;
 
 /**
  * 864. Shortest Path to Get All Keys

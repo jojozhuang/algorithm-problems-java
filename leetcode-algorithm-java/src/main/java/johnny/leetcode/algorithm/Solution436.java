@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-import johnny.leetcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 
 /**
  * Find Right Interval

@@ -6,8 +6,8 @@ import org.junit.Test;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution587;
-import johnny.leetcode.algorithm.common.ListUtil;
-import johnny.leetcode.algorithm.common.Point;
+import johnny.algorithm.common.ListUtil;
+import johnny.algorithm.common.Point;
 
 public class Solution587Test extends JunitBase {
 

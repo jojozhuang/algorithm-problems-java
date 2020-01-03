@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Serialize and Deserialize Binary Tree.

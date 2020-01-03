@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution802;
-import johnny.leetcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.ListUtil;
 
 public class Solution802Test extends JunitBase {
 

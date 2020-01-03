@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.HashMap;
 import java.util.Map;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 865. Smallest Subtree with all the Deepest Nodes

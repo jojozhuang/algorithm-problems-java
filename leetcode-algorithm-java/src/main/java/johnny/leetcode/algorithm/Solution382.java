@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import johnny.leetcode.algorithm.common.ListNode;
+import johnny.algorithm.common.ListNode;
 
 /**
  * Linked List Random Node

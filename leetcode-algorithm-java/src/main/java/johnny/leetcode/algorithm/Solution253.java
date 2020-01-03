@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
-import johnny.leetcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 
 /**
  * Meeting Rooms II.

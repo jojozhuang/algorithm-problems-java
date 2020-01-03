@@ -1,7 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import johnny.leetcode.algorithm.SolutionA1197;
-import johnny.leetcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.ListUtil;
 import org.junit.Test;
 
 import java.util.List;

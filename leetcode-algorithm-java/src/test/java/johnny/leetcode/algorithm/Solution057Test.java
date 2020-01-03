@@ -6,8 +6,8 @@ import org.junit.Test;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution057;
-import johnny.leetcode.algorithm.common.Interval;
-import johnny.leetcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.Interval;
+import johnny.algorithm.common.ListUtil;
 
 public class Solution057Test extends JunitBase {
 

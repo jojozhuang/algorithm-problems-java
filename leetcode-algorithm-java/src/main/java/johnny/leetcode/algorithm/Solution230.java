@@ -1,7 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import java.util.Stack;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Kth Smallest Element in a BST.

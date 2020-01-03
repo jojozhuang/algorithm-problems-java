@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution385;
-import johnny.leetcode.algorithm.common.NestedInteger;
+import johnny.algorithm.common.NestedInteger;
 
 public class Solution385Test extends JunitBase {
 

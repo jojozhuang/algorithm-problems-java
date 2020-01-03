@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution138;
-import johnny.leetcode.algorithm.common.RandomListNode;
+import johnny.algorithm.common.RandomListNode;
 
 public class Solution138Test extends JunitBase {
 

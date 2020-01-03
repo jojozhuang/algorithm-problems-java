@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
-import johnny.leetcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 
 /**
  * 986. Interval List Intersections

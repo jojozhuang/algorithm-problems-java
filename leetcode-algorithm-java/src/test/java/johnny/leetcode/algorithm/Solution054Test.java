@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution054;
-import johnny.leetcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.ListUtil;
 
 public class Solution054Test extends JunitBase {
 

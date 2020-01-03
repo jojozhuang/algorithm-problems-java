@@ -1,6 +1,6 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.common.QuadNode;
+import johnny.algorithm.common.QuadNode;
 
 /**
  * 427. Construct Quad Tree

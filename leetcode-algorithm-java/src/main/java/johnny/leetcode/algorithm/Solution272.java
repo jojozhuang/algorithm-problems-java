@@ -7,7 +7,7 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.TreeMap;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Closest Binary Search Tree Value II.

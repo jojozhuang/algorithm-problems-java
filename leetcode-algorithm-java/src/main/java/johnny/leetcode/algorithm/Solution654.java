@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.Deque;
 import java.util.LinkedList;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 654. Maximum Binary Tree

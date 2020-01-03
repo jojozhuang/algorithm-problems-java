@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 655. Print Binary Tree

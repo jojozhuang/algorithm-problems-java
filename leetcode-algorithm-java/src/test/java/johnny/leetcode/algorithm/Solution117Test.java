@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import johnny.leetcode.algorithm.Solution117;
-import johnny.leetcode.algorithm.common.TreeLinkNode;
+import johnny.algorithm.common.TreeLinkNode;
 
 public class Solution117Test extends JunitBase {
 

@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Find Leaves of Binary Tree.

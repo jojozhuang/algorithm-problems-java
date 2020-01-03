@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import johnny.leetcode.algorithm.common.UndirectedGraphNode;
+import johnny.algorithm.common.UndirectedGraphNode;
 
 /**
  * Clone Graph.

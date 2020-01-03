@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 import java.util.HashSet;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 653. Two Sum IV - Input is a BST

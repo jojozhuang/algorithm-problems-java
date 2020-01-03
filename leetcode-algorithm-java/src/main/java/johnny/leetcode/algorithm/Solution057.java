@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import johnny.leetcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 import java.util.List;
 import java.util.Queue;
 
@@ -31,7 +31,7 @@ public class Solution057 {
             return intervals;
         }
         
-        List<Interval> res = new ArrayList<Interval>();
+        List<Interval> res = new ArrayList<>();
         if (intervals == null || intervals.size() == 0) {
             res.add(newInterval);
             return res;
@@ -61,7 +61,7 @@ public class Solution057 {
             return intervals;
         }
         
-        List<Interval> res = new ArrayList<Interval>();
+        List<Interval> res = new ArrayList<>();
         if (intervals == null || intervals.size() == 0) {
             res.add(newInterval);
             return res;
@@ -96,13 +96,13 @@ public class Solution057 {
             return intervals;
         }
         
-        List<Interval> res = new ArrayList<Interval>();
+        List<Interval> res = new ArrayList<>();
         if (intervals == null || intervals.size() == 0) {
             res.add(newInterval);
             return res;
         }
         
-        Queue<Interval> queue = new LinkedList<Interval>();
+        Queue<Interval> queue = new LinkedList<>();
         for (Interval item: intervals) {
             queue.offer(item);
         }

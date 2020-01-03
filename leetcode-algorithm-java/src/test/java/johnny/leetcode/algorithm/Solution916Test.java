@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution916;
-import johnny.leetcode.algorithm.common.ListUtil;
+import johnny.algorithm.common.ListUtil;
 
 public class Solution916Test extends JunitBase {
 

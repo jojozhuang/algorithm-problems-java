@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 import java.util.Stack;
 
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * 1028. Recover a Tree From Preorder Traversal

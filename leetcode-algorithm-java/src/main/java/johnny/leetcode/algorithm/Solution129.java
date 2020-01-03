@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Sum Root to Leaf Numbers.

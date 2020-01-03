@@ -6,8 +6,8 @@ import org.junit.Test;
 import java.util.List;
 
 import johnny.leetcode.algorithm.Solution103;
-import johnny.leetcode.algorithm.common.ListUtil;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.ListUtil;
+import johnny.algorithm.common.TreeNode;
 
 public class Solution103Test extends JunitBase {
 

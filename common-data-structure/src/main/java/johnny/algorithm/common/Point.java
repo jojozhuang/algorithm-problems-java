@@ -1,36 +1,69 @@
 package johnny.algorithm.common;
 
+import java.util.List;
+
 /**
  *
  * @author Johnny
  */
-public class Point {
+public class Point implements Comparable<Point> {
     public int x;
     public int y;
     public Point() { x = 0; y = 0; }
     public Point(int a, int b) { x = a; y = b; }
-    
-    public static Point createInstance(int[] arr) {  
-        if (arr == null || arr.length != 2) {
+
+    public static Point[] buildArray(int[][] arr) {
+        if (arr == null || arr.length == 0) {
             return null;
         }
-        
-        return new Point(arr[0], arr[1]);
-    }
-    
-    public static Point[] createList(int[][] arr) {  
-        if (arr == null || arr.length == 0 || arr[0].length == 0) {
-            return null;
-        }
-        
-        Point[] res = new Point[arr.length];
+
+
+        Point[] points = new Point[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            res[i] = createInstance(arr[i]);
+            points[i] = new Point(arr[i][0], arr[i][1]);
         }
-        
-        return res;
+
+        return points;
     }
-    
+
+    public static List<Point> buildList(int[][] arr) {
+        Point[] points = buildArray(arr);
+        return ListUtil.buildList(points);
+    }
+
+    @Override
+    public String toString() {
+        return "["+ x + "," + y + "]";
+    }
+
+    @Override
+    public int compareTo(Point other){
+        if (this.x == other.x) {
+            return this.y - other.y;
+        }
+        return this.x - other.x;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        // If the object is compared with itself then return true
+        if (o == this) {
+            return true;
+        }
+
+        /* Check if o is an instance of ListNode or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Point)) {
+            return false;
+        }
+
+        // typecast o to ListNode so that we can compare data members
+        Point point = (Point) o;
+
+        // Compare the data members and return accordingly
+        return point.x == this.x && point.y == this.y;
+    }
+
     public static boolean isSame(Point[] p1, Point[] p2) {
         if (p1 == null && p2 == null) {
             return true;
@@ -44,14 +77,14 @@ public class Point {
         if (p1.length != p2.length) {
             return false;
         }
-        
+
         for (int i = 0; i < p1.length; i++) {
             if (p1[i].x != p2[i].x || p1[i].y != p2[i].y) {
                 return false;
             }
         }
-        
+
         return true;
     }
-    
+
 }

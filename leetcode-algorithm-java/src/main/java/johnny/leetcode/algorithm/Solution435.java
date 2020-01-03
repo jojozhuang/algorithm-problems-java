@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import johnny.leetcode.algorithm.common.Interval;
+import johnny.algorithm.common.Interval;
 
 /**
  * Non-overlapping Intervals

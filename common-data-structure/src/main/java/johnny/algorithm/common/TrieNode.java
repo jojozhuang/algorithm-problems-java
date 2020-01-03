@@ -1,4 +1,4 @@
-package johnny.leetcode.algorithm.common;
+package johnny.algorithm.common;
 
 import java.util.HashMap;
 
@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class TrieNode {
     public char c;
-    public HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
+    public HashMap<Character, TrieNode> children = new HashMap<>();
     public boolean isLeaf;
  
     public TrieNode() {}

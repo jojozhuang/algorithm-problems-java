@@ -1,5 +1,5 @@
 package johnny.leetcode.algorithm;
-import johnny.leetcode.algorithm.common.TreeNode;
+import johnny.algorithm.common.TreeNode;
 
 /**
  * Lowest Common Ancestor of a Binary Tree.
