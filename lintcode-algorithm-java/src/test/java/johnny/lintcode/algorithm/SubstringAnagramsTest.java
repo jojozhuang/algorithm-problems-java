@@ -44,12 +44,12 @@ public class SubstringAnagramsTest {
     public void testFindAnagrams() {
         System.out.println("findAnagrams");
         SubstringAnagrams instance = new SubstringAnagrams();
-        List<Integer> expResult = new ArrayList<Integer>();
+        List<Integer> expResult = new ArrayList<>();
         assertEquals(expResult, instance.findAnagrams("ab", ""));
         
-        assertEquals(ListUtil.buildIntegerList(new Integer[]{0}), instance.findAnagrams("ab", "ab"));
-        assertEquals(ListUtil.buildIntegerList(new Integer[]{2}), instance.findAnagrams("acba", "ab"));
-        assertEquals(ListUtil.buildIntegerList(new Integer[]{2,3,4,5}), instance.findAnagrams("abdededf", "de"));
-        assertEquals(ListUtil.buildIntegerList(new Integer[]{0,6}), instance.findAnagrams("cbaebabacd", "abc"));
+        assertEquals(ListUtil.buildList(new Integer[]{0}), instance.findAnagrams("ab", "ab"));
+        assertEquals(ListUtil.buildList(new Integer[]{2}), instance.findAnagrams("acba", "ab"));
+        assertEquals(ListUtil.buildList(new Integer[]{2,3,4,5}), instance.findAnagrams("abdededf", "de"));
+        assertEquals(ListUtil.buildList(new Integer[]{0,6}), instance.findAnagrams("cbaebabacd", "abc"));
     }
 }
