@@ -59,7 +59,6 @@ import java.util.List;
  * Output: 8
  * Explanation:The maximum width existing in the fourth level with the length 8 (6,null,null,null,null,null,null,7).
  * <p>
- * <p>
  * Note: Answer will in the range of 32-bit signed integer
  *
  * @author Johnny

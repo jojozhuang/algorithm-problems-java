@@ -11,7 +11,7 @@ package johnny.leetcode.algorithm;
  * Note:
  * (1) 1 is a super ugly number for any given primes.
  * (2) The given numbers in primes are in ascending order.
- * (3) 0 < k ≤ 100, 0 < n ≤ 106, 0 < primes[i] < 1000.
+ * {@code (3) 0 < k ≤ 100, 0 < n ≤ 106, 0 < primes[i] < 1000.}
  *
  * @author Johnny
  */

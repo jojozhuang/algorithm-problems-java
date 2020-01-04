@@ -17,7 +17,6 @@ import java.util.Map;
  * <p>
  * Given s = "abc", return [].
  * <p>
- * <p>
  * Hint:
  * <p>
  * If a palindromic permutation exists, we just need to generate the first

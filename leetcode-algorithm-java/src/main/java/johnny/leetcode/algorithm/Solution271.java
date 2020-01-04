@@ -10,14 +10,14 @@ import java.util.List;
  * of strings.
  * <p>
  * Machine 1 (sender) has the function:
- * string encode(vector<string> strs) { // ... your code return encoded_string; }
+ * {@code string encode(vector<string> strs) { // ... your code return encoded_string; }
  * Machine 2 (receiver) has the function:
- * vector<string> decode(string s) { //... your code return strs; }
+ * vector<string> decode(string s) { //... your code return strs; }}
  * <p>
  * So Machine 1 does:
  * string encoded_string = encode(strs);
  * and Machine 2 does:
- * vector<string> strs2 = decode(encoded_string);
+ * {@code vector<string> strs2 = decode(encoded_string);}
  * strs2 in Machine 2 should be the same as strs in Machine 1.
  * <p>
  * Implement the encode and decode methods.

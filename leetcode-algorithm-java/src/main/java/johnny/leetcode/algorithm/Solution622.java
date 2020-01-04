@@ -54,6 +54,8 @@ public class Solution622 {
 
     /**
      * Insert an element into the circular queue. Return true if the operation is successful.
+     * @param value value
+     * @return result
      */
     public boolean enQueue(int value) {
         // check if queue is full
@@ -76,6 +78,7 @@ public class Solution622 {
 
     /**
      * Delete an element from the circular queue. Return true if the operation is successful.
+     * @return result
      */
     public boolean deQueue() {
         if (isEmpty()) {
@@ -99,6 +102,7 @@ public class Solution622 {
 
     /**
      * Get the front item from the queue.
+     * @return result
      */
     public int Front() {
         if (isEmpty()) {
@@ -109,6 +113,7 @@ public class Solution622 {
 
     /**
      * Get the last item from the queue.
+     * @return result
      */
     public int Rear() {
         if (isEmpty()) {
@@ -119,6 +124,7 @@ public class Solution622 {
 
     /**
      * Checks whether the circular queue is empty or not.
+     * @return result
      */
     public boolean isEmpty() {
         return head == -1;
@@ -126,6 +132,7 @@ public class Solution622 {
 
     /**
      * Checks whether the circular queue is full or not.
+     * @return result
      */
     public boolean isFull() {
         if (tail == arr.length - 1 && head == 0 || tail == head - 1) {

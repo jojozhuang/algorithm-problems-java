@@ -11,6 +11,7 @@ package johnny.leetcode.algorithm;
  * Write a one-pass algorithm with O(1) extra space to determine, if your path
  * crosses itself, or not.
  * <p>
+ * <pre>{@code
  * Example 1:
  * Given x = [2, 1, 1, 2],
  * ┌───┐
@@ -35,6 +36,7 @@ package johnny.leetcode.algorithm;
  * └───┼>
  * <p>
  * Return true (self crossing)
+ * }</pre>
  *
  * @author Johnny
  */

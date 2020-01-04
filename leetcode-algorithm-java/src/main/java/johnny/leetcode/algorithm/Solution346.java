@@ -16,9 +16,10 @@ public class Solution346 {
 
     /**
      * Initialize your data structure here.
+     * @param size size
      */
     public Solution346(int size) {
-        this.queue = new LinkedList<Integer>();
+        this.queue = new LinkedList<>();
         this.size = size;
     }
 

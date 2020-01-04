@@ -25,7 +25,6 @@ import java.util.Queue;
  * /  \
  * 15   7
  * <p>
- * <p>
  * return its vertical order traversal as:
  * <p>
  * [
@@ -35,7 +34,6 @@ import java.util.Queue;
  * [7]
  * ]
  * <p>
- * <p>
  * Given binary tree [3,9,20,4,5,2,7],
  * <p>
  * _3_
@@ -43,7 +41,6 @@ import java.util.Queue;
  * 9    20
  * / \   / \
  * 4   5 2   7
- * <p>
  * <p>
  * return its vertical order traversal as:
  * <p>

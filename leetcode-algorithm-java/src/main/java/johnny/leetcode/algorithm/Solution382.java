@@ -50,6 +50,7 @@ public class Solution382 {
 
     /**
      * Returns a random node's value.
+     * @return result
      */
     public int getRandom() {
         Random r = new Random();

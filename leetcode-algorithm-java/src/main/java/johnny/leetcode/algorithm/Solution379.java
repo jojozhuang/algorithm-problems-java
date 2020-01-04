@@ -50,6 +50,8 @@ public class Solution379 {
 
     /**
      * Check if a number is available or not.
+     * @param number number
+     * @return result
      */
     public boolean check(int number) {
         return !set.contains(number) && number <= max;
@@ -57,6 +59,7 @@ public class Solution379 {
 
     /**
      * Recycle or release a number.
+     * @param number number
      */
     public void release(int number) {
         if (set.contains(number)) {

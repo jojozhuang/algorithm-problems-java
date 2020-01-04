@@ -9,6 +9,7 @@ import java.util.Stack;
  * validator to parse the code and return whether it is valid. A code snippet is
  * valid if all the following rules hold:
  * <p>
+ * <pre>{@code
  * 1. The code must be wrapped in a valid closed tag. Otherwise, the code is invalid.
  * 2. A closed tag (not necessarily valid) has exactly the following format : <TAG_NAME>TAG_CONTENT</TAG_NAME>. Among them, <TAG_NAME> is the start tag, and </TAG_NAME> is the end tag. The TAG_NAME in start and end tags should be the same. A closed tag is valid if and only if the TAG_NAME and TAG_CONTENT are valid.
  * 3. A valid TAG_NAME only contain upper-case letters, and has length in range [1,9]. Otherwise, the TAG_NAME is invalid.
@@ -66,7 +67,7 @@ import java.util.Stack;
  * Note:
  * For simplicity, you could assume the input code (including the any characters
  * mentioned above) only contain letters, digits, '<','>','/','!','[',']' and ' '.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution591 {

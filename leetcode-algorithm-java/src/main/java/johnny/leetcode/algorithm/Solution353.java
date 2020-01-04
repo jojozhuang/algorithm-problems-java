@@ -24,6 +24,7 @@ import java.util.Set;
  * appear on a block occupied by the snake.
  * <p>
  * Example:
+ * <pre>{@code
  * Given width = 3, height = 2, and food = [[1,2],[0,1]].
  * <p>
  * Snake snake = new Snake(width, height, food);
@@ -59,7 +60,7 @@ import java.util.Set;
  * | | |S|
  * <p>
  * snake.move("U"); -> Returns -1 (Game over because snake collides with border)
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution353 {

@@ -21,7 +21,6 @@ package johnny.leetcode.algorithm;
  * | 4 | 5 | 6 |
  * | 7 | 8 | 9 |
  * <p>
- * <p>
  * Invalid move: 4 - 1 - 3 - 6
  * Line 1 - 3 passes through key 2 which had not been selected in the pattern.
  * <p>
@@ -33,7 +32,6 @@ package johnny.leetcode.algorithm;
  * <p>
  * Valid move: 6 - 5 - 4 - 1 - 9 - 2
  * Line 1 - 9 is valid because it passes through key 5, which had been selected in the pattern.
- * <p>
  * <p>
  * Example:
  * Given m = 1, n = 1, return 9.

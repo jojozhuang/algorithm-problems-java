@@ -13,7 +13,6 @@ import java.util.List;
  * Example:
  * Input:
  * <p>
- * <p>
  * 1
  * / \
  * 3   2

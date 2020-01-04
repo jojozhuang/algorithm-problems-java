@@ -17,7 +17,6 @@ import java.util.List;
  * length surface they touch (either the number line or another square). Squares dropped adjacent
  * to each other will not stick together prematurely.
  * <p>
- * <p>
  * Return a list ans of heights. Each height ans[i] represents the current highest height of any
  * square we have dropped, after dropping squares represented by positions[0], positions[1], ...,
  * positions[i].
@@ -33,7 +32,6 @@ import java.util.List;
  * -------
  * The maximum height of any square is 2.
  * <p>
- * <p>
  * After the second drop of positions[1] = [2, 3]:
  * __aaa
  * __aaa
@@ -44,7 +42,6 @@ import java.util.List;
  * The maximum height of any square is 5.
  * The larger square stays on top of the smaller square despite where its center
  * of gravity is, because squares are infinitely sticky on their bottom edge.
- * <p>
  * <p>
  * After the third drop of positions[1] = [6, 1]:
  * __aaa
@@ -57,7 +54,6 @@ import java.util.List;
  * <p>
  * Thus, we return an answer of [2, 5, 5].
  * <p>
- * <p>
  * Example 2:
  * Input: [[100, 100], [200, 100]]
  * Output: [100, 100]
@@ -65,9 +61,9 @@ import java.util.List;
  * surfaces.
  * Note:
  * <p>
- * 1 <= positions.length <= 1000.
- * 1 <= positions[i][0] <= 10^8.
- * 1 <= positions[i][1] <= 10^6.
+ * {@code 1 <= positions.length <= 1000}.
+ * {@code 1 <= positions[i][0] <= 10^8}.
+ * {@code 1 <= positions[i][1] <= 10^6}.
  *
  * @author Johnny
  */

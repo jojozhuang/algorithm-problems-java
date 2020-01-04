@@ -35,11 +35,13 @@ public class Solution355 {
      * Initialize your data structure here.
      */
     public Solution355() {
-        userMap = new HashMap<Integer, User>();
+        userMap = new HashMap<>();
     }
 
     /**
      * Compose a new tweet.
+     * @param userId user id
+     * @param tweetId tweet id
      */
     public void postTweet(int userId, int tweetId) {
         if (!userMap.containsKey(userId)) {
@@ -51,6 +53,8 @@ public class Solution355 {
 
     /**
      * Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
+     * @param userId user id
+     * @return feeds list
      */
     public List<Integer> getNewsFeed(int userId) {
         List<Integer> res = new LinkedList<>();
@@ -82,6 +86,8 @@ public class Solution355 {
 
     /**
      * Follower follows a followee. If the operation is invalid, it should be a no-op.
+     * @param followeeId followee id
+     * @param followerId follower id
      */
     public void follow(int followerId, int followeeId) {
         if (!userMap.containsKey(followerId)) {
@@ -97,6 +103,8 @@ public class Solution355 {
 
     /**
      * Follower unfollows a followee. If the operation is invalid, it should be a no-op.
+     * @param followerId follower id
+     * @param followeeId followee id
      */
     public void unfollow(int followerId, int followeeId) {
         if (!userMap.containsKey(followerId) || followerId == followeeId) {

@@ -15,7 +15,6 @@ import java.util.HashMap;
  * search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one letter.
  * <p>
  * For example:
- * <p>
  * <pre>{@code
  * addWord("bad")
  * addWord("dad")

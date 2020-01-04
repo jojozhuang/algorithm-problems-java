@@ -16,7 +16,6 @@ package johnny.leetcode.algorithm;
  * Output: -1
  * Explanation: 2 does not exist in nums so return -1
  * <p>
- * <p>
  * Note:
  * <p>
  * You may assume that all elements in nums are unique.

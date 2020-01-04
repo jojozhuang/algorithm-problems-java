@@ -7,7 +7,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Note:
  * n is positive and will fit within the range of a 32-bit signed integer
- * (n < 2^31).
+ * {@code (n < 2^31)}.
  * <p>
  * Example 1:
  * Input:

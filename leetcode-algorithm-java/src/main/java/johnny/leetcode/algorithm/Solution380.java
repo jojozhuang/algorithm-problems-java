@@ -62,6 +62,8 @@ public class Solution380 {
 
     /**
      * Inserts a value to the set. Returns true if the set did not already contain the specified element.
+     * @param val value
+     * @return result
      */
     public boolean insert(int val) {
         if (map.containsKey(val)) {
@@ -75,6 +77,8 @@ public class Solution380 {
 
     /**
      * Removes a value from the set. Returns true if the set contained the specified element.
+     * @param val
+     * @return result
      */
     public boolean remove(int val) {
         if (!map.containsKey(val)) {
@@ -99,6 +103,7 @@ public class Solution380 {
 
     /**
      * Get a random element from the set.
+     * @return result
      */
     public int getRandom() {
         if (list.isEmpty()) {

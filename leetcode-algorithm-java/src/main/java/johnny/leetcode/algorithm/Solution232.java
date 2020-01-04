@@ -31,12 +31,13 @@ public class Solution232 {
      * Initialize your data structure here.
      */
     public Solution232() {
-        stack1 = new Stack<Integer>();
-        stack2 = new Stack<Integer>();
+        stack1 = new Stack<>();
+        stack2 = new Stack<>();
     }
 
     /**
      * Push element x to the back of queue.
+     * @param x number
      */
     public void push(int x) {
         stack1.push(x);
@@ -44,6 +45,7 @@ public class Solution232 {
 
     /**
      * Removes the element from in front of queue and returns that element.
+     * @return result
      */
     public int pop() {
         peek();
@@ -52,6 +54,7 @@ public class Solution232 {
 
     /**
      * Get the front element.
+     * @return result
      */
     public int peek() {
         if (stack2.isEmpty()) {
@@ -65,6 +68,7 @@ public class Solution232 {
 
     /**
      * Returns whether the queue is empty.
+     * @return result
      */
     public boolean empty() {
         return stack1.isEmpty() && stack2.empty();

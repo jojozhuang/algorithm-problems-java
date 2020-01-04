@@ -13,6 +13,7 @@ import java.util.HashSet;
  * return -1.0.
  * <p>
  * Example:
+ * <pre>{@code
  * Given a / b = 2.0, b / c = 3.0.
  * queries are: a / c = ?, b / a = ?, a / e = ?, a / a = ?, x / x = ? .
  * return [6.0, 0.5, -1.0, 1.0, -1.0 ].
@@ -26,7 +27,7 @@ import java.util.HashSet;
  * queries = [ ["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"] ].
  * The input is always valid. You may assume that evaluating the queries will
  * result in no division by zero and there is no contradiction.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution399 {

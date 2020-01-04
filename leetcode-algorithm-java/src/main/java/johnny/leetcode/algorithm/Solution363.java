@@ -20,7 +20,7 @@ import java.util.TreeSet;
  * is the max number no larger than k (k = 2).
  * <p>
  * Note:
- * The rectangle inside the matrix must have an area > 0.
+ * The rectangle inside the matrix must have an area larger than 0.
  * What if the number of rows is much larger than the number of columns?
  *
  * @author Johnny

@@ -21,7 +21,6 @@ import java.util.TreeMap;
  * You are guaranteed to have only one unique set of k values in the BST that
  * are closest to the target.
  * <p>
- * <p>
  * Follow up:
  * Assume that the BST is balanced, could you solve it in less than O(n)
  * runtime (where n = total nodes)?

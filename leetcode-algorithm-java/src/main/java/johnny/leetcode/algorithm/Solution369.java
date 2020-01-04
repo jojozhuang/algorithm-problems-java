@@ -13,10 +13,10 @@ import johnny.algorithm.common.ListNode;
  * <p>
  * Example:
  * Input:
- * 1->2->3
+ * {@code 1->2->3}
  * <p>
  * Output:
- * 1->2->4
+ * {@code 1->2->4}
  *
  * @author Johnny
  */

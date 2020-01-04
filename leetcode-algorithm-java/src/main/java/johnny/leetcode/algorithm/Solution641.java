@@ -55,6 +55,8 @@ public class Solution641 {
 
     /**
      * Adds an item at the front of Deque. Return true if the operation is successful.
+     * @param value value
+     * @return result
      */
     public boolean insertFront(int value) {
         // check if deque is full
@@ -76,6 +78,8 @@ public class Solution641 {
 
     /**
      * Adds an item at the rear of Deque. Return true if the operation is successful.
+     * @param value value
+     * @return result
      */
     public boolean insertLast(int value) {
         // check if deque is full
@@ -97,6 +101,7 @@ public class Solution641 {
 
     /**
      * Deletes an item from the front of Deque. Return true if the operation is successful.
+     * @return result
      */
     public boolean deleteFront() {
         if (isEmpty()) {
@@ -119,6 +124,7 @@ public class Solution641 {
 
     /**
      * Deletes an item from the rear of Deque. Return true if the operation is successful.
+     * @return result
      */
     public boolean deleteLast() {
         if (isEmpty()) {
@@ -141,6 +147,7 @@ public class Solution641 {
 
     /**
      * Get the front item from the deque.
+     * @return result
      */
     public int getFront() {
         if (isEmpty()) {
@@ -151,6 +158,7 @@ public class Solution641 {
 
     /**
      * Get the last item from the deque.
+     * @return result
      */
     public int getRear() {
         if (isEmpty()) {
@@ -161,6 +169,7 @@ public class Solution641 {
 
     /**
      * Checks whether the circular deque is empty or not.
+     * @return result
      */
     public boolean isEmpty() {
         return head == -1;
@@ -168,6 +177,7 @@ public class Solution641 {
 
     /**
      * Checks whether the circular deque is full or not.
+     * @return result
      */
     public boolean isFull() {
         if (tail == arr.length - 1 && head == 0 || tail == head - 1) {

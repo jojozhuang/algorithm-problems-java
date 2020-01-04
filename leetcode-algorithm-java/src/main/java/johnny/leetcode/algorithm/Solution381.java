@@ -71,6 +71,8 @@ public class Solution381 {
 
     /**
      * Inserts a value to the collection. Returns true if the collection did not already contain the specified element.
+     * @param val value
+     * @return result
      */
     public boolean insert(int val) {
         if (!map.containsKey(val)) {
@@ -87,6 +89,8 @@ public class Solution381 {
 
     /**
      * Removes a value from the collection. Returns true if the collection contained the specified element.
+     * @param val value
+     * @return result
      */
     public boolean remove(int val) {
         if (!map.containsKey(val)) {
@@ -114,6 +118,7 @@ public class Solution381 {
 
     /**
      * Get a random element from the collection.
+     * @return result
      */
     public int getRandom() {
 

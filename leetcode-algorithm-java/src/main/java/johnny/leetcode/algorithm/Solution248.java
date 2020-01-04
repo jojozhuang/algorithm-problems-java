@@ -11,7 +11,7 @@ import java.util.List;
  * degrees (looked at upside down).
  * <p>
  * Write a function to count the total strobogrammatic numbers that exist in
- * the range of low <= num <= high.
+ * the range of low {@code <= num <= high}.
  * <p>
  * For example,
  * <p>

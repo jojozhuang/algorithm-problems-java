@@ -9,8 +9,6 @@ import johnny.leetcode.algorithm.common.ArrayReader;
  * <p>
  * You may assume all integers in the array are less than 10000, and if you access the array out of bounds, ArrayReader.get will return 2147483647.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: array = [-1,0,3,5,9,12], target = 9
@@ -21,7 +19,6 @@ import johnny.leetcode.algorithm.common.ArrayReader;
  * Input: array = [-1,0,3,5,9,12], target = 2
  * Output: -1
  * Explanation: 2 does not exist in nums so return -1
- * <p>
  * <p>
  * Note:
  * <p>

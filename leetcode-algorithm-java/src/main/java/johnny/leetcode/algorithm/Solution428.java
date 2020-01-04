@@ -16,7 +16,6 @@ import java.util.Queue;
  * <p>
  * as [1 [3[5 6] 2 4]]. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
  * <p>
- * <p>
  * Note:
  * <p>
  * N is in the range of [1, 1000]

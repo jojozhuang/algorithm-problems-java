@@ -25,7 +25,6 @@ import java.util.Set;
  * guess, use A to indicate the bulls and B to indicate the cows. In the above
  * example, your function should return "1A3B".
  * <p>
- * <p>
  * Please note that both secret number and friend's guess may contain duplicate digits, for example:
  * <p>
  * Secret number:  "1123"

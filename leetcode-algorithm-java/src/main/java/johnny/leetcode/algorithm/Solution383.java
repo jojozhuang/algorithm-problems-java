@@ -10,9 +10,9 @@ package johnny.leetcode.algorithm;
  * <p>
  * Note:
  * You may assume that both strings contain only lowercase letters.
- * canConstruct("a", "b") -> false
- * canConstruct("aa", "ab") -> false
- * canConstruct("aa", "aab") -> true
+ * {@code canConstruct("a", "b") -> false}
+ * {@code canConstruct("aa", "ab") -> false}
+ * {@code canConstruct("aa", "aab") -> true}
  *
  * @author Johnny
  */

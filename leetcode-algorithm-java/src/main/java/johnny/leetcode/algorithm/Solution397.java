@@ -14,7 +14,7 @@ package johnny.leetcode.algorithm;
  * Output:
  * 3
  * Explanation:
- * 8 -> 4 -> 2 -> 1
+ * {@code 8 -> 4 -> 2 -> 1}
  * <p>
  * Example 2:
  * Input:
@@ -22,9 +22,9 @@ package johnny.leetcode.algorithm;
  * Output:
  * 4
  * Explanation:
- * 7 -> 8 -> 4 -> 2 -> 1
+ * {@code 7 -> 8 -> 4 -> 2 -> 1}
  * or
- * 7 -> 6 -> 3 -> 2 -> 1
+ * {@code 7 -> 6 -> 3 -> 2 -> 1}
  *
  * @author Johnny
  */

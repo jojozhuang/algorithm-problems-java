@@ -18,8 +18,8 @@ import java.util.HashSet;
  * k,or k + 1 units. Note that the frog can only jump in the forward direction.
  * <p>
  * Note:
- * The number of stones is ≥ 2 and is < 1,100.
- * Each stone's position will be a non-negative integer < 231.
+ * The number of stones is {@code ≥ 2 and is < 1,100}.
+ * Each stone's position will be a non-negative integer {@code < 231}.
  * The first stone's position is always 0.
  * <p>
  * Example 1:

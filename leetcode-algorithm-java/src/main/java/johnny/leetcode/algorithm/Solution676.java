@@ -42,6 +42,7 @@ public class Solution676 {
 
     /**
      * Build a dictionary through a list of words
+     * @param dict dict array
      */
     //ello, hllo, helo, hell 
     //eetcode, letcode, leecode,leetode, leetcde, leetcoe, leetcod
@@ -61,6 +62,8 @@ public class Solution676 {
 
     /**
      * Returns if there is any word in the trie that equals to the given word after modifying exactly one character
+     * @param word word
+     * @return result
      */
     public boolean search(String word) {
         for (int i = 0; i < word.length(); i++) {

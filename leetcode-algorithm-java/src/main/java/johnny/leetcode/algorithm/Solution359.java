@@ -43,6 +43,9 @@ public class Solution359 {
 
     /**
      * Returns true if the message should be printed in the given timestamp, otherwise returns false. The timestamp is in seconds granularity.
+     * @param timestamp time stamp
+     * @param message message
+     * @return result
      */
     public boolean shouldPrintMessage(int timestamp, String message) {
         if (map.containsKey(message) && (timestamp - map.get(message)) < 10) {

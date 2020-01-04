@@ -28,9 +28,9 @@ import johnny.algorithm.common.TreeNode;
  * <p>
  * Return 3. The paths that sum to 8 are:
  * <p>
- * 1.  5 -> 3
- * 2.  5 -> 2 -> 1
- * 3. -3 -> 11
+ * {@code 1.  5 -> 3}
+ * {@code 2.  5 -> 2 -> 1}
+ * {@code 3. -3 -> 11}
  *
  * @author Johnny
  */

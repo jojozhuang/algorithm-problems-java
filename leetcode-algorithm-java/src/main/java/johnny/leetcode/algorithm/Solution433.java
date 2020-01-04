@@ -11,7 +11,7 @@ import java.util.Set;
  * <p>
  * Suppose we need to investigate about a mutation (mutation from "start" to "end"), where ONE mutation is defined as ONE single character changed in the gene string.
  * <p>
- * For example, "AACCGGTT" -> "AACCGGTA" is 1 mutation.
+ * For example, {@code "AACCGGTT" -> "AACCGGTA"} is 1 mutation.
  * <p>
  * Also, there is a given gene "bank", which records all the valid gene mutations. A gene must be in the bank to make it a valid gene string.
  * <p>

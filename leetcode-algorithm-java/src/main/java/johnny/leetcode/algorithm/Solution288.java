@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Unique Word Abbreviation.
- * An abbreviation of a word follows the form <first letter><number><last letter>.
+ * An abbreviation of a word follows the form {@code <first letter><number><last letter>}.
  * Below are some examples of word abbreviations:
  * <pre>{@code
  * a) it                      --> it    (no abbreviation)
@@ -23,7 +23,6 @@ import java.util.HashMap;
  * <p>
  * Example:
  * Given dictionary = [ "deer", "door", "cake", "card" ]
- * <p>
  * <pre>{@code
  * isUnique("dear") -> false
  * isUnique("cart") -> true

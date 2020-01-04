@@ -10,10 +10,8 @@ package johnny.leetcode.algorithm;
  * <p>
  * After you are done modifying the input array in-place, return the new length of the array.
  * <p>
- * <p>
  * Follow up:
  * Could you solve it using only O(1) extra space?
- * <p>
  * <p>
  * Example 1:
  * Input:

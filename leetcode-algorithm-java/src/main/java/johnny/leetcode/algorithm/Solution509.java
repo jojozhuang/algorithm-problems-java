@@ -8,8 +8,6 @@ package johnny.leetcode.algorithm;
  * F(N) = F(N - 1) + F(N - 2), for N > 1.
  * Given N, calculate F(N).
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: 2

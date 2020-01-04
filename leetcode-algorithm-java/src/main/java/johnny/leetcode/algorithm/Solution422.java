@@ -6,7 +6,7 @@ import java.util.List;
  * 422. Valid Word Square
  * Given a sequence of words, check whether it forms a valid word square.
  * <p>
- * A sequence of words forms a valid word square if the kth row and column read the exact same string, where 0 ≤ k < max(numRows, numColumns).
+ * A sequence of words forms a valid word square if the kth row and column read the exact same string, where {@code 0 ≤ k < max(numRows, numColumns)}.
  * <p>
  * Note:
  * The number of words given is at least 1 and does not exceed 500.

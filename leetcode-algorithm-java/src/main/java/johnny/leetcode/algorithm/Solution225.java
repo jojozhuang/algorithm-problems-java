@@ -33,6 +33,7 @@ public class Solution225 {
 
     /**
      * Push element x onto stack.
+     * @param x number
      */
     public void push(int x) {
         queue.add(x);
@@ -45,6 +46,7 @@ public class Solution225 {
 
     /**
      * Removes the element on top of the stack and returns that element.
+     * @return result
      */
     public int pop() {
         return queue.remove();
@@ -52,6 +54,7 @@ public class Solution225 {
 
     /**
      * Get the top element.
+     * @return result
      */
     public int top() {
         return queue.peek();
@@ -59,6 +62,7 @@ public class Solution225 {
 
     /**
      * Returns whether the stack is empty.
+     * @return result
      */
     public boolean empty() {
         return queue.isEmpty();

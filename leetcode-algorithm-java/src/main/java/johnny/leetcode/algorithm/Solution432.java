@@ -46,6 +46,7 @@ public class Solution432 {
 
     /**
      * Inserts a new key <Key> with value 1. Or increments an existing key by 1.
+     * @param key key
      */
     public void inc(String key) {
         if (keyCountMap.containsKey(key)) {
@@ -61,6 +62,7 @@ public class Solution432 {
 
     /**
      * Decrements an existing key by 1. If Key's value is 1, remove it from the data structure.
+     * @param key key
      */
     public void dec(String key) {
         if (keyCountMap.containsKey(key)) {
@@ -76,6 +78,7 @@ public class Solution432 {
 
     /**
      * Returns one of the keys with maximal value.
+     * @return result
      */
     public String getMaxKey() {
         return tail.pre == head ? "" : (String) tail.pre.keySet.iterator().next();
@@ -83,6 +86,7 @@ public class Solution432 {
 
     /**
      * Returns one of the keys with Minimal value.
+     * @return result
      */
     public String getMinKey() {
         return head.next == tail ? "" : (String) head.next.keySet.iterator().next();

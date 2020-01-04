@@ -19,7 +19,6 @@ import java.util.PriorityQueue;
  * void addNum(int num) - Add a integer number from the data stream to the data structure.
  * double findMedian() - Return the median of all elements so far.
  * For example:
- * <p>
  * <pre>{@code
  * add(1)
  * add(2)

@@ -42,7 +42,6 @@ package johnny.leetcode.algorithm;
  * bottomLeft: T
  * bottomRight: F
  * <p>
- * <p>
  * Your task is to implement a function that will take two quadtrees and return a quadtree that represents the logical OR (or union) of the two trees.
  * <p>
  * A:                 B:                 C (A or B):

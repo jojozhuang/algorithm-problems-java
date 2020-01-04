@@ -36,6 +36,7 @@ public class Solution384 {
 
     /**
      * Resets the array to its original configuration and return it.
+     * @return result
      */
     public int[] reset() {
         return original;
@@ -43,6 +44,7 @@ public class Solution384 {
 
     /**
      * Returns a random shuffling of the array.
+     * @return result
      */
     public int[] shuffle() {
         if (original == null || original.length <= 1) {

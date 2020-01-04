@@ -19,7 +19,6 @@ import java.util.List;
  * 4   5
  * Returns [4, 5, 3], [2], [1].
  * <p>
- * <p>
  * Explanation:
  * 1. Remove the leaves [4, 5, 3] from the tree
  * <p>

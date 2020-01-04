@@ -16,9 +16,9 @@ import java.util.List;
  * In the case of multiple answers as shown in the second example below, you may return any one of them.
  * Assume length of target string = m, and dictionary size = n. You may assume that m ≤ 21, n ≤ 1000, and log2(n) + m ≤ 20.
  * Examples:
- * "apple", ["blade"] -> "a4" (because "5" or "4e" conflicts with "blade")
+ * {@code "apple", ["blade"] -> "a4" (because "5" or "4e" conflicts with "blade")}
  * <p>
- * "apple", ["plain", "amber", "blade"] -> "1p3" (other valid answers include "ap3", "a3e", "2p2", "3le", "3l1").
+ * {@code "apple", ["plain", "amber", "blade"] -> "1p3" (other valid answers include "ap3", "a3e", "2p2", "3le", "3l1")}.
  *
  * @author Johnny
  */

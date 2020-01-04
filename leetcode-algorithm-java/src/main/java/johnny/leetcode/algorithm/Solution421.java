@@ -3,9 +3,9 @@ package johnny.leetcode.algorithm;
 /**
  * Maximum XOR of Two Numbers in an Array.
  * <p>
- * Given a non-empty array of numbers, a0, a1, a2, … , an-1, where 0 ≤ ai < 231.
+ * Given a non-empty array of numbers, {@code a0, a1, a2, … , an-1, where 0 ≤ ai < 231}.
  * <p>
- * Find the maximum result of ai XOR aj, where 0 ≤ i, j < n.
+ * Find the maximum result of ai XOR aj, where {@code 0 ≤ i, j < n}.
  * <p>
  * Could you do this in O(n) runtime?
  * <p>
