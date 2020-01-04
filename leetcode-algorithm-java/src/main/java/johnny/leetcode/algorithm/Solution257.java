@@ -1,7 +1,9 @@
 package johnny.leetcode.algorithm;
 
 import johnny.algorithm.common.TreeNode;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Binary Tree Paths.
  * Given a binary tree, return all root-to-leaf paths.

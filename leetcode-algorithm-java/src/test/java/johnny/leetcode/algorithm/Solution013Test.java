@@ -2,9 +2,7 @@ package johnny.leetcode.algorithm;
 
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution013;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *

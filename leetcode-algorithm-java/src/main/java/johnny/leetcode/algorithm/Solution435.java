@@ -1,9 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 import johnny.algorithm.common.Interval;
+
+import java.util.Arrays;
 
 /**
  * Non-overlapping Intervals

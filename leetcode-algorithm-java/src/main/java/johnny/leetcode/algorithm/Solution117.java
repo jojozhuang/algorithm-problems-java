@@ -1,8 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeLinkNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import johnny.algorithm.common.TreeLinkNode;
 
 /**
  * Populating Next Right Pointers in Each Node II.

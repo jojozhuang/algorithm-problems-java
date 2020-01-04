@@ -1,6 +1,5 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.SolutionA1161;
 import johnny.algorithm.common.TreeNode;
 import org.junit.Test;
 

@@ -1,7 +1,6 @@
 package johnny.leetcode.algorithm;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * Implement Stack using Queues.

@@ -1,9 +1,10 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
-import johnny.algorithm.common.TreeNode;
 import java.util.List;
 import java.util.Queue;
 

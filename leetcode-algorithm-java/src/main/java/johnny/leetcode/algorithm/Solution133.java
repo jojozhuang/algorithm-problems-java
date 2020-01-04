@@ -1,10 +1,10 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.UndirectedGraphNode;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
-
-import johnny.algorithm.common.UndirectedGraphNode;
 
 /**
  * Clone Graph.

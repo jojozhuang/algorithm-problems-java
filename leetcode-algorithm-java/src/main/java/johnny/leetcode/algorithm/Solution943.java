@@ -1,8 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * 943. Find the Shortest Superstring

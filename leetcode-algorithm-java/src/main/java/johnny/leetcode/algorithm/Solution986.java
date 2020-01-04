@@ -1,9 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.Interval;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import johnny.algorithm.common.Interval;
 
 /**
  * 986. Interval List Intersections

@@ -1,9 +1,10 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.Interval;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import johnny.algorithm.common.Interval;
 import java.util.List;
 
 /**

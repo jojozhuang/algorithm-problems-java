@@ -1,13 +1,12 @@
 package johnny.leetcode.algorithm;
 
-import java.util.ArrayList;
+import johnny.leetcode.algorithm.common.Employee;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-
-import johnny.leetcode.algorithm.common.Employee;
 
 /**
  *690. Employee Importance

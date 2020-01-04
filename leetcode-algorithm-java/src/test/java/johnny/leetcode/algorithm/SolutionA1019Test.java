@@ -1,11 +1,9 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
-
+import johnny.algorithm.common.ListNode;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.SolutionA1019;
-import johnny.algorithm.common.ListNode;
+import static org.junit.Assert.assertArrayEquals;
 
 public class SolutionA1019Test extends JunitBase {
 

@@ -1,11 +1,11 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.Point;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import johnny.algorithm.common.Point;
 
 /**
  * Erect the Fence

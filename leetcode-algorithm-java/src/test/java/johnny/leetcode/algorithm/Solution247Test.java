@@ -1,14 +1,13 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import johnny.algorithm.common.ListUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import johnny.leetcode.algorithm.Solution247;
-import johnny.algorithm.common.ListUtil;
+import static org.junit.Assert.assertEquals;
 
 public class Solution247Test extends JunitBase {
 

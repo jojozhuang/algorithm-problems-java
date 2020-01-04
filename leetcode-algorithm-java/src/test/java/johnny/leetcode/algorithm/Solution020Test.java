@@ -1,12 +1,10 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.HashMap;
 
-import org.junit.Test;
-
-import johnny.leetcode.algorithm.Solution020;
+import static org.junit.Assert.assertEquals;
 
 public class Solution020Test extends JunitBase {
 

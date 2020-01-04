@@ -1,9 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.Comparator;
 
 /**
  * Kth Largest Element in an Array.

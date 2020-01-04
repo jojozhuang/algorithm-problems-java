@@ -1,7 +1,5 @@
 package johnny.leetcode.algorithm;
 
-import java.util.Arrays;
-
 /**
  *785. Is Graph Bipartite?
 Given a graph, return true if and only if it is bipartite.

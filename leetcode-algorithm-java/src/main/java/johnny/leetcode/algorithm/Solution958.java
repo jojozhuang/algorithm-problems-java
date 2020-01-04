@@ -1,11 +1,9 @@
 package johnny.leetcode.algorithm;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 import johnny.algorithm.common.TreeNode;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 958. Check Completeness of a Binary Tree

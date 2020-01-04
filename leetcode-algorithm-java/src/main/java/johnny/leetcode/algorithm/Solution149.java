@@ -1,9 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.Point;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import johnny.algorithm.common.Point;
 
 /**
  * Max Points on a Line.

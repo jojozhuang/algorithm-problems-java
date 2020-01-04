@@ -1,9 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution719;
+import static org.junit.Assert.assertEquals;
 
 public class Solution719Test extends JunitBase {
 

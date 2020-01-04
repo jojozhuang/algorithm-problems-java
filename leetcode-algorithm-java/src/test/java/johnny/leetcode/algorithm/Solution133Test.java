@@ -1,10 +1,9 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import johnny.algorithm.common.UndirectedGraphNode;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution133;
-import johnny.algorithm.common.UndirectedGraphNode;
+import static org.junit.Assert.assertEquals;
 
 public class Solution133Test extends JunitBase {
 

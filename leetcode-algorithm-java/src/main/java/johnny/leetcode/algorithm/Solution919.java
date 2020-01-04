@@ -1,9 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
-
-import johnny.algorithm.common.TreeNode;
 
 /**
  * 919. Complete Binary Tree Inserter

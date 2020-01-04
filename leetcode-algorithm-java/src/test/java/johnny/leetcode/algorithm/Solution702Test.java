@@ -1,10 +1,9 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import johnny.leetcode.algorithm.common.ArrayReaderImpl;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution702;
-import johnny.leetcode.algorithm.common.ArrayReaderImpl;
+import static org.junit.Assert.assertEquals;
 
 public class Solution702Test extends JunitBase {
 

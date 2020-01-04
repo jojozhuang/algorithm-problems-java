@@ -1,10 +1,9 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import johnny.algorithm.common.TreeNode;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution222;
-import johnny.algorithm.common.TreeNode;
+import static org.junit.Assert.assertEquals;
 
 public class Solution222Test extends JunitBase {
 

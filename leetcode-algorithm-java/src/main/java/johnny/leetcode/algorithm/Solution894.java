@@ -1,11 +1,11 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeNode;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
-import johnny.algorithm.common.TreeNode;
 
 /**
  * 894. All Possible Full Binary Trees

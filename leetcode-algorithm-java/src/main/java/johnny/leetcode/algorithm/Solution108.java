@@ -1,7 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import java.util.Arrays;
 import johnny.algorithm.common.TreeNode;
+
+import java.util.Arrays;
 
 /**
  * Convert Sorted Array to Binary Search Tree.

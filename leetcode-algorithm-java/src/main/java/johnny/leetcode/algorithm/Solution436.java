@@ -1,11 +1,11 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.Interval;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-
-import johnny.algorithm.common.Interval;
 
 /**
  * Find Right Interval

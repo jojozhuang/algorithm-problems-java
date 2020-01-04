@@ -1,9 +1,10 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.NestedInteger;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
-import johnny.algorithm.common.NestedInteger;
 
 /**
  * Flatten Nested List Iterator.

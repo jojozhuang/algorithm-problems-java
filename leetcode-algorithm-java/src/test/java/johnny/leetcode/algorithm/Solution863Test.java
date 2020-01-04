@@ -1,14 +1,12 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import johnny.algorithm.common.ListUtil;
+import johnny.algorithm.common.TreeNode;
+import org.junit.Test;
 
 import java.util.List;
 
-import org.junit.Test;
-
-import johnny.leetcode.algorithm.Solution863;
-import johnny.algorithm.common.ListUtil;
-import johnny.algorithm.common.TreeNode;
+import static org.junit.Assert.assertTrue;
 
 public class Solution863Test extends JunitBase {
 

@@ -1,12 +1,12 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-import johnny.algorithm.common.TreeNode;
 
 /**
  * 431. Encode N-ary Tree to Binary Tree

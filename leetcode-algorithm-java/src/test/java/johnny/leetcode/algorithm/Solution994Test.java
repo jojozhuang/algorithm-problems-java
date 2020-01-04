@@ -1,6 +1,5 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.Solution994;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

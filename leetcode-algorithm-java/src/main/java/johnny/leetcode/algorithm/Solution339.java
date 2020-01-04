@@ -1,7 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import java.util.List;
 import johnny.algorithm.common.NestedInteger;
+
+import java.util.List;
 
 /**
  * Nested List Weight Sum.

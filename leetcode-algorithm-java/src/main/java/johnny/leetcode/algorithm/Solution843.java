@@ -1,9 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.leetcode.algorithm.common.Master;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import johnny.leetcode.algorithm.common.Master;
 
 /**
  * 843. Guess the Word

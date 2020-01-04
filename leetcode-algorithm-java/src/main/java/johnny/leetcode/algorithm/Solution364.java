@@ -1,11 +1,11 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.NestedInteger;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-import johnny.algorithm.common.NestedInteger;
 
 /**
  * Nested List Weight Sum II .

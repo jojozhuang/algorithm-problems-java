@@ -1,8 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TrieNode;
+
 import java.util.HashMap;
 import java.util.Map;
-import johnny.algorithm.common.TrieNode;
 
 /**
  * Implement Trie (Prefix Tree).

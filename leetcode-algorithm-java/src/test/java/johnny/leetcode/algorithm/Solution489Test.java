@@ -1,10 +1,7 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
-
-import johnny.leetcode.algorithm.Solution489;
 import johnny.leetcode.algorithm.common.RobotImp;
+import org.junit.Test;
 
 public class Solution489Test extends JunitBase {
 

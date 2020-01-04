@@ -1,10 +1,9 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import johnny.algorithm.common.Point;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution149;
-import johnny.algorithm.common.Point;
+import static org.junit.Assert.assertEquals;
 
 public class Solution149Test extends JunitBase {
 

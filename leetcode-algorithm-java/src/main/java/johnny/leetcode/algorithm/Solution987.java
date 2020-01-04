@@ -1,12 +1,12 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.TreeMap;
-
-import johnny.algorithm.common.TreeNode;
 
 /**
  * 987. Vertical Order Traversal of a Binary Tree

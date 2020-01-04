@@ -1,7 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import java.util.Stack;
 import johnny.algorithm.common.NestedInteger;
+
+import java.util.Stack;
 
 /**
  * Mini Parser

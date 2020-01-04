@@ -1,7 +1,11 @@
 package johnny.leetcode.algorithm;
 
 import johnny.algorithm.common.TreeNode;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 /**
  * Binary Tree Right Side View.
  * Given a binary tree, imagine yourself standing on the right side of it, 

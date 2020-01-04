@@ -1,9 +1,10 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.ListNode;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import johnny.algorithm.common.ListNode;
 
 /**
  * Linked List Random Node

@@ -1,10 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import java.util.Arrays;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.PriorityQueue;
-import java.util.TreeMap;
 
 /**
  * 973. K Closest Points to Origin

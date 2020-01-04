@@ -1,11 +1,10 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import johnny.leetcode.algorithm.Solution384;
+import static org.junit.Assert.assertArrayEquals;
 
 public class Solution384Test extends JunitBase {
 

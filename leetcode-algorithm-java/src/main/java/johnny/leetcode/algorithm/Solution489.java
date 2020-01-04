@@ -1,9 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.leetcode.algorithm.common.Robot;
+
 import java.util.HashSet;
 import java.util.Set;
-
-import johnny.leetcode.algorithm.common.Robot;
 
 /**
  * 489. Robot Room Cleaner

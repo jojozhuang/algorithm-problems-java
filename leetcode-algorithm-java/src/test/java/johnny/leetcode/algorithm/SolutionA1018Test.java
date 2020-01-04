@@ -1,13 +1,11 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
-
-import johnny.leetcode.algorithm.SolutionA1018;
+import static org.junit.Assert.assertEquals;
 
 public class SolutionA1018Test extends JunitBase {
 

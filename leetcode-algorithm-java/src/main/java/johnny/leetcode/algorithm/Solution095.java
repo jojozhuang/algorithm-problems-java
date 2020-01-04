@@ -1,7 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import java.util.ArrayList;
 import johnny.algorithm.common.TreeNode;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**

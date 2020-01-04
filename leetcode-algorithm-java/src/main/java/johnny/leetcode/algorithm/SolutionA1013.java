@@ -1,8 +1,5 @@
 package johnny.leetcode.algorithm;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 1013. Pairs of Songs With Total Durations Divisible by 60
  * In a list of songs, the i-th song has a duration of time[i] seconds. 

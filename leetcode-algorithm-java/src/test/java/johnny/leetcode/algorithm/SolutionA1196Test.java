@@ -1,6 +1,5 @@
 package johnny.leetcode.algorithm;
 
-import johnny.leetcode.algorithm.SolutionA1196;
 import johnny.algorithm.common.ListUtil;
 import org.junit.Test;
 

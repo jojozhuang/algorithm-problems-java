@@ -2,8 +2,6 @@ package johnny.leetcode.algorithm;
 
 import java.util.Arrays;
 
-import johnny.leetcode.algorithm.Solution684.DSU;
-
 /**
  *685. Redundant Connection II
  In this problem, a rooted tree is a directed graph such that, there is exactly one node

@@ -1,13 +1,11 @@
 package johnny.leetcode.algorithm;
 
-import java.util.List;
-
-import static org.junit.Assert.*;
-
+import johnny.algorithm.common.ListUtil;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.SolutionA1002;
-import johnny.algorithm.common.ListUtil;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class SolutionA1002Test extends JunitBase {
 

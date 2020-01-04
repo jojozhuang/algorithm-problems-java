@@ -1,9 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import johnny.algorithm.common.TreeNode;
 
 /**
  * 971. Flip Binary Tree To Match Preorder Traversal

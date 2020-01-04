@@ -1,6 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import johnny.algorithm.common.ListNode;
+
 import java.util.Stack;
 
 /**

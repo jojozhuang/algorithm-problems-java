@@ -1,7 +1,6 @@
 package johnny.leetcode.algorithm;
 
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 /**
  * Find Median from Data Stream.

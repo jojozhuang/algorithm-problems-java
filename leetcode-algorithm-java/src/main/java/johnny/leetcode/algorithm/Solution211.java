@@ -1,7 +1,8 @@
 package johnny.leetcode.algorithm;
 
-import java.util.HashMap;
 import johnny.algorithm.common.TrieNode;
+
+import java.util.HashMap;
 
 /**
  * Add and Search Word - Data structure design.

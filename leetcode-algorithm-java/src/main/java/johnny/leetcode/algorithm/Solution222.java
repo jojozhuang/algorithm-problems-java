@@ -1,8 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import johnny.algorithm.common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import johnny.algorithm.common.TreeNode;
 
 /**
  * Count Complete Tree Nodes.

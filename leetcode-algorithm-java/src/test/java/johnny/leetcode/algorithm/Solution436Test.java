@@ -1,10 +1,9 @@
 package johnny.leetcode.algorithm;
 
-import static org.junit.Assert.*;
+import johnny.algorithm.common.Interval;
 import org.junit.Test;
 
-import johnny.leetcode.algorithm.Solution436;
-import johnny.algorithm.common.Interval;
+import static org.junit.Assert.assertArrayEquals;
 
 public class Solution436Test extends JunitBase {
 
