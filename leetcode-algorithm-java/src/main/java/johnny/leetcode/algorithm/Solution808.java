@@ -14,8 +14,6 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the probability that soup A will be empty first, plus half the probability that A and B become empty at the same time.
  * <p>
- * <p>
- * <p>
  * Example:
  * Input: N = 50
  * Output: 0.625

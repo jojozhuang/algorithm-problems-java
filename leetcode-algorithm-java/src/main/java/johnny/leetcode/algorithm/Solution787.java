@@ -22,7 +22,6 @@ import java.util.Queue;
  * Explanation:
  * The graph looks like this:
  * <p>
- * <p>
  * The cheapest price from city 0 to city 2 with at most 1 stop costs 200, as marked red in the picture.
  * Example 2:
  * Input:
@@ -31,7 +30,6 @@ import java.util.Queue;
  * Output: 500
  * Explanation:
  * The graph looks like this:
- * <p>
  * <p>
  * The cheapest price from city 0 to city 2 with at most 0 stop costs 500, as marked blue in the picture.
  * Note:

@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Reverse Pairs
  * <p>
  * Given an array nums, we call (i, j) an important reverse pair if
- * i < j and nums[i] > 2*nums[j].
+ * {@code i < j and nums[i] > 2*nums[j]}.
  * <p>
  * You need to return the number of important reverse pairs in the given array.
  * <p>

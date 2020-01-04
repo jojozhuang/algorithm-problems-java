@@ -20,8 +20,6 @@ package johnny.leetcode.algorithm;
  * K = 4,  A = [0,2,3,1,4],    score 3
  * So we should choose K = 3, which has the highest score.
  * <p>
- * <p>
- * <p>
  * Example 2:
  * Input: [1, 3, 0, 2, 4]
  * Output: 0

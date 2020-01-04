@@ -10,12 +10,11 @@ package johnny.leetcode.algorithm;
  * Explanation:
  * The five points are show in the figure below. The red triangle is the largest.
  * <p>
- * <p>
  * Notes:
  * <p>
- * 3 <= points.length <= 50.
+ * {@code 3 <= points.length <= 50.}
  * No points will be duplicated.
- * -50 <= points[i][j] <= 50.
+ * {@code -50 <= points[i][j] <= 50.}
  * Answers within 10^-6 of the true value will be accepted as correct.
  *
  * @author Johnny

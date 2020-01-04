@@ -19,7 +19,7 @@ import java.util.Map;
  * <p>
  * A zero-indexed array A consisting of N numbers is given. A subsequence slice
  * of that array is any sequence of integers (P0, P1, ..., Pk) such
- * that 0 ≤ P0 < P1 < ... < Pk < N.
+ * that {@code 0 ≤ P0 < P1 < ... < Pk < N}.
  * <p>
  * A subsequence slice (P0, P1, ..., Pk) of array A is called arithmetic if
  * the sequence A[P0], A[P1], ..., A[Pk-1], A[Pk] is arithmetic. In particular,

@@ -15,7 +15,7 @@ import java.util.Stack;
  * <p>
  * Note:
  * <p>
- * A transaction will be given as a tuple (x, y, z). Note that x ≠ y and z > 0.
+ * A transaction will be given as a tuple (x, y, z). Note that {@code x ≠ y and z > 0}.
  * Person's IDs may not be linear, e.g. we could have the persons 0, 1, 2 or we could also have the persons 0, 2, 6.
  * Example 1:
  * <p>

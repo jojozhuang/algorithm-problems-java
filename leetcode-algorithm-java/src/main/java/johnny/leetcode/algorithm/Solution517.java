@@ -14,7 +14,7 @@ package johnny.leetcode.algorithm;
  * machine from left to right on the line, you should find the minimum number
  * of moves to make all the washing machines have the same number of dresses.
  * If it is not possible to do it, return -1.
- * <p>
+ * <pre>{@code
  * Example1
  * <p>
  * Input: [1,0,5]
@@ -43,7 +43,7 @@ package johnny.leetcode.algorithm;
  * Explanation:
  * It's impossible to make all the three washing machines have the same number
  * of dresses.
- * <p>
+ * }</pre>
  * Note:
  * 1. The range of n is [1, 10000].
  * 2. The range of dresses number in a super washing machine is [0, 1e5].

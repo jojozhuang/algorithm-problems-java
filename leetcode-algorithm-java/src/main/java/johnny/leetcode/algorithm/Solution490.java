@@ -24,7 +24,7 @@ import java.util.LinkedList;
  * Input 3: destination coordinate (rowDest, colDest) = (4, 4)
  * <p>
  * Output: true
- * Explanation: One possible way is : left -> down -> left -> down -> right -> down -> right.
+ * Explanation: One possible way is : {@code left -> down -> left -> down -> right -> down -> right}.
  * <p>
  * Example 2
  * <p>

@@ -6,8 +6,8 @@ package johnny.leetcode.algorithm;
  * <p>
  * Note: You can assume that
  * <p>
- * 0 <= amount <= 5000
- * 1 <= coin <= 5000
+ * {@code 0 <= amount <= 5000}
+ * {@code 1 <= coin <= 5000}
  * the number of coins is less than 500
  * the answer is guaranteed to fit into signed 32-bit integer
  * Example 1:

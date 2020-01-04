@@ -25,9 +25,11 @@ import java.util.PriorityQueue;
  * <p>
  * Output: "lul"
  * Explanation: There are two shortest ways for the ball to drop into the hole.
+ * <pre>{@code
  * The first way is left -> up -> left, represented by "lul".
  * The second way is up -> left, represented by 'ul'.
  * Both ways have shortest distance 6, but the first way is lexicographically smaller because 'l' < 'u'. So the output is "lul".
+ * }</pre>
  * <p>
  * Example 2
  * <p>

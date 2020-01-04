@@ -28,7 +28,6 @@ import java.util.LinkedList;
  * Output: "4"
  * <p>
  * Explanation: The conditional expressions group right-to-left. Using parenthesis, it is read/evaluated as:
- * <p>
  * <pre>{@code
  * "(F ? 1 : (T ? 4 : 5))"                   "(F ? 1 : (T ? 4 : 5))"
  * -> "(F ? 1 : 4)"                 or       -> "(T ? 4 : 5)"
@@ -39,7 +38,6 @@ import java.util.LinkedList;
  * Input: "T?T?F:5:3"
  * <p>
  * Output: "F"
- * <p>
  * <pre>{@code
  * Explanation: The conditional expressions group right-to-left. Using parenthesis, it is read/evaluated as:
  * <p>

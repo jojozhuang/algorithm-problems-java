@@ -16,7 +16,7 @@ package johnny.leetcode.algorithm;
  * table. If you cannot remove all the balls, output -1.
  * <p>
  * Examples:
- * <p>
+ * <pre>{@code
  * Input: "WRRBBW", "RB"
  * Output: -1
  * Explanation: WRRBBW -> WRR[R]BBW -> WBBW -> WBB[B]W -> WW
@@ -33,6 +33,7 @@ package johnny.leetcode.algorithm;
  * Output: 3
  * Explanation: RBYYBBRRB -> RBYY[Y]BBRRB -> RBBBRRB -> RRRB -> B -> B[B]
  * -> BB[B] -> empty
+ * }</pre>
  * <p>
  * Note:
  * You may assume that the initial row of balls on the table won’t have any 3

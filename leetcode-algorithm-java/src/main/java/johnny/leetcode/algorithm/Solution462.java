@@ -23,7 +23,7 @@ import java.util.Arrays;
  * Only two moves are needed (remember each move increments or decrements one
  * element):
  * <p>
- * [1,2,3]  =>  [2,2,3]  =>  [2,2,2]
+ * {@code [1,2,3]  =>  [2,2,3]  =>  [2,2,2]}
  *
  * @author Johnny
  */

@@ -23,7 +23,6 @@ package johnny.leetcode.algorithm;
  * Explanation:
  * When we erase the brick at (1, 0), the brick at (1, 1) has already disappeared due to the last move. So each erasure will cause no bricks dropping.  Note that the erased brick (1, 0) will not be counted as a dropped brick.
  * <p>
- * <p>
  * Note:
  * <p>
  * The number of rows and columns in the grid will be in the range [1, 200].

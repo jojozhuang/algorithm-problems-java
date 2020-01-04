@@ -10,8 +10,8 @@ import java.util.Random;
  * <p>
  * Note:
  * <p>
- * 1 <= n_rows, n_cols <= 10000
- * 0 <= row.id < n_rows and 0 <= col.id < n_cols
+ * {@code 1 <= n_rows, n_cols <= 10000}
+ * {@code 0 <= row.id < n_rows and 0 <= col.id < n_cols}
  * flip will not be called when the matrix has no 0 values left.
  * the total number of calls to flip and reset will not exceed 1000.
  * Example 1:

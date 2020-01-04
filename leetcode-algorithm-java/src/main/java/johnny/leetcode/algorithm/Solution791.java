@@ -17,7 +17,6 @@ package johnny.leetcode.algorithm;
  * "a", "b", "c" appear in S, so the order of "a", "b", "c" should be "c", "b", and "a".
  * Since "d" does not appear in S, it can be at any position in T. "dcba", "cdba", "cbda" are also valid outputs.
  * <p>
- * <p>
  * Note:
  * <p>
  * S has length at most 26, and no character is repeated in S.

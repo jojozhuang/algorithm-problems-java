@@ -13,7 +13,7 @@ import java.util.Map;
  * What if we change the game so that players cannot re-use integers?
  * <p>
  * For example, two players might take turns drawing from a common pool of
- * numbers of 1..15 without replacement until they reach a total >= 100.
+ * numbers of 1..15 without replacement until they reach a {@code total >= 100}.
  * <p>
  * Given an integer maxChoosableInteger and another integer desiredTotal,
  * determine if the first player to move can force a win, assuming both players

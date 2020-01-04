@@ -5,7 +5,7 @@ import java.math.BigInteger;
 /**
  * Smallest Good Base
  * <p>
- * For an integer n, we call k>=2 a good base of n, if all digits of n base k are 1.
+ * For an integer n, we call {@code k>=2} a good base of n, if all digits of n base k are 1.
  * <p>
  * Now given a string representing n, you should return the smallest good base
  * of n in string format.

@@ -18,7 +18,7 @@ package johnny.leetcode.algorithm;
  * Explanation:
  * Only three moves are needed (remember each move increments two elements):
  * <p>
- * [1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
+ * {@code [1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]}
  *
  * @author Johnny
  */

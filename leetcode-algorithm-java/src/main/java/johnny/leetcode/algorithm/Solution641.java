@@ -16,7 +16,6 @@ package johnny.leetcode.algorithm;
  * isEmpty(): Checks whether Deque is empty or not.
  * isFull(): Checks whether Deque is full or not.
  * <p>
- * <p>
  * Example:
  * <p>
  * MyCircularDeque circularDeque = new MycircularDeque(3); // set the size to be 3
@@ -29,7 +28,6 @@ package johnny.leetcode.algorithm;
  * circularDeque.deleteLast();         // return true
  * circularDeque.insertFront(4);           // return true
  * circularDeque.getFront();           // return 4
- * <p>
  * <p>
  * Note:
  * <p>
@@ -46,6 +44,7 @@ public class Solution641 {
 
     /**
      * Initialize your data structure here. Set the size of the deque to be k.
+     * @param k size
      */
     public Solution641(int k) {
         arr = new int[k];

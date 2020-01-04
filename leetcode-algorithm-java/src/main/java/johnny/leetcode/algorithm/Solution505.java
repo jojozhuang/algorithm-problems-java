@@ -24,7 +24,7 @@ import java.util.PriorityQueue;
  * Input 3: destination coordinate (rowDest, colDest) = (4, 4)
  * <p>
  * Output: 12
- * Explanation: One shortest way is : left -> down -> left -> down -> right -> down -> right.
+ * Explanation: One shortest way is : {@code left -> down -> left -> down -> right -> down -> right}.
  * The total distance is 1 + 1 + 3 + 1 + 2 + 2 + 2 = 12.
  * <p>
  * Example 2

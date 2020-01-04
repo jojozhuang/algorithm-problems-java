@@ -16,7 +16,6 @@ package johnny.leetcode.algorithm;
  * isEmpty(): Checks whether the circular queue is empty or not.
  * isFull(): Checks whether the circular queue is full or not.
  * <p>
- * <p>
  * Example:
  * <p>
  * MyCircularQueue circularQueue = new MyCircularQueue(3); // set the size to be 3
@@ -45,6 +44,7 @@ public class Solution622 {
 
     /**
      * Initialize your data structure here. Set the size of the queue to be k.
+     * @param k size
      */
     public Solution622(int k) {
         arr = new int[k];

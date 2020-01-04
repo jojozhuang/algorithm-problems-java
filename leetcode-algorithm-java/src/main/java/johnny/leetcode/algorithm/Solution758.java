@@ -6,7 +6,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * The returned string should use the least number of tags possible, and of course the tags should form a valid combination.
  * <p>
- * For example, given that words = ["ab", "bc"] and S = "aabcd", we should return "a<b>abc</b>d". Note that returning "a<b>a<b>b</b>c</b>d" would use more tags, so it is incorrect.
+ * {@code For example, given that words = ["ab", "bc"] and S = "aabcd", we should return "a<b>abc</b>d". Note that returning "a<b>a<b>b</b>c</b>d" would use more tags, so it is incorrect.}
  * <p>
  * Note:
  * <p>

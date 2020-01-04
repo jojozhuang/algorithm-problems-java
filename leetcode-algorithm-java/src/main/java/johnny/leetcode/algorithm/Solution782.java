@@ -20,7 +20,6 @@ package johnny.leetcode.algorithm;
  * The first move swaps the first and second column.
  * The second move swaps the second and third row.
  * <p>
- * <p>
  * Input: board = [[0, 1], [1, 0]]
  * Output: 0
  * Explanation:

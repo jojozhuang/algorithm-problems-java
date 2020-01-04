@@ -9,7 +9,7 @@ package johnny.leetcode.algorithm;
  * Given two integers x and y, calculate the Hamming distance.
  * <p>
  * Note:
- * 0 ≤ x, y < 2^31.
+ * {@code 0 ≤ x, y < 2^31}.
  * <p>
  * Example:
  * <p>

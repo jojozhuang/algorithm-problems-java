@@ -34,10 +34,6 @@ import johnny.leetcode.algorithm.common.SolBase;
  * What is the expected value for the number of calls to rand7() function?
  * Could you minimize the number of calls to rand7()?
  *
- * @author Johnny
- */
-
-/**
  * The rand7() API is already defined in the parent class SolBase.
  * public int rand7();
  * @return a random integer in the range 1 to 7

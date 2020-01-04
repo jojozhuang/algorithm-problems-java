@@ -28,7 +28,6 @@ package johnny.leetcode.algorithm;
  * there is only 2 units left in the first line.
  * So the answer is 2 lines, plus 4 units in the second line.
  * <p>
- * <p>
  * Note:
  * <p>
  * The length of S will be in the range [1, 1000].

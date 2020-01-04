@@ -30,7 +30,7 @@ package johnny.leetcode.algorithm;
  * return True representing player1 can win.
  * <p>
  * Note:
- * 1. 1 <= length of the array <= 20.
+ * 1. {@code 1 <= length of the array <= 20.}
  * 2. Any scores in the given array are non-negative integers and will not exceed 10,000,000.
  * 3. If the scores of both players are equal, then player 1 is still the winner.
  *

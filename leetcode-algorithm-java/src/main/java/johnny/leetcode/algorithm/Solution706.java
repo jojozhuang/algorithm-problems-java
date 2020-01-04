@@ -51,6 +51,8 @@ public class Solution706 {
 
     /**
      * value will always be non-negative.
+     * @param key key
+     * @param value value
      */
     public void put(int key, int value) {
         // Find head of chain for given key
@@ -79,6 +81,8 @@ public class Solution706 {
 
     /**
      * Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
+     * @param key key
+     * @return result
      */
     public int get(int key) {
         // Find head of chain for given key
@@ -100,6 +104,7 @@ public class Solution706 {
 
     /**
      * Removes the mapping of the specified value key if this map contains a mapping for the key
+     * @param key key
      */
     public void remove(int key) {
         // Apply hash function to find index for given key

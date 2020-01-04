@@ -44,6 +44,8 @@ public class Solution707 {
 
     /**
      * Get the value of the index-th node in the linked list. If the index is invalid, return -1.
+     * @param index index
+     * @return result
      */
     public int get(int index) {
         if (index < 0 || index >= list.size()) {
@@ -55,6 +57,7 @@ public class Solution707 {
 
     /**
      * Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
+     * @param val value
      */
     public void addAtHead(int val) {
         if (head == null) {
@@ -71,6 +74,7 @@ public class Solution707 {
 
     /**
      * Append a node of value val to the last element of the linked list.
+     * @param val value
      */
     public void addAtTail(int val) {
         if (tail == null) {
@@ -86,6 +90,8 @@ public class Solution707 {
 
     /**
      * Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
+     * @param index index
+     * @param val val
      */
     public void addAtIndex(int index, int val) {
         if (index < 0 || index > list.size()) {
@@ -107,6 +113,7 @@ public class Solution707 {
 
     /**
      * Delete the index-th node in the linked list, if the index is valid.
+     * @param index index
      */
     public void deleteAtIndex(int index) {
         if (index < 0 || index >= list.size()) {

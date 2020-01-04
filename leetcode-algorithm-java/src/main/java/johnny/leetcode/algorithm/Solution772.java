@@ -19,7 +19,6 @@ import java.util.Stack;
  * "2*(5+5*2)/3+(6/2+8)" = 21
  * "(2+6* 3+5- (3*14/7+2)*5)+3"=-12
  * <p>
- * <p>
  * Note: Do not use the eval built-in library function.
  *
  * @author Johnny

@@ -15,6 +15,7 @@ public class Solution348 {
 
     /**
      * Initialize your data structure here.
+     * @param n size
      */
     public Solution348(int n) {
         rows = new int[n];

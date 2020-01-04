@@ -77,7 +77,7 @@ public class Solution380 {
 
     /**
      * Removes a value from the set. Returns true if the set contained the specified element.
-     * @param val
+     * @param val value
      * @return result
      */
     public boolean remove(int val) {

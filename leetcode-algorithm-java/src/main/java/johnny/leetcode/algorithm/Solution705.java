@@ -38,6 +38,10 @@ public class Solution705 {
         bucket = new HashNode[1000000];
     }
 
+    /**
+     * Add key to set
+     * @param key key
+     */
     public void add(int key) {
         int hash = hashFunc(key);
         if (bucket[hash] == null) {
@@ -57,6 +61,10 @@ public class Solution705 {
         }
     }
 
+    /**
+     * Remove key from set
+     * @param key key
+     */
     public void remove(int key) {
         int hash = hashFunc(key);
         if (bucket[hash] == null) {
@@ -80,6 +88,8 @@ public class Solution705 {
 
     /**
      * Returns true if this set contains the specified element
+     * @param key key
+     * @return result
      */
     public boolean contains(int key) {
         int hash = hashFunc(key);

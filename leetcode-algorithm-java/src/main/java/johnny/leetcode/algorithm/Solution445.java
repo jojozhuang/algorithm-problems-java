@@ -19,8 +19,8 @@ import java.util.Stack;
  * lists is not allowed.
  * <p>
  * Example:
- * Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
- * Output: 7 -> 8 -> 0 -> 7
+ * {@code Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)}
+ * {@code Output: 7 -> 8 -> 0 -> 7}
  *
  * @author Johnny
  */
