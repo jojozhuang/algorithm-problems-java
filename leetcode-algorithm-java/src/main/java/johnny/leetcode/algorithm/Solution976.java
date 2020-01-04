@@ -8,30 +8,27 @@ import java.util.Arrays;
  * <p>
  * If it is impossible to form any triangle of non-zero area, return 0.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [2,1,2]
  * Output: 5
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [1,2,1]
  * Output: 0
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [3,2,3,4]
  * Output: 10
- * Example 4:
  * <p>
+ * Example 4:
  * Input: [3,6,2,3]
  * Output: 8
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 3 <= A.length <= 10000
  * 1 <= A[i] <= 10^6
+ * }</pre>
  *
  * @author Johnny
  */

@@ -8,19 +8,14 @@ import johnny.algorithm.common.TreeNode;
  * <p>
  * Return true if and only if the given tree is univalued.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
  * Input: [1,1,1,1,1,null,1]
  * Output: true
- * Example 2:
  * <p>
+ * Example 2:
  * <p>
  * Input: [2,2,2,5,2]
  * Output: false
- * <p>
  * <p>
  * Note:
  * <p>

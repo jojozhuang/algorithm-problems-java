@@ -6,34 +6,31 @@ package johnny.leetcode.algorithm;
  * <p>
  * You examine the typed characters of the keyboard.  Return True if it is possible that it was your friends name, with some characters (possibly none) being long pressed.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: name = "alex", typed = "aaleex"
  * Output: true
  * Explanation: 'a' and 'e' in 'alex' were long pressed.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: name = "saeed", typed = "ssaaedd"
  * Output: false
  * Explanation: 'e' must have been pressed twice, but it wasn't in the typed output.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: name = "leelee", typed = "lleeelee"
  * Output: true
- * Example 4:
  * <p>
+ * Example 4:
  * Input: name = "laiden", typed = "laiden"
  * Output: true
  * Explanation: It's not necessary to long press any character.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * name.length <= 1000
  * typed.length <= 1000
  * The characters of name and typed are lowercase letters.
+ * }</pre>
  *
  * @author Johnny
  */

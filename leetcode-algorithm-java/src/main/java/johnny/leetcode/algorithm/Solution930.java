@@ -4,10 +4,7 @@ package johnny.leetcode.algorithm;
  * 930. Binary Subarrays With Sum
  * n an array A of 0s and 1s, how many non-empty subarrays have sum S?
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: A = [1,0,1,0,1], S = 2
  * Output: 4
  * Explanation:
@@ -17,12 +14,12 @@ package johnny.leetcode.algorithm;
  * [1,0,1,0,1]
  * [1,0,1,0,1]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * A.length <= 30000
  * 0 <= S <= A.length
  * A[i] is either 0 or 1.
+ * }</pre>
  *
  * @author Johnny
  */

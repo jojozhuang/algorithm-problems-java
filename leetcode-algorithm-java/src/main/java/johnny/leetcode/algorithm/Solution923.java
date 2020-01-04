@@ -9,9 +9,7 @@ import java.util.Arrays;
  * <p>
  * As the answer can be very large, return it modulo 10^9 + 7.
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: A = [1,1,2,2,3,3,4,4,5,5], target = 8
  * Output: 20
  * Explanation:
@@ -20,8 +18,8 @@ import java.util.Arrays;
  * (1, 3, 4) occurs 8 times;
  * (2, 2, 4) occurs 2 times;
  * (2, 3, 3) occurs 2 times.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: A = [1,1,2,2,2,2], target = 5
  * Output: 12
  * Explanation:
@@ -29,12 +27,12 @@ import java.util.Arrays;
  * We choose one 1 from [1,1] in 2 ways,
  * and two 2s from [2,2,2,2] in 6 ways.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 3 <= A.length <= 3000
  * 0 <= A[i] <= 100
  * 0 <= target <= 300
+ * }</pre>
  *
  * @author Johnny
  */

@@ -8,17 +8,14 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the number of positive integers that can be written (using the digits of D) that are less than or equal to N.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: D = ["1","3","5","7"], N = 100
  * Output: 20
  * Explanation:
  * The 20 numbers that can be written are:
  * 1, 3, 5, 7, 11, 13, 15, 17, 31, 33, 35, 37, 51, 53, 55, 57, 71, 73, 75, 77.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: D = ["1","4","9"], N = 1000000000
  * Output: 29523
  * Explanation:
@@ -27,11 +24,11 @@ package johnny.leetcode.algorithm;
  * 2187 seven digit numbers, 6561 eight digit numbers, and 19683 nine digit numbers.
  * In total, this is 29523 integers that can be written using the digits of D.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * D is a subset of digits '1'-'9' in sorted order.
  * 1 <= N <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

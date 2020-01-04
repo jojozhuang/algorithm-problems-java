@@ -10,22 +10,20 @@ import java.util.List;
  * <p>
  * We may assume that no string in A is substring of another string in A.
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["alex","loves","leetcode"]
  * Output: "alexlovesleetcode"
  * Explanation: All permutations of "alex","loves","leetcode" would also be accepted.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: ["catg","ctaagt","gcta","ttca","atgcatc"]
  * Output: "gctaagttcatgcatc"
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 12
  * 1 <= A[i].length <= 20
+ * }</pre>
  *
  * @author Johnny
  */

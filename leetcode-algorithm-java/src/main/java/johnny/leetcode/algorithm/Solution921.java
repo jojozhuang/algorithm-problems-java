@@ -13,30 +13,27 @@ import java.util.Stack;
  * It can be written as (A), where A is a valid string.
  * Given a parentheses string, return the minimum number of parentheses we must add to make the resulting string valid.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: "())"
  * Output: 1
- * Example 2:
  * <p>
+ * Example 2:
  * Input: "((("
  * Output: 3
- * Example 3:
  * <p>
+ * Example 3:
  * Input: "()"
  * Output: 0
- * Example 4:
  * <p>
+ * Example 4:
  * Input: "()))(("
  * Output: 4
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * S.length <= 1000
  * S only consists of '(' and ')' characters.
+ * }</pre>
  *
  * @author Johnny
  */

@@ -19,20 +19,17 @@ import java.util.Set;
  * <p>
  * Given a list of emails, we send one email to each address in the list.  How many different addresses actually receive mails?
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
  * Output: 2
  * Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= emails[i].length <= 100
  * 1 <= emails.length <= 100
  * Each emails[i] contains exactly one '@' character.
+ * }</pre>
  *
  * @author Johnny
  */

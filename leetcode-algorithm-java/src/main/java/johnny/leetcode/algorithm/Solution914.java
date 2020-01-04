@@ -9,7 +9,6 @@ import java.util.Set;
 
 /**
  * 914. X of a Kind in a Deck of Cards
- * <p>
  * In a deck of cards, each card has an integer written on it.
  * <p>
  * Return true if and only if you can choose X >= 2 such that it is possible to split the entire deck into 1 or more groups of cards, where:
@@ -17,37 +16,36 @@ import java.util.Set;
  * Each group has exactly X cards.
  * All the cards in each group have the same integer.
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [1,2,3,4,4,3,2,1]
  * Output: true
  * Explanation: Possible partition [1,1],[2,2],[3,3],[4,4]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [1,1,1,2,2,2,3,3]
  * Output: false
  * Explanation: No possible partition.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [1]
  * Output: false
  * Explanation: No possible partition.
- * Example 4:
  * <p>
+ * Example 4:
  * Input: [1,1]
  * Output: true
  * Explanation: Possible partition [1,1]
- * Example 5:
  * <p>
+ * Example 5:
  * Input: [1,1,2,2,2,2]
  * Output: true
  * Explanation: Possible partition [1,1],[2,2],[2,2]
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= deck.length <= 10000
  * 0 <= deck[i] < 10000
+ * }</pre>
  *
  * @author Johnny
  */

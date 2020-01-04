@@ -17,29 +17,26 @@ import java.util.Set;
  * <p>
  * We will remove one node from the initial list, completely removing it and any connections from this node to any other node.  Return the node that if removed, would minimize M(initial).  If multiple nodes could be removed to minimize M(initial), return such a node with the smallest index.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
  * Output: 0
- * Example 2:
  * <p>
+ * Example 2:
  * Input: graph = [[1,1,0],[1,1,1],[0,1,1]], initial = [0,1]
  * Output: 1
- * Example 3:
  * <p>
+ * Example 3:
  * Input: graph = [[1,1,0,0],[1,1,1,0],[0,1,1,1],[0,0,1,1]], initial = [0,1]
  * Output: 1
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 < graph.length = graph[0].length <= 300
  * 0 <= graph[i][j] == graph[j][i] <= 1
  * graph[i][i] = 1
  * 1 <= initial.length < graph.length
  * 0 <= initial[i] < graph.length
+ * }</pre>
  *
  * @author Johnny
  */

@@ -7,9 +7,7 @@ import java.util.Queue;
 
 /**
  * 909. Snakes and Ladders
- * <p>
  * On an N x N board, the numbers from 1 to N*N are written boustrophedonically starting from the bottom left of the board, and alternating direction each row.  For example, for a 6 x 6 board, the numbers are written as follows:
- * <p>
  * <p>
  * You start on square 1 of the board (which is always in the last row and first column).  Each move, starting from square x, consists of the following:
  * <p>
@@ -23,7 +21,6 @@ import java.util.Queue;
  * Return the least number of moves required to reach square N*N.  If it is not possible, return -1.
  * <p>
  * Example 1:
- * <p>
  * Input: [
  * [-1,-1,-1,-1,-1,-1],
  * [-1,-1,-1,-1,-1,-1],
@@ -39,12 +36,14 @@ import java.util.Queue;
  * You then decide to move to square 14, and must take the ladder to square 35.
  * You then decide to move to square 36, ending the game.
  * It can be shown that you need at least 4 moves to reach the N*N-th square, so the answer is 4.
- * Note:
  * <p>
+ * Note:
+ * <pre>{@code
  * 2 <= board.length = board[0].length <= 20
  * board[i][j] is between 1 and N*N or is equal to -1.
  * The board square with number 1 has no snake or ladder.
  * The board square with number N*N has no snake or ladder.
+ * }</pre>
  *
  * @author Johnny
  */

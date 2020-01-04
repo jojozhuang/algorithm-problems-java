@@ -17,9 +17,7 @@ import java.util.TreeMap;
  * If there are multiple such values, it returns the one with the largest timestamp_prev.
  * If there are no values, it returns the empty string ("").
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: inputs = ["TimeMap","set","get","get","set","get","get"], inputs = [[],["foo","bar",1],["foo",1],["foo",3],["foo","bar2",4],["foo",4],["foo",5]]
  * Output: [null,null,"bar","bar",null,"bar2","bar2"]
  * Explanation:
@@ -32,18 +30,17 @@ import java.util.TreeMap;
  * kv.get("foo", 5); //output "bar2"
  * <p>
  * Example 2:
- * <p>
  * Input: inputs = ["TimeMap","set","set","get","get","get","get","get"], inputs = [[],["love","high",10],["love","low",20],["love",5],["love",10],["love",15],["love",20],["love",25]]
  * Output: [null,null,null,"","high","high","low","low"]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * All key/value strings are lowercase.
  * All key/value strings have length in the range [1, 100]
  * The timestamps for all TimeMap.set operations are strictly increasing.
  * 1 <= timestamp <= 10^7
  * TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.
+ * }</pre>
  *
  * @author Johnny
  */

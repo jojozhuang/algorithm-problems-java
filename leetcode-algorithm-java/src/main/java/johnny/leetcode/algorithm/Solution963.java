@@ -11,45 +11,34 @@ import java.util.Map;
  * <p>
  * If there isn't any rectangle, return 0.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
- * <p>
  * Input: [[1,2],[2,1],[1,0],[0,1]]
  * Output: 2.00000
  * Explanation: The minimum area rectangle occurs at [1,2],[2,1],[1,0],[0,1], with an area of 2.
+ * <p>
  * Example 2:
- * <p>
- * <p>
- * <p>
  * Input: [[0,1],[2,1],[1,1],[1,0],[2,0]]
  * Output: 1.00000
  * Explanation: The minimum area rectangle occurs at [1,0],[1,1],[2,1],[2,0], with an area of 1.
+ * <p>
  * Example 3:
- * <p>
- * <p>
- * <p>
  * Input: [[0,3],[1,2],[3,1],[1,3],[2,1]]
  * Output: 0
  * Explanation: There is no possible rectangle to form from these points.
+ * <p>
  * Example 4:
- * <p>
- * <p>
- * <p>
  * Input: [[3,1],[1,1],[0,1],[2,1],[3,3],[3,2],[0,2],[2,3]]
  * Output: 2.00000
  * Explanation: The minimum area rectangle occurs at [2,1],[2,3],[3,3],[3,1], with an area of 2.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= points.length <= 50
  * 0 <= points[i][0] <= 40000
  * 0 <= points[i][1] <= 40000
  * All points are distinct.
  * Answers within 10^-5 of the actual value will be accepted as correct.
+ * }</pre>
  *
  * @author Johnny
  */

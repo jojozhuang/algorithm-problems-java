@@ -10,16 +10,12 @@ import johnny.algorithm.common.TreeNode;
  * <p>
  * Calculate the minimum number of cameras needed to monitor all nodes of the tree.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
  * Input: [0,0,null,0,0]
  * Output: 1
  * Explanation: One camera is enough to monitor all nodes if placed as shown.
- * Example 2:
  * <p>
+ * Example 2:
  * <p>
  * Input: [0,0,null,0,null,0,null,null,0]
  * Output: 2

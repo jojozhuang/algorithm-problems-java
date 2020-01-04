@@ -8,17 +8,13 @@ import johnny.algorithm.common.TreeNode;
  * <p>
  * The binary search tree is guaranteed to have unique values.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: root = [10,5,15,3,7,null,18], L = 7, R = 15
  * Output: 32
- * Example 2:
  * <p>
+ * Example 2:
  * Input: root = [10,5,15,3,7,13,18,1,null,6], L = 6, R = 10
  * Output: 23
- * <p>
  * <p>
  * Note:
  * <p>

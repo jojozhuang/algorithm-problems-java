@@ -9,10 +9,7 @@ import java.util.List;
  * <p>
  * Return the k-values corresponding to a sequence of pancake flips that sort A.  Any valid answer that sorts the array within 10 * A.length flips will be judged as correct.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [3,2,4,1]
  * Output: [4,2,4,3]
  * Explanation:
@@ -22,18 +19,18 @@ import java.util.List;
  * After 2nd flip (k=2): A = [4, 1, 2, 3]
  * After 3rd flip (k=4): A = [3, 2, 1, 4]
  * After 4th flip (k=3): A = [1, 2, 3, 4], which is sorted.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [1,2,3]
  * Output: []
  * Explanation: The input is already sorted, so there is no need to flip anything.
  * Note that other answers, such as [3, 3], would also be accepted.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 100
  * A[i] is a permutation of [1, 2, ..., A.length]
+ * }</pre>
  *
  * @author Johnny
  */

@@ -8,20 +8,17 @@ package johnny.leetcode.algorithm;
  * <p>
  * You may return any answer array that satisfies this condition.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [4,2,5,7]
  * Output: [4,5,2,7]
  * Explanation: [4,7,2,5], [2,5,4,7], [2,7,4,5] would also have been accepted.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 2 <= A.length <= 20000
  * A.length % 2 == 0
  * 0 <= A[i] <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

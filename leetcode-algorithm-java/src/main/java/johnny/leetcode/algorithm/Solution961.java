@@ -11,27 +11,24 @@ import java.util.Set;
  * <p>
  * Return the element repeated N times.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [1,2,3,3]
  * Output: 3
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [2,1,2,5,3,2]
  * Output: 2
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [5,1,5,2,5,3,5,4]
  * Output: 5
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 4 <= A.length <= 10000
  * 0 <= A[i] < 10000
  * A.length is even
+ * }</pre>
  *
  * @author Johnny
  */

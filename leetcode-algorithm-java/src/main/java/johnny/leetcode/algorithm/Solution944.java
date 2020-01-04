@@ -14,26 +14,23 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the minimum possible value of D.length.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["cba","daf","ghi"]
  * Output: 1
- * Example 2:
  * <p>
+ * Example 2:
  * Input: ["a","b"]
  * Output: 0
- * Example 3:
  * <p>
+ * Example 3:
  * Input: ["zyx","wvu","tsr"]
  * Output: 3
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 100
  * 1 <= A[i].length <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

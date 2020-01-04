@@ -2,17 +2,14 @@ package johnny.leetcode.algorithm;
 
 /**
  * 982. Triples with Bitwise AND Equal To Zero
- * <p>
  * Given an array of integers A, find the number of triples of indices (i, j, k) such that:
- * <p>
+ * <pre>{@code
  * 0 <= i < A.length
  * 0 <= j < A.length
  * 0 <= k < A.length
  * A[i] & A[j] & A[k] == 0, where & represents the bitwise-AND operator.
- * <p>
- * <p>
+ * }</pre>
  * Example 1:
- * <p>
  * Input: [2,1,3]
  * Output: 12
  * Explanation: We could choose the following i, j, k triples:
@@ -29,11 +26,11 @@ package johnny.leetcode.algorithm;
  * (i=2, j=0, k=1) : 3 & 2 & 1
  * (i=2, j=1, k=0) : 3 & 1 & 2
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 1000
  * 0 <= A[i] < 2^16
+ * }</pre>
  *
  * @author Johnny
  */

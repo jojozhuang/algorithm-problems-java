@@ -15,10 +15,7 @@ import java.util.TreeMap;
  * <p>
  * Return the number of good starting indexes.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [10,13,12,14,15]
  * Output: 2
  * Explanation:
@@ -27,8 +24,8 @@ import java.util.TreeMap;
  * From starting index i = 3, we can jump to i = 4, so we've reached the end.
  * From starting index i = 4, we've reached the end already.
  * In total, there are 2 different starting indexes (i = 3, i = 4) where we can reach the end with some number of jumps.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [2,3,1,1,4]
  * Output: 3
  * Explanation:
@@ -48,18 +45,18 @@ import java.util.TreeMap;
  * From starting index i = 3, we jump to i = 4, so we reach the end.
  * From starting index i = 4, we are already at the end.
  * In total, there are 3 different starting indexes (i = 1, i = 3, i = 4) where we can reach the end with some number of jumps.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [5,1,3,4,2]
  * Output: 3
  * Explanation:
  * We can reach the end from starting indexes 1, 2, and 4.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 20000
  * 0 <= A[i] < 100000
+ * }</pre>
  *
  * @author Johnny
  */

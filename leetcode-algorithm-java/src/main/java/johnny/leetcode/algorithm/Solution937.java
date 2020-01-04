@@ -20,19 +20,16 @@ import java.util.List;
  * <p>
  * Return the final order of the logs.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"]
  * Output: ["g1 act car","a8 act zoo","ab1 off key dog","a1 9 2 3 1","zo4 4 7"]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 0 <= logs.length <= 100
  * 3 <= logs[i].length <= 100
  * logs[i] is guaranteed to have an identifier, and a word after the identifier.
+ * }</pre>
  *
  * @author Johnny
  */

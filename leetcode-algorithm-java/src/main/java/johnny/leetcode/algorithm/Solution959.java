@@ -8,10 +8,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the number of regions.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input:
  * [
  * " /",
@@ -21,7 +18,6 @@ package johnny.leetcode.algorithm;
  * Explanation: The 2x2 grid is as follows:
  * <p>
  * Example 2:
- * <p>
  * Input:
  * [
  * " /",
@@ -31,7 +27,6 @@ package johnny.leetcode.algorithm;
  * Explanation: The 2x2 grid is as follows:
  * <p>
  * Example 3:
- * <p>
  * Input:
  * [
  * "\\/",
@@ -42,7 +37,6 @@ package johnny.leetcode.algorithm;
  * The 2x2 grid is as follows:
  * <p>
  * Example 4:
- * <p>
  * Input:
  * [
  * "/\\",
@@ -53,7 +47,6 @@ package johnny.leetcode.algorithm;
  * The 2x2 grid is as follows:
  * <p>
  * Example 5:
- * <p>
  * Input:
  * [
  * "//",
@@ -62,12 +55,11 @@ package johnny.leetcode.algorithm;
  * Output: 3
  * Explanation: The 2x2 grid is as follows:
  * <p>
- * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= grid.length == grid[0].length <= 30
  * grid[i][j] is either '/', '\', or ' '.
+ * }</pre>
  *
  * @author Johnny
  */

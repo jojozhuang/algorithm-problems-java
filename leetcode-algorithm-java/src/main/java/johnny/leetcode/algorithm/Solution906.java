@@ -6,22 +6,19 @@ package johnny.leetcode.algorithm;
  * <p>
  * Now, given two positive integers L and R (represented as strings), return the number of superpalindromes in the inclusive range [L, R].
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: L = "4", R = "1000"
  * Output: 4
  * Explanation: 4, 9, 121, and 484 are superpalindromes.
  * Note that 676 is not a superpalindrome: 26 * 26 = 676, but 26 is not a palindrome.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= len(L) <= 18
  * 1 <= len(R) <= 18
  * L and R are strings representing integers in the range [1, 10^18).
  * int(L) <= int(R)
+ * }</pre>
  *
  * @author Johnny
  */

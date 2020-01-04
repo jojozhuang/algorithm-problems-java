@@ -12,27 +12,24 @@ import java.util.Arrays;
  * If we have at least 1 point, we may play the token face down, gaining token[i] power, and losing 1 point.
  * Return the largest number of points we can have after playing any number of tokens.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: tokens = [100], P = 50
  * Output: 0
- * Example 2:
  * <p>
+ * Example 2:
  * Input: tokens = [100,200], P = 150
  * Output: 1
- * Example 3:
  * <p>
+ * Example 3:
  * Input: tokens = [100,200,300,400], P = 200
  * Output: 2
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * tokens.length <= 1000
  * 0 <= tokens[i] < 10000
  * 0 <= P < 10000
+ * }</pre>
  *
  * @author Johnny
  */

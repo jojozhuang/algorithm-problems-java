@@ -14,29 +14,26 @@ import java.util.Arrays;
  * <p>
  * Note that if a node was removed from the initial list of infected nodes, it may still be infected later as a result of the malware spread.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
  * Output: 0
- * Example 2:
  * <p>
+ * Example 2:
  * Input: graph = [[1,0,0],[0,1,0],[0,0,1]], initial = [0,2]
  * Output: 0
- * Example 3:
  * <p>
+ * Example 3:
  * Input: graph = [[1,1,1],[1,1,1],[1,1,1]], initial = [1,2]
  * Output: 1
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 < graph.length = graph[0].length <= 300
  * 0 <= graph[i][j] == graph[j][i] <= 1
  * graph[i][i] = 1
  * 1 <= initial.length < graph.length
  * 0 <= initial[i] < graph.length
+ * }</pre>
  *
  * @author Johnny
  */

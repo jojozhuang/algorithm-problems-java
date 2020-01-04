@@ -4,27 +4,24 @@ package johnny.leetcode.algorithm;
  * 917. Reverse Only Letters
  * Given a string S, return the "reversed" string where all characters that are not a letter stay in the same place, and all letters reverse their positions.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: "ab-cd"
  * Output: "dc-ba"
- * Example 2:
  * <p>
+ * Example 2:
  * Input: "a-bC-dEf-ghIj"
  * Output: "j-Ih-gfE-dCba"
- * Example 3:
  * <p>
+ * Example 3:
  * Input: "Test1ng-Leet=code-Q!"
  * Output: "Qedo1ct-eeLg=ntse-T!"
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * S.length <= 100
  * 33 <= S[i].ASCIIcode <= 122
  * S doesn't contain \ or "
+ * }</pre>
  *
  * @author Johnny
  */

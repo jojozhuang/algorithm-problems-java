@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 955. Delete Columns to Make Sorted II
- * <p>
  * We are given an array A of N lowercase letter strings, all of the same length.
  * <p>
  * Now, we may choose any set of deletion indices, and for each string, we delete all the characters in those indices.
@@ -16,32 +15,32 @@ import java.util.Arrays;
  * Return the minimum possible value of D.length.
  * <p>
  * Example 1:
- * <p>
  * Input: ["ca","bb","ac"]
  * Output: 1
  * Explanation:
  * After deleting the first column, A = ["a", "b", "c"].
  * Now A is in lexicographic order (ie. A[0] <= A[1] <= A[2]).
  * We require at least 1 deletion since initially A was not in lexicographic order, so the answer is 1.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: ["xc","yb","za"]
  * Output: 0
  * Explanation:
  * A is already in lexicographic order, so we don't need to delete anything.
  * Note that the rows of A are not necessarily in lexicographic order:
  * ie. it is NOT necessarily true that (A[0][0] <= A[0][1] <= ...)
- * Example 3:
  * <p>
+ * Example 3:
  * Input: ["zyx","wvu","tsr"]
  * Output: 3
  * Explanation:
  * We have to delete every column.
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 100
  * 1 <= A[i].length <= 100
+ * }</pre>
  *
  * @author Johnny
  */

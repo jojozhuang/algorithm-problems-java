@@ -6,7 +6,6 @@ import java.util.Queue;
 
 /**
  * 950. Reveal Cards In Increasing Order
- * <p>
  * In a deck of cards, every card has a unique integer.  You can order the deck in any order you want.
  * <p>
  * Initially, all the cards start face down (unrevealed) in one deck.
@@ -20,10 +19,7 @@ import java.util.Queue;
  * <p>
  * The first entry in the answer is considered to be the top of the deck.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [17,13,11,2,3,5,7]
  * Output: [2,13,3,11,5,17,7]
  * Explanation:
@@ -38,12 +34,12 @@ import java.util.Queue;
  * We reveal 17.
  * Since all the cards revealed are in increasing order, the answer is correct.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 1000
  * 1 <= A[i] <= 10^6
  * A[i] != A[j] for all i != j
+ * }</pre>
  *
  * @author Johnny
  */

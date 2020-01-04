@@ -16,22 +16,19 @@ import java.util.Arrays;
  * <p>
  * Note that the entire part is used when considering what binary value it represents.  For example, [1,1,0] represents 6 in decimal, not 3.  Also, leading zeros are allowed, so [0,1,1] and [1,1] represent the same value.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [1,0,1,0,1]
  * Output: [0,3]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [1,1,0,1,1]
  * Output: [-1,-1]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 3 <= A.length <= 30000
  * A[i] == 0 or A[i] == 1
+ * }</pre>
  *
  * @author Johnny
  */

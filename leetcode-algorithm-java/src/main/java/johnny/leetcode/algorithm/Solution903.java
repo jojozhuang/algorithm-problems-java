@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 903. Valid Permutations for DI Sequence
- * <p>
  * We are given S, a length n string of characters from the set {'D', 'I'}. (These letters stand for "decreasing" and "increasing".)
  * <p>
  * A valid permutation is a permutation P[0], P[1], ..., P[n] of integers {0, 1, ..., n}, such that for all i:
@@ -13,10 +12,7 @@ import java.util.Arrays;
  * If S[i] == 'I', then P[i] < P[i+1].
  * How many valid permutations are there?  Since the answer may be large, return your answer modulo 10^9 + 7.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: "DID"
  * Output: 5
  * Explanation:
@@ -27,11 +23,11 @@ import java.util.Arrays;
  * (3, 0, 2, 1)
  * (3, 1, 2, 0)
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= S.length <= 200
  * S consists only of characters from the set {'D', 'I'}.
+ * }</pre>
  *
  * @author Johnny
  */

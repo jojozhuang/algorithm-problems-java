@@ -17,10 +17,7 @@ import java.util.Map;
  * <p>
  * Given the initial state of the prison, return the state of the prison after N days (and N such changes described above.)
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: cells = [0,1,0,1,1,0,0,1], N = 7
  * Output: [0,0,1,1,0,0,0,0]
  * Explanation:
@@ -35,16 +32,15 @@ import java.util.Map;
  * Day 7: [0, 0, 1, 1, 0, 0, 0, 0]
  * <p>
  * Example 2:
- * <p>
  * Input: cells = [1,0,0,1,0,0,1,0], N = 1000000000
  * Output: [0,0,1,1,1,1,1,0]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * cells.length == 8
  * cells[i] is in {0, 1}
  * 1 <= N <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

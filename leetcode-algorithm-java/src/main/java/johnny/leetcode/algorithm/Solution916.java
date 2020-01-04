@@ -13,36 +13,33 @@ import java.util.List;
  * <p>
  * Return a list of all universal words in A.  You can return the words in any order.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["e","o"]
  * Output: ["facebook","google","leetcode"]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["l","e"]
  * Output: ["apple","google","leetcode"]
- * Example 3:
  * <p>
+ * Example 3:
  * Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["e","oo"]
  * Output: ["facebook","google"]
- * Example 4:
  * <p>
+ * Example 4:
  * Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["lo","eo"]
  * Output: ["google","leetcode"]
- * Example 5:
  * <p>
+ * Example 5:
  * Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["ec","oc","ceo"]
  * Output: ["facebook","leetcode"]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length, B.length <= 10000
  * 1 <= A[i].length, B[i].length <= 10
  * A[i] and B[i] consist only of lowercase letters.
  * All words in A[i] are unique: there isn't i != j with A[i] == A[j].
+ * }</pre>
  *
  * @author Johnny
  */

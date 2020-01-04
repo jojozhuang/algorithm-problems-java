@@ -15,10 +15,7 @@ import java.util.TreeSet;
  * <p>
  * You may return the answer in any order.  In your answer, each value should occur at most once.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: x = 2, y = 3, bound = 10
  * Output: [2,3,4,5,7,9,10]
  * Explanation:
@@ -29,17 +26,17 @@ import java.util.TreeSet;
  * 7 = 2^2 + 3^1
  * 9 = 2^3 + 3^0
  * 10 = 2^0 + 3^2
- * Example 2:
  * <p>
+ * Example 2:
  * Input: x = 3, y = 5, bound = 15
  * Output: [2,4,6,8,10,14]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= x <= 100
  * 1 <= y <= 100
  * 0 <= bound <= 10^6
+ * }</pre>
  *
  * @author Johnny
  */

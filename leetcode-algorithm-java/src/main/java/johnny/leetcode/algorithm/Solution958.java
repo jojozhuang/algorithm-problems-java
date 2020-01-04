@@ -7,25 +7,17 @@ import java.util.Queue;
 
 /**
  * 958. Check Completeness of a Binary Tree
- * <p>
  * Given a binary tree, determine if it is a complete binary tree.
  * <p>
  * Definition of a complete binary tree from Wikipedia:
  * In a complete binary tree every level, except possibly the last, is completely filled, and all nodes in the last level are as far left as possible. It can have between 1 and 2h nodes inclusive at the last level h.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
- * <p>
  * Input: [1,2,3,4,5,6]
  * Output: true
  * Explanation: Every level before the last is full (ie. levels with node-values {1} and {2, 3}), and all nodes in the last level ({4, 5, 6}) are as far left as possible.
+ * <p>
  * Example 2:
- * <p>
- * <p>
- * <p>
  * Input: [1,2,3,4,5,null,7]
  * Output: false
  * Explanation: The node with value 7 isn't as far left as possible.

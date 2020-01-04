@@ -16,17 +16,16 @@ package johnny.leetcode.algorithm;
  * Both 0.1(6) or 0.1666(6) or 0.166(66) are correct representations of 1 / 6.
  * <p>
  * Example 1:
- * <p>
  * Input: S = "0.(52)", T = "0.5(25)"
  * Output: true
  * Explanation:
  * Because "0.(52)" represents 0.52525252..., and "0.5(25)" represents 0.52525252525..... , the strings represent the same number.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: S = "0.1666(6)", T = "0.166(66)"
  * Output: true
- * Example 3:
  * <p>
+ * Example 3:
  * Input: S = "0.9(9)", T = "1."
  * Output: true
  * Explanation:
@@ -34,12 +33,13 @@ package johnny.leetcode.algorithm;
  * "1." represents the number 1, which is formed correctly: (IntegerPart) = "1" and (NonRepeatingPart) = "".
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * Each part consists only of digits.
  * The <IntegerPart> will not begin with 2 or more zeros.  (There is no other restriction on the digits of each part.)
  * 1 <= <IntegerPart>.length <= 4
  * 0 <= <NonRepeatingPart>.length <= 4
  * 1 <= <RepeatingPart>.length <= 4
+ * }</pre>
  *
  * @author Johnny
  */

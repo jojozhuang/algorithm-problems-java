@@ -10,10 +10,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * For example, we start with A = [3,8,0,9,2,5], which is a run-length encoding of the sequence [8,8,8,5,5].  This is because the sequence can be read as "three eights, zero nines, two fives".
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["RLEIterator","next","next","next","next"], [[[3,8,0,9,2,5]],[2],[1],[1],[2]]
  * Output: [null,8,8,5,-1]
  * Explanation:
@@ -31,12 +28,13 @@ package johnny.leetcode.algorithm;
  * but the second term did not exist.  Since the last term exhausted does not exist, we return -1.
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 0 <= A.length <= 1000
  * A.length is an even integer.
  * 0 <= A[i] <= 10^9
  * There are at most 1000 calls to RLEIterator.next(int n) per test case.
  * Each call to RLEIterator.next(int n) will have 1 <= n <= 10^9.
+ * }</pre>
  *
  * @author Johnny
  */

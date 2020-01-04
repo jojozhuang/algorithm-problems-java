@@ -16,31 +16,28 @@ import java.util.Arrays;
  * <p>
  * Return the minimum possible value of D.length.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["babca","bbazb"]
  * Output: 3
  * Explanation: After deleting columns 0, 1, and 4, the final array is A = ["bc", "az"].
  * Both these rows are individually in lexicographic order (ie. A[0][0] <= A[0][1] and A[1][0] <= A[1][1]).
  * Note that A[0] > A[1] - the array A isn't necessarily in lexicographic order.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: ["edcba"]
  * Output: 4
  * Explanation: If we delete less than 4 columns, the only row won't be lexicographically sorted.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: ["ghi","def","abc"]
  * Output: 0
  * Explanation: All rows are already lexicographically sorted.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 100
  * 1 <= A[i].length <= 100
+ * }</pre>
  *
  * @author Johnny
  */

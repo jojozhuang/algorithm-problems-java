@@ -22,21 +22,21 @@ import java.util.List;
  * If we cannot do so, then return the list [-1].
  * <p>
  * Example 1:
- * <p>
  * Input: root = [1,2], voyage = [2,1]
  * Output: [-1]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: root = [1,2,3], voyage = [1,3,2]
  * Output: [1]
- * Example 3:
  * <p>
+ * Example 3:
  * Input: root = [1,2,3], voyage = [1,2,3]
  * Output: []
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 100
+ * }</pre>
  *
  * @author Johnny
  */

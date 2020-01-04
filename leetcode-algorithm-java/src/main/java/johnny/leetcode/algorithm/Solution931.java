@@ -2,15 +2,11 @@ package johnny.leetcode.algorithm;
 
 /**
  * 931. Minimum Falling Path Sum
- * <p>
  * Given a square array of integers A, we want the minimum sum of a falling path through A.
  * <p>
  * A falling path starts at any element in the first row, and chooses one element from each row.  The next row's choice must be in a column that is different from the previous row's column by at most one.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [[1,2,3],[4,5,6],[7,8,9]]
  * Output: 12
  * Explanation:
@@ -20,12 +16,11 @@ package johnny.leetcode.algorithm;
  * [3,5,7], [3,5,8], [3,5,9], [3,6,8], [3,6,9]
  * The falling path with the smallest sum is [1,4,7], so the answer is 12.
  * <p>
- * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length == A[0].length <= 100
  * -100 <= A[i][j] <= 100
+ * }</pre>
  *
  * @author Johnny
  */
