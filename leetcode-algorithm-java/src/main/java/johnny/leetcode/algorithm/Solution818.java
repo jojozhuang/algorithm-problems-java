@@ -12,7 +12,7 @@ import java.util.Arrays;
  * <p>
  * When you get an instruction "R", your car does the following: if your speed is positive then speed = -1 , otherwise speed = 1.  (Your position stays the same.)
  * <p>
- * For example, after commands "AAR", your car goes to positions 0->1->3->3, and your speed goes to 1->2->4->-1.
+ * For example, after commands "AAR", your car goes to positions {@code 0->1->3->3}, and your speed goes to {@code 1->2->4->-1}.
  * <p>
  * Now for some target position, say the length of the shortest sequence of instructions to get there.
  * <p>
@@ -22,14 +22,15 @@ import java.util.Arrays;
  * Output: 2
  * Explanation:
  * The shortest instruction sequence is "AA".
- * Your position goes from 0->1->3.
+ * Your position goes from {@code 0->1->3}.
+ * <p>
  * Example 2:
  * Input:
  * target = 6
  * Output: 5
  * Explanation:
  * The shortest instruction sequence is "AAARA".
- * Your position goes from 0->1->3->7->7->6.
+ * Your position goes from {@code 0->1->3->7->7->6}.
  *
  * @author Johnny
  */

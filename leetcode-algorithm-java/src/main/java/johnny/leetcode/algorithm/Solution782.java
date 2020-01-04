@@ -13,7 +13,7 @@ package johnny.leetcode.algorithm;
  * One potential sequence of moves is shown below, from left to right:
  * <p>
  * 0110     1010     1010
- * 0110 --> 1010 --> 0101
+ * {@code 0110 --> 1010 --> 0101}
  * 1001     0101     1010
  * 1001     0101     0101
  * <p>

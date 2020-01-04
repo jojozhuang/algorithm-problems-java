@@ -22,7 +22,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Notes:
  * <p>
- * 0 <= N <= 10^9.
+ * {@code 0 <= N <= 10^9.}
  * Answers within 10^-6 of the true value will be accepted as correct.
  *
  * @author Johnny

@@ -13,11 +13,13 @@ import java.util.List;
  * Input: [[1,2], [3], [3], []]
  * Output: [[0,1,3],[0,2,3]]
  * Explanation: The graph looks like this:
+ * <pre>{@code
  * 0--->1
  * |    |
  * v    v
  * 2--->3
  * There are two paths: 0 -> 1 -> 3 and 0 -> 2 -> 3.
+ * }</pre>
  * Note:
  * <p>
  * The number of nodes in the graph will be in the range [2, 15].

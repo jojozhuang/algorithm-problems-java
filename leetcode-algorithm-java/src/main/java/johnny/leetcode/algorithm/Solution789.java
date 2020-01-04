@@ -33,7 +33,7 @@ package johnny.leetcode.algorithm;
  * The ghost can reach the target at the same time as you.
  * Note:
  * <p>
- * All points have coordinates with absolute value <= 10000.
+ * All points have coordinates with absolute value {@code <= 10000}.
  * The number of ghosts will not exceed 100.
  *
  * @author Johnny

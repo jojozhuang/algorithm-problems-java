@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * 843. Guess the Word
- * <p>
  * This problem is an interactive problem new to the LeetCode platform.
  * <p>
  * We are given a word list of unique words, each word is 6 letters long, and one word in this list is chosen as secret.
@@ -24,7 +23,6 @@ import java.util.List;
  * Input: secret = "acckzz", wordlist = ["acckzz","ccbazz","eiowzz","abcczz"]
  * <p>
  * Explanation:
- * <p>
  * master.guess("aaaaaa") returns -1, because "aaaaaa" is not in wordlist.
  * master.guess("acckzz") returns 6, because "acckzz" is secret and has all 6 matches.
  * master.guess("ccbazz") returns 3, because "ccbazz" has 3 matches.

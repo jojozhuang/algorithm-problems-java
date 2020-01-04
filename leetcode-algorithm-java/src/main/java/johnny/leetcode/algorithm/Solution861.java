@@ -2,7 +2,6 @@ package johnny.leetcode.algorithm;
 
 /**
  * 861. Score After Flipping Matrix
- * <p>
  * We have a two dimensional matrix A where each value is 0 or 1.
  * <p>
  * A move consists of choosing any row or column, and toggling each value in that row or column: changing all 0s to 1s, and all 1s to 0s.
@@ -11,10 +10,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the highest possible score.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [[0,0,1,1],[1,0,1,0],[1,1,0,0]]
  * Output: 39
  * Explanation:

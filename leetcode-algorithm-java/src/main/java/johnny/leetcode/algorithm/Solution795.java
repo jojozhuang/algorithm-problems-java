@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 /**
  * 795. Number of Subarrays with Bounded Maximum
- * We are given an array A of positive integers, and two positive integers L and R (L <= R).
+ * We are given an array A of positive integers, and two positive integers L and R ({@code L <= R}).
  * <p>
  * Return the number of (contiguous, non-empty) subarrays such that the value of the maximum array element in that subarray is at least L and at most R.
  * <p>

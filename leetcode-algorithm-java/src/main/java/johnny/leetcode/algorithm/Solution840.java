@@ -6,10 +6,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Given an grid of integers, how many 3 x 3 "magic square" subgrids are there?  (Each subgrid is contiguous).
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [[4,3,8,4],
  * [9,5,1,9],
  * [2,7,6,2]]

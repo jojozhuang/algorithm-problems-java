@@ -30,7 +30,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Notes:
  * <p>
- * 1 < grid.length = grid[0].length <= 50.
+ * {@code 1 < grid.length = grid[0].length <= 50.}
  * All heights grid[i][j] are in the range [0, 100].
  * All buildings in grid[i][j] occupy the entire grid cell: that is, they are a 1 x 1 x grid[i][j] rectangular prism.
  *

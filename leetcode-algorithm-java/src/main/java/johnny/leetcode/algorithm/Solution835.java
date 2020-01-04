@@ -11,7 +11,6 @@ package johnny.leetcode.algorithm;
  * What is the largest possible overlap?
  * <p>
  * Example 1:
- * <p>
  * Input: A = [[1,1,0],
  * [0,1,0],
  * [0,1,0]]
@@ -21,9 +20,10 @@ package johnny.leetcode.algorithm;
  * Output: 3
  * Explanation: We slide A to right by 1 unit and down by 1 unit.
  * Notes:
- * <p>
+ * <pre>{@code
  * 1 <= A.length = A[0].length = B.length = B[0].length <= 30
  * 0 <= A[i][j], B[i][j] <= 1
+ * }</pre>
  *
  * @author Johnny
  */

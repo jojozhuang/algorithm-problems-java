@@ -22,17 +22,16 @@ import java.util.Queue;
  * Return a string representing the final state.
  * <p>
  * Example 1:
- * <p>
  * Input: ".L.R...LR..L.."
  * Output: "LL.RR.LLRRLL.."
- * Example 2:
  * <p>
+ * Example 2:
  * Input: "RR.L"
  * Output: "RR.L"
  * Explanation: The first domino expends no additional force on the second domino.
- * Note:
  * <p>
- * 0 <= N <= 10^5
+ * Note:
+ * {@code 0 <= N <= 10^5}
  * String dominoes contains only 'L', 'R' and '.'
  *
  * @author Johnny

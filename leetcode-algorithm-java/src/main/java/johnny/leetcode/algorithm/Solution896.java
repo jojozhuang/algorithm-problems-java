@@ -8,34 +8,31 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return true if and only if the given array A is monotonic.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [1,2,2,3]
  * Output: true
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [6,5,4,4]
  * Output: true
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [1,3,2]
  * Output: false
- * Example 4:
  * <p>
+ * Example 4:
  * Input: [1,2,4,5]
  * Output: true
- * Example 5:
  * <p>
+ * Example 5:
  * Input: [1,1,1]
  * Output: true
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 50000
  * -100000 <= A[i] <= 100000
+ * }</pre>
  *
  * @author Johnny
  */

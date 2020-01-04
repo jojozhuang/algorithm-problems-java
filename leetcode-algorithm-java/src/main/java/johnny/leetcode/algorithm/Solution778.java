@@ -38,7 +38,7 @@ import java.util.Set;
  * We need to wait until time 16 so that (0, 0) and (4, 4) are connected.
  * Note:
  * <p>
- * 2 <= N <= 50.
+ * {@code 2 <= N <= 50.}
  * grid[i][j] is a permutation of [0, ..., N*N - 1].
  *
  * @author Johnny

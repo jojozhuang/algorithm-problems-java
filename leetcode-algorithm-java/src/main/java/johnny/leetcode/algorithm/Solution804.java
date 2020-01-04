@@ -19,10 +19,12 @@ import java.util.Set;
  * Output: 2
  * Explanation:
  * The transformation of each word is:
+ * <pre>{@code
  * "gin" -> "--...-."
  * "zen" -> "--...-."
  * "gig" -> "--...--."
  * "msg" -> "--...--."
+ * }</pre>
  * <p>
  * There are 2 different transformations, "--...-." and "--...--.".
  * <p>

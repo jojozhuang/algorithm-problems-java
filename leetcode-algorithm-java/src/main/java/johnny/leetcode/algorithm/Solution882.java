@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 
 /**
  * 882. Reachable Nodes In Subdivided Graph
- * <p>
  * Starting with an undirected graph (the "original graph") with nodes from 0 to N-1, subdivisions are made to some of the edges.
  * <p>
  * The graph is given as follows: edges[k] is a list of integer pairs (i, j, n) such that (i, j) is an edge of the original graph,
@@ -21,23 +20,18 @@ import java.util.PriorityQueue;
  * <p>
  * Return how many nodes you can reach in at most M moves.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: edges = [[0,1,10],[0,2,1],[1,2,2]], M = 6, N = 3
  * Output: 13
  * Explanation:
  * The nodes that are reachable in the final graph after M = 6 moves are indicated below.
  * <p>
  * Example 2:
- * <p>
  * Input: edges = [[0,1,4],[1,2,6],[0,2,8],[1,3,1]], M = 10, N = 4
  * Output: 23
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 0 <= edges.length <= 10000
  * 0 <= edges[i][0] < edges[i][1] < N
  * There does not exist any i != j for which edges[i][0] == edges[j][0] and edges[i][1] == edges[j][1].
@@ -46,25 +40,25 @@ import java.util.PriorityQueue;
  * 0 <= M <= 10^9
  * 1 <= N <= 3000
  * A reachable node is a node that can be travelled to using at most M moves starting from node 0.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution882 {
     public int reachableNodes(int[][] edges, int M, int N) {
-        Map<Integer, Map<Integer, Integer>> graph = new HashMap<Integer, Map<Integer, Integer>>();
+        Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
         for (int[] edge : edges) {
             int u = edge[0], v = edge[1], w = edge[2];
-            graph.computeIfAbsent(u, x -> new HashMap<Integer, Integer>()).put(v, w);
-            graph.computeIfAbsent(v, x -> new HashMap<Integer, Integer>()).put(u, w);
+            graph.computeIfAbsent(u, x -> new HashMap<>()).put(v, w);
+            graph.computeIfAbsent(v, x -> new HashMap<>()).put(u, w);
         }
 
-        PriorityQueue<ANode> pq = new PriorityQueue<ANode>(
+        PriorityQueue<ANode> pq = new PriorityQueue<>(
                 (a, b) -> Integer.compare(a.dist, b.dist));
         pq.offer(new ANode(0, 0));
 
-        Map<Integer, Integer> dist = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> dist = new HashMap<>();
         dist.put(0, 0);
-        Map<Integer, Integer> used = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> used = new HashMap<>();
         int ans = 0;
 
         while (!pq.isEmpty()) {

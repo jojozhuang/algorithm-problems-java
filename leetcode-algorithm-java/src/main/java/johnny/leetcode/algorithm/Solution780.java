@@ -11,9 +11,11 @@ package johnny.leetcode.algorithm;
  * Output: True
  * Explanation:
  * One series of moves that transforms the starting point to the target is:
+ * <pre>{@code
  * (1, 1) -> (1, 2)
  * (1, 2) -> (3, 2)
  * (3, 2) -> (3, 5)
+ * }</pre>
  * <p>
  * Input: sx = 1, sy = 1, tx = 2, ty = 2
  * Output: False

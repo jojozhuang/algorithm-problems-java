@@ -2,7 +2,6 @@ package johnny.leetcode.algorithm;
 
 /**
  * 848. Shifting Letters
- * <p>
  * We have a string S of lowercase letters, and an integer array shifts.
  * <p>
  * Call the shift of a letter, the next letter in the alphabet, (wrapping around so that 'z' becomes 'a').
@@ -14,7 +13,6 @@ package johnny.leetcode.algorithm;
  * Return the final string after all such shifts to S are applied.
  * <p>
  * Example 1:
- * <p>
  * Input: S = "abc", shifts = [3,5,9]
  * Output: "rpl"
  * Explanation:
@@ -23,9 +21,10 @@ package johnny.leetcode.algorithm;
  * After shifting the first 2 letters of S by 5, we have "igc".
  * After shifting the first 3 letters of S by 9, we have "rpl", the answer.
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= S.length = shifts.length <= 20000
  * 0 <= shifts[i] <= 10 ^ 9
+ * }</pre>
  *
  * @author Johnny
  */

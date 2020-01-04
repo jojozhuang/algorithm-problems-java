@@ -10,8 +10,6 @@ import java.util.LinkedList;
  * <p>
  * If there is no non-empty subarray with sum at least K, return -1.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: A = [1], K = 1

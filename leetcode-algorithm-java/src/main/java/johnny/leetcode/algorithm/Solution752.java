@@ -15,7 +15,7 @@ import java.util.Set;
  * <p>
  * Given a target representing the value of the wheels that will unlock the lock, return the minimum
  * total number of turns required to open the lock, or -1 if it is impossible.
- * <p>
+ * <pre>{@code
  * Example 1:
  * Input: deadends = ["0201","0101","0102","1212","2002"], target = "0202"
  * Output: 6
@@ -41,6 +41,7 @@ import java.util.Set;
  * target will not be in the list deadends.
  * Every string in deadends and the string target will be a string of 4 digits from the 10,000
  * possibilities '0000' to '9999'.
+ * }</pre>
  *
  * @author Johnny
  */

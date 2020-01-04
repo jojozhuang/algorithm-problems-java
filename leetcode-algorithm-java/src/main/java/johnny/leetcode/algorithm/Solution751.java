@@ -14,6 +14,7 @@ import java.util.List;
  * Output: ["255.0.0.7/32","255.0.0.8/29","255.0.0.16/32"]
  * Explanation:
  * The initial ip address, when converted to binary, looks like this (spaces added for clarity):
+ * <pre>{@code
  * 255.0.0.7 -> 11111111 00000000 00000000 00000111
  * The address "255.0.0.7/32" specifies all addresses with a common prefix of 32 bits to the given address,
  * ie. just this one address.
@@ -46,6 +47,7 @@ import java.util.List;
  * ip will be a valid IPv4 address.
  * Every implied address ip + x (for x < n) will be a valid IPv4 address.
  * n will be an integer in the range [1, 1000].
+ * }</pre>
  *
  * @author Johnny
  */

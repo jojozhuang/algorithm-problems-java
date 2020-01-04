@@ -4,38 +4,32 @@ import java.util.Arrays;
 
 /**
  * 869. Reordered Power of 2
- * <p>
  * Starting with a positive integer N, we reorder the digits in any order (including the original order) such that the leading digit is not zero.
  * <p>
  * Return true if and only if we can do this in a way such that the resulting number is a power of 2.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: 1
  * Output: true
- * Example 2:
  * <p>
+ * Example 2:
  * Input: 10
  * Output: false
- * Example 3:
  * <p>
+ * Example 3:
  * Input: 16
  * Output: true
- * Example 4:
  * <p>
+ * Example 4:
  * Input: 24
  * Output: false
- * Example 5:
  * <p>
+ * Example 5:
  * Input: 46
  * Output: true
  * <p>
- * <p>
  * Note:
- * <p>
- * 1 <= N <= 10^9
+ * {@code 1 <= N <= 10^9}
  *
  * @author Johnny
  */

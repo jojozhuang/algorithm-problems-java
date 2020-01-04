@@ -10,6 +10,7 @@ package johnny.leetcode.algorithm;
  * Output: True
  * Explanation:
  * We can transform start to end following these steps:
+ * <pre>{@code
  * RXXLRXRXL ->
  * XRXLRXRXL ->
  * XRLXRXRXL ->
@@ -19,7 +20,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * 1 <= len(start) = len(end) <= 10000.
  * Both start and end will only consist of characters in {'L', 'R', 'X'}.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution777 {

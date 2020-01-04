@@ -18,22 +18,23 @@ import java.util.List;
  * All these operations occur simultaneously.  It's guaranteed that there won't be any overlap in replacement: for example, S = "abc", indexes = [0, 1], sources = ["ab","bc"] is not a valid test case.
  * <p>
  * Example 1:
- * <p>
  * Input: S = "abcd", indexes = [0,2], sources = ["a","cd"], targets = ["eee","ffff"]
  * Output: "eeebffff"
  * Explanation: "a" starts at index 0 in S, so it's replaced by "eee".
  * "cd" starts at index 2 in S, so it's replaced by "ffff".
- * Example 2:
  * <p>
+ * Example 2:
  * Input: S = "abcd", indexes = [0,2], sources = ["ab","ec"], targets = ["eee","ffff"]
  * Output: "eeecd"
  * Explanation: "ab" starts at index 0 in S, so it's replaced by "eee".
  * "ec" doesn't starts at index 2 in the original S, so we do nothing.
- * Notes:
  * <p>
+ * Notes:
+ * <pre>{@code
  * 0 <= indexes.length = sources.length = targets.length <= 100
  * 0 < indexes[i] < S.length <= 1000
  * All characters in given inputs are lowercase letters.
+ * }</pre>
  *
  * @author Johnny
  */

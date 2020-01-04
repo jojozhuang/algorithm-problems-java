@@ -17,9 +17,10 @@ package johnny.leetcode.algorithm;
  * If Alice erases 2 first, now nums becomes [1, 1]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 1 = 0. Alice will lose.
  * <p>
  * Notes:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 1000.
  * 0 <= nums[i] <= 2^16.
+ * }</pre>
  *
  * @author Johnny
  */

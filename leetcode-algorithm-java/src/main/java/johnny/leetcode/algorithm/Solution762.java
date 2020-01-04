@@ -9,7 +9,7 @@ import java.util.Set;
  * Given two integers L and R, find the count of numbers in the range [L, R] (inclusive) having a prime number of set bits in their binary representation.
  * <p>
  * (Recall that the number of set bits an integer has is the number of 1s present when written in binary. For example, 21 written in binary is 10101 which has 3 set bits. Also, 1 is not a prime.)
- * <p>
+ * <pre>{@code
  * Example 1:
  * <p>
  * Input: L = 6, R = 10
@@ -34,6 +34,7 @@ import java.util.Set;
  * <p>
  * L, R will be integers L <= R in the range [1, 10^6].
  * R - L will be at most 10000.
+ * }</pre>
  *
  * @author Johnny
  */

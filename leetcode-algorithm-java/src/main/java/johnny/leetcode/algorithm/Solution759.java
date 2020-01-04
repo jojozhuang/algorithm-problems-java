@@ -31,7 +31,7 @@ import java.util.PriorityQueue;
  * Note:
  * <p>
  * schedule and schedule[i] are lists with lengths in range [1, 50].
- * 0 <= schedule[i].start < schedule[i].end <= 10^8.
+ * {@code 0 <= schedule[i].start < schedule[i].end <= 10^8.}
  *
  * @author Johnny
  */

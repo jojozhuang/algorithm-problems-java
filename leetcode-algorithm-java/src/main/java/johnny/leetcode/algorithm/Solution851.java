@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 /**
  * 851. Loud and Rich
- * <p>
  * In a group of N people (labelled 0, 1, 2, ..., N-1), each person has different amounts of money, and different levels of quietness.
  * <p>
  * For convenience, we'll call the person with label x, simply "person x".
@@ -17,7 +16,6 @@ import java.util.Arrays;
  * Now, return answer, where answer[x] = y if y is the least quiet person (that is, the person y with the smallest value of quiet[y]), among all people who definitely have equal to or more money than person x.
  * <p>
  * Example 1:
- * <p>
  * Input: richer = [[1,0],[2,1],[3,1],[3,7],[4,3],[5,3],[6,3]], quiet = [3,2,5,4,6,1,7,0]
  * Output: [5,5,2,5,4,5,6,7]
  * Explanation:
@@ -33,7 +31,7 @@ import java.util.Arrays;
  * <p>
  * The other answers can be filled out with similar reasoning.
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= quiet.length = N <= 500
  * 0 <= quiet[i] < N, all quiet[i] are different.
  * 0 <= richer.length <= N * (N-1) / 2
@@ -41,6 +39,7 @@ import java.util.Arrays;
  * richer[i][0] != richer[i][1]
  * richer[i]'s are all different.
  * The observations in richer are all logically consistent.
+ * }</pre>
  *
  * @author Johnny
  */

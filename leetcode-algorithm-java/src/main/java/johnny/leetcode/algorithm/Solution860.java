@@ -2,7 +2,6 @@ package johnny.leetcode.algorithm;
 
 /**
  * 860. Lemonade Change
- * <p>
  * At a lemonade stand, each lemonade costs $5.
  * <p>
  * Customers are standing in a queue to buy from you, and order one at a time (in the order specified by bills).
@@ -13,10 +12,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return true if and only if you can provide every customer with correct change.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [5,5,5,10,20]
  * Output: true
  * Explanation:
@@ -24,16 +20,16 @@ package johnny.leetcode.algorithm;
  * From the fourth customer, we collect a $10 bill and give back a $5.
  * From the fifth customer, we give a $10 bill and a $5 bill.
  * Since all customers got correct change, we output true.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [5,5,10]
  * Output: true
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [10,10]
  * Output: false
- * Example 4:
  * <p>
+ * Example 4:
  * Input: [5,5,10,10,20]
  * Output: false
  * Explanation:

@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 /**
  * 826. Most Profit Assigning Work
- * <p>
  * We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job.
  * <p>
  * Now we have some workers. worker[i] is the ability of the ith worker, which means that this worker can only complete a job with difficulty at most worker[i].
@@ -18,15 +17,15 @@ import java.util.Arrays;
  * What is the most profit we can make?
  * <p>
  * Example 1:
- * <p>
  * Input: difficulty = [2,4,6,8,10], profit = [10,20,30,40,50], worker = [4,5,6,7]
  * Output: 100
  * Explanation: Workers are assigned jobs of difficulty [4,4,6,6] and they get profit of [20,20,30,30] seperately.
  * Notes:
- * <p>
+ * <pre>{@code
  * 1 <= difficulty.length = profit.length <= 10000
  * 1 <= worker.length <= 10000
  * difficulty[i], profit[i], worker[i]  are in range [1, 10^5]
+ * }</pre>
  *
  * @author Johnny
  */

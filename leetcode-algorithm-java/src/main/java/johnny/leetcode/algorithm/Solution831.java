@@ -5,8 +5,7 @@ package johnny.leetcode.algorithm;
  * We are given a personal information string S, which may represent either an email address or a phone number.
  * <p>
  * We would like to mask this personal information according to the following rules:
- * <p>
- * <p>
+ * <pre>{@code
  * 1. Email address:
  * <p>
  * We define a name to be a string of length ≥ 2 consisting of only lowercase letters a-z or uppercase letters A-Z.
@@ -16,7 +15,6 @@ package johnny.leetcode.algorithm;
  * All email addresses are guaranteed to be valid and in the format of "name1@name2.name3".
  * <p>
  * To mask an email, all names must be converted to lowercase and all letters between the first and last letter of the first name must be replaced by 5 asterisks '*'.
- * <p>
  * <p>
  * 2. Phone number:
  * <p>
@@ -29,8 +27,6 @@ package johnny.leetcode.algorithm;
  * To mask a phone number with country code like "+111 111 111 1111", we write it in the form "+***-***-***-1111".  The '+' sign and the first '-' sign before the local number should only exist if there is a country code.  For example, a 12 digit phone number mask should start with "+**-".
  * <p>
  * Note that extraneous characters like "(", ")", " ", as well as extra dashes or plus signs not part of the above formatting scheme should be removed.
- * <p>
- * <p>
  * <p>
  * Return the correct "mask" of the information provided.
  * <p>
@@ -62,6 +58,7 @@ package johnny.leetcode.algorithm;
  * S.length <= 40.
  * Emails have length at least 8.
  * Phone numbers have length at least 10.
+ * }</pre>
  *
  * @author Johnny
  */

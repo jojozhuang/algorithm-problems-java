@@ -14,9 +14,7 @@ import java.util.Stack;
  * pop(), which removes and returns the most frequent element in the stack.
  * If there is a tie for most frequent element, the element closest to the top of the stack is removed and returned.
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input:
  * ["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"],
  * [[],[5],[7],[5],[7],[4],[5],[],[],[],[]]
@@ -36,10 +34,9 @@ import java.util.Stack;
  * pop() -> returns 4.
  * The stack becomes [5,7].
  * <p>
- * <p>
  * Note:
  * <p>
- * Calls to FreqStack.push(int x) will be such that 0 <= x <= 10^9.
+ * Calls to FreqStack.push(int x) will be such that {@code 0 <= x <= 10^9}.
  * It is guaranteed that FreqStack.pop() won't be called if the stack has zero elements.
  * The total number of FreqStack.push calls will not exceed 10000 in a single test case.
  * The total number of FreqStack.pop calls will not exceed 10000 in a single test case.

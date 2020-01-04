@@ -17,19 +17,14 @@ import java.util.Map;
  * <p>
  * You may return the final list of trees in any order.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: 7
  * Output: [[0,0,0,null,null,0,0,null,null,0,0],[0,0,0,null,null,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,null,null,null,null,0,0],[0,0,0,0,0,null,null,0,0]]
  * Explanation:
  * <p>
- * <p>
- * <p>
  * Note:
- * <p>
- * 1 <= N <= 20
+ * {@code 1 <= N <= 20}
  *
  * @author Johnny
  */

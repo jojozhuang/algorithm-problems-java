@@ -26,7 +26,7 @@ package johnny.leetcode.algorithm;
  * #       #
  * ##  # ###
  * #########
- * 0123456    <- index
+ * {@code 0123456    <- index}
  * <p>
  * The first drop of water lands at index K = 3:
  * <p>

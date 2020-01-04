@@ -7,31 +7,28 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the N-th magical number.  Since the answer may be very large, return it modulo 10^9 + 7.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: N = 1, A = 2, B = 3
  * Output: 2
- * Example 2:
  * <p>
+ * Example 2:
  * Input: N = 4, A = 2, B = 3
  * Output: 6
- * Example 3:
  * <p>
+ * Example 3:
  * Input: N = 5, A = 2, B = 4
  * Output: 10
- * Example 4:
  * <p>
+ * Example 4:
  * Input: N = 3, A = 6, B = 4
  * Output: 8
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 10^9
  * 2 <= A <= 40000
  * 2 <= B <= 40000
+ * }</pre>
  *
  * @author Johnny
  */

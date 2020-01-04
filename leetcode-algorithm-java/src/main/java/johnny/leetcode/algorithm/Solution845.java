@@ -2,7 +2,6 @@ package johnny.leetcode.algorithm;
 
 /**
  * 845. Longest Mountain in Array
- * <p>
  * Let's call any (contiguous) subarray B (of A) a mountain if the following properties hold:
  * <p>
  * B.length >= 3
@@ -14,19 +13,20 @@ package johnny.leetcode.algorithm;
  * Return 0 if there is no mountain.
  * <p>
  * Example 1:
- * <p>
  * Input: [2,1,4,7,3,2,5]
  * Output: 5
  * Explanation: The largest mountain is [1,4,7,3,2] which has length 5.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [2,2,2]
  * Output: 0
  * Explanation: There is no mountain.
- * Note:
  * <p>
+ * Note:
+ * <pre>{@code
  * 0 <= A.length <= 10000
  * 0 <= A[i] <= 10000
+ * }</pre>
  * Follow up:
  * <p>
  * Can you solve it using only one pass?

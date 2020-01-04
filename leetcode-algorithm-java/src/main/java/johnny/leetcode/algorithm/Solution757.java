@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 /**
  * 757. Set Intersection Size At Least Two
- * An integer interval [a, b] (for integers a < b) is a set of all consecutive integers from a to b,
+ * An integer interval [a, b] (for integers {@code a < b}) is a set of all consecutive integers from a to b,
  * including a and b.
  * <p>
  * Find the minimum size of a set S such that for every integer interval A in intervals, the intersection

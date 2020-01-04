@@ -5,7 +5,6 @@ import java.util.LinkedList;
 
 /**
  * 844. Backspace String Compare
- * <p>
  * Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
  * <p>
  * Example 1:
@@ -29,12 +28,13 @@ import java.util.LinkedList;
  * Output: false
  * Explanation: S becomes "c" while T becomes "b".
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= S.length <= 200
  * 1 <= T.length <= 200
  * S and T only contain lowercase letters and '#' characters.
- * Follow up:
+ * }</pre>
  * <p>
+ * Follow up:
  * Can you solve it in O(N) time and O(1) space?
  *
  * @author Johnny
