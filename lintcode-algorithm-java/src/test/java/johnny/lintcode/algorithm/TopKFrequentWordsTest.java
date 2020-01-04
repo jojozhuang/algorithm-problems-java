@@ -1,18 +1,18 @@
 package johnny.lintcode.algorithm;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import johnny.lintcode.algorithm.common.Document;
+import johnny.lintcode.algorithm.common.OutputCollector;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.lintcode.algorithm.common.Document;
-import johnny.lintcode.algorithm.common.OutputCollector;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  *

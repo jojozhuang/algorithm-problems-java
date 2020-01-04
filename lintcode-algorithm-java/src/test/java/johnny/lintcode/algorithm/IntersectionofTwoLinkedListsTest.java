@@ -1,14 +1,13 @@
 package johnny.lintcode.algorithm;
 
+import johnny.algorithm.common.ListNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.common.ListNode;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *

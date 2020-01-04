@@ -1,9 +1,9 @@
 package johnny.lintcode.algorithm;
 
+import johnny.algorithm.common.Point;
+
 import java.util.Arrays;
 import java.util.Comparator;
-
-import johnny.algorithm.common.Point;
 
 /**
  * K Closest Points

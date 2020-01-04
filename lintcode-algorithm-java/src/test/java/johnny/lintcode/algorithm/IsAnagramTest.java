@@ -1,6 +1,5 @@
 package johnny.lintcode.algorithm;
 
-import johnny.algorithm.common.TreeNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

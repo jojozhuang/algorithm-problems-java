@@ -1,8 +1,8 @@
 package johnny.lintcode.algorithm;
 
-import java.util.ArrayList;
-
 import johnny.algorithm.common.TreeNode;
+
+import java.util.ArrayList;
 
 /**
  * Search Range in Binary Search Tree.

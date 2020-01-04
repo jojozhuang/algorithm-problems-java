@@ -1,8 +1,8 @@
 package johnny.lintcode.algorithm;
 
-import java.util.StringTokenizer;
-
 import johnny.algorithm.common.TreeNode;
+
+import java.util.StringTokenizer;
 
 /**
  * Binary Tree Serialization.

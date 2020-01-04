@@ -1,15 +1,15 @@
 package johnny.lintcode.algorithm;
 
-import java.util.ArrayList;
+import johnny.algorithm.common.DirectedGraphNode;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.common.DirectedGraphNode;
+import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *

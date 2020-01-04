@@ -1,5 +1,8 @@
 package johnny.lintcode.algorithm;
 
+import johnny.lintcode.algorithm.common.Document;
+import johnny.lintcode.algorithm.common.OutputCollector;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -8,9 +11,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
-
-import johnny.lintcode.algorithm.common.Document;
-import johnny.lintcode.algorithm.common.OutputCollector;
 
 /**
  * Top K Frequent Words (Map Reduce)

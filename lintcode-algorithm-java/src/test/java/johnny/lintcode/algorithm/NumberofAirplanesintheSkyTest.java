@@ -1,16 +1,16 @@
 package johnny.lintcode.algorithm;
 
-import java.util.ArrayList;
-import java.util.List;
+import johnny.algorithm.common.Interval;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import johnny.algorithm.common.Interval;
+import java.util.ArrayList;
+import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *

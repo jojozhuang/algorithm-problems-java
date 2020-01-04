@@ -23,7 +23,6 @@ import java.util.Map;
  * @author Johnny
  */
 public class IsAnagram {
-    public static final int
     /**
      * @param s: string s
      * @param t: string t

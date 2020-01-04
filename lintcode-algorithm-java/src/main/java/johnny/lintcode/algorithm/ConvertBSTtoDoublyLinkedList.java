@@ -1,9 +1,9 @@
 package johnny.lintcode.algorithm;
 
-import java.util.Stack;
-
 import johnny.algorithm.common.DoublyListNode;
 import johnny.algorithm.common.TreeNode;
+
+import java.util.Stack;
 
 /**
  * Convert Binary Search Tree to Doubly Linked List

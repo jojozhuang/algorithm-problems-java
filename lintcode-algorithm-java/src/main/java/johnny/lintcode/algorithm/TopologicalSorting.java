@@ -1,9 +1,9 @@
 package johnny.lintcode.algorithm;
 
+import johnny.algorithm.common.DirectedGraphNode;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import johnny.algorithm.common.DirectedGraphNode;
 
 /**
  * Topological Sorting.
