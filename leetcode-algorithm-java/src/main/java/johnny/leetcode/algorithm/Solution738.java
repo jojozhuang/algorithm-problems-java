@@ -4,7 +4,7 @@ package johnny.leetcode.algorithm;
  * 738. Monotone Increasing Digits
  * Given a non-negative integer N, find the largest number that is less than or equal to N with monotone increasing digits.
  * <p>
- * (Recall that an integer has monotone increasing digits if and only if each pair of adjacent digits x and y satisfy x <= y.)
+ * Recall that an integer has monotone increasing digits if and only if each pair of adjacent digits x and y satisfy {@code x <= y}.
  * <p>
  * Example 1:
  * Input: N = 10

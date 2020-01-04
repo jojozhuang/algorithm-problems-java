@@ -28,10 +28,9 @@ import java.util.List;
  * Explanation:
  * 1.0 is not allowed.
  * <p>
- * <p>
  * Note:
  * <p>
- * 4 <= S.length <= 12.
+ * {@code 4 <= S.length <= 12}.
  * S[0] = "(", S[S.length - 1] = ")", and the other elements in S are digits.
  *
  * @author Johnny

@@ -22,12 +22,10 @@ import johnny.leetcode.algorithm.common.SolBase;
  * Input: 3
  * Output: [8,1,10]
  * <p>
- * <p>
  * Note:
  * <p>
  * rand7 is predefined.
  * Each testcase has one argument: n, the number of times that rand10 is called.
- * <p>
  * <p>
  * Follow up:
  * <p>
@@ -36,7 +34,7 @@ import johnny.leetcode.algorithm.common.SolBase;
  *
  * The rand7() API is already defined in the parent class SolBase.
  * public int rand7();
- * @return a random integer in the range 1 to 7
+ * return a random integer in the range 1 to 7
  */
 public class Solution470 extends SolBase {
     public int rand10() {

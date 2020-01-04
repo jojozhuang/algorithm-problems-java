@@ -23,7 +23,7 @@ package johnny.leetcode.algorithm;
  * one-bit character.
  * Note:
  * <p>
- * 1 <= len(bits) <= 1000.
+ * {@code 1 <= len(bits) <= 1000.}
  * bits[i] is always 0 or 1.
  *
  * @author Johnny

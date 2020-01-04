@@ -6,8 +6,6 @@ package johnny.leetcode.algorithm;
  * <p>
  * Now answer two questions: how many lines have at least one character from S, and what is the width used by the last such line? Return your answer as an integer list of length 2.
  * <p>
- * <p>
- * <p>
  * Example :
  * Input:
  * widths = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]

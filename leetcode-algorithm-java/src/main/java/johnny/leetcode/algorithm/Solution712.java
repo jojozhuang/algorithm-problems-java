@@ -22,7 +22,7 @@ import java.util.Arrays;
  * are higher.
  * Note:
  * <p>
- * 0 < s1.length, s2.length <= 1000.
+ * {@code 0 < s1.length, s2.length <= 1000.}
  * All elements of each string will have an ASCII value in [97, 122].
  *
  * @author Johnny

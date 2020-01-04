@@ -27,7 +27,7 @@ package johnny.leetcode.algorithm;
  * We can at most get 9 A's on screen by pressing following key sequence:
  * A, A, A, Ctrl A, Ctrl C, Ctrl V, Ctrl V
  * Note:
- * 1 <= N <= 50
+ * {@code 1 <= N <= 50}
  * Answers will be in the range of 32-bit signed integer.
  *
  * @author Johnny

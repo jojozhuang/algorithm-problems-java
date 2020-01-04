@@ -24,11 +24,11 @@ import java.util.HashMap;
  * Output: 7
  * Explanation: We can make these trees: [2], [4], [5], [10], [4, 2, 2], [10, 2, 5], [10, 5, 2].
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 1000.
  * 2 <= A[i] <= 10 ^ 9.
+ * }</pre>
  *
  * @author Johnny
  */

@@ -11,7 +11,7 @@ package johnny.leetcode.algorithm;
  * Output: 5
  * <p>
  * Explanation:
- * Here are the non-negative integers <= 5 with their corresponding binary representations:
+ * Here are the non-negative integers {@code <= 5} with their corresponding binary representations:
  * 0 : 0
  * 1 : 1
  * 2 : 10
@@ -20,7 +20,7 @@ package johnny.leetcode.algorithm;
  * 5 : 101
  * Among them, only integer 3 disobeys the rule (two consecutive ones) and the other 5 satisfy the rule.
  * <p>
- * Note: 1 <= n <= 109
+ * Note: {@code 1 <= n <= 109}
  *
  * @author Johnny
  */

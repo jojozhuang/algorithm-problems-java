@@ -42,7 +42,7 @@ import java.util.Map;
  * Explanation: You can't split the tree into two trees with equal sum after removing exactly one edge on the tree.
  * Note:
  * The range of tree node value is in the range of [-100000, 100000].
- * 1 <= n <= 10000
+ * {@code 1 <= n <= 10000}
  *
  * @author Johnny
  */

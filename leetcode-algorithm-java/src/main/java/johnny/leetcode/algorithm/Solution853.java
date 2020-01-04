@@ -21,10 +21,7 @@ import java.util.Queue;
  * <p>
  * If a car catches up to a car fleet right at the destination point, it will still be considered as one car fleet.
  * <p>
- * <p>
  * How many car fleets will arrive at the destination?
- * <p>
- * <p>
  * <p>
  * Example 1:
  * <p>
@@ -37,12 +34,13 @@ import java.util.Queue;
  * Note that no other cars meet these fleets before the destination, so the answer is 3.
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 0 <= N <= 10 ^ 4
  * 0 < target <= 10 ^ 6
  * 0 < speed[i] <= 10 ^ 6
  * 0 <= position[i] < target
  * All initial positions are different.
+ * }</pre>
  *
  * @author Johnny
  */

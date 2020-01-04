@@ -24,15 +24,15 @@ import java.util.Arrays;
  * <p>
  * Input: quality = [3,1,10,10,1], wage = [4,8,2,2,7], K = 3
  * Output: 30.66667
- * Explanation: We pay 4 to 0-th worker, 13.33333 to 2-th and 3-th workers seperately.
- * <p>
+ * Explanation: We pay 4 to 0-th worker, 13.33333 to 2-th and 3-th workers separately.
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= K <= N <= 10000, where N = quality.length = wage.length
  * 1 <= quality[i] <= 10000
  * 1 <= wage[i] <= 10000
  * Answers within 10^-5 of the correct answer will be considered correct.
+ * }</pre>
  *
  * @author Johnny
  */

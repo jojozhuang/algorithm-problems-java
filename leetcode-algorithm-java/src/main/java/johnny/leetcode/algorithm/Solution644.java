@@ -13,7 +13,7 @@ package johnny.leetcode.algorithm;
  * when length is 6, maximum average value is 9.16667.
  * Thus return 12.75.
  * Note:
- * 1 <= k <= n <= 10,000.
+ * {@code 1 <= k <= n <= 10,000.}
  * Elements of the given array will be in range [-10,000, 10,000].
  * The answer with the calculation error less than 10-5 will be accepted
  *

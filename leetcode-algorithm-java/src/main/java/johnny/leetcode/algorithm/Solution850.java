@@ -20,11 +20,12 @@ package johnny.leetcode.algorithm;
  * Output: 49
  * Explanation: The answer is 10^18 modulo (10^9 + 7), which is (10^9)^2 = (-7)^2 = 49.
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= rectangles.length <= 200
  * rectanges[i].length = 4
  * 0 <= rectangles[i][j] <= 10^9
  * The total area covered by all rectangles will never exceed 2^63 - 1 and thus will fit in a 64-bit signed integer.
+ * }</pre>
  *
  * @author Johnny
  */

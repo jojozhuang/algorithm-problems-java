@@ -13,8 +13,6 @@ import java.util.List;
  * <p>
  * The final answer should be in lexicographic order.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: "abbxxxxzzy"

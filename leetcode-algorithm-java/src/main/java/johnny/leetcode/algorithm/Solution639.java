@@ -5,11 +5,12 @@ package johnny.leetcode.algorithm;
  * <p>
  * A message containing letters from A-Z is being encoded to numbers using the
  * following mapping way:
- * <p>
+ * <pre>{@code
  * 'A' -> 1
  * 'B' -> 2
  * ...
  * 'Z' -> 26
+ * }</pre>
  * <p>
  * Beyond that, now the encoded string can also contain the character '*',
  * which can be treated as one of the numbers from 1 to 9.

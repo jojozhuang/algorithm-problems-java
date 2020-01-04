@@ -7,7 +7,7 @@ package johnny.leetcode.algorithm;
  * from 1 to n such that there are exactly k inverse pairs.
  * <p>
  * We define an inverse pair as following: For ith and jth element in the array,
- * if i < j and a[i] > a[j] then it's an inverse pair; Otherwise, it's not.
+ * if {@code i < j and a[i] > a[j]} then it's an inverse pair; Otherwise, it's not.
  * <p>
  * Since the answer may very large, the answer should be modulo 109 + 7.
  * <p>

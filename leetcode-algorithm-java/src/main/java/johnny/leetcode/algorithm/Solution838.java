@@ -9,8 +9,6 @@ import java.util.Queue;
  * <p>
  * In the beginning, we simultaneously push some of the dominoes either to the left or to the right.
  * <p>
- * <p>
- * <p>
  * After each second, each domino that is falling to the left pushes the adjacent domino on the left.
  * <p>
  * Similarly, the dominoes falling to the right push their adjacent dominoes standing on the right.

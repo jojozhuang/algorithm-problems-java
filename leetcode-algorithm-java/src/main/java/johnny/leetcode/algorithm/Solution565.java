@@ -12,7 +12,7 @@ import java.util.Set;
  * A zero-indexed array A consisting of N different integers is given. The array
  * contains all integers in the range [0, N - 1].
  * <p>
- * Sets S[K] for 0 <= K < N are defined as follows:
+ * Sets S[K] for {@code 0 <= K < N} are defined as follows:
  * <p>
  * S[K] = { A[K], A[A[K]], A[A[A[K]]], ... }.
  * <p>

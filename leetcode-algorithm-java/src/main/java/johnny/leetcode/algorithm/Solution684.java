@@ -16,11 +16,11 @@ import java.util.Set;
  * was not an edge that already existed.
  * <p>
  * The resulting graph is given as a 2D-array of edges. Each element of edges is a pair [u, v] with
- * u < v, that represents an undirected edge connecting nodes u and v.
+ * {@code u < v}, that represents an undirected edge connecting nodes u and v.
  * <p>
  * Return an edge that can be removed so that the resulting graph is a tree of N nodes. If there are
  * multiple answers, return the answer that occurs last in the given 2D-array. The answer
- * edge [u, v] should be in the same format, with u < v.
+ * edge [u, v] should be in the same format, with {@code u < v}.
  * <p>
  * Example 1:
  * Input: [[1,2], [1,3], [2,3]]

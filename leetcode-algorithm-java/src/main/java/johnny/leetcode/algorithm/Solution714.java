@@ -18,11 +18,11 @@ package johnny.leetcode.algorithm;
  * Selling at prices[5] = 9
  * The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
  * Note:
- * <p>
+ * <pre>{@code
  * 0 < prices.length <= 50000.
  * 0 < prices[i] < 50000.
  * 0 <= fee < 50000.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution714 {

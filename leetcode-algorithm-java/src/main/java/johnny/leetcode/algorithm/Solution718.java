@@ -12,8 +12,8 @@ package johnny.leetcode.algorithm;
  * Explanation:
  * The repeated subarray with maximum length is [3, 2, 1].
  * Note:
- * 1 <= len(A), len(B) <= 1000
- * 0 <= A[i], B[i] < 100
+ * {@code 1 <= len(A), len(B) <= 1000}
+ * {@code 0 <= A[i], B[i] < 100}
  *
  * @author Johnny
  */

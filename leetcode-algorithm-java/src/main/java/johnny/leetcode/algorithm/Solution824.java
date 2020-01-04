@@ -22,8 +22,6 @@ import java.util.Set;
  * For example, the first word gets "a" added to the end, the second word gets "aa" added to the end and so on.
  * Return the final sentence representing the conversion from S to Goat Latin.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: "I speak Goat Latin"

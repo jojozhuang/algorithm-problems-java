@@ -20,7 +20,7 @@ import java.util.Arrays;
  * Example 1:
  * Input: tasks = ['A','A','A','B','B','B'], n = 2
  * Output: 8
- * Explanation: A -> B -> idle -> A -> B -> idle -> A -> B.
+ * Explanation: {@code A -> B -> idle -> A -> B -> idle -> A -> B}.
  * <p>
  * Note:
  * The number of tasks is in the range [1, 10000].

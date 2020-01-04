@@ -7,7 +7,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Operations are represented by a 2D array, and each operation is represented
  * by an array with two positive integers a and b, which means M[i][j] should be
- * added by one for all 0 <= i < a and 0 <= j < b.
+ * added by one for all {@code 0 <= i < a and 0 <= j < b}.
  * <p>
  * You need to count and return the number of maximum integers in the matrix
  * after performing all the operations.

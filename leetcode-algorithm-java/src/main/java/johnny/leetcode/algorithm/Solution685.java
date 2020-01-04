@@ -17,7 +17,7 @@ import java.util.Arrays;
  * <p>
  * Return an edge that can be removed so that the resulting graph is a rooted tree of N nodes. If
  * there are multiple answers, return the answer that occurs last in the given 2D-array.
- * <p>
+ * <pre>{@code
  * Example 1:
  * Input: [[1,2], [1,3], [2,3]]
  * Output: [2,3]
@@ -38,6 +38,7 @@ import java.util.Arrays;
  * The size of the input 2D-array will be between 3 and 1000.
  * Every integer represented in the 2D-array will be between 1 and N, where N is the size of the
  * input array.
+ * }</pre>
  *
  * @author Johnny
  */

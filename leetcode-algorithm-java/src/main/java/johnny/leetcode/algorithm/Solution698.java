@@ -10,8 +10,8 @@ package johnny.leetcode.algorithm;
  * Explanation: It's possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.
  * Note:
  * <p>
- * 1 <= k <= len(nums) <= 16.
- * 0 < nums[i] < 10000.
+ * {@code 1 <= k <= len(nums) <= 16.}
+ * {@code 0 < nums[i] < 10000.}
  *
  * @author Johnny
  */

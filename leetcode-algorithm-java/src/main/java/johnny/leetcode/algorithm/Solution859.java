@@ -33,13 +33,12 @@ import java.util.Set;
  * Input: A = "", B = "aa"
  * Output: false
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 0 <= A.length <= 20000
  * 0 <= B.length <= 20000
  * A and B consist only of lowercase letters.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution859 {

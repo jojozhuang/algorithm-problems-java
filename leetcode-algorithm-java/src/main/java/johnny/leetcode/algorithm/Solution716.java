@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * 716. Max Stack
  * Design a max stack that supports push, pop, top, peekMax and popMax.
- * <p>
+ * <pre>{@code
  * push(x) -- Push element x onto stack.
  * pop() -- Remove the element on top of the stack and return it.
  * top() -- Get the element on the top.
@@ -26,7 +26,7 @@ import java.util.Stack;
  * -1e7 <= x <= 1e7
  * Number of operations won't exceed 10000.
  * The last four operations won't be called when stack is empty.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution716 {

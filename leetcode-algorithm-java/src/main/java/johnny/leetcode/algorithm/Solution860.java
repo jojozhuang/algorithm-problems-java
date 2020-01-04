@@ -42,10 +42,8 @@ package johnny.leetcode.algorithm;
  * For the last customer, we can't give change of $15 back because we only have two $10 bills.
  * Since not every customer received correct change, the answer is false.
  * <p>
- * <p>
  * Note:
- * <p>
- * 0 <= bills.length <= 10000
+ * {@code 0 <= bills.length <= 10000}
  * bills[i] will be either 5, 10, or 20.
  *
  * @author Johnny

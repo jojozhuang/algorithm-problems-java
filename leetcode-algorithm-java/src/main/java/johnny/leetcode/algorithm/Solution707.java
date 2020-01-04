@@ -15,7 +15,7 @@ import java.util.List;
  * addAtIndex(index, val) : Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
  * deleteAtIndex(index) : Delete the index-th node in the linked list, if the index is valid.
  * Example:
- * <p>
+ * <pre>{@code
  * MyLinkedList linkedList = new MyLinkedList();
  * linkedList.addAtHead(1);
  * linkedList.addAtTail(3);
@@ -23,6 +23,7 @@ import java.util.List;
  * linkedList.get(1);            // returns 2
  * linkedList.deleteAtIndex(1);  // now the linked list is 1->3
  * linkedList.get(1);            // returns 3
+ * }</pre>
  * Note:
  * <p>
  * All values will be in the range of [1, 1000].

@@ -6,7 +6,7 @@ import java.util.TreeMap;
  * 729. My Calendar I
  * Implement a MyCalendar class to store your events. A new event can be added if adding the event will not cause a double booking.
  * <p>
- * Your class will have the method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that start <= x < end.
+ * Your class will have the method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that start {@code <= x < end}.
  * <p>
  * A double booking happens when two events have some non-empty intersection (ie., there is some time that is common to both events.)
  * <p>

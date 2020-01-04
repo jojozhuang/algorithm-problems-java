@@ -40,7 +40,7 @@ import java.util.Map;
  * <p>
  * Note:
  * 1. The given kill id is guaranteed to be one of the given PIDs.
- * 2. n >= 1.
+ * 2.{@code  n >= 1}.
  *
  * @author Johnny
  */

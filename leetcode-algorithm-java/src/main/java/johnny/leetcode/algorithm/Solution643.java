@@ -12,7 +12,7 @@ package johnny.leetcode.algorithm;
  * Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
  * <p>
  * Note:
- * 1 <= k <= n <= 30,000.
+ * {@code 1 <= k <= n <= 30,000.}
  * Elements of the given array will be in the range [-10,000, 10,000].
  *
  * @author Johnny

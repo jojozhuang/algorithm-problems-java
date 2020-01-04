@@ -21,8 +21,6 @@ import java.util.Map;
  * <p>
  * Since the answer can be very large, retrun the answer modulo 10 ^ 9 + 7.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: "ABC"

@@ -18,18 +18,13 @@ import johnny.algorithm.common.TreeNode;
  * Only the red nodes satisfy the property "every subtree not containing a 1".
  * The diagram on the right represents the answer.
  * <p>
- * <p>
  * Example 2:
  * Input: [1,0,1,0,0,0,1]
  * Output: [1,null,1,null,1]
  * <p>
- * <p>
- * <p>
  * Example 3:
  * Input: [1,1,0,1,1,0,1,0]
  * Output: [1,1,0,1,1,null,1]
- * <p>
- * <p>
  * <p>
  * Note:
  * <p>

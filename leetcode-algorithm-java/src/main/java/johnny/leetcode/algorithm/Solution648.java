@@ -24,11 +24,13 @@ import java.util.Set;
  * Output: "the cat was rat by the bat"
  * <p>
  * Note:
+ * <pre>{@code
  * The input will only have lower-case letters.
  * 1 <= dict words number <= 1000
  * 1 <= sentence words number <= 1000
  * 1 <= root length <= 100
  * 1 <= sentence words length <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

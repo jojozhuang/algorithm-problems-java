@@ -12,7 +12,7 @@ import johnny.algorithm.common.ListNode;
  * <p>
  * Return a List of ListNode's representing the linked list parts that are formed.
  * <p>
- * Examples 1->2->3->4, k = 5 // 5 equal parts [ [1], [2], [3], [4], null ]
+ * Examples {@code 1->2->3->4, k = 5 // 5 equal parts [ [1], [2], [3], [4], null ]}
  * Example 1:
  * Input:
  * root = [1, 2, 3], k = 5

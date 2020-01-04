@@ -23,7 +23,7 @@ package johnny.leetcode.algorithm;
  * Note:
  * <p>
  * The length of image and image[0] will be in the range [1, 50].
- * The given starting pixel will satisfy 0 <= sr < image.length and 0 <= sc < image[0].length.
+ * The given starting pixel will satisfy {@code 0 <= sr < image.length and 0 <= sc < image[0].length}.
  * The value of each color in image[i][j] and newColor will be an integer in [0, 65535].
  *
  * @author Johnny

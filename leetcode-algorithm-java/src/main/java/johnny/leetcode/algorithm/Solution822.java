@@ -23,12 +23,12 @@ import java.util.HashSet;
  * Explanation: If we flip the second card, the fronts are [1,3,4,4,7] and the backs are [1,2,4,1,3].
  * We choose the second card, which has number 2 on the back, and it isn't on the front of any card, so 2 is good.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= fronts.length == backs.length <= 1000.
  * 1 <= fronts[i] <= 2000.
  * 1 <= backs[i] <= 2000.
+ * }</pre>
  *
  * @author Johnny
  */

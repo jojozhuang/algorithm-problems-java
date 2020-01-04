@@ -16,8 +16,6 @@ import java.util.Arrays;
  * <p>
  * Now, return answer, where answer[x] = y if y is the least quiet person (that is, the person y with the smallest value of quiet[y]), among all people who definitely have equal to or more money than person x.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: richer = [[1,0],[2,1],[3,1],[3,7],[4,3],[5,3],[6,3]], quiet = [3,2,5,4,6,1,7,0]

@@ -27,10 +27,11 @@ package johnny.leetcode.algorithm;
  * <p>
  * In total, there is only one magic square inside the given grid.
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= grid.length <= 10
  * 1 <= grid[0].length <= 10
  * 0 <= grid[i][j] <= 15
+ * }</pre>
  *
  * @author Johnny
  */

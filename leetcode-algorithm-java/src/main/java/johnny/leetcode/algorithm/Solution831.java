@@ -34,8 +34,6 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the correct "mask" of the information provided.
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: "LeetCode@LeetCode.com"

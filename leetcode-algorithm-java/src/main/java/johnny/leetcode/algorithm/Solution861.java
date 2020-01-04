@@ -21,12 +21,12 @@ package johnny.leetcode.algorithm;
  * Toggled to [[1,1,1,1],[1,0,0,1],[1,1,1,1]].
  * 0b1111 + 0b1001 + 0b1111 = 15 + 9 + 15 = 39
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 20
  * 1 <= A[0].length <= 20
  * A[i][j] is 0 or 1.
+ * }</pre>
  *
  * @author Johnny
  */

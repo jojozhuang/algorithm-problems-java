@@ -16,13 +16,13 @@ package johnny.leetcode.algorithm;
  * We could have also partitioned A into [9, 1], [2], [3, 9], for example.
  * That partition would lead to a score of 5 + 2 + 6 = 13, which is worse.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 100.
  * 1 <= A[i] <= 10000.
  * 1 <= K <= A.length.
  * Answers within 10^-6 of the correct answer will be accepted as correct.
+ * }</pre>
  *
  * @author Johnny
  */

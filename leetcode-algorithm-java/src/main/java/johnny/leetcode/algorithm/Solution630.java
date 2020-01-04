@@ -25,7 +25,7 @@ import java.util.PriorityQueue;
  * The 4th course cannot be taken now, since you will finish it on the 3300th day, which exceeds the closed date.
  * <p>
  * Note:
- * 1. The integer 1 <= d, t, n <= 10,000.
+ * 1. The integer {@code 1 <= d, t, n <= 10,000}.
  * 2. You can't take two courses simultaneously.
  *
  * @author Johnny

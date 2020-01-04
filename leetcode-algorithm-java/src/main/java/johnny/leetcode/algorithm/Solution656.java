@@ -22,10 +22,11 @@ import java.util.List;
  * Input: [1,2,4,-1,2], 1
  * Output: []
  * Note:
- * Path Pa1, Pa2, ..., Pan is lexicographically smaller than Pb1, Pb2, ..., Pbm, if and only if at the first i where Pai and Pbi differ, Pai < Pbi; when no such i exists, then n < m.
+ * <pre>{@code Path Pa1, Pa2, ..., Pan is lexicographically smaller than Pb1, Pb2, ..., Pbm, if and only if at the first i where Pai and Pbi differ, Pai < Pbi; when no such i exists, then n < m.
  * A1 >= 0. A2, ..., AN (if exist) will in the range of [-1, 100].
  * Length of A is in the range of [1, 1000].
  * B is in the range of [1, 100].
+ * }</pre>
  *
  * @author Johnny
  */

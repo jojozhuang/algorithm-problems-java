@@ -24,12 +24,12 @@ import java.util.Set;
  * that punctuation is ignored (even if adjacent to words, such as "ball,"),
  * and that "hit" isn't the answer even though it occurs more because it is banned.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= paragraph.length <= 1000.
  * 1 <= banned.length <= 100.
  * 1 <= banned[i].length <= 10.
+ * }</pre>
  * The answer is unique, and written in lowercase (even if its occurrences in paragraph may have uppercase symbols, and even if it is a proper noun.)
  * paragraph only consists of letters, spaces, or the punctuation symbols !?',;.
  * Different words in paragraph are always separated by a space.

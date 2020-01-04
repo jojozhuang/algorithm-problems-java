@@ -44,7 +44,7 @@ import java.util.Stack;
  * <p>
  * Two functions won't start or end at the same time.
  * Functions could be called recursively, and will always end.
- * 1 <= n <= 100
+ * {@code 1 <= n <= 100}
  *
  * @author Johnny
  */

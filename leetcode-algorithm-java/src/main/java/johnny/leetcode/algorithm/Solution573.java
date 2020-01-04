@@ -17,7 +17,7 @@ package johnny.leetcode.algorithm;
  * All given positions won't overlap.
  * The squirrel can take at most one nut at one time.
  * The given positions of nuts have no order.
- * Height and width are positive integers. 3 <= height * width <= 10,000.
+ * Height and width are positive integers. {@code 3 <= height * width <= 10,000}.
  * The given positions contain at least one nut, only one tree and one squirrel.
  *
  * @author Johnny

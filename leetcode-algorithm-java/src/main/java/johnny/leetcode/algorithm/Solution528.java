@@ -9,8 +9,8 @@ import java.util.Random;
  * <p>
  * Note:
  * <p>
- * 1 <= w.length <= 10000
- * 1 <= w[i] <= 10^5
+ * {@code 1 <= w.length <= 10000}
+ * {@code 1 <= w[i] <= 10^5}
  * pickIndex will be called at most 10000 times.
  * Example 1:
  * <p>

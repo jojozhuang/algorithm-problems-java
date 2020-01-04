@@ -29,7 +29,6 @@ package johnny.leetcode.algorithm;
  * 3----2
  * We cannot find a way to divide the set of nodes into two independent ubsets.
  * <p>
- * <p>
  * Note:
  * <p>
  * graph will have length in range [1, 100].

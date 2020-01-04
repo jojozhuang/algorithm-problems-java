@@ -26,10 +26,11 @@ import java.util.TreeMap;
  * <p>
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= hand.length <= 10000
  * 0 <= hand[i] <= 10^9
  * 1 <= W <= hand.length
+ * }</pre>
  *
  * @author Johnny
  */

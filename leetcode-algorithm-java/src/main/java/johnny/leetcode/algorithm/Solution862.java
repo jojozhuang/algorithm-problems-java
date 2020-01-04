@@ -25,12 +25,12 @@ import java.util.LinkedList;
  * Input: A = [2,-1,2], K = 3
  * Output: 3
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 50000
  * -10 ^ 5 <= A[i] <= 10 ^ 5
  * 1 <= K <= 10 ^ 9
+ * }</pre>
  *
  * @author Johnny
  */

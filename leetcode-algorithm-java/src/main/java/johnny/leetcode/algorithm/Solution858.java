@@ -9,20 +9,17 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the number of the receptor that the ray meets first.  (It is guaranteed that the ray will meet a receptor eventually.)
  * <p>
- * <p>
- * <p>
  * Example 1:
  * <p>
  * Input: p = 2, q = 1
  * Output: 2
  * Explanation: The ray meets receptor 2 the first time it gets reflected back to the left wall.
  * <p>
- * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= p <= 1000
  * 0 <= q <= p
+ * }</pre>
  *
  * @author Johnny
  */

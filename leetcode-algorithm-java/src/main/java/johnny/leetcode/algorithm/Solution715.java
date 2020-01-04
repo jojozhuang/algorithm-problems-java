@@ -18,12 +18,13 @@ import java.util.TreeSet;
  * queryRange(13, 15): false (Numbers like 14, 14.03, 14.17 in [13, 15) are not being tracked)
  * queryRange(16, 17): true (The number 16 in [16, 17) is still being tracked, despite the remove operation)
  * Note:
- * <p>
+ * <pre>{@code
  * A half open interval [left, right) denotes all real numbers left <= x < right.
  * 0 < left < right < 10^9 in all calls to addRange, queryRange, removeRange.
  * The total number of calls to addRange in a single test case is at most 1000.
  * The total number of calls to queryRange in a single test case is at most 5000.
  * The total number of calls to removeRange in a single test case is at most 1000.
+ * }</pre>
  *
  * @author Johnny
  */

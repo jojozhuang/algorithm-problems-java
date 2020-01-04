@@ -7,7 +7,7 @@ import java.util.List;
  * 731. My Calendar II
  * Implement a MyCalendarTwo class to store your events. A new event can be added if adding the event will not cause a triple booking.
  * <p>
- * Your class will have one method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that start <= x < end.
+ * Your class will have one method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that {@code start <= x < end}.
  * <p>
  * A triple booking happens when three events have some non-empty intersection (ie., there is some time that is common to all 3 events.)
  * <p>

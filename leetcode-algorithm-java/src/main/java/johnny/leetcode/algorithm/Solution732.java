@@ -6,7 +6,7 @@ import java.util.TreeMap;
  * 732. My Calendar III
  * Implement a MyCalendarThree class to store your events. A new event can always be added.
  * <p>
- * Your class will have one method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that start <= x < end.
+ * Your class will have one method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that {@code start <= x < end}.
  * <p>
  * A K-booking happens when K events have some non-empty intersection (ie., there is some time that is common to all K events.)
  * <p>

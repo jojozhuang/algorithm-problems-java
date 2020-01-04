@@ -11,7 +11,7 @@ import static java.util.stream.Collectors.toList;
  * 632. Smallest Range
  * You have k lists of sorted integers in ascending order. Find the smallest range that includes at least one number from each of the k lists.
  * <p>
- * We define the range [a,b] is smaller than range [c,d] if b-a < d-c or a < c if b-a == d-c.
+ * We define the range [a,b] is smaller than range [c,d] if {@code b-a < d-c or a < c if b-a == d-c}.
  * <p>
  * Example 1:
  * Input:[[4,10,15,24,26], [0,9,12,20], [5,18,22,30]]
@@ -21,11 +21,12 @@ import static java.util.stream.Collectors.toList;
  * List 2: [0, 9, 12, 20], 20 is in range [20,24].
  * List 3: [5, 18, 22, 30], 22 is in range [20,24].
  * Note:
+ * <pre>{@code
  * The given list may contain duplicates, so ascending order means >= here.
  * 1 <= k <= 3500
  * -105 <= value of elements <= 105.
  * For Java users, please note that the input type has been changed to List<List<Integer>>. And after you reset the code template, you'll see this point.
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution632 {
