@@ -27,6 +27,7 @@ public class Solution208 {
 
     /**
      * Inserts a word into the trie.
+     * @param word word
      */
     public void insert(String word) {
         HashMap<Character, TrieNode> children = root.children;
@@ -53,6 +54,8 @@ public class Solution208 {
 
     /**
      * Returns if the word is in the trie.
+     * @param word word
+     * @return result
      */
     public boolean search(String word) {
         TrieNode t = searchNode(word);
@@ -66,6 +69,8 @@ public class Solution208 {
 
     /**
      * Returns if there is any word in the trie that starts with the given prefix.
+     * @param prefix prefix
+     * @return result
      */
     public boolean startsWith(String prefix) {
         if (searchNode(prefix) == null) {

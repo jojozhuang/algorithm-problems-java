@@ -20,11 +20,13 @@ import java.util.PriorityQueue;
  * double findMedian() - Return the median of all elements so far.
  * For example:
  * <p>
+ * <pre>{@code
  * add(1)
  * add(2)
  * findMedian() -> 1.5
  * add(3)
  * findMedian() -> 2
+ * }</pre>
  *
  * @author Johnny
  */

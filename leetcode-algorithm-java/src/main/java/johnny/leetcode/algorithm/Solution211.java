@@ -16,6 +16,7 @@ import java.util.HashMap;
  * <p>
  * For example:
  * <p>
+ * <pre>{@code
  * addWord("bad")
  * addWord("dad")
  * addWord("mad")
@@ -23,7 +24,7 @@ import java.util.HashMap;
  * search("bad") -> true
  * search(".ad") -> true
  * search("b..") -> true
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution211 {

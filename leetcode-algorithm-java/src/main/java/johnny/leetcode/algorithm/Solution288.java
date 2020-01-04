@@ -6,19 +6,17 @@ import java.util.HashMap;
  * Unique Word Abbreviation.
  * An abbreviation of a word follows the form <first letter><number><last letter>.
  * Below are some examples of word abbreviations:
- * <p>
+ * <pre>{@code
  * a) it                      --> it    (no abbreviation)
- * <p>
  * 1
  * b) d|o|g                   --> d1g
- * <p>
  * 1    1  1
  * 1---5----0----5--8
  * c) i|nternationalizatio|n  --> i18n
- * <p>
  * 1
  * 1---5----0
  * d) l|ocalizatio|n          --> l10n
+ * }</pre>
  * Assume you have a dictionary and given a word, find whether its abbreviation
  * is unique in the dictionary. A word's abbreviation is unique if no other word
  * from the dictionary has the same abbreviation.
@@ -26,11 +24,12 @@ import java.util.HashMap;
  * Example:
  * Given dictionary = [ "deer", "door", "cake", "card" ]
  * <p>
+ * <pre>{@code
  * isUnique("dear") -> false
  * isUnique("cart") -> true
  * isUnique("cane") -> false
  * isUnique("make") -> true
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution288 {

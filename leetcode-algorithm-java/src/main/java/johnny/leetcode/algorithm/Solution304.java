@@ -19,9 +19,9 @@ package johnny.leetcode.algorithm;
  * [1, 0, 3, 0, 5]
  * ]
  * <p>
- * sumRegion(2, 1, 4, 3) -> 8
- * sumRegion(1, 1, 2, 2) -> 11
- * sumRegion(1, 2, 2, 4) -> 12
+ * {@code sumRegion(2, 1, 4, 3) -> 8}
+ * {@code sumRegion(1, 1, 2, 2) -> 11}
+ * {@code sumRegion(1, 2, 2, 4) -> 12}
  * Note:
  * You may assume that the matrix does not change.
  * There are many calls to sumRegion function.

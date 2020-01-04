@@ -8,7 +8,7 @@ package johnny.leetcode.algorithm;
  * column number.
  * <p>
  * For example:
- * <p>
+ * <pre>{@code
  * A -> 1
  * B -> 2
  * C -> 3
@@ -16,7 +16,7 @@ package johnny.leetcode.algorithm;
  * Z -> 26
  * AA -> 27
  * AB -> 28
- *
+ *}</pre>
  * @author Johnny
  */
 public class Solution171 {

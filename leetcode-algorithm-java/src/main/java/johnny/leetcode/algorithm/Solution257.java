@@ -18,7 +18,7 @@ import java.util.List;
  * 5
  * All root-to-leaf paths are:
  * <p>
- * ["1->2->5", "1->3"]
+ * {@code ["1->2->5", "1->3"]}
  *
  * @author Johnny
  */

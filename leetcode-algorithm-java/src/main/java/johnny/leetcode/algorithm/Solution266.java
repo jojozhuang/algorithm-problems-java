@@ -9,7 +9,7 @@ import java.util.Map;
  * Given a string, determine if a permutation of the string could form a palindrome.
  * <p>
  * For example,
- * "code" -> False, "aab" -> True, "carerac" -> True.
+ * {@code "code" -> False, "aab" -> True, "carerac" -> True.}
  * <p>
  * Hint:
  * <p>

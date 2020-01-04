@@ -21,7 +21,7 @@ package johnny.leetcode.algorithm;
  * is able to rescue the princess.
  * <p>
  * For example, given the dungeon below, the initial health of the knight must
- * be at least 7 if he follows the optimal path RIGHT-> RIGHT -> DOWN -> DOWN.
+ * be at least 7 if he follows the optimal path {@code RIGHT-> RIGHT -> DOWN -> DOWN.}
  * <p>
  * -2 (K)	-3	3
  * -5	-10	1

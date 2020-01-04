@@ -20,9 +20,9 @@ package johnny.leetcode.algorithm;
  * [1, 0, 3, 0, 5]
  * ]
  * <p>
- * sumRegion(2, 1, 4, 3) -> 8
+ * {@code sumRegion(2, 1, 4, 3) -> 8}
  * update(3, 2, 2)
- * sumRegion(2, 1, 4, 3) -> 10
+ * {@code sumRegion(2, 1, 4, 3) -> 10}
  * <p>
  * Note:
  * <p>

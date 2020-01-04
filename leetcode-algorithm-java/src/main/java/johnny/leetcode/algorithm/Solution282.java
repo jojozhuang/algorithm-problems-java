@@ -11,12 +11,13 @@ import java.util.List;
  * digits so they evaluate to the target value.
  * <p>
  * Examples:
+ * <pre>{@code
  * "123", 6 -> ["1+2+3", "1*2*3"]
  * "232", 8 -> ["2*3+2", "2+3*2"]
  * "105", 5 -> ["1*0+5","10-5"]
  * "00", 0 -> ["0+0", "0-0", "0*0"]
  * "3456237490", 9191 -> []
- *
+ * }</pre>
  * @author Johnny
  */
 public class Solution282 {

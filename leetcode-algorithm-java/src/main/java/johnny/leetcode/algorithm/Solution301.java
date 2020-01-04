@@ -14,9 +14,9 @@ import java.util.Set;
  * Note: The input string may contain letters other than the parentheses ( and ).
  * <p>
  * Examples:
- * "()())()" -> ["()()()", "(())()"]
- * "(a)())()" -> ["(a)()()", "(a())()"]
- * ")(" -> [""]
+ * {@code "()())()" -> ["()()()", "(())()"]}
+ * {@code "(a)())()" -> ["(a)()()", "(a())()"]}
+ * {@code ")(" -> [""]}
  *
  * @author Johnny
  */

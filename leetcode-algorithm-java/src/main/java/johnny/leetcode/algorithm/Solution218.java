@@ -20,7 +20,7 @@ import java.util.Queue;
  * The geometric information of each building is represented by a triplet of
  * integers [Li, Ri, Hi], where Li and Ri are the x coordinates of the left and
  * right edge of the ith building, respectively, and Hi is its height. It is
- * guaranteed that 0 ≤ Li, Ri ≤ INT_MAX, 0 < Hi ≤ INT_MAX, and Ri - Li > 0.
+ * guaranteed that {@code 0 ≤ Li, Ri ≤ INT_MAX, 0 < Hi ≤ INT_MAX, and Ri - Li > 0}.
  * You may assume all buildings are perfect rectangles grounded on an absolutely
  * flat surface at height 0.
  * <p>

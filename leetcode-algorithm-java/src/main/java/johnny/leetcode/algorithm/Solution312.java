@@ -13,7 +13,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Note:
  * (1) You may imagine nums[-1] = nums[n] = 1. They are not real therefore you can not burst them.
- * (2) 0 ≤ n ≤ 500, 0 ≤ nums[i] ≤ 100
+ * (2) {@code 0 ≤ n ≤ 500, 0 ≤ nums[i] ≤ 100}
  * <p>
  * Example:
  * <p>
@@ -21,7 +21,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return 167
  * <p>
- * nums = [3,1,5,8] --> [3,5,8] -->   [3,8]   -->  [8]  --> []
+ * {@code  * nums = [3,1,5,8] --> [3,5,8] -->   [3,8]   -->  [8]  --> []}
  * coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
  *
  * @author Johnny

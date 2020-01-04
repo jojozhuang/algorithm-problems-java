@@ -18,7 +18,7 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class Solution170 {
-    private HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+    private HashMap<Integer, Integer> map = new HashMap<>();
 
     /**
      * Initialize your data structure here.
@@ -28,7 +28,8 @@ public class Solution170 {
     }
 
     /**
-     * Add the number to an internal data structure..
+     * Add the number to an internal data structure.
+     * @param number number
      */
     public void add(int number) {
         if (!map.containsKey(number)) {
@@ -40,6 +41,8 @@ public class Solution170 {
 
     /**
      * Find if there exists any pair of numbers which sum is equal to the value.
+     * @param value value
+     * @return result
      */
     public boolean find(int value) {
         for (Integer i : map.keySet()) {
