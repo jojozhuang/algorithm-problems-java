@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 /**
  * Divide Two Integers.
+ *
  * @author Johnny
  */
 public class DivideTwoIntegers {
@@ -10,7 +11,7 @@ public class DivideTwoIntegers {
         if (dividend == 0 || divisor == 0) {
             return 0;
         }
-        
+
         if (divisor == 1) {
             return dividend;
         } else if (divisor == -1) {
@@ -20,13 +21,13 @@ public class DivideTwoIntegers {
                 return -dividend;
             }
         }
-        
+
         int negative = (dividend < 0) ^ (divisor < 0) ? -1 : 1;
-        long absdividend = Math.abs((long)dividend);
-        long absdivisor = Math.abs((long)divisor);
+        long absdividend = Math.abs((long) dividend);
+        long absdivisor = Math.abs((long) divisor);
         long res = 0;
         int i = 0;
-        
+
         while (absdividend >= absdivisor) {
             i = 0;
             long curr = absdivisor;
@@ -37,6 +38,6 @@ public class DivideTwoIntegers {
             res += 1 << (i - 1);
             absdividend -= absdivisor << (i - 1);
         }
-        return (int)res * negative;
+        return (int) res * negative;
     }
 }

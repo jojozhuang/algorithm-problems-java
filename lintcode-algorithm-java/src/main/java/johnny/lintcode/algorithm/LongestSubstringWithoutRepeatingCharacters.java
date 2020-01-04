@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 /**
  * Longest Substring Without Repeating Characters.
+ *
  * @author Johnny
  */
 public class LongestSubstringWithoutRepeatingCharacters {

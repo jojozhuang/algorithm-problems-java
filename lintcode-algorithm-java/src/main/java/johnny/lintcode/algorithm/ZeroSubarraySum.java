@@ -8,13 +8,13 @@ import java.util.Map;
 /**
  * Subarray Sum.
  * Given an integer array, find a subarray where the sum of numbers is zero. Your code should return the index of the first number and the index of the last number.
- * 
+ * <p>
  * Example
  * Given [-3, 1, 2, -3, 4], return [0, 2] or [1, 3].
- * 
+ * <p>
  * Note
  * There is at least one subarray that it's sum equals to zero.
- * 
+ *
  * @author Johnny
  */
 public class ZeroSubarraySum {
@@ -51,13 +51,14 @@ public class ZeroSubarraySum {
         return list;
 
     }
+
     public ArrayList<Integer> subarraySum2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return null;
         }
-        
+
         ArrayList<Integer> ret = new ArrayList<Integer>();
-        
+
         //key is the sum until current index, value is the index of numbers
         /*
         key contains the sum for each step, it same key appears, that means there must a subarray between them, which is zero. eg.
@@ -69,10 +70,10 @@ public class ZeroSubarraySum {
         [5] = 4 -> back to 5        
         */
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        
+
         // initial, in case the sub array starts from index = 0;
-        map.put(0, 0); 
-        
+        map.put(0, 0);
+
         // sum for the all of the previous numbers
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -85,8 +86,8 @@ public class ZeroSubarraySum {
                 map.put(sum, i + 1);
             }
         }
-        
+
         return ret;
-        
+
     }
 }

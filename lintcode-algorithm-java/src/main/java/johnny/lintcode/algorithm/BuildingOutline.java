@@ -8,31 +8,31 @@ import java.util.PriorityQueue;
 
 /**
  * Building Outline.
- * Given N buildings in a x-axis，each building is a rectangle and can be 
- * represented by a triple (start, end, height)，where start is the start 
- * position on x-axis, end is the end position on x-axis and height is the 
+ * Given N buildings in a x-axis，each building is a rectangle and can be
+ * represented by a triple (start, end, height)，where start is the start
+ * position on x-axis, end is the end position on x-axis and height is the
  * height of the building. Buildings may overlap if you see them from far away,
  * find the outline of them.
- * 
- * An outline can be represented by a triple, (start, end, height), where 
+ * <p>
+ * An outline can be represented by a triple, (start, end, height), where
  * start is the start position on x-axis of the outline, end is the end position
  * on x-axis and height is the height of the outline.
- * 
+ * <p>
  * Given 3 buildings：
- * 
+ * <p>
  * [
- *   [1, 3, 3],
- *   [2, 4, 4],
- *   [5, 6, 1]
+ * [1, 3, 3],
+ * [2, 4, 4],
+ * [5, 6, 1]
  * ]
  * The outlines are：
- * 
+ * <p>
  * [
- *   [1, 2, 3],
- *   [2, 4, 4],
- *   [5, 6, 1]
+ * [1, 2, 3],
+ * [2, 4, 4],
+ * [5, 6, 1]
  * ]
- *  
+ *
  * @author Johnny
  */
 public class BuildingOutline {
@@ -42,23 +42,23 @@ public class BuildingOutline {
         if (buildings == null || buildings.length == 0 || buildings[0].length == 0) {
             return res;
         }
-        
+
         List<Point> points = new ArrayList<Point>();
         for (int i = 0; i < buildings.length; i++) {
             points.add(new Point(buildings[i][0], -buildings[i][2]));
             points.add(new Point(buildings[i][1], buildings[i][2]));
         }
         Collections.sort(points, new PointComparator());
-        
+
         //max heap
         PriorityQueue<Integer> heap = new PriorityQueue<Integer>(new Comparator<Integer>() {
             public int compare(Integer i1, Integer i2) {
                 return i2 - i1;
             }
         });
-        
+
         heap.offer(0);
-        
+
         int prev = 0, curr = 0;
         Point keypoint = null;
         for (Point p : points) {
@@ -67,7 +67,7 @@ public class BuildingOutline {
             } else {
                 heap.remove(p.height);
             }
-            
+
             curr = heap.peek();
             if (curr != prev) {
                 if (keypoint == null) {
@@ -85,10 +85,10 @@ public class BuildingOutline {
                 prev = curr;
             }
         }
-        
+
         return res;
     }
-    
+
     private class PointComparator implements Comparator<Point> {
         public int compare(Point p1, Point p2) {
             if (p1.pos == p2.pos) {
@@ -101,9 +101,11 @@ public class BuildingOutline {
             }
         }
     }
+
     private class Point {
         public int pos;
         public int height; // left: negative, right: positive        
+
         public Point(int pos, int height) {
             this.pos = pos;
             this.height = height;

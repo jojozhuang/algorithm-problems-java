@@ -3,8 +3,8 @@ package johnny.lintcode.algorithm;
 import java.math.BigInteger;
 
 /**
- *  Hash Function.
- * 
+ * Hash Function.
+ *
  * @author Johnny
  */
 public class HashFunction {
@@ -16,7 +16,7 @@ public class HashFunction {
 
         BigInteger res = new BigInteger("0");
         for (int i = key.length - 1; i >= 0; i--) {
-            BigInteger mul1 = new BigInteger(String.valueOf((int)key[i]));
+            BigInteger mul1 = new BigInteger(String.valueOf((int) key[i]));
             BigInteger mul2 = new BigInteger("33");
             mul2 = mul2.pow(key.length - 1 - i);
             mul1 = mul1.multiply(mul2);

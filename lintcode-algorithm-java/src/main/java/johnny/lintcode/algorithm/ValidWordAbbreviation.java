@@ -1,7 +1,6 @@
 package johnny.lintcode.algorithm;
 
 /**
- *
  * @author Johnny
  */
 public class ValidWordAbbreviation {

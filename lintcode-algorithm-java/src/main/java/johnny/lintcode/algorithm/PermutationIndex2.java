@@ -5,13 +5,13 @@ import java.util.Map;
 
 /**
  * Permutation Index II.
- * Given a permutation which may contain repeated numbers, find its index in all 
- * the permutations of these numbers, which are ordered in lexicographical order. 
+ * Given a permutation which may contain repeated numbers, find its index in all
+ * the permutations of these numbers, which are ordered in lexicographical order.
  * The index begins at 1.
- * 
+ * <p>
  * Example
  * Given the permutation [1, 4, 2, 2], return 3.
- * 
+ *
  * @author Johnny
  */
 public class PermutationIndex2 {
@@ -19,11 +19,11 @@ public class PermutationIndex2 {
         if (A == null || A.length == 0) {
             return 0;
         }
-        
+
         long index = 1;
         long fact = 1;
         long multifact = 1;
-        
+
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = A.length - 1; i >= 0; i--) {
             if (map.containsKey(A[i])) {
@@ -38,11 +38,11 @@ public class PermutationIndex2 {
                     successor++;
                 }
             }
-            
+
             index += fact * successor / multifact;
             fact *= A.length - i;
         }
-        
+
         return index;
     }
 }

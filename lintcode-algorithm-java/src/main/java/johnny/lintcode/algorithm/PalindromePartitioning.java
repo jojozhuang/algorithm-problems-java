@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Palindrome Partitioning.
+ *
  * @author Johnny
  */
 public class PalindromePartitioning {

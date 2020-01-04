@@ -3,7 +3,6 @@ package johnny.lintcode.algorithm;
 import johnny.algorithm.common.SegmentTreeNode;
 
 /**
- *
  * @author Johnny
  */
 public class SegmentTreeNodeTutorial {
@@ -22,7 +21,7 @@ public class SegmentTreeNodeTutorial {
         root.right = SegmentTreeNodeTutorial.this.build(mid + 1, end);
         return root;
     }
-    
+
     public SegmentTreeNode build(int[] arr) {
         if (arr == null || arr.length == 0) {
             return null;
@@ -30,7 +29,7 @@ public class SegmentTreeNodeTutorial {
 
         return buildHelpler(arr, 0, arr.length - 1);
     }
-    
+
     private SegmentTreeNode buildHelpler(int[] arr, int start, int end) {
         if (start > end) {
             return null;
@@ -52,7 +51,7 @@ public class SegmentTreeNodeTutorial {
         root.sum = root.left.sum + root.right.sum;
         return root;
     }
-    
+
     public int queryMin(SegmentTreeNode root, int start, int end) {
         if (root == null) {
             return 0;
@@ -79,10 +78,10 @@ public class SegmentTreeNodeTutorial {
                 rightmin = queryMin(root.right, start, end);
             }
         }
-        
+
         return Math.min(leftmin, rightmin);
     }
-    
+
     public int queryMax(SegmentTreeNode root, int start, int end) {
         if (root == null) {
             return 0;
@@ -109,10 +108,10 @@ public class SegmentTreeNodeTutorial {
                 rightmax = queryMax(root.right, start, end);
             }
         }
-        
+
         return Math.max(leftmax, rightmax);
     }
-    
+
     public int querySum(SegmentTreeNode root, int start, int end) {
         if (root == null) {
             return 0;
@@ -139,7 +138,7 @@ public class SegmentTreeNodeTutorial {
                 rightsum = querySum(root.right, start, end);
             }
         }
-        
+
         return leftsum + rightsum;
     }
 }

@@ -2,14 +2,14 @@ package johnny.lintcode.algorithm;
 
 /**
  * Connecting Graph
- * 
+ * <p>
  * Given n nodes in a graph labeled from 1 to n. There is no edges in the graph
  * at beginning.
- * 
+ * <p>
  * You need to support the following method:
- * 1. connect(a, b), add an edge to connect node a and node b. 
+ * 1. connect(a, b), add an edge to connect node a and node b.
  * 2.query(a, b)`, check if two nodes are connected
- * 
+ * <p>
  * Example
  * 5 // n = 5
  * query(1, 2) return false
@@ -17,12 +17,12 @@ package johnny.lintcode.algorithm;
  * query(1, 3) return false
  * connect(2, 4)
  * query(1, 4) return true
-* 
+ *
  * @author Johnny
  */
 public class ConnectingGraph {
     int[] nodes;
-    
+
     public ConnectingGraph(int n) {
         nodes = new int[n];
         for (int i = 0; i < n; i++) {
@@ -34,21 +34,21 @@ public class ConnectingGraph {
         if (a <= 0 || a > nodes.length || b <= 0 || b > nodes.length) {
             return;
         }
-        
+
         int group = nodes[a - 1];
         for (int i = 0; i < nodes.length; i++) {
-            if(nodes[i] == group) {
+            if (nodes[i] == group) {
                 nodes[i] = nodes[b - 1];
             }
         }
     }
-  
+
 
     public boolean query(int a, int b) {
         if (a <= 0 || a > nodes.length || b <= 0 || b > nodes.length) {
             return false;
         }
-        
+
         return nodes[a - 1] == nodes[b - 1];
     }
 }

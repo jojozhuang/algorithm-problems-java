@@ -7,20 +7,20 @@ import java.util.Stack;
 
 /**
  * Convert Binary Search Tree to Doubly Linked List
- * 
+ * <p>
  * Convert a binary search tree to doubly linked list with in-order traversal.
- * 
+ * <p>
  * Example
  * Given a binary search tree:
- * 
- *     4
- *    / \
- *   2   5
- *  / \
+ * <p>
+ * 4
+ * / \
+ * 2   5
+ * / \
  * 1   3
- * 
- * return 1<->2<->3<->4<->5
- * 
+ * <p>
+ * return Doubly Node List 1,2,3,4,5
+ *
  * @author Johnny
  */
 public class ConvertBSTtoDoublyLinkedList {
@@ -28,7 +28,7 @@ public class ConvertBSTtoDoublyLinkedList {
         if (root == null) {
             return null;
         }
-        
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode curr = root;
         DoublyListNode dummy = new DoublyListNode(0);
@@ -43,10 +43,10 @@ public class ConvertBSTtoDoublyLinkedList {
             currDLN.next = node;
             node.prev = currDLN;
             currDLN = node;
-            
+
             curr = curr.right;
         }
-        
+
         dummy.next.prev = null;
         return dummy.next;
     }

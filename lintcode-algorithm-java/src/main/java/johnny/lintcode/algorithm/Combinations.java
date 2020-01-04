@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Johnny
  */
 public class Combinations {
@@ -21,7 +20,7 @@ public class Combinations {
     }
 
     private void helper(int n, int pos, int k, List<Integer> list,
-                             List<List<Integer>> res) {
+                        List<List<Integer>> res) {
         if (list.size() >= k) {
             if (list.size() == k) {
                 res.add(new ArrayList<Integer>(list));

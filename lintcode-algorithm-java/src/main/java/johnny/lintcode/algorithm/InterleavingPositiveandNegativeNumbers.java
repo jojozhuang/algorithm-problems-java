@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 /**
  * Interleaving Positive and Negative Numbers.
+ *
  * @author Johnny
  */
 public class InterleavingPositiveandNegativeNumbers {
@@ -10,7 +11,7 @@ public class InterleavingPositiveandNegativeNumbers {
         if (A == null || A.length <= 1) {
             return;
         }
-        
+
         if (A.length % 2 == 0) {
             helper(A, false);
         } else {
@@ -26,7 +27,7 @@ public class InterleavingPositiveandNegativeNumbers {
             helper(A, positive > negative);
         }
     }
-    
+
     private void helper(int[] A, boolean positive) {
         for (int i = 0; i < A.length; i++) {
             if (!positive) {

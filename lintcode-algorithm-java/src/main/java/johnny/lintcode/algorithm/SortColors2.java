@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 /**
  * Sort Colors II
+ *
  * @author Johnny
  */
 public class SortColors2 {
@@ -24,7 +25,7 @@ public class SortColors2 {
                     colors[i] = p;
                     i++;
                 }
-            }           
+            }
         }
     }
 }

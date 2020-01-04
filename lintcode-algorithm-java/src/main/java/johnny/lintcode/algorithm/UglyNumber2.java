@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 /**
  * Ugly Number II
+ *
  * @author Johnny
  */
 public class UglyNumber2 {
@@ -25,7 +26,7 @@ public class UglyNumber2 {
             }
             if (res[i] == num3) {
                 count3++;
-            } 
+            }
             if (res[i] == num5) {
                 count5++;
             }

@@ -1,7 +1,6 @@
 package johnny.lintcode.algorithm;
 
 /**
- *
  * @author Johnny
  */
 public class LintCode {
@@ -12,5 +11,5 @@ public class LintCode {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
+
 }

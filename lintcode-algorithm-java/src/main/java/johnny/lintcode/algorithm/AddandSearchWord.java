@@ -4,20 +4,10 @@ import java.util.HashMap;
 
 /**
  * Add and Search Word.
+ *
  * @author Johnny
  */
 public class AddandSearchWord {
-    class TrieNode {
-        char c;
-        HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
-        boolean isLeaf;
-        TrieNode() {
-        }
-        TrieNode(char c) {
-            this.c = c;
-        }
-    }
-    
     private TrieNode root = new TrieNode();
 
     // Adds a word into the data structure.
@@ -55,7 +45,7 @@ public class AddandSearchWord {
         if (word.isEmpty()) {
             return curr.isLeaf;
         }
-        
+
         TrieNode res = null;
         HashMap<Character, TrieNode> children = curr.children;
         if (children.isEmpty()) {
@@ -66,14 +56,14 @@ public class AddandSearchWord {
             if (c == '.') {
                 if (i == word.length() - 1) {
                     for (TrieNode node : children.values()) {
-                        if(node.isLeaf) {
+                        if (node.isLeaf) {
                             return true;
                         }
                     }
                     return false;
                 } else {
                     for (TrieNode node : children.values()) {
-                        if(dfs(word.substring(i + 1), node)) {
+                        if (dfs(word.substring(i + 1), node)) {
                             return true;
                         }
                     }
@@ -89,5 +79,18 @@ public class AddandSearchWord {
         }
 
         return res.isLeaf;
+    }
+
+    class TrieNode {
+        char c;
+        HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
+        boolean isLeaf;
+
+        TrieNode() {
+        }
+
+        TrieNode(char c) {
+            this.c = c;
+        }
     }
 }

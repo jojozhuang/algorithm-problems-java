@@ -2,14 +2,14 @@ package johnny.lintcode.algorithm;
 
 /**
  * Backpack II.
- * 
- * Given n items with size Ai and value Vi, and a backpack with size m. 
+ * <p>
+ * Given n items with size Ai and value Vi, and a backpack with size m.
  * What's the maximum value can you put into the backpack?
- * 
+ * <p>
  * Example
- * Given 4 items with size [2, 3, 5, 7] and value [1, 5, 2, 4], and a backpack 
+ * Given 4 items with size [2, 3, 5, 7] and value [1, 5, 2, 4], and a backpack
  * with size 10. The maximum value is 9.
-* 
+ *
  * @author Johnny
  */
 public class Backpack2 {
@@ -17,9 +17,9 @@ public class Backpack2 {
         if (A == null || A.length == 0 || V == null || V.length == 0 || m <= 0) {
             return 0;
         }
-        
+
         int[][] bp = new int[A.length + 1][m + 1];
-        
+
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j <= m; j++) {
                 if (A[i] > j) {
@@ -29,7 +29,7 @@ public class Backpack2 {
                 }
             }
         }
-        
+
         return bp[A.length][m];
     }
 }

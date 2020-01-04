@@ -5,32 +5,32 @@ import java.util.ArrayList;
 /**
  * Longest Words.
  * Given a dictionary, find all of the longest words in the dictionary.
- * 
+ * <p>
  * Example
  * Challenge
  * Tags
  * Related Problems
  * Given
- * 
+ * <p>
  * {
- *   "dog",
- *   "google",
- *   "facebook",
- *   "internationalization",
- *   "blabla"
+ * "dog",
+ * "google",
+ * "facebook",
+ * "internationalization",
+ * "blabla"
  * }
  * the longest words are(is) ["internationalization"].
- * 
+ * <p>
  * Given
- * 
+ * <p>
  * {
- *   "like",
- *   "love",
- *   "hate",
- *   "yes"
+ * "like",
+ * "love",
+ * "hate",
+ * "yes"
  * }
  * the longest words are ["like", "love", "hate"].
- * 
+ *
  * @author Johnny
  */
 public class LongestWords {
@@ -39,16 +39,16 @@ public class LongestWords {
         if (dictionary == null || dictionary.length == 0) {
             return ret;
         }
-        
-        for(String str: dictionary) {
+
+        for (String str : dictionary) {
             if (ret.isEmpty() || str.length() > ret.get(0).length()) {
                 ret.clear();
                 ret.add(str);
-            } else if (str.length() == ret.get(0).length()){
+            } else if (str.length() == ret.get(0).length()) {
                 ret.add(str);
             }
         }
-        
+
         return ret;
     }
 }

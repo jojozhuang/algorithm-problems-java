@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 /**
  * Decode Ways.
+ *
  * @author Johnny
  */
 public class DecodeWays {
@@ -15,7 +16,7 @@ public class DecodeWays {
         if (n == 1) {
             return isValid(s) ? 1 : 0;
         }
-        
+
         int[] dp = new int[n];
         dp[0] = isValid(s.substring(0, 1)) ? 1 : 0;
         dp[1] = isValid(s.substring(1, 2)) ? dp[0] : 0;
@@ -33,16 +34,16 @@ public class DecodeWays {
                 dp[i] += dp[i - 2];
             }
         }
-        
+
         return dp[n - 1];
-    }    
-    
+    }
+
     public int numDecodings2(String s) {
         // Write your code here
         int res = helper(s);
         return res == -1 ? 0 : res;
     }
-    
+
     private int helper(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
@@ -53,8 +54,8 @@ public class DecodeWays {
         }
 
         int res1 = 0;
-        if (isValid(s.substring(0,1))) { // one digit
-            int right = helper(s.substring(1,  s.length()));
+        if (isValid(s.substring(0, 1))) { // one digit
+            int right = helper(s.substring(1, s.length()));
             if (right == -1) {
                 res1 = -1;
             } else {
@@ -64,8 +65,8 @@ public class DecodeWays {
             res1 = -1;
         }
         int res2 = 0;
-        if (isValid(s.substring(0,2))) { // two digits
-            int right = helper(s.substring(2,  s.length()));
+        if (isValid(s.substring(0, 2))) { // two digits
+            int right = helper(s.substring(2, s.length()));
             if (right == -1) {
                 res2 = -1;
             } else if (right == 0) {
@@ -76,7 +77,7 @@ public class DecodeWays {
         } else {
             res2 = -1;
         }
-        
+
         if (res1 == -1 && res2 == -1) {
             return -1;
         }

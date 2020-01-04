@@ -2,15 +2,15 @@ package johnny.lintcode.algorithm;
 
 /**
  * Implement Queue by Linked List
- 
+ * <p>
  * Implement a Queue by linked list. Support the following basic methods:
- *
+ * <p>
  * enqueue(item). Put a new item in the queue.
  * dequeue(). Move the first item out of the queue, return it.
- *
+ * <p>
  * Example
  * Example 1:
- *
+ * <p>
  * Input:
  * enqueue(1)
  * enqueue(2)
@@ -19,11 +19,11 @@ package johnny.lintcode.algorithm;
  * enqueue(4)
  * dequeue() // return 2
  * Example 2:
- *
+ * <p>
  * Input:
  * enqueue(10)
  * dequeue()// return 10
- *  
+ *
  * @author Johnny
  */
 public class MyQueue {
@@ -34,6 +34,7 @@ public class MyQueue {
         head = null;
         tail = null;
     }
+
     /*
      * @param item: An integer
      * @return: nothing
@@ -66,6 +67,7 @@ public class MyQueue {
     class ListNode {
         public int val;
         public ListNode next;
+
         public ListNode(int val) {
             this.val = val;
             this.next = null;

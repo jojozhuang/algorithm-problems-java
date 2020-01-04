@@ -2,20 +2,20 @@ package johnny.lintcode.algorithm;
 
 /**
  * Reverse Integer
- * 
+ * <p>
  * Reverse digits of an integer. Returns 0 when the reversed integer overflows (signed 32-bit integer).
- *
+ * <p>
  * Have you met this question in a real interview?
  * Example
  * Example 1:
- *
+ * <p>
  * Input: 123
  * Output: 321
  * Example 2:
- *
+ * <p>
  * Input: -123
  * Output: -321
- * 
+ *
  * @author Johnny
  */
 public class ReverseInteger {
@@ -36,6 +36,6 @@ public class ReverseInteger {
             return 0;
         }
 
-        return (int)ans;
+        return (int) ans;
     }
 }

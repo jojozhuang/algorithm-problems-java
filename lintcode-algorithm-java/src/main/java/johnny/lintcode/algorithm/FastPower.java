@@ -4,14 +4,14 @@ package johnny.lintcode.algorithm;
  * Fast Power.
  * Calculate the a^n % b where a, b and n are all 32bit integers.
  * Example
- * 
+ * <p>
  * For 2^31 % 3 = 2
- * 
+ * <p>
  * For 100^1000 % 1000 = 0
- * 
+ * <p>
  * Challenge
  * O(logn)
- * 
+ *
  * @author Johnny
  */
 public class FastPower {

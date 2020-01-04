@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Continuous Subarray Sum.
+ *
  * @author Johnny
  */
 public class ContinuousSubarraySum {
@@ -18,7 +19,7 @@ public class ContinuousSubarraySum {
         int minSum = 0;
         int sum = 0;
         int end = A.length - 1;
-        
+
         for (int i = 0; i < A.length; i++) {
             sum += A[i];
             if (sum - minSum > max) {
@@ -27,7 +28,7 @@ public class ContinuousSubarraySum {
             }
             minSum = Math.min(minSum, sum);
         }
-        
+
         int start = end;
         while (max != A[start]) {
             max -= A[start];

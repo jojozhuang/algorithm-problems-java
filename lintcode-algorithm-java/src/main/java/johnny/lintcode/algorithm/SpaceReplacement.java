@@ -4,22 +4,22 @@ package johnny.lintcode.algorithm;
  * Space Replacement.
  * Write a method to replace all spaces in a string with %20. The string is given in a characters array, you can assume it has enough space for replacement and you are given the true length of the string.
  * You code should also return the new length of the string after replacement.
- * 
+ * <p>
  * Example
  * Given "Mr John Smith", length = 13.
- * 
+ * <p>
  * The string after replacement should be "Mr%20John%20Smith".
- * 
+ * <p>
  * Note
  * If you are using Java or Python，please use characters array instead of string.
- * 
+ * <p>
  * Challenge
  * Do it in-place.
- * 
+ *
  * @author Johnny
  */
 public class SpaceReplacement {
-     /**
+    /**
      * @param string: An array of Char
      * @param length: The true length of the string
      * @return: The true length of new string
@@ -44,7 +44,7 @@ public class SpaceReplacement {
         }
 
         return length + count * 2;
-        
+
     }
 
     public int replaceBlank2(char[] string, int length) {
@@ -72,8 +72,7 @@ public class SpaceReplacement {
                 string[k - 2] = '2';
                 string[k - 3] = '%';
                 k = k - 3;
-            }
-            else {
+            } else {
                 string[k - 1] = string[j];
                 k = k - 1;
             }

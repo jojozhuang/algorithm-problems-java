@@ -6,22 +6,22 @@ import java.util.List;
 
 /**
  * Substring Anagrams
- * 
- * Given a string s and a non-empty string p, find all the start indices of p's 
+ * <p>
+ * Given a string s and a non-empty string p, find all the start indices of p's
  * anagrams in s.
- * 
- * Strings consists of lowercase English letters only and the length of both 
+ * <p>
+ * Strings consists of lowercase English letters only and the length of both
  * strings s and p will not be larger than 40,000.
- * 
+ * <p>
  * The order of output does not matter.
- * 
+ * <p>
  * Example
  * Given s = "cbaebabacd" p = "abc"
- * 
+ * <p>
  * return [0, 6]
  * The substring with start index = 0 is "cba", which is an anagram of "abc".
  * The substring with start index = 6 is "bac", which is an anagram of "abc".
- * 
+ *
  * @author Johnny
  */
 public class SubstringAnagrams {
@@ -33,7 +33,7 @@ public class SubstringAnagrams {
         if (s.length() < p.length()) {
             return res;
         }
-        
+
         char[] arrp = p.toCharArray();
         Arrays.sort(arrp);
         String sortedP = new String(arrp);
@@ -46,7 +46,7 @@ public class SubstringAnagrams {
                 res.add(i);
             }
         }
-        
+
         return res;
     }
 }

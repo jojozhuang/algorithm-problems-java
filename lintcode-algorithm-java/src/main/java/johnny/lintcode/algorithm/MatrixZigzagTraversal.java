@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 /**
  * Matrix Zigzag Traversal
+ *
  * @author Johnny
  */
 public class MatrixZigzagTraversal {
@@ -35,8 +36,8 @@ public class MatrixZigzagTraversal {
                     } else {
                         i--;
                         j++;
-                    }                    
-                }                
+                    }
+                }
             } else {
                 res[index] = matrix[i][j];
                 if (j == 0 || i == m - 1) {
@@ -52,8 +53,8 @@ public class MatrixZigzagTraversal {
                     } else {
                         j--;
                         i++;
-                    }                    
-                }                
+                    }
+                }
             }
             index++;
         }

@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 /**
  * Topological Sorting.
+ *
  * @author Johnny
  */
 public class TopologicalSorting {
@@ -46,7 +47,7 @@ public class TopologicalSorting {
     private void getInDegree(ArrayList<DirectedGraphNode> graph,
                              HashMap<DirectedGraphNode, Integer> map) {
         for (int i = 0; i < graph.size(); i++) {
-            DirectedGraphNode node = graph.get(i);        
+            DirectedGraphNode node = graph.get(i);
             for (int j = 0; j < node.neighbors.size(); j++) {
                 DirectedGraphNode neighbor = node.neighbors.get(j);
                 if (!map.containsKey(neighbor)) {

@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * Largest Rectangle in Histogram.
+ *
  * @author Johnny
  */
 public class LargestRectangleinHistogram {
@@ -24,7 +25,7 @@ public class LargestRectangleinHistogram {
                 while (!stack.isEmpty() && height[stack.peek()] > height[i]) {
                     int index = stack.pop();
                     int h = height[index];
-                    int width = stack.isEmpty() ? i : i - stack.peek() - 1; 
+                    int width = stack.isEmpty() ? i : i - stack.peek() - 1;
                     max = Math.max(max, h * width);
                 }
                 stack.push(i);
@@ -33,7 +34,7 @@ public class LargestRectangleinHistogram {
         while (!stack.isEmpty()) {
             int index = stack.pop();
             int h = height[index];
-            int width = stack.isEmpty() ? height.length : height.length - stack.peek() - 1; 
+            int width = stack.isEmpty() ? height.length : height.length - stack.peek() - 1;
             max = Math.max(max, h * width);
         }
         return max;

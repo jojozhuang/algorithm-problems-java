@@ -2,15 +2,15 @@ package johnny.lintcode.algorithm;
 
 /**
  * Partition Array by Odd and Even.
- * 
+ * <p>
  * Partition an integers array into odd number first and even number second.
- * 
+ * <p>
  * Example
  * Given [1, 2, 3, 4], return [1, 3, 2, 4]
- * 
+ * <p>
  * Challenge
  * Do it in-place.
-* 
+ *
  * @author Johnny
  */
 public class PartitionArraybyOddandEven {
@@ -18,11 +18,11 @@ public class PartitionArraybyOddandEven {
         if (nums == null || nums.length == 0) {
             return;
         }
-        
+
         int start = 0;
         int end = nums.length - 1;
-        
-        while(start <= end) {
+
+        while (start <= end) {
             if (nums[start] % 2 == 1) {
                 start++;
                 continue;

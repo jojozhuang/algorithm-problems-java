@@ -2,6 +2,7 @@ package johnny.lintcode.algorithm;
 
 /**
  * Binary Representation.
+ *
  * @author Johnny
  */
 public class BinaryRepresentation {
@@ -62,7 +63,7 @@ public class BinaryRepresentation {
                 num -= 1;
             } else {
                 res += "0";
-            }           
+            }
         }
         return res;
     }

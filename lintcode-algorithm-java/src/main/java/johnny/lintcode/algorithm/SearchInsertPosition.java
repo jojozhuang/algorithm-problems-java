@@ -2,23 +2,23 @@ package johnny.lintcode.algorithm;
 
 /**
  * Search Insert Position.
- * Given a sorted array and a target value, return the index if the target is 
+ * Given a sorted array and a target value, return the index if the target is
  * found. If not, return the index where it would be if it were inserted in order.
- * 
+ * <p>
  * You may assume NO duplicates in the array.
- * 
+ * <p>
  * Example
  * [1,3,5,6], 5 → 2
- * 
+ * <p>
  * [1,3,5,6], 2 → 1
- * 
+ * <p>
  * [1,3,5,6], 7 → 4
- * 
+ * <p>
  * [1,3,5,6], 0 → 0
- * 
+ * <p>
  * Challenge
  * O(log(n)) time
-* 
+ *
  * @author Johnny
  */
 public class SearchInsertPosition {
@@ -26,7 +26,7 @@ public class SearchInsertPosition {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        
+
         int start = 0;
         int end = nums.length - 1;
         while (start + 1 < end) {
@@ -39,7 +39,7 @@ public class SearchInsertPosition {
                 start = mid;
             }
         }
-        
+
         if (nums[start] >= target) {
             if (start == 0) {
                 return 0;

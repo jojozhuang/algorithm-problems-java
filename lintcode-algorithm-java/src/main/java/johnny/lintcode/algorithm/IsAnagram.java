@@ -6,17 +6,17 @@ import java.util.Map;
 /**
  * Valid Anagram
  * Given two strings s and t, write a function to determine if t is an anagram of s.
- *
+ * <p>
  * Example
- *
+ * <p>
  * Example 1:
  * Input: s = "anagram", t = "nagaram"
  * Output: true
- *
+ * <p>
  * Example 2:
  * Input: s = "rat", t = "car"
  * Output: false
- *
+ * <p>
  * Challenge
  * What if the inputs contain unicode characters? How would you adapt your solution to such case?
  *
