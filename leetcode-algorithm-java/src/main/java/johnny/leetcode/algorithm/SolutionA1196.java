@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
  * @author Johnny
  */
 public class SolutionA1196 {

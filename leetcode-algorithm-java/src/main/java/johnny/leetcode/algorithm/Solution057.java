@@ -9,20 +9,20 @@ import java.util.Queue;
 
 /**
  * Insert Interval.
- * Given a set of non-overlapping intervals, insert a new interval into the 
+ * Given a set of non-overlapping intervals, insert a new interval into the
  * intervals (merge if necessary).
- * 
+ * <p>
  * You may assume that the intervals were initially sorted according to their
  * start times.
- * 
+ * <p>
  * Example 1:
  * Given intervals [1,3],[6,9], insert and merge [2,5] in as [1,5],[6,9].
- * 
+ * <p>
  * Example 2:
  * Given [1,2],[3,5],[6,7],[8,10],[12,16], insert and merge [4,9] in as [1,2],[3,10],[12,16].
- * 
+ * <p>
  * This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
- * 
+ *
  * @author Johnny
  */
 public class Solution057 {
@@ -31,13 +31,13 @@ public class Solution057 {
         if (newInterval == null) {
             return intervals;
         }
-        
+
         List<Interval> res = new ArrayList<>();
         if (intervals == null || intervals.size() == 0) {
             res.add(newInterval);
             return res;
         }
-        
+
         int i = 0;
         // add all the intervals ending before newInterval starts
         while (i < intervals.size() && intervals.get(i).end < newInterval.start) {
@@ -53,15 +53,15 @@ public class Solution057 {
         // add all the rest
         while (i < intervals.size()) {
             res.add(intervals.get(i++));
-        } 
+        }
         return res;
     }
-    
+
     public List<Interval> insert3(List<Interval> intervals, Interval newInterval) {
         if (newInterval == null) {
             return intervals;
         }
-        
+
         List<Interval> res = new ArrayList<>();
         if (intervals == null || intervals.size() == 0) {
             res.add(newInterval);
@@ -85,29 +85,29 @@ public class Solution057 {
                 newInterval.end = Math.max(newInterval.end, curr.end);
             }
         }
-        
+
         if (newInterval != null) {
             res.add(newInterval);
         }
         return res;
     }
-    
+
     public List<Interval> insert2(List<Interval> intervals, Interval newInterval) {
         if (newInterval == null) {
             return intervals;
         }
-        
+
         List<Interval> res = new ArrayList<>();
         if (intervals == null || intervals.size() == 0) {
             res.add(newInterval);
             return res;
         }
-        
+
         Queue<Interval> queue = new LinkedList<>();
-        for (Interval item: intervals) {
+        for (Interval item : intervals) {
             queue.offer(item);
         }
-        
+
         boolean newadded = false;
         while (!queue.isEmpty()) {
             Interval curr = queue.poll();
@@ -122,16 +122,16 @@ public class Solution057 {
                 newInterval.start = Math.min(newInterval.start, curr.start);
                 newInterval.end = Math.max(newInterval.end, curr.end);
             }
-        }    
-        
+        }
+
         if (!newadded) {
             res.add(newInterval);
         } else {
-             while(!queue.isEmpty()) {
+            while (!queue.isEmpty()) {
                 res.add(queue.poll());
             }
         }
-        
+
         return res;
-    }   
+    }
 }

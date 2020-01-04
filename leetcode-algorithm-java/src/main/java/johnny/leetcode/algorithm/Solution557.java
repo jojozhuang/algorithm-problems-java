@@ -2,17 +2,17 @@ package johnny.leetcode.algorithm;
 
 /**
  * Reverse Words in a String III
- * 
- * Given a string, you need to reverse the order of characters in each word 
+ * <p>
+ * Given a string, you need to reverse the order of characters in each word
  * within a sentence while still preserving whitespace and initial word order.
- * 
+ * <p>
  * Example 1:
  * Input: "Let's take LeetCode contest"
  * Output: "s'teL ekat edoCteeL tsetnoc"
- * 
- * Note: In the string, each word is separated by single space and there will 
+ * <p>
+ * Note: In the string, each word is separated by single space and there will
  * not be any extra space in the string.
- * 
+ *
  * @author Johnny
  */
 public class Solution557 {
@@ -20,7 +20,7 @@ public class Solution557 {
         if (s == null || s.length() <= 1) {
             return s;
         }
-        
+
         int len = s.length();
         int left = 0;
         int right = 1;
@@ -31,7 +31,7 @@ public class Solution557 {
                 right++;
             }
             // swap the word by in-place
-            int end = right-1;
+            int end = right - 1;
             while (left < end) {
                 char temp = chs[left];
                 chs[left] = chs[end];
@@ -45,15 +45,15 @@ public class Solution557 {
             }
             left = right;
         }
-        
+
         return new String(chs);
     }
-    
+
     public String reverseWords3(String s) {
         if (s == null || s.length() <= 1) {
             return s;
         }
-        
+
         int len = s.length();
         int slow = 0;
         int fast = 1;
@@ -71,20 +71,20 @@ public class Solution557 {
             }
             slow = fast;
         }
-        
+
         return new String(chs);
     }
-    
+
     public String reverseWords2(String s) {
         if (s == null || s.isEmpty()) {
             return "";
         }
-        
+
         s = s.trim();
         char[] letters = s.toCharArray();
         int start = 0;
         int index = 0;
-        
+
         while (index < letters.length) {
             if (letters[index] == ' ') {
                 reverse(letters, start, index - 1);
@@ -96,17 +96,17 @@ public class Solution557 {
                 index++;
             }
         }
-        
+
         reverse(letters, start, index - 1);
-        
+
         return String.valueOf(letters);
     }
-    
+
     private void reverse(char[] letters, int start, int end) {
         if (start >= letters.length || end >= letters.length || start >= end) {
             return;
         }
-        
+
         while (start < end) {
             char temp = letters[start];
             letters[start] = letters[end];

@@ -5,25 +5,25 @@ import java.util.Comparator;
 
 /**
  * Maximum Length of Pair Chain
- * 
- * You are given n pairs of numbers. In every pair, the first number is always 
+ * <p>
+ * You are given n pairs of numbers. In every pair, the first number is always
  * smaller than the second number.
- * 
- * Now, we define a pair (c, d) can follow another pair (a, b) if and only 
+ * <p>
+ * Now, we define a pair (c, d) can follow another pair (a, b) if and only
  * if b < c. Chain of pairs can be formed in this fashion.
- * 
- * Given a set of pairs, find the length longest chain which can be formed. You 
+ * <p>
+ * Given a set of pairs, find the length longest chain which can be formed. You
  * needn't use up all the given pairs. You can select pairs in any order.
- * 
+ * <p>
  * Example 1:
  * Input: [[1,2], [2,3], [3,4]]
  * Output: 2
- * 
+ * <p>
  * Explanation: The longest chain is [1,2] -> [3,4]
- * 
+ * <p>
  * Note:
  * The number of given pairs will be in the range [1, 1000].
- * 
+ *
  * @author Johnny
  */
 public class Solution646 {
@@ -32,9 +32,9 @@ public class Solution646 {
         if (pairs == null || pairs.length == 0) {
             return 0;
         }
-        
-        Arrays.sort(pairs, (a, b)->(a[0]-b[0]));
-        
+
+        Arrays.sort(pairs, (a, b) -> (a[0] - b[0]));
+
         int n = pairs.length;
         int[] dp = new int[n];
         Arrays.fill(dp, 1);
@@ -47,13 +47,14 @@ public class Solution646 {
         }
         return dp[n - 1];
     }
+
     public int findLongestChain3(int[][] pairs) {
         if (pairs == null || pairs.length == 0) {
             return 0;
         }
-        
-        Arrays.sort(pairs, (a, b)->(a[0]==b[0]?a[1]-b[1]:a[0]-b[0]));
-        
+
+        Arrays.sort(pairs, (a, b) -> (a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]));
+
         int count = 1;
         int[] prev = pairs[0];
         for (int i = 1; i < pairs.length; i++) {
@@ -70,23 +71,24 @@ public class Solution646 {
         }
         return count;
     }
+
     public int findLongestChain2(int[][] pairs) {
         if (pairs == null || pairs.length == 0 || pairs[0].length != 2) {
             return 0;
         }
-        
-        Arrays.sort(pairs, new Comparator<int[]>(){
-            public int compare(int[] s1, int[] s2){
+
+        Arrays.sort(pairs, new Comparator<int[]>() {
+            public int compare(int[] s1, int[] s2) {
                 if (s1[0] == s2[0]) {
                     return s1[1] - s2[1];
                 }
                 return s1[0] - s2[0];
             }
         });
-        
+
         int count = 1;
         int[] prev = pairs[0];
-        
+
         for (int i = 1; i < pairs.length; i++) {
             int[] curr = pairs[i];
             if (prev[0] <= curr[0] && prev[1] >= curr[1]) {
@@ -98,7 +100,7 @@ public class Solution646 {
                 prev = curr;
             }
         }
-        
+
         return count;
     }
 }

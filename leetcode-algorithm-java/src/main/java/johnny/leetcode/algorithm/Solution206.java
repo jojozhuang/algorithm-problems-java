@@ -5,6 +5,7 @@ import johnny.algorithm.common.ListNode;
 /**
  * Reverse Linked List.
  * Reverse a singly linked list.
+ *
  * @author Johnny
  */
 public class Solution206 {
@@ -19,13 +20,13 @@ public class Solution206 {
         }
         return prev;
     }
-    
+
     // Recursive
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        
+
         ListNode next = reverseList(head.next);
         head.next.next = head;
         head.next = null;

@@ -4,45 +4,48 @@ import java.util.PriorityQueue;
 
 /**
  * Find Median from Data Stream.
- * 
- * Median is the middle value in an ordered integer list. If the size of the 
- * list is even, there is no middle value. So the median is the mean of the two 
+ * <p>
+ * Median is the middle value in an ordered integer list. If the size of the
+ * list is even, there is no middle value. So the median is the mean of the two
  * middle value.
- * 
- * Examples: 
+ * <p>
+ * Examples:
  * [2,3,4] , the median is 3
- * 
+ * <p>
  * [2,3], the median is (2 + 3) / 2 = 2.5
- * 
+ * <p>
  * Design a data structure that supports the following two operations:
- * 
+ * <p>
  * void addNum(int num) - Add a integer number from the data stream to the data structure.
  * double findMedian() - Return the median of all elements so far.
  * For example:
- * 
+ * <p>
  * add(1)
  * add(2)
  * findMedian() -> 1.5
- * add(3) 
+ * add(3)
  * findMedian() -> 2
- * 
+ *
  * @author Johnny
  */
 public class Solution295 {
     PriorityQueue<Integer> min; // stores half numbers which are larger
     PriorityQueue<Integer> max; // stores half numbers which are smaller
-    /** initialize your data structure here. */
+
+    /**
+     * initialize your data structure here.
+     */
     public Solution295() {
         min = new PriorityQueue<>();
-        max = new PriorityQueue<>((a,b)->b-a);
+        max = new PriorityQueue<>((a, b) -> b - a);
     }
-    
+
     public void addNum(int num) {
         if (min.isEmpty()) {
             min.add(num);
             return;
         }
-        
+
         if (num > min.peek()) {
             min.add(num);
         } else {
@@ -54,14 +57,14 @@ public class Solution295 {
             min.add(max.poll());
         }
     }
-    
+
     public double findMedian() {
         if (min.size() == max.size()) {
-            return ((double)min.peek() + (double)max.peek()) / 2;
+            return ((double) min.peek() + (double) max.peek()) / 2;
         } else if (min.size() == max.size() + 1) {
-            return (double)min.peek();
+            return (double) min.peek();
         } else {
-            return (double)max.peek();
+            return (double) max.peek();
         }
     }
     
@@ -83,7 +86,7 @@ public class Solution295 {
            : (large.peek() - small.peek()) / 2.0;
     }
     */
-    
+
     //http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
     //https://segmentfault.com/a/1190000003709954
     //left: maxHeap, right: minHeap

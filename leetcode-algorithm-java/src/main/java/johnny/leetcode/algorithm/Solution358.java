@@ -8,34 +8,34 @@ import java.util.PriorityQueue;
 
 /**
  * Rearrange String k Distance Apart.
- * 
+ * <p>
  * Given a non-empty string str and an integer k, rearrange the string such that
  * the same characters are at least distance k from each other.
- * 
- * All input strings are given in lowercase letters. If it is not possible to 
+ * <p>
+ * All input strings are given in lowercase letters. If it is not possible to
  * rearrange the string, return an empty string "".
- * 
+ * <p>
  * Example 1:
  * str = "aabbcc", k = 3
- * 
+ * <p>
  * Result: "abcabc"
- * 
+ * <p>
  * The same letters are at least distance 3 from each other.
  * Example 2:
- * str = "aaabc", k = 3 
- * 
+ * str = "aaabc", k = 3
+ * <p>
  * Answer: ""
- * 
+ * <p>
  * It is not possible to rearrange the string.
  * Example 3:
  * str = "aaadbbcc", k = 2
- * 
+ * <p>
  * Answer: "abacabcd"
- * 
+ * <p>
  * Another possible answer is: "abcabcda"
- * 
+ * <p>
  * The same letters are at least distance 2 from each other.
- * 
+ *
  * @author Johnny
  */
 public class Solution358 {
@@ -45,7 +45,7 @@ public class Solution358 {
         if (str == null || str.length() == 0 || k == 0) {
             return str;
         }
-        
+
         char[] arr = str.toCharArray();
         int n = arr.length;
 
@@ -84,8 +84,8 @@ public class Solution358 {
         }
 
         return sb.toString();
-    }   
-    
+    }
+
     //https://segmentfault.com/a/1190000005825133    
     //https://discuss.leetcode.com/topic/48260/java-15ms-solution-with-two-auxiliary-array-o-n-time/2
     public String rearrangeString2(String str, int k) {
@@ -97,7 +97,7 @@ public class Solution358 {
         for (char c : str.toCharArray()) {
             count[c - 'a']++;
         }
-        
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             // find the most frequent and out of the k distance element
@@ -107,12 +107,12 @@ public class Solution358 {
             }
             count[candidatePos]--;
             valid[candidatePos] = i + k;
-            sb.append((char)('a' + candidatePos));
+            sb.append((char) ('a' + candidatePos));
         }
-        
+
         return sb.toString();
     }
-    
+
     private int findValidMax(int[] count, int[] valid, int index) {
         int max = Integer.MIN_VALUE;
         int candidatePos = -1;

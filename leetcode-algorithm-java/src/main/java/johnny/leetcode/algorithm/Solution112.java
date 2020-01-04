@@ -8,15 +8,15 @@ import johnny.algorithm.common.TreeNode;
  * such that adding up all the values along the path equals the given sum.
  * For example:
  * Given the below binary tree and sum = 22,
- *               5
- *              / \
- *             4   8
- *            /   / \
- *           11  13  4
- *          /  \      \
- *         7    2      1
- * return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
- * 
+ * 5
+ * / \
+ * 4   8
+ * /   / \
+ * 11  13  4
+ * /  \      \
+ * 7    2      1
+ * {@code return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.}
+ *
  * @author Johnny
  */
 public class Solution112 {
@@ -24,7 +24,7 @@ public class Solution112 {
         if (root == null) {
             return false;
         }
-        
+
         if (root.left == null && root.right == null) {
             return root.val == sum;
         }
@@ -36,7 +36,7 @@ public class Solution112 {
         if (root.right != null && hasPathSum(root.right, sum - root.val)) {
             return true;
         }
-        
+
         return false;
     }
 }

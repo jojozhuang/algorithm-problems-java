@@ -11,18 +11,18 @@ import java.util.Stack;
 /**
  * Binary Tree Preorder Traversal.
  * Given a binary tree, return the preorder traversal of its nodes' values.
- * 
+ * <p>
  * For example:
  * Given binary tree {1,#,2,3},
- *    1
- *     \
- *      2
- *     /
- *    3
+ * 1
+ * \
+ * 2
+ * /
+ * 3
  * return [1,2,3].
- * 
+ * <p>
  * Note: Recursive solution is trivial, could you do it iteratively?
- * 
+ *
  * @author Johnny
  */
 public class Solution144 {
@@ -42,21 +42,21 @@ public class Solution144 {
         }
         return ans;
     }
-    
+
     // create stack
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        
+
         if (root == null) {
             return ans;
         }
-            
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         while (!stack.empty()) {
             TreeNode node = stack.pop();
             ans.add(node.val);
-            
+
             if (node.right != null) {
                 stack.push(node.right);
             }
@@ -64,7 +64,7 @@ public class Solution144 {
                 stack.push(node.left);
             }
         }
-        
+
         return ans;
     }
 
@@ -74,10 +74,10 @@ public class Solution144 {
         if (root == null) {
             return ans;
         }
-        
+
         List<Integer> left = preorderTraversal(root.left);
         List<Integer> right = preorderTraversal(root.right);
-        
+
         ans.add(root.val);
         ans.addAll(left);
         ans.addAll(right);

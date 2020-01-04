@@ -3,23 +3,23 @@ package johnny.leetcode.algorithm;
 /**
  * Word Search.
  * Given a 2D board and a word, find if the word exists in the grid.
- * 
- * The word can be constructed from letters of sequentially adjacent cell, 
- * where "adjacent" cells are those horizontally or vertically neighboring. 
+ * <p>
+ * The word can be constructed from letters of sequentially adjacent cell,
+ * where "adjacent" cells are those horizontally or vertically neighboring.
  * The same letter cell may not be used more than once.
- * 
+ * <p>
  * For example,
  * Given board =
- * 
+ * <p>
  * [
- *   ["ABCE"],
- *   ["SFCS"],
- *   ["ADEE"]
+ * ["ABCE"],
+ * ["SFCS"],
+ * ["ADEE"]
  * ]
- * word = "ABCCED", -> returns true,
- * word = "SEE", -> returns true,
- * word = "ABCB", -> returns false.
- * 
+ * {@code word = "ABCCED", -> returns true,}
+ * {@code word = "SEE", -> returns true,}
+ * {@code word = "ABCB", -> returns false.}
+ *
  * @author Johnny
  */
 public class Solution079 {
@@ -28,7 +28,7 @@ public class Solution079 {
         if (word == null || word.length() == 0 || board == null || board.length == 0 || board[0].length == 0) {
             return false;
         }
-        
+
         int m = board.length;
         int n = board[0].length;
         for (int i = 0; i < m; i++) {
@@ -40,10 +40,10 @@ public class Solution079 {
                 }
             }
         }
-        
+
         return false;
     }
-    
+
     private boolean dfs(char[][] board, int x, int y, char[] word, int pos) {
         if (pos == word.length - 1) {
             return true;
@@ -53,8 +53,8 @@ public class Solution079 {
 
         char temp = board[x][y];
         board[x][y] = '0'; // set to other value
-        int[] dr = new int[]{-1,1,0,0};
-        int[] dc = new int[]{0,0,-1,1};
+        int[] dr = new int[]{-1, 1, 0, 0};
+        int[] dc = new int[]{0, 0, -1, 1};
         boolean found = false;
         for (int i = 0; i < 4; i++) {
             int r = x + dr[i];
@@ -70,13 +70,13 @@ public class Solution079 {
         board[x][y] = temp;
         return found;
     }
-    
+
     // space: O(m*n)
     public boolean exist2(char[][] board, String word) {
         if (word == null || word.length() == 0 || board == null || board.length == 0 || board[0].length == 0) {
             return false;
         }
-        
+
         int m = board.length;
         int n = board[0].length;
         for (int i = 0; i < m; i++) {
@@ -89,10 +89,10 @@ public class Solution079 {
                 }
             }
         }
-        
+
         return false;
     }
-    
+
     private boolean dfs2(char[][] board, int x, int y, char[] word, int pos, boolean[][] visited) {
         if (pos == word.length) {
             return true;
@@ -103,8 +103,8 @@ public class Solution079 {
             return false;
         }
         visited[x][y] = true;
-        int[] dr = new int[]{-1,1,0,0};
-        int[] dc = new int[]{0,0,-1,1};
+        int[] dr = new int[]{-1, 1, 0, 0};
+        int[] dc = new int[]{0, 0, -1, 1};
         for (int i = 0; i < 4; i++) {
             int r = x + dr[i];
             int c = y + dc[i];

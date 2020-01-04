@@ -5,19 +5,19 @@ import java.util.List;
 
 /**
  * Spiral Matrix.
- * Given a matrix of m x n elements (m rows, n columns), return all elements of 
+ * Given a matrix of m x n elements (m rows, n columns), return all elements of
  * the matrix in spiral order.
- * 
+ * <p>
  * For example,
  * Given the following matrix:
- * 
+ * <p>
  * [
- *  [ 1, 2, 3 ],
- *  [ 4, 5, 6 ],
- *  [ 7, 8, 9 ]
+ * [ 1, 2, 3 ],
+ * [ 4, 5, 6 ],
+ * [ 7, 8, 9 ]
  * ]
  * You should return [1,2,3,6,9,8,7,4,5].
- * 
+ *
  * @author Johnny
  */
 public class Solution054 {
@@ -28,7 +28,7 @@ public class Solution054 {
         }
         int m = matrix.length;
         int n = matrix[0].length;
-        
+
         int i = 0;
         int top = 0;
         int bottom = m - 1;
@@ -63,16 +63,16 @@ public class Solution054 {
             }
             left++;
         }
-        
+
         return ans;
     }
-    
+
     public List<Integer> spiralOrder2(int[][] matrix) {
         List<Integer> res = new ArrayList<Integer>();
         if (matrix == null || matrix.length == 0) {
             return new ArrayList<Integer>();
         }
-        
+
         int top = 0;
         int left = 0;
         int bottom = matrix.length - 1;
@@ -113,7 +113,7 @@ public class Solution054 {
             }
             left++;
         }
-        
+
         return res;
     }
 }

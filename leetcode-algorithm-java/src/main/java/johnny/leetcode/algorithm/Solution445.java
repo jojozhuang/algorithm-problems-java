@@ -6,22 +6,22 @@ import java.util.Stack;
 
 /**
  * Add Two Numbers II
- * 
- * You are given two non-empty linked lists representing two non-negative 
- * integers. The most significant digit comes first and each of their nodes 
+ * <p>
+ * You are given two non-empty linked lists representing two non-negative
+ * integers. The most significant digit comes first and each of their nodes
  * contain a single digit. Add the two numbers and return it as a linked list.
- * 
- * You may assume the two numbers do not contain any leading zero, except the 
+ * <p>
+ * You may assume the two numbers do not contain any leading zero, except the
  * number 0 itself.
- * 
+ * <p>
  * Follow up:
- * What if you cannot modify the input lists? In other words, reversing the 
+ * What if you cannot modify the input lists? In other words, reversing the
  * lists is not allowed.
- * 
+ * <p>
  * Example:
  * Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 8 -> 0 -> 7
- * 
+ *
  * @author Johnny
  */
 public class Solution445 {
@@ -32,7 +32,7 @@ public class Solution445 {
         if (l2 == null) {
             return l1;
         }
-        
+
         Stack<Integer> stack1 = new Stack<Integer>();
         Stack<Integer> stack2 = new Stack<Integer>();
         ListNode head1 = l1;
@@ -40,13 +40,13 @@ public class Solution445 {
             stack1.push(head1.val);
             head1 = head1.next;
         }
-        
+
         ListNode head2 = l2;
         while (head2 != null) {
             stack2.push(head2.val);
             head2 = head2.next;
         }
-        
+
         int carry = 0;
         ListNode dummy = new ListNode(0);
         while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0) {
@@ -59,7 +59,7 @@ public class Solution445 {
             curr.next = next;
             carry = sum / 10;
         }
-        
+
         return dummy.next;
     }
 }

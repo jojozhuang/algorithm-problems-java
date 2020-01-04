@@ -14,6 +14,7 @@ package johnny.leetcode.algorithm;
  * C - 100
  * D - 500
  * M - 1000
+ *
  * @author Johnny
  */
 public class Solution012 {
@@ -29,21 +30,22 @@ public class Solution012 {
         String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         // 1,2,3,4,5,6,7,8,9
         String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-        return M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[num%10];
+        return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
     }
+
     //http://bangbingsyb.blogspot.com/2014/11/leetcode-integer-to-roman.html
     public String intToRoman2(int num) {
         if (num <= 0) {
             return "";
         }
-        String[] dict = new String[]{"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
-        int[] val = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
-        
+        String[] dict = new String[]{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] val = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 13; i++) {
-            if(num >= val[i]) {
+            if (num >= val[i]) {
                 int count = num / val[i];
-                for(int j = 0; j < count; j++) {
+                for (int j = 0; j < count; j++) {
                     sb.append(dict[i]);
                 }
                 num %= val[i];

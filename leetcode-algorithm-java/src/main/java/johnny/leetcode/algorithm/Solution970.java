@@ -9,39 +9,38 @@ import java.util.TreeSet;
 
 /**
  * 970. Powerful Integers
-Given two non-negative integers x and y, an integer is powerful if it is equal to x^i + y^j for some integers i >= 0 and j >= 0.
-
-Return a list of all powerful integers that have value less than or equal to bound.
-
-You may return the answer in any order.  In your answer, each value should occur at most once.
-
- 
-
-Example 1:
-
-Input: x = 2, y = 3, bound = 10
-Output: [2,3,4,5,7,9,10]
-Explanation: 
-2 = 2^0 + 3^0
-3 = 2^1 + 3^0
-4 = 2^0 + 3^1
-5 = 2^1 + 3^1
-7 = 2^2 + 3^1
-9 = 2^3 + 3^0
-10 = 2^0 + 3^2
-Example 2:
-
-Input: x = 3, y = 5, bound = 15
-Output: [2,4,6,8,10,14]
- 
-
-Note:
-
-1 <= x <= 100
-1 <= y <= 100
-0 <= bound <= 10^6
-
-
+ * Given two non-negative integers x and y, an integer is powerful if it is equal to x^i + y^j for some integers i >= 0 and j >= 0.
+ * <p>
+ * Return a list of all powerful integers that have value less than or equal to bound.
+ * <p>
+ * You may return the answer in any order.  In your answer, each value should occur at most once.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: x = 2, y = 3, bound = 10
+ * Output: [2,3,4,5,7,9,10]
+ * Explanation:
+ * 2 = 2^0 + 3^0
+ * 3 = 2^1 + 3^0
+ * 4 = 2^0 + 3^1
+ * 5 = 2^1 + 3^1
+ * 7 = 2^2 + 3^1
+ * 9 = 2^3 + 3^0
+ * 10 = 2^0 + 3^2
+ * Example 2:
+ * <p>
+ * Input: x = 3, y = 5, bound = 15
+ * Output: [2,4,6,8,10,14]
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= x <= 100
+ * 1 <= y <= 100
+ * 0 <= bound <= 10^6
+ *
  * @author Johnny
  */
 public class Solution970 {
@@ -60,11 +59,11 @@ public class Solution970 {
         }
         return new ArrayList<>(ans);
     }
-    
+
     public List<Integer> powerfulIntegers2(int x, int y, int bound) {
         List<Integer> xlist = powList(x, bound);
         List<Integer> ylist = powList(y, bound);
-        
+
         SortedSet<Integer> set = new TreeSet<Integer>();
         for (int i = 0; i < xlist.size(); i++) {
             for (int j = 0; j < ylist.size(); j++) {
@@ -81,13 +80,13 @@ public class Solution970 {
         List<Integer> res = new ArrayList<Integer>(set);
         return res;
     }
-    
+
     private List<Integer> powList(int val, int bound) {
         List<Integer> list = new ArrayList<Integer>();
         int i = 0;
         double pow = Math.pow(val, i);
         while (pow <= bound) {
-            list.add((int)pow);
+            list.add((int) pow);
             if (val == 1) {
                 break;
             }
@@ -96,7 +95,7 @@ public class Solution970 {
         }
         return list;
     }
-    
+
     // without helper method
     public List<Integer> powerfulIntegers3(int x, int y, int bound) {
         Set<Integer> set = new HashSet<Integer>();
@@ -113,7 +112,7 @@ public class Solution970 {
                 if (sum > bound) {
                     break;
                 } else {
-                    set.add((int)sum);
+                    set.add((int) sum);
                     j++;
                 }
                 if (y == 1) {
@@ -125,7 +124,7 @@ public class Solution970 {
             }
             i++;
         }
-        
+
         List<Integer> res = new ArrayList<Integer>(set);
         return res;
     }

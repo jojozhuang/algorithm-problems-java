@@ -4,22 +4,22 @@ import java.util.Arrays;
 
 /**
  * Sort Transformed Array.
- * Given a sorted array of integers nums and integer values a, b and c. Apply a 
+ * Given a sorted array of integers nums and integer values a, b and c. Apply a
  * function of the form f(x) = ax2 + bx + c to each element x in the array.
- * 
+ * <p>
  * The returned array must be in sorted order.
- * 
+ * <p>
  * Expected time complexity: O(n)
- * 
+ * <p>
  * Example:
  * nums = [-4, -2, 2, 4], a = 1, b = 3, c = 5,
- * 
+ * <p>
  * Result: [3, 9, 15, 33]
- * 
+ * <p>
  * nums = [-4, -2, 2, 4], a = -1, b = 3, c = 5
- * 
+ * <p>
  * Result: [-23, -5, 1, 7]
- * 
+ *
  * @author Johnny
  */
 public class Solution360 {
@@ -43,24 +43,26 @@ public class Solution360 {
         }
         return sorted;
     }
+
     private int quad(int x, int a, int b, int c) {
         return a * x * x + b * x + c;
     }
+
     // naive, nlog(n)
     public int[] sortTransformedArray2(int[] nums, int a, int b, int c) {
         if (nums == null || nums.length == 0) {
             return new int[]{};
         }
-        
+
         int[] res = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             res[i] = a * nums[i] * nums[i] + b * nums[i] + c;
         }
-        
+
         Arrays.sort(res);
-        
+
         return res;
     }
-    
-    
+
+
 }

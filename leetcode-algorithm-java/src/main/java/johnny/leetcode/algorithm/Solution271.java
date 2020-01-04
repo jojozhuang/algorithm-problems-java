@@ -5,30 +5,30 @@ import java.util.List;
 
 /**
  * Encode and Decode Strings.
- * Design an algorithm to encode a list of strings to a string. The encoded 
+ * Design an algorithm to encode a list of strings to a string. The encoded
  * string is then sent over the network and is decoded back to the original list
  * of strings.
- * 
+ * <p>
  * Machine 1 (sender) has the function:
- * string encode(vector<string> strs) { // ... your code return encoded_string; } 
- * Machine 2 (receiver) has the function: 
+ * string encode(vector<string> strs) { // ... your code return encoded_string; }
+ * Machine 2 (receiver) has the function:
  * vector<string> decode(string s) { //... your code return strs; }
- * 
+ * <p>
  * So Machine 1 does:
- * string encoded_string = encode(strs); 
+ * string encoded_string = encode(strs);
  * and Machine 2 does:
- * vector<string> strs2 = decode(encoded_string); 
+ * vector<string> strs2 = decode(encoded_string);
  * strs2 in Machine 2 should be the same as strs in Machine 1.
- * 
+ * <p>
  * Implement the encode and decode methods.
- * 
- * Note: The string may contain any possible characters out of 256 valid ascii 
- * characters. Your algorithm should be generalized enough to work on any 
- * possible characters. Do not use class member/global/static variables to 
- * store states. Your encode and decode algorithms should be stateless. Do not 
- * rely on any library method such as eval or serialize methods. You should 
+ * <p>
+ * Note: The string may contain any possible characters out of 256 valid ascii
+ * characters. Your algorithm should be generalized enough to work on any
+ * possible characters. Do not use class member/global/static variables to
+ * store states. Your encode and decode algorithms should be stateless. Do not
+ * rely on any library method such as eval or serialize methods. You should
  * implement your own encode/decode algorithm.
- * 
+ *
  * @author Johnny
  */
 public class Solution271 {
@@ -39,13 +39,13 @@ public class Solution271 {
             return "";
         }
         StringBuilder output = new StringBuilder();
-        for(String str : strs){
-            output.append(String.valueOf(str.length())+"#");
+        for (String str : strs) {
+            output.append(String.valueOf(str.length()) + "#");
             output.append(str);
         }
         return output.toString();
     }
-    
+
     // Decodes a single string to a list of strings.
     public List<String> decode(String s) {
         List<String> res = new LinkedList<String>();
@@ -53,7 +53,7 @@ public class Solution271 {
             return res;
         }
         int start = 0;
-        while(start < s.length()){
+        while (start < s.length()) {
             int idx = s.indexOf('#', start);
             int size = Integer.parseInt(s.substring(start, idx));
             res.add(s.substring(idx + 1, idx + size + 1));

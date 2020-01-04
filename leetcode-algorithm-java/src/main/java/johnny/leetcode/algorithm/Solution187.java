@@ -9,19 +9,19 @@ import java.util.Set;
 /**
  * Repeated DNA Sequences.
  * All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T,
- * for example: "ACGAATTCCG". When studying DNA, it is sometimes useful to 
+ * for example: "ACGAATTCCG". When studying DNA, it is sometimes useful to
  * identify repeated sequences within the DNA.
- * 
- * Write a function to find all the 10-letter-long sequences (substrings) that 
+ * <p>
+ * Write a function to find all the 10-letter-long sequences (substrings) that
  * occur more than once in a DNA molecule.
- * 
+ * <p>
  * For example,
- * 
+ * <p>
  * Given s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
- * 
+ * <p>
  * Return:
  * ["AAAAACCCCC", "CCCCCAAAAA"].
- * 
+ *
  * @author Johnny
  */
 public class Solution187 {
@@ -30,8 +30,8 @@ public class Solution187 {
         if (s == null || s.length() == 0) {
             return res;
         }
-        
-        Set<String> seen = new HashSet<String>(); 
+
+        Set<String> seen = new HashSet<String>();
         Set<String> repeated = new HashSet<String>();
         for (int i = 0; i + 9 < s.length(); i++) {
             String ten = s.substring(i, i + 10);
@@ -40,6 +40,7 @@ public class Solution187 {
         }
         return new ArrayList<String>(repeated);
     }
+
     //http://yuanhsh.iteye.com/blog/2185976
     //There are only four letters ACGT. The total combination is 4^10 = 1048576. Encode ACGT as
     //A = 00
@@ -56,13 +57,13 @@ public class Solution187 {
         if (s == null || s.length() == 0) {
             return res;
         }
-        
+
         HashMap<Character, Integer> codeMap = new HashMap<Character, Integer>();
         codeMap.put('A', 0); // 00
         codeMap.put('C', 1); // 01
         codeMap.put('G', 2); // 10
         codeMap.put('T', 3); // 11
-        
+
         HashMap<Integer, Integer> dnaMap = new HashMap<Integer, Integer>();
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -80,7 +81,7 @@ public class Solution187 {
                 }
             }
         }
-        
+
         return res;
     }
 }

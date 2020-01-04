@@ -7,42 +7,42 @@ import java.util.Map;
 
 /**
  * Sort Characters By Frequency
- * 
+ * <p>
  * Given a string, sort it in decreasing order based on the frequency of characters.
- * 
+ * <p>
  * Example 1:
  * Input:
  * "tree"
- * 
+ * <p>
  * Output:
  * "eert"
- * 
+ * <p>
  * Explanation:
  * 'e' appears twice while 'r' and 't' both appear once.
  * So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
- * 
+ * <p>
  * Example 2:
  * Input:
  * "cccaaa"
- * 
+ * <p>
  * Output:
  * "cccaaa"
- * 
+ * <p>
  * Explanation:
  * Both 'c' and 'a' appear three times, so "aaaccc" is also a valid answer.
  * Note that "cacaca" is incorrect, as the same characters must be together.
- * 
+ * <p>
  * Example 3:
  * Input:
  * "Aabb"
- * 
+ * <p>
  * Output:
  * "bbAa"
- * 
+ * <p>
  * Explanation:
  * "bbaA" is also a valid answer, but "Aabb" is incorrect.
  * Note that 'A' and 'a' are treated as two different characters.
- * 
+ *
  * @author Johnny
  */
 public class Solution451 {
@@ -64,7 +64,7 @@ public class Solution451 {
             bucket[frequency].add(key);
         }
         StringBuilder sb = new StringBuilder();
-        for (int pos = bucket.length - 1; pos >=0; pos--) {
+        for (int pos = bucket.length - 1; pos >= 0; pos--) {
             if (bucket[pos] != null) {
                 for (char num : bucket[pos]) {
                     for (int i = 0; i < map.get(num); i++) {

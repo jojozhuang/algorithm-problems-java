@@ -4,16 +4,16 @@ import java.util.Arrays;
 
 /**
  * Maximum Gap.
- * Given an unsorted array, find the maximum difference between the successive 
+ * Given an unsorted array, find the maximum difference between the successive
  * elements in its sorted form.
- * 
+ * <p>
  * Try to solve it in linear time/space.
- * 
+ * <p>
  * Return 0 if the array contains less than 2 elements.
- * 
- * You may assume all elements in the array are non-negative integers and fit 
+ * <p>
+ * You may assume all elements in the array are non-negative integers and fit
  * in the 32-bit signed integer range.
- * 
+ *
  * @author Johnny
  */
 public class Solution164 {
@@ -23,7 +23,7 @@ public class Solution164 {
         if (nums == null || nums.length < 2) {
             return 0;
         }
-        
+
         int n = nums.length;
         int max = nums[0];
         int min = nums[0];
@@ -31,7 +31,7 @@ public class Solution164 {
             max = Math.max(max, nums[i]);
             min = Math.min(min, nums[i]);
         }
-        
+
         // size of each bucket
         int size = (max - min) / n + 1;
         // length of buckets
@@ -51,7 +51,7 @@ public class Solution164 {
                 bucket[index][1] = Math.max(bucket[index][1], nums[i]);
             }
         }
-        
+
         int gap = 0;
         int prev = 0;
         for (int i = 1; i < bucket.length; i++) {
@@ -60,22 +60,23 @@ public class Solution164 {
                 prev = i;
             }
         }
-        
+
         return gap;
     }
+
     // Sorting and Comparison: O(n)
     public int maximumGap2(int[] nums) {
         if (nums == null || nums.length < 2) {
             return 0;
         }
-        
+
         Arrays.sort(nums);
-        
+
         int maxGap = 0;
         for (int i = 0; i < nums.length - 1; i++) {
             maxGap = Math.max(maxGap, nums[i + 1] - nums[i]);
         }
-        
+
         return maxGap;
     }
 }

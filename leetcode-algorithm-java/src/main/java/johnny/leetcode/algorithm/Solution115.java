@@ -2,19 +2,19 @@ package johnny.leetcode.algorithm;
 
 /**
  * Distinct Subsequences.
- * Given a string S and a string T, count the number of distinct subsequences 
+ * Given a string S and a string T, count the number of distinct subsequences
  * of T in S.
- * 
- * A subsequence of a string is a new string which is formed from the original 
- * string by deleting some (can be none) of the characters without disturbing 
- * the relative positions of the remaining characters. (ie, "ACE" is a 
+ * <p>
+ * A subsequence of a string is a new string which is formed from the original
+ * string by deleting some (can be none) of the characters without disturbing
+ * the relative positions of the remaining characters. (ie, "ACE" is a
  * subsequence of "ABCDE" while "AEC" is not).
- * 
+ * <p>
  * Here is an example:
  * S = "rabbbit", T = "rabbit"
- * 
+ * <p>
  * Return 3.
- * 
+ *
  * @author Johnny
  */
 public class Solution115 {
@@ -23,22 +23,22 @@ public class Solution115 {
         if (s == null || t == null) {
             return 0;
         }
-        
+
         int m = s.length();
         int n = t.length();
         int[][] dp = new int[m + 1][n + 1];
         dp[0][0] = 1;
-        
+
         // t is empty
-        for(int i = 1; i <= m; i++) {
+        for (int i = 1; i <= m; i++) {
             dp[i][0] = 1;
         }
-        
+
         // s is empty
-        for(int j = 1; j <= n; j++) {
+        for (int j = 1; j <= n; j++) {
             dp[0][j] = 0;
-        }        
-        
+        }
+
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
                 if (s.charAt(i - 1) == t.charAt(j - 1)) {
@@ -48,9 +48,10 @@ public class Solution115 {
                 }
             }
         }
-        
+
         return dp[m][n];
     }
+
     //time out
     public int numDistinct2(String s, String t) {
         if (s == null || t == null) {
@@ -62,14 +63,14 @@ public class Solution115 {
         if (t.length() == 0) {
             return 1;
         }
-        
+
         int count = 0;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == t.charAt(0)) {
                 count += numDistinct2(s.substring(i + 1), t.substring(1));
             }
         }
-        
+
         return count;
     }
 }

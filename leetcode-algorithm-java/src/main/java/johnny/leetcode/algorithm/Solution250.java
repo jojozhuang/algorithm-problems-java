@@ -5,19 +5,19 @@ import johnny.algorithm.common.TreeNode;
 /**
  * Count Univalue Subtrees.
  * Given a binary tree, count the number of uni-value subtrees.
- * 
+ * <p>
  * A Uni-value subtree means all nodes of the subtree have the same value.
- * 
+ * <p>
  * For example:
- * Given binary tree, 
- *               5
- *              / \
- *             1   5
- *            / \   \
- *           5   5   5
- *   
+ * Given binary tree,
+ * 5
+ * / \
+ * 1   5
+ * / \   \
+ * 5   5   5
+ * <p>
  * return 4.
- * 
+ *
  * @author Johnny
  */
 public class Solution250 {
@@ -26,7 +26,7 @@ public class Solution250 {
         helper(root, count);
         return count[0];
     }
-    
+
     private boolean helper(TreeNode node, int[] count) {
         if (node == null) {
             return true;

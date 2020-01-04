@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 /**
  * Palindrome Number.
  * Determine whether an integer is a palindrome. Do this without extra space.
- * 
+ *
  * @author Johnny
  */
 public class Solution009 {
@@ -18,10 +18,10 @@ public class Solution009 {
             reverse = reverse * 10 + num % 10;
             num = num / 10;
         }
-        
+
         return reverse == x;
     }
-    
+
     public boolean isPalindrome2(int x) {
         if (x < 0) {
             return false;

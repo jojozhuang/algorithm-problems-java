@@ -5,47 +5,46 @@ import java.util.List;
 
 /**
  * 996. Number of Squareful Arrays
- * 
+ * <p>
  * Given an array A of non-negative integers, the array is squareful if for every pair of adjacent elements, their sum is a perfect square.
-
-Return the number of permutations of A that are squareful.  Two permutations A1 and A2 differ if and only if there is some index i such that A1[i] != A2[i].
-
- 
-
-Example 1:
-
-Input: [1,17,8]
-Output: 2
-Explanation: 
-[1,8,17] and [17,8,1] are the valid permutations.
-Example 2:
-
-Input: [2,2,2]
-Output: 1
- 
-
-Note:
-
-1 <= A.length <= 12
-0 <= A[i] <= 1e9
-
-
+ * <p>
+ * Return the number of permutations of A that are squareful.  Two permutations A1 and A2 differ if and only if there is some index i such that A1[i] != A2[i].
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [1,17,8]
+ * Output: 2
+ * Explanation:
+ * [1,8,17] and [17,8,1] are the valid permutations.
+ * Example 2:
+ * <p>
+ * Input: [2,2,2]
+ * Output: 1
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= A.length <= 12
+ * 0 <= A[i] <= 1e9
+ *
  * @author Johnny
  */
 public class Solution996 {
     public int numSquarefulPerms(int[] A) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
-        
+
         List<Integer> list = new ArrayList<Integer>();
         helper(A, list, res);
         return res.size();
     }
-    
-    private void helper(int[] A,List<Integer> list, List<List<Integer>> res) {
+
+    private void helper(int[] A, List<Integer> list, List<List<Integer>> res) {
         if (list.size() == A.length) {
             res.add(new ArrayList<Integer>(list));
         }
-        
+
         for (int i = 0; i < A.length; i++) {
             if (list.contains(A[i])) {
                 continue;
@@ -103,7 +102,7 @@ public class Solution996 {
             }
         }
     }*/
-    
+
     private boolean squareful(int num) {
         return Math.sqrt(num) * Math.sqrt(num) == num;
     }

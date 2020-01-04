@@ -1,7 +1,6 @@
 package johnny.leetcode.algorithm;
 
 /**
- *
  * @author Johnny
  */
 public class SolutionA1194 {
@@ -14,7 +13,7 @@ public class SolutionA1194 {
         for (int i = 1; i < arr.length; i++) {
             sum[i] = sum[i - 1] + arr[i];
             if (sum[i] > max) {
-                max =  sum[i];
+                max = sum[i];
                 index_max = i;
             }
         }
@@ -38,7 +37,7 @@ public class SolutionA1194 {
 
         int index_right = arr.length;
         for (int i = arr.length - 1; i >= index_max; i--) {
-            if (sum[i] >=0) {
+            if (sum[i] >= 0) {
                 index_right = i;
                 break;
             }

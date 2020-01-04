@@ -9,35 +9,35 @@ import java.util.Set;
 
 /**
  * 952. Largest Component Size by Common Factor
-
-Given a non-empty array of unique positive integers A, consider the following graph:
-
-There are A.length nodes, labelled A[0] to A[A.length - 1];
-There is an edge between A[i] and A[j] if and only if A[i] and A[j] share a common factor greater than 1.
-Return the size of the largest connected component in the graph.
-
- 
-
-Example 1:
-
-Input: [4,6,15,35]
-Output: 4
-
-Example 2:
-
-Input: [20,50,9,63]
-Output: 2
-
-Example 3:
-
-Input: [2,3,6,7,4,12,21,39]
-Output: 8
-
-Note:
-
-1 <= A.length <= 20000
-1 <= A[i] <= 100000
-
+ * <p>
+ * Given a non-empty array of unique positive integers A, consider the following graph:
+ * <p>
+ * There are A.length nodes, labelled A[0] to A[A.length - 1];
+ * There is an edge between A[i] and A[j] if and only if A[i] and A[j] share a common factor greater than 1.
+ * Return the size of the largest connected component in the graph.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [4,6,15,35]
+ * Output: 4
+ * <p>
+ * Example 2:
+ * <p>
+ * Input: [20,50,9,63]
+ * Output: 2
+ * <p>
+ * Example 3:
+ * <p>
+ * Input: [2,3,6,7,4,12,21,39]
+ * Output: 8
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= A.length <= 20000
+ * 1 <= A[i] <= 100000
+ *
  * @author Johnny
  */
 public class Solution952 {
@@ -65,13 +65,13 @@ public class Solution952 {
 
         // primesL : a list of all primes that occur in factored
         Set<Integer> primes = new HashSet<Integer>();
-        for (List<Integer> facs: factored)
-            for (int x: facs)
+        for (List<Integer> facs : factored)
+            for (int x : facs)
                 primes.add(x);
 
         int[] primesL = new int[primes.size()];
         int t = 0;
-        for (int x: primes)
+        for (int x : primes)
             primesL[t++] = x;
 
         // primeToIndex.get(v) == i  iff  primes[i] = v
@@ -80,32 +80,35 @@ public class Solution952 {
             primeToIndex.put(primesL[i], i);
 
         DSU dsu = new DSU(primesL.length);
-        for (List<Integer> facs: factored)
-            for (int x: facs)
+        for (List<Integer> facs : factored)
+            for (int x : facs)
                 dsu.union(primeToIndex.get(facs.get(0)), primeToIndex.get(x));
 
         int[] count = new int[primesL.length];
-        for (List<Integer> facs: factored)
+        for (List<Integer> facs : factored)
             count[dsu.find(primeToIndex.get(facs.get(0)))]++;
 
         int ans = 0;
-        for (int x: count)
+        for (int x : count)
             if (x > ans)
                 ans = x;
         return ans;
     }
-    
+
     class DSU {
         int[] parent;
+
         public DSU(int N) {
             parent = new int[N];
             for (int i = 0; i < N; ++i)
                 parent[i] = i;
         }
+
         public int find(int x) {
             if (parent[x] != x) parent[x] = find(parent[x]);
             return parent[x];
         }
+
         public void union(int x, int y) {
             parent[find(x)] = find(y);
         }

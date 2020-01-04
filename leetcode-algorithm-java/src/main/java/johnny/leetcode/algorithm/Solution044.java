@@ -5,22 +5,23 @@ package johnny.leetcode.algorithm;
  * Implement wildcard pattern matching with support for '?' and '*'.
  * '?' Matches any single character.
  * '*' Matches any sequence of characters (including the empty sequence).
- * 
+ * <p>
  * The matching should cover the entire input string (not partial).
- * 
+ * <p>
  * The function prototype should be:
- * 
+ * <p>
  * Tool isMatch(const char *s, const char *p)
- * 
+ * <p>
  * Some examples:
- * isMatch("aa","a") -> false
+ * <pre>{@code isMatch("aa","a") -> false
  * isMatch("aa","aa") -> true
  * isMatch("aaa","aa") -> false
  * isMatch("aa", "*") -> true
  * isMatch("aa", "a*") -> true
  * isMatch("ab", "?*") -> true
  * isMatch("aab", "c*a*b") -> false
- * 
+ * }</pre>
+ *
  * @author Johnny
  */
 public class Solution044 {
@@ -29,14 +30,14 @@ public class Solution044 {
         if (s == null || p == null) {
             return false;
         }
-        
+
         char[] arrs = s.toCharArray();
         char[] arrp = p.toCharArray();
         int m = arrs.length;
         int n = arrp.length;
         boolean[][] dp = new boolean[m + 1][n + 1];
         dp[0][0] = true;
-        
+
         for (int j = 1; j <= n; j++) {
             dp[0][j] = dp[0][j - 1] && arrp[j - 1] == '*';
         }
@@ -47,19 +48,20 @@ public class Solution044 {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else if (arrp[j - 1] == '*') {
                     dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
-                } 
+                }
             }
         }
 
         return dp[m][n];
     }
+
     //dp
     //https://www.youtube.com/watch?v=3ZDZ-N0EPV0
     public boolean isMatch3(String s, String p) {
         if (s == null || p == null) {
             return false;
         }
-        
+
         char[] arrs = s.toCharArray();
         char[] arrp = p.toCharArray();
         //remove duplicated *
@@ -84,7 +86,7 @@ public class Solution044 {
         } else if (m != 0 && n == 0) {
             return false;
         }
-        
+
         boolean[][] dp = new boolean[m + 1][n + 1];
         dp[0][0] = true;
         if (p.charAt(0) == '*') {
@@ -105,13 +107,13 @@ public class Solution044 {
 
         return dp[m][n];
     }
-    
+
     public boolean isMatch2(String s, String p) {
         if (s == null || p == null) {
             return false;
         }
-        
-        if (s.length() == 0|| p.length() == 0) {
+
+        if (s.length() == 0 || p.length() == 0) {
             return false;
         }
 

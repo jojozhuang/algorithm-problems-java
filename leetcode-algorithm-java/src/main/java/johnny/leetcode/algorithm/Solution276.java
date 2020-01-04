@@ -2,18 +2,18 @@ package johnny.leetcode.algorithm;
 
 /**
  * Paint Fence.
- * 
- * There is a fence with n posts, each post can be painted with one of the k 
+ * <p>
+ * There is a fence with n posts, each post can be painted with one of the k
  * colors.
- * 
- * You have to paint all the posts such that no more than two adjacent fence 
+ * <p>
+ * You have to paint all the posts such that no more than two adjacent fence
  * posts have the same color.
- * 
+ * <p>
  * Return the total number of ways you can paint the fence.
- * 
+ * <p>
  * Note:
  * n and k are non-negative integers.
- * 
+ *
  * @author Johnny
  */
 public class Solution276 {
@@ -22,36 +22,37 @@ public class Solution276 {
         if (n < 1 || k < 1) return 0;
         if (n == 1) return k;
         int[] f = new int[n];
-        f[0] = 1; f[1] = k;
+        f[0] = 1;
+        f[1] = k;
         for (int i = 2; i < n; i++) {
-            f[i] = (k - 1) * (f[i - 1] + f[i - 2]); 
+            f[i] = (k - 1) * (f[i - 1] + f[i - 2]);
         }
         return k * f[n - 1];
     }
-    
+
     public int numWays2(int n, int k) {
-        if(n == 0) {
+        if (n == 0) {
             return 0;
-        } else if(n == 1) {
+        } else if (n == 1) {
             return k;
         }
-        
+
         int diffColorCounts = k * (k - 1);
         int sameColorCounts = k;
-        for(int i = 2; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             int temp = diffColorCounts;
             diffColorCounts = (diffColorCounts + sameColorCounts) * (k - 1);
             sameColorCounts = temp;
         }
         return diffColorCounts + sameColorCounts;
     }
-    
+
     //
     public int numWays3(int n, int k) {
         if (n < 1 || k < 1) {
             return 0;
         }
-        
+
         if (n == 1) {
             return k;
         }
@@ -65,7 +66,7 @@ public class Solution276 {
             same[i] = diff[i - 1];
             diff[i] = same[i - 1] * (k - 1) + diff[i - 1] * (k - 1);
         }
-        
+
         return same[n - 1] + diff[n - 1];
     }
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 899. Orderly Queue
-
+ *
  * @author Johnny
  */
 public class Solution899 {

@@ -8,11 +8,11 @@ import java.util.Map;
 
 /**
  * Palindrome Pairs.
- * 
- * Given a list of unique words. Find all pairs of distinct indices (i, j) in 
- * the given list, so that the concatenation of the two words, i.e. words[i] + 
+ * <p>
+ * Given a list of unique words. Find all pairs of distinct indices (i, j) in
+ * the given list, so that the concatenation of the two words, i.e. words[i] +
  * words[j] is a palindrome.
- * 
+ * <p>
  * Example 1:
  * Given words = ["bat", "tab", "cat"]
  * Return [[0, 1], [1, 0]]
@@ -21,7 +21,7 @@ import java.util.Map;
  * Given words = ["abcd", "dcba", "lls", "s", "sssll"]
  * Return [[0, 1], [1, 0], [3, 2], [2, 4]]
  * The palindromes are ["dcbaabcd", "abcddcba", "slls", "llssssll"]
- *  
+ *
  * @author Johnny
  */
 public class Solution336 {
@@ -30,13 +30,13 @@ public class Solution336 {
         if (words == null || words.length == 0) {
             return ans;
         }
-        
+
         // create map for checking if word is itself
         Map<String, Integer> map = new HashMap<>();
         for (int i = 0; i < words.length; i++) {
             map.put(words[i], i);
         }
-        
+
         // case 1: empty + palindrome string
         if (map.containsKey("")) {
             int blankIdx = map.get("");
@@ -70,22 +70,22 @@ public class Solution336 {
                 }
                 // case 4
                 if (isPalindrome(word.substring(j))) {
-                    String rev = reverse(word.substring(0,j));
+                    String rev = reverse(word.substring(0, j));
                     if (map.containsKey(rev) && map.get(rev) != i) {
                         ans.add(Arrays.asList(i, map.get(rev)));
                     }
                 }
             }
         }
-        
+
         return ans;
     }
-    
+
     private String reverse(String s) {
         StringBuilder sb = new StringBuilder(s);
         return sb.reverse().toString();
     }
-    
+
     private boolean isPalindrome(String s) {
         int start = 0;
         int end = s.length() - 1;
@@ -96,7 +96,7 @@ public class Solution336 {
             start++;
             end--;
         }
-        
+
         return true;
     }
     /*

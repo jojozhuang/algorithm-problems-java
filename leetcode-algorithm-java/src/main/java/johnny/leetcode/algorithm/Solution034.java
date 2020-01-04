@@ -2,26 +2,26 @@ package johnny.leetcode.algorithm;
 
 /**
  * Search for a Range.
- * Given a sorted array of integers, find the starting and ending position of 
+ * Given a sorted array of integers, find the starting and ending position of
  * a given target value.
- * 
+ * <p>
  * Your algorithm's runtime complexity must be in the order of O(log n).
- * 
+ * <p>
  * If the target is not found in the array, return [-1, -1].
- * 
+ * <p>
  * For example,
  * Given [5, 7, 7, 8, 8, 10] and target value 8,
  * return [3, 4].
- * 
+ *
  * @author Johnny
  */
 public class Solution034 {
     public int[] searchRange(int[] nums, int target) {
-        int[] ans = new int[]{-1,-1};
+        int[] ans = new int[]{-1, -1};
         if (nums == null || nums.length == 0) {
             return ans;
         }
-        
+
         int lower = binarySearch(nums, target, true);
         if (lower == -1) {
             return ans;
@@ -31,7 +31,7 @@ public class Solution034 {
         ans[1] = upper;
         return ans;
     }
-    
+
     public int binarySearch(int[] nums, int target, boolean lower) {
         int start = 0;
         int end = nums.length - 1;
@@ -70,7 +70,7 @@ public class Solution034 {
                 return start;
             }
         }
-        
+
         return -1;
     }
 }

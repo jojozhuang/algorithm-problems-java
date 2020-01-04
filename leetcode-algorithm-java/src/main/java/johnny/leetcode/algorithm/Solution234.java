@@ -4,12 +4,12 @@ import johnny.algorithm.common.ListNode;
 
 /**
  * Palindrome Linked List.
- * 
+ * <p>
  * Given a singly linked list, determine if it is a palindrome.
- * 
+ * <p>
  * Follow up:
  * Could you do it in O(n) time and O(1) space?
- * 
+ *
  * @author Johnny
  */
 public class Solution234 {
@@ -17,40 +17,39 @@ public class Solution234 {
         if (head == null) {
             return true;
         }
-        
+
         if (head.next == null) {
             return true;
         }
-        
+
         ListNode fast = head.next;
         ListNode slow = head;
-        
-        while(fast != null && fast.next != null) {
+
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
-        
+
         ListNode right = slow.next;
         slow.next = null;
-       
+
         right = reverse(right);
-        
+
         while (head != null) {
             if (right == null) {
                 return true;
             }
             if (head.val != right.val) {
                 return false;
-            }
-            else {
+            } else {
                 head = head.next;
                 right = right.next;
             }
         }
-        
+
         return true;
     }
-    
+
     private ListNode reverse(ListNode head) {
         ListNode prev = null;
         while (head != null) {
@@ -59,7 +58,7 @@ public class Solution234 {
             prev = head;
             head = next;
         }
-        
+
         return prev;
     }
 }

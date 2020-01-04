@@ -7,40 +7,40 @@ import java.util.Set;
 
 /**
  * 928. Minimize Malware Spread II
-(This problem is the same as Minimize Malware Spread, with the differences bolded.)
-
-In a network of nodes, each node i is directly connected to another node j if and only if graph[i][j] = 1.
-
-Some nodes initial are initially infected by malware.  Whenever two nodes are directly connected and at least one of those two nodes is infected by malware, both nodes will be infected by malware.  This spread of malware will continue until no more nodes can be infected in this manner.
-
-Suppose M(initial) is the final number of nodes infected with malware in the entire network, after the spread of malware stops.
-
-We will remove one node from the initial list, completely removing it and any connections from this node to any other node.  Return the node that if removed, would minimize M(initial).  If multiple nodes could be removed to minimize M(initial), return such a node with the smallest index.
-
- 
-
-Example 1:
-
-Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
-Output: 0
-Example 2:
-
-Input: graph = [[1,1,0],[1,1,1],[0,1,1]], initial = [0,1]
-Output: 1
-Example 3:
-
-Input: graph = [[1,1,0,0],[1,1,1,0],[0,1,1,1],[0,0,1,1]], initial = [0,1]
-Output: 1
- 
-
-Note:
-
-1 < graph.length = graph[0].length <= 300
-0 <= graph[i][j] == graph[j][i] <= 1
-graph[i][i] = 1
-1 <= initial.length < graph.length
-0 <= initial[i] < graph.length
-
+ * (This problem is the same as Minimize Malware Spread, with the differences bolded.)
+ * <p>
+ * In a network of nodes, each node i is directly connected to another node j if and only if graph[i][j] = 1.
+ * <p>
+ * Some nodes initial are initially infected by malware.  Whenever two nodes are directly connected and at least one of those two nodes is infected by malware, both nodes will be infected by malware.  This spread of malware will continue until no more nodes can be infected in this manner.
+ * <p>
+ * Suppose M(initial) is the final number of nodes infected with malware in the entire network, after the spread of malware stops.
+ * <p>
+ * We will remove one node from the initial list, completely removing it and any connections from this node to any other node.  Return the node that if removed, would minimize M(initial).  If multiple nodes could be removed to minimize M(initial), return such a node with the smallest index.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
+ * Output: 0
+ * Example 2:
+ * <p>
+ * Input: graph = [[1,1,0],[1,1,1],[0,1,1]], initial = [0,1]
+ * Output: 1
+ * Example 3:
+ * <p>
+ * Input: graph = [[1,1,0,0],[1,1,1,0],[0,1,1,1],[0,0,1,1]], initial = [0,1]
+ * Output: 1
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 < graph.length = graph[0].length <= 300
+ * 0 <= graph[i][j] == graph[j][i] <= 1
+ * graph[i][i] = 1
+ * 1 <= initial.length < graph.length
+ * 0 <= initial[i] < graph.length
+ *
  * @author Johnny
  */
 public class Solution928 {
@@ -48,7 +48,7 @@ public class Solution928 {
         int N = graph.length;
         int[] clean = new int[N];
         Arrays.fill(clean, 1);
-        for (int x: initial)
+        for (int x : initial)
             clean[x] = 0;
 
         // For each node u in initial, dfs to find
@@ -57,10 +57,10 @@ public class Solution928 {
         for (int i = 0; i < N; ++i)
             infectedBy[i] = new ArrayList<Integer>();
 
-        for (int u: initial) {
+        for (int u : initial) {
             Set<Integer> seen = new HashSet<Integer>();
             dfs(graph, clean, u, seen);
-            for (int v: seen)
+            for (int v : seen)
                 infectedBy[v].add(u);
         }
 
@@ -74,7 +74,7 @@ public class Solution928 {
         // Take the best answer.
         Arrays.sort(initial);
         int ans = initial[0], ansSize = -1;
-        for (int u: initial) {
+        for (int u : initial) {
             int score = contribution[u];
             if (score > ansSize || score == ansSize && u < ans) {
                 ans = u;

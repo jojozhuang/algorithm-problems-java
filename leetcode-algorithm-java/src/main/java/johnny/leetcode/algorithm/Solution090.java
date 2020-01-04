@@ -8,22 +8,22 @@ import java.util.List;
  * Subsets II.
  * Given a collection of integers that might contain duplicates, S, return all
  * possible subsets.
- * 
+ * <p>
  * Note:
  * Elements in a subset must be in non-descending order.
  * The solution set must not contain duplicate subsets.
  * For example,
  * If S = [1,2,2], a solution is:
- * 
+ * <p>
  * [
- *   [2],
- *   [1],
- *   [1,2,2],
- *   [2,2],
- *   [1,2],
- *   []
+ * [2],
+ * [1],
+ * [1,2,2],
+ * [2,2],
+ * [1,2],
+ * []
  * ]
- * 
+ *
  * @author Johnny
  */
 public class Solution090 {

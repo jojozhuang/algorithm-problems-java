@@ -4,18 +4,18 @@ import java.util.Stack;
 
 /**
  * Remove Duplicate Letters.
- * 
- * Given a string which contains only lowercase letters, remove duplicate 
- * letters so that every letter appear once and only once. You must make sure 
+ * <p>
+ * Given a string which contains only lowercase letters, remove duplicate
+ * letters so that every letter appear once and only once. You must make sure
  * your result is the smallest in lexicographical order among all possible results.
- * 
+ * <p>
  * Example:
  * Given "bcabc"
  * Return "abc"
- * 
+ * <p>
  * Given "cbacdcbc"
  * Return "acdb"
- *  
+ *
  * @author Johnny
  */
 public class Solution316 {
@@ -24,18 +24,18 @@ public class Solution316 {
         if (s == null || s.isEmpty()) {
             return "";
         }
-        
+
         int[] counter = new int[26];
         for (int i = 0; i < s.length(); i++) {
             counter[s.charAt(i) - 'a']++;
         }
-        
+
         Stack<Character> stack = new Stack<Character>();
         stack.push(s.charAt(0));
         counter[s.charAt(0) - 'a']--;
         for (int i = 1; i < s.length(); i++) {
             char c = s.charAt(i);
-            if(stack.contains(c)) {
+            if (stack.contains(c)) {
                 counter[c - 'a']--;
             } else {
                 char top = stack.peek();
@@ -58,7 +58,7 @@ public class Solution316 {
             sb.append(stack.pop());
         }
         sb.reverse();
-        
+
         return sb.toString();
     }
 }

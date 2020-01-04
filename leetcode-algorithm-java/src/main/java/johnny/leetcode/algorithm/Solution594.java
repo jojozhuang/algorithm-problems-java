@@ -5,20 +5,20 @@ import java.util.Map;
 
 /**
  * Longest Harmonious Subsequence
- * 
- * We define a harmonious array is an array where the difference between its 
+ * <p>
+ * We define a harmonious array is an array where the difference between its
  * maximum value and its minimum value is exactly 1.
- * 
- * Now, given an integer array, you need to find the length of its longest 
+ * <p>
+ * Now, given an integer array, you need to find the length of its longest
  * harmonious subsequence among all its possible subsequences.
- * 
+ * <p>
  * Example 1:
  * Input: [1,3,2,2,5,2,3,7]
  * Output: 5
  * Explanation: The longest harmonious subsequence is [3,2,2,2,3].
- * 
+ * <p>
  * Note: The length of the input array will not exceed 20,000.
- * 
+ *
  * @author Johnny
  */
 public class Solution594 {
@@ -27,7 +27,7 @@ public class Solution594 {
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
-        
+
         int ans = 0;
         for (int num : map.keySet()) {
             /*
@@ -38,7 +38,7 @@ public class Solution594 {
                 ans = Math.max(ans, map.get(num) + map.get(num + 1));
             }
         }
-        
+
         return ans;
     }
 }

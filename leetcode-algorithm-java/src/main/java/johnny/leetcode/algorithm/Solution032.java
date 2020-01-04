@@ -4,15 +4,15 @@ import java.util.Stack;
 
 /**
  * Longest Valid Parentheses.
- * Given a string containing just the characters '(' and ')', find the length 
+ * Given a string containing just the characters '(' and ')', find the length
  * of the longest valid (well-formed) parentheses substring.
- * 
- * For "(()", the longest valid parentheses substring is "()", which has 
+ * <p>
+ * For "(()", the longest valid parentheses substring is "()", which has
  * length = 2.
- * 
- * Another example is ")()())", where the longest valid parentheses substring 
+ * <p>
+ * Another example is ")()())", where the longest valid parentheses substring
  * is "()()", which has length = 4.
- * 
+ *
  * @author Johnny
  */
 public class Solution032 {
@@ -34,16 +34,17 @@ public class Solution032 {
         }
         return maxans;
     }
+
     //http://www.geeksforgeeks.org/length-of-the-longest-valid-substring/
     public int longestValidParentheses(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
         }
-        
+
         // Create stack to store the position of character
         Stack<Integer> stack = new Stack<Integer>();
         stack.push(-1);
-        
+
         int max = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
@@ -51,14 +52,14 @@ public class Solution032 {
                 stack.push(i);
             } else {
                 stack.pop();
-                if(!stack.isEmpty()) {
+                if (!stack.isEmpty()) {
                     max = Math.max(max, i - stack.peek());
                 } else {
                     stack.push(i);
                 }
             }
         }
-        
+
         return max;
-    } 
+    }
 }

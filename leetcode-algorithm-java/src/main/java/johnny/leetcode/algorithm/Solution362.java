@@ -2,16 +2,16 @@ package johnny.leetcode.algorithm;
 
 /**
  * Design Hit Counter.
- * Design a hit counter which counts the number of hits received in the past 5 
+ * Design a hit counter which counts the number of hits received in the past 5
  * minutes.
- * 
- * Each function accepts a timestamp parameter (in seconds granularity) and you 
- * may assume that calls are being made to the system in chronological order 
- * (ie, the timestamp is monotonically increasing). You may assume that the 
+ * <p>
+ * Each function accepts a timestamp parameter (in seconds granularity) and you
+ * may assume that calls are being made to the system in chronological order
+ * (ie, the timestamp is monotonically increasing). You may assume that the
  * earliest timestamp starts at 1.
- * 
+ * <p>
  * It is possible that several hits arrive roughly at the same time.
- * 
+ *
  * @author Johnny
  */
 public class Solution362 {
@@ -39,16 +39,22 @@ public class Solution362 {
         
         return queue.size();
     }*/
-    
+
     int[] times = new int[300];
     int[] hits = new int[300];
-     /** Initialize your data structure here. */
+
+    /**
+     * Initialize your data structure here.
+     */
     public Solution362() {
-        
+
     }
-    
-     /** Record a hit.
-        @param timestamp - The current timestamp (in seconds granularity). */
+
+    /**
+     * Record a hit.
+     *
+     * @param timestamp - The current timestamp (in seconds granularity).
+     */
     public void hit(int timestamp) {
         int index = timestamp % 300;
         if (times[index] != timestamp) {
@@ -58,9 +64,12 @@ public class Solution362 {
             hits[index]++;
         }
     }
-    
-    /** Return the number of hits in the past 5 minutes.
-        @param timestamp - The current timestamp (in seconds granularity). */
+
+    /**
+     * Return the number of hits in the past 5 minutes.
+     *
+     * @param timestamp - The current timestamp (in seconds granularity).
+     */
     public int getHits(int timestamp) {
         int sum = 0;
         for (int i = 0; i < 300; i++) {
@@ -68,7 +77,7 @@ public class Solution362 {
                 sum += hits[i];
             }
         }
-        
+
         return sum;
     }
 }

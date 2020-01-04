@@ -11,50 +11,50 @@ import java.util.Queue;
 
 /**
  * Binary Tree Vertical Order Traversal.
- * Given a binary tree, return the vertical order traversal of its nodes' values. 
+ * Given a binary tree, return the vertical order traversal of its nodes' values.
  * (ie, from top to bottom, column by column).
- * 
+ * <p>
  * If two nodes are in the same row and column, the order should be from left to right.
- * 
+ * <p>
  * Examples:
  * Given binary tree [3,9,20,null,null,15,7],
- * 
- *     3
- *    / \
- *   9  20
- *     /  \
- *    15   7
- *  
- * 
+ * <p>
+ * 3
+ * / \
+ * 9  20
+ * /  \
+ * 15   7
+ * <p>
+ * <p>
  * return its vertical order traversal as:
- * 
+ * <p>
  * [
- *   [9],
- *   [3,15],
- *   [20],
- *   [7]
+ * [9],
+ * [3,15],
+ * [20],
+ * [7]
  * ]
- *  
- * 
+ * <p>
+ * <p>
  * Given binary tree [3,9,20,4,5,2,7],
- * 
- *     _3_
- *    /   \
- *   9    20
- *  / \   / \
+ * <p>
+ * _3_
+ * /   \
+ * 9    20
+ * / \   / \
  * 4   5 2   7
- *  
- * 
+ * <p>
+ * <p>
  * return its vertical order traversal as:
- * 
+ * <p>
  * [
- *   [4],
- *   [9],
- *   [3,5,2],
- *   [20],
- *   [7]
+ * [4],
+ * [9],
+ * [3,5,2],
+ * [20],
+ * [7]
  * ]
- * 
+ *
  * @author Johnny
  */
 public class Solution314 {
@@ -62,46 +62,46 @@ public class Solution314 {
     //https://discuss.leetcode.com/topic/31954/5ms-java-clean-solution/2
     public List<List<Integer>> verticalOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-        if(root == null) {
+        if (root == null) {
             return res;
         }
-        
+
         Map<Integer, ArrayList<Integer>> map = new HashMap<>();
         Queue<TreeNode> q = new LinkedList<>();
         Queue<Integer> cols = new LinkedList<>();
-    
-        q.add(root); 
+
+        q.add(root);
         cols.add(0);
-    
+
         int min = 0, max = 0;
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             TreeNode node = q.poll();
             int col = cols.poll();
-            if(!map.containsKey(col)) {
+            if (!map.containsKey(col)) {
                 map.put(col, new ArrayList<Integer>());
             }
             map.get(col).add(node.val);
-    
-            if(node.left != null) {
-                q.add(node.left); 
+
+            if (node.left != null) {
+                q.add(node.left);
                 cols.add(col - 1);
-                if(col <= min) {
+                if (col <= min) {
                     min = col - 1;
                 }
             }
-            if(node.right != null) {
+            if (node.right != null) {
                 q.add(node.right);
                 cols.add(col + 1);
-                if(col >= max) {
+                if (col >= max) {
                     max = col + 1;
                 }
             }
         }
-    
-        for(int i = min; i <= max; i++) {
+
+        for (int i = min; i <= max; i++) {
             res.add(map.get(i));
         }
-    
+
         return res;
     }
 }

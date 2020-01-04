@@ -4,31 +4,31 @@ import java.util.Stack;
 
 /**
  * 1021. Best Sightseeing Pair
-User Accepted: 810
-User Tried: 1449
-Total Accepted: 831
-Total Submissions: 2578
-Difficulty: Medium
-Given an array A of positive integers, A[i] represents the value of the i-th sightseeing spot, and two sightseeing spots i and j have distance j - i between them.
-
-The score of a pair (i < j) of sightseeing spots is (A[i] + A[j] + i - j) : the sum of the values of the sightseeing spots, minus the distance between them.
-
-Return the maximum score of a pair of sightseeing spots.
-
- 
-
-Example 1:
-
-Input: [8,1,5,2,6]
-Output: 11
-Explanation: i = 0, j = 2, A[i] + A[j] + i - j = 8 + 5 + 0 - 2 = 11
- 
-
-Note:
-
-2 <= A.length <= 50000
-1 <= A[i] <= 1000
-
+ * User Accepted: 810
+ * User Tried: 1449
+ * Total Accepted: 831
+ * Total Submissions: 2578
+ * Difficulty: Medium
+ * Given an array A of positive integers, A[i] represents the value of the i-th sightseeing spot, and two sightseeing spots i and j have distance j - i between them.
+ * <p>
+ * The score of a pair (i < j) of sightseeing spots is (A[i] + A[j] + i - j) : the sum of the values of the sightseeing spots, minus the distance between them.
+ * <p>
+ * Return the maximum score of a pair of sightseeing spots.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [8,1,5,2,6]
+ * Output: 11
+ * Explanation: i = 0, j = 2, A[i] + A[j] + i - j = 8 + 5 + 0 - 2 = 11
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 2 <= A.length <= 50000
+ * 1 <= A[i] <= 1000
+ *
  * @author Johnny
  */
 public class SolutionA1014 {
@@ -43,6 +43,7 @@ public class SolutionA1014 {
         }
         return max;
     }
+
     //
     public int maxScoreSightseeingPair4(int[] A) {
         Stack<Integer> stack = new Stack<>();
@@ -58,6 +59,7 @@ public class SolutionA1014 {
         }
         return max;
     }
+
     //
     public int maxScoreSightseeingPair3(int[] A) {
         int n = A.length;
@@ -78,9 +80,10 @@ public class SolutionA1014 {
                 }
             }
         }
-        
+
         return max;
     }
+
     //
     public int maxScoreSightseeingPair2(int[] A) {
         int max = 0;
@@ -91,7 +94,7 @@ public class SolutionA1014 {
                 max = Math.max(max, score);
             }
         }
-        
+
         return max;
     }
 }

@@ -9,14 +9,15 @@ import java.util.Stack;
 
 /**
  * 589. N-ary Tree Preorder Traversal
- * 
+ * <p>
  * Given an n-ary tree, return the preorder traversal of its nodes' values.
- 
-For example, given a 3-ary tree:
-
-Return its preorder traversal as: [1,3,5,6,2,4].
- 
-Note: Recursive solution is trivial, could you do it iteratively?
+ * <p>
+ * For example, given a 3-ary tree:
+ * <p>
+ * Return its preorder traversal as: [1,3,5,6,2,4].
+ * <p>
+ * Note: Recursive solution is trivial, could you do it iteratively?
+ *
  * @author Johnny
  */
 public class Solution589 {
@@ -26,7 +27,7 @@ public class Solution589 {
         if (root == null) {
             return ans;
         }
-        
+
         Stack<Node> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
@@ -40,14 +41,14 @@ public class Solution589 {
         }
         return ans;
     }
-    
+
     // recursion
     public List<Integer> preorder2(Node root) {
         List<Integer> ans = new ArrayList<>();
         if (root == null) {
             return ans;
         }
-        
+
         ans.add(root.val);
         for (Node child : root.children) {
             ans.addAll(preorder(child));
@@ -55,36 +56,39 @@ public class Solution589 {
         return ans;
     }
 
-    public class Node {
-        public int val;
-        public List<Node> children;
-
-        public Node() {}
-
-        public Node(int _val,List<Node> _children) {
-            val = _val;
-            children = _children;
-        }
-    };
-    
     // Decodes your encoded data to tree.
     public Node deserialize(String data) {
         if (data.isEmpty())
             return null;
-        
-        String[] ss=data.split(",");
+
+        String[] ss = data.split(",");
         Queue<String> q = new LinkedList<>(Arrays.asList(ss));
         return deserializeHelper(q);
     }
-    
-    private Node deserializeHelper(Queue<String> q){
+
+    ;
+
+    private Node deserializeHelper(Queue<String> q) {
         Node root = new Node();
         root.val = Integer.parseInt(q.poll());
         int size = Integer.parseInt(q.poll());
         root.children = new ArrayList<Node>(size);
-        for(int i = 0; i < size;i++){
+        for (int i = 0; i < size; i++) {
             root.children.add(deserializeHelper(q));
         }
         return root;
+    }
+
+    public class Node {
+        public int val;
+        public List<Node> children;
+
+        public Node() {
+        }
+
+        public Node(int _val, List<Node> _children) {
+            val = _val;
+            children = _children;
+        }
     }
 }

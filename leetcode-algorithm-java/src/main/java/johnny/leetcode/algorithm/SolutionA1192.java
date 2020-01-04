@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- *
  * @author Johnny
  */
 public class SolutionA1192 {

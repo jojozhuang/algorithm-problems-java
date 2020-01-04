@@ -4,11 +4,11 @@ import johnny.algorithm.common.RandomListNode;
 
 /**
  * Copy List with Random Pointer.
- * A linked list is given such that each node contains an additional random 
+ * A linked list is given such that each node contains an additional random
  * pointer which could point to any node in the list or null.
- * 
+ * <p>
  * Return a deep copy of the list.
- * 
+ *
  * @author Johnny
  */
 public class Solution138 {
@@ -16,7 +16,7 @@ public class Solution138 {
         if (head == null) {
             return head;
         }
-        
+
         RandomListNode curr = head;
         while (curr != null) {
             RandomListNode next = curr.next;
@@ -27,7 +27,7 @@ public class Solution138 {
             }
             curr = curr.next.next;
         }
-        
+
         curr = head;
         RandomListNode dummy = new RandomListNode(0);
         RandomListNode newCurr = dummy;
@@ -38,18 +38,18 @@ public class Solution138 {
             curr.next = next;
             curr = curr.next;
         }
-        
+
         return dummy.next;
     }
-    
+
     public RandomListNode copyRandomList2(RandomListNode head) {
         if (head == null) {
             return head;
         }
-        
+
         RandomListNode curr = head;
         // create each new node behind its old node
-        while(curr != null) {
+        while (curr != null) {
             RandomListNode copy = new RandomListNode(curr.label);
             copy.next = curr.next;
             curr.next = copy;
@@ -57,7 +57,7 @@ public class Solution138 {
         }
         // copy random node for new node
         curr = head;
-        while(curr != null) {
+        while (curr != null) {
             if (curr.random != null) {
                 curr.next.random = curr.random.next;
             }

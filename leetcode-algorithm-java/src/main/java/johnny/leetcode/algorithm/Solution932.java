@@ -5,33 +5,34 @@ import java.util.Map;
 
 /**
  * 932. Beautiful Array
-
-For some fixed N, an array A is beautiful if it is a permutation of the integers 1, 2, ..., N, such that:
-
-For every i < j, there is no k with i < k < j such that A[k] * 2 = A[i] + A[j].
-
-Given N, return any beautiful array A.  (It is guaranteed that one exists.)
-
- 
-
-Example 1:
-
-Input: 4
-Output: [2,1,4,3]
-Example 2:
-
-Input: 5
-Output: [3,1,2,5,4]
- 
-
-Note:
-
-1 <= N <= 1000
-
+ * <p>
+ * For some fixed N, an array A is beautiful if it is a permutation of the integers 1, 2, ..., N, such that:
+ * <p>
+ * For every i < j, there is no k with i < k < j such that A[k] * 2 = A[i] + A[j].
+ * <p>
+ * Given N, return any beautiful array A.  (It is guaranteed that one exists.)
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: 4
+ * Output: [2,1,4,3]
+ * Example 2:
+ * <p>
+ * Input: 5
+ * Output: [3,1,2,5,4]
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= N <= 1000
+ *
  * @author Johnny
  */
 public class Solution932 {
     Map<Integer, int[]> memo;
+
     public int[] beautifulArray(int N) {
         memo = new HashMap<Integer, int[]>();
         return f(N);
@@ -46,10 +47,10 @@ public class Solution932 {
             ans[0] = 1;
         } else {
             int t = 0;
-            for (int x: f((N+1)/2))  // odds
-                ans[t++] = 2*x - 1;
-            for (int x: f(N/2))  // evens
-                ans[t++] = 2*x;
+            for (int x : f((N + 1) / 2))  // odds
+                ans[t++] = 2 * x - 1;
+            for (int x : f(N / 2))  // evens
+                ans[t++] = 2 * x;
         }
         memo.put(N, ans);
         return ans;

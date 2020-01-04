@@ -5,7 +5,7 @@ package johnny.leetcode.algorithm;
  * Write a function that takes a string as input and returns the string reversed.
  * Example:
  * Given s = "hello", return "olleh".
- * 
+ *
  * @author Johnny
  */
 public class Solution344 {
@@ -13,7 +13,7 @@ public class Solution344 {
         if (s == null || s.isEmpty()) {
             return "";
         }
-        
+
         char[] chars = s.toCharArray();
         int start = 0;
         int end = chars.length - 1;
@@ -24,7 +24,7 @@ public class Solution344 {
             start++;
             end--;
         }
-        
+
         return new String(chars);
     }
 }

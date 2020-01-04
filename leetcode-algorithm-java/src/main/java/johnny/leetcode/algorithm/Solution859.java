@@ -7,39 +7,39 @@ import java.util.Set;
 
 /**
  * 859. Buddy Strings
- * 
+ * <p>
  * Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B.
-
- 
-
-Example 1:
-
-Input: A = "ab", B = "ba"
-Output: true
-Example 2:
-
-Input: A = "ab", B = "ab"
-Output: false
-Example 3:
-
-Input: A = "aa", B = "aa"
-Output: true
-Example 4:
-
-Input: A = "aaaaaaabc", B = "aaaaaaacb"
-Output: true
-Example 5:
-
-Input: A = "", B = "aa"
-Output: false
- 
-
-Note:
-
-0 <= A.length <= 20000
-0 <= B.length <= 20000
-A and B consist only of lowercase letters.
-
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: A = "ab", B = "ba"
+ * Output: true
+ * Example 2:
+ * <p>
+ * Input: A = "ab", B = "ab"
+ * Output: false
+ * Example 3:
+ * <p>
+ * Input: A = "aa", B = "aa"
+ * Output: true
+ * Example 4:
+ * <p>
+ * Input: A = "aaaaaaabc", B = "aaaaaaacb"
+ * Output: true
+ * Example 5:
+ * <p>
+ * Input: A = "", B = "aa"
+ * Output: false
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 0 <= A.length <= 20000
+ * 0 <= B.length <= 20000
+ * A and B consist only of lowercase letters.
+ *
  * @author Johnny
  */
 public class Solution859 {
@@ -47,7 +47,7 @@ public class Solution859 {
         if (A.length() != B.length()) {
             return false;
         }
-        
+
         if (A.equals(B)) { // abab, abab
             Set<Character> set = new HashSet<>();
             for (Character c : A.toCharArray()) {
@@ -57,10 +57,10 @@ public class Solution859 {
                     set.add(c);
                 }
             }
-            
+
             return false;
         }
-        
+
         int diff = 0;
         int index1 = -1;
         int index2 = -1;
@@ -80,24 +80,24 @@ public class Solution859 {
         if (diff != 2) {
             return false;
         }
-        
+
         if (A.charAt(index1) != B.charAt(index2) ||
-            A.charAt(index2) != B.charAt(index1)) {
+                A.charAt(index2) != B.charAt(index1)) {
             return false;
         }
-        
+
         return true;
     }
-    
+
     public boolean buddyStrings2(String A, String B) {
         if (A.length() == 0 && B.length() == 0) {
             return false;
         }
-        
+
         if (A.length() != B.length()) {
             return false;
         }
-        
+
         if (A.equals(B)) { // abab, abab
             Set<Character> set = new HashSet<>();
             for (Character c : A.toCharArray()) {
@@ -107,10 +107,10 @@ public class Solution859 {
                     set.add(c);
                 }
             }
-            
+
             return false;
         }
-        
+
         // ab, ba
         List<Integer> diff = new ArrayList<>();
         for (int i = 0; i < A.length(); i++) {
@@ -118,7 +118,7 @@ public class Solution859 {
                 diff.add(i);
             }
         }
-        
-        return diff.size() == 2 && A.charAt(diff.get(0)) == B.charAt(diff.get(1)) && A.charAt(diff.get(1)) ==  B.charAt(diff.get(0));
+
+        return diff.size() == 2 && A.charAt(diff.get(0)) == B.charAt(diff.get(1)) && A.charAt(diff.get(1)) == B.charAt(diff.get(0));
     }
 }

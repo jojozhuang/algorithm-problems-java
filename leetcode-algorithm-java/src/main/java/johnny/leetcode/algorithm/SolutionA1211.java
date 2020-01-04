@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- *
  * @author Johnny
  */
 public class SolutionA1211 {
@@ -18,13 +17,13 @@ public class SolutionA1211 {
 
         int ans = 0;
         Iterator<Map.Entry<Integer, Integer>> iterator = map.entrySet().iterator();
-        while (maxCost>=0 && iterator.hasNext()) {
+        while (maxCost >= 0 && iterator.hasNext()) {
             Map.Entry<Integer, Integer> entry = iterator.next();
             if (maxCost < entry.getKey()) {
                 break;
             }
             int count = entry.getValue();
-            while (maxCost>=0 && maxCost >= entry.getKey() && count > 0) {
+            while (maxCost >= 0 && maxCost >= entry.getKey() && count > 0) {
                 maxCost -= entry.getKey();
                 count--;
                 ans++;

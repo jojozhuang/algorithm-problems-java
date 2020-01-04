@@ -7,69 +7,72 @@ import java.util.List;
 
 /**
  * Minimum Window Substring.
- * Given a string S and a string T, find the minimum window in S which will 
+ * Given a string S and a string T, find the minimum window in S which will
  * contain all the characters in T in complexity O(n).
- * 
+ * <p>
  * For example,
  * S = "ADOBECODEBANC"
  * T = "ABC"
  * Minimum window is "BANC".
- * 
+ * <p>
  * Note:
- * If there is no such window in S that covers all characters in T, return the 
+ * If there is no such window in S that covers all characters in T, return the
  * emtpy string "".
- * 
- * If there are multiple such windows, you are guaranteed that there will 
+ * <p>
+ * If there are multiple such windows, you are guaranteed that there will
  * always be only one unique minimum window in S.
- * 
+ *
  * @author Johnny
  */
 public class Solution076 {
+    private int min = 0;
+    private int max = 0;
+
     public String minWindow(String s, String t) {
-        if(s == null || s.length() < t.length() || s.length() == 0){
+        if (s == null || s.length() < t.length() || s.length() == 0) {
             return "";
         }
-        HashMap<Character,Integer> map = new HashMap<Character,Integer>();
-        for(char c : t.toCharArray()){
-            if(map.containsKey(c)){
-                map.put(c,map.get(c)+1);
-            }else{
-                map.put(c,1);
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        for (char c : t.toCharArray()) {
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
             }
         }
         int left = 0;
         int minLeft = 0;
-        int minLen = s.length()+1;
+        int minLen = s.length() + 1;
         int count = 0;
         for (int right = 0; right < s.length(); right++) {
             char ch = s.charAt(right);
-            if (map.containsKey(ch)){
+            if (map.containsKey(ch)) {
                 map.put(ch, map.get(ch) - 1);
-                if (map.get(ch) >= 0){
+                if (map.get(ch) >= 0) {
                     count++;
                 }
-                while (count == t.length()){
-                    if (right - left + 1 < minLen){
+                while (count == t.length()) {
+                    if (right - left + 1 < minLen) {
                         minLeft = left;
                         minLen = right - left + 1;
                     }
-                    if (map.containsKey(s.charAt(left))){
+                    if (map.containsKey(s.charAt(left))) {
                         map.put(s.charAt(left), map.get(s.charAt(left)) + 1);
-                        if (map.get(s.charAt(left)) > 0){
+                        if (map.get(s.charAt(left)) > 0) {
                             count--;
                         }
                     }
-                    left ++;
+                    left++;
                 }
             }
         }
-        if(minLen > s.length())
-        {  
+        if (minLen > s.length()) {
             return "";
-        }  
-        
+        }
+
         return s.substring(minLeft, minLeft + minLen);
     }
+
     //http://www.cnblogs.com/TenosDoIt/p/3461301.html
     public String minWindow4(String s, String t) {
         if (s == null || s.isEmpty() || t == null || t.isEmpty()) {
@@ -78,29 +81,25 @@ public class Solution076 {
         int lens = s.length(), lent = t.length();
         int srcCnt[] = new int[256];
         int foundCnt[] = new int[256];
-        for(int i = 0; i < lent; i++)
+        for (int i = 0; i < lent; i++)
             srcCnt[t.charAt(i)]++;
         int hasFound = 0;
         int winStart = -1, winEnd = lens;
 
-        for(int i = 0, start = 0; i < lens; i++)
-            if(srcCnt[s.charAt(i)] != 0)
-            {
+        for (int i = 0, start = 0; i < lens; i++)
+            if (srcCnt[s.charAt(i)] != 0) {
                 foundCnt[s.charAt(i)]++;
-                if(foundCnt[s.charAt(i)] <= srcCnt[s.charAt(i)]) {
+                if (foundCnt[s.charAt(i)] <= srcCnt[s.charAt(i)]) {
                     hasFound++;
                 }
-                if(hasFound == lent)
-                {
-                    while(srcCnt[s.charAt(start)] == 0 ||
-                          foundCnt[s.charAt(start)] > srcCnt[s.charAt(start)])
-                    {
-                        if(srcCnt[s.charAt(start)] != 0)
+                if (hasFound == lent) {
+                    while (srcCnt[s.charAt(start)] == 0 ||
+                            foundCnt[s.charAt(start)] > srcCnt[s.charAt(start)]) {
+                        if (srcCnt[s.charAt(start)] != 0)
                             foundCnt[s.charAt(start)]--;
                         start++;
                     }
-                    if(winEnd - winStart > i - start)
-                    {
+                    if (winEnd - winStart > i - start) {
                         winStart = start;
                         winEnd = i;
                     }
@@ -109,16 +108,14 @@ public class Solution076 {
                     hasFound--;
                 }
             }
-        return winStart != -1 ? s.substring(winStart, winEnd +1) : "";
+        return winStart != -1 ? s.substring(winStart, winEnd + 1) : "";
     }
 
-    private int min = 0;
-    private int max = 0;
     public String minWindow2(String s, String t) {
         if (s == null || s.isEmpty() || t == null || t.isEmpty()) {
             return "";
         }
-        
+
         List<Integer> previous = null;
         int premax = 0, premin = 0;
         List<Integer> list = new ArrayList<>();
@@ -160,22 +157,22 @@ public class Solution076 {
                 }
             }
         }
-        
+
         if (!isFull(list)) {
             return s.substring(premin, premax + 1);
         } else {
             if (max - min < premax - premin) {
-                return s.substring(min, + max + 1);
+                return s.substring(min, +max + 1);
             } else {
                 return s.substring(premin, premax + 1);
             }
         }
     }
-    
+
     private boolean isFull(List<Integer> list) {
         min = Integer.MAX_VALUE;
         max = Integer.MIN_VALUE;
-        for (Integer i: list) {
+        for (Integer i : list) {
             if (i == -1) {
                 return false;
             }
@@ -184,7 +181,7 @@ public class Solution076 {
         }
         return true;
     }
-    
+
     private int getSecondMin(List<Integer> list) {
         Integer[] arr = new Integer[list.size()];
         list.toArray(arr);

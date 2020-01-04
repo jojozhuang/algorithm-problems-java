@@ -6,10 +6,10 @@ import johnny.algorithm.common.ListNode;
  * Linked List Cycle II.
  * Given a linked list, return the node where the cycle begins. If there is no
  * cycle, return null.
- * 
+ * <p>
  * Follow up:
  * Can you solve it without using extra space?
- * 
+ *
  * @author Johnny
  */
 public class Solution142 {
@@ -18,10 +18,10 @@ public class Solution142 {
         if (head == null) {
             return null;
         }
-        
+
         ListNode fast = head;
         ListNode slow = head;
-        
+
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
@@ -34,7 +34,7 @@ public class Solution142 {
                 return fast;
             }
         }
-        
+
         return null;
     }
 }

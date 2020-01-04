@@ -5,7 +5,7 @@ import johnny.algorithm.common.ListNode;
 /**
  * Insertion Sort List.
  * Sort a linked list using insertion sort.
- * 
+ *
  * @author Johnny
  */
 public class Solution147 {
@@ -13,7 +13,7 @@ public class Solution147 {
         if (head == null || head.next == null) {
             return head;
         }
-        
+
         ListNode dummy = new ListNode(0);
         ListNode cur = head;
         while (cur != null) {

@@ -2,37 +2,37 @@ package johnny.leetcode.algorithm;
 
 /**
  * 856. Score of Parentheses
- * 
+ * <p>
  * Given a balanced parentheses string S, compute the score of the string based on the following rule:
-
-() has score 1
-AB has score A + B, where A and B are balanced parentheses strings.
-(A) has score 2 * A, where A is a balanced parentheses string.
- 
-
-Example 1:
-
-Input: "()"
-Output: 1
-Example 2:
-
-Input: "(())"
-Output: 2
-Example 3:
-
-Input: "()()"
-Output: 2
-Example 4:
-
-Input: "(()(()))"
-Output: 6
- 
-
-Note:
-
-S is a balanced parentheses string, containing only ( and ).
-2 <= S.length <= 50
-
+ * <p>
+ * () has score 1
+ * AB has score A + B, where A and B are balanced parentheses strings.
+ * (A) has score 2 * A, where A is a balanced parentheses string.
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: "()"
+ * Output: 1
+ * Example 2:
+ * <p>
+ * Input: "(())"
+ * Output: 2
+ * Example 3:
+ * <p>
+ * Input: "()()"
+ * Output: 2
+ * Example 4:
+ * <p>
+ * Input: "(()(()))"
+ * Output: 6
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * S is a balanced parentheses string, containing only ( and ).
+ * 2 <= S.length <= 50
+ *
  * @author Johnny
  */
 public class Solution856 {
@@ -49,8 +49,8 @@ public class Solution856 {
             bal += S.charAt(k) == '(' ? 1 : -1;
             if (bal == 0) {
                 if (k - i == 1) ans++;
-                else ans += 2 * F(S, i+1, k);
-                i = k+1;
+                else ans += 2 * F(S, i + 1, k);
+                i = k + 1;
             }
         }
 

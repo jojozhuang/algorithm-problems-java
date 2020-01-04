@@ -7,39 +7,43 @@ import java.util.Map;
 
 /**
  * Implement Trie (Prefix Tree).
- * 
+ * <p>
  * Implement a trie with insert, search, and startsWith methods.
- * 
+ * <p>
  * Note:
  * You may assume that all inputs are consist of lowercase letters a-z.
- *  
+ *
  * @author Johnny
  */
 public class Solution208 {
     private TrieNode root;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public Solution208() {
         root = new TrieNode();
     }
 
-    /** Inserts a word into the trie. */
+    /**
+     * Inserts a word into the trie.
+     */
     public void insert(String word) {
         HashMap<Character, TrieNode> children = root.children;
- 
-        for (int i = 0; i < word.length(); i++){
+
+        for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
- 
+
             TrieNode t;
-            if (children.containsKey(c)){
+            if (children.containsKey(c)) {
                 t = children.get(c);
             } else {
                 t = new TrieNode(c);
                 children.put(c, t);
             }
- 
+
             children = t.children;
- 
+
             //set leaf node
             if (i == word.length() - 1) {
                 t.isLeaf = true;
@@ -47,10 +51,12 @@ public class Solution208 {
         }
     }
 
-    /** Returns if the word is in the trie. */
+    /**
+     * Returns if the word is in the trie.
+     */
     public boolean search(String word) {
         TrieNode t = searchNode(word);
- 
+
         if (t != null && t.isLeaf) {
             return true;
         } else {
@@ -58,7 +64,9 @@ public class Solution208 {
         }
     }
 
-    /** Returns if there is any word in the trie that starts with the given prefix. */
+    /**
+     * Returns if there is any word in the trie that starts with the given prefix.
+     */
     public boolean startsWith(String prefix) {
         if (searchNode(prefix) == null) {
             return false;
@@ -66,20 +74,20 @@ public class Solution208 {
             return true;
         }
     }
-    
-    private TrieNode searchNode(String str){
-        Map<Character, TrieNode> children = root.children; 
+
+    private TrieNode searchNode(String str) {
+        Map<Character, TrieNode> children = root.children;
         TrieNode t = null;
-        for (int i = 0; i < str.length(); i++){
+        for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            if (children.containsKey(c)){
+            if (children.containsKey(c)) {
                 t = children.get(c);
                 children = t.children;
-            }else{
+            } else {
                 return null;
             }
         }
- 
+
         return t;
     }
 }

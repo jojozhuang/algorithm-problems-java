@@ -7,33 +7,33 @@ import java.util.Set;
 
 /**
  * 1189. Maximum Number of Balloons
- *
+ * <p>
  * Given a string text, you want to use the characters of text to form as many instances of the word "balloon" as possible.
- *
+ * <p>
  * You can use each character in text at most once. Return the maximum number of instances that can be formed.
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Example 1:
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Input: text = "nlaebolko"
  * Output: 1
  * Example 2:
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Input: text = "loonbalxballpoon"
  * Output: 2
  * Example 3:
- *
+ * <p>
  * Input: text = "leetcode"
  * Output: 0
- *
- *
+ * <p>
+ * <p>
  * Constraints:
- *
+ * <p>
  * 1 <= text.length <= 10^4
  * text consists of lower case English letters only.
  *
@@ -99,7 +99,7 @@ public class SolutionA1189 {
         }
 
         int max = text.length() / 7;
-        Character[] balloon = new Character[]{'a','b','l','n','o'};
+        Character[] balloon = new Character[]{'a', 'b', 'l', 'n', 'o'};
         for (int i = 0; i < balloon.length; i++) {
             if (!map.containsKey(balloon[i]) || map.get(balloon[i]) <= 0) {
                 return 0;

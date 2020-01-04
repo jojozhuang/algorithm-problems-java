@@ -2,14 +2,14 @@ package johnny.leetcode.algorithm;
 
 /**
  * Implement atoi to convert a string to an integer.
- * Hint: Carefully consider all possible input cases. If you want a challenge, 
- *   please do not see below and ask yourself what are the possible input cases.
- * Notes: It is intended for this problem to be specified vaguely (ie, 
- *   no given input specs). You are responsible to gather all the input 
- *   requirements up front.
- * 
+ * Hint: Carefully consider all possible input cases. If you want a challenge,
+ * please do not see below and ask yourself what are the possible input cases.
+ * Notes: It is intended for this problem to be specified vaguely (ie,
+ * no given input specs). You are responsible to gather all the input
+ * requirements up front.
+ * <p>
  * int: [-2147483648, 2147483647]
- * 
+ *
  * @author Johnny
  */
 public class Solution008 {
@@ -17,7 +17,7 @@ public class Solution008 {
         if (str == null || str.length() == 0 || str.trim().length() == 0) {
             return 0;
         }
- 
+
         str = str.trim();
         int sign = 1;
         int i = 0;
@@ -27,7 +27,7 @@ public class Solution008 {
         } else if (str.charAt(0) == '+') {
             i++;
         }
-        
+
         long result = 0;
         while (i < str.length()) {
             if (str.charAt(i) < '0' || str.charAt(i) > '9') {
@@ -45,7 +45,7 @@ public class Solution008 {
             }
             i++;
         }
-        
-        return (int)(result);
+
+        return (int) (result);
     }
 }

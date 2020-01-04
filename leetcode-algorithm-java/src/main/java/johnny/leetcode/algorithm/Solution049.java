@@ -9,20 +9,21 @@ import java.util.List;
 /**
  * Group Anagrams.
  * Given an array of strings, group anagrams together.
- * 
- * For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
- * 
+ * <p>
+ * For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
+ * <p>
  * Return:
- * 
+ * <p>
  * [
- *   ["ate", "eat","tea"],
- *   ["nat","tan"],
- *   ["bat"]
+ * ["ate", "eat","tea"],
+ * ["nat","tan"],
+ * ["bat"]
  * ]
  * Note:
  * For the return value, each inner list's elements must follow the lexicographic order.
  * All inputs will be in lower-case.
- *  * 
+ * *
+ *
  * @author Johnny
  */
 public class Solution049 {
@@ -35,7 +36,7 @@ public class Solution049 {
 
         HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
-        for (String str: strs) {
+        for (String str : strs) {
             char[] arrStr = str.toCharArray();
             Arrays.sort(arrStr);
             String key = new String(arrStr);
@@ -45,14 +46,14 @@ public class Solution049 {
             }
             map.get(key).add(str);
         }
-        
-        for (List<String> li: map.values()) {
+
+        for (List<String> li : map.values()) {
             if (li.size() > 1) {
                 Collections.sort(li);
             }
             res.add(li);
         }
-        
+
         return res;
     }
 }

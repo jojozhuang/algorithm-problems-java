@@ -5,32 +5,32 @@ import java.util.TreeSet;
 
 /**
  * 1071. Greatest Common Divisor of Strings
-For strings S and T, we say "T divides S" if and only if S = T + ... + T  (T concatenated with itself 1 or more times)
-
-Return the largest string X such that X divides str1 and X divides str2.
-
- 
-
-Example 1:
-
-Input: str1 = "ABCABC", str2 = "ABC"
-Output: "ABC"
-Example 2:
-
-Input: str1 = "ABABAB", str2 = "ABAB"
-Output: "AB"
-Example 3:
-
-Input: str1 = "LEET", str2 = "CODE"
-Output: ""
- 
-
-Note:
-
-1 <= str1.length <= 1000
-1 <= str2.length <= 1000
-str1[i] and str2[i] are English uppercase letters.
-
+ * For strings S and T, we say "T divides S" if and only if S = T + ... + T  (T concatenated with itself 1 or more times)
+ * <p>
+ * Return the largest string X such that X divides str1 and X divides str2.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: str1 = "ABCABC", str2 = "ABC"
+ * Output: "ABC"
+ * Example 2:
+ * <p>
+ * Input: str1 = "ABABAB", str2 = "ABAB"
+ * Output: "AB"
+ * Example 3:
+ * <p>
+ * Input: str1 = "LEET", str2 = "CODE"
+ * Output: ""
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= str1.length <= 1000
+ * 1 <= str2.length <= 1000
+ * str1[i] and str2[i] are English uppercase letters.
+ *
  * @author Johnny
  */
 public class SolutionA1071 {
@@ -40,7 +40,7 @@ public class SolutionA1071 {
         if (len1 < len2) {
             return gcdOfStrings(str2, str1);
         }
-        
+
         int[] divs = commDiv(len1, len2);
         for (int i = divs.length - 1; i >= 0; i--) {
             boolean valid = true;
@@ -60,7 +60,7 @@ public class SolutionA1071 {
             }
             if (valid) {
                 // then, check str1
-                for (int j = 0; j < str1.length(); j+= divs[i]) {
+                for (int j = 0; j < str1.length(); j += divs[i]) {
                     for (int offset = 0; offset < divs[i]; offset++) {
                         if (str1.charAt(j + offset) != str2.charAt(offset)) {
                             valid = false;
@@ -73,17 +73,17 @@ public class SolutionA1071 {
                 return str1.substring(0, divs[i]);
             }
         }
-        
+
         return "";
     }
-    
+
     // common divisor
     private int[] commDiv(int x, int y) {
         SortedSet<Integer> set = new TreeSet<>();
         int n = gcd(x, y);
-       
+
         for (int i = 1; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) { 
+            if (n % i == 0) {
                 // check if divisors are equal 
                 if (n / i == i) {
                     set.add(i);
@@ -93,9 +93,9 @@ public class SolutionA1071 {
                 }
             }
         }
-        
+
         set.add(n);
-        return set.stream().mapToInt(i->i).toArray();
+        return set.stream().mapToInt(i -> i).toArray();
     }
 
     // get greatest common divisor

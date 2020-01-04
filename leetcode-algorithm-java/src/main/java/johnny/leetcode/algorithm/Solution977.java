@@ -2,24 +2,24 @@ package johnny.leetcode.algorithm;
 
 /**
  * 977. Squares of a Sorted Array
-Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order.
-
-Example 1:
-
-Input: [-4,-1,0,3,10]
-Output: [0,1,9,16,100]
-Example 2:
-
-Input: [-7,-3,2,3,11]
-Output: [4,9,9,49,121]
- 
-
-Note:
-
-1 <= A.length <= 10000
--10000 <= A[i] <= 10000
-A is sorted in non-decreasing order.
-
+ * Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order.
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [-4,-1,0,3,10]
+ * Output: [0,1,9,16,100]
+ * Example 2:
+ * <p>
+ * Input: [-7,-3,2,3,11]
+ * Output: [4,9,9,49,121]
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= A.length <= 10000
+ * -10000 <= A[i] <= 10000
+ * A is sorted in non-decreasing order.
+ *
  * @author Johnny
  */
 public class Solution977 {
@@ -27,14 +27,14 @@ public class Solution977 {
         if (A == null || A.length == 0) {
             return A;
         }
-        
+
         int pos = 0; // index of first non-negative element
         for (pos = 0; pos < A.length; pos++) {
             if (A[pos] >= 0) {
                 break;
             }
         }
-        
+
         int[] ans = new int[A.length];
         int neg = pos - 1; // index of the negative elements
         int i = 0;
@@ -50,7 +50,7 @@ public class Solution977 {
             }
             i++;
         }
-        
+
         while (neg >= 0) {
             ans[i] = A[neg] * A[neg];
             neg--;

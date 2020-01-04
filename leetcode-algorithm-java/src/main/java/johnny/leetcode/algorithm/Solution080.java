@@ -4,12 +4,12 @@ package johnny.leetcode.algorithm;
  * Remove Duplicates from Sorted Array II.
  * Follow up for "Remove Duplicates":
  * What if duplicates are allowed at most twice?
- * 
+ * <p>
  * For example,
  * Given sorted array A = [1,1,1,2,2,3],
- * 
+ * <p>
  * Your function should return length = 5, and A is now [1,1,2,2,3].
- * 
+ *
  * @author Johnny
  */
 public class Solution080 {
@@ -27,16 +27,16 @@ public class Solution080 {
         }
         return i;
     }
-    
+
     public int removeDuplicates2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        
+
         if (nums.length == 1) {
             return 1;
         }
-        
+
         int i = 1;
         int j = 0;
         int count = 0;
@@ -50,11 +50,11 @@ public class Solution080 {
                     count++;
                     j++;
                     nums[j] = nums[i];
-                } 
+                }
             }
             i++;
         }
-        
+
         return j + 1;
     }
 }

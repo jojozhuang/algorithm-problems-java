@@ -5,12 +5,12 @@ import java.util.Stack;
 
 /**
  * Valid Parentheses.
- * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', 
+ * Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
  * determine if the input string is valid.
- * 
+ * <p>
  * The brackets must close in the correct order, "()" and "()[]{}" are all valid
  * but "(]" and "([)]" are not.
- * 
+ *
  * @author Johnny
  */
 public class Solution020 {
@@ -18,7 +18,7 @@ public class Solution020 {
         if (s.length() % 2 != 0) {
             return false;
         }
-        
+
         Stack<Character> stack = new Stack<>();
         for (Character c : s.toCharArray()) {
             if (c == '(' || c == '[' || c == '{') {
@@ -39,18 +39,19 @@ public class Solution020 {
                 }
             }
         }
-        
+
         return stack.isEmpty();
     }
+
     public boolean isValid3(String s) {
         if (s == null || s.isEmpty()) {
             return true;
         }
-        
+
         if (s.length() % 2 != 0) {
             return false;
         }
-        
+
         Stack<Character> stack = new Stack<Character>();
         for (char c : s.toCharArray()) {
             if (c == '(') {
@@ -65,16 +66,16 @@ public class Solution020 {
         }
         return stack.isEmpty();
     }
-    
+
     public boolean isValid2(String s, HashMap<Character, Character> map) {
         if (s == null || s.isEmpty()) {
             return true;
         }
-        
+
         if (s.length() % 2 != 0) {
             return false;
         }
-        
+
         Stack<Character> stack = new Stack<Character>();
         for (char c : s.toCharArray()) {
             if (map.containsKey(c)) {

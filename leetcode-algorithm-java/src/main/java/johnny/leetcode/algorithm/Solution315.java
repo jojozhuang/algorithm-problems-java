@@ -8,22 +8,22 @@ import java.util.TreeSet;
 
 /**
  * Count of Smaller Numbers After Self.
- * 
- * You are given an integer array nums and you have to return a new counts array. 
+ * <p>
+ * You are given an integer array nums and you have to return a new counts array.
  * The counts array has the property where counts[i] is the number of smaller
  * elements to the right of nums[i].
- * 
+ * <p>
  * Example:
- * 
+ * <p>
  * Given nums = [5, 2, 6, 1]
- * 
+ * <p>
  * To the right of 5 there are 2 smaller elements (2 and 1).
  * To the right of 2 there is only 1 smaller element (1).
  * To the right of 6 there is 1 smaller element (1).
  * To the right of 1 there is 0 smaller element.
- * 
+ * <p>
  * Return the array [2, 1, 1, 0].
- * 
+ *
  * @author Johnny
  */
 public class Solution315 {
@@ -37,11 +37,11 @@ public class Solution315 {
         int n = nums.length;
         //int[] sorted = new int[n];
         List<Integer> sorted = new ArrayList<Integer>();
-        
+
         for (int i = n - 1; i >= 0; i--) {
             int start = 0;
             int end = sorted.size();
-            while(start < end) {
+            while (start < end) {
                 int mid = start + (end - start) / 2;
                 if (sorted.get(mid) >= nums[i]) {
                     end = mid;
@@ -52,15 +52,16 @@ public class Solution315 {
             res.add(0, end);
             sorted.add(end, nums[i]);
         }
-        
+
         return res;
     }
+
     public List<Integer> countSmaller2(int[] nums) {
         List<Integer> res = new ArrayList<Integer>();
         if (nums == null || nums.length == 0) {
             return res;
         }
-        
+
         SortedSet<Integer> set = new TreeSet<Integer>();
         int min = Integer.MAX_VALUE;
         for (int i = nums.length - 1; i >= 0; i--) {
@@ -73,9 +74,9 @@ public class Solution315 {
             set.add(nums[i]);
             min = Math.min(min, nums[i]);
         }
-        
+
         Collections.reverse(res);
-        
+
         return res;
     }
 }

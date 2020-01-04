@@ -7,21 +7,21 @@ import java.util.List;
 
 /**
  * Find Largest Value in Each Tree Row
- * 
+ * <p>
  * You need to find the largest value in each row of a binary tree.
- * 
+ * <p>
  * Example:
- * Input: 
- * 
- * 
- *        1
- *       / \
- *      3   2
- *     / \   \ 
- *    5   3   9 
- * 
+ * Input:
+ * <p>
+ * <p>
+ * 1
+ * / \
+ * 3   2
+ * / \   \
+ * 5   3   9
+ * <p>
  * Output: [1, 3, 9]
- * 
+ *
  * @author Johnny
  */
 public class Solution515 {
@@ -30,11 +30,12 @@ public class Solution515 {
         helper(root, res, 0);
         return res;
     }
-    private void helper(TreeNode root, List<Integer> res, int depth){
-        if (root == null){
+
+    private void helper(TreeNode root, List<Integer> res, int depth) {
+        if (root == null) {
             return;
         }
-        if (depth == res.size()){
+        if (depth == res.size()) {
             //expand list size
             res.add(root.val);
         } else {

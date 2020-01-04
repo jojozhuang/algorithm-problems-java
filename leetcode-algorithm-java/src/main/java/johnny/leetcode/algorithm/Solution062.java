@@ -4,17 +4,17 @@ package johnny.leetcode.algorithm;
  * Unique Paths.
  * A robot is located at the top-left corner of a m x n grid (marked 'Start' in
  * the diagram below).
- * 
- * The robot can only move either down or right at any point in time. The robot 
- * is trying to reach the bottom-right corner of the grid (marked 'Finish' in 
+ * <p>
+ * The robot can only move either down or right at any point in time. The robot
+ * is trying to reach the bottom-right corner of the grid (marked 'Finish' in
  * the diagram below).
- * 
+ * <p>
  * How many possible unique paths are there?
- * 
+ * <p>
  * Above is a 3 x 7 grid. How many possible unique paths are there?
- * 
+ * <p>
  * Note: m and n will be at most 100.
- * 
+ *
  * @author Johnny
  */
 public class Solution062 {
@@ -27,9 +27,10 @@ public class Solution062 {
                 dp[j] = dp[j] + dp[j - 1];
             }
         }
-        
+
         return dp[n - 1];
     }
+
     // space: O(n)
     public int uniquePaths2(int m, int n) {
         int[] dp = new int[n];
@@ -42,10 +43,10 @@ public class Solution062 {
                 }
             }
         }
-        
+
         return dp[n - 1];
     }
-    
+
     // space, O(m*n)
     public int uniquePaths3(int m, int n) {
         int[][] dp = new int[m][n];
@@ -58,10 +59,10 @@ public class Solution062 {
                 }
             }
         }
-        
+
         return dp[m - 1][n - 1];
     }
-    
+
     // space, O(m*n)
     public int uniquePaths4(int m, int n) {
         // Define function, f[i][j] if the count of possible path from start point
@@ -80,9 +81,10 @@ public class Solution062 {
                 f[i][j] = f[i][j - 1] + f[i - 1][j];
             }
         }
-        
+
         return f[m - 1][n - 1];
     }
+
     // recursive
     public int uniquePaths5(int m, int n) {
         if (m <= 1 || n <= 1) {

@@ -7,29 +7,29 @@ import java.util.List;
 
 /**
  * Group Shifted Strings.
- * 
+ * <p>
  * Given a string, we can "shift" each of its letter to its successive letter,
  * for example: "abc" -> "bcd". We can keep "shifting" which forms the sequence:
- * 
+ * <p>
  * "abc" -> "bcd" -> ... -> "xyz"
- * Given a list of strings which contains only lowercase alphabets, group all 
+ * Given a list of strings which contains only lowercase alphabets, group all
  * strings that belong to the same shifting sequence.
  * For example, given: ["abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"],
- * 
+ * <p>
  * Return:
- * 
+ * <p>
  * [
- *   ["abc","bcd","xyz"],
- *   ["az","ba"],
- *   ["acef"],
- *   ["a","z"]
+ * ["abc","bcd","xyz"],
+ * ["az","ba"],
+ * ["acef"],
+ * ["a","z"]
  * ]
- * 
+ *
  * @author Johnny
  */
 public class Solution249 {
     //http://ryanleetcode.blogspot.com/2015/10/group-shifted-strings-leetcode.html
-   public List<List<String>> groupStrings(String[] strings) {
+    public List<List<String>> groupStrings(String[] strings) {
         List<List<String>> res = new ArrayList<List<String>>();
         if (strings == null || strings.length == 0) {
             return res;
@@ -51,11 +51,11 @@ public class Solution249 {
             map.get(key).add(str);
         }
 
-        for(List<String> item: map.values()) {
+        for (List<String> item : map.values()) {
             Collections.sort(item);
             res.add(item);
         }
 
         return res;
-   } 
+    }
 }

@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * Permutation Sequence.
  * The set [1,2,3,…,n] contains a total of n! unique permutations.
- * 
+ * <p>
  * By listing and labeling all of the permutations in order,
  * We get the following sequence (ie, for n = 3):
- * 
+ * <p>
  * "123"
  * "132"
  * "213"
@@ -17,9 +17,9 @@ import java.util.List;
  * "312"
  * "321"
  * Given n and k, return the kth permutation sequence.
- * 
+ * <p>
  * Note: Given n will be between 1 and 9 inclusive.
- * 
+ *
  * @author Johnny
  */
 public class Solution060 {
@@ -28,18 +28,18 @@ public class Solution060 {
         if (n <= 0 || k <= 0) {
             return "";
         }
-        
+
         int fact = 1;
         List<Integer> nums = new ArrayList<Integer>();
         for (int i = 1; i <= n; i++) {
             fact *= i;
             nums.add(i);
         }
-        
+
         if (k > fact) {
             return "";
         }
-        
+
         // get the permutation digit
         StringBuilder sb = new StringBuilder();
         for (int i = n; i >= 1; i--) {

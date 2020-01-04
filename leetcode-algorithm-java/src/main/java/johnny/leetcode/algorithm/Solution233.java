@@ -4,18 +4,17 @@ import java.util.HashMap;
 
 /**
  * Number of Digit One.
- * 
+ * <p>
  * Given an integer n, count the total number of digit 1 appearing in all non-negative integers less than or equal to n.
- * 
+ * <p>
  * For example:
  * Given n = 13,
  * Return 6, because digit 1 occurred in the following numbers: 1, 10, 11, 12, 13.
- * 
+ *
  * @author Johnny
  */
 public class Solution233 {
-    public int countDigitOne(int n)
-    {
+    public int countDigitOne(int n) {
         int countr = 0;
         for (long i = 1; i <= n; i *= 10) {
             long divider = i * 10;
@@ -23,27 +22,29 @@ public class Solution233 {
         }
         return countr;
     }
+
     //https://discuss.leetcode.com/topic/18054/4-lines-o-log-n-c-java-python/2
     //http://www.cnblogs.com/grandyang/p/4629032.html
     public int countDigitOne4(int n) {
         if (n <= 0) {
             return 0;
         }
-        
+
         int res = 0, a = 1, b = 1;
         while (n > 0) {
-            res += (n + 8) / 10 * a + (n % 10 == 1? 1 : 0) * b;
+            res += (n + 8) / 10 * a + (n % 10 == 1 ? 1 : 0) * b;
             b += n % 10 * a;
             a *= 10;
             n /= 10;
         }
         return res;
     }
+
     public int countDigitOne2(int n) {
         if (n <= 0) {
             return 0;
         }
-        
+
         int count = 0;
         for (int i = 1; i <= n; i++) {
             char[] arr = String.valueOf(i).toCharArray();
@@ -53,15 +54,15 @@ public class Solution233 {
                 }
             }
         }
-        
+
         return count;
     }
-    
+
     public int countDigitOne3(int n) {
         if (n <= 0) {
             return 0;
         }
-        
+
         HashMap<String, Integer> map = new HashMap<String, Integer>();
         int count = 0;
         for (int i = 1; i <= n; i++) {
@@ -71,7 +72,7 @@ public class Solution233 {
             }
             if (str.substring(0, 1).equals("1")) {
                 count++;
-            }            
+            }
             if (str.length() > 1) {
                 String prev = str.substring(1);
                 if (prev.isEmpty() || !prev.contains("1")) {
@@ -83,7 +84,7 @@ public class Solution233 {
             }
             map.put(str, count);
         }
-        
+
         return count;
     }
 }

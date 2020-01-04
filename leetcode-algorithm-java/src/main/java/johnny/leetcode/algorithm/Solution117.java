@@ -8,29 +8,31 @@ import java.util.Queue;
 /**
  * Populating Next Right Pointers in Each Node II.
  * Follow up for problem "Populating Next Right Pointers in Each Node".
- * 
+ * <p>
  * What if the given tree could be any binary tree? Would your previous solution still work?
- * 
+ * <p>
  * Note:
- * 
+ * <p>
  * You may only use constant extra space.
  * For example,
  * Given the following binary tree,
- *          1
- *        /  \
- *       2    3
- *      / \    \
- *     4   5    7
+ * 1
+ * /  \
+ * 2    3
+ * / \    \
+ * 4   5    7
  * After calling your function, the tree should look like:
+ * <pre>{@code
  *          1 -> NULL
  *        /  \
  *       2 -> 3 -> NULL
  *      / \    \
  *     4-> 5 -> 7 -> NULL
- * 
+ * }</pre>
+ *
  * @author Johnny
  */
-public class Solution117 {    
+public class Solution117 {
     //level order traversal with constant space
     //https://discuss.leetcode.com/topic/1106/o-1-space-o-n-complexity-iterative-solution/2
     public void connect(TreeLinkNode root) {
@@ -60,22 +62,23 @@ public class Solution117 {
                 //move to next node
                 cur = cur.next;
             }
-            
+
             //move to next level
             cur = head;
             head = null;
             prev = null;
         }
     }
+
     // level order traversal with queue
     public void connect2(TreeLinkNode root) {
         if (root == null) {
             return;
         }
-        
+
         Queue<TreeLinkNode> queue = new LinkedList<TreeLinkNode>();
         queue.offer(root);
-        
+
         while (!queue.isEmpty()) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
@@ -93,7 +96,7 @@ public class Solution117 {
             }
         }
     }
-    
+
     public void connect3(TreeLinkNode root) {
         if (root == null) {
             return;
@@ -106,11 +109,11 @@ public class Solution117 {
             pre = null;
             next = null;
             while (parent != null) {
-                if (next == null){
-                    next = (parent.left != null) ? parent.left: parent.right;
+                if (next == null) {
+                    next = (parent.left != null) ? parent.left : parent.right;
                 }
 
-                if (parent.left != null){
+                if (parent.left != null) {
                     if (pre != null) {
                         pre.next = parent.left;
                         pre = pre.next;
@@ -130,6 +133,6 @@ public class Solution117 {
                 parent = parent.next;
             }
             parent = next;
-        }    
+        }
     }
 }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-*722. Remove Comments
-
+ * 722. Remove Comments
+ *
  * @author Johnny
  */
 public class Solution722 {
@@ -20,16 +20,13 @@ public class Solution722 {
                         mode = false;
                         i++;        //skip '/' on next iteration of i
                     }
-                }
-                else {
+                } else {
                     if (s.charAt(i) == '/' && i < s.length() - 1 && s.charAt(i + 1) == '/') {
                         break;      //ignore remaining characters on line s
-                    }
-                    else if (s.charAt(i) == '/' && i < s.length() - 1 && s.charAt(i + 1) == '*') {
+                    } else if (s.charAt(i) == '/' && i < s.length() - 1 && s.charAt(i + 1) == '*') {
                         mode = true;
                         i++;           //skip '*' on next iteration of i
-                    }
-                    else    
+                    } else
                         sb.append(s.charAt(i));     //not a comment
                 }
             }

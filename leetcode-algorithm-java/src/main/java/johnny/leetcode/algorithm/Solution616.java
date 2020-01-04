@@ -2,32 +2,32 @@ package johnny.leetcode.algorithm;
 
 /**
  * Add Bold Tag in String
- * 
- * Given a string s and a list of strings dict, you need to add a closed pair 
- * of bold tag <b> and </b> to wrap the substrings in s that exist in dict. 
- * If two such substrings overlap, you need to wrap them together by only one 
- * pair of closed bold tag. Also, if two substrings wrapped by bold tags are 
+ * <p>
+ * Given a string s and a list of strings dict, you need to add a closed pair
+ * of bold tag <b> and </b> to wrap the substrings in s that exist in dict.
+ * If two such substrings overlap, you need to wrap them together by only one
+ * pair of closed bold tag. Also, if two substrings wrapped by bold tags are
  * consecutive, you need to combine them.
- * 
+ * <p>
  * Example 1:
- * Input: 
+ * Input:
  * s = "abcxyz123"
  * dict = ["abc","123"]
  * Output:
  * "<b>abc</b>xyz<b>123</b>"
- * 
+ * <p>
  * Example 2:
- * Input: 
+ * Input:
  * s = "aaabbcc"
  * dict = ["aaa","aab","bc"]
- * 
+ * <p>
  * Output:
  * "<b>aaabbc</b>c"
- * 
+ * <p>
  * Note:
  * 1. The given dict won't contain duplicates, and its length won't exceed 100.
  * 2. All the strings in input have length in range [1, 1000].
- * 
+ *
  * @author Johnny
  */
 public class Solution616 {
@@ -41,7 +41,7 @@ public class Solution616 {
             }
             bold[i] = end > i;
         }
-        
+
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if (!bold[i]) {
@@ -53,7 +53,7 @@ public class Solution616 {
             result.append("<b>" + s.substring(i, j) + "</b>");
             i = j - 1;
         }
-        
+
         return result.toString();
     }
 }

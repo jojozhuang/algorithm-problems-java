@@ -12,26 +12,26 @@ import java.util.Set;
 
 /**
  * Word Ladder II.
- * Given two words (start and end), and a dictionary, find all shortest 
+ * Given two words (start and end), and a dictionary, find all shortest
  * transformation sequence(s) from start to end, such that:
- * 
+ * <p>
  * Only one letter can be changed at a time
  * Each intermediate word must exist in the dictionary
  * For example,
- * 
+ * <p>
  * Given:
  * start = "hit"
  * end = "cog"
  * dict = ["hot","dot","dog","lot","log"]
  * Return
- *   [
- *     ["hit","hot","dot","dog","cog"],
- *     ["hit","hot","lot","log","cog"]
- *   ]
+ * [
+ * ["hit","hot","dot","dog","cog"],
+ * ["hit","hot","lot","log","cog"]
+ * ]
  * Note:
  * All words have the same length.
  * All words contain only lowercase alphabetic characters.
- * 
+ *
  * @author Johnny
  */
 public class Solution126 {
@@ -49,14 +49,14 @@ public class Solution126 {
         }
         set.remove(beginWord);
         set.remove(endWord);
-        
+
         Map<String, Integer> steps = new HashMap<>();
         steps.put(beginWord, 1);
         Map<String, List<String>> parents = new HashMap<>();
-        
+
         Queue<String> queue = new LinkedList<>();
         queue.offer(beginWord);
-        
+
         int len = beginWord.length();
         int step = 0;
         boolean found = false;
@@ -65,10 +65,10 @@ public class Solution126 {
             int size = queue.size();
             for (int s = 0; s < size; s++) {
                 String word = queue.poll();
-                
+
                 for (int i = 0; i < len; i++) {
                     for (int j = 'a'; j <= 'z'; j++) {
-                        String newWord = word.substring(0, i) + (char)(j) + word.substring(i + 1);
+                        String newWord = word.substring(0, i) + (char) (j) + word.substring(i + 1);
                         if (newWord.equals(endWord)) {
                             if (!parents.containsKey(newWord)) {
                                 parents.put(newWord, new ArrayList<>());
@@ -97,16 +97,16 @@ public class Solution126 {
                 }
             }
         }
-        
+
         if (found) {
             List<String> list = new ArrayList<>();
             list.add(endWord);
             dfs(endWord, beginWord, parents, list, ans);
         }
-        
+
         return ans;
     }
-    
+
     private void dfs(String word, String beginWord, Map<String, List<String>> parents, List<String> list, List<List<String>> ans) {
         if (word.equals(beginWord)) {
             List<String> clone = new ArrayList<>();
@@ -117,7 +117,7 @@ public class Solution126 {
             ans.add(new ArrayList<>(clone));
             return;
         }
-        
+
         for (String p : parents.get(word)) {
             list.add(p);
             dfs(p, beginWord, parents, list, ans);

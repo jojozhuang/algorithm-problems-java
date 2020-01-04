@@ -3,20 +3,20 @@ package johnny.leetcode.algorithm;
 /**
  * 372. Super Pow
  * Your task is to calculate ab mod 1337 where a is a positive integer and b is an extremely large positive integer given in the form of an array.
-
-Example1:
-
-a = 2
-b = [3]
-
-Result: 8
-Example2:
-
-a = 2
-b = [1,0]
-
-Result: 1024
- *  
+ * <p>
+ * Example1:
+ * <p>
+ * a = 2
+ * b = [3]
+ * <p>
+ * Result: 8
+ * Example2:
+ * <p>
+ * a = 2
+ * b = [1,0]
+ * <p>
+ * Result: 1024
+ *
  * @author Johnny
  */
 public class Solution372 {
@@ -27,6 +27,7 @@ public class Solution372 {
         if (p == 0) p += 1440;
         return power(a, p, 1337);
     }
+
     public int power(int a, int n, int mod) {
         a %= mod;
         int ret = 1;

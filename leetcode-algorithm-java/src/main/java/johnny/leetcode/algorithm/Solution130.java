@@ -6,21 +6,21 @@ import java.util.Queue;
 /**
  * Surrounded Regions.
  * Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'.
- * 
+ * <p>
  * A region is captured by flipping all 'O's into 'X's in that surrounded region.
- * 
+ * <p>
  * For example,
  * X X X X
  * X O O X
  * X X O X
  * X O X X
  * After running your function, the board should be:
- * 
+ * <p>
  * X X X X
  * X X X X
  * X X X X
  * X O X X
- * 
+ *
  * @author Johnny
  */
 public class Solution130 {
@@ -29,10 +29,10 @@ public class Solution130 {
         if (board == null || board.length == 0 || board[0].length == 0) {
             return;
         }
-        
+
         int m = board.length;
         int n = board[0].length;
-        
+
         Queue<Integer> queue = new LinkedList<Integer>();
         for (int j = 0; j < n; j++) {
             enqueue(queue, board, 0, j);
@@ -42,7 +42,7 @@ public class Solution130 {
             enqueue(queue, board, i, 0);
             enqueue(queue, board, i, n - 1);
         }
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             int index = queue.poll();
             int row = index / n;
             int col = index % n;
@@ -67,23 +67,23 @@ public class Solution130 {
             }
         }
     }
-    
+
     private void enqueue(Queue<Integer> queue, char[][] board, int i, int j) {
         int m = board.length;
         int n = board[0].length;
-        if (i >=0 && i < m && j >=0 && j < n && board[i][j] == 'O') {
+        if (i >= 0 && i < m && j >= 0 && j < n && board[i][j] == 'O') {
             queue.offer(i * n + j);
         }
     }
-    
+
     public void solve2(char[][] board) {
         if (board == null || board.length == 0 || board[0].length == 0) {
             return;
         }
-        
+
         int m = board.length;
         int n = board[0].length;
-        
+
         boolean[][] visited = new boolean[m][n];
         // find all linked 'O', replaced with '#'
         for (int j = 0; j < n; j++) {
@@ -102,7 +102,7 @@ public class Solution130 {
                 helper(board, i, n - 1, visited);
             }
         }
-        
+
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 // find all isolated 'O', replaced with 'X'
@@ -116,14 +116,14 @@ public class Solution130 {
             }
         }
     }
-    
+
     private void helper(char[][] board, int i, int j, boolean[][] visited) {
         int m = board.length;
         int n = board[0].length;
         if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j] == true) {
             return;
         }
-        
+
         if (board[i][j] == 'O') {
             board[i][j] = '#';
             visited[i][j] = true;
@@ -131,6 +131,6 @@ public class Solution130 {
             helper(board, i + 1, j, visited); // down
             helper(board, i, j - 1, visited); // left
             helper(board, i, j + 1, visited); // right
-        } 
+        }
     }
 }

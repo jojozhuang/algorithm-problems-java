@@ -2,34 +2,34 @@ package johnny.leetcode.algorithm;
 
 /**
  * 930. Binary Subarrays With Sum
-n an array A of 0s and 1s, how many non-empty subarrays have sum S?
-
- 
-
-Example 1:
-
-Input: A = [1,0,1,0,1], S = 2
-Output: 4
-Explanation: 
-The 4 subarrays are bolded below:
-[1,0,1,0,1]
-[1,0,1,0,1]
-[1,0,1,0,1]
-[1,0,1,0,1]
- 
-
-Note:
-
-A.length <= 30000
-0 <= S <= A.length
-A[i] is either 0 or 1.
-
+ * n an array A of 0s and 1s, how many non-empty subarrays have sum S?
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: A = [1,0,1,0,1], S = 2
+ * Output: 4
+ * Explanation:
+ * The 4 subarrays are bolded below:
+ * [1,0,1,0,1]
+ * [1,0,1,0,1]
+ * [1,0,1,0,1]
+ * [1,0,1,0,1]
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * A.length <= 30000
+ * 0 <= S <= A.length
+ * A[i] is either 0 or 1.
+ *
  * @author Johnny
  */
 public class Solution930 {
     public int numSubarraysWithSum(int[] A, int S) {
         int su = 0;
-        for (int x: A) su += x;
+        for (int x : A) su += x;
 
         // indexes[i] = location of i-th one (1 indexed)
         int[] indexes = new int[su + 2];
@@ -44,7 +44,7 @@ public class Solution930 {
         if (S == 0) {
             for (int i = 0; i < indexes.length - 1; ++i) {
                 // w: number of zeros between consecutive ones
-                int w = indexes[i+1] - indexes[i] - 1;
+                int w = indexes[i + 1] - indexes[i] - 1;
                 ans += w * (w + 1) / 2;
             }
             return ans;
@@ -52,8 +52,8 @@ public class Solution930 {
 
         for (int i = 1; i < indexes.length - S; ++i) {
             int j = i + S - 1;
-            int left = indexes[i] - indexes[i-1];
-            int right = indexes[j+1] - indexes[j];
+            int left = indexes[i] - indexes[i - 1];
+            int right = indexes[j + 1] - indexes[j];
             ans += left * right;
         }
 

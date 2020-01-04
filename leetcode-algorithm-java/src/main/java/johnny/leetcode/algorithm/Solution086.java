@@ -4,16 +4,16 @@ import johnny.algorithm.common.ListNode;
 
 /**
  * Partition List.
- * Given a linked list and a value x, partition it such that all nodes less 
+ * Given a linked list and a value x, partition it such that all nodes less
  * than x come before nodes greater than or equal to x.
- * 
- * You should preserve the original relative order of the nodes in each of the 
+ * <p>
+ * You should preserve the original relative order of the nodes in each of the
  * two partitions.
- * 
+ * <p>
  * For example,
- * Given 1->4->3->2->5->2 and x = 3,
- * return 1->2->2->4->3->5.
- * 
+ * {@code Given 1->4->3->2->5->2 and x = 3,}
+ * {@code return 1->2->2->4->3->5.}
+ *
  * @author Johnny
  */
 public class Solution086 {
@@ -21,12 +21,12 @@ public class Solution086 {
         if (head == null) {
             return head;
         }
-        
+
         ListNode leftDummy = new ListNode(0);
         ListNode leftCurr = leftDummy;
         ListNode rightDummy = new ListNode(0);
         ListNode rightCurr = rightDummy;
-        
+
         ListNode curr = head;
         while (curr != null) {
             if (curr.val < x) {
@@ -38,10 +38,10 @@ public class Solution086 {
             }
             curr = curr.next;
         }
-        
+
         rightCurr.next = null;
         leftCurr.next = rightDummy.next;
-        
+
         return leftDummy.next;
     }
 }

@@ -6,36 +6,36 @@ import java.util.Stack;
  * Maximal Rectangle.
  * Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle
  * containing all ones and return its area.
- * 
+ *
  * @author Johnny
  */
 public class Solution085 {
     public int maximalRectangle(char[][] matrix) {
-        if (matrix==null||matrix.length==0||matrix[0].length==0)
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return 0;
         int cLen = matrix[0].length;    // column length
         int rLen = matrix.length;       // row length
         // height array 
-        int[] h = new int[cLen+1];
-        h[cLen]=0;
+        int[] h = new int[cLen + 1];
+        h[cLen] = 0;
         int max = 0;
-        
-        
-        for (int row=0;row<rLen;row++) {
+
+
+        for (int row = 0; row < rLen; row++) {
             Stack<Integer> s = new Stack<Integer>();
-            for (int i=0;i<cLen+1;i++) {
-                if (i<cLen)
-                    if(matrix[row][i]=='1')
-                        h[i]+=1;
-                    else h[i]=0;
-                
-                if (s.isEmpty()||h[s.peek()]<=h[i])
+            for (int i = 0; i < cLen + 1; i++) {
+                if (i < cLen)
+                    if (matrix[row][i] == '1')
+                        h[i] += 1;
+                    else h[i] = 0;
+
+                if (s.isEmpty() || h[s.peek()] <= h[i])
                     s.push(i);
                 else {
-                    while(!s.isEmpty()&&h[i]<h[s.peek()]){
+                    while (!s.isEmpty() && h[i] < h[s.peek()]) {
                         int top = s.pop();
-                        int area = h[top]*(s.isEmpty()?i:(i-s.peek()-1));
-                        if (area>max)
+                        int area = h[top] * (s.isEmpty() ? i : (i - s.peek() - 1));
+                        if (area > max)
                             max = area;
                     }
                     s.push(i);
@@ -44,16 +44,17 @@ public class Solution085 {
         }
         return max;
     }
+
     //http://www.programcreek.com/2014/05/leetcode-maximal-rectangle-java/
     public int maximalRectangle2(char[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return 0;
         }
-        
+
         int n = matrix.length;
         int m = matrix[0].length;
         int[][] heights = new int[n][m];
-        
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (matrix[i][j] == '0') {
@@ -67,15 +68,15 @@ public class Solution085 {
                 }
             }
         }
-        
+
         int max = 0;
         for (int i = 0; i < n; i++) {
             max = Math.max(max, largestRectangleArea(heights[i]));
         }
-        
+
         return max;
     }
-    
+
     private int largestRectangleArea(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;

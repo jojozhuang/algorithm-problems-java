@@ -2,18 +2,18 @@ package johnny.leetcode.algorithm;
 
 /**
  * Reverse Words in a String II.
- * Given an input string, reverse the string word by word. A word is defined as 
+ * Given an input string, reverse the string word by word. A word is defined as
  * a sequence of non-space characters.
- * 
- * The input string does not contain leading or trailing spaces and the words 
+ * <p>
+ * The input string does not contain leading or trailing spaces and the words
  * are always separated by a single space.
- * 
+ * <p>
  * For example,
  * Given s = "the sky is blue",
  * return "blue is sky the".
- * 
+ * <p>
  * Could you do it in-place without allocating extra space?
- * 
+ *
  * @author Johnny
  */
 public class Solution186 {
@@ -21,9 +21,9 @@ public class Solution186 {
         if (str == null || str.length == 0) {
             return;
         }
-        
+
         reverse(str, 0, str.length - 1);
-        
+
         int i = 0;
         int start = 0;
         while (i < str.length) {
@@ -35,12 +35,12 @@ public class Solution186 {
         }
         reverse(str, start, str.length - 1);
     }
-    
+
     private void reverse(char[] arr, int start, int end) {
         if (start > end) {
             return;
         }
-        
+
         while (start < end) {
             char c = arr[start];
             arr[start] = arr[end];

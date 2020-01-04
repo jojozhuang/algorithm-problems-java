@@ -2,11 +2,11 @@ package johnny.leetcode.algorithm;
 
 /**
  * Remove Element.
- * Given an array and a value, remove all instances of that value in place and 
+ * Given an array and a value, remove all instances of that value in place and
  * return the new length.
- * The order of elements can be changed. It doesn't matter what you leave 
+ * The order of elements can be changed. It doesn't matter what you leave
  * beyond the new length.
- * 
+ *
  * @author Johnny
  */
 public class Solution027 {
@@ -14,7 +14,7 @@ public class Solution027 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        
+
         int i = 0;
         int j = 0;
         while (i < nums.length) {

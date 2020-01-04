@@ -5,49 +5,49 @@ import java.util.Arrays;
 /**
  * Candy.
  * There are N children standing in a line. Each child is assigned a rating value.
- * 
+ * <p>
  * You are giving candies to these children subjected to the following requirements:
- * 
+ * <p>
  * Each child must have at least one candy.
  * Children with a higher rating get more candies than their neighbors.
  * What is the minimum candies you must give?
- * 
+ *
  * @author Johnny
  */
 public class Solution135 {
     //https://discuss.leetcode.com/topic/5243/a-simple-solution
-     public int candy(int[] ratings) {
+    public int candy(int[] ratings) {
         if (ratings == null) {
             return 0;
         }
-        
+
         int n = ratings.length;
-        if(n <= 1) {
+        if (n <= 1) {
             return n;
         }
-        
+
         int[] candies = new int[n];
         Arrays.fill(candies, 1);
-        
+
         for (int i = 1; i < n; i++) {
-            if(ratings[i] > ratings[i-1]) {
+            if (ratings[i] > ratings[i - 1]) {
                 candies[i] = candies[i - 1] + 1;
             }
         }
-        
-        for (int i = n - 1; i > 0 ; i--) {
-            if(ratings[i - 1] > ratings[i]) {
+
+        for (int i = n - 1; i > 0; i--) {
+            if (ratings[i - 1] > ratings[i]) {
                 candies[i - 1] = Math.max(candies[i] + 1, candies[i - 1]);
             }
         }
-        
-        int result=0;
+
+        int result = 0;
         for (int i = 0; i < n; i++) {
             result += candies[i];
         }
         return result;
     }
-     
+
     //http://www.programcreek.com/2014/03/leetcode-candy-java/
     public int candy2(int[] ratings) {
         if (ratings == null || ratings.length == 0) {
@@ -61,7 +61,7 @@ public class Solution135 {
         for (int i = 1; i < ratings.length; i++) {
             if (ratings[i] > ratings[i - 1]) {
                 candies[i] = candies[i - 1] + 1;
-            } else { 
+            } else {
                 // if not ascending, assign 1
                 candies[i] = 1;
             }
@@ -82,7 +82,7 @@ public class Solution135 {
 
         return result;
     }
-    
+
     //Brute Force
     public int candy3(int[] ratings) {
         int[] candies = new int[ratings.length];

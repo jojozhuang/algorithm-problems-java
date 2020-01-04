@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 /**
  * Pow(x, n).
  * Implement pow(x, n).
- * 
+ *
  * @author Johnny
  */
 public class Solution050 {
@@ -15,7 +15,7 @@ public class Solution050 {
             return helper(x, n);
         }
     }
-    
+
     private double helper(double x, int n) {
         if (x == 0) {
             return 0;
@@ -26,7 +26,7 @@ public class Solution050 {
         if (x == 1) {
             return 1;
         }
-        
+
         double half = helper(x, n / 2);
         if (n % 2 == 0) {
             return half * half;

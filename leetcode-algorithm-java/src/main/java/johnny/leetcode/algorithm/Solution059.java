@@ -4,17 +4,17 @@ package johnny.leetcode.algorithm;
  * Spiral Matrix II.
  * Given an integer n, generate a square matrix filled with elements from 1 to
  * n2 in spiral order.
- * 
+ * <p>
  * For example,
  * Given n = 3,
- * 
+ * <p>
  * You should return the following matrix:
  * [
- *  [ 1, 2, 3 ],
- *  [ 8, 9, 4 ],
- *  [ 7, 6, 5 ]
+ * [ 1, 2, 3 ],
+ * [ 8, 9, 4 ],
+ * [ 7, 6, 5 ]
  * ]
- * 
+ *
  * @author Johnny
  */
 public class Solution059 {
@@ -22,20 +22,20 @@ public class Solution059 {
         if (n < 1) {
             return new int[][]{};
         }
-        
+
         int[][] matrix = new int[n][n];
-        
+
         int top = 0;
         int left = 0;
-        int bottom = matrix.length-1;
-        int right = matrix[0].length-1;
+        int bottom = matrix.length - 1;
+        int right = matrix[0].length - 1;
         int i = 0;
         int index = 1;
 
         while (top <= bottom && left <= right) {
             //left->right
             i = left;
-            while(i <= right) {
+            while (i <= right) {
                 matrix[top][i] = index;
                 index++;
                 i++;
@@ -43,14 +43,14 @@ public class Solution059 {
             top++;
             //top->bottom
             i = top;
-            while(i <= bottom) {
+            while (i <= bottom) {
                 matrix[i][right] = index;
                 index++;
                 i++;
             }
             right--;
             //check
-            if(top > bottom || left > right) {
+            if (top > bottom || left > right) {
                 break;
             }
             //right->left
@@ -70,7 +70,7 @@ public class Solution059 {
             }
             left++;
         }
-        
+
         return matrix;
-    } 
+    }
 }

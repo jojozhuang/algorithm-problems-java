@@ -2,21 +2,21 @@ package johnny.leetcode.algorithm;
 
 /**
  * Next Permutation.
- * Implement next permutation, which rearranges numbers into the 
+ * Implement next permutation, which rearranges numbers into the
  * lexicographically next greater permutation of numbers.
- * 
- * If such arrangement is not possible, it must rearrange it as the lowest 
+ * <p>
+ * If such arrangement is not possible, it must rearrange it as the lowest
  * possible order (ie, sorted in ascending order).
- * 
+ * <p>
  * The replacement must be in-place, do not allocate extra memory.
- * 
- * Here are some examples. Inputs are in the left-hand column and its 
+ * <p>
+ * Here are some examples. Inputs are in the left-hand column and its
  * corresponding outputs are in the right-hand column.
- * 
- * 1,2,3 -> 1,3,2
- * 3,2,1 -> 1,2,3
- * 1,1,5 -> 1,5,1
- * 
+ * <p>
+ * {@code 1,2,3 -> 1,3,2}
+ * {@code 3,2,1 -> 1,2,3}
+ * {@code 1,1,5 -> 1,5,1}
+ *
  * @author Johnny
  */
 public class Solution031 {
@@ -38,11 +38,12 @@ public class Solution031 {
         }
         reverse(nums, i + 1, nums.length - 1);
     }
+
     public void nextPermutation2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return;
         }
-        
+
         // find the partition number from right to left
         int partition = -1;
         for (int i = nums.length - 1; i > 0; i--) {
@@ -51,13 +52,13 @@ public class Solution031 {
                 break;
             }
         }
-        
+
         // swap
         if (partition == -1) {
             reverse(nums, 0, nums.length - 1);
             return;
         }
-            
+
         int firstbig = -1;
         for (int i = nums.length - 1; i >= 0; i--) {
             if (nums[i] > nums[partition]) {
@@ -67,19 +68,19 @@ public class Solution031 {
         }
         //swap
         swap(nums, partition, firstbig);
-            
+
         reverse(nums, partition + 1, nums.length - 1);
     }
-    
+
     private void reverse(int[] nums, int start, int end) {
         int i = start, j = end;
-        while(i < j) {
+        while (i < j) {
             swap(nums, i, j);
             i++;
             j--;
         }
     }
-    
+
     private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];

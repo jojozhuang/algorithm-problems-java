@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * Permutations.
  * Given a collection of numbers, return all possible permutations.
- * 
+ * <p>
  * For example,
  * [1,2,3] have the following permutations:
  * [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
- * 
+ *
  * @author Johnny
  */
 public class Solution046 {
@@ -19,18 +19,18 @@ public class Solution046 {
         if (nums == null || nums.length == 0) {
             return ans;
         }
-        
+
         boolean[] visited = new boolean[nums.length];
         dfs(nums, visited, new ArrayList<>(), ans);
         return ans;
     }
-    
+
     private void dfs(int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> ans) {
         if (list.size() == nums.length) {
             ans.add(new ArrayList<>(list));
             return;
         }
-        
+
         for (int i = 0; i < nums.length; i++) {
             if (visited[i]) {
                 continue;

@@ -4,25 +4,25 @@ import java.util.Stack;
 
 /**
  * Min Stack.
- * Design a stack that supports push, pop, top, and retrieving the minimum 
+ * Design a stack that supports push, pop, top, and retrieving the minimum
  * element in constant time.
- * 
+ * <p>
  * push(x) -- Push element x onto stack.
  * pop() -- Removes the element on top of the stack.
  * top() -- Get the top element.
  * getMin() -- Retrieve the minimum element in the stack.
- * 
+ *
  * @author Johnny
  */
 public class Solution155 {
     // one stack
     private int min = Integer.MAX_VALUE;
-    private Stack<Integer> stack; 
-    
+    private Stack<Integer> stack;
+
     public Solution155() {
         stack = new Stack<Integer>();
     }
-    
+
     public void push(int x) {
         if (x <= min) {
             stack.push(min);

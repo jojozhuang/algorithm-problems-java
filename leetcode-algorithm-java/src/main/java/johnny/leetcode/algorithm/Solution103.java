@@ -10,25 +10,25 @@ import java.util.Queue;
 
 /**
  * Binary Tree Zigzag Level Order Traversal.
- * Given a binary tree, return the zigzag level order traversal of its nodes' 
- * values. (ie, from left to right, then right to left for the next level and 
+ * Given a binary tree, return the zigzag level order traversal of its nodes'
+ * values. (ie, from left to right, then right to left for the next level and
  * alternate between).
- * 
+ * <p>
  * For example:
  * Given binary tree {3,9,20,#,#,15,7},
- *     3
- *    / \
- *   9  20
- *     /  \
- *    15   7
+ * 3
+ * / \
+ * 9  20
+ * /  \
+ * 15   7
  * return its zigzag level order traversal as:
  * [
- *   [3],
- *   [20,9],
- *   [15,7]
+ * [3],
+ * [20,9],
+ * [15,7]
  * ]
- * confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
- * 
+ * confused what "{1,#,2,3}" means? read more on how binary tree is serialized on OJ.
+ *
  * @author Johnny
  */
 public class Solution103 {
@@ -37,11 +37,11 @@ public class Solution103 {
         if (root == null) {
             return res;
         }
-        
+
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
         boolean odd = false;
-        
+
         while (!queue.isEmpty()) {
             int size = queue.size();
             List<Integer> list = new ArrayList<Integer>();
@@ -62,20 +62,20 @@ public class Solution103 {
             res.add(list);
             odd = !odd;
         }
-        
+
         return res;
     }
-    
+
     public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (root == null) {
             return result;
         }
-        
+
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
-        
-        while(!queue.isEmpty()) {
+
+        while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<Integer>();
             int size = queue.size();
             for (int i = 0; i < size; i++) {
@@ -90,13 +90,13 @@ public class Solution103 {
             }
             result.add(level);
         }
-        
+
         for (int i = 0; i < result.size(); i++) {
             if (i % 2 != 0) {
                 Collections.reverse(result.get(i));
             }
         }
-        
+
         return result;
     }
 }

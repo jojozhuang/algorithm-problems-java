@@ -2,26 +2,21 @@ package johnny.leetcode.algorithm;
 
 /**
  * Maximum XOR of Two Numbers in an Array.
- * 
+ * <p>
  * Given a non-empty array of numbers, a0, a1, a2, … , an-1, where 0 ≤ ai < 231.
- * 
+ * <p>
  * Find the maximum result of ai XOR aj, where 0 ≤ i, j < n.
- * 
+ * <p>
  * Could you do this in O(n) runtime?
- * 
+ * <p>
  * Example:
  * Input: [3, 10, 5, 25, 2, 8]
  * Output: 28
  * Explanation: The maximum result is 5 ^ 25 = 28.
- * 
+ *
  * @author Johnny
  */
 public class Solution421 {
-    class TrieNode {
-        TrieNode zero;
-        TrieNode one;
-    }
-
     public int findMaximumXOR(int[] nums) {
         if (nums.length == 0) {
             return 0;
@@ -76,6 +71,11 @@ public class Solution421 {
         }
 
         return max;
+    }
+
+    class TrieNode {
+        TrieNode zero;
+        TrieNode one;
     }
     
     /*

@@ -13,32 +13,32 @@ import java.util.Stack;
 /**
  * Binary Tree Postorder Traversal.
  * Given a binary tree, return the postorder traversal of its nodes' values.
- * 
+ * <p>
  * For example:
  * Given binary tree {1,#,2,3},
- *    1
- *     \
- *      2
- *     /
- *    3
+ * 1
+ * \
+ * 2
+ * /
+ * 3
  * return [3,2,1].
- * 
+ * <p>
  * Note: Recursive solution is trivial, could you do it iteratively?
- * 
+ *
  * @author Johnny
  */
 public class Solution145 {
     // use curr node
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        
+
         if (root == null) {
             return ans;
         }
-        
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode curr = root;
-        
+
         while (curr != null || !stack.empty()) {
             while (curr != null) {
                 stack.push(curr);
@@ -53,11 +53,11 @@ public class Solution145 {
                 TreeNode right = curr.right;
                 curr.right = null; // avoid being added to stack again.
                 curr = right;
-            } 
+            }
         }
         return ans;
     }
-    
+
     public List<Integer> postorderTraversal8(TreeNode root) {
         LinkedList<Integer> ans = new LinkedList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
@@ -74,16 +74,17 @@ public class Solution145 {
         }
         return ans;
     }
+
     public List<Integer> postorderTraversal6(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        
+
         if (root == null) {
             return ans;
         }
-        
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
-        
+
         while (!stack.isEmpty()) {
             TreeNode node = stack.peek();
             if (node.left == null && node.right == null) {
@@ -91,7 +92,7 @@ public class Solution145 {
                 ans.add(node.val);
                 continue;
             }
-            
+
             if (node.right != null) {
                 stack.push(node.right);
                 node.right = null;
@@ -101,37 +102,38 @@ public class Solution145 {
                 node.left = null;
             }
         }
-        
+
         return ans;
     }
+
     // Recursion
     public List<Integer> postorderTraversal2(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        if(root == null) {
+        if (root == null) {
             return ans;
         }
-        
+
         List<Integer> left = postorderTraversal(root.left);
         List<Integer> right = postorderTraversal(root.right);
-        
+
         ans.addAll(left);
         ans.addAll(right);
         ans.add(root.val);
         return ans;
     }
-    
+
     // reverse mid->right-left => left-right-mid, similar with preorder
     public List<Integer> postorderTraversal3(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        
+
         if (root == null) {
             return ans;
         }
-        
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
-        
-        while(!stack.isEmpty()) {
+
+        while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             ans.add(node.val);
             if (node.left != null) {
@@ -142,21 +144,21 @@ public class Solution145 {
             }
         }
         Collections.reverse(ans);
-        
+
         return ans;
     }
-    
+
     public List<Integer> postorderTraversal5(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        
+
         if (root == null) {
             return ans;
         }
-        
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
-        
-        while(!stack.isEmpty()) {
+
+        while (!stack.isEmpty()) {
             TreeNode node = stack.peek();
             if (node.left == null) {
                 if (node.right != null) {
@@ -170,12 +172,12 @@ public class Solution145 {
                 if (node.right != null) {
                     stack.push(node.right);
                     node.right = null;
-                } 
+                }
                 stack.push(node.left);
                 node.left = null;
             }
         }
-        
+
         return ans;
     }
 }

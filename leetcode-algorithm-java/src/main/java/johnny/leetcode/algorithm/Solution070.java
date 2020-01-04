@@ -2,11 +2,11 @@ package johnny.leetcode.algorithm;
 
 /**
  * Climbing Stairs .
- * 
+ * <p>
  * You are climbing a stair case. It takes n steps to reach to the top.
- * Each time you can either climb 1 or 2 steps. In how many distinct ways can 
+ * Each time you can either climb 1 or 2 steps. In how many distinct ways can
  * you climb to the top?
-* 
+ *
  * @author Johnny
  */
 public class Solution070 {
@@ -33,6 +33,7 @@ public class Solution070 {
 
         return third;
     }
+
     // DP
     public int climbStairs2(int n) {
         if (n <= 0) {
@@ -49,12 +50,12 @@ public class Solution070 {
         dp[1] = 2;
         // Calculate f[i]
         for (int i = 2; i < n; i++) {
-            dp[i] = dp[i-1] + dp[i-2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
         // Get result
         return dp[n - 1];
     }
-    
+
     // Recursion
     public int climbStairs3(int n) {
         if (n <= 0)
@@ -63,7 +64,7 @@ public class Solution070 {
             return 1;
         if (n == 2)
             return 2;
-        
-        return climbStairs(n-1) + climbStairs(n-2);
+
+        return climbStairs(n - 1) + climbStairs(n - 2);
     }
 }

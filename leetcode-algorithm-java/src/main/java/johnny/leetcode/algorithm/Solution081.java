@@ -4,11 +4,11 @@ package johnny.leetcode.algorithm;
  * Search in Rotated Sorted Array II.
  * Follow up for "Search in Rotated Sorted Array":
  * What if duplicates are allowed?
- * 
+ * <p>
  * Would this affect the run-time complexity? How and why?
- * 
+ * <p>
  * Write a function to determine if a given target is in the array.
- * 
+ *
  * @author Johnny
  */
 public class Solution081 {
@@ -16,13 +16,13 @@ public class Solution081 {
         if (nums == null || nums.length == 0) {
             return false;
         }
-        
+
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target) {
                 return true;
             }
         }
-        
+
         return false;
-    } 
+    }
 }

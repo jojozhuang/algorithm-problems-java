@@ -2,51 +2,51 @@ package johnny.leetcode.algorithm;
 
 /**
  * 883. Projection Area of 3D Shapes
- * 
+ * <p>
  * On a N * N grid, we place some 1 * 1 * 1 cubes that are axis-aligned with the x, y, and z axes.
-
-Each value v = grid[i][j] represents a tower of v cubes placed on top of grid cell (i, j).
-
-Now we view the projection of these cubes onto the xy, yz, and zx planes.
-
-A projection is like a shadow, that maps our 3 dimensional figure to a 2 dimensional plane. 
-
-Here, we are viewing the "shadow" when looking at the cubes from the top, the front, and the side.
-
-Return the total area of all three projections.
-
- 
-
-Example 1:
-
-Input: [[2]]
-Output: 5
-Example 2:
-
-Input: [[1,2],[3,4]]
-Output: 17
-Explanation: 
-Here are the three projections ("shadows") of the shape made with each axis-aligned plane.
-
-Example 3:
-
-Input: [[1,0],[0,2]]
-Output: 8
-Example 4:
-
-Input: [[1,1,1],[1,0,1],[1,1,1]]
-Output: 14
-Example 5:
-
-Input: [[2,2,2],[2,1,2],[2,2,2]]
-Output: 21
- 
-
-Note:
-
-1 <= grid.length = grid[0].length <= 50
-0 <= grid[i][j] <= 50
-
+ * <p>
+ * Each value v = grid[i][j] represents a tower of v cubes placed on top of grid cell (i, j).
+ * <p>
+ * Now we view the projection of these cubes onto the xy, yz, and zx planes.
+ * <p>
+ * A projection is like a shadow, that maps our 3 dimensional figure to a 2 dimensional plane.
+ * <p>
+ * Here, we are viewing the "shadow" when looking at the cubes from the top, the front, and the side.
+ * <p>
+ * Return the total area of all three projections.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [[2]]
+ * Output: 5
+ * Example 2:
+ * <p>
+ * Input: [[1,2],[3,4]]
+ * Output: 17
+ * Explanation:
+ * Here are the three projections ("shadows") of the shape made with each axis-aligned plane.
+ * <p>
+ * Example 3:
+ * <p>
+ * Input: [[1,0],[0,2]]
+ * Output: 8
+ * Example 4:
+ * <p>
+ * Input: [[1,1,1],[1,0,1],[1,1,1]]
+ * Output: 14
+ * Example 5:
+ * <p>
+ * Input: [[2,2,2],[2,1,2],[2,2,2]]
+ * Output: 21
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= grid.length = grid[0].length <= 50
+ * 0 <= grid[i][j] <= 50
+ *
  * @author Johnny
  */
 public class Solution883 {
@@ -54,10 +54,10 @@ public class Solution883 {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }
-        
+
         int m = grid.length;
         int n = grid[0].length;
-        
+
         int ans = 0;
         // xy
         for (int i = 0; i < m; i++) {
@@ -67,7 +67,7 @@ public class Solution883 {
                 }
             }
         }
-        
+
         // xz, largest in each row
         for (int i = 0; i < m; i++) {
             int max = Integer.MIN_VALUE;
@@ -76,7 +76,7 @@ public class Solution883 {
             }
             ans += max;
         }
-        
+
         // yz, largest in each column
         for (int j = 0; j < n; j++) {
             int max = Integer.MIN_VALUE;
@@ -85,15 +85,15 @@ public class Solution883 {
             }
             ans += max;
         }
-        
+
         return ans;
     }
-    
+
     public int projectionArea2(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }
-        
+
         //xy
         int xy = 0;
         for (int i = 0; i < grid.length; i++) {
@@ -103,7 +103,7 @@ public class Solution883 {
                 }
             }
         }
-        
+
         // xz
         int xz = 0;
         for (int i = 0; i < grid.length; i++) {
@@ -113,7 +113,7 @@ public class Solution883 {
             }
             xz += max;
         }
-        
+
         // yz
         int yz = 0;
         for (int j = 0; j < grid[0].length; j++) {
@@ -123,7 +123,7 @@ public class Solution883 {
             }
             xz += max;
         }
-        
+
         return xy + xz + yz;
     }
 }

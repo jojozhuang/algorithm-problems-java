@@ -2,12 +2,12 @@ package johnny.leetcode.algorithm;
 
 /**
  * Sum of Two Integers.
- * Calculate the sum of two integers a and b, but you are not allowed to use 
+ * Calculate the sum of two integers a and b, but you are not allowed to use
  * the operator + and -.
- * 
+ * <p>
  * Example:
  * Given a = 1 and b = 2, return 3.
- *  
+ *
  * @author Johnny
  */
 public class Solution371 {

@@ -4,32 +4,32 @@ import johnny.algorithm.common.TreeNode;
 
 /**
  * 968. Binary Tree Cameras
-Given a binary tree, we install cameras on the nodes of the tree. 
-
-Each camera at a node can monitor its parent, itself, and its immediate children.
-
-Calculate the minimum number of cameras needed to monitor all nodes of the tree.
-
- 
-
-Example 1:
-
-
-Input: [0,0,null,0,0]
-Output: 1
-Explanation: One camera is enough to monitor all nodes if placed as shown.
-Example 2:
-
-
-Input: [0,0,null,0,null,0,null,null,0]
-Output: 2
-Explanation: At least two cameras are needed to monitor all nodes of the tree. The above image shows one of the valid configurations of camera placement.
-
-Note:
-
-The number of nodes in the given tree will be in the range [1, 1000].
-Every node has value 0.
-
+ * Given a binary tree, we install cameras on the nodes of the tree.
+ * <p>
+ * Each camera at a node can monitor its parent, itself, and its immediate children.
+ * <p>
+ * Calculate the minimum number of cameras needed to monitor all nodes of the tree.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * <p>
+ * Input: [0,0,null,0,0]
+ * Output: 1
+ * Explanation: One camera is enough to monitor all nodes if placed as shown.
+ * Example 2:
+ * <p>
+ * <p>
+ * Input: [0,0,null,0,null,0,null,null,0]
+ * Output: 2
+ * Explanation: At least two cameras are needed to monitor all nodes of the tree. The above image shows one of the valid configurations of camera placement.
+ * <p>
+ * Note:
+ * <p>
+ * The number of nodes in the given tree will be in the range [1, 1000].
+ * Every node has value 0.
+ *
  * @author Johnny
  */
 public class Solution968 {

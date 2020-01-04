@@ -5,21 +5,21 @@ import java.util.List;
 
 /**
  * Combinations.
- * Given two integers n and k, return all possible combinations of k numbers 
+ * Given two integers n and k, return all possible combinations of k numbers
  * out of 1 ... n.
- * 
+ * <p>
  * For example,
  * If n = 4 and k = 2, a solution is:
- * 
+ * <p>
  * [
- *   [2,4],
- *   [3,4],
- *   [2,3],
- *   [1,2],
- *   [1,3],
- *   [1,4],
+ * [2,4],
+ * [3,4],
+ * [2,3],
+ * [1,2],
+ * [1,3],
+ * [1,4],
  * ]
- * 
+ *
  * @author Johnny
  */
 public class Solution077 {
@@ -34,14 +34,14 @@ public class Solution077 {
 
         return ans;
     }
-    
+
     private void dfs(int n, int k, int pos, List<Integer> list, List<List<Integer>> ans) {
         if (list.size() == k) {
             ans.add(new ArrayList<Integer>(list));
             return;
         }
-        
-        for(int i = pos; i <= n; i++) {
+
+        for (int i = pos; i <= n; i++) {
             list.add(i);
             dfs(n, k, i + 1, list, ans);
             list.remove(list.size() - 1);

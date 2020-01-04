@@ -6,16 +6,16 @@ import java.util.HashMap;
 
 /**
  * Add and Search Word - Data structure design.
- * 
+ * <p>
  * Design a data structure that supports the following two operations:\
- * 
+ * <p>
  * void addWord(word)
  * bool search(word)
- * 
+ * <p>
  * search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one letter.
- * 
+ * <p>
  * For example:
- * 
+ * <p>
  * addWord("bad")
  * addWord("dad")
  * addWord("mad")
@@ -23,7 +23,7 @@ import java.util.HashMap;
  * search("bad") -> true
  * search(".ad") -> true
  * search("b..") -> true
- * 
+ *
  * @author Johnny
  */
 public class Solution211 {
@@ -69,7 +69,7 @@ public class Solution211 {
 }
      */
     private TrieNode root = new TrieNode();
-    
+
     // similar to solution 208
     // Adds a word into the data structure.
     public void addWord(String word) {
@@ -96,7 +96,7 @@ public class Solution211 {
     public boolean search(String word) {
         return dfs(word, root);
     }
-    
+
     private boolean dfs(String word, TrieNode curr) {
         if (curr == null) {
             return false;
@@ -104,7 +104,7 @@ public class Solution211 {
         if (word.isEmpty()) {
             return curr.isLeaf;
         }
-        
+
         TrieNode res = null;
         HashMap<Character, TrieNode> children = curr.children;
         if (children.isEmpty()) {
@@ -115,14 +115,14 @@ public class Solution211 {
             if (c == '.') {
                 if (i == word.length() - 1) {
                     for (TrieNode node : children.values()) {
-                        if(node.isLeaf) {
+                        if (node.isLeaf) {
                             return true;
                         }
                     }
                     return false;
                 } else {
                     for (TrieNode node : children.values()) {
-                        if(dfs(word.substring(i + 1), node)) {
+                        if (dfs(word.substring(i + 1), node)) {
                             return true;
                         }
                     }

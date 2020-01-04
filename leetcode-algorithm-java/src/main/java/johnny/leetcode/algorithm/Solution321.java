@@ -5,38 +5,38 @@ import java.util.LinkedList;
 
 /**
  * Create Maximum Number.
- * 
+ * <p>
  * Given two arrays of length m and n with digits 0-9 representing two numbers.
- * Create the maximum number of length k <= m + n from digits of the two. 
- * The relative order of the digits from the same array must be preserved. 
- * Return an array of the k digits. You should try to optimize your time and 
+ * Create the maximum number of length k <= m + n from digits of the two.
+ * The relative order of the digits from the same array must be preserved.
+ * Return an array of the k digits. You should try to optimize your time and
  * space complexity.
- * 
+ * <p>
  * Example 1:
  * nums1 = [3, 4, 6, 5]
  * nums2 = [9, 1, 2, 5, 8, 3]
  * k = 5
  * return [9, 8, 6, 5, 3]
- * 
+ * <p>
  * Example 2:
  * nums1 = [6, 7]
  * nums2 = [6, 0, 4]
  * k = 5
  * return [6, 7, 6, 0, 4]
- * 
+ * <p>
  * Example 3:
  * nums1 = [3, 9]
  * nums2 = [8, 9]
  * k = 3
  * return [9, 8, 9]
- *  
+ *
  * @author Johnny
  */
 public class Solution321 {
     public int[] maxNumber(int[] nums1, int[] nums2, int k) {
         int m = nums1.length;
         int n = nums2.length;
-        
+
         int[] ans = null;
         for (int i = 0; i <= k; i++) {
             if (i > m || k - i > n) {
@@ -53,16 +53,16 @@ public class Solution321 {
                 }
             }
         }
-        
+
         return ans;
     }
-    
+
     private int[] top(int[] nums, int k) {
         if (k >= nums.length) {
             return nums;
         }
         if (k == 0) {
-            return new int[] {};
+            return new int[]{};
         }
         int pop = nums.length - k;
         Deque<Integer> deque = new LinkedList<>();
@@ -88,7 +88,7 @@ public class Solution321 {
         }
         return ans;
     }
-    
+
     private int[] merge(int[] nums1, int[] nums2) {
         int m = nums1.length;
         int n = nums2.length;
@@ -98,9 +98,9 @@ public class Solution321 {
         if (n == 0) {
             return nums1;
         }
-        
-        int[] ans = new int[m+n];
-        
+
+        int[] ans = new int[m + n];
+
         int i = 0;
         int j = 0;
         int k = 0;
@@ -120,13 +120,13 @@ public class Solution321 {
                     j++;
                 }
             }
-            
+
             k++;
         }
-        
+
         return ans;
     }
-    
+
     private boolean isLarge(int[] nums1, int i, int[] nums2, int j) {
         while (i < nums1.length && j < nums2.length) {
             if (nums1[i] == nums2[j]) {
@@ -139,9 +139,10 @@ public class Solution321 {
                 return false;
             }
         }
-        
+
         return true;
     }
+
     //https://discuss.leetcode.com/topic/32272/share-my-greedy-solution
     //https://www.hrwhisper.me/leetcode-create-maximum-number/
     //http://blog.csdn.net/xyqzki/article/details/50405256
@@ -160,12 +161,14 @@ public class Solution321 {
         }
         return ans;
     }
+
     private int[] merge(int[] nums1, int[] nums2, int k) {
         int[] ans = new int[k];
         for (int i = 0, j = 0, r = 0; r < k; ++r)
             ans[r] = compare(nums1, i, nums2, j) ? nums1[i++] : nums2[j++];
         return ans;
     }
+
     public boolean compare(int[] nums1, int i, int[] nums2, int j) {
         while (i < nums1.length && j < nums2.length && nums1[i] == nums2[j]) {
             i++;
@@ -173,6 +176,7 @@ public class Solution321 {
         }
         return j == nums2.length || (i < nums1.length && nums1[i] > nums2[j]);
     }
+
     private int[] maxArray(int[] nums, int k) {
         int n = nums.length;
         int[] ans = new int[k];

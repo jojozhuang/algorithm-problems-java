@@ -7,7 +7,7 @@ import johnny.algorithm.common.TreeNode;
  * Given a binary tree, find its minimum depth.
  * The minimum depth is the number of nodes along the shortest path from the
  * root node down to the nearest leaf node.
- * 
+ *
  * @author Johnny
  */
 public class Solution111 {
@@ -24,7 +24,7 @@ public class Solution111 {
         if (root.left != null && root.right == null) {
             return 1 + minDepth(root.left);
         }
-        
-        return Math.min(minDepth(root.left),  minDepth(root.right)) + 1;
+
+        return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
     }
 }

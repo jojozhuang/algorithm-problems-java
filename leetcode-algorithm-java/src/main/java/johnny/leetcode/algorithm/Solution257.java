@@ -4,21 +4,22 @@ import johnny.algorithm.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * Binary Tree Paths.
  * Given a binary tree, return all root-to-leaf paths.
- * 
+ * <p>
  * For example, given the following binary tree:
- * 
- *    1
- *  /   \
+ * <p>
+ * 1
+ * /   \
  * 2     3
- *  \
- *   5
+ * \
+ * 5
  * All root-to-leaf paths are:
- * 
+ * <p>
  * ["1->2->5", "1->3"]
- * 
+ *
  * @author Johnny
  */
 public class Solution257 {
@@ -27,7 +28,7 @@ public class Solution257 {
         if (root == null) {
             return ans;
         }
-        
+
         if (root.left == null && root.right == null) {
             ans.add(String.valueOf(root.val));
             return ans;

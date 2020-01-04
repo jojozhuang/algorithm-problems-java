@@ -4,16 +4,16 @@ import johnny.algorithm.common.TreeNode;
 
 /**
  * Closest Binary Search Tree Value.
- * 
+ * <p>
  * Given a non-empty binary search tree and a target value, find the value in
  * the BST that is closest to the target.
- * 
+ * <p>
  * Note:
- * 
+ * <p>
  * Given target value is a floating point.
- * You are guaranteed to have only one unique value in the BST that is closest 
+ * You are guaranteed to have only one unique value in the BST that is closest
  * to the target.
- * 
+ *
  * @author Johnny
  */
 public class Solution270 {
@@ -23,26 +23,26 @@ public class Solution270 {
             return Integer.MAX_VALUE;
         }
         int closest = root.val;
-        while (root != null){
+        while (root != null) {
             if (Math.abs(root.val - target) < Math.abs(closest - target)) {
                 closest = root.val;
             }
-            if (closest == target){
+            if (closest == target) {
                 break;
             }
             root = target < root.val ? root.left : root.right;
         }
         return closest;
     }
-    
+
     // recursion, use the feature of BST
     public int closestValue3(TreeNode root, double target) {
         if (root == null) {
             return Integer.MAX_VALUE;
         }
-        
+
         TreeNode child = target < root.val ? root.left : root.right;
-        if(child == null) {
+        if (child == null) {
             return root.val;
         }
         int closest = closestValue(child, target);
@@ -54,18 +54,18 @@ public class Solution270 {
         if (root == null) {
             return Integer.MAX_VALUE;
         }
-        
+
         if (root.left == null && root.right == null) {
             return root.val;
         }
-        
+
         int left = closestValue(root.left, target);
         int right = closestValue(root.right, target);
-        
+
         double diffroot = Math.abs(root.val - target);
         double diffleft = Math.abs(left - target);
         double diffright = Math.abs(right - target);
-        
+
         if (diffroot <= diffleft) {
             return diffroot <= diffright ? root.val : right;
         } else {

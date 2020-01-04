@@ -2,9 +2,9 @@ package johnny.leetcode.algorithm;
 
 /**
  * Longest Common Prefix.
- * Write a function to find the longest common prefix string amongst an 
+ * Write a function to find the longest common prefix string amongst an
  * array of strings.
- * 
+ *
  * @author Johnny
  */
 public class Solution014 {
@@ -13,7 +13,7 @@ public class Solution014 {
         if (strs == null || strs.length == 0) {
             return "";
         }
-  
+
         int minlen = Integer.MAX_VALUE;
         String str = "";
         for (int i = 0; i < strs.length; i++) {
@@ -22,11 +22,11 @@ public class Solution014 {
                 str = strs[i];
             }
         }
-        
+
         if (minlen == 0) {
             return "";
         }
-        
+
         for (int i = 0; i < str.length(); i++) {
             for (int j = 0; j < strs.length; j++) {
                 if (strs[j].charAt(i) != str.charAt(i)) {
@@ -34,7 +34,7 @@ public class Solution014 {
                 }
             }
         }
-        
+
         return str;
     }
 }

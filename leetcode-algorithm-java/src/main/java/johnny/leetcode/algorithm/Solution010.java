@@ -3,15 +3,15 @@ package johnny.leetcode.algorithm;
 /**
  * Regular Expression Matching.
  * Implement regular expression matching with support for '.' and '*'.
- * 
+ * <p>
  * '.' Matches any single character.
  * '*' Matches zero or more of the preceding element.
- * 
+ * <p>
  * The matching should cover the entire input string (not partial).
- * 
+ * <p>
  * The function prototype should be:
  * bool isMatch(const char *s, const char *p)
- * 
+ * <p>
  * Some examples:
  * isMatch("aa","a") → false
  * isMatch("aa","aa") → true
@@ -20,7 +20,7 @@ package johnny.leetcode.algorithm;
  * isMatch("aa", ".*") → true
  * isMatch("ab", ".*") → true
  * isMatch("aab", "c*a*b") → true
- * 
+ *
  * @author Johnny
  */
 public class Solution010 {
@@ -30,14 +30,14 @@ public class Solution010 {
         if (s == null || p == null) {
             return false;
         }
-        
+
         char[] arrs = s.toCharArray();
         char[] arrp = p.toCharArray();
         int m = arrs.length;
         int n = arrp.length;
         boolean[][] dp = new boolean[m + 1][n + 1];
         dp[0][0] = true;
-        
+
         for (int j = 1; j <= n; j++) {
             if (arrp[j - 1] == '*') {
                 dp[0][j] = dp[0][j - 2];
@@ -53,12 +53,13 @@ public class Solution010 {
                     if (arrp[j - 2] == '.' || arrp[j - 2] == arrs[i - 1]) {
                         dp[i][j] = dp[i - 1][j] || dp[i][j];
                     }
-                } 
+                }
             }
         }
 
         return dp[m][n];
     }
+
     public boolean isMatch2(String s, String p) {
         if (s.isEmpty() && p.isEmpty())
             return true;
@@ -66,28 +67,28 @@ public class Solution010 {
             return false;
         if (s.isEmpty() && !p.isEmpty())
             return false;
-        
-        if(p.indexOf('*') >=0)
+
+        if (p.indexOf('*') >= 0)
             return true;
-        
+
         char[] sArray = s.toCharArray();
         char[] pArray = p.toCharArray();
-        int i=0;
-        for(i=0; i<sArray.length; i++) {
-            if (i>=pArray.length)
+        int i = 0;
+        for (i = 0; i < sArray.length; i++) {
+            if (i >= pArray.length)
                 return false;
             if (sArray[i] == pArray[i])
                 continue;
             else {
-                if(pArray[i] == '.')
+                if (pArray[i] == '.')
                     continue;
-                else if(pArray[i] == '*')
+                else if (pArray[i] == '*')
                     return true;
                 else
                     return false;
             }
         }
-        
+
         return true;
     }
 }

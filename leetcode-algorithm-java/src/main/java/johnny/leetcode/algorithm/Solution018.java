@@ -7,31 +7,31 @@ import java.util.List;
 
 /**
  * 4Sum.
- * Given an array S of n integers, are there elements a, b, c, and d in S such 
- * that a + b + c + d = target? Find all unique quadruplets in the array which 
+ * Given an array S of n integers, are there elements a, b, c, and d in S such
+ * that a + b + c + d = target? Find all unique quadruplets in the array which
  * gives the sum of target.
- * 
+ * <p>
  * Note:
- * Elements in a quadruplet (a,b,c,d) must be in non-descending order. 
+ * Elements in a quadruplet (a,b,c,d) must be in non-descending order.
  * (ie, a ≤ b ≤ c ≤ d)
  * The solution set must not contain duplicate quadruplets.
- *     For example, given array S = {1 0 -1 0 -2 2}, and target = 0.
- * 
- *     A solution set is:
- *     (-1,  0, 0, 1)
- *     (-2, -1, 1, 2)
- *     (-2,  0, 0, 2)
- * 
+ * For example, given array S = {1 0 -1 0 -2 2}, and target = 0.
+ * <p>
+ * A solution set is:
+ * (-1,  0, 0, 1)
+ * (-2, -1, 1, 2)
+ * (-2,  0, 0, 2)
+ *
  * @author Johnny
  */
 public class Solution018 {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
-        
+
         if (nums == null || nums.length < 3) {
             return res;
         }
-        
+
         Arrays.sort(nums);
 
         HashSet<List<Integer>> hashSet = new HashSet<List<Integer>>();
@@ -44,7 +44,7 @@ public class Solution018 {
                 while (k < l) {
                     int sum = nums[i] + nums[j] + nums[k] + nums[l];
                     if (sum == target) {
-                        List<Integer> item = Arrays.asList(nums[i], nums[j],nums[k],nums[l]);
+                        List<Integer> item = Arrays.asList(nums[i], nums[j], nums[k], nums[l]);
 
                         if (!hashSet.contains(item)) {
                             hashSet.add(item);
@@ -57,7 +57,7 @@ public class Solution018 {
                         l--;
                     } else if (sum < target) {
                         k++;
-                    } 
+                    }
                 }
             }
         }

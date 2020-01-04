@@ -4,20 +4,20 @@ import johnny.algorithm.common.ListNode;
 
 /**
  * Plus One Linked List.
- * 
- * Given a non-negative number represented as a singly linked list of digits, 
+ * <p>
+ * Given a non-negative number represented as a singly linked list of digits,
  * plus one to the number.
- * 
+ * <p>
  * The digits are stored such that the most significant digit is at the head of
  * the list.
- * 
+ * <p>
  * Example:
  * Input:
  * 1->2->3
- * 
+ * <p>
  * Output:
  * 1->2->4
- * 
+ *
  * @author Johnny
  */
 public class Solution369 {
@@ -48,7 +48,7 @@ public class Solution369 {
         if (head == null) {
             return new ListNode(1);
         }
-        
+
         ListNode tail = reverse(head);
         ListNode rev = tail;
         int carry = 1;
@@ -56,7 +56,7 @@ public class Solution369 {
             if (carry == 0) {
                 break;
             }
-            
+
             int sum = rev.val + carry;
             if (sum >= 10) {
                 rev.val = sum % 10;
@@ -73,10 +73,10 @@ public class Solution369 {
                 break;
             }
         }
-        
+
         return reverse(tail);
     }
-    
+
     private ListNode reverse(ListNode head) {
         ListNode prev = null;
         while (head != null) {

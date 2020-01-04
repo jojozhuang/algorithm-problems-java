@@ -9,32 +9,32 @@ import java.util.Queue;
 
 /**
  * 854. K-Similar Strings
- * 
+ * <p>
  * Strings A and B are K-similar (for some non-negative integer K) if we can swap the positions of two letters in A exactly K times so that the resulting string equals B.
-
-Given two anagrams A and B, return the smallest K for which A and B are K-similar.
-
-Example 1:
-
-Input: A = "ab", B = "ba"
-Output: 1
-Example 2:
-
-Input: A = "abc", B = "bca"
-Output: 2
-Example 3:
-
-Input: A = "abac", B = "baca"
-Output: 2
-Example 4:
-
-Input: A = "aabc", B = "abca"
-Output: 2
-Note:
-
-1 <= A.length == B.length <= 20
-A and B contain only lowercase letters from the set {'a', 'b', 'c', 'd', 'e', 'f'}
-
+ * <p>
+ * Given two anagrams A and B, return the smallest K for which A and B are K-similar.
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: A = "ab", B = "ba"
+ * Output: 1
+ * Example 2:
+ * <p>
+ * Input: A = "abc", B = "bca"
+ * Output: 2
+ * Example 3:
+ * <p>
+ * Input: A = "abac", B = "baca"
+ * Output: 2
+ * Example 4:
+ * <p>
+ * Input: A = "aabc", B = "abca"
+ * Output: 2
+ * Note:
+ * <p>
+ * 1 <= A.length == B.length <= 20
+ * A and B contain only lowercase letters from the set {'a', 'b', 'c', 'd', 'e', 'f'}
+ *
  * @author Johnny
  */
 public class Solution854 {
@@ -48,7 +48,7 @@ public class Solution854 {
         while (!queue.isEmpty()) {
             String S = queue.poll();
             if (S.equals(B)) return dist.get(S);
-            for (String T: neighbors(S, B)) {
+            for (String T : neighbors(S, B)) {
                 if (!dist.containsKey(T)) {
                     dist.put(T, dist.get(S) + 1);
                     queue.offer(T);
@@ -67,7 +67,7 @@ public class Solution854 {
         }
 
         char[] T = S.toCharArray();
-        for (int j = i+1; j < S.length(); ++j)
+        for (int j = i + 1; j < S.length(); ++j)
             if (S.charAt(j) == target.charAt(i)) {
                 swap(T, i, j);
                 ans.add(new String(T));

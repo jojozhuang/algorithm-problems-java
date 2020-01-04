@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- *
  * @author Johnny
  */
 public class Solution888 {
@@ -22,7 +21,7 @@ public class Solution888 {
             sum2 += i;
             set2.add(i);
         }
-        
+
         int avg = (sum1 + sum2) / 2;
         for (int i = 0; i < A.length; i++) {
             if (sum1 - A[i] < avg) {
@@ -31,16 +30,16 @@ public class Solution888 {
                 }
             }
         }
-        
-        return new int[]{-1,-1};
+
+        return new int[]{-1, -1};
     }
-    
+
     public int[] fairCandySwap2(int[] A, int[] B) {
         int sum1 = 0, sum2 = 0;
         for (int i : A) {
             sum1 += i;
         }
-        for (int j: B) {
+        for (int j : B) {
             sum2 += j;
         }
 
@@ -55,15 +54,15 @@ public class Solution888 {
             return res;
         }
     }
-    
+
     private int[] match(int[] nums1, int[] nums2, int diff) {
         int[] res = new int[2];
         HashMap<Integer, Integer> map = new HashMap<>();
-        
+
         for (int i = 0; i < nums1.length; i++) {
             map.put(nums1[i] + diff / 2, i);
         }
-        
+
         for (int j = 0; j < nums2.length; j++) {
             if (map.containsKey(nums2[j])) {
                 res[0] = nums1[map.get(nums2[j])];

@@ -5,36 +5,36 @@ import java.util.List;
 
 /**
  * 969. Pancake Sorting
-Given an array A, we can perform a pancake flip: We choose some positive integer k <= A.length, then reverse the order of the first k elements of A.  We want to perform zero or more pancake flips (doing them one after another in succession) to sort the array A.
-
-Return the k-values corresponding to a sequence of pancake flips that sort A.  Any valid answer that sorts the array within 10 * A.length flips will be judged as correct.
-
- 
-
-Example 1:
-
-Input: [3,2,4,1]
-Output: [4,2,4,3]
-Explanation: 
-We perform 4 pancake flips, with k values 4, 2, 4, and 3.
-Starting state: A = [3, 2, 4, 1]
-After 1st flip (k=4): A = [1, 4, 2, 3]
-After 2nd flip (k=2): A = [4, 1, 2, 3]
-After 3rd flip (k=4): A = [3, 2, 1, 4]
-After 4th flip (k=3): A = [1, 2, 3, 4], which is sorted. 
-Example 2:
-
-Input: [1,2,3]
-Output: []
-Explanation: The input is already sorted, so there is no need to flip anything.
-Note that other answers, such as [3, 3], would also be accepted.
- 
-
-Note:
-
-1 <= A.length <= 100
-A[i] is a permutation of [1, 2, ..., A.length]
-
+ * Given an array A, we can perform a pancake flip: We choose some positive integer k <= A.length, then reverse the order of the first k elements of A.  We want to perform zero or more pancake flips (doing them one after another in succession) to sort the array A.
+ * <p>
+ * Return the k-values corresponding to a sequence of pancake flips that sort A.  Any valid answer that sorts the array within 10 * A.length flips will be judged as correct.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [3,2,4,1]
+ * Output: [4,2,4,3]
+ * Explanation:
+ * We perform 4 pancake flips, with k values 4, 2, 4, and 3.
+ * Starting state: A = [3, 2, 4, 1]
+ * After 1st flip (k=4): A = [1, 4, 2, 3]
+ * After 2nd flip (k=2): A = [4, 1, 2, 3]
+ * After 3rd flip (k=4): A = [3, 2, 1, 4]
+ * After 4th flip (k=3): A = [1, 2, 3, 4], which is sorted.
+ * Example 2:
+ * <p>
+ * Input: [1,2,3]
+ * Output: []
+ * Explanation: The input is already sorted, so there is no need to flip anything.
+ * Note that other answers, such as [3, 3], would also be accepted.
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= A.length <= 100
+ * A[i] is a permutation of [1, 2, ..., A.length]
+ *
  * @author Johnny
  */
 public class Solution969 {
@@ -55,10 +55,10 @@ public class Solution969 {
                 i--;
             }
         }
-     
+
         return ans;
     }
-    
+
     private int findMax(int[] A, int end) {
         int max = 0;
         int index = -1;
@@ -70,7 +70,7 @@ public class Solution969 {
         }
         return index;
     }
-    
+
     private void reverse(int[] A, int i, int j) {
         while (i < j) {
             int temp = A[i];

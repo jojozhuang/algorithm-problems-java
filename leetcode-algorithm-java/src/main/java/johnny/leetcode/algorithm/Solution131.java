@@ -5,19 +5,19 @@ import java.util.List;
 
 /**
  * Palindrome Partitioning.
- * Given a string s, partition s such that every substring of the partition 
+ * Given a string s, partition s such that every substring of the partition
  * is a palindrome.
- * 
+ * <p>
  * Return all possible palindrome partitioning of s.
- * 
+ * <p>
  * For example, given s = "aab",
  * Return
- * 
- *   [
- *     ["aa","b"],
- *     ["a","a","b"]
- *   ]
- * 
+ * <p>
+ * [
+ * ["aa","b"],
+ * ["a","a","b"]
+ * ]
+ *
  * @author Johnny
  */
 public class Solution131 {
@@ -31,7 +31,7 @@ public class Solution131 {
         helper(s, 0, list, res);
         return res;
     }
-    
+
     private void helper(String s, int pos, List<String> list, List<List<String>> res) {
         if (pos == s.length()) {
             res.add(new ArrayList<String>(list));

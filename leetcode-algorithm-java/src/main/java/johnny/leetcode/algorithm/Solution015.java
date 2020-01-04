@@ -6,22 +6,22 @@ import java.util.List;
 
 /**
  * 3Sum.
- * Given an array S of n integers, are there elements a, b, c in S such that 
- * a + b + c = 0? Find all unique triplets in the array which gives the sum of 
+ * Given an array S of n integers, are there elements a, b, c in S such that
+ * a + b + c = 0? Find all unique triplets in the array which gives the sum of
  * zero.
- * 
+ * <p>
  * Note:
- * 1. Elements in a triplet (a,b,c) must be in non-descending order. 
+ * 1. Elements in a triplet (a,b,c) must be in non-descending order.
  * (ie, a ≤ b ≤ c)
  * 2. The solution set must not contain duplicate triplets.
- *    For example, given array S = {-1 0 1 2 -1 -4},
- *    A solution set is:
- *    (-1, 0, 1)
- *    (-1, -1, 2)
- * 
+ * For example, given array S = {-1 0 1 2 -1 -4},
+ * A solution set is:
+ * (-1, 0, 1)
+ * (-1, -1, 2)
+ *
  * @author Johnny
  */
-public class Solution015 {    
+public class Solution015 {
     //http://www.programcreek.com/2012/12/leetcode-3sum/
     //List<List<Integer>>, O(n^2)
     public List<List<Integer>> threeSum(int[] nums) {
@@ -44,7 +44,7 @@ public class Solution015 {
             int end = nums.length - 1;
 
             while (start < end) {
-                long sum = (long)nums[start] + (long)nums[end] + (long)nums[i];
+                long sum = (long) nums[start] + (long) nums[end] + (long) nums[i];
                 if (sum == 0) {
                     res.add(Arrays.asList(nums[i], nums[start], nums[end]));
 

@@ -8,18 +8,18 @@ import java.util.Set;
 /**
  * Word Pattern II.
  * Given a pattern and a string str, find if str follows the same pattern.
- * 
- * Here follow means a full match, such that there is a bijection between a 
+ * <p>
+ * Here follow means a full match, such that there is a bijection between a
  * letter in pattern and a non-empty substring in str.
- * 
+ * <p>
  * Examples:
- * 
+ * <p>
  * pattern = "abab", str = "redblueredblue" should return true.
  * pattern = "aaaa", str = "asdasdasdasd" should return true.
- * pattern = "aabb", str = "xyzabcxzyabc" should return false. 
+ * pattern = "aabb", str = "xyzabcxzyabc" should return false.
  * Notes:
  * You may assume both pattern and str contains only lowercase letters.
- * 
+ *
  * @author Johnny
  */
 public class Solution291 {
@@ -30,7 +30,7 @@ public class Solution291 {
         if (pattern == null || str == null) {
             return false;
         }
-        
+
         Map<Character, String> map = new HashMap<>();
         Set<String> set = new HashSet<>(); // avoid duplicate match. a->red, b->red is not allowed
 

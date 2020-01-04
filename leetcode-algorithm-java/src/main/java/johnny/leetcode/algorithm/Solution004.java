@@ -2,10 +2,10 @@ package johnny.leetcode.algorithm;
 
 /**
  * Median of Two Sorted Arrays.
- * There are two sorted arrays A and B of size m and n respectively. Find the 
- * median of the two sorted arrays. The overall run time complexity should be 
+ * There are two sorted arrays A and B of size m and n respectively. Find the
+ * median of the two sorted arrays. The overall run time complexity should be
  * O(log (m+n)).
- * 
+ *
  * @author Johnny
  */
 public class Solution004 {
@@ -13,7 +13,7 @@ public class Solution004 {
         if ((nums1 == null || nums1.length == 0) && (nums2 == null || nums2.length == 0)) {
             return 0;
         }
-        
+
         if (nums1 == null || nums1.length == 0) {
             return findMedian(nums2);
         }
@@ -30,7 +30,7 @@ public class Solution004 {
             return (findKth(nums1, 0, nums2, 0, len / 2) + findKth(nums1, 0, nums2, 0, len / 2 + 1)) / 2.0;
         }
     }
-    
+
     private double findMedian(int[] nums) {
         int len = nums.length;
         if (len % 2 == 1) {
@@ -39,6 +39,7 @@ public class Solution004 {
             return (nums[len / 2] + nums[len / 2 - 1]) / 2.0;
         }
     }
+
     /*
     Find kth value, find median is one case of it.
     */
@@ -73,7 +74,7 @@ public class Solution004 {
             return findKth(nums1, start1, nums2, start2 + k / 2, k - k / 2);
         }
     }
-    
+
     public double findMedianSortedArrays3(int[] nums1, int[] nums2) {
         if ((nums1 == null || nums1.length == 0) && (nums2 == null || nums2.length == 0)) {
             return 0;
@@ -88,7 +89,8 @@ public class Solution004 {
         } else {
             return (findKth(nums1, 0, nums2, 0, len / 2) + findKth(nums1, 0, nums2, 0, len / 2 + 1)) / 2.0;
         }
-    }    
+    }
+
     /*
     Find kth value, find median is one case of it.
     */

@@ -7,11 +7,11 @@ import java.util.List;
 /**
  * Strobogrammatic Number II.
  * A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
- * 
+ * <p>
  * Find all strobogrammatic numbers that are of length = n.
  * For example,
  * Given n = 2, return ["11","69","88","96"].
- * 
+ *
  * @author Johnny
  */
 public class Solution247 {
@@ -28,8 +28,8 @@ public class Solution247 {
         }
         List<String> res = new ArrayList<>();
         List<String> prev = helper(remain - 2, level + 1);
-        for (String s: prev) {
-            if (level > 0) { 
+        for (String s : prev) {
+            if (level > 0) {
                 res.add("0" + s + "0");
             }
             res.add("1" + s + "1");

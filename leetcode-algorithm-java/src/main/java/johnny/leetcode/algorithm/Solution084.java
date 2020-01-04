@@ -4,17 +4,17 @@ import java.util.Stack;
 
 /**
  * Largest Rectangle in Histogram.
- * Given n non-negative integers representing the histogram's bar height where 
+ * Given n non-negative integers representing the histogram's bar height where
  * the width of each bar is 1, find the area of largest rectangle in the histogram.
- * 
+ * <p>
  * Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
- * 
+ * <p>
  * The largest rectangle is shown in the shaded area, which has area = 10 unit.
- * 
+ * <p>
  * For example,
  * Given height = [2,1,5,6,2,3],
  * return 10.
- * 
+ *
  * @author Johnny
  */
 public class Solution084 {
@@ -25,11 +25,11 @@ public class Solution084 {
         int len = heights.length;
         Stack<Integer> s = new Stack<Integer>();
         int maxArea = 0;
-        for(int i = 0; i <= len; i++){
+        for (int i = 0; i <= len; i++) {
             int h = (i == len ? 0 : heights[i]);
-            if(s.isEmpty() || h >= heights[s.peek()]){
+            if (s.isEmpty() || h >= heights[s.peek()]) {
                 s.push(i);
-            }else{
+            } else {
                 int tp = s.pop();
                 maxArea = Math.max(maxArea, heights[tp] * (s.isEmpty() ? i : i - 1 - s.peek()));
                 i--;
@@ -37,6 +37,7 @@ public class Solution084 {
         }
         return maxArea;
     }
+
     //http://www.programcreek.com/2014/05/leetcode-largest-rectangle-in-histogram-java/
     public int largestRectangleArea4(int[] heights) {
         if (heights == null || heights.length == 0) {
@@ -61,7 +62,7 @@ public class Solution084 {
                 max = Math.max(h * w, max);
             }
         }
-        
+
         while (!stack.isEmpty()) {
             int p = stack.pop();
             int h = heights[p];
@@ -71,16 +72,16 @@ public class Solution084 {
 
         return max;
     }
-    
+
     //Brute Force
     public int largestRectangleArea3(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;
         }
-        
+
         int n = heights.length;
         int max = 0;
-        
+
         for (int i = 0; i < n; i++) {
             int min = heights[i];
             for (int j = i; j < n; j++) {
@@ -88,19 +89,19 @@ public class Solution084 {
                 max = Math.max(max, (j - i + 1) * min);
             }
         }
-        
+
         return max;
     }
-    
+
     public int largestRectangleArea2(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;
         }
-        
+
         int n = heights.length;
         int[][] area = new int[n][n];
         int max = 0;
-        
+
         for (int i = 0; i < n; i++) {
             int min = 0;
             for (int j = i; j < n; j++) {
@@ -114,7 +115,7 @@ public class Solution084 {
                 max = Math.max(max, area[i][j]);
             }
         }
-        
+
         return max;
     }
 }

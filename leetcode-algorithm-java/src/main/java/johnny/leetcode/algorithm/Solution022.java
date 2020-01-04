@@ -5,11 +5,11 @@ import java.util.List;
 
 /**
  * Generate Parentheses.
- * Given n pairs of parentheses, write a function to generate all combinations 
+ * Given n pairs of parentheses, write a function to generate all combinations
  * of well-formed parentheses.
  * For example, given n = 3, a solution set is:
  * "((()))", "(()())", "(())()", "()(())", "()()()"
- * 
+ *
  * @author Johnny
  */
 public class Solution022 {
@@ -18,17 +18,17 @@ public class Solution022 {
         if (n <= 0) {
             return res;
         }
-            
+
         combination(res, "", n, n);
         return res;
     }
-    
+
     private void combination(List<String> res, String prefix, int left, int right) {
         if (left > right) {//deal wiith ")("
-             return;
+            return;
         }
 
-        if (left == 0 && right == 0){
+        if (left == 0 && right == 0) {
             res.add(prefix);
             return;
         }

@@ -4,15 +4,15 @@ package johnny.leetcode.algorithm;
  * Maximum Product Subarray.
  * Find the contiguous subarray within an array (containing at least one number)
  * which has the largest product.
- * 
+ * <p>
  * For example, given the array [2,3,-2,4],
  * the contiguous subarray [2,3] has the largest product = 6.
- * 
+ *
  * @author Johnny
  */
 public class Solution152 {
     public int maxProduct(int[] nums) {
-        if(nums == null || nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
 

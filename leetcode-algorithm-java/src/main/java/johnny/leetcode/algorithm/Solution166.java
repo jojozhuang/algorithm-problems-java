@@ -7,15 +7,15 @@ import java.util.Map;
  * Fraction to Recurring Decimal.
  * Given two integers representing the numerator and denominator of a fraction,
  * return the fraction in string format.
- * 
+ * <p>
  * If the fractional part is repeating, enclose the repeating part in parentheses.
- * 
+ * <p>
  * For example,
- * 
+ * <p>
  * Given numerator = 1, denominator = 2, return "0.5".
  * Given numerator = 2, denominator = 1, return "2".
  * Given numerator = 2, denominator = 3, return "0.(6)".
- * 
+ *
  * @author Johnny
  */
 public class Solution166 {
@@ -26,7 +26,7 @@ public class Solution166 {
         if (numerator == 0) {
             return "0";
         }
-        
+
         StringBuilder fraction = new StringBuilder();
         // If either one is negative (not both)
         if (numerator < 0 ^ denominator < 0) {
@@ -36,13 +36,13 @@ public class Solution166 {
         long dividend = Math.abs(Long.valueOf(numerator));
         long divisor = Math.abs(Long.valueOf(denominator));
         fraction.append(String.valueOf(dividend / divisor));
-        
+
         long remainder = dividend % divisor;
         if (remainder == 0) {
             return fraction.toString();
         }
         fraction.append(".");
-        
+
         Map<Long, Integer> map = new HashMap<>();
         while (remainder != 0) {
             if (map.containsKey(remainder)) {
@@ -57,7 +57,7 @@ public class Solution166 {
         }
         return fraction.toString();
     }
-    
+
     public String fractionToDecimal2(int numerator, int denominator) {
         if (denominator == 0) {
             return "";
@@ -94,7 +94,7 @@ public class Solution166 {
         while (remainder != 0) {
             // if digits repeat
             if (map.containsKey(remainder)) {
-                int beg = map.get(remainder); 
+                int beg = map.get(remainder);
                 String part1 = result.substring(0, beg);
                 String part2 = result.substring(beg, result.length());
                 result = part1 + "(" + part2 + ")";

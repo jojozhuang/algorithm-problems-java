@@ -1,7 +1,6 @@
 package johnny.leetcode.algorithm;
 
 /**
- *
  * @author Johnny
  */
 public class SolutionA1144 {
@@ -9,7 +8,7 @@ public class SolutionA1144 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        
+
         // case 1: first one is smaller than the second
         int steps1 = 0;
         int prev = nums[0];
@@ -42,7 +41,7 @@ public class SolutionA1144 {
                 prev = nums[i];
             }
         }
-        
+
         return Math.min(steps1, steps2);
     }
 }

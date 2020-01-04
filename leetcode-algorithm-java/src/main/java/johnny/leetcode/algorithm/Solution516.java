@@ -2,26 +2,26 @@ package johnny.leetcode.algorithm;
 
 /**
  * Longest Palindromic Subsequence
- * 
- * Given a string s, find the longest palindromic subsequence's length in s. 
+ * <p>
+ * Given a string s, find the longest palindromic subsequence's length in s.
  * You may assume that the maximum length of s is 1000.
- * 
+ * <p>
  * Example 1:
  * Input:
- * 
+ * <p>
  * "bbbab"
  * Output:
  * 4
  * One possible longest palindromic subsequence is "bbbb".
- * 
+ * <p>
  * Example 2:
  * Input:
- * 
+ * <p>
  * "cbbd"
  * Output:
  * 2
  * One possible longest palindromic subsequence is "bb".
- * 
+ *
  * @author Johnny
  */
 public class Solution516 {
@@ -29,7 +29,7 @@ public class Solution516 {
     public int longestPalindromeSubseq(String s) {
         int n = s.length();
         int[][] dp = new int[n][n];
-        
+
         for (int i = n - 1; i >= 0; i--) {
             dp[i][i] = 1;
             for (int j = i + 1; j < n; j++) {
@@ -40,16 +40,17 @@ public class Solution516 {
                 }
             }
         }
-        
+
         return dp[0][n - 1];
     }
+
     // recursion + memo
     public int longestPalindromeSubseq2(String s) {
         int n = s.length();
         Integer[][] memo = new Integer[n][n];
         return helper(s, 0, n - 1, memo);
     }
-    
+
     private int helper(String s, int i, int j, Integer[][] memo) {
         if (memo[i][j] != null) {
             return memo[i][j];
@@ -60,12 +61,12 @@ public class Solution516 {
         if (i == j) {
             return 1;
         }
-        
+
         if (s.charAt(i) == s.charAt(j)) {
             memo[i][j] = helper(s, i + 1, j - 1, memo) + 2;
         } else {
             memo[i][j] = Math.max(helper(s, i + 1, j, memo), helper(s, i, j - 1, memo));
         }
         return memo[i][j];
-    } 
+    }
 }

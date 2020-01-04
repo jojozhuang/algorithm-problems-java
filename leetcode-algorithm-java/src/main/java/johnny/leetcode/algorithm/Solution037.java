@@ -3,15 +3,15 @@ package johnny.leetcode.algorithm;
 /**
  * Sudoku Solver. (picture not downloaded)
  * Write a program to solve a Sudoku puzzle by filling the empty cells.
- * 
+ * <p>
  * Empty cells are indicated by the character '.'.
- * 
+ * <p>
  * You may assume that there will be only one unique solution.
- * 
+ * <p>
  * A sudoku puzzle...
- * 
+ * <p>
  * ...and its solution numbers marked in red.
- * 
+ *
  * @author Johnny
  */
 public class Solution037 {
@@ -35,22 +35,22 @@ public class Solution037 {
                 }
             }
         }
-        
+
         fill(board, 0, 0, row, col, box);
     }
-    
+
     private boolean fill(char[][] board, int x, int y, int[][] row, int[][] col, int[][] box) {
         if (x == 9) {
             return true;
         }
-        
+
         // next position, from left to right, and up to down
         int nc = (y + 1) % 9;           // column of next position
         int nr = (nc == 0) ? x + 1 : x; // row of next position
         if (board[x][y] != '.') {
             return fill(board, nr, nc, row, col, box);
         }
-        
+
         // board[x][y] == '.'
         for (int i = 0; i < 9; i++) {
             int bx = x / 3;
@@ -60,7 +60,7 @@ public class Solution037 {
                 row[x][i] = 1;
                 col[y][i] = 1;
                 box[boxkey][i] = 1;
-                board[x][y] = (char)(i + 1 + '0');
+                board[x][y] = (char) (i + 1 + '0');
                 if (fill(board, nr, nc, row, col, box)) {
                     return true;
                 }
@@ -70,17 +70,18 @@ public class Solution037 {
                 row[x][i] = 0;
             }
         }
-        
+
         return false;
     }
+
     public void solveSudoku2(char[][] board) {
         if (board == null || board.length == 0 || board[0].length == 0) {
             return;
         }
-        
+
         helper(board);
     }
-    
+
     private boolean helper(char[][] board) {
         int n = board.length;
         int m = board[0].length;
@@ -88,7 +89,7 @@ public class Solution037 {
             for (int j = 0; j < m; j++) {
                 if (board[i][j] == '.') {
                     for (char c = '1'; c <= '9'; c++) {
-                        if (isValid(board, i, j, c)){
+                        if (isValid(board, i, j, c)) {
                             board[i][j] = c;
                             if (helper(board)) {
                                 return true;
@@ -103,7 +104,7 @@ public class Solution037 {
         }
         return true;
     }
-    
+
     private boolean isValid(char[][] board, int i, int j, char c) {
         int n = board.length;
         int m = board[0].length;
@@ -127,7 +128,7 @@ public class Solution037 {
                 }
             }
         }
-        
+
         return true;
     }
 }

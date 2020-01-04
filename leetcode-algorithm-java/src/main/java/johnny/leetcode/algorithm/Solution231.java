@@ -3,7 +3,7 @@ package johnny.leetcode.algorithm;
 /**
  * Power of Two.
  * Given an integer, write a function to determine if it is a power of two.
- * 
+ *
  * @author Johnny
  */
 public class Solution231 {
@@ -15,12 +15,12 @@ public class Solution231 {
         }
         return count == 1;
     }
-    
+
     public boolean isPowerOfTwo2(int n) {
         if (n <= 0) {
             return false;
         }
-        
-        return (n &(n - 1)) == 0;
+
+        return (n & (n - 1)) == 0;
     }
 }

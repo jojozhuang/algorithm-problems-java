@@ -5,24 +5,23 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- *
  * @author Johnny
  */
 public class Solution890 {
     public List<String> findAndReplacePattern(String[] words, String pattern) {
         List<String> ans = new ArrayList<>();
-        
-        for (String word: words) {
+
+        for (String word : words) {
             if (word.length() == pattern.length()) {
                 if (match(word, pattern)) {
                     ans.add(word);
                 }
             }
         }
-        
+
         return ans;
     }
-    
+
     private boolean match(String word, String pattern) {
         HashMap<Character, Character> map = new HashMap<>();
         for (int i = 0; i < word.length(); i++) {
@@ -39,7 +38,7 @@ public class Solution890 {
                 }
             }
         }
-        
+
         return true;
     }
 }

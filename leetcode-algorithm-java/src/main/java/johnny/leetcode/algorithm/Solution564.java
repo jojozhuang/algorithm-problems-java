@@ -3,17 +3,18 @@ package johnny.leetcode.algorithm;
 import java.util.Arrays;
 
 /**
- *564. Find the Closest Palindrome
- *Given an integer n, find the closest integer (not including itself), which is a palindrome.
-
-The 'closest' is defined as absolute difference minimized between two integers.
-
-Example 1:
-Input: "123"
-Output: "121"
-Note:
-The input n is a positive integer represented by string, whose length will not exceed 18.
-If there is a tie, return the smaller one as answer.
+ * 564. Find the Closest Palindrome
+ * Given an integer n, find the closest integer (not including itself), which is a palindrome.
+ * <p>
+ * The 'closest' is defined as absolute difference minimized between two integers.
+ * <p>
+ * Example 1:
+ * Input: "123"
+ * Output: "121"
+ * Note:
+ * The input n is a positive integer represented by string, whose length will not exceed 18.
+ * If there is a tie, return the smaller one as answer.
+ *
  * @author Johnny
  */
 public class Solution564 {
@@ -23,6 +24,7 @@ public class Solution564 {
         Long small = findLowerPalindrome(number - 1);
         return Math.abs(number - small) > Math.abs(big - number) ? String.valueOf(big) : String.valueOf(small);
     }
+
     public Long findHigherPalindrome(Long limit) {
         String n = Long.toString(limit);
         char[] s = n.toCharArray(); // limit
@@ -33,8 +35,8 @@ public class Solution564 {
         }
         for (int i = 0; i < m; i++) {
             if (s[i] < t[i]) {
-                return Long.parseLong(String.valueOf(t)); 
-            } else if (s[i] > t[i]) { 
+                return Long.parseLong(String.valueOf(t));
+            } else if (s[i] > t[i]) {
                 for (int j = (m - 1) / 2; j >= 0; j--) {
                     if (++t[j] > '9') {
                         t[j] = '0';
@@ -46,11 +48,12 @@ public class Solution564 {
                 for (int k = 0; k < m / 2; k++) {
                     t[m - 1 - k] = t[k];
                 }
-                return Long.parseLong(String.valueOf(t)); 
+                return Long.parseLong(String.valueOf(t));
             }
         }
-        return Long.parseLong(String.valueOf(t));    
+        return Long.parseLong(String.valueOf(t));
     }
+
     public Long findLowerPalindrome(Long limit) {
         String n = Long.toString(limit);
         char[] s = n.toCharArray();
@@ -61,7 +64,7 @@ public class Solution564 {
         }
         for (int i = 0; i < m; i++) {
             if (s[i] > t[i]) {
-                return Long.parseLong(String.valueOf(t)); 
+                return Long.parseLong(String.valueOf(t));
             } else if (s[i] < t[i]) {
                 for (int j = (m - 1) / 2; j >= 0; j--) {
                     if (--t[j] < '0') {
@@ -73,15 +76,15 @@ public class Solution564 {
                 if (t[0] == '0') {
                     char[] a = new char[m - 1];
                     Arrays.fill(a, '9');
-                    return Long.parseLong(String.valueOf(a)); 
+                    return Long.parseLong(String.valueOf(a));
                 }
                 // make it palindrome again
                 for (int k = 0; k < m / 2; k++) {
                     t[m - 1 - k] = t[k];
                 }
-                return Long.parseLong(String.valueOf(t)); 
+                return Long.parseLong(String.valueOf(t));
             }
         }
-         return Long.parseLong(String.valueOf(t));  
+        return Long.parseLong(String.valueOf(t));
     }
 }

@@ -6,13 +6,13 @@ import java.util.Set;
 /**
  * Valid Sudoku .
  * Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
- * The Sudoku board could be partially filled, where empty cells are filled 
+ * The Sudoku board could be partially filled, where empty cells are filled
  * with the character '.'.
- * 
+ * <p>
  * Note:
- * A valid Sudoku board (partially filled) is not necessarily solvable. 
+ * A valid Sudoku board (partially filled) is not necessarily solvable.
  * Only the filled cells need to be validated.
-* 
+ *
  * @author Johnny
  */
 public class Solution036 {
@@ -21,17 +21,18 @@ public class Solution036 {
             return false;
         }
         Set<String> seen = new HashSet<String>();
-        for (int i=0; i<9; ++i) {
-            for (int j=0; j<9; ++j) {
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
                 if (board[i][j] != '.') {
                     String b = "(" + board[i][j] + ")";
-                    if (!seen.add(b + i) || !seen.add(j + b) || !seen.add(i/3 + b + j/3))
+                    if (!seen.add(b + i) || !seen.add(j + b) || !seen.add(i / 3 + b + j / 3))
                         return false;
                 }
             }
         }
         return true;
     }
+
     public boolean isValidSudoku2(char[][] board) {
         if (board == null || board.length != 9 || board[0].length != 9) {
             return false;
@@ -55,7 +56,7 @@ public class Solution036 {
                 }
             }
         }
-        
+
         // check 9 small matrix
         for (int i = 0; i < board.length; i = i + 3) {
             for (int j = 0; j < board[0].length; j = j + 3) {
@@ -64,9 +65,10 @@ public class Solution036 {
                 }
             }
         }
-        
+
         return true;
     }
+
     // check matrix
     private boolean isValidMatrix(char[][] matrix, int top, int left) {
         boolean[] numsUsed = new boolean[matrix.length];
@@ -79,6 +81,7 @@ public class Solution036 {
         }
         return true;
     }
+
     // check array
     private boolean isDuplicated(char c, boolean[] numsUsed) {
         if (c == '.') {

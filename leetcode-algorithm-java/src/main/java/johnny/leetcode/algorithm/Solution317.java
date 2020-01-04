@@ -5,18 +5,18 @@ import java.util.Queue;
 
 /**
  * Shortest Distance from All Buildings.
- * You want to build a house on an empty land which reaches all buildings in 
- * the shortest amount of distance. You can only move up, down, left and right. 
+ * You want to build a house on an empty land which reaches all buildings in
+ * the shortest amount of distance. You can only move up, down, left and right.
  * You are given a 2D grid of values 0, 1 or 2, where:
- * 
+ * <p>
  * Each 0 marks an empty land which you can pass by freely.
  * Each 1 marks a building which you cannot pass through.
  * Each 2 marks an obstacle which you cannot pass through.
- * 
- * For example, given three buildings at (0,0), (0,4), (2,2), and an obstacle 
- * at (0,2). The point (1,2) is an ideal empty land to build a house, as the 
+ * <p>
+ * For example, given three buildings at (0,0), (0,4), (2,2), and an obstacle
+ * at (0,2). The point (1,2) is an ideal empty land to build a house, as the
  * total travel distance of 3+3+1=7 is minimal. So return 7.
- *  
+ *
  * @author Johnny
  */
 public class Solution317 {
@@ -27,14 +27,14 @@ public class Solution317 {
         }
         int rows = grid.length;
         int cols = grid[0].length;
- 
+
         // 记录到各个building距离和
         int[][] dist = new int[rows][cols];
-        
+
         // 记录到能到达的building的数量
-        int[][] nums = new int[rows][cols];            
+        int[][] nums = new int[rows][cols];
         int buildingNum = 0;
-        
+
         // 从每个building开始BFS
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -44,7 +44,7 @@ public class Solution317 {
                 }
             }
         }
-        
+
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -56,15 +56,15 @@ public class Solution317 {
             return min;
         return -1;
     }
-    
+
     private void bfs(int[][] grid, int row, int col, int[][] dist, int[][] nums) {
         int rows = grid.length;
         int cols = grid[0].length;
-        
+
         Queue<int[]> q = new LinkedList<>();
         q.add(new int[]{row, col});
         int[][] dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-        
+
         // 记录访问过的点
         boolean[][] visited = new boolean[rows][cols];
         int level = 0;

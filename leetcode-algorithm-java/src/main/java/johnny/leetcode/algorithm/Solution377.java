@@ -4,15 +4,15 @@ import java.util.Arrays;
 
 /**
  * Combination Sum IV
- * 
- * Given an integer array with all positive numbers and no duplicates, find the 
+ * <p>
+ * Given an integer array with all positive numbers and no duplicates, find the
  * number of possible combinations that add up to a positive integer target.
- * 
+ * <p>
  * Example:
- * 
+ * <p>
  * nums = [1, 2, 3]
  * target = 4
- * 
+ * <p>
  * The possible combination ways are:
  * (1, 1, 1, 1)
  * (1, 1, 2)
@@ -21,15 +21,15 @@ import java.util.Arrays;
  * (2, 1, 1)
  * (2, 2)
  * (3, 1)
- * 
+ * <p>
  * Note that different sequences are counted as different combinations.
  * Therefore the output is 7.
- * 
+ * <p>
  * Follow up:
  * What if negative numbers are allowed in the given array?
  * How does it change the problem?
  * What limitation we need to add to the question to allow negative numbers?
- * 
+ *
  * @author Johnny
  */
 public class Solution377 {
@@ -56,7 +56,7 @@ public class Solution377 {
         dp[target] = res;
         return res;
     }
-    
+
     //recursive
     public int combinationSum42(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
@@ -73,19 +73,19 @@ public class Solution377 {
         }
         return res;
     }
-    
+
     // dfs
     public int combinationSum4(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        
+
         Arrays.sort(nums);
         int[] ans = new int[1];
         dfs(nums, target, ans);
         return ans[0];
     }
-    
+
     private void dfs(int[] nums, int target, int[] ans) {
         if (target <= 0) {
             if (target == 0) {
@@ -93,7 +93,7 @@ public class Solution377 {
             }
             return;
         }
-        
+
         for (int i = 0; i < nums.length; i++) {
             dfs(nums, target - nums[i], ans);
         }

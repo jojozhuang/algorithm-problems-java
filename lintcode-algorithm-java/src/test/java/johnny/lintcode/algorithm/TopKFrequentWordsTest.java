@@ -63,7 +63,7 @@ public class TopKFrequentWordsTest {
         expect1.collect("I", 1);
         expect1.collect("love", 1);
 
-        map.map("", doc1, output1);
+        map.map(doc1, output1);
         assertTrue(OutputCollector.isSame(output1, expect1));
         
         TopKFrequentWords.Reduce reduce = new TopKFrequentWords.Reduce();
@@ -110,8 +110,8 @@ public class TopKFrequentWordsTest {
         expect1.collect("document1", 1);
         expect1.collect("document3", 1);
 
-        map.map("", doc1, output1);
-        map.map("", doc2, output1);
+        map.map(doc1, output1);
+        map.map(doc2, output1);
         assertTrue(OutputCollector.isSame(output1, expect1));
         
         TopKFrequentWords.Reduce reduce = new TopKFrequentWords.Reduce();
@@ -157,8 +157,8 @@ public class TopKFrequentWordsTest {
         expect1.collect("gc", 1);
         expect1.collect("gc", 1);
 
-        map.map("", doc1, output1);
-        map.map("", doc2, output1);
+        map.map(doc1, output1);
+        map.map(doc2, output1);
         assertTrue(OutputCollector.isSame(output1, expect1));
         
         TopKFrequentWords.Reduce reduce = new TopKFrequentWords.Reduce();

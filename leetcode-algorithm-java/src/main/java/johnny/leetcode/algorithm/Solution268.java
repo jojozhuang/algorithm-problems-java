@@ -2,18 +2,17 @@ package johnny.leetcode.algorithm;
 
 /**
  * Missing Number.
- * 
+ * <p>
  * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find
  * the one that is missing from the array.
- * 
+ * <p>
  * For example,
  * Given nums = [0, 1, 3] return 2.
- * 
+ * <p>
  * Note:
- * Your algorithm should run in linear runtime complexity. Could you implement 
+ * Your algorithm should run in linear runtime complexity. Could you implement
  * it using only constant extra space complexity?
- * 
-* 
+ *
  * @author Johnny
  */
 public class Solution268 {
@@ -22,7 +21,7 @@ public class Solution268 {
         if (nums == null || nums.length == 0) {
             return -1;
         }
-        
+
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == i) {
                 continue;
@@ -34,16 +33,16 @@ public class Solution268 {
                 nums[index] = temp;
             }
         }
-        
+
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i) {
                 return i;
             }
         }
-        
-        return nums[nums.length-1] + 1;
+
+        return nums[nums.length - 1] + 1;
     }
-    
+
     // sum, math formula
     public int missingNumber2(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -56,7 +55,7 @@ public class Solution268 {
         }
         return len * (len + 1) / 2 - sum;
     }
-    
+
     // xor
     public int missingNumber3(int[] nums) {
         if (nums == null || nums.length == 0) {

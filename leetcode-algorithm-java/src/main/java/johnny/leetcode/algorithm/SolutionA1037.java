@@ -2,28 +2,28 @@ package johnny.leetcode.algorithm;
 
 /**
  * 1037. Valid Boomerang
-A boomerang is a set of 3 points that are all distinct and not in a straight line.
-
-Given a list of three points in the plane, return whether these points are a boomerang.
-
- 
-
-Example 1:
-
-Input: [[1,1],[2,3],[3,2]]
-Output: true
-Example 2:
-
-Input: [[1,1],[2,2],[3,3]]
-Output: false
- 
-
-Note:
-
-points.length == 3
-points[i].length == 2
-0 <= points[i][j] <= 100
-
+ * A boomerang is a set of 3 points that are all distinct and not in a straight line.
+ * <p>
+ * Given a list of three points in the plane, return whether these points are a boomerang.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [[1,1],[2,3],[3,2]]
+ * Output: true
+ * Example 2:
+ * <p>
+ * Input: [[1,1],[2,2],[3,3]]
+ * Output: false
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * points.length == 3
+ * points[i].length == 2
+ * 0 <= points[i][j] <= 100
+ *
  * @author Johnny
  */
 public class SolutionA1037 {
@@ -39,11 +39,11 @@ public class SolutionA1037 {
         if (point3[0] - point2[0] == 0) {
             slope2 = Integer.MAX_VALUE;
         }
-        
+
         if (slope1 == Integer.MAX_VALUE && slope2 == Integer.MAX_VALUE) {
             return false;
         }
-        
-        return (point2[1]-point1[1]) * (point3[0]-point2[0]) != (point2[0]-point1[0]) * (point3[1]-point2[1]);
+
+        return (point2[1] - point1[1]) * (point3[0] - point2[0]) != (point2[0] - point1[0]) * (point3[1] - point2[1]);
     }
 }

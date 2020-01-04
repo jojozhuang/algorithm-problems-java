@@ -2,13 +2,13 @@ package johnny.leetcode.algorithm;
 
 /**
  * Count Numbers with Unique Digits.
- * Given a non-negative integer n, count all numbers with unique digits, x, 
+ * Given a non-negative integer n, count all numbers with unique digits, x,
  * where 0 ≤ x < 10n.
- * 
+ * <p>
  * Example:
- * Given n = 2, return 91. (The answer should be the total numbers 
+ * Given n = 2, return 91. (The answer should be the total numbers
  * in the range of 0 ≤ x < 100, excluding [11,22,33,44,55,66,77,88,99])
- * 
+ *
  * @author Johnny
  */
 public class Solution357 {
@@ -16,7 +16,7 @@ public class Solution357 {
         if (n == 0) {
             return 1;
         }
-        
+
         int res = 10;
         int uniqueDigits = 9;
         int availableNumber = 9;

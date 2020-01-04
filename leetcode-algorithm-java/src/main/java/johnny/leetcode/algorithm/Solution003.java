@@ -7,25 +7,25 @@ import java.util.Set;
 
 /**
  * Longest Substring Without Repeating Characters.
-Given a string, find the length of the longest substring without repeating characters.
-
-Example 1:
-
-Input: "abcabcbb"
-Output: 3 
-Explanation: The answer is "abc", which the length is 3.
-Example 2:
-
-Input: "bbbbb"
-Output: 1
-Explanation: The answer is "b", with the length of 1.
-Example 3:
-
-Input: "pwwkew"
-Output: 3
-Explanation: The answer is "wke", with the length of 3. 
-Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
- * 
+ * Given a string, find the length of the longest substring without repeating characters.
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: "abcabcbb"
+ * Output: 3
+ * Explanation: The answer is "abc", which the length is 3.
+ * Example 2:
+ * <p>
+ * Input: "bbbbb"
+ * Output: 1
+ * Explanation: The answer is "b", with the length of 1.
+ * Example 3:
+ * <p>
+ * Input: "pwwkew"
+ * Output: 3
+ * Explanation: The answer is "wke", with the length of 3.
+ * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ *
  * @author Johnny
  */
 public class Solution003 {
@@ -54,23 +54,24 @@ public class Solution003 {
             map.put(s.charAt(right), right);
             right++;
         }
-        
+
         return longest;
     }
+
     // template
     // https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
     public int lengthOfLongestSubstring4(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        
+
         HashMap<Character, Integer> map = new HashMap<>();
         int longest = 0, count = 0, left = 0, right = 0;
 
         while (right < s.length()) {
             char ch = s.charAt(right);
             map.put(ch, map.getOrDefault(ch, 0) + 1);
-            if(map.get(ch) > 1) {
+            if (map.get(ch) > 1) {
                 count++;
             }
             right++;
@@ -85,15 +86,16 @@ public class Solution003 {
             }
             longest = Math.max(longest, right - left);
         }
-        
+
         return longest;
     }
+
     // Sliding Window
     public int lengthOfLongestSubstring3(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        
+
         int longest = 0;
         HashMap<Character, Integer> map = new HashMap<>();
         int left = 0, right = 0;
@@ -106,13 +108,13 @@ public class Solution003 {
             longest = Math.max(longest, right - left + 1);
             right++;
         }
-        
+
         return longest;
     }
-    
+
     //Brute Force
     public int lengthOfLongestSubstring2(String s) {
-        if (s == null || s.length() == 0){
+        if (s == null || s.length() == 0) {
             return 0;
         }
         int n = s.length();

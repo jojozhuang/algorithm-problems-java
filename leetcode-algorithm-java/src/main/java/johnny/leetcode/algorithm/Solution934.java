@@ -10,34 +10,34 @@ import java.util.Stack;
 
 /**
  * 934. Shortest Bridge
-
-In a given 2D binary array A, there are two islands.  (An island is a 4-directionally connected group of 1s not connected to any other 1s.)
-
-Now, we may change 0s to 1s so as to connect the two islands together to form 1 island.
-
-Return the smallest number of 0s that must be flipped.  (It is guaranteed that the answer is at least 1.)
-
- 
-
-Example 1:
-
-Input: [[0,1],[1,0]]
-Output: 1
-Example 2:
-
-Input: [[0,1,0],[0,0,0],[0,0,1]]
-Output: 2
-Example 3:
-
-Input: [[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
-Output: 1
- 
-
-Note:
-
-1 <= A.length = A[0].length <= 100
-A[i][j] == 0 or A[i][j] == 1
-
+ * <p>
+ * In a given 2D binary array A, there are two islands.  (An island is a 4-directionally connected group of 1s not connected to any other 1s.)
+ * <p>
+ * Now, we may change 0s to 1s so as to connect the two islands together to form 1 island.
+ * <p>
+ * Return the smallest number of 0s that must be flipped.  (It is guaranteed that the answer is at least 1.)
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [[0,1],[1,0]]
+ * Output: 1
+ * Example 2:
+ * <p>
+ * Input: [[0,1,0],[0,0,0],[0,0,1]]
+ * Output: 2
+ * Example 3:
+ * <p>
+ * Input: [[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
+ * Output: 1
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 <= A.length = A[0].length <= 100
+ * A[i][j] == 0 or A[i][j] == 1
+ *
  * @author Johnny
  */
 public class Solution934 {
@@ -46,7 +46,7 @@ public class Solution934 {
         if (A == null || A.length == 0 || A[0].length == 0) {
             return 0;
         }
-        
+
         int m = A.length;
         int n = A[0].length;
         Queue<int[]> queue = new LinkedList<int[]>();
@@ -60,10 +60,10 @@ public class Solution934 {
                 }
             }
         }
-        
+
         int[] dr = new int[]{0, -1, 0, 1};
         int[] dc = new int[]{1, 0, -1, 0};
-        
+
         int ans = 0;
         while (!queue.isEmpty()) {
             int size = queue.size();
@@ -75,22 +75,22 @@ public class Solution934 {
                     if (r < 0 || r >= m || c < 0 || c >= n || A[r][c] == 2) {
                         continue;
                     }
-                    
+
                     if (A[r][c] == 1) {
                         return ans;
                     }
-                    
+
                     A[r][c] = 2;
-                    queue.offer(new int[] {r,c});
+                    queue.offer(new int[]{r, c});
                 }
                 size--;
             }
             ans++;
         }
-        
+
         return ans;
     }
-    
+
     private void dfs(int[][] grid, int m, int n, int i, int j, Queue<int[]> queue) {
         if (i < 0 || i >= m || j < 0 || j >= n || grid[i][j] != 1) {
             return;
@@ -102,7 +102,7 @@ public class Solution934 {
         dfs(grid, m, n, i, j - 1, queue);
         dfs(grid, m, n, i, j + 1, queue);
     }
-    
+
     public int shortestBridge2(int[][] A) {
         int R = A.length, C = A[0].length;
         int[][] colors = getComponents(A);
@@ -123,7 +123,7 @@ public class Solution934 {
             Node node = queue.poll();
             if (target.contains(node.r * C + node.c))
                 return node.depth - 1;
-            for (int nei: neighbors(A, node.r, node.c)) {
+            for (int nei : neighbors(A, node.r, node.c)) {
                 int nr = nei / C, nc = nei % C;
                 if (colors[nr][nc] != 1) {
                     queue.add(new Node(nr, nc, node.depth + 1));
@@ -151,7 +151,7 @@ public class Solution934 {
                     while (!stack.isEmpty()) {
                         int node = stack.pop();
                         int r = node / C, c = node % C;
-                        for (int nei: neighbors(A, r, c)) {
+                        for (int nei : neighbors(A, r, c)) {
                             int nr = nei / C, nc = nei % C;
                             if (A[nr][nc] == 1 && colors[nr][nc] == 0) {
                                 colors[nr][nc] = t;
@@ -167,15 +167,16 @@ public class Solution934 {
     public List<Integer> neighbors(int[][] A, int r, int c) {
         int R = A.length, C = A[0].length;
         List<Integer> ans = new ArrayList<Integer>();
-        if (0 <= r-1) ans.add((r-1) * R + c);
-        if (0 <= c-1) ans.add(r * R + (c-1));
-        if (r+1 < R) ans.add((r+1) * R + c);
-        if (c+1 < C) ans.add(r * R + (c+1));
+        if (0 <= r - 1) ans.add((r - 1) * R + c);
+        if (0 <= c - 1) ans.add(r * R + (c - 1));
+        if (r + 1 < R) ans.add((r + 1) * R + c);
+        if (c + 1 < C) ans.add(r * R + (c + 1));
         return ans;
     }
-    
+
     class Node {
         int r, c, depth;
+
         Node(int r, int c, int d) {
             this.r = r;
             this.c = c;

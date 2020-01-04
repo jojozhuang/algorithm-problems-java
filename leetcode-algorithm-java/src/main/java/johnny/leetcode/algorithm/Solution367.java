@@ -2,17 +2,17 @@ package johnny.leetcode.algorithm;
 
 /**
  * Valid Perfect Square.
- * 
- * Given a positive integer num, write a function which returns True if num is 
+ * <p>
+ * Given a positive integer num, write a function which returns True if num is
  * a perfect square else False.
- * 
+ * <p>
  * Note: Do not use any built-in library function such as sqrt.
  * Example 1:
  * Input: 16, Returns: True
- * 
- * Example 2: 
+ * <p>
+ * Example 2:
  * Input: 14, Returns: False
- *  
+ *
  * @author Johnny
  */
 public class Solution367 {
@@ -21,11 +21,11 @@ public class Solution367 {
         if (num < 0) {
             return false;
         }
-        
+
         if (num == 0) {
             return true;
         }
-        
+
         long start = 1;
         long end = num;
         while (start <= end) {
@@ -39,10 +39,10 @@ public class Solution367 {
                 return true;
             }
         }
-        
+
         return false;
     }
-    
+
     // Newton Method
     public boolean isPerfectSquare(int num) {
         long x = num;

@@ -5,10 +5,10 @@ import johnny.algorithm.common.ListNode;
 /**
  * Linked List Cycle.
  * Given a linked list, determine if it has a cycle in it.
- * 
+ * <p>
  * Follow up:
  * Can you solve it without using extra space?
- * 
+ *
  * @author Johnny
  */
 public class Solution141 {
@@ -20,19 +20,19 @@ public class Solution141 {
 
         ListNode fast = head.next;
         ListNode slow = head;
-        
-        while(fast != null) {
+
+        while (fast != null) {
             if (fast.next == null) {
                 return false;
             }
-            
+
             fast = fast.next.next;
             slow = slow.next;
             if (fast == slow) { // Compare object, not its value. Nodes with same value may exist.
                 return true;
             }
         }
-        
+
         return false;
     }
 }

@@ -11,20 +11,20 @@ import java.util.Stack;
 /**
  * Binary Tree Inorder Traversal.
  * Given a binary tree, return the inorder traversal of its nodes' values.
- * 
+ * <p>
  * For example:
  * Given binary tree {1,#,2,3},
- *    1
- *     \
- *      2
- *     /
- *    3
+ * 1
+ * \
+ * 2
+ * /
+ * 3
  * return [1,3,2].
- * 
+ * <p>
  * Note: Recursive solution is trivial, could you do it iteratively?
- * 
- * confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
- * 
+ * <p>
+ * confused what "{1,#,2,3}" means? read more on how binary tree is serialized on OJ.
+ *
  * @author Johnny
  */
 public class Solution094 {
@@ -45,17 +45,17 @@ public class Solution094 {
         }
         return ans;
     }
-    
+
     public List<Integer> inorderTraversal3(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
-        
+
         if (root == null) {
             return ans;
         }
-        
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode curr = root;
-        
+
         while (curr != null || !stack.empty()) {
             while (curr != null) {
                 stack.push(curr);
@@ -67,17 +67,17 @@ public class Solution094 {
         }
         return ans;
     }
-    
+
     // Recursion
     public List<Integer> inorderTraversal2(TreeNode root) {
         List<Integer> ans = new ArrayList<Integer>();
         if (root == null) {
             return ans;
         }
-        
+
         List<Integer> left = inorderTraversal(root.left);
         List<Integer> right = inorderTraversal(root.right);
-        
+
         ans.addAll(left);
         ans.add(root.val);
         ans.addAll(right);

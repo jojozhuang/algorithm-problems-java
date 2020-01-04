@@ -4,40 +4,40 @@ import java.util.Arrays;
 
 /**
  * 924. Minimize Malware Spread
-In a network of nodes, each node i is directly connected to another node j if and only if graph[i][j] = 1.
-
-Some nodes initial are initially infected by malware.  Whenever two nodes are directly connected and at least one of those two nodes is infected by malware, both nodes will be infected by malware.  This spread of malware will continue until no more nodes can be infected in this manner.
-
-Suppose M(initial) is the final number of nodes infected with malware in the entire network, after the spread of malware stops.
-
-We will remove one node from the initial list.  Return the node that if removed, would minimize M(initial).  If multiple nodes could be removed to minimize M(initial), return such a node with the smallest index.
-
-Note that if a node was removed from the initial list of infected nodes, it may still be infected later as a result of the malware spread.
-
- 
-
-Example 1:
-
-Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
-Output: 0
-Example 2:
-
-Input: graph = [[1,0,0],[0,1,0],[0,0,1]], initial = [0,2]
-Output: 0
-Example 3:
-
-Input: graph = [[1,1,1],[1,1,1],[1,1,1]], initial = [1,2]
-Output: 1
- 
-
-Note:
-
-1 < graph.length = graph[0].length <= 300
-0 <= graph[i][j] == graph[j][i] <= 1
-graph[i][i] = 1
-1 <= initial.length < graph.length
-0 <= initial[i] < graph.length
-
+ * In a network of nodes, each node i is directly connected to another node j if and only if graph[i][j] = 1.
+ * <p>
+ * Some nodes initial are initially infected by malware.  Whenever two nodes are directly connected and at least one of those two nodes is infected by malware, both nodes will be infected by malware.  This spread of malware will continue until no more nodes can be infected in this manner.
+ * <p>
+ * Suppose M(initial) is the final number of nodes infected with malware in the entire network, after the spread of malware stops.
+ * <p>
+ * We will remove one node from the initial list.  Return the node that if removed, would minimize M(initial).  If multiple nodes could be removed to minimize M(initial), return such a node with the smallest index.
+ * <p>
+ * Note that if a node was removed from the initial list of infected nodes, it may still be infected later as a result of the malware spread.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
+ * Output: 0
+ * Example 2:
+ * <p>
+ * Input: graph = [[1,0,0],[0,1,0],[0,0,1]], initial = [0,2]
+ * Output: 0
+ * Example 3:
+ * <p>
+ * Input: graph = [[1,1,1],[1,1,1],[1,1,1]], initial = [1,2]
+ * Output: 1
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * 1 < graph.length = graph[0].length <= 300
+ * 0 <= graph[i][j] == graph[j][i] <= 1
+ * graph[i][i] = 1
+ * 1 <= initial.length < graph.length
+ * 0 <= initial[i] < graph.length
+ *
  * @author Johnny
  */
 public class Solution924 {
@@ -56,17 +56,17 @@ public class Solution924 {
 
         // 2. Size of each color.
         int[] size = new int[C];
-        for (int color: colors)
+        for (int color : colors)
             size[color]++;
 
         // 3. Find unique colors.
         int[] colorCount = new int[C];
-        for (int node: initial)
+        for (int node : initial)
             colorCount[colors[node]]++;
 
         // 4. Answer
         int ans = Integer.MAX_VALUE;
-        for (int node: initial) {
+        for (int node : initial) {
             int c = colors[node];
             if (colorCount[c] == 1) {
                 if (ans == Integer.MAX_VALUE)
@@ -79,7 +79,7 @@ public class Solution924 {
         }
 
         if (ans == Integer.MAX_VALUE)
-            for (int node: initial)
+            for (int node : initial)
                 ans = Math.min(ans, node);
 
         return ans;

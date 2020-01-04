@@ -1,20 +1,21 @@
 package johnny.leetcode.algorithm;
 
 /**
- *821. Shortest Distance to a Character
- *Given a string S and a character C, return an array of integers representing the shortest distance from the character C in the string.
-
-Example 1:
-
-Input: S = "loveleetcode", C = 'e'
-Output: [3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
- 
-
-Note:
-
-S string length is in [1, 10000].
-C is a single character, and guaranteed to be in string S.
-All letters in S and C are lowercase.
+ * 821. Shortest Distance to a Character
+ * Given a string S and a character C, return an array of integers representing the shortest distance from the character C in the string.
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: S = "loveleetcode", C = 'e'
+ * Output: [3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
+ * <p>
+ * <p>
+ * Note:
+ * <p>
+ * S string length is in [1, 10000].
+ * C is a single character, and guaranteed to be in string S.
+ * All letters in S and C are lowercase.
+ *
  * @author Johnny
  */
 public class Solution821 {
@@ -38,7 +39,7 @@ public class Solution821 {
                 }
             }
         }
-        
+
         // right to left
         index = -1;
         for (int i = n - 1; i >= 0; i--) {
@@ -52,10 +53,10 @@ public class Solution821 {
                 }
             }
         }
-        
+
         return ans;
     }
-    
+
     public int[] shortestToChar2(String S, char C) {
         int n = S.length();
         int[] res = new int[n];
@@ -65,7 +66,7 @@ public class Solution821 {
             res[i] = i - pos;
         }
         for (int i = n - 1; i >= 0; --i) {
-            if (S.charAt(i) == C)  pos = i;
+            if (S.charAt(i) == C) pos = i;
             res[i] = Math.min(res[i], Math.abs(i - pos));
         }
         return res;

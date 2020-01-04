@@ -4,13 +4,13 @@ import johnny.algorithm.common.ListNode;
 
 /**
  * Remove Duplicates from Sorted List .
- * Given a sorted linked list, delete all duplicates such that each element 
+ * Given a sorted linked list, delete all duplicates such that each element
  * appear only once.
- * 
+ * <p>
  * For example,
- * Given 1->1->2, return 1->2.
- * Given 1->1->2->3->3, return 1->2->3.
- * 
+ * {@code Given 1->1->2, return 1->2.}
+ * {@code Given 1->1->2->3->3, return 1->2->3.}
+ *
  * @author Johnny
  */
 public class Solution083 {
@@ -18,7 +18,7 @@ public class Solution083 {
         if (head == null) {
             return null;
         }
-        
+
         ListNode curr = head;
         while (curr != null) {
             if (curr.next != null && curr.val == curr.next.val) {
@@ -27,7 +27,7 @@ public class Solution083 {
                 curr = curr.next;
             }
         }
-        
+
         return head;
     }
 }

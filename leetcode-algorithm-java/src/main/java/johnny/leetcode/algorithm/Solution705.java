@@ -1,52 +1,43 @@
 package johnny.leetcode.algorithm;
 
 /**
-* 705. Design HashSet
-
-Design a HashSet without using any built-in hash table libraries.
-
-To be specific, your design should include these functions:
-
-add(value): Insert a value into the HashSet. 
-contains(value) : Return whether the value exists in the HashSet or not.
-remove(value): Remove a value in the HashSet. If the value does not exist in the HashSet, do nothing.
-
-Example:
-
-MyHashSet hashSet = new MyHashSet();
-hashSet.add(1);         
-hashSet.add(2);         
-hashSet.contains(1);    // returns true
-hashSet.contains(3);    // returns false (not found)
-hashSet.add(2);          
-hashSet.contains(2);    // returns true
-hashSet.remove(2);          
-hashSet.contains(2);    // returns false (already removed)
-
-Note:
-
-All values will be in the range of [0, 1000000].
-The number of operations will be in the range of [1, 10000].
-Please do not use the built-in HashSet library.
-
+ * 705. Design HashSet
+ * <p>
+ * Design a HashSet without using any built-in hash table libraries.
+ * <p>
+ * To be specific, your design should include these functions:
+ * <p>
+ * add(value): Insert a value into the HashSet.
+ * contains(value) : Return whether the value exists in the HashSet or not.
+ * remove(value): Remove a value in the HashSet. If the value does not exist in the HashSet, do nothing.
+ * <p>
+ * Example:
+ * <p>
+ * MyHashSet hashSet = new MyHashSet();
+ * hashSet.add(1);
+ * hashSet.add(2);
+ * hashSet.contains(1);    // returns true
+ * hashSet.contains(3);    // returns false (not found)
+ * hashSet.add(2);
+ * hashSet.contains(2);    // returns true
+ * hashSet.remove(2);
+ * hashSet.contains(2);    // returns false (already removed)
+ * <p>
+ * Note:
+ * <p>
+ * All values will be in the range of [0, 1000000].
+ * The number of operations will be in the range of [1, 10000].
+ * Please do not use the built-in HashSet library.
+ *
  * @author Johnny
  */
 public class Solution705 {
-    // node
-    class HashNode {
-        int key;
-        HashNode next;
-
-        HashNode(int key) {
-            this.key = key;
-        }
-    }
-    
     HashNode[] bucket;
+
     public Solution705() {
         bucket = new HashNode[1000000];
     }
-    
+
     public void add(int key) {
         int hash = hashFunc(key);
         if (bucket[hash] == null) {
@@ -65,7 +56,7 @@ public class Solution705 {
             }
         }
     }
-    
+
     public void remove(int key) {
         int hash = hashFunc(key);
         if (bucket[hash] == null) {
@@ -86,8 +77,10 @@ public class Solution705 {
             bucket[hash] = dummy.next;
         }
     }
-    
-    /** Returns true if this set contains the specified element */
+
+    /**
+     * Returns true if this set contains the specified element
+     */
     public boolean contains(int key) {
         int hash = hashFunc(key);
         if (bucket[hash] == null) {
@@ -103,9 +96,19 @@ public class Solution705 {
             return false;
         }
     }
-    
+
     private int hashFunc(int key) {
         return key % 1000000;
+    }
+
+    // node
+    class HashNode {
+        int key;
+        HashNode next;
+
+        HashNode(int key) {
+            this.key = key;
+        }
     }
     /* array
     int[] arr;

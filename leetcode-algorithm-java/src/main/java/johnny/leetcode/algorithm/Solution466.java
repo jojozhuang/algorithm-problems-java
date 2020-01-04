@@ -2,30 +2,30 @@ package johnny.leetcode.algorithm;
 
 /**
  * Count The Repetitions
- * 
- * Define S = [s,n] as the string S which consists of n connected strings s. For 
+ * <p>
+ * Define S = [s,n] as the string S which consists of n connected strings s. For
  * example, ["abc", 3] ="abcabcabc".
- * 
- * On the other hand, we define that string s1 can be obtained from string s2 
- * if we can remove some characters from s2 such that it becomes s1. For 
+ * <p>
+ * On the other hand, we define that string s1 can be obtained from string s2
+ * if we can remove some characters from s2 such that it becomes s1. For
  * example, “abc” can be obtained from “abdbec” based on our definition,
  * but it can not be obtained from “acbbe”.
- * 
+ * <p>
  * You are given two non-empty strings s1 and s2 (each at most 100 characters
- * long) and two integers 0 ≤ n1 ≤ 106 and 1 ≤ n2 ≤ 106. Now consider the 
+ * long) and two integers 0 ≤ n1 ≤ 106 and 1 ≤ n2 ≤ 106. Now consider the
  * strings S1 and S2, where S1=[s1,n1] and S2=[s2,n2]. Find the maximum integer
  * M such that [S2,M] can be obtained from S1.
- * 
+ * <p>
  * Example:
- * 
+ * <p>
  * Input:
- * 
+ * <p>
  * s1="acb", n1=4
  * s2="ab", n2=2
- * 
+ * <p>
  * Return:
  * 2
- * 
+ *
  * @author Johnny
  */
 public class Solution466 {
@@ -42,7 +42,7 @@ public class Solution466 {
                 }
                 index1++;
             }
-            
+
             if (index2 == len - 1) {
                 res++;
                 index2 = 0;
@@ -53,52 +53,52 @@ public class Solution466 {
             }
         }
 
-        
+
         return res;
     }
-    
+
     private boolean find(String s1, int index1, String s2, int index2) {
         if (index1 >= s1.length() || index2 >= s2.length()) {
             return false;
         }
-        
+
         if (s1.charAt(index1) == s2.charAt(index2)) {
             return true;
         }
         return false;
     }
-    
-    
+
+
     public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
         int[] reps = new int[102];
         int[] rests = new int[102];
-        int posRest=0, repTime=0;
-        int i=0, k=0;
-        if(n1 <= 0) return 0;
-        while(k==i) {
+        int posRest = 0, repTime = 0;
+        int i = 0, k = 0;
+        if (n1 <= 0) return 0;
+        while (k == i) {
             i++;
-            for(int j=0; j<s1.length(); j++) {
-                if(s2.charAt(posRest) == s1.charAt(j)) {
+            for (int j = 0; j < s1.length(); j++) {
+                if (s2.charAt(posRest) == s1.charAt(j)) {
                     posRest++;
-                    if(posRest == s2.length()) {
+                    if (posRest == s2.length()) {
                         repTime++;
-                        posRest=0;
+                        posRest = 0;
                     }
                 }
             }
-            if(i >= n1)
+            if (i >= n1)
                 return repTime / n2;
-            for(k=0; k<i; k++){
-                if(posRest == rests[k])
+            for (k = 0; k < i; k++) {
+                if (posRest == rests[k])
                     break;
             }
             reps[i] = repTime;
             rests[i] = posRest;
         }
-        int interval = i-k;
-        int repeatCount = (n1-k) / interval;
-        int repeatTimes = repeatCount * (reps[i]-reps[k]);
-        int remainTimes = reps[(n1-k) % interval + k];
+        int interval = i - k;
+        int repeatCount = (n1 - k) / interval;
+        int repeatTimes = repeatCount * (reps[i] - reps[k]);
+        int remainTimes = reps[(n1 - k) % interval + k];
         return (repeatTimes + remainTimes) / n2;
     }
 }

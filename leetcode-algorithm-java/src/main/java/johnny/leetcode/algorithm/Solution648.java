@@ -6,30 +6,30 @@ import java.util.Set;
 
 /**
  * Replace Words
- * 
- * In English, we have a concept called root, which can be followed by some 
- * other words to form another longer word - let's call this word successor. 
+ * <p>
+ * In English, we have a concept called root, which can be followed by some
+ * other words to form another longer word - let's call this word successor.
  * For example, the root an, followed by other, which can form another word another.
- * 
- * Now, given a dictionary consisting of many roots and a sentence. You need to 
- * replace all the successor in the sentence with the root forming it. If a 
- * successor has many roots can form it, replace it with the root with the 
+ * <p>
+ * Now, given a dictionary consisting of many roots and a sentence. You need to
+ * replace all the successor in the sentence with the root forming it. If a
+ * successor has many roots can form it, replace it with the root with the
  * shortest length.
- * 
+ * <p>
  * You need to output the sentence after the replacement.
- * 
+ * <p>
  * Example 1:
  * Input: dict = ["cat", "bat", "rat"]
  * sentence = "the cattle was rattled by the battery"
  * Output: "the cat was rat by the bat"
- * 
+ * <p>
  * Note:
  * The input will only have lower-case letters.
  * 1 <= dict words number <= 1000
  * 1 <= sentence words number <= 1000
  * 1 <= root length <= 100
  * 1 <= sentence words length <= 1000
- * 
+ *
  * @author Johnny
  */
 public class Solution648 {
@@ -38,20 +38,20 @@ public class Solution648 {
         if (dict == null || sentence == null || sentence.isEmpty()) {
             return null;
         }
-        
+
         Set<String> set = new HashSet<>();
         for (String word : dict) {
             set.add(word);
         }
-        
+
         StringBuilder sb = new StringBuilder();
         String[] words = sentence.split(" ");
-        
+
         for (String word : words) {
             if (word.isEmpty()) {
                 continue;
             }
-            
+
             String prefix = "";
             for (int i = 1; i <= word.length(); i++) {
                 prefix = word.substring(0, i);
@@ -62,11 +62,11 @@ public class Solution648 {
             sb.append(prefix);
             sb.append(" ");
         }
-        
+
         sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
-    
+
     // Trie
     public String replaceWords(List<String> dict, String sentence) {
         String[] tokens = sentence.split(" ");
@@ -100,19 +100,7 @@ public class Solution648 {
         }
         return token;
     }
-    
-    private class TrieNode {
-        char val;
-        TrieNode[] children;
-        boolean isWord;
 
-        public TrieNode(char val) {
-            this.val = val;
-            this.children = new TrieNode[26];
-            this.isWord = false;
-        }
-    }
-    
     private TrieNode buildTrie(List<String> dict) {
         TrieNode root = new TrieNode(' ');
         for (String word : dict) {
@@ -126,5 +114,17 @@ public class Solution648 {
             node.isWord = true;
         }
         return root;
+    }
+
+    private class TrieNode {
+        char val;
+        TrieNode[] children;
+        boolean isWord;
+
+        public TrieNode(char val) {
+            this.val = val;
+            this.children = new TrieNode[26];
+            this.isWord = false;
+        }
     }
 }

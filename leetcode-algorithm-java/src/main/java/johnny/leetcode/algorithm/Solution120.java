@@ -4,24 +4,24 @@ import java.util.List;
 
 /**
  * Triangle.
- * Given a triangle, find the minimum path sum from top to bottom. Each step 
+ * Given a triangle, find the minimum path sum from top to bottom. Each step
  * you may move to adjacent numbers on the row below.
  * For example, given the following triangle
  * [
- *      [2],
- *     [3,4],
- *    [6,5,7],
- *   [4,1,8,3]
+ * [2],
+ * [3,4],
+ * [6,5,7],
+ * [4,1,8,3]
  * ]
  * The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
  * Note:
  * Bonus point if you are able to do this using only O(n) extra space, where n
  * is the total number of rows in the triangle.
-* 
+ *
  * @author Johnny
  */
 public class Solution120 {
- // space: O(n)
+    // space: O(n)
     public int minimumTotal(List<List<Integer>> triangle) {
         if (triangle == null) {
             return 0;
@@ -30,18 +30,19 @@ public class Solution120 {
         int n = triangle.get(m - 1).size();
         int[] dp = new int[n];
         for (int i = 0; i < n; i++) {
-            dp[i] = triangle.get(m-1).get(i);
+            dp[i] = triangle.get(m - 1).get(i);
         }
-        
+
         for (int i = m - 2; i >= 0; i--) {
             List<Integer> row = triangle.get(i);
             for (int j = 0; j < row.size(); j++) {
-                dp[j] = Math.min(dp[j], dp[j+1]) + row.get(j);
+                dp[j] = Math.min(dp[j], dp[j + 1]) + row.get(j);
             }
         }
-        
+
         return dp[0];
     }
+
     // space: O(m*n)
     public int minimumTotal4(List<List<Integer>> triangle) {
         if (triangle == null) {
@@ -51,24 +52,25 @@ public class Solution120 {
         int n = triangle.get(m - 1).size();
         int[][] dp = new int[m][n];
         for (int i = 0; i < n; i++) {
-            dp[m - 1][i] = triangle.get(m-1).get(i);
+            dp[m - 1][i] = triangle.get(m - 1).get(i);
         }
-        
+
         for (int i = m - 2; i >= 0; i--) {
             List<Integer> row = triangle.get(i);
             for (int j = 0; j < row.size(); j++) {
-                dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1]) + row.get(j);
+                dp[i][j] = Math.min(dp[i + 1][j], dp[i + 1][j + 1]) + row.get(j);
             }
         }
-        
+
         return dp[0][0];
     }
+
     // DP, from bottom to top, space = O(n)
     public int minimumTotal3(List<List<Integer>> triangle) {
         if (triangle == null || triangle.size() == 0 || triangle.get(0).size() == 0) {
             return 0;
         }
-        
+
         int maxwidth = triangle.get(triangle.size() - 1).size();
         int[] dp = new int[maxwidth];
         // Initial
@@ -78,7 +80,7 @@ public class Solution120 {
         }
         // Calculate from bottom to top
         for (int i = triangle.size() - 2; i >= 0; i--) {
-            for(int j = 0; j < triangle.get(i).size(); j++) {
+            for (int j = 0; j < triangle.get(i).size(); j++) {
                 dp[j] = Math.min(dp[j], dp[j + 1]) + triangle.get(i).get(j);
             }
         }
@@ -93,17 +95,17 @@ public class Solution120 {
     // So, it is a two-dimensional array. And, for each point, it can only move 
     // down or right down.
     //
-    
+
     // Solution1: DP, from bottom to top, space= O(m*n)
     public int minimumTotal2(List<List<Integer>> triangle) {
         if (triangle == null || triangle.size() == 0 || triangle.get(0).size() == 0) {
             return 0;
         }
-        
+
         int height = triangle.size();
         int maxwidth = triangle.get(height - 1).size();
         // Define f function, f[i][j] is the minimum sum from bottom to point i,j.
-        int[][] dp = new int[height][maxwidth]; 
+        int[][] dp = new int[height][maxwidth];
         // Initial
         for (int i = 0; i < maxwidth; i++) {
             // The minimum sum is it self for each point of the bottom line
@@ -111,7 +113,7 @@ public class Solution120 {
         }
         // Calculate from bottom to top
         for (int i = height - 2; i >= 0; i--) {
-            for(int j = 0; j < triangle.get(i).size(); j++) {
+            for (int j = 0; j < triangle.get(i).size(); j++) {
                 dp[i][j] = Math.min(dp[i + 1][j], dp[i + 1][j + 1]) + triangle.get(i).get(j);
             }
         }
