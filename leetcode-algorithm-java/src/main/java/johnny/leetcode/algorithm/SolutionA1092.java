@@ -6,10 +6,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * (A string S is a subsequence of string T if deleting some number of characters from T (possibly 0, and the characters are chosen anywhere from T) results in the string S.)
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: str1 = "abac", str2 = "cab"
  * Output: "cabac"
  * Explanation:
@@ -17,11 +14,11 @@ package johnny.leetcode.algorithm;
  * str2 = "cab" is a subsequence of "cabac" because we can delete the last "ac".
  * The answer provided is the shortest such string that satisfies these properties.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= str1.length, str2.length <= 1000
  * str1 and str2 consist of lowercase English letters.
+ * }</pre>
  *
  * @author Johnny
  */

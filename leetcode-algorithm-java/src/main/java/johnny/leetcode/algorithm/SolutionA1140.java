@@ -12,19 +12,16 @@ package johnny.leetcode.algorithm;
  * <p>
  * Assuming Alex and Lee play optimally, return the maximum number of stones Alex can get.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: piles = [2,7,9,4,4]
  * Output: 10
  * Explanation:  If Alex takes one pile at the beginning, Lee takes two piles, then Alex takes 2 piles again. Alex can get 2 + 4 + 4 = 10 piles in total. If Alex takes two piles at the beginning, then Lee can take all three piles left. In this case, Alex get 2 + 7 = 9 piles in total. So we return 10 since it's larger.
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= piles.length <= 100
  * 1 <= piles[i] <= 10 ^ 4
+ * }</pre>
  *
  * @author Johnny
  */

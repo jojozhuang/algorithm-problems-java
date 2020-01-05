@@ -13,9 +13,10 @@ package johnny.leetcode.algorithm;
  * Output: false
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= S.length <= 1000
  * 1 <= N <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

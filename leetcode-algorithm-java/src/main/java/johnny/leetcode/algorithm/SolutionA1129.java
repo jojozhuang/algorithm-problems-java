@@ -8,37 +8,34 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return an array answer of length n, where each answer[X] is the length of the shortest path from node 0 to node X such that the edge colors alternate along the path (or -1 if such a path doesn't exist).
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: n = 3, red_edges = [[0,1],[1,2]], blue_edges = []
  * Output: [0,1,-1]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: n = 3, red_edges = [[0,1]], blue_edges = [[2,1]]
  * Output: [0,1,-1]
- * Example 3:
  * <p>
+ * Example 3:
  * Input: n = 3, red_edges = [[1,0]], blue_edges = [[2,1]]
  * Output: [0,-1,-1]
- * Example 4:
  * <p>
+ * Example 4:
  * Input: n = 3, red_edges = [[0,1]], blue_edges = [[1,2]]
  * Output: [0,1,2]
- * Example 5:
  * <p>
+ * Example 5:
  * Input: n = 3, red_edges = [[0,1],[0,2]], blue_edges = [[1,0]]
  * Output: [0,1,1]
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= n <= 100
  * red_edges.length <= 400
  * blue_edges.length <= 400
  * red_edges[i].length == blue_edges[i].length == 2
  * 0 <= red_edges[i][j], blue_edges[i][j] < n
+ * }</pre>
  *
  * @author Johnny
  */

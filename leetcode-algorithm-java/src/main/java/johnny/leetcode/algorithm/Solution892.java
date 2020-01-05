@@ -8,34 +8,31 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the total surface area of the resulting shapes.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [[2]]
  * Output: 10
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [[1,2],[3,4]]
  * Output: 34
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [[1,0],[0,2]]
  * Output: 16
- * Example 4:
  * <p>
+ * Example 4:
  * Input: [[1,1,1],[1,0,1],[1,1,1]]
  * Output: 32
- * Example 5:
  * <p>
+ * Example 5:
  * Input: [[2,2,2],[2,1,2],[2,2,2]]
  * Output: 46
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 50
  * 0 <= grid[i][j] <= 50
+ * }</pre>
  *
  * @author Johnny
  */

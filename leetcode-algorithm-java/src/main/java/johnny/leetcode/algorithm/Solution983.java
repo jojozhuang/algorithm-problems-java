@@ -13,10 +13,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the minimum number of dollars you need to travel every day in the given list of days.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: days = [1,4,6,7,8,20], costs = [2,7,15]
  * Output: 11
  * Explanation:
@@ -25,8 +22,8 @@ package johnny.leetcode.algorithm;
  * On day 3, you bought a 7-day pass for costs[1] = $7, which covered days 3, 4, ..., 9.
  * On day 20, you bought a 1-day pass for costs[0] = $2, which covered day 20.
  * In total you spent $11 and covered all the days of your travel.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: days = [1,2,3,4,5,6,7,8,9,10,30,31], costs = [2,7,15]
  * Output: 17
  * Explanation:
@@ -35,14 +32,14 @@ package johnny.leetcode.algorithm;
  * On day 31, you bought a 1-day pass for costs[0] = $2 which covered day 31.
  * In total you spent $17 and covered all the days of your travel.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= days.length <= 365
  * 1 <= days[i] <= 365
  * days is in strictly increasing order.
  * costs.length == 3
  * 1 <= costs[i] <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

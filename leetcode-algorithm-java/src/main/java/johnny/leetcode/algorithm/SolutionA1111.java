@@ -14,29 +14,24 @@ package johnny.leetcode.algorithm;
  * depth("(" + A + ")") = 1 + depth(A), where A is a VPS.
  * For example,  "", "()()", and "()(()())" are VPS's (with nesting depths 0, 1, and 2), and ")(" and "(()" are not VPS's.
  * <p>
- * <p>
- * <p>
  * Given a VPS seq, split it into two disjoint subsequences A and B, such that A and B are VPS's (and A.length + B.length = seq.length).
  * <p>
  * Now choose any such A and B such that max(depth(A), depth(B)) is the minimum possible value.
  * <p>
  * Return an answer array (of length seq.length) that encodes such a choice of A and B:  answer[i] = 0 if seq[i] is part of A, else answer[i] = 1.  Note that even though multiple answers may exist, you may return any of them.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: seq = "(()())"
  * Output: [0,1,1,1,1,0]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: seq = "()(())()"
  * Output: [0,0,0,1,1,0,1,1]
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= seq.size <= 10000
+ * }</pre>
  *
  * @author Johnny
  */

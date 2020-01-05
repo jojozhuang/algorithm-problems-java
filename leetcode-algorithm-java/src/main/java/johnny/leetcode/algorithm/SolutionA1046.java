@@ -12,10 +12,7 @@ import java.util.PriorityQueue;
  * If x != y, the stone of weight x is totally destroyed, and the stone of weight y has new weight y-x.
  * At the end, there is at most 1 stone left.  Return the weight of this stone (or 0 if there are no stones left.)
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [2,7,4,1,8,1]
  * Output: 1
  * Explanation:
@@ -24,11 +21,11 @@ import java.util.PriorityQueue;
  * we combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
  * we combine 1 and 1 to get 0 so the array converts to [1] then that's the value of last stone.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= stones.length <= 30
  * 1 <= stones[i] <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

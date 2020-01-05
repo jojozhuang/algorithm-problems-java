@@ -6,8 +6,6 @@ package johnny.leetcode.algorithm;
  * <p>
  * Here, board = ["abcde", "fghij", "klmno", "pqrst", "uvwxy", "z"], as shown in the diagram below.
  * <p>
- * <p>
- * <p>
  * We may make the following moves:
  * <p>
  * 'U' moves our position up one row, if the position exists on the board;
@@ -19,22 +17,19 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return a sequence of moves that makes our answer equal to target in the minimum number of moves.  You may return any path that does so.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: target = "leet"
  * Output: "DDR!UURRR!!DDD!"
- * Example 2:
  * <p>
+ * Example 2:
  * Input: target = "code"
  * Output: "RR!DDRR!UUL!R!"
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= target.length <= 100
  * target consists only of English lowercase letters.
+ * }</pre>
  *
  * @author Johnny
  */

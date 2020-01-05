@@ -11,34 +11,31 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the minimum number of operations needed to display the number Y.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: X = 2, Y = 3
  * Output: 2
  * Explanation: Use double operation and then decrement operation {2 -> 4 -> 3}.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: X = 5, Y = 8
  * Output: 2
  * Explanation: Use decrement and then double {5 -> 4 -> 8}.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: X = 3, Y = 10
  * Output: 3
  * Explanation:  Use double, decrement and double {3 -> 6 -> 5 -> 10}.
- * Example 4:
  * <p>
+ * Example 4:
  * Input: X = 1024, Y = 1
  * Output: 1023
  * Explanation: Use decrement operations 1023 times.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= X <= 10^9
  * 1 <= Y <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

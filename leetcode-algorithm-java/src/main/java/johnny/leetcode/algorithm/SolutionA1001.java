@@ -13,7 +13,6 @@ package johnny.leetcode.algorithm;
  * Return an array of answers.  Each value answer[i] should be equal to the answer of the i-th query queries[i].
  * <p>
  * Example 1:
- * <p>
  * Input: N = 5, lamps = [[0,0],[4,4]], queries = [[1,1],[1,0]]
  * Output: [1,0]
  * Explanation:
@@ -32,13 +31,13 @@ package johnny.leetcode.algorithm;
  * 1 1 1 1 1
  * Before performing the second query we have only the lamp [4,4] on.  Now the query at [1,0] returns 0, because the cell is no longer lit.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 10^9
  * 0 <= lamps.length <= 20000
  * 0 <= queries.length <= 20000
  * lamps[i].length == queries[i].length == 2
+ * }</pre>
  *
  * @author Johnny
  */

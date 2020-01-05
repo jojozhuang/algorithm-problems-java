@@ -15,30 +15,23 @@ import java.util.Queue;
  * <p>
  * If no land or water exists in the grid, return -1.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
- * <p>
  * Input: [[1,0,1],[0,0,0],[1,0,1]]
  * Output: 2
  * Explanation:
  * The cell (1, 1) is as far as possible from all the land with distance 2.
+ * <p>
  * Example 2:
- * <p>
- * <p>
- * <p>
  * Input: [[1,0,0],[0,0,0],[0,0,0]]
  * Output: 4
  * Explanation:
  * The cell (2, 2) is as far as possible from all the land with distance 4.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= grid.length == grid[0].length <= 100
  * grid[i][j] is 0 or 1
+ * }</pre>
  *
  * @author Johnny
  */

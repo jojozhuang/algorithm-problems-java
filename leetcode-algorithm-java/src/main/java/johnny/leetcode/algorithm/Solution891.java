@@ -12,10 +12,7 @@ import java.util.Arrays;
  * <p>
  * As the answer may be very large, return the answer modulo 10^9 + 7.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [2,1,3]
  * Output: 6
  * Explanation:
@@ -23,11 +20,11 @@ import java.util.Arrays;
  * The corresponding widths are 0, 0, 0, 1, 1, 2, 2.
  * The sum of these widths is 6.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 20000
  * 1 <= A[i] <= 20000
+ * }</pre>
  *
  * @author Johnny
  */

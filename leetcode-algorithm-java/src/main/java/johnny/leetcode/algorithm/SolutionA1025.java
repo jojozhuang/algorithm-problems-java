@@ -16,16 +16,16 @@ package johnny.leetcode.algorithm;
  * Input: 2
  * Output: true
  * Explanation: Alice chooses 1, and Bob has no more moves.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: 3
  * Output: false
  * Explanation: Alice chooses 1, Bob chooses 1, and Alice has no more moves.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

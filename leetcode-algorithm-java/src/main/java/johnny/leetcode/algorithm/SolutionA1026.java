@@ -19,7 +19,6 @@ import johnny.algorithm.common.TreeNode;
  * |10 - 13| = 3
  * Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.
  * <p>
- * <p>
  * Note:
  * <p>
  * The number of nodes in the tree is between 2 and 5000.

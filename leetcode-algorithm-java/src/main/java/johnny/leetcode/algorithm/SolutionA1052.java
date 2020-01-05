@@ -10,21 +10,18 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the maximum number of customers that can be satisfied throughout the day.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: customers = [1,0,1,2,1,1,7,5], grumpy = [0,1,0,1,0,1,0,1], X = 3
  * Output: 16
  * Explanation: The bookstore owner keeps themselves not grumpy for the last 3 minutes.
  * The maximum number of customers that can be satisfied = 1 + 1 + 1 + 1 + 7 + 5 = 16.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= X <= customers.length == grumpy.length <= 20000
  * 0 <= customers[i] <= 1000
  * 0 <= grumpy[i] <= 1
+ * }</pre>
  *
  * @author Johnny
  */

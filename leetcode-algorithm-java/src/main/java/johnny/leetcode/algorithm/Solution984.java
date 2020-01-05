@@ -8,23 +8,21 @@ package johnny.leetcode.algorithm;
  * The substring 'aaa' does not occur in S;
  * The substring 'bbb' does not occur in S.
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: A = 1, B = 2
  * Output: "abb"
  * Explanation: "abb", "bab" and "bba" are all correct answers.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: A = 4, B = 1
  * Output: "aabaa"
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 0 <= A <= 100
  * 0 <= B <= 100
  * It is guaranteed such an S exists for the given A and B.
+ * }</pre>
  *
  * @author Johnny
  */

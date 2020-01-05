@@ -24,24 +24,22 @@ import java.util.List;
  * For expressions e_1 and e_2, we have R(e_1 + e_2) = {a + b for (a, b) in R(e_1) × R(e_2)}, where + denotes concatenation, and × denotes the cartesian product.
  * Given an expression representing a set of words under the given grammar, return the sorted list of words that the expression represents.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: "{a,b}{c,{d,e}}"
  * Output: ["ac","ad","ae","bc","bd","be"]
+ * <p>
  * Example 2:
  * <p>
  * Input: "{{a,z},a{b,c},{ab,z}}"
  * Output: ["a","ab","ac","z"]
  * Explanation: Each distinct word is written only once in the final answer.
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= expression.length <= 50
  * expression[i] consists of '{', '}', ','or lowercase English letters.
  * The given expression represents a set of words based on the grammar given in the description.
+ * }</pre>
  *
  * @author Johnny
  */

@@ -10,19 +10,16 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the length of the longest well-performing interval.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: hours = [9,9,6,0,6,6,9]
  * Output: 3
  * Explanation: The longest well-performing interval is [9,9,6].
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= hours.length <= 10000
  * 0 <= hours[i] <= 16
+ * }</pre>
  *
  * @author Johnny
  */

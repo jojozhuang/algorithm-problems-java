@@ -11,18 +11,15 @@ import java.util.Map;
  * <p>
  * Return the number of pairs (i, j) for which 0 <= i < j < dominoes.length, and dominoes[i] is equivalent to dominoes[j].
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: dominoes = [[1,2],[2,1],[3,4],[5,6]]
  * Output: 1
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= dominoes.length <= 40000
  * 1 <= dominoes[i][j] <= 9
+ * }</pre>
  *
  * @author Johnny
  */

@@ -6,17 +6,13 @@ package johnny.leetcode.algorithm;
  * <p>
  * A defanged IP address replaces every period "." with "[.]".
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: address = "1.1.1.1"
  * Output: "1[.]1[.]1[.]1"
- * Example 2:
  * <p>
+ * Example 2:
  * Input: address = "255.100.50.0"
  * Output: "255[.]100[.]50[.]0"
- * <p>
  * <p>
  * Constraints:
  * <p>

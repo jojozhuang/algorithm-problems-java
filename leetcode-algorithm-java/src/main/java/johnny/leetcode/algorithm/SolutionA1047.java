@@ -14,20 +14,17 @@ import java.util.stream.Collectors;
  * <p>
  * Return the final string after all such duplicate removals have been made.  It is guaranteed the answer is unique.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: "abbaca"
  * Output: "ca"
  * Explanation:
  * For example, in "abbaca" we could remove "bb" since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is "aaca", of which only "aa" is possible, so the final string is "ca".
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= S.length <= 20000
  * S consists only of English lowercase letters.
+ * }</pre>
  *
  * @author Johnny
  */

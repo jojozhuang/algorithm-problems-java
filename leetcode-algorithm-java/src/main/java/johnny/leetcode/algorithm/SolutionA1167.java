@@ -8,22 +8,19 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the minimum cost of connecting all the given sticks into one stick in this way.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: sticks = [2,4,3]
  * Output: 14
- * Example 2:
  * <p>
+ * Example 2:
  * Input: sticks = [1,8,3,5]
  * Output: 30
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= sticks.length <= 10^4
  * 1 <= sticks[i] <= 10^4
+ * }</pre>
  *
  * @author Johnny
  */

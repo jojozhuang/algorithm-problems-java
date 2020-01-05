@@ -8,28 +8,25 @@ package johnny.leetcode.algorithm;
  * <p>
  * For a given number N in base-10, return the complement of it's binary representation as a base-10 integer.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: 5
  * Output: 2
  * Explanation: 5 is "101" in binary, with complement "010" in binary, which is 2 in base-10.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: 7
  * Output: 0
  * Explanation: 7 is "111" in binary, with complement "000" in binary, which is 0 in base-10.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: 10
  * Output: 5
  * Explanation: 10 is "1010" in binary, with complement "0101" in binary, which is 5 in base-10.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 0 <= N < 10^9
+ * }</pre>
  *
  * @author Johnny
  */

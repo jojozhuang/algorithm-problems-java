@@ -19,8 +19,9 @@ package johnny.leetcode.algorithm;
  * Output: 262
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

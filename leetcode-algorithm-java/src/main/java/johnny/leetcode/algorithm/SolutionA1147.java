@@ -8,33 +8,31 @@ package johnny.leetcode.algorithm;
  * Their concatenation a_1 + a_2 + ... + a_k is equal to text;
  * For all 1 <= i <= k,  a_i = a_{k+1 - i}.
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: text = "ghiabcdefhelloadamhelloabcdefghi"
  * Output: 7
  * Explanation: We can split the string on "(ghi)(abcdef)(hello)(adam)(hello)(abcdef)(ghi)".
- * Example 2:
  * <p>
+ * Example 2:
  * Input: text = "merchant"
  * Output: 1
  * Explanation: We can split the string on "(merchant)".
- * Example 3:
  * <p>
+ * Example 3:
  * Input: text = "antaprezatepzapreanta"
  * Output: 11
  * Explanation: We can split the string on "(a)(nt)(a)(pre)(za)(tpe)(za)(pre)(a)(nt)(a)".
- * Example 4:
  * <p>
+ * Example 4:
  * Input: text = "aaa"
  * Output: 3
  * Explanation: We can split the string on "(a)(a)(a)".
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * text consists only of lowercase English characters.
  * 1 <= text.length <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

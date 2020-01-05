@@ -6,28 +6,25 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the length of N.  If there is no such N, return -1.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: 1
  * Output: 1
  * Explanation: The smallest answer is N = 1, which has length 1.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: 2
  * Output: -1
  * Explanation: There is no such positive integer N divisible by 2.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: 3
  * Output: 3
  * Explanation: The smallest answer is N = 111, which has length 3.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= K <= 10^5
+ * }</pre>
  *
  * @author Johnny
  */

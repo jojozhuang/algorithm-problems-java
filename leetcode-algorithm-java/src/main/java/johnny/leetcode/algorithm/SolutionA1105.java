@@ -2,7 +2,6 @@ package johnny.leetcode.algorithm;
 
 /**
  * 1105. Filling Bookcase Shelves
- * <p>
  * We have a sequence of books: the i-th book has thickness books[i][0] and height books[i][1].
  * <p>
  * We want to place these books in order onto bookcase shelves that have total width shelf_width.
@@ -13,23 +12,19 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the minimum possible height that the total bookshelf can be after placing shelves in this manner.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
  * Input: books = [[1,1],[2,3],[2,3],[1,1],[1,1],[1,1],[1,2]], shelf_width = 4
  * Output: 6
  * Explanation:
  * The sum of the heights of the 3 shelves are 1 + 3 + 2 = 6.
  * Notice that book number 2 does not have to be on the first shelf.
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= books.length <= 1000
  * 1 <= books[i][0] <= shelf_width <= 1000
  * 1 <= books[i][1] <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

@@ -9,9 +9,7 @@ package johnny.leetcode.algorithm;
  * int snap() takes a snapshot of the array and returns the snap_id: the total number of times we called snap() minus 1.
  * int get(index, snap_id) returns the value at the given index, at the time we took the snapshot with the given snap_id
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["SnapshotArray","set","snap","set","get"]
  * [[3],[0,5],[],[0,6],[0,0]]
  * Output: [null,null,0,null,5]
@@ -22,14 +20,14 @@ package johnny.leetcode.algorithm;
  * snapshotArr.set(0,6);
  * snapshotArr.get(0,0);  // Get the value of array[0] with snap_id = 0, return 5
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= length <= 50000
  * At most 50000 calls will be made to set, snap, and get.
  * 0 <= index < length
  * 0 <= snap_id < (the total number of times we call snap())
  * 0 <= val <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

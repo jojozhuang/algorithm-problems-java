@@ -14,31 +14,28 @@ import java.util.List;
  * <p>
  * When the game ends, what is the minimum and maximum number of moves that you could have made?  Return the answer as an length 2 array: answer = [minimum_moves, maximum_moves]
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: a = 1, b = 2, c = 5
  * Output: [1,2]
  * Explanation: Move the stone from 5 to 3, or move the stone from 5 to 4 to 3.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: a = 4, b = 3, c = 2
  * Output: [0,0]
  * Explanation: We cannot make any moves.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: a = 3, b = 5, c = 1
  * Output: [1,2]
  * Explanation: Move the stone from 1 to 4; or move the stone from 1 to 2 to 4.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= a <= 100
  * 1 <= b <= 100
  * 1 <= c <= 100
  * a != b, b != c, c != a
+ * }</pre>
  *
  * @author Johnny
  */

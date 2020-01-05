@@ -8,16 +8,13 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the sum of lengths of all good strings in words.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: words = ["cat","bt","hat","tree"], chars = "atach"
  * Output: 6
  * Explanation:
  * The strings that can be formed are "cat" and "hat" so the answer is 3 + 3 = 6.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: words = ["hello","world","leetcode"], chars = "welldonehoneyr"
  * Output: 10
  * Explanation:

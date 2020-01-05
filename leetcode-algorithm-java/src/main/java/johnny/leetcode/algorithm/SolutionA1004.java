@@ -6,29 +6,26 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the length of the longest (contiguous) subarray that contains only 1s.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: A = [1,1,1,0,0,0,1,1,1,1,0], K = 2
  * Output: 6
  * Explanation:
  * [1,1,1,0,0,1,1,1,1,1,1]
  * Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: A = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], K = 3
  * Output: 10
  * Explanation:
  * [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
  * Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 20000
  * 0 <= K <= A.length
  * A[i] is 0 or 1
+ * }</pre>
  *
  * @author Johnny
  */

@@ -12,30 +12,28 @@ package johnny.leetcode.algorithm;
  * "&(expr1,expr2,...)", evaluating to the logical AND of 2 or more inner expressions expr1, expr2, ...;
  * "|(expr1,expr2,...)", evaluating to the logical OR of 2 or more inner expressions expr1, expr2, ...
  * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: expression = "!(f)"
  * Output: true
- * Example 2:
  * <p>
+ * Example 2:
  * Input: expression = "|(f,t)"
  * Output: true
- * Example 3:
  * <p>
+ * Example 3:
  * Input: expression = "&(t,f)"
  * Output: false
- * Example 4:
  * <p>
+ * Example 4:
  * Input: expression = "|(&(t,f,t),!(t))"
  * Output: false
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= expression.length <= 20000
  * expression[i] consists of characters in {'(', ')', '&', '|', '!', 't', 'f', ','}.
  * expression is a valid expression representing a boolean, as given in the description.
+ * }</pre>
  *
  * @author Johnny
  */

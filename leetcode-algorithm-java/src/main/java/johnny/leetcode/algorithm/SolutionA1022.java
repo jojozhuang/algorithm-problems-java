@@ -15,7 +15,6 @@ import johnny.algorithm.common.TreeNode;
  * Output: 22
  * Explanation: (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
  * <p>
- * <p>
  * Note:
  * <p>
  * The number of nodes in the tree is between 1 and 1000.

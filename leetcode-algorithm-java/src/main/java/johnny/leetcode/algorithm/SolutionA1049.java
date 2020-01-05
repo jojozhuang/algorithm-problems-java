@@ -14,10 +14,7 @@ import java.util.List;
  * If x != y, the stone of weight x is totally destroyed, and the stone of weight y has new weight y-x.
  * At the end, there is at most 1 stone left.  Return the smallest possible weight of this stone (the weight is 0 if there are no stones left.)
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [2,7,4,1,8,1]
  * Output: 1
  * Explanation:
@@ -26,11 +23,11 @@ import java.util.List;
  * we can combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
  * we can combine 1 and 1 to get 0 so the array converts to [1] then that's the optimal value.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= stones.length <= 30
  * 1 <= stones[i] <= 100
+ * }</pre>
  *
  * @author Johnny
  */

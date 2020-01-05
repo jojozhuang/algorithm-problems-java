@@ -6,23 +6,20 @@ package johnny.leetcode.algorithm;
  * <p>
  * Given a list of three points in the plane, return whether these points are a boomerang.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [[1,1],[2,3],[3,2]]
  * Output: true
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [[1,1],[2,2],[3,3]]
  * Output: false
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * points.length == 3
  * points[i].length == 2
  * 0 <= points[i][j] <= 100
+ * }</pre>
  *
  * @author Johnny
  */

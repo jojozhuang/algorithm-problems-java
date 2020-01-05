@@ -13,15 +13,14 @@ import johnny.algorithm.common.TreeNode;
  * Return true if and only if the nodes corresponding to the values x and y are cousins.
  * <p>
  * Example 1:
- * <p>
  * Input: root = [1,2,3,4], x = 4, y = 3
  * Output: false
- * Example 2:
  * <p>
+ * Example 2:
  * Input: root = [1,2,3,null,4,null,5], x = 5, y = 4
  * Output: true
- * Example 3:
  * <p>
+ * Example 3:
  * Input: root = [1,2,3,null,4], x = 2, y = 3
  * Output: false
  * <p>

@@ -12,24 +12,21 @@ package johnny.leetcode.algorithm;
  * <p>
  * Implement the clumsy function as defined above: given an integer N, it returns the clumsy factorial of N.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: 4
  * Output: 7
  * Explanation: 7 = 4 * 3 / 2 + 1
- * Example 2:
  * <p>
+ * Example 2:
  * Input: 10
  * Output: 12
  * Explanation: 12 = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= N <= 10000
  * -2^31 <= answer <= 2^31 - 1  (The answer is guaranteed to fit within a 32-bit integer.)
+ * }</pre>
  *
  * @author Johnny
  */

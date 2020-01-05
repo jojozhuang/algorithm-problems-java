@@ -10,30 +10,27 @@ package johnny.leetcode.algorithm;
  * <p>
  * Given a square at location (r0, c0) in the grid and a color, color the border of the connected component of that square with the given color, and return the final grid.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: grid = [[1,1],[1,2]], r0 = 0, c0 = 0, color = 3
  * Output: [[3, 3], [3, 2]]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: grid = [[1,2,2],[2,3,2]], r0 = 0, c0 = 1, color = 3
  * Output: [[1, 3, 3], [2, 3, 3]]
- * Example 3:
  * <p>
+ * Example 3:
  * Input: grid = [[1,1,1],[1,1,1],[1,1,1]], r0 = 1, c0 = 1, color = 2
  * Output: [[2, 2, 2], [2, 1, 2], [2, 2, 2]]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= grid.length <= 50
  * 1 <= grid[0].length <= 50
  * 1 <= grid[i][j] <= 1000
  * 0 <= r0 < grid.length
  * 0 <= c0 < grid[0].length
  * 1 <= color <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

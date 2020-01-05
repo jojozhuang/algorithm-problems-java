@@ -9,25 +9,22 @@ import java.util.List;
  * <p>
  * Given the array-form A of a non-negative integer X, return the array-form of the integer X+K.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: A = [1,2,0,0], K = 34
  * Output: [1,2,3,4]
  * Explanation: 1200 + 34 = 1234
- * Example 2:
  * <p>
+ * Example 2:
  * Input: A = [2,7,4], K = 181
  * Output: [4,5,5]
  * Explanation: 274 + 181 = 455
- * Example 3:
  * <p>
+ * Example 3:
  * Input: A = [2,1,5], K = 806
  * Output: [1,0,2,1]
  * Explanation: 215 + 806 = 1021
- * Example 4:
  * <p>
+ * Example 4:
  * Input: A = [9,9,9,9,9,9,9,9,9,9], K = 1
  * Output: [1,0,0,0,0,0,0,0,0,0,0]
  * Explanation: 9999999999 + 1 = 10000000000

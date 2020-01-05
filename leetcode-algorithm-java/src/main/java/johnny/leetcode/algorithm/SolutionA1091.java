@@ -12,28 +12,19 @@ package johnny.leetcode.algorithm;
  * If C_i is located at (r, c), then grid[r][c] is empty (ie. grid[r][c] == 0).
  * Return the length of the shortest such clear path from top-left to bottom-right.  If such a path does not exist, return -1.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [[0,1],[1,0]]
- * <p>
- * <p>
  * Output: 2
  * <p>
  * Example 2:
- * <p>
  * Input: [[0,0,0],[1,1,0],[1,1,0]]
- * <p>
- * <p>
  * Output: 4
  * <p>
- * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= grid.length == grid[0].length <= 100
  * grid[r][c] is 0 or 1
+ * }</pre>
  *
  * @author Johnny
  */

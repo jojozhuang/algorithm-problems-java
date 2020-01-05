@@ -7,35 +7,27 @@ import java.util.Set;
 
 /**
  * 1189. Maximum Number of Balloons
- * <p>
  * Given a string text, you want to use the characters of text to form as many instances of the word "balloon" as possible.
  * <p>
  * You can use each character in text at most once. Return the maximum number of instances that can be formed.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
- * <p>
  * Input: text = "nlaebolko"
  * Output: 1
+ * <p>
  * Example 2:
- * <p>
- * <p>
- * <p>
  * Input: text = "loonbalxballpoon"
  * Output: 2
- * Example 3:
  * <p>
+ * Example 3:
  * Input: text = "leetcode"
  * Output: 0
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= text.length <= 10^4
  * text consists of lower case English letters only.
+ * }</pre>
  *
  * @author Johnny
  */

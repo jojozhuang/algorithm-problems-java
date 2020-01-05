@@ -9,10 +9,7 @@ package johnny.leetcode.algorithm;
  * The value of each non-leaf node is equal to the product of the largest leaf value in its left and right subtree respectively.
  * Among all possible binary trees considered, return the smallest possible sum of the values of each non-leaf node.  It is guaranteed this sum fits into a 32-bit integer.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: arr = [6,2,4]
  * Output: 32
  * Explanation:
@@ -24,12 +21,12 @@ package johnny.leetcode.algorithm;
  * /  \               / \
  * 6    2             2   4
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 2 <= arr.length <= 40
  * 1 <= arr[i] <= 15
  * It is guaranteed that the answer fits into a 32-bit signed integer (ie. it is less than 2^31).
+ * }</pre>
  *
  * @author Johnny
  */

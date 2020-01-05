@@ -14,21 +14,17 @@ import johnny.algorithm.common.TreeNode;
  * <p>
  * You are the second player.  If it is possible to choose such a y to ensure you win the game, return true.  If it is not possible, return false.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
  * Input: root = [1,2,3,4,5,6,7,8,9,10,11], n = 11, x = 3
  * Output: true
  * Explanation: The second player can choose the node with value 2.
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * root is the root of a binary tree with n nodes and distinct node values from 1 to n.
  * n is odd.
  * 1 <= x <= n <= 100
+ * }</pre>
  *
  * @author Johnny
  */

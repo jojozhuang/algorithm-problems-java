@@ -8,10 +8,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within D days.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: weights = [1,2,3,4,5,6,7,8,9,10], D = 5
  * Output: 15
  * Explanation:
@@ -23,8 +20,8 @@ package johnny.leetcode.algorithm;
  * 5th day: 10
  * <p>
  * Note that the cargo must be shipped in the order given, so using a ship of capacity 14 and splitting the packages into parts like (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) is not allowed.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: weights = [3,2,2,4,1,4], D = 3
  * Output: 6
  * Explanation:
@@ -32,8 +29,8 @@ package johnny.leetcode.algorithm;
  * 1st day: 3, 2
  * 2nd day: 2, 4
  * 3rd day: 1, 4
- * Example 3:
  * <p>
+ * Example 3:
  * Input: weights = [1,2,3,1,1], D = 4
  * Output: 3
  * Explanation:
@@ -42,11 +39,11 @@ package johnny.leetcode.algorithm;
  * 3rd day: 3
  * 4th day: 1, 1
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= D <= weights.length <= 50000
  * 1 <= weights[i] <= 500
+ * }</pre>
  *
  * @author Johnny
  */

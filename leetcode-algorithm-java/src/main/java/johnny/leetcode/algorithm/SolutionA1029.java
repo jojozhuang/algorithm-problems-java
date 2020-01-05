@@ -10,10 +10,7 @@ import java.util.List;
  * <p>
  * Return the minimum cost to fly every person to a city such that exactly N people arrive in each city.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: [[10,20],[30,200],[400,50],[30,20]]
  * Output: 110
  * Explanation:
@@ -24,12 +21,12 @@ import java.util.List;
  * <p>
  * The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= costs.length <= 100
  * It is guaranteed that costs.length is even.
  * 1 <= costs[i][0], costs[i][1] <= 1000
+ * }</pre>
  *
  * @author Johnny
  */

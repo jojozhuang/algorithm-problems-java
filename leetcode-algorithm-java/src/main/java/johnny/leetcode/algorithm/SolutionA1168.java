@@ -8,21 +8,15 @@ package johnny.leetcode.algorithm;
  * <p>
  * Find the minimum total cost to supply water to all houses.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
- * <p>
  * Input: n = 3, wells = [1,2,2], pipes = [[1,2,1],[2,3,1]]
  * Output: 3
  * Explanation:
  * The image shows the costs of connecting houses using pipes.
  * The best strategy is to build a well in the first house with cost 1 and connect the other houses to it with cost 2 so the total cost is 3.
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= n <= 10000
  * wells.length == n
  * 0 <= wells[i] <= 10^5
@@ -30,6 +24,7 @@ package johnny.leetcode.algorithm;
  * 1 <= pipes[i][0], pipes[i][1] <= n
  * 0 <= pipes[i][2] <= 10^5
  * pipes[i][0] != pipes[i][1]
+ * }</pre>
  *
  * @author Johnny
  */

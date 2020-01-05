@@ -9,27 +9,24 @@ import java.util.TreeSet;
  * <p>
  * Return the largest string X such that X divides str1 and X divides str2.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: str1 = "ABCABC", str2 = "ABC"
  * Output: "ABC"
- * Example 2:
  * <p>
+ * Example 2:
  * Input: str1 = "ABABAB", str2 = "ABAB"
  * Output: "AB"
- * Example 3:
  * <p>
+ * Example 3:
  * Input: str1 = "LEET", str2 = "CODE"
  * Output: ""
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= str1.length <= 1000
  * 1 <= str2.length <= 1000
  * str1[i] and str2[i] are English uppercase letters.
+ * }</pre>
  *
  * @author Johnny
  */

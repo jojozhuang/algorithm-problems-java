@@ -11,33 +11,30 @@ package johnny.leetcode.algorithm;
  * <p>
  * Return true if and only if there exists a circle in the plane such that the robot never leaves the circle.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: "GGLLGG"
  * Output: true
  * Explanation:
  * The robot moves from (0,0) to (0,2), turns 180 degrees, and then returns to (0,0).
  * When repeating these instructions, the robot remains in the circle of radius 2 centered at the origin.
- * Example 2:
  * <p>
+ * Example 2:
  * Input: "GG"
  * Output: false
  * Explanation:
  * The robot moves north indefinitely.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: "GL"
  * Output: true
  * Explanation:
- * The robot moves from (0, 0) -> (0, 1) -> (-1, 1) -> (-1, 0) -> (0, 0) -> ...
- * <p>
+ * The robot moves from {@code (0, 0) -> (0, 1) -> (-1, 1) -> (-1, 0) -> (0, 0) -> ...}
  * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= instructions.length <= 100
  * instructions[i] is in {'G', 'L', 'R'}
+ * }</pre>
  *
  * @author Johnny
  */

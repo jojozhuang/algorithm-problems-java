@@ -5,10 +5,11 @@ package johnny.leetcode.algorithm;
  * Given two strings S and T, each of which represents a non-negative rational number, return True if and only if they represent the same number. The strings may use parentheses to denote the repeating part of the rational number.
  * <p>
  * In general a rational number can be represented using up to three parts: an integer part, a non-repeating part, and a repeating part. The number will be represented in one of the following three ways:
- *
+ * <pre>{@code
  * <IntegerPart> (e.g. 0, 12, 123)
  * <IntegerPart><.><NonRepeatingPart>  (e.g. 0.5, 1., 2.12, 2.0001)
  * <IntegerPart><.><NonRepeatingPart><(><RepeatingPart><)> (e.g. 0.1(6), 0.9(9), 0.00(1212))
+ * }</pre>
  * The repeating portion of a decimal expansion is conventionally denoted within a pair of round brackets.  For example:
  * <p>
  * 1 / 6 = 0.16666666... = 0.1(6) = 0.1666(6) = 0.166(66)

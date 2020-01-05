@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
+ * Dinner Plate Stacks
  * You have an infinite number of stacks arranged in a row and numbered (left to right) from 0, each of the stacks has the same maximum capacity.
  * <p>
  * Implement the DinnerPlates class:
@@ -55,13 +56,13 @@ import java.util.Stack;
  * D.pop()            // Returns 1.  There are no stacks.
  * D.pop()            // Returns -1.  There are still no stacks.
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * 1 <= capacity <= 20000
  * 1 <= val <= 20000
  * 0 <= index <= 100000
  * At most 200000 calls will be made to push, pop, and popAtStack.
+ * }</pre>
  *
  * @author Johnny
  */

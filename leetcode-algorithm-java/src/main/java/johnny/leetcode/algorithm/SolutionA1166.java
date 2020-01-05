@@ -12,10 +12,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Please refer to the examples for clarifications.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input:
  * ["FileSystem","create","get"]
  * [[],["/a",1],["/a"]]
@@ -42,12 +39,12 @@ package johnny.leetcode.algorithm;
  * fileSystem.create("/c/d", 1); // return false because the parent path "/c" doesn't exist.
  * fileSystem.get("/c"); // return -1 because this path doesn't exist.
  * <p>
- * <p>
  * Constraints:
- * <p>
+ * <pre>{@code
  * The number of calls to the two functions is less than or equal to 10^4 in total.
  * 2 <= path.length <= 100
  * 1 <= value <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

@@ -16,36 +16,33 @@ import java.util.Set;
  * <p>
  * Return the number of groups of special-equivalent strings from A.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
  * Input: ["a","b","c","a","c","c"]
  * Output: 3
  * Explanation: 3 groups ["a","a"], ["b"], ["c","c","c"]
- * Example 2:
  * <p>
+ * Example 2:
  * Input: ["aa","bb","ab","ba"]
  * Output: 4
  * Explanation: 4 groups ["aa"], ["bb"], ["ab"], ["ba"]
- * Example 3:
  * <p>
+ * Example 3:
  * Input: ["abc","acb","bac","bca","cab","cba"]
  * Output: 3
  * Explanation: 3 groups ["abc","cba"], ["acb","bca"], ["bac","cab"]
- * Example 4:
  * <p>
+ * Example 4:
  * Input: ["abcd","cdab","adcb","cbad"]
  * Output: 1
  * Explanation: 1 group ["abcd","cdab","adcb","cbad"]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= A.length <= 1000
  * 1 <= A[i].length <= 20
  * All A[i] have the same length.
  * All A[i] consist of only lowercase letters.
+ * }</pre>
  *
  * @author Johnny
  */

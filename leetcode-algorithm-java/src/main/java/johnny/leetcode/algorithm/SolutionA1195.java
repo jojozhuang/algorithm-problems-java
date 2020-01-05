@@ -4,7 +4,6 @@ import java.util.function.IntConsumer;
 
 /**
  * 1195. Fizz Buzz Multithreaded
- * <p>
  * Write a program that outputs the string representation of numbers from 1 to n, however:
  * <p>
  * If the number is divisible by 3, output "fizz".

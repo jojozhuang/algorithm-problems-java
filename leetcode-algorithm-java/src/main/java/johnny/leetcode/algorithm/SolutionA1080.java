@@ -10,35 +10,24 @@ import johnny.algorithm.common.TreeNode;
  * <p>
  * Delete all insufficient nodes simultaneously, and return the root of the resulting binary tree.
  * <p>
- * <p>
- * <p>
  * Example 1:
- * <p>
- * <p>
  * Input: root = [1,2,3,4,-99,-99,7,8,9,-99,-99,12,13,-99,14], limit = 1
- * <p>
  * Output: [1,2,3,4,null,null,7,8,9,null,14]
+ * <p>
  * Example 2:
- * <p>
- * <p>
  * Input: root = [5,4,8,11,null,17,4,7,1,null,null,5,3], limit = 22
- * <p>
  * Output: [5,4,8,11,null,17,4,7,null,null,null,5]
  * <p>
- * <p>
  * Example 3:
- * <p>
- * <p>
  * Input: root = [1,2,-3,-5,null,4,null], limit = -1
- * <p>
  * Output: [1,null,-3,4]
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * The given tree will have between 1 and 5000 nodes.
  * -10^5 <= node.val <= 10^5
  * -10^9 <= limit <= 10^9
+ * }</pre>
  *
  * @author Johnny
  */

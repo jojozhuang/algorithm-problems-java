@@ -15,26 +15,25 @@ import java.util.Queue;
  * Return the minimum number of minutes that must elapse until no cell has a fresh orange.  If this is impossible, return -1 instead.
  * <p>
  * Example 1:
- * <p>
  * Input: [[2,1,1],[1,1,0],[0,1,1]]
  * Output: 4
- * Example 2:
  * <p>
+ * Example 2:
  * Input: [[2,1,1],[0,1,1],[1,0,1]]
  * Output: -1
  * Explanation:  The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.
- * Example 3:
  * <p>
+ * Example 3:
  * Input: [[0,2]]
  * Output: 0
  * Explanation:  Since there are already no fresh oranges at minute 0, the answer is just 0.
  * <p>
- * <p>
  * Note:
- * <p>
+ * <pre>{@code
  * 1 <= grid.length <= 10
  * 1 <= grid[0].length <= 10
  * grid[i][j] is only 0, 1, or 2.
+ * }</pre>
  *
  * @author Johnny
  */
