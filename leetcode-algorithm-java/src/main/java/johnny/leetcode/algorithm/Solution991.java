@@ -14,17 +14,17 @@ package johnny.leetcode.algorithm;
  * Example 1:
  * Input: X = 2, Y = 3
  * Output: 2
- * Explanation: Use double operation and then decrement operation {2 -> 4 -> 3}.
+ * Explanation: Use double operation and then decrement operation {{@code 2 -> 4 -> 3}}.
  * <p>
  * Example 2:
  * Input: X = 5, Y = 8
  * Output: 2
- * Explanation: Use decrement and then double {5 -> 4 -> 8}.
+ * Explanation: Use decrement and then double {{@code 5 -> 4 -> 8}}.
  * <p>
  * Example 3:
  * Input: X = 3, Y = 10
  * Output: 3
- * Explanation:  Use double, decrement and double {3 -> 6 -> 5 -> 10}.
+ * Explanation:  Use double, decrement and double {{@code 3 -> 6 -> 5 -> 10}}.
  * <p>
  * Example 4:
  * Input: X = 1024, Y = 1

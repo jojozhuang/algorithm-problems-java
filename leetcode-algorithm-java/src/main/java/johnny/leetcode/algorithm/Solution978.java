@@ -13,7 +13,7 @@ package johnny.leetcode.algorithm;
  * Example 1:
  * Input: [9,4,2,10,7,8,8,1,9]
  * Output: 5
- * Explanation: (A[1] > A[2] < A[3] > A[4] < A[5])
+ * Explanation: ({@code A[1] > A[2] < A[3] > A[4] < A[5]})
  * <p>
  * Example 2:
  * Input: [4,8,12,16]

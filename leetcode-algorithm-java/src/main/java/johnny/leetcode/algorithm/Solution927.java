@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 927. Three Equal Parts
  * Given an array A of 0s and 1s, divide the array into 3 non-empty parts such that all of these parts represent the same binary value.
  * <p>
- * If it is possible, return any [i, j] with i+1 < j, such that:
+ * If it is possible, return any {@code [i, j] with i+1 < j}, such that:
  * <p>
  * A[0], A[1], ..., A[i] is the first part;
  * A[i+1], A[i+2], ..., A[j-1] is the second part, and

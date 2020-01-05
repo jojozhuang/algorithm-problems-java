@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 /**
  * 1030. Matrix Cells in Distance Order
- * We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where 0 <= r < R and 0 <= c < C.
+ * We are given a matrix with R rows and C columns has cells with integer coordinates (r, c), where {@code 0 <= r < R and 0 <= c < C.}
  * <p>
  * Additionally, we are given a cell in that matrix with coordinates (r0, c0).
  * <p>

@@ -8,9 +8,9 @@ package johnny.leetcode.algorithm;
  * <p>
  * "t", evaluating to True;
  * "f", evaluating to False;
- * "!(expr)", evaluating to the logical NOT of the inner expression expr;
- * "&(expr1,expr2,...)", evaluating to the logical AND of 2 or more inner expressions expr1, expr2, ...;
- * "|(expr1,expr2,...)", evaluating to the logical OR of 2 or more inner expressions expr1, expr2, ...
+ * "{@code !(expr)}", evaluating to the logical NOT of the inner expression expr;
+ * "{@code &(expr1,expr2,...)}", evaluating to the logical AND of 2 or more inner expressions expr1, expr2, ...;
+ * "{@code |(expr1,expr2,...)}", evaluating to the logical OR of 2 or more inner expressions expr1, expr2, ...
  * <p>
  * Example 1:
  * Input: expression = "!(f)"
@@ -21,11 +21,11 @@ package johnny.leetcode.algorithm;
  * Output: true
  * <p>
  * Example 3:
- * Input: expression = "&(t,f)"
+ * Input: expression = "{@code &(t,f)}"
  * Output: false
  * <p>
  * Example 4:
- * Input: expression = "|(&(t,f,t),!(t))"
+ * Input: expression = "{@code |(&(t,f,t),!(t))}"
  * Output: false
  * <p>
  * Constraints:

@@ -8,7 +8,7 @@ import java.util.List;
  * 1049. Last Stone Weight II
  * We have a collection of rocks, each rock has a positive integer weight.
  * <p>
- * Each turn, we choose any two rocks and smash them together.  Suppose the stones have weights x and y with x <= y.  The result of this smash is:
+ * Each turn, we choose any two rocks and smash them together.  Suppose the stones have weights x and y with {@code x <= y}.  The result of this smash is:
  * <p>
  * If x == y, both stones are totally destroyed;
  * If x != y, the stone of weight x is totally destroyed, and the stone of weight y has new weight y-x.

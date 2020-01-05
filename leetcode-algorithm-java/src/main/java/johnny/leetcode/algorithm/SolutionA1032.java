@@ -5,7 +5,7 @@ package johnny.leetcode.algorithm;
  * Implement the StreamChecker class as follows:
  * <p>
  * StreamChecker(words): Constructor, init the data structure with the given words.
- * query(letter): returns true if and only if for some k >= 1, the last k characters queried (in order from oldest to newest, including this letter just queried) spell one of the words in the given list.
+ * query(letter): returns true if and only if for some {@code k >= 1}, the last k characters queried (in order from oldest to newest, including this letter just queried) spell one of the words in the given list.
  * <p>
  * Example:
  * StreamChecker streamChecker = new StreamChecker(["cd","f","kl"]); // init the dictionary.

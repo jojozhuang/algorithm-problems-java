@@ -13,6 +13,7 @@ package johnny.leetcode.algorithm;
  * Input: [2,1,3]
  * Output: 12
  * Explanation: We could choose the following i, j, k triples:
+ * <pre>{@code
  * (i=0, j=0, k=1) : 2 & 2 & 1
  * (i=0, j=1, k=0) : 2 & 1 & 2
  * (i=0, j=1, k=1) : 2 & 1 & 1
@@ -25,6 +26,7 @@ package johnny.leetcode.algorithm;
  * (i=1, j=2, k=0) : 1 & 3 & 2
  * (i=2, j=0, k=1) : 3 & 2 & 1
  * (i=2, j=1, k=0) : 3 & 1 & 2
+ * }</pre>
  * <p>
  * Note:
  * <pre>{@code

@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 /**
  * 908. Smallest Range I
- * Given an array A of integers, for each integer A[i] we may choose any x with -K <= x <= K, and add x to A[i].
+ * Given an array A of integers, for each integer A[i] we may choose any x with {@code -K <= x <= K}, and add x to A[i].
  * <p>
  * After this process, we have some array B.
  * <p>

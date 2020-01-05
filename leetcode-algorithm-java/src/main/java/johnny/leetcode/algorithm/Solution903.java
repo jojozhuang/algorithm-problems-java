@@ -8,8 +8,8 @@ import java.util.Arrays;
  * <p>
  * A valid permutation is a permutation P[0], P[1], ..., P[n] of integers {0, 1, ..., n}, such that for all i:
  * <p>
- * If S[i] == 'D', then P[i] > P[i+1], and;
- * If S[i] == 'I', then P[i] < P[i+1].
+ * {@code If S[i] == 'D', then P[i] > P[i+1], and;}
+ * {@code If S[i] == 'I', then P[i] < P[i+1].}
  * How many valid permutations are there?  Since the answer may be large, return your answer modulo 10^9 + 7.
  * <p>
  * Example 1:

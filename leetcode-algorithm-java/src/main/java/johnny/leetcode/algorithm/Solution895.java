@@ -15,6 +15,7 @@ import java.util.Stack;
  * If there is a tie for most frequent element, the element closest to the top of the stack is removed and returned.
  * <p>
  * Example 1:
+ * <pre>{@code
  * Input:
  * ["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"],
  * [[],[5],[7],[5],[7],[4],[5],[],[],[],[]]
@@ -33,7 +34,7 @@ import java.util.Stack;
  * <p>
  * pop() -> returns 4.
  * The stack becomes [5,7].
- * <p>
+ * }</pre>
  * Note:
  * <p>
  * Calls to FreqStack.push(int x) will be such that {@code 0 <= x <= 10^9}.

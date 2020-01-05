@@ -2,7 +2,7 @@ package johnny.leetcode.algorithm;
 
 /**
  * 1001. Grid Illumination
- * On a N x N grid of cells, each cell (x, y) with 0 <= x < N and 0 <= y < N has a lamp.
+ * On a N x N grid of cells, each cell (x, y) with {@code 0 <= x < N and 0 <= y < N} has a lamp.
  * <p>
  * Initially, some number of lamps are on.  lamps[i] tells us the location of the i-th lamp that is on.  Each lamp that is on illuminates every square on its x-axis, y-axis, and both diagonals (similar to a Queen in chess).
  * <p>

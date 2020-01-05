@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- *https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=503600
+ * {@code https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=503600}
  *给一个排好序的N个不同数字，一个整数K，一个整数C，找到距离K第Cth近的数字，注意K并不一定出现在这个数组里
 例如数组是{1, 3, 5, 10, 20, 23} K = 11 C = 2，那么输出为5
  *

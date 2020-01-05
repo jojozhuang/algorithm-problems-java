@@ -4,7 +4,7 @@ package johnny.leetcode.algorithm;
  * 896. Monotonic Array
  * An array is monotonic if it is either monotone increasing or monotone decreasing.
  * <p>
- * An array A is monotone increasing if for all i <= j, A[i] <= A[j].  An array A is monotone decreasing if for all i <= j, A[i] >= A[j].
+ * {@code An array A is monotone increasing if for all i <= j, A[i] <= A[j].  An array A is monotone decreasing if for all i <= j, A[i] >= A[j].}
  * <p>
  * Return true if and only if the given array A is monotonic.
  * <p>

@@ -23,9 +23,9 @@ package johnny.leetcode.algorithm;
  * <p>
  * Note:
  * <pre>{@code
- * 1 <= S.length <= 10000
+ * {@code 1 <= S.length <= 10000}
  * S only contains characters "I" or "D".
- * <pre>{@code
+ * }</pre>
  *
  * @author Johnny
  */

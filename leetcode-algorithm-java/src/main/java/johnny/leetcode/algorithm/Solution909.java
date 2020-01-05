@@ -11,7 +11,7 @@ import java.util.Queue;
  * <p>
  * You start on square 1 of the board (which is always in the last row and first column).  Each move, starting from square x, consists of the following:
  * <p>
- * You choose a destination square S with number x+1, x+2, x+3, x+4, x+5, or x+6, provided this number is <= N*N.
+ * You choose a destination square S with number x+1, x+2, x+3, x+4, x+5, or x+6, provided this number is {@code <= N*N}.
  * (This choice simulates the result of a standard 6-sided die roll: ie., there are always at most 6 destinations.)
  * If S has a snake or ladder, you move to the destination of that snake or ladder.  Otherwise, you move to S.
  * A board square on row r and column c has a "snake or ladder" if board[r][c] != -1.  The destination of that snake or ladder is board[r][c].

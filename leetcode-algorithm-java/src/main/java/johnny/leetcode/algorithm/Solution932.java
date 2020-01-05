@@ -7,7 +7,7 @@ import java.util.Map;
  * 932. Beautiful Array
  * For some fixed N, an array A is beautiful if it is a permutation of the integers 1, 2, ..., N, such that:
  * <p>
- * For every i < j, there is no k with i < k < j such that A[k] * 2 = A[i] + A[j].
+ * {@code For every i < j, there is no k with i < k < j such that A[k] * 2 = A[i] + A[j].}
  * <p>
  * Given N, return any beautiful array A.  (It is guaranteed that one exists.)
  * <p>

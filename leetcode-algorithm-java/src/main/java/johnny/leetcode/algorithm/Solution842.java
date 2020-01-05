@@ -9,11 +9,9 @@ import java.util.List;
  * Given a string S of digits, such as S = "123456579", we can split it into a Fibonacci-like sequence [123, 456, 579].
  * <p>
  * Formally, a Fibonacci-like sequence is a list F of non-negative integers such that:
- * <pre>{@code
- * 0 <= F[i] <= 2^31 - 1}, (that is, each integer fits a 32-bit signed integer type;
- * F.length >= 3;
- * and F[i] + F[i+1] = F[i+2] for all 0 <= i < F.length - 2.
- * }</pre>
+ * {@code 0 <= F[i] <= 2^31 - 1}, (that is, each integer fits a 32-bit signed integer type;}
+ * {@code F.length >= 3;}
+ * {@code and F[i] + F[i+1] = F[i+2] for all 0 <= i < F.length - 2.}
  * Also, note that when splitting the string into pieces, each piece must not have extra leading zeroes, except if the piece is the number 0 itself.
  * <p>
  * Return any Fibonacci-like sequence split from S, or return [] if it cannot be done.

@@ -9,7 +9,7 @@ import java.util.Set;
  * 873. Length of Longest Fibonacci Subsequence
  * A sequence X_1, X_2, ..., X_n is fibonacci-like if:
  * {@code n >= 3}
- * X_i + X_{i+1} = X_{i+2} for all i + 2 <= n
+ * {@code X_i + X_{i+1} = X_{i+2} for all i + 2 <= n}
  * Given a strictly increasing array A of positive integers forming a sequence, find the length of the longest fibonacci-like subsequence of A.  If one does not exist, return 0.
  * <p>
  * (Recall that a subsequence is derived from another sequence A by deleting any number of elements (including none) from A, without changing the order of the remaining elements.  For example, [3, 5, 8] is a subsequence of [3, 4, 5, 6, 7, 8].)

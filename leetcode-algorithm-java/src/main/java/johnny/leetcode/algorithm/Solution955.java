@@ -10,7 +10,7 @@ import java.util.Arrays;
  * <p>
  * For example, if we have an array A = ["abcdef","uvwxyz"] and deletion indices {0, 2, 3}, then the final array after deletions is ["bef","vyz"].
  * <p>
- * Suppose we chose a set of deletion indices D such that after deletions, the final array has its elements in lexicographic order (A[0] <= A[1] <= A[2] ... <= A[A.length - 1]).
+ * Suppose we chose a set of deletion indices D such that after deletions, the final array has its elements in lexicographic order ({@code A[0] <= A[1] <= A[2] ... <= A[A.length - 1]}).
  * <p>
  * Return the minimum possible value of D.length.
  * <p>
@@ -19,7 +19,7 @@ import java.util.Arrays;
  * Output: 1
  * Explanation:
  * After deleting the first column, A = ["a", "b", "c"].
- * Now A is in lexicographic order (ie. A[0] <= A[1] <= A[2]).
+ * Now A is in lexicographic order (ie. {@code A[0] <= A[1] <= A[2]}).
  * We require at least 1 deletion since initially A was not in lexicographic order, so the answer is 1.
  * <p>
  * Example 2:
@@ -28,7 +28,7 @@ import java.util.Arrays;
  * Explanation:
  * A is already in lexicographic order, so we don't need to delete anything.
  * Note that the rows of A are not necessarily in lexicographic order:
- * ie. it is NOT necessarily true that (A[0][0] <= A[0][1] <= ...)
+ * ie. it is NOT necessarily true that ({@code A[0][0] <= A[0][1] <= ...})
  * <p>
  * Example 3:
  * Input: ["zyx","wvu","tsr"]

@@ -1,17 +1,14 @@
 package johnny.leetcode.others;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- *https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=490497
- *字母骰子，六面字母有可能重复，给15个，input是长15的string，给出一个可行解使筛子的排列有可能组成这个15长度的单词。
-
-follow up是如果有可互换的字母怎么判断，比如W可看成M，Z可能看成N等等
- *
+ * {@code https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=490497}
+ * 字母骰子，六面字母有可能重复，给15个，input是长15的string，给出一个可行解使筛子的排列有可能组成这个15长度的单词。
+ * follow up是如果有可互换的字母怎么判断，比如W可看成M，Z可能看成N等等
  *
  * @author Johnny
  */

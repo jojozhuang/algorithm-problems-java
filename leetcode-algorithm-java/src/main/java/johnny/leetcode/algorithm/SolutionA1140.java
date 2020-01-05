@@ -6,7 +6,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Alex and Lee take turns, with Alex starting first.  Initially, M = 1.
  * <p>
- * On each player's turn, that player can take all the stones in the first X remaining piles, where 1 <= X <= 2M.  Then, we set M = max(M, X).
+ * On each player's turn, that player can take all the stones in the first X remaining piles, where {@code 1 <= X <= 2M}.  Then, we set M = max(M, X).
  * <p>
  * The game continues until all the stones have been taken.
  * <p>

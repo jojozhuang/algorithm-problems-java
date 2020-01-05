@@ -6,8 +6,8 @@ package johnny.leetcode.algorithm;
  * <p>
  * Then, we choose a subset S of these items, such that:
  * <p>
- * |S| <= num_wanted
- * For every label L, the number of items in S with label L is <= use_limit.
+ * {@code |S| <= num_wanted}
+ * {@code For every label L, the number of items in S with label L is <= use_limit.}
  * Return the largest possible sum of the subset S.
  * <p>
  * Example 1:

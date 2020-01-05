@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * 954. Array of Doubled Pairs
- * Given an array of integers A with even length, return true if and only if it is possible to reorder it such that A[2 * i + 1] = 2 * A[2 * i] for every 0 <= i < len(A) / 2.
+ * Given an array of integers A with even length, return true if and only if it is possible to reorder it such that A[2 * i + 1] = 2 * A[2 * i] for every {@code 0 <= i < len(A) / 2}.
  * <p>
  * Example 1:
  * Input: [3,1,3,6]

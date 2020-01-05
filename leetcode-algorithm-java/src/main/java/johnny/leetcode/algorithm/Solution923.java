@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 923. 3Sum With Multiplicity
  * <p>
- * Given an integer array A, and an integer target, return the number of tuples i, j, k  such that i < j < k and A[i] + A[j] + A[k] == target.
+ * Given an integer array A, and an integer target, return the number of tuples i, j, k  such that {@code i < j < k} and A[i] + A[j] + A[k] == target.
  * <p>
  * As the answer can be very large, return it modulo 10^9 + 7.
  * <p>

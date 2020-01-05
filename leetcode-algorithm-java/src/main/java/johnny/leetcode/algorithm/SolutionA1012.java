@@ -7,12 +7,12 @@ package johnny.leetcode.algorithm;
  * Example 1:
  * Input: 20
  * Output: 1
- * Explanation: The only positive number (<= 20) with at least 1 repeated digit is 11.
+ * Explanation: The only positive number ({@code <= 2}0) with at least 1 repeated digit is 11.
  * <p>
  * Example 2:
  * Input: 100
  * Output: 10
- * Explanation: The positive numbers (<= 100) with atleast 1 repeated digit are 11, 22, 33, 44, 55, 66, 77, 88, 99, and 100.
+ * Explanation: The positive numbers ({@code <= 100}) with atleast 1 repeated digit are 11, 22, 33, 44, 55, 66, 77, 88, 99, and 100.
  * <p>
  * Example 3:
  * Input: 1000

@@ -7,7 +7,7 @@ import java.util.Set;
  * 898. Bitwise ORs of Subarrays
  * We have an array A of non-negative integers.
  * <p>
- * For every (contiguous) subarray B = [A[i], A[i+1], ..., A[j]] (with i <= j), we take the bitwise OR of all the elements in B, obtaining a result A[i] | A[i+1] | ... | A[j].
+ * For every (contiguous) subarray B = [A[i], A[i+1], ..., A[j]] (with {@code i <= j}), we take the bitwise OR of all the elements in B, obtaining a result A[i] | A[i+1] | ... | A[j].
  * <p>
  * Return the number of possible results.  (Results that occur more than once are only counted once in the final answer.)
  * <p>

@@ -13,7 +13,7 @@ import java.util.TreeMap;
  * Stores the key and value, along with the given timestamp.
  * 2. get(string key, int timestamp)
  * <p>
- * Returns a value such that set(key, value, timestamp_prev) was called previously, with timestamp_prev <= timestamp.
+ * Returns a value such that set(key, value, timestamp_prev) was called previously, with {@code timestamp_prev <= timestamp}.
  * If there are multiple such values, it returns the one with the largest timestamp_prev.
  * If there are no values, it returns the empty string ("").
  * <p>

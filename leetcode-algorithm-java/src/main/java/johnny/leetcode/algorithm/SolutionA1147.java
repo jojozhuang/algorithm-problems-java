@@ -6,7 +6,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * Each a_i is a non-empty string;
  * Their concatenation a_1 + a_2 + ... + a_k is equal to text;
- * For all 1 <= i <= k,  a_i = a_{k+1 - i}.
+ * For all {@code 1 <= i <= k,  a_i = a_{k+1 - i}}.
  * <p>
  * Example 1:
  * Input: text = "ghiabcdefhelloadamhelloabcdefghi"

@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * 969. Pancake Sorting
- * Given an array A, we can perform a pancake flip: We choose some positive integer k <= A.length, then reverse the order of the first k elements of A.  We want to perform zero or more pancake flips (doing them one after another in succession) to sort the array A.
+ * Given an array A, we can perform a pancake flip: We choose some positive integer {@code k <= A.length}, then reverse the order of the first k elements of A.  We want to perform zero or more pancake flips (doing them one after another in succession) to sort the array A.
  * <p>
  * Return the k-values corresponding to a sequence of pancake flips that sort A.  Any valid answer that sorts the array within 10 * A.length flips will be judged as correct.
  * <p>

@@ -6,7 +6,7 @@ package johnny.leetcode.algorithm;
  * <p>
  * |arr1[i] - arr1[j]| + |arr2[i] - arr2[j]| + |i - j|
  * <p>
- * where the maximum is taken over all 0 <= i, j < arr1.length.
+ * where the maximum is taken over all {@code 0 <= i, j < arr1.length}.
  * <p>
  * Example 1:
  * Input: arr1 = [1,2,3,4], arr2 = [-1,4,5,6]

@@ -12,7 +12,7 @@ import java.util.Arrays;
  * <p>
  * Suppose we chose a set of deletion indices D such that after deletions, the final array has every element (row) in lexicographic order.
  * <p>
- * For clarity, A[0] is in lexicographic order (ie. A[0][0] <= A[0][1] <= ... <= A[0][A[0].length - 1]), A[1] is in lexicographic order (ie. A[1][0] <= A[1][1] <= ... <= A[1][A[1].length - 1]), and so on.
+ * {@code For clarity, A[0] is in lexicographic order (ie. A[0][0] <= A[0][1] <= ... <= A[0][A[0].length - 1]), A[1] is in lexicographic order (ie. A[1][0] <= A[1][1] <= ... <= A[1][A[1].length - 1]), and so on.}
  * <p>
  * Return the minimum possible value of D.length.
  * <p>
@@ -20,8 +20,8 @@ import java.util.Arrays;
  * Input: ["babca","bbazb"]
  * Output: 3
  * Explanation: After deleting columns 0, 1, and 4, the final array is A = ["bc", "az"].
- * Both these rows are individually in lexicographic order (ie. A[0][0] <= A[0][1] and A[1][0] <= A[1][1]).
- * Note that A[0] > A[1] - the array A isn't necessarily in lexicographic order.
+ * Both these rows are individually in lexicographic order (ie. {@code A[0][0] <= A[0][1] and A[1][0] <= A[1][1]}).
+ * Note that {@code A[0] > A[1]} - the array A isn't necessarily in lexicographic order.
  * <p>
  * Example 2:
  * Input: ["edcba"]

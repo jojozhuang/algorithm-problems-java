@@ -1,16 +1,11 @@
 package johnny.leetcode.others;
 
-import java.util.HashMap;
-
-import johnny.leetcode.others.common.TreeNode;
-
 /**
- *https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=499490
- *Opposite with the following two. The following two are same questions.
- *410. Split Array Largest Sum
- *1014. Capacity To Ship Packages Within D Days
+ * {@code https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=499490}
+ * Opposite with the following two. The following two are same questions.
+ * 410. Split Array Largest Sum
+ * 1014. Capacity To Ship Packages Within D Days
  *
- *  
  * @author Johnny
  */
 public class AAASplitChocolate {

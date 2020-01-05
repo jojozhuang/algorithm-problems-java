@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
  * 1046. Last Stone Weight
  * We have a collection of rocks, each rock has a positive integer weight.
  * <p>
- * Each turn, we choose the two heaviest rocks and smash them together.  Suppose the stones have weights x and y with x <= y.  The result of this smash is:
+ * Each turn, we choose the two heaviest rocks and smash them together.  Suppose the stones have weights {@code x and y with x <= y}.  The result of this smash is:
  * <p>
  * If x == y, both stones are totally destroyed;
  * If x != y, the stone of weight x is totally destroyed, and the stone of weight y has new weight y-x.

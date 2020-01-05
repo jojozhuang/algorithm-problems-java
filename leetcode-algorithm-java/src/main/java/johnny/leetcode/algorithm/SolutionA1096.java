@@ -20,7 +20,7 @@ import java.util.List;
  * Formally, the 3 rules for our grammar:
  * <p>
  * For every lowercase letter x, we have R(x) = {x}
- * For expressions e_1, e_2, ... , e_k with k >= 2, we have R({e_1,e_2,...}) = R(e_1) ∪ R(e_2) ∪ ...
+ * For expressions e_1, e_2, ... , e_k with {@code k >= 2}, we have R({e_1,e_2,...}) = R(e_1) ∪ R(e_2) ∪ ...
  * For expressions e_1 and e_2, we have R(e_1 + e_2) = {a + b for (a, b) in R(e_1) × R(e_2)}, where + denotes concatenation, and × denotes the cartesian product.
  * Given an expression representing a set of words under the given grammar, return the sorted list of words that the expression represents.
  * <p>

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 962. Maximum Width Ramp
- * Given an array A of integers, a ramp is a tuple (i, j) for which i < j and A[i] <= A[j].  The width of such a ramp is j - i.
+ * Given an array A of integers, a ramp is a tuple (i, j) for which {@code i < j and A[i] <= A[j]}.  The width of such a ramp is j - i.
  * <p>
  * Find the maximum width of a ramp in A.  If one doesn't exist, return 0.
  * <p>

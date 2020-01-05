@@ -17,12 +17,12 @@ import java.util.Map;
  * Example 2:
  * Input: words = ["word","world","row"], order = "worldabcefghijkmnpqstuvxyz"
  * Output: false
- * Explanation: As 'd' comes after 'l' in this language, then words[0] > words[1], hence the sequence is unsorted.
+ * Explanation: As 'd' comes after 'l' in this language, then {@code words[0] > words[1]}, hence the sequence is unsorted.
  * <p>
  * Example 3:
  * Input: words = ["apple","app"], order = "abcdefghijklmnopqrstuvwxyz"
  * Output: false
- * Explanation: The first three characters "app" match, and the second string is shorter (in size.) According to lexicographical rules "apple" > "app", because 'l' > '∅', where '∅' is defined as the blank character which is less than any other character (More info).
+ * {@code Explanation: The first three characters "app" match, and the second string is shorter (in size.) According to lexicographical rules "apple" > "app", because 'l' > '∅', where '∅' is defined as the blank character which is less than any other character (More info).}
  * <p>
  * Note:
  * <pre>{@code

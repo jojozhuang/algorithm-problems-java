@@ -23,7 +23,6 @@ import java.util.Queue;
  * Input: ["@..aA","..B#.","....b"]
  * Output: 6
  * <p>
- * <p>
  * Note:
  * <pre>{@code
  * 1 <= grid.length <= 30

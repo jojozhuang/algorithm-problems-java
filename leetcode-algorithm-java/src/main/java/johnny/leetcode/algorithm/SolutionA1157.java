@@ -6,8 +6,8 @@ package johnny.leetcode.algorithm;
  * <p>
  * MajorityChecker(int[] arr) constructs an instance of MajorityChecker with the given array arr;
  * int query(int left, int right, int threshold) has arguments such that:
- * 0 <= left <= right < arr.length representing a subarray of arr;
- * 2 * threshold > right - left + 1, ie. the threshold is always a strict majority of the length of the subarray
+ * {@code 0 <= left <= right < arr.length} representing a subarray of arr;
+ * {@code 2 * threshold > right - left + 1}, ie. the threshold is always a strict majority of the length of the subarray
  * Each query(...) returns the element in arr[left], arr[left+1], ..., arr[right] that occurs at least threshold times, or -1 if no such element exists.
  * <p>
  * Example:
