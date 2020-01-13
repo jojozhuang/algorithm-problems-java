@@ -48,14 +48,10 @@ public class ListUtil {
         boolean res = equalsIgnoreOrderPrint(list1, list2);
         if (res == false) {
             println("Expect List:");
-            for(T t1: list1) {
-                print(t1.toString());
-            }
+            list1.stream().forEach(val -> System.out.print(val + ","));
             println("");
             println("Actual List:");
-            for(T t2: list2) {
-                print(t2.toString());
-            }
+            list2.stream().forEach(val -> System.out.print(val + ","));
         }
         return res;
     }
