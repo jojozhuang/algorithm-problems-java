@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import johnny.leetcode.others.AAAClosestElement;
-
 public class AAAClosestElementTest extends JunitBase {
 
     @Test
