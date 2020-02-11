@@ -54,6 +54,8 @@ import java.util.Set;
  * elmo - [4,3]
  * elsa - [4,2]
  * "elmo" should be placed before "elsa" in the result because "elmo" appears in 3 different quotes and "elsa" appears in 2 different quotes.
+ *
+ * https://leetcode.com/discuss/interview-question/460127/
  */
 public class TopNBuzzwords {
     public List<String> topToys(int numToys, int topToys, String[] toys, int numQuotes,

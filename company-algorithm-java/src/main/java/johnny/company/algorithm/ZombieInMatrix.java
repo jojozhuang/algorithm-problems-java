@@ -1,9 +1,7 @@
 package johnny.company.algorithm;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Set;
 
 /**
  * Zombie in Matrix
@@ -32,6 +30,7 @@ import java.util.Set;
  *  [1, 1, 1, 1, 1],
  *  [1, 1, 1, 1, 1]]
  *
+ * https://leetcode.com/discuss/interview-question/411357/
  */
 public class ZombieInMatrix {
     int minHours(int[][] grid) {

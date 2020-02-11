@@ -44,42 +44,14 @@ public class Solution937 {
         return logs;
     }
 
-    public String[] reorderLogFiles2(String[] logs) {
-        if (logs == null || logs.length == 0) {
-            return null;
-        }
-
-        List<String> letter = new ArrayList<String>();
-        List<String> digit = new ArrayList<String>();
-
-        for (int i = 0; i < logs.length; i++) {
-            if (isLetter(logs[i])) {
-                letter.add(logs[i]);
-            } else {
-                digit.add(logs[i]);
-            }
-        }
-        Collections.sort(letter, new LogComparator());
-
-        List<String> res = new ArrayList<String>();
-        res.addAll(letter);
-        res.addAll(digit);
-
-        String[] arrLog = new String[res.size()];
-        return res.toArray(arrLog);
-    }
-
-    private boolean isLetter(String log) {
-        char ch = log.charAt(log.indexOf(" ") + 1);
-        return Character.isLetter(ch);
-    }
-
     private class LogComparator implements Comparator<String> {
         public int compare(String s1, String s2) {
-            String log1 = s1.substring(s1.indexOf(" ") + 1);
-            String log2 = s2.substring(s2.indexOf(" ") + 1);
-            boolean isNumber1 = log1.charAt(0) >= '0' && log1.charAt(0) <= '9';
-            boolean isNumber2 = log2.charAt(0) >= '0' && log2.charAt(0) <= '9';
+            int index1 = s1.indexOf(" ");
+            int index2 = s2.indexOf(" ");
+            String[] log1 = new String[]{s1.substring(0, index1), s1.substring(index1 + 1)};
+            String[] log2 = new String[]{s2.substring(0, index2), s2.substring(index2 + 1)};
+            boolean isNumber1 = log1[1].charAt(0) >= '0' && log1[1].charAt(0) <= '9';
+            boolean isNumber2 = log2[1].charAt(0) >= '0' && log2[1].charAt(0) <= '9';
             if (isNumber1) {
                 if (isNumber2) {
                     return 0;
@@ -90,17 +62,57 @@ public class Solution937 {
                 if (isNumber2) {
                     return -1;
                 } else {
-                    return log1.compareTo(log2);
+                    if (log1[1].equals(log2[1])) {
+                        return log1[0].compareTo(log2[0]);
+                    } else {
+                        return log1[1].compareTo(log2[1]);
+                    }
                 }
             }
         }
     }
 
+    public String[] reorderLogFiles2(String[] logs) {
+        if (logs == null || logs.length == 0) {
+            return null;
+        }
+
+        List<String> letter = new ArrayList<>();
+        List<String> digit = new ArrayList<>();
+
+        for (int i = 0; i < logs.length; i++) {
+            if (isLetter(logs[i])) {
+                letter.add(logs[i]);
+            } else {
+                digit.add(logs[i]);
+            }
+        }
+        Collections.sort(letter, new LogComparator2());
+
+        List<String> ans = new ArrayList<>();
+        ans.addAll(letter);
+        ans.addAll(digit);
+
+        return ans.toArray(new String[]{});
+    }
+
+    private boolean isLetter(String log) {
+        char ch = log.charAt(log.indexOf(" ") + 1);
+        return Character.isLetter(ch);
+    }
+
     private class LogComparator2 implements Comparator<String> {
         public int compare(String s1, String s2) {
-            String sub1 = s1.substring(s1.indexOf(" ") + 1, s1.length());
-            String sub2 = s2.substring(s2.indexOf(" ") + 1, s2.length());
-            return sub1.compareTo(sub2);
+            int index1 = s1.indexOf(" ");
+            int index2 = s2.indexOf(" ");
+            String[] log1 = new String[]{s1.substring(0, index1), s1.substring(index1 + 1)};
+            String[] log2 = new String[]{s2.substring(0, index2), s2.substring(index2 + 1)};
+
+            if (log1[1].equals(log2[1])) {
+                return log1[0].compareTo(log2[0]);
+            } else {
+                return log1[1].compareTo(log2[1]);
+            }
         }
     }
 }

@@ -24,8 +24,9 @@ public class JunitBase {
     public void tearDown() throws Exception {
     }
 
+    /*
     @Test
     public void test() {
         
-    }
+    }*/
 }
