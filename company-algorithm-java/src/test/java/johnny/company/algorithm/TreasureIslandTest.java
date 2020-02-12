@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class TreasureIslandTest extends JunitBase {
 
     @Test
-    public void testZombieInMatrix() {
-        System.out.println("ZombieInMatrix");
+    public void testFindPath() {
+        System.out.println("findPath");
         TreasureIsland instance = new TreasureIsland();
 
         char[][] grid1 = new char[][] {
