@@ -10,8 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class TopNBuzzwordsTest extends JunitBase {
 
     @Test
-    public void testTopNBuzzwords() {
-        System.out.println("TopNBuzzwords");
+    public void testTopToys() {
+        System.out.println("topToys");
         TopNBuzzwords instance = new TopNBuzzwords();
 
         String[] toys1 = new String[]{"elmo", "elsa", "legos", "drone", "tablet", "warcraft"};

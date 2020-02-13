@@ -12,8 +12,8 @@ import static org.junit.Assert.assertEquals;
 public class FavoriteGenresTest extends JunitBase {
 
     @Test
-    public void testTopNBuzzwords() {
-        System.out.println("TopNBuzzwords");
+    public void testFavoriteGenre() {
+        System.out.println("favoriteGenre");
         FavoriteGenres instance = new FavoriteGenres();
 
         Map<String, List<String>> userMap1 = new HashMap<>();

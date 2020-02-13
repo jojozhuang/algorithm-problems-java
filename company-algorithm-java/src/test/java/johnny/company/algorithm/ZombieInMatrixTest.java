@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class ZombieInMatrixTest extends JunitBase {
 
     @Test
-    public void testZombieInMatrix() {
-        System.out.println("ZombieInMatrix");
+    public void testMinHours() {
+        System.out.println("minHours");
         ZombieInMatrix instance = new ZombieInMatrix();
 
         int[][] grid1 = new int[][] {
