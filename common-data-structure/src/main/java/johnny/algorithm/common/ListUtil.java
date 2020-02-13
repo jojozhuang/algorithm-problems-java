@@ -29,8 +29,8 @@ public class ListUtil {
         return new LinkedList<>(Arrays.asList(array)); // return modifiable list.
     }
 
-    public static List<int[]> buildList2(int[][] array) {
-        List<int[]> res = new ArrayList<int[]>();
+    public static List<int[]> buildListOfIntArray(int[][] array) {
+        List<int[]> res = new ArrayList<>();
         if (array == null || array.length == 0) {
             return res;
         }
