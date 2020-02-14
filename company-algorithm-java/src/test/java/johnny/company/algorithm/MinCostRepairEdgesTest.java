@@ -24,6 +24,6 @@ public class MinCostRepairEdgesTest extends JunitBase {
 
         List<int[]> edges3 = ListUtil.buildListOfIntArray(new int[][]{{1, 2}, {2, 3}, {4, 5}, {5, 6}, {1, 5}, {2, 4}, {3, 4}});
         List<int[]> newEdges3 = ListUtil.buildListOfIntArray(new int[][]{{1, 5, 110}, {2, 4, 84}, {3, 4, 79}});
-        assertEquals(79, instance.minCost(6, edges1, newEdges1));
+        assertEquals(79, instance.minCost(6, edges3, newEdges3));
     }
 }
