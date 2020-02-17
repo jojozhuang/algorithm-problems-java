@@ -73,7 +73,7 @@ public class Solution431 {
         Node root = new Node();
         root.val = Integer.parseInt(q.poll());
         int size = Integer.parseInt(q.poll());
-        root.children = new ArrayList<Node>(size);
+        root.children = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             root.children.add(deserializeHelper(q));
         }

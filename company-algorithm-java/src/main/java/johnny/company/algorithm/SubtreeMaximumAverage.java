@@ -1,9 +1,6 @@
 package johnny.company.algorithm;
 
-import johnny.algorithm.common.TreeNode;
-
-import java.util.HashSet;
-import java.util.Set;
+import johnny.algorithm.common.NaryNode;
 
 /**
  * Subtree with Maximum Average
@@ -14,11 +11,11 @@ import java.util.Set;
  * Example 1:
  *
  * Input:
- * 		 20
- * 	   /   \
- * 	 12     18
- *   /  |  \   / \
- * 11   2   3 15  8
+ *         20
+ *      /     \
+ *     12     18
+ *   / | \   / \
+ * 11  2  3 15  8
  *
  * Output: 18
  * Explanation:
@@ -35,8 +32,37 @@ import java.util.Set;
  * https://leetcode.com/discuss/interview-question/349617
  */
 public class SubtreeMaximumAverage {
-    public TreeNode maximumAverageSubtree(TreeNode root) {
+    double max = Double.NEGATIVE_INFINITY;
+    NaryNode node = null;
+    public NaryNode maximumAverage(NaryNode root) {
+        max = Double.NEGATIVE_INFINITY;
+        node = null;
+        helper(root);
+        return node;
+    }
 
-        return root;
+    // int[], 0, sum, 1, number of nodes
+    private int[] helper(NaryNode root) {
+        if (root == null) {
+            return new int[]{0,0};
+        }
+
+        if (root.children == null || root.children.size() == 0) {
+            return new int[]{root.val, 1};
+        }
+
+        int sum = root.val;
+        int count = 1;
+        for (int i = 0; i < root.children.size(); i++) {
+            int[] child = helper(root.children.get(i));
+            sum += child[0];
+            count += child[1];
+        }
+        double average = (double)sum/count;
+        if (average > max) {
+            max = average;
+            node = root;
+        }
+        return new int[]{sum, count};
     }
 }
