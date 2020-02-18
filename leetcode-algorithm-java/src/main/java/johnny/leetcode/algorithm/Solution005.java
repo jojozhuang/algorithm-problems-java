@@ -9,104 +9,97 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution005 {
-    private int low = 0, maxLen = 0;
-
+    // O(n^2)
     public String longestPalindrome(String s) {
-        if (s == null || s.length() < 2) {
-            return s;
-        }
-        for (int i = 0; i < s.length() - 1; i++) {
-            extendPalindrome(s, i, i + 1);     // even
-            extendPalindrome(s, i, i);         // odd
-        }
-        return s.substring(low, low + maxLen);
-    }
-
-    private void extendPalindrome(String s, int left, int right) {
-        while (left >= 0 && right < s.length()) {
-            if (s.charAt(left) == s.charAt(right)) {
-                left--;
-                right++;
-            } else {
-                break;
-            }
-        }
-
-        if (maxLen < right - left - 1) { // this also covers the scenario that left != right at first place
-            low = left + 1;
-            maxLen = right - left - 1;
-        }
-    }
-
-    public String longestPalindrome44(String s) {
         if (s == null || s.length() == 0) {
             return s;
         }
 
-        int start = 0, end = 0;
+        int start = 0;
+        int end = 0;
+        int max = 0;
         for (int i = 0; i < s.length(); i++) {
-            int len1 = expandAroundCenter(s, i, i);
-            int len2 = expandAroundCenter(s, i, i + 1);
-            int len = Math.max(len1, len2);
-            if (len > end - start) {
-                start = i - (len - 1) / 2;
-                end = i + len / 2;
+            int[] pos1 = helper(s, i, i);
+            int[] pos2 = helper(s, i, i + 1);
+            if (pos1[1] - pos1[0] + 1 > max) {
+                max = pos1[1] - pos1[0] + 1;
+                start = pos1[0];
+                end = pos1[1];
+            }
+            if (pos2[1] - pos2[0] + 1 > max) {
+                max = pos2[1] - pos2[0] + 1;
+                start = pos2[0];
+                end = pos2[1];
             }
         }
 
         return s.substring(start, end + 1);
     }
 
-    private int expandAroundCenter(String s, int start, int end) {
-        int left = start;
-        int right = end;
-
-        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-            left--;
-            right++;
+    // return index not string
+    private int[] helper(String s, int start, int end) {
+        while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+            start--;
+            end++;
         }
 
-        return right - left - 1;
+        return new int[]{start + 1, end - 1};
     }
 
+    // O(n^2)
     public String longestPalindrome2(String s) {
         if (s == null || s.length() == 0) {
-            return s;
+            return "";
         }
 
-        String res = "";
+        String ans = "";
         for (int i = 0; i < s.length(); i++) {
-            String temp = palindrome(s, i, i);
-            if (temp.length() > res.length()) {
-                res = temp;
+            String s1 = palindrome(s, i, i);
+            String s2 = palindrome(s, i, i + 1);
+            if (s1.length() > ans.length()) {
+                ans = s1;
             }
-
-            temp = palindrome(s, i, i + 1);
-            if (temp.length() > res.length()) {
-                res = temp;
+            if (s2.length() > ans.length()) {
+                ans = s2;
             }
         }
 
-        return res;
+        return ans;
     }
 
+    // return sub string
     private String palindrome(String s, int start, int end) {
-        int i = start;
-        int j = end;
-
-        while (i >= 0 && j < s.length()) {
-            if (s.charAt(i) == s.charAt(j)) {
-                i--;
-                j++;
-            } else {
-                break;
-            }
+        while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+            start--;
+            end++;
         }
 
-        if (i + 1 > j) {
-            return "";
-        } else {
-            return s.substring(i + 1, j);
+        return s.substring(start + 1, end);
+    }
+
+    // use global variable
+    private int low = 0, maxLen = 0;
+
+    public String longestPalindrome3(String s) {
+        if (s == null || s.length() < 2) {
+            return s;
+        }
+        for (int i = 0; i < s.length() - 1; i++) {
+            helper3(s, i, i);            // odd
+            helper3(s, i, i + 1);  // even
+        }
+        return s.substring(low, low + maxLen);
+    }
+
+    private void helper3(String s, int start, int end) {
+        while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+            start--;
+            end++;
+        }
+
+        if (maxLen < end - start - 1) { // this also covers the scenario that left != right at first place
+            low = start + 1;
+            maxLen = end - start - 1;
         }
     }
 }

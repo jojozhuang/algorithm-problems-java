@@ -59,7 +59,7 @@ public class SubtreeMaximumAverage {
             count += child[1];
         }
         double average = (double)sum/count;
-        if (average > max) {
+        if (count > 1 && average > max) {
             max = average;
             node = root;
         }
