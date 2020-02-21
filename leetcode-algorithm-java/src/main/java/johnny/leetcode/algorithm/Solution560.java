@@ -19,6 +19,29 @@ package johnny.leetcode.algorithm;
  */
 public class Solution560 {
     public int subarraySum(int[] nums, int k) {
+        int n = nums.length;
+        int[] sum = new int[n];
+        sum[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            sum[i] = sum[i - 1] + nums[i];
+        }
+
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            if (sum[i] == k) {
+                ans++;
+            }
+            for (int j = i + 1; j < n; j++) {
+                if (sum[j] - sum[i] == k) {
+                    ans++;
+                }
+            }
+        }
+
+        return ans;
+    }
+
+    public int subarraySum2(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
