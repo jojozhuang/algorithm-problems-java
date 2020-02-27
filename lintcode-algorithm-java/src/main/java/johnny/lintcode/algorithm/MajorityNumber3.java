@@ -3,6 +3,7 @@ package johnny.lintcode.algorithm;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,12 +30,12 @@ public class MajorityNumber3 {
      * @param k:    As described
      * @return: The majority number
      */
-    public int majorityNumber(ArrayList<Integer> nums, int k) {
+    public int majorityNumber(List<Integer> nums, int k) {
         if (nums == null || nums.size() == 0) {
             return 0;
         }
 
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
             if (!map.containsKey(num)) {
                 map.put(num, 1);

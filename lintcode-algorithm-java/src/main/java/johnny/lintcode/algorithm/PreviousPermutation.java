@@ -1,6 +1,6 @@
 package johnny.lintcode.algorithm;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Previous Permutation.
@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author Johnny
  */
 public class PreviousPermutation {
-    public ArrayList<Integer> previousPermuation(ArrayList<Integer> nums) {
+    public List<Integer> previousPermuation(List<Integer> nums) {
         if (nums == null || nums.size() == 0) {
             return nums;
         }
@@ -52,7 +52,7 @@ public class PreviousPermutation {
         return nums;
     }
 
-    private void reverse(ArrayList<Integer> nums, int start, int end) {
+    private void reverse(List<Integer> nums, int start, int end) {
         if (nums == null || nums.size() == 0 || end <= start) {
             return;
         }
@@ -64,7 +64,7 @@ public class PreviousPermutation {
         }
     }
 
-    private void swap(ArrayList<Integer> nums, int first, int second) {
+    private void swap(List<Integer> nums, int first, int second) {
         int temp = nums.get(first);
         nums.set(first, nums.get(second));
         nums.set(second, temp);

@@ -1,35 +1,12 @@
 package johnny.lintcode.algorithm;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
  *
  * @author Johnny
  */
-public class FastPowerTest {
-    
-    public FastPowerTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class FastPowerTest extends JunitBase {
 
     /**
      * Test of fastPower method, of class FastPower.

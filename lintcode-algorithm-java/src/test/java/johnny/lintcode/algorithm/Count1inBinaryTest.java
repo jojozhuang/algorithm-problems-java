@@ -1,9 +1,5 @@
 package johnny.lintcode.algorithm;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -12,26 +8,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class Count1inBinaryTest {
-    
-    public Count1inBinaryTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class Count1inBinaryTest extends JunitBase {
 
     /**
      * Test of countOnes method, of class Count1inBinary.

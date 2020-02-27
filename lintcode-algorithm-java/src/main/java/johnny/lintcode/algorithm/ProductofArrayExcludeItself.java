@@ -1,6 +1,7 @@
 package johnny.lintcode.algorithm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Given an integers array A.
@@ -11,12 +12,12 @@ import java.util.ArrayList;
  */
 public class ProductofArrayExcludeItself {
     // b[i] = left * right, divide and conquer
-    public ArrayList<Long> productExcludeItself(ArrayList<Integer> A) {
+    public List<Long> productExcludeItself(List<Integer> A) {
         if (A == null || A.size() == 0) {
             return null;
         }
 
-        ArrayList<Long> ret = new ArrayList<Long>();
+        List<Long> ret = new ArrayList<>();
 
         for (int i = 0; i < A.size(); i++) {
             long left = multiple(A, 0, i - 1);
@@ -27,7 +28,7 @@ public class ProductofArrayExcludeItself {
         return ret;
     }
 
-    private long multiple(ArrayList<Integer> A, int start, int end) {
+    private long multiple(List<Integer> A, int start, int end) {
         if (start < 0 || end > A.size() || end < start) {
             return 1;
         }

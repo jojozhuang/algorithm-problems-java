@@ -1,10 +1,6 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.ListUtil;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,26 +12,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class SubstringAnagramsTest {
-    
-    public SubstringAnagramsTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class SubstringAnagramsTest extends JunitBase  {
 
     /**
      * Test of findAnagrams method, of class SubstringAnagrams.

@@ -2,10 +2,6 @@ package johnny.lintcode.algorithm;
 
 import johnny.lintcode.algorithm.common.Document;
 import johnny.lintcode.algorithm.common.OutputCollector;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -18,27 +14,7 @@ import static org.junit.Assert.assertTrue;
  *
  * @author Johnny
  */
-public class TopKFrequentWordsTest {
-    
-    public TopKFrequentWordsTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
+public class TopKFrequentWordsTest extends JunitBase {
     @Test
     public void testSomeMethod() {
         System.out.println("testSomeMethod");

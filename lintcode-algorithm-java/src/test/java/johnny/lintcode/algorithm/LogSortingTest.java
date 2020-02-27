@@ -1,9 +1,5 @@
 package johnny.lintcode.algorithm;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -12,26 +8,7 @@ import static org.junit.Assert.assertArrayEquals;
  *
  * @author Johnny
  */
-public class LogSortingTest {
-
-    public LogSortingTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class LogSortingTest extends JunitBase {
 
     /**
      * Test of logSort method, of class LogSorting.

@@ -1,41 +1,17 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.ListUtil;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
  *
  * @author Johnny
  */
-public class LetterCasePermutationTest {
-
-    public LetterCasePermutationTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class LetterCasePermutationTest extends JunitBase {
 
     /**
      * Test of letterCasePermutation method, of class LetterCasePermutation.

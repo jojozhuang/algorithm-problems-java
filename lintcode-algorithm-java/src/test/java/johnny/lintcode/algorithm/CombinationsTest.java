@@ -1,9 +1,5 @@
 package johnny.lintcode.algorithm;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,26 +11,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class CombinationsTest {
-    
-    public CombinationsTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class CombinationsTest extends JunitBase {
 
     /**
      * Test of combine method, of class Combinations.
@@ -45,14 +22,14 @@ public class CombinationsTest {
         int n = 0;
         int k = 0;
         Combinations instance = new Combinations();
-        List<List<Integer>> expResult = new ArrayList<List<Integer>>();
+        List<List<Integer>> expResult = new ArrayList<>();
         List<List<Integer>> result = instance.combine(n, k);
         assertEquals(expResult, result);
         
-        List<Integer> list41 = new ArrayList<Integer>();
+        List<Integer> list41 = new ArrayList<>();
         list41.add(1);
         list41.add(2);       
-        List<List<Integer>> expResult4 = new ArrayList<List<Integer>>();
+        List<List<Integer>> expResult4 = new ArrayList<>();
         expResult4.add(list41);
         assertEquals(expResult4,  instance.combine(2, 2));
     }

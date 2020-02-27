@@ -1,9 +1,5 @@
 package johnny.lintcode.algorithm;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,26 +10,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class RecoverRotatedSortedArrayTest {
-    
-    public RecoverRotatedSortedArrayTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class RecoverRotatedSortedArrayTest extends JunitBase {
 
     /**
      * Test of recoverRotatedSortedArray method, of class RecoverRotatedSortedArray.

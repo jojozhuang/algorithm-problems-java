@@ -1,10 +1,6 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.Interval;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,26 +12,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class NumberofAirplanesintheSkyTest {
-    
-    public NumberofAirplanesintheSkyTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class NumberofAirplanesintheSkyTest extends JunitBase  {
 
     /**
      * Test of countOfAirplanes method, of class NumberofAirplanesintheSky.

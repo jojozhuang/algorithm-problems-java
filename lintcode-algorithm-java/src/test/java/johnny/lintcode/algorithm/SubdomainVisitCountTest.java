@@ -1,10 +1,6 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.ListUtil;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
@@ -15,26 +11,7 @@ import static junit.framework.TestCase.assertTrue;
  *
  * @author Johnny
  */
-public class SubdomainVisitCountTest {
-
-    public SubdomainVisitCountTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class SubdomainVisitCountTest extends JunitBase {
 
     /**
      * Test of subdomainVisits method, of class SubdomainVisitCount.

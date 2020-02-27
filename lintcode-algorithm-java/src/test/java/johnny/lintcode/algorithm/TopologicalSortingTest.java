@@ -1,10 +1,6 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.DirectedGraphNode;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,26 +11,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class TopologicalSortingTest {
-    
-    public TopologicalSortingTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class TopologicalSortingTest extends JunitBase {
 
     /**
      * Test of topSort method, of class TopologicalSorting.

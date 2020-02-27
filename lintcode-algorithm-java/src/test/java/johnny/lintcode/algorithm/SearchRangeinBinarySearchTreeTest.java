@@ -1,10 +1,6 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.TreeNode;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,27 +12,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class SearchRangeinBinarySearchTreeTest {
-    
-    public SearchRangeinBinarySearchTreeTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
+public class SearchRangeinBinarySearchTreeTest extends JunitBase {
     /**
      * Test of searchRange method, of class SearchRangeinBinarySearchTree.
      */

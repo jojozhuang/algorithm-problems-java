@@ -1,10 +1,6 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.Point;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -14,26 +10,7 @@ import static org.junit.Assert.assertTrue;
  *
  * @author Johnny
  */
-public class KClosestPointsTest {
-    
-    public KClosestPointsTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class KClosestPointsTest extends JunitBase {
 
     /**
      * Test of kClosest method, of class KClosestPoints.

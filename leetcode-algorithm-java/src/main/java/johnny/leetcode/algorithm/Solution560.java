@@ -1,5 +1,8 @@
 package johnny.leetcode.algorithm;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Subarray Sum Equals K
  * <p>
@@ -18,7 +21,38 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution560 {
+    // Prefix sum + HashMap, O(n)
+    // https://www.cnblogs.com/grandyang/p/6810361.html
     public int subarraySum(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int n = nums.length;
+        int[] sum = new int[n];
+        sum[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            sum[i] = sum[i - 1] + nums[i];
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put (0, 1);
+
+        int ans = 0;
+        for (int i = 0; i < sum.length; ++i) {
+            if (map.containsKey(sum[i] - k)) {
+                ans += map.get(sum[i] - k);
+            }
+            map.put(sum[i], map.getOrDefault(sum[i], 0) + 1);
+        }
+
+        return ans;
+    }
+
+    // Prefix sum, O(n^2)
+    public int subarraySum2(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
         int n = nums.length;
         int[] sum = new int[n];
         sum[0] = nums[0];
@@ -41,7 +75,8 @@ public class Solution560 {
         return ans;
     }
 
-    public int subarraySum2(int[] nums, int k) {
+    // Brute force, O(n^2)
+    public int subarraySum3(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

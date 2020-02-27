@@ -30,7 +30,7 @@ public class Solution139 {
             maxLen = Math.max(maxLen, str.length());
         }
 
-        Set<String> wordDictSet = new HashSet<String>(wordDict);
+        Set<String> wordDictSet = new HashSet<>(wordDict);
         boolean[] dp = new boolean[s.length() + 1];
         dp[0] = true;
         for (int i = 1; i <= s.length(); i++) {
@@ -100,7 +100,7 @@ public class Solution139 {
         if (s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0) {
             return false;
         }
-        return helper(s, 0, new HashSet<String>(wordDict));
+        return helper(s, 0, new HashSet<>(wordDict));
     }
 
     public boolean helper(String s, int start, Set<String> wordDict) {

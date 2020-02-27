@@ -1,10 +1,6 @@
 package johnny.lintcode.algorithm;
 
 import johnny.algorithm.common.TreeNode;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -13,26 +9,7 @@ import static org.junit.Assert.assertEquals;
  *
  * @author Johnny
  */
-public class SubtreeTest {
-    
-    public SubtreeTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+public class SubtreeTest extends JunitBase {
 
     /**
      * Test of isSubtree method, of class Subtree.
