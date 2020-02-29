@@ -66,7 +66,7 @@ public class TopNBuzzwords {
         }
 
         for (String quote : quotes) {
-            Set<String> used = new HashSet<>();
+            Set<String> seen = new HashSet<>();
 
             String[] words = quote.toLowerCase().split("\\W+");
             for (String word : words) {
@@ -77,11 +77,11 @@ public class TopNBuzzwords {
                 int[] nums = freq.get(word);
 
                 nums[0]++; // total frequency
-                if (!used.contains(word)) {
+                if (!seen.contains(word)) {
                     nums[1]++; // frequency in unique quote
                 }
 
-                used.add(word);
+                seen.add(word);
             }
         }
 

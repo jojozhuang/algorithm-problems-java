@@ -152,6 +152,36 @@ public class Solution684 {
     }
 
     class DSU {
+        int[] parent;
+
+        public DSU(int size) {
+            parent = new int[size];
+            for (int i = 0; i < size; i++) {
+                parent[i] = i;
+            }
+        }
+
+        public int find(int i) {
+            if (parent[i] != i) {
+                parent[i] = find(parent[i]);
+            }
+            return parent[i];
+        }
+
+        public boolean union(int i, int j) {
+            int p1 = find(i);
+            int p2 = find(j);
+            if (p1 == p2) {
+                return false;
+            } else {
+                parent[p1] = p2;
+                return true;
+            }
+        }
+    }
+
+    /*
+    class DSU {
         int[] rank;
         int[] parent;
 
@@ -186,5 +216,5 @@ public class Solution684 {
             }
             return true;
         }
-    }
+    }*/
 }

@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * 1268. Search Suggestions System
@@ -56,6 +57,33 @@ import java.util.Map;
  */
 public class SolutionA1268 {
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
+        Arrays.sort(products);
+        List<String> productsList = Arrays.asList(products);
+
+        TreeMap<String, Integer> map = new TreeMap<>();
+        for (int i = 0; i < products.length; i++) {
+            map.put(products[i], i);
+        }
+
+        List<List<String>> ans = new ArrayList<>();
+        String key = "";
+        for (char c : searchWord.toCharArray()) {
+            key += c;
+            String ceiling = map.ceilingKey(key);
+            String floor = map.floorKey(key + "{");
+            if (ceiling == null || floor == null) {
+                break;
+            }
+            ans.add(productsList.subList(map.get(ceiling), Math.min(map.get(ceiling) + 3, map.get(floor) + 1)));
+        }
+
+        while (ans.size() < searchWord.length()) {
+            ans.add(new ArrayList<>());
+        }
+        return ans;
+    }
+
+    public List<List<String>> suggestedProducts3(String[] products, String searchWord) {
         Arrays.sort(products);
 
         List<List<String>> ans = new ArrayList<>();

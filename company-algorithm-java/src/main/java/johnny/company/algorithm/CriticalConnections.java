@@ -46,6 +46,7 @@ import java.util.List;
  */
 public class CriticalConnections {
     List<int[]> criticalConnections(int n, List<int[]> connections) {
+
         return null;
     }
 }
