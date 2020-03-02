@@ -1,9 +1,11 @@
 package johnny.company.algorithm;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * Min Cost to Connect All Nodes
+ * Min Cost to Connect All Nodes(City)
  *
  * Given an undirected graph with n nodes labeled 1..n. Some of the nodes are already connected. The i-th edge connects nodes edges[i][0] and edges[i][1] together. Your task is to augment this set of edges with additional edges to connect all the nodes. Find the minimum cost to add new edges between the nodes such that all the nodes are accessible from each other.
  *
@@ -29,6 +31,59 @@ import java.util.List;
  */
 public class MinCostConnectAllNodes {
     public int minCost(int n, List<int[]> edges, List<int[]> newEdges) {
-        return 0;
+        DSU dsu = new DSU(n);
+        for (int[] edge: edges){
+            dsu.union(edge[0], edge[1]);
+        }
+        Collections.sort(newEdges, (a, b) -> (a[2] - b[2]));
+        int cost = 0;
+        for (int[] edge : newEdges){
+            if(!dsu.isConnected(edge[0], edge[1])){
+                dsu.union(edge[0], edge[1]);
+                cost += edge[2];
+                if (dsu.group == 1) {
+                    return cost;
+                }
+            }
+        }
+        return -1;
+
+    }
+
+    public class DSU { // Disjoint Set Union
+        public int group;
+        public int[] parents;
+
+        public DSU(int size) {
+            group = size;
+            parents = new int[size + 1];
+            for (int i = 0; i < parents.length; i++) {
+                // Initially, all elements are in their own set.
+                parents[i] = i;
+            }
+        }
+
+        // find
+        public int find(int i) {
+            if (parents[i] != i) {
+                parents[i] = find(parents[i]);
+            }
+            return parents[i];
+        }
+
+        // union
+        public void union(int i, int j) {
+            if (isConnected(i, j)) {
+                return;
+            }
+            int p1 = find(i);
+            int p2 = find(j);
+            parents[p1] = p2;
+            group--;
+        }
+
+        public boolean isConnected(int i, int j){
+            return find(i) == find(j);
+        }
     }
 }

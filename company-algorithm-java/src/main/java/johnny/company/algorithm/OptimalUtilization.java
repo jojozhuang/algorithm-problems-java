@@ -3,6 +3,8 @@ package johnny.company.algorithm;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Optimal Utilization
@@ -54,35 +56,77 @@ import java.util.List;
  * https://leetcode.com/discuss/interview-question/373202
  */
 public class OptimalUtilization {
+    // Nlog(N)
     public List<int[]> getPairs(List<int[]> a, List<int[]> b, int target) {
+        if (a == null || a.size() == 0 || b == null || b.size() == 0) {
+            return new ArrayList<>();
+        }
+
+        // convert list to tree map
+        TreeMap<Integer, Integer> treeMap1 = new TreeMap<>(); // <value, index>
+        for (int[] arr : a) {
+            treeMap1.put(arr[1], arr[0]);
+        }
+        TreeMap<Integer, Integer> treeMap2 = new TreeMap<>(); // <value, index>
+        for (int[] arr : b) {
+            treeMap2.put(arr[1], arr[0]);
+        }
+
+        List<int[]> ans = new ArrayList<>();
+        int max = Integer.MIN_VALUE;
+
+        for (Map.Entry<Integer, Integer> entry : treeMap1.entrySet()) {
+            int diff = target - entry.getKey();
+            // get the greatest key in list b, which is less than or equal to the given key
+            Map.Entry<Integer, Integer> entry2 = treeMap2.floorEntry(diff);
+            if (entry2 == null) {
+                // no more valid pair
+                break;
+            }
+            int sum = entry.getKey() + entry2.getKey();
+            if (sum > max) {
+                max = sum;
+                ans.clear();
+            }
+            ans.add(new int[]{entry.getValue(), entry2.getValue()});
+        }
+
+        return ans;
+    }
+
+    public List<int[]> getPairs2(List<int[]> a, List<int[]> b, int target) {
+        if (a == null || a.size() == 0 || b == null || b.size() == 0) {
+            return new ArrayList<>();
+        }
+
         Collections.sort(a, (i, j) -> i[1] - j[1]);
         Collections.sort(b, (i,j) -> i[1] - j[1]);
 
         List<int[]> ans = new ArrayList<>();
         int max = Integer.MIN_VALUE;
-        int m = a.size();
-        int n = b.size();
         int i = 0;
-        int j = n-1;
-        while(i<m && j >= 0) {
+        int j = b.size() - 1;
+        while (i < a.size() && j >= 0) {
             int sum = a.get(i)[1] + b.get(j)[1];
             if(sum > target) {
-                --j;
-            } else {
-                if(max <= sum) {
-                    if(max < sum) {
+                j--;
+            } else { // sum <= target
+                if (max <= sum) {
+                    if (max < sum) {
                         max = sum;
                         ans.clear();
                     }
                     ans.add(new int[]{a.get(i)[0], b.get(j)[0]});
-                    int index = j-1;
-                    while(index >=0 && b.get(index)[1] == b.get(index+1)[1]) {
-                        ans.add(new int[]{a.get(i)[0], b.get(index--)[0]});
+                    int index = j - 1;
+                    while (index >= 0 && b.get(index)[1] == b.get(index + 1)[1]) {
+                        ans.add(new int[]{a.get(i)[0], b.get(index)[0]});
+                        index--;
                     }
                 }
-                ++i;
+                i++;
             }
         }
+
         return ans;
     }
 }

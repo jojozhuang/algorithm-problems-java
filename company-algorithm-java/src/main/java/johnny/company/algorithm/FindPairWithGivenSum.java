@@ -2,7 +2,6 @@ package johnny.company.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.PriorityQueue;
 
 /**
  * Find Pair With Given Sum

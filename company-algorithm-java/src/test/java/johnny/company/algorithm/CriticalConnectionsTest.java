@@ -25,5 +25,15 @@ public class CriticalConnectionsTest extends JunitBase {
             assertArrayEquals(expect1.get(i), result1.get(i));
         }
 
+        List<int[]> edges2 = ListUtil.buildListOfIntArray(new int[][]{{1, 2}, {1, 3}, {2, 3}, {2, 4}, {2, 5}, {4, 6}, {5, 6}});
+        List<int[]> expect2 = ListUtil.buildListOfIntArray(new int[][]{});
+        List<int[]> result2 = instance.criticalConnections(6, edges2);
+
+        assertEquals(expect2.size(), result2.size());
+
+        for (int i = 0; i < expect2.size(); i++) {
+            assertArrayEquals(expect2.get(i), result2.get(i));
+        }
+
     }
 }

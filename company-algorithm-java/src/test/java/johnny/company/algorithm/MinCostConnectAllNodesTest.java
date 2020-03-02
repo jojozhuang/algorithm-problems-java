@@ -16,6 +16,6 @@ public class MinCostConnectAllNodesTest extends JunitBase {
 
         List<int[]> edges1 = ListUtil.buildListOfIntArray(new int[][]{{1, 4}, {4, 5}, {2, 3}});
         List<int[]> newEdges1 = ListUtil.buildListOfIntArray(new int[][]{{1, 2, 5}, {1, 3, 10}, {1, 6, 2}, {5, 6, 5}});
-        assertEquals(7, instance.minCost(5, edges1, newEdges1));
+        assertEquals(7, instance.minCost(6, edges1, newEdges1));
     }
 }

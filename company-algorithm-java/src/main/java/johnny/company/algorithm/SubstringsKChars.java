@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Substrings with exactly K distinct chars
+ * Count Substrings with exactly K distinct chars
  *
  * Given a string s and an int k, return an int representing the number of substrings (not unique) of s with exactly k distinct characters. If the given string doesn't have k distinct characters, return 0.
  * https://leetcode.com/problems/subarrays-with-k-different-integers

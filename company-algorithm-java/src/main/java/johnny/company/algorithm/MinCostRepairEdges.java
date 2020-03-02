@@ -1,6 +1,9 @@
 package johnny.company.algorithm;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Min Cost to Repair Edges
@@ -33,6 +36,65 @@ import java.util.List;
  */
 public class MinCostRepairEdges {
     public int minCost(int n, List<int[]> edges, List<int[]> edgesToRepair) {
-        return 0;
+        Set<String> set = new HashSet<>();
+        for (int[] repairEdge : edgesToRepair) {
+            set.add(repairEdge[0] + "-" + repairEdge[1]);
+        }
+        DSU dsu = new DSU(n);
+        for (int[] edge: edges){
+            if (!set.contains(edge[0] + "-" +  edge[1])) {
+                dsu.union(edge[0], edge[1]);
+            }
+        }
+        Collections.sort(edgesToRepair, (a, b) -> (a[2] - b[2]));
+        int cost = 0;
+        for (int[] edge : edgesToRepair){
+            if(!dsu.isConnected(edge[0], edge[1])){
+                dsu.union(edge[0], edge[1]);
+                cost += edge[2];
+                if (dsu.group == 1) {
+                    return cost;
+                }
+            }
+        }
+        return -1;
+
+    }
+
+    public class DSU { // Disjoint Set Union
+        public int group;
+        public int[] parents;
+
+        public DSU(int size) {
+            group = size;
+            parents = new int[size + 1];
+            for (int i = 0; i < parents.length; i++) {
+                // Initially, all elements are in their own set.
+                parents[i] = i;
+            }
+        }
+
+        // find
+        public int find(int i) {
+            if (parents[i] != i) {
+                parents[i] = find(parents[i]);
+            }
+            return parents[i];
+        }
+
+        // union
+        public void union(int i, int j) {
+            if (isConnected(i, j)) {
+                return;
+            }
+            int p1 = find(i);
+            int p2 = find(j);
+            parents[p1] = p2;
+            group--;
+        }
+
+        public boolean isConnected(int i, int j){
+            return find(i) == find(j);
+        }
     }
 }

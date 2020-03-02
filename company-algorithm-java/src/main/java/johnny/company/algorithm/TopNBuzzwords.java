@@ -58,8 +58,74 @@ import java.util.Set;
  * https://leetcode.com/discuss/interview-question/460127/
  */
 public class TopNBuzzwords {
-    public List<String> topToys(int numToys, int topToys, String[] toys, int numQuotes,
+    public List<String> topToys(int numToys, int topToys, List<String> toys, int numQuotes,
+                                List<String> quotes) {
+        if (toys == null || toys.size() == 0 || quotes == null || quotes.size() == 0) {
+            return new ArrayList<>();
+        }
+        Map<String, int[]> map = new HashMap<>();
+        for (String toy : toys) {
+            map.put(toy, new int[]{0, 0}); // <toy name, [total frequency, quote frequency]>
+        }
+
+        for (String quote : quotes) {
+            String[] words = quote.toLowerCase().split("\\W+"); // split by whitespace
+            for (String word : words) {
+                if (!map.containsKey(word)) {
+                    // not a toy word, skip
+                    continue;
+                }
+
+                int[] freq = map.get(word);
+
+                freq[0]++; // total frequency
+                freq[1]=1; // quote frequency is always one
+            }
+        }
+
+        PriorityQueue<String> pq = new PriorityQueue<>((a, b) -> {
+            int[] freqA = map.get(a);
+            int[] freqB = map.get(b);
+            if (freqA[0] == freqB[0]) {         // total frequency are same
+                if (freqA[1] == freqB[1]) {     // quote frequency are same
+                    return b.compareTo(a);      // compare alphabet
+                } else {
+                    return freqA[1] - freqB[1]; // compare frequency in unique quotes
+                }
+            } else {
+                return freqA[0] - freqB[0];     // compare total frequency
+            }
+        });
+
+        int top = topToys;
+        if (topToys > numToys) {
+            top = numToys;
+        }
+        for (String toy : toys) {
+            if (map.containsKey(toy) && map.get(toy)[0] > 0) {
+                pq.add(toy);
+
+                if (pq.size() > top) {
+                    pq.poll();
+                }
+            }
+        }
+
+        List<String> list = new ArrayList<>();
+        while (!pq.isEmpty()) {
+            list.add(pq.poll());
+        }
+
+        Collections.reverse(list);
+
+        return list;
+    }
+
+    public List<String> topToys2(int numToys, int topToys, String[] toys, int numQuotes,
                                        String[] quotes) {
+        if (toys == null || toys.length == 0 || quotes == null || quotes.length == 0) {
+            return new ArrayList<>();
+        }
         Map<String, int[]> freq = new HashMap<>();
         for (String toy : toys) {
             freq.put(toy, new int[]{0, 0});
@@ -107,10 +173,12 @@ public class TopNBuzzwords {
             }
         } else {
             for (String toy : toys) {
-                pq.add(toy);
+                if (freq.get(toy)[0] > 0) {
+                    pq.add(toy);
 
-                if (pq.size() > topToys) {
-                    pq.poll();
+                    if (pq.size() > topToys) {
+                        pq.poll();
+                    }
                 }
             }
         }
