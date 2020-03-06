@@ -6,12 +6,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionA5001Test extends JunitBase {
+public class SolutionA1367Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("largestMultipleOfThree");
-        SolutionA5001 instance = new SolutionA5001();
+        System.out.println("isSubPath");
+        SolutionA1367 instance = new SolutionA1367();
 
         ListNode head1 = ListNode.createInstance(new int[]{4,2,8});
         TreeNode root1 = TreeNode.createInstance("1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3");
