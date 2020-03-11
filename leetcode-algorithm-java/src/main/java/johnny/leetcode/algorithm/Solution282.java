@@ -21,8 +21,42 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution282 {
-    // back tracking
     public List<String> addOperators(String num, int target) {
+        List<String> ans = new ArrayList<>();
+        if (num == null || num.length() == 0) {
+            return ans;
+        }
+
+        dfs(num, target, 0, "", 0, 0, ans);
+
+        return ans;
+    }
+
+    private void dfs(String num, int target, int start, String prefix, long sum, long last, List<String> ans) {
+        if (start == num.length()) {
+            if (target == sum) {
+                ans.add(prefix);
+            }
+            return;
+        }
+
+        for (int i = start; i < num.length(); i++) {
+            long val = Long.parseLong(num.substring(start, i + 1));
+            if (start == 0) {
+                dfs(num, target, i + 1, "" + val, val, val, ans);
+            } else {
+                dfs(num, target, i + 1, prefix + "+" + val, sum + val, val, ans);
+                dfs(num, target, i + 1, prefix + "-" + val, sum - val, -val, ans);
+                dfs(num, target, i + 1, prefix + "*" + val, sum - last + last*val, last*val, ans);
+            }
+            if (val == 0) { // leading zero
+                break;
+            }
+        }
+    }
+
+    // back tracking
+    public List<String> addOperators3(String num, int target) {
         List<String> res = new ArrayList<String>();
         if (num == null || num.length() == 0) {
             return res;
@@ -62,11 +96,11 @@ public class Solution282 {
         }
 
         List<String> list = new ArrayList<String>();
-        helper(num, target, 0, 0, "", list);
+        helper2(num, target, 0, 0, "", list);
         return list;
     }
 
-    private void helper(String num, int target, long diff, long curVal, String prefix, List<String> list) {
+    private void helper2(String num, int target, long diff, long curVal, String prefix, List<String> list) {
         if (num.length() == 0 && curVal == target) {
             list.add(prefix);
         }
@@ -77,11 +111,11 @@ public class Solution282 {
             }
             String next = num.substring(i);
             if (prefix.length() > 0) {
-                helper(next, target, Long.parseLong(cur), curVal + Long.parseLong(cur), prefix + "+" + cur, list);
-                helper(next, target, -Long.parseLong(cur), curVal - Long.parseLong(cur), prefix + "-" + cur, list);
-                helper(next, target, diff * Long.parseLong(cur), (curVal - diff) + diff * Long.parseLong(cur), prefix + "*" + cur, list);
+                helper2(next, target, Long.parseLong(cur), curVal + Long.parseLong(cur), prefix + "+" + cur, list);
+                helper2(next, target, -Long.parseLong(cur), curVal - Long.parseLong(cur), prefix + "-" + cur, list);
+                helper2(next, target, diff * Long.parseLong(cur), (curVal - diff) + diff * Long.parseLong(cur), prefix + "*" + cur, list);
             } else {
-                helper(next, target, Long.parseLong(cur), Long.parseLong(cur), cur, list);
+                helper2(next, target, Long.parseLong(cur), Long.parseLong(cur), cur, list);
             }
         }
     }

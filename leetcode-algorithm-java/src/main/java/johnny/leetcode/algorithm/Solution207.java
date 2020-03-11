@@ -2,10 +2,12 @@ package johnny.leetcode.algorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 /**
  * Course Schedule.
@@ -33,6 +35,49 @@ import java.util.Queue;
  */
 public class Solution207 {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
+        if (numCourses <= 0) {
+            return false;
+        }
+        if (prerequisites == null || prerequisites.length == 0) {
+            return true;
+        }
+
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+
+        int[] indegree = new int[numCourses];
+        for (int[] pre : prerequisites) {
+            indegree[pre[0]]++;
+            if (!graph.containsKey(pre[1])) {
+                graph.put(pre[1], new ArrayList<>());
+            }
+            graph.get(pre[1]).add(pre[0]);
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+
+        int count = 0;
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            count++;
+            if (graph.containsKey(course)) {
+                for (Integer nextCourse : graph.get(course)) {
+                    indegree[nextCourse]--;
+                    if (indegree[nextCourse] == 0) {
+                        queue.offer(nextCourse);
+                    }
+                }
+            }
+        }
+
+        return count == numCourses;
+    }
+
+    public boolean canFinish6(int numCourses, int[][] prerequisites) {
         if (numCourses <= 0) {
             return false;
         }

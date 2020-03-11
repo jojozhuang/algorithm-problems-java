@@ -13,4 +13,9 @@ public class DirectedGraphNode {
         label = x;
         neighbors = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return label + "";
+    }
 }

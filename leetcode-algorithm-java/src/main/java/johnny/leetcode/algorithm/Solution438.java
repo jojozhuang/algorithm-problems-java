@@ -1,6 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -42,8 +43,67 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution438 {
-    // slide window + hashtable
+    // optimized with sliding window concept
     public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> ans = new ArrayList<>();
+        if (s == null || s.length() == 0) {
+            return ans;
+        }
+
+        int[] count = new int[26];
+        for (char c : p.toCharArray()) {
+            count[c - 'a']++;
+        }
+
+        int[] find = new int[26];
+        for (int i = 0; i <= s.length() - p.length(); i++) {
+            if (i == 0) {
+                for (int j = i; j < i + p.length(); j++) {
+                    char c = s.charAt(j);
+                    find[c - 'a']++;
+                }
+            } else {
+                // remove the first one
+                find[s.charAt(i - 1) - 'a']--;
+                // add the last one
+                find[s.charAt(i + p.length() - 1) - 'a']++;
+            }
+            if (Arrays.equals(count, find)) {
+                ans.add(i);
+            }
+        }
+
+        return ans;
+    }
+
+    // compare count
+    public List<Integer> findAnagrams2(String s, String p) {
+        List<Integer> ans = new ArrayList<>();
+        if (s == null || s.length() == 0) {
+            return ans;
+        }
+
+        int[] count = new int[26];
+        for (char c : p.toCharArray()) {
+            count[c - 'a']++;
+        }
+
+        for (int i = 0; i <= s.length() - p.length(); i++) {
+            int[] find = new int[26];
+            for (int j = i; j < i + p.length(); j++) {
+                char c = s.charAt(j);
+                find[c - 'a']++;
+            }
+            if (Arrays.equals(count, find)) {
+                ans.add(i);
+            }
+        }
+
+        return ans;
+    }
+
+    // slide window + hashtable
+    public List<Integer> findAnagrams3(String s, String p) {
         List<Integer> ans = new ArrayList<>();
         int[] count = new int[26];
         for (char c : p.toCharArray()) {
@@ -83,7 +143,7 @@ public class Solution438 {
         return true;
     }
 
-    public List<Integer> findAnagrams2(String s, String p) {
+    public List<Integer> findAnagrams4(String s, String p) {
         List<Integer> res = new ArrayList<Integer>();
         if (s == null || s.isEmpty() || p.length() > s.length()) {
             return res;

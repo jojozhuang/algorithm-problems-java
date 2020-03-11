@@ -66,23 +66,23 @@ public class Solution716 {
     // two stacks
     Stack<Integer> stack;
     Stack<Integer> maxStack;
-
     public Solution716() {
         stack = new Stack<>();
         maxStack = new Stack<>();
     }
 
+    /*
+     * @param number: An integer
+     * @return: nothing
+     */
     public void push(int x) {
-        pushHelper(x);
-    }
-
-    public void pushHelper(int x) {
-        int tempMax = maxStack.isEmpty() ? Integer.MIN_VALUE : maxStack.peek();
-        if (x > tempMax) {
-            tempMax = x;
+        if (maxStack.isEmpty()) {
+            stack.push(x);
+            maxStack.push(x);
+        } else {
+            stack.push(x);
+            maxStack.push(Math.max(x, maxStack.peek()));
         }
-        stack.push(x);
-        maxStack.push(tempMax);
     }
 
     public int pop() {
@@ -90,27 +90,34 @@ public class Solution716 {
         return stack.pop();
     }
 
+    /*
+     * @return: An integer
+     */
     public int top() {
         return stack.peek();
     }
 
+    /*
+     * @return: An integer
+     */
     public int peekMax() {
         return maxStack.peek();
     }
 
+    /*
+     * @return: An integer
+     */
     public int popMax() {
-        int max = maxStack.peek();
         Stack<Integer> temp = new Stack<>();
-
-        while (stack.peek() != max) {
+        int max = maxStack.peek();
+        while (!stack.isEmpty() && stack.peek() < max) {
             temp.push(stack.pop());
             maxStack.pop();
         }
-        stack.pop();
+        stack.pop(); // pop the maximum;
         maxStack.pop();
         while (!temp.isEmpty()) {
-            int x = temp.pop();
-            pushHelper(x);
+            push(temp.pop());
         }
         return max;
     }

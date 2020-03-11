@@ -31,5 +31,16 @@ public class Solution173Test extends JunitBase {
         assertEquals(true, instance2.hasNext());
         assertEquals(4, instance2.next());
         assertEquals(false, instance1.hasNext());
+
+        TreeNode root3 = TreeNode.createInstance("10,1,11,#,6,#,12");
+        Solution173 instance3 = new Solution173(root3);
+        assertEquals(1, instance3.next());
+        assertEquals(6, instance3.next());
+        assertEquals(10, instance3.next());
+        assertEquals(true, instance3.hasNext());
+        assertEquals(11, instance3.next());
+        assertEquals(true, instance3.hasNext());
+        assertEquals(12, instance3.next());
+        assertEquals(false, instance3.hasNext());
     }
 }

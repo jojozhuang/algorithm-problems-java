@@ -15,7 +15,7 @@ public class Solution282Test extends JunitBase {
         System.out.println("addOperators");
         Solution282 instance = new Solution282();
 
-        List<String> expect1 = new ArrayList<String>();
+        List<String> expect1 = new ArrayList<>();
         assertEquals(expect1, instance.addOperators("", 0));
 
         List<String> expect2 = ListUtil.buildList(new String[] {"1+2+3","1*2*3"});
@@ -30,7 +30,10 @@ public class Solution282Test extends JunitBase {
         List<String> expect5 = ListUtil.buildList(new String[] {"0+0","0-0","0*0"});
         assertEquals(expect5, instance.addOperators("00", 0));
 
-        List<String> expect6 = new ArrayList<String>();
+        List<String> expect6 = new ArrayList<>();
         assertEquals(expect6, instance.addOperators("3456237490", 9191));
+
+        List<String> expect7 =ListUtil.buildList(new String[] {"0+0","0-0","0*0"});
+        assertEquals(expect7, instance.addOperators("00", 0));
     }
 }

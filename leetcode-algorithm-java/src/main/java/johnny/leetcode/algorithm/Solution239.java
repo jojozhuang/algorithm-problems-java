@@ -1,7 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Sliding Window Maximum.
@@ -29,8 +31,35 @@ import java.util.LinkedList;
  * @author Johnny
  */
 public class Solution239 {
-    // Monotonic Queue
     public int[] maxSlidingWindow(int[] nums, int k) {
+        List<Integer> ans = new ArrayList<>();
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return new int[]{};
+        }
+
+        Deque<Integer> deque = new LinkedList<>(); // index of number
+        for (int i = 0; i < nums.length; i++) {
+            while (!deque.isEmpty() && deque.peekFirst() < i - k + 1) {
+                deque.removeFirst();
+            }
+            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+                deque.removeLast();
+            }
+            deque.addLast(i);
+            if (i >= k - 1) {
+                ans.add(nums[deque.peekFirst()]);
+            }
+        }
+
+        int[] res = new int[ans.size()];
+        for (int i = 0; i < ans.size(); i++) {
+            res[i] = ans.get(i);
+        }
+        return res;
+    }
+
+    // Monotonic Queue
+    public int[] maxSlidingWindow3(int[] nums, int k) {
         if (nums == null || k <= 0) {
             return new int[]{};
         }
@@ -101,7 +130,7 @@ public class Solution239 {
         return r;
     }
 
-    public int[] maxSlidingWindow3(int[] nums, int k) {
+    public int[] maxSlidingWindow444(int[] nums, int k) {
         int[] res = new int[]{};
         if (nums == null) {
             return res;

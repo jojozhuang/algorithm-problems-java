@@ -41,13 +41,28 @@ package johnny.leetcode.algorithm;
  *
  */
 public class SolutionA1375 {
+    // Time: O(n), Space: O(1)
     public int numTimesAllBlue(int[] light) {
+        int n = light.length;
+        int right = 0;
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            right = Math.max(right, light[i] - 1);
+            if (right == i) {
+                ans++;
+            }
+        }
+        return ans;
+    }
+
+    // Time: O(n), Space: O(n)
+    public int numTimesAllBlue2(int[] light) {
         int n = light.length;
         int[] on = new int[n];
 
         int ans = 0;
-        int left = -1;
-        int right = -1;
+        int left = -1;  // all light are on before left
+        int right = -1; // the most right light which is on
         for (int i = 0; i < light.length; i++) {
             int index = light[i] - 1;
             on[index] = 1;

@@ -41,6 +41,39 @@ public class Solution042 {
         return water;
     }
 
+    // use two highest bars, time: O(n), space: O(n)
+    public int trap6(int[] heights) {
+        if (heights == null || heights.length <= 2) {
+            return 0;
+        }
+
+        int n = heights.length;
+        int[] left = new int[n];  // the highest bar at left side
+        int[] right = new int[n]; // the highest bar at right side
+
+        int max = heights[0];
+        for (int i = 1; i < n; i++) {
+            left[i] = max;
+            max = Math.max(max, heights[i]);
+        }
+
+        max = heights[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            right[i] = max;
+            max = Math.max(max, heights[i]);
+        }
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            int lower = Math.min(left[i], right[i]);
+            if (lower > heights[i]) {
+                sum += lower - heights[i];
+            }
+        }
+
+        return sum;
+    }
+
     // Stack, O(n)
     public int trap(int[] height) {
         if (height == null || height.length == 0) {

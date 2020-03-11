@@ -27,54 +27,56 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution311 {
-    // Optimize by switching order of iterations over j and k 
+    // Optimize by switching order of iterations over j and k, O(n^2)
     public int[][] multiply(int[][] A, int[][] B) {
-        int[][] res = new int[][]{};
+        int[][] ans = new int[][]{};
         if (A == null || A.length == 0 || A[0].length == 0 ||
                 B == null || B.length == 0 || B[0].length == 0 ||
                 A[0].length != B.length) {
-            return res;
+            return ans;
         }
-        int m = A.length, n = A[0].length, nB = B[0].length;
-        int[][] C = new int[m][nB];
+
+        int m = A.length;
+        int nB = B[0].length;
+        int n = B.length; // A[0].length
+        ans = new int[m][nB];
 
         for (int i = 0; i < m; i++) {
             for (int k = 0; k < n; k++) { // iterating k first
                 if (A[i][k] != 0) {
                     for (int j = 0; j < nB; j++) {
                         if (B[k][j] != 0) {
-                            C[i][j] += A[i][k] * B[k][j];
+                            ans[i][j] += A[i][k] * B[k][j];
                         }
                     }
                 }
             }
         }
-        return C;
+        return ans;
     }
 
-    // Brute force
+    // Brute force, O(n^3)
     public int[][] multiply2(int[][] A, int[][] B) {
-        int[][] res = new int[][]{};
+        int[][] ans = new int[][]{};
         if (A == null || A.length == 0 || A[0].length == 0 ||
                 B == null || B.length == 0 || B[0].length == 0 ||
                 A[0].length != B.length) {
-            return res;
+            return ans;
         }
 
-        int n = A.length;
-        int m = B[0].length;
-        res = new int[n][m];
+        int m = A.length;
+        int nB = B[0].length;
+        int n = B.length; // A[0].length
+        ans = new int[m][nB];
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                int sum = 0;
-                for (int k = 0; k < B.length; k++) {
-                    sum += A[i][k] * B[k][j];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < nB; j++) {
+                for (int k = 0; k < n; k++) {
+                    ans[i][j] += A[i][k] * B[k][j];
                 }
-                res[i][j] = sum;
             }
         }
 
-        return res;
+        return ans;
     }
 }

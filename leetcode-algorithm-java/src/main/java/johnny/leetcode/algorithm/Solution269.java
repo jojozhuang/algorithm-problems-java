@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 
@@ -38,7 +39,64 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution269 {
+    // Topological Sorting
     public String alienOrder(String[] words) {
+        if (words == null || words.length == 0) {
+            return "";
+        }
+
+        // initialize degree
+        Map<Character, Integer> indegree = new HashMap<>();
+        for (String word : words) {
+            for (char c : word.toCharArray()) {
+                indegree.put(c, 0);
+            }
+        }
+
+        Map<Character, List<Character>> graph = new HashMap<>();
+        for (int i = 1; i < words.length; i++) {
+            String word1 = words[i - 1];
+            String word2 = words[i];
+            for (int j = 0; j < Math.min(word1.length(), word2.length()); j++) {
+                char c1 = word1.charAt(j);
+                char c2 = word2.charAt(j);
+                if (c1 != c2) {
+                    if (!graph.containsKey(c1)) {
+                        graph.put(c1, new ArrayList<>());
+                    }
+                    graph.get(c1).add(c2);
+                    indegree.put(c2, indegree.get(c2) + 1);
+                    break;
+                }
+            }
+        }
+
+        // use PriorityQueue instead of LinkedList for case "zy","zx" -> "yxz"
+        Queue<Character> queue = new PriorityQueue<>();
+        for (char c : indegree.keySet()) {
+            if (indegree.get(c) == 0) {
+                queue.offer(c);
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while (!queue.isEmpty()) {
+            char c = queue.poll();
+            sb.append(c);
+            if (graph.containsKey(c)) {
+                for (char nextchar : graph.get(c)) {
+                    indegree.put(nextchar, indegree.get(nextchar) - 1);
+                    if (indegree.get(nextchar) == 0) {
+                        queue.offer(nextchar);
+                    }
+                }
+            }
+        }
+
+        return sb.length() == indegree.size() ? sb.toString() : "";
+    }
+
+    public String alienOrder4(String[] words) {
         if (words == null || words.length == 0) {
             return "";
         }
@@ -111,9 +169,9 @@ public class Solution269 {
 
     //http://www.cnblogs.com/jcliBlogger/p/4758761.html
     //https://segmentfault.com/a/1190000003795463
-    public String alienOrder2(String[] words) {
-        Map<Character, Set<Character>> map = new HashMap<Character, Set<Character>>();
-        Map<Character, Integer> degree = new HashMap<Character, Integer>();
+    public String alienOrder444(String[] words) {
+        Map<Character, Set<Character>> map = new HashMap<>();
+        Map<Character, Integer> degree = new HashMap<>();
         String result = "";
         if (words == null || words.length == 0) return result;
         for (String s : words) {
@@ -129,7 +187,7 @@ public class Solution269 {
                 char c1 = cur.charAt(j);
                 char c2 = next.charAt(j);
                 if (c1 != c2) {
-                    Set<Character> set = new HashSet<Character>();
+                    Set<Character> set = new HashSet<>();
                     if (map.containsKey(c1)) set = map.get(c1);
                     if (!set.contains(c2)) {
                         set.add(c2);
@@ -140,7 +198,7 @@ public class Solution269 {
                 }
             }
         }
-        Queue<Character> q = new LinkedList<Character>();
+        Queue<Character> q = new LinkedList<>();
         for (char c : degree.keySet()) {
             if (degree.get(c) == 0) q.add(c);
         }
@@ -156,5 +214,84 @@ public class Solution269 {
         }
         if (result.length() != degree.size()) return "";
         return result;
+    }
+
+    public String alienOrder444555(String[] words) {
+        Map<Character, Set<Character>> graph = constructGraph(words);
+        return topologicalSorting(graph);
+    }
+
+
+    private Map<Character, Set<Character>> constructGraph(String[] words) {
+        Map<Character, Set<Character>> graph = new HashMap<>();
+
+        // create nodes
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words[i].length(); j++) {
+                char c = words[i].charAt(j);
+                if (!graph.containsKey(c)) {
+                    graph.put(c, new HashSet<Character>());
+                }
+            }
+        }
+
+        // create edges
+        for (int i = 0; i <  words.length - 1; i++) {
+            int index = 0;
+            while (index < words[i].length() && index < words[i + 1].length()) {
+                if (words[i].charAt(index) != words[i + 1].charAt(index)) {
+                    graph.get(words[i].charAt(index)).add(words[i + 1].charAt(index));
+                    break;
+                }
+                index++;
+            }
+        }
+
+        return graph;
+    }
+
+    private Map<Character, Integer> getIndegree(Map<Character, Set<Character>> graph) {
+        Map<Character, Integer> indegree = new HashMap<>();
+        for (Character u : graph.keySet()) {
+            indegree.put(u, 0);
+        }
+
+        for (Character u : graph.keySet()) {
+            for (Character v : graph.get(u)) {
+                indegree.put(v, indegree.get(v) + 1);
+            }
+        }
+
+        return indegree;
+    }
+
+    private String topologicalSorting(Map<Character, Set<Character>> graph) {
+        Map<Character, Integer> indegree = getIndegree(graph);
+        // as we should return the topo order with lexicographical order
+        // we should use PriorityQueue instead of a FIFO Queue
+        Queue<Character> queue = new PriorityQueue<>();
+
+        for (Character u : indegree.keySet()) {
+            if (indegree.get(u) == 0) {
+                queue.offer(u);
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while (!queue.isEmpty()) {
+            Character head = queue.poll();
+            sb.append(head);
+            for (Character neighbor : graph.get(head)) {
+                indegree.put(neighbor, indegree.get(neighbor) - 1);
+                if (indegree.get(neighbor) == 0) {
+                    queue.offer(neighbor);
+                }
+            }
+        }
+
+        if (sb.length() != indegree.size()) {
+            return "";
+        }
+        return sb.toString();
     }
 }

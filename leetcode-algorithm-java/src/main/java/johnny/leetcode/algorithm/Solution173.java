@@ -17,23 +17,18 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution173 {
-    private Stack<TreeNode> stack = new Stack<TreeNode>();
+    private Stack<TreeNode> stack;
     private TreeNode curr;
 
     public Solution173(TreeNode root) {
+        stack = new Stack<>();
         curr = root;
     }
 
-    /**
-     * @return whether we have a next smallest number
-     */
     public boolean hasNext() {
         return (curr != null || !stack.isEmpty());
     }
 
-    /**
-     * @return the next smallest number
-     */
     public int next() {
         while (curr != null) {
             stack.push(curr);
@@ -41,9 +36,9 @@ public class Solution173 {
         }
 
         curr = stack.pop();
-        int res = curr.val;
+        int val = curr.val;
         curr = curr.right;
-        return res;
+        return val;
     }
 }
 /**

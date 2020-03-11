@@ -16,5 +16,8 @@ public class Solution269Test extends JunitBase {
         assertEquals("", instance.alienOrder(new String[] {"z","x","z"}));
         //assertEquals("", instance.alienOrder(new String[] {"wrtkj","wrt"}));
         assertEquals("", instance.alienOrder(new String[] {"ri","xz","qxf","jhsguaw","dztqrbwbm","dhdqfb","jdv","fcgfsilnb","ooby"}));
+
+        assertEquals("yxz", instance.alienOrder(new String[] {"zy","zx"}));
+        assertEquals("abcd", instance.alienOrder(new String[] {"ab","adc"}));
     }
 }

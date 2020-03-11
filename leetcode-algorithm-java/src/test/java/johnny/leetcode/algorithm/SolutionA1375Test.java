@@ -11,6 +11,7 @@ public class SolutionA1375Test extends JunitBase {
         System.out.println("numTimesAllBlue");
         SolutionA1375 instance = new SolutionA1375();
 
+        assertEquals(1, instance.numTimesAllBlue(new int[]{5,4,3,2,1}));
         assertEquals(3, instance.numTimesAllBlue(new int[]{2,1,3,5,4}));
         assertEquals(2, instance.numTimesAllBlue(new int[]{3,2,4,1,5}));
         assertEquals(1, instance.numTimesAllBlue(new int[]{4,1,2,3}));

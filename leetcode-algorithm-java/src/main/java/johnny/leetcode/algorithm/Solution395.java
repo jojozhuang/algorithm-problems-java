@@ -28,6 +28,44 @@ import java.util.Arrays;
  */
 public class Solution395 {
     public int longestSubstring(String s, int k) {
+        if (s == null || s.length() == 0 || k > s.length()) {
+            return 0;
+        }
+
+        int[] count = new int[26];
+        // record the frequency of each character
+        for (int i = 0; i < s.length(); i += 1) {
+            count[s.charAt(i) - 'a']++;
+        }
+
+        boolean flag = true;
+        for (int i = 0; i < count.length; i += 1) {
+            if (count[i] > 0 && count[i] < k) {
+                flag = false;
+            }
+        }
+
+        // return the length of string if the whole string is valid
+        if (flag == true) {
+            return s.length();
+        }
+
+        int result = 0;
+        int start = 0, end = 0;
+        // otherwise we use all the infrequent elements as splits
+        while (end < s.length()) {
+            if (count[s.charAt(end) - 'a'] < k) {
+                result = Math.max(result, longestSubstring(s.substring(start, end), k));
+                start = end + 1;
+            }
+            end++;
+        }
+        result = Math.max(result, longestSubstring(s.substring(start), k));
+        return result;
+
+    }
+
+    public int longestSubstring2(String s, int k) {
         char[] str = s.toCharArray();
         int[] counts = new int[26];
         int h, i, j, idx, max = 0, unique, noLessThanK;

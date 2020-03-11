@@ -1,8 +1,10 @@
 package johnny.leetcode.algorithm;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -35,9 +37,51 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution210 {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        if (numCourses <= 0) {
+            return new int[]{};
+        }
+
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+
+        int[] indegree = new int[numCourses];
+        for (int[] pre : prerequisites) {
+            indegree[pre[0]]++;
+            if (!graph.containsKey(pre[1])) {
+                graph.put(pre[1], new ArrayList<>());
+            }
+            graph.get(pre[1]).add(pre[0]);
+        }
+
+        int[] ans = new int[numCourses];
+        int k = 0;
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+
+        int count = 0;
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            ans[k++] = course;
+            count++;
+            if (graph.containsKey(course)) {
+                for (Integer nextCourse : graph.get(course)) {
+                    indegree[nextCourse]--;
+                    if (indegree[nextCourse] == 0) {
+                        queue.offer(nextCourse);
+                    }
+                }
+            }
+        }
+
+        return count == numCourses ? ans : new int[]{};
+    }
     // https://www.youtube.com/watch?v=ddTC4Zovtbc
     // https://www.youtube.com/watch?v=Qqgck2ijUjU
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
+    public int[] findOrder3(int numCourses, int[][] prerequisites) {
         int[] ans = new int[]{};
         if (numCourses <= 0) {
             return ans;

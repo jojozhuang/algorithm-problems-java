@@ -15,7 +15,7 @@ public class Solution438Test extends JunitBase {
         System.out.println("findAnagrams");
         Solution438 instance = new Solution438();
 
-        List<Integer> expect1 = new ArrayList<Integer>();
+        List<Integer> expect1 = new ArrayList<>();
         assertEquals(expect1, instance.findAnagrams("", "a"));
         assertEquals(expect1, instance.findAnagrams("a", "abc"));
 
