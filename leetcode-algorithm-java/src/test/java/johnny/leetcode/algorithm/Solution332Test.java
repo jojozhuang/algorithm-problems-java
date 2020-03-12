@@ -15,8 +15,11 @@ public class Solution332Test extends JunitBase {
         System.out.println("findItinerary");
         Solution332 instance = new Solution332();
 
-        List<String> expect1 = new LinkedList<String>();
+        List<String> expect1 = new LinkedList<>();
         assertEquals(expect1, instance.findItinerary(null));
+
+        List<String> expect4 = ListUtil.buildList(new String[] {"JFK", "SJC", "JFK", "KUL"});
+        assertEquals(expect4, instance.findItinerary(new String[][]{{"JFK", "KUL"}, {"JFK", "SJC"}, {"SJC", "JFK"}}));
 
         List<String> expect2 = ListUtil.buildList(new String[] {"JFK", "MUC", "LHR", "SFO", "SJC"});
         assertEquals(expect2, instance.findItinerary(new String[][]{{"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}}));

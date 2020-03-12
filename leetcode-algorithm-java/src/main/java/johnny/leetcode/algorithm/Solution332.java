@@ -33,26 +33,28 @@ import java.util.PriorityQueue;
  */
 public class Solution332 {
     public List<String> findItinerary(String[][] tickets) {
-        List<String> res = new LinkedList<String>();
-        if (tickets == null || tickets.length == 0 || tickets[0].length == 0) {
-            return res;
+        List<String> ans = new LinkedList<>();
+        if (tickets == null || tickets.length == 0) {
+            return ans;
         }
 
-        Map<String, PriorityQueue<String>> map = new HashMap<String, PriorityQueue<String>>();
+        Map<String, PriorityQueue<String>> map = new HashMap<>();
         for (String[] ticket : tickets) {
             if (!map.containsKey(ticket[0])) {
-                map.put(ticket[0], new PriorityQueue<String>());
+                map.put(ticket[0], new PriorityQueue<>());
             }
             map.get(ticket[0]).offer(ticket[1]);
         }
-        dfs("JFK", res, map);
-        return res;
+        dfs("JFK", map, ans);
+        return ans;
     }
 
-    private void dfs(String airport, List<String> res, Map<String, PriorityQueue<String>> map) {
-        while (map.containsKey(airport) && !map.get(airport).isEmpty()) {
-            dfs(map.get(airport).poll(), res, map);
+    private void dfs(String airport, Map<String, PriorityQueue<String>> map, List<String> list) {
+        if (map.containsKey(airport)) {
+            while (!map.get(airport).isEmpty()){
+                dfs(map.get(airport).poll(), map, list);
+            }
         }
-        res.add(0, airport);
+        list.add(0, airport);
     }
 }

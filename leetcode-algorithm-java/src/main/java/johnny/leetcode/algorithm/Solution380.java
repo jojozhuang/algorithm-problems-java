@@ -46,8 +46,7 @@ import java.util.Random;
  * @author Johnny
  */
 public class Solution380 {
-    Map<Integer, Integer> map;
-    ;
+    Map<Integer, Integer> map; // <value, index>, index in the list when value was inserted
     List<Integer> list;
     Random random;
 
@@ -55,8 +54,8 @@ public class Solution380 {
      * Initialize your data structure here.
      */
     public Solution380() {
-        map = new HashMap<Integer, Integer>();
-        list = new ArrayList<Integer>();
+        map = new HashMap<>();
+        list = new ArrayList<>();
         random = new Random();
     }
 

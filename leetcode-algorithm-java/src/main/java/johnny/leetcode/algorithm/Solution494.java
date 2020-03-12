@@ -1,5 +1,8 @@
 package johnny.leetcode.algorithm;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Target Sum
  * <p>
@@ -31,8 +34,34 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution494 {
-    //dp
+    // dfs with memorization
     public int findTargetSumWays(int[] nums, int S) {
+        if (nums == null || nums.length == 0){
+            return 0;
+        }
+        return helper(nums, S, 0, 0, new HashMap<>());
+    }
+
+    private int helper(int[] nums, int target, int pos, int sum, Map<String, Integer> map){
+        String encodeString = pos + "->" + sum;
+        if (map.containsKey(encodeString)){
+            return map.get(encodeString);
+        }
+        if (pos == nums.length){
+            if (sum == target){
+                return 1;
+            }else {
+                return 0;
+            }
+        }
+        int add = helper(nums, target, pos + 1, sum + nums[pos], map);
+        int minus = helper(nums, target, pos + 1, sum - nums[pos], map);
+        map.put(encodeString, add + minus);
+        return add + minus;
+    }
+
+    //dp
+    public int findTargetSumWays2(int[] nums, int S) {
         int sum = 0;
         for (int i : nums) {
             sum += i;
@@ -60,20 +89,24 @@ public class Solution494 {
 
     // recursion, O(2^n)
     public int findTargetSumWays3(int[] nums, int S) {
-        int[] count = new int[1];
-        dfs(nums, 0, 0, S, count);
-        return count[0];
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int[] ans = new int[1];
+        dfs(nums, S, 0, 0, ans);
+        return ans[0];
     }
 
-    private void dfs(int[] nums, int i, int sum, int S, int[] count) {
-        if (i == nums.length) {
-            if (sum == S) {
-                count[0]++;
+    private void dfs(int[] nums, int target, int pos, int sum, int[] ans) {
+        if (pos == nums.length) {
+            if (target == sum) {
+                ans[0]++;
             }
             return;
         }
 
-        dfs(nums, i + 1, sum + nums[i], S, count);
-        dfs(nums, i + 1, sum - nums[i], S, count);
+        dfs(nums, target, pos + 1, sum + nums[pos], ans);
+        dfs(nums, target, pos + 1, sum - nums[pos], ans);
     }
 }
