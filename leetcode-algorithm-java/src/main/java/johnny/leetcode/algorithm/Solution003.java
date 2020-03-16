@@ -29,7 +29,66 @@ import java.util.Set;
  * @author Johnny
  */
 public class Solution003 {
+    // O(n)
     public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        int ans = 0;
+        Map<Character, Integer> map = new HashMap<>(); // <char, index>, last appearance
+        int start = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!map.containsKey(c)) {
+                map.put(c, i);
+                ans = Math.max(ans, i - start + 1);
+            } else {
+                if (start > map.get(c)) {
+                    map.put(c, i);
+                    ans = Math.max(ans, i - start + 1);
+                } else {
+                    start = map.get(c) + 1;
+                    map.put(c, i);
+                }
+            }
+        }
+
+        return ans;
+    }
+    // Brute force: O(n^2)
+    public int lengthOfLongestSubstring6(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        int ans = 0;
+        for (int i = 0; i < s.length(); i++) {
+            Map<Character, Integer> map = new HashMap<>(); // <char, count>
+            map.put(s.charAt(i), 1);
+            int j = i + 1;
+            for (; j < s.length(); j++) {
+                char c = s.charAt(j);
+                if (!map.containsKey(c)) {
+                    map.put(c, 1);
+                } else {
+                    if (map.get(c) > 0) {
+                        ans = Math.max(ans, j - i);
+                        break;
+                    } else {
+                        map.put(c, 1);
+                    }
+                }
+            }
+            if (j == s.length()) {
+                ans = Math.max(ans, j - i);
+                break;
+            }
+        }
+        return ans;
+    }
+
+    public int lengthOfLongestSubstring5(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
         }
