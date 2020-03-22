@@ -30,30 +30,28 @@ public class Solution506 {
             return new String[]{};
         }
 
-        Integer[] index = new Integer[nums.length];
-        for (int i = 0; i < nums.length; i++) {
+        int n = nums.length;
+        Integer[] index = new Integer[n];
+        for (int i = 0; i < n; i++) {
             index[i] = i;
         }
 
-        Arrays.sort(index, new Comparator<Integer>() {
-            public int compare(Integer o1, Integer o2) {
-                return nums[o2] - nums[o1];
-            }
-        });
-
-        String[] res = new String[nums.length];
-        for (int i = 0; i < nums.length; i++) {
+        Arrays.sort(index, (a, b) -> (nums[b] - nums[a]));
+        //nums:  {3,2,1,4,5}
+        //index: {4,3,0,1,2}
+        String[] ans = new String[n];
+        for (int i = 0; i < n; i++) {
             if (i == 0) {
-                res[index[i]] = "Gold Medal";
+                ans[index[i]] = "Gold Medal";
             } else if (i == 1) {
-                res[index[i]] = "Silver Medal";
+                ans[index[i]] = "Silver Medal";
             } else if (i == 2) {
-                res[index[i]] = "Bronze Medal";
+                ans[index[i]] = "Bronze Medal";
             } else {
-                res[index[i]] = String.valueOf(i + 1);
+                ans[index[i]] = String.valueOf(i + 1);
             }
         }
 
-        return res;
+        return ans;
     }
 }
