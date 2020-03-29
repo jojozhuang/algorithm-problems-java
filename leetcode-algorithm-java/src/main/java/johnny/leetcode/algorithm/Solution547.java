@@ -56,12 +56,7 @@ public class Solution547 {
             }
         }
 
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < M.length; i++) {
-            set.add(dsu.find(i));
-        }
-
-        return set.size();
+        return dsu.count;
     }
 
     public int findCircleNum2(int[][] M) {
@@ -179,6 +174,7 @@ public class Solution547 {
     public class DSU { // Disjoint Set Union with Rank
         public int[] parents;
         public int[] rank;
+        public int count; // number of groups
 
         public DSU(int size) {
             parents = new int[size];
@@ -187,6 +183,7 @@ public class Solution547 {
                 parents[i] = i;
             }
             rank = new int[size];
+            count = size;
         }
 
         // Path Compression
@@ -220,6 +217,7 @@ public class Solution547 {
                 parents[p1] = p2;
                 rank[p2]++;
             }
+            count--;
         }
     }
 }

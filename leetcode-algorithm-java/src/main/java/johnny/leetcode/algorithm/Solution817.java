@@ -2,7 +2,9 @@ package johnny.leetcode.algorithm;
 
 import johnny.algorithm.common.ListNode;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -40,21 +42,59 @@ import java.util.Set;
  */
 public class Solution817 {
     public int numComponents(ListNode head, int[] G) {
-        Set<Integer> sets = new HashSet<Integer>();
-        for (int x : G) {
-            sets.add(x);
+        DSU dsu = new DSU(G);
+        while (head != null && head.next != null) {
+            dsu.union(head.val, head.next.val);
+            head = head.next;
         }
 
-        int res = 0;
-        ListNode cur = head;
+        return dsu.count;
+    }
 
-        while (cur != null) {
-            if (sets.contains(cur.val) && (cur.next == null || !sets.contains(cur.next.val))) {
-                res++;
+    public class DSU {
+        Map<Integer, Integer> map; // <child, parent>, use map instead of array
+        int count; // the number of component groups
+
+        public DSU(int[] nodes) {
+            map = new HashMap<>();
+            for (int node : nodes) {
+                map.put(node, node);
             }
-            cur = cur.next;
+            count = nodes.length;
         }
 
-        return res;
+        public int find(int i) {
+            while (map.get(i) != i) {
+                map.put(i, map.get(map.get(i)));
+                i = map.get(i);
+            }
+            return map.get(i);
+        }
+
+        public void union(int i, int j) {
+            if (map.containsKey(i) && map.containsKey(j)) {
+                int p1 = find(i);
+                int p2 = find(j);
+                map.put(p1, p2);
+                count--;
+            }
+        }
+    }
+
+    public int numComponents2(ListNode head, int[] G) {
+        Set<Integer> set = new HashSet<>();
+        for (int g : G) {
+            set.add(g);
+        }
+
+        int ans = 0;
+        while (head != null) {
+            if (set.contains(head.val) && (head.next == null || !set.contains(head.next.val))) {
+                ans++;
+            }
+            head = head.next;
+        }
+
+        return ans;
     }
 }
