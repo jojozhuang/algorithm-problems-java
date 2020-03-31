@@ -27,6 +27,42 @@ import johnny.algorithm.common.TreeNode;
  */
 public class Solution536 {
     public TreeNode str2tree(String s) {
+        if (s == null || s.isEmpty()) {
+            return null;
+        }
+
+        int index = s.indexOf("(");
+        if (index < 0) {
+            return new TreeNode(Integer.parseInt(s));
+        }
+        Integer val = Integer.parseInt(s.substring(0, index));
+        TreeNode root = new TreeNode(val);
+        int i = index;
+        int count = 0;
+        while (i < s.length()) {
+            char c = s.charAt(i);
+            if (c == '(') {
+                count++;
+            } else if (c == ')') {
+                count--;
+            }
+            if (count == 0) {
+                break;
+            }
+            i++;
+        }
+
+        root.left = str2tree(s.substring(index + 1, i));
+        if (i == s.length() - 1) {
+            root.right = null;
+        } else {
+            root.right = str2tree(s.substring(i + 2, s.length() - 1));
+        }
+
+        return root;
+    }
+
+    public TreeNode str2tree2(String s) {
         if (s == null || s.length() == 0) {
             return null;
         }

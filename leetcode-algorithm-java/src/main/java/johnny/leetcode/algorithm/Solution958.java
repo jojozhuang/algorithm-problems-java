@@ -4,6 +4,7 @@ import johnny.algorithm.common.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.TreeMap;
 
 /**
  * 958. Check Completeness of a Binary Tree
@@ -29,6 +30,30 @@ import java.util.Queue;
  * @author Johnny
  */
 public class Solution958 {
+    public boolean isCompleteTree2(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (node.left == null && node.right != null) {
+                    return false;
+                } else if (node.right == null && i != size - 1) {
+                    return false;
+                }
+                queue.offer(node.left);
+                queue.offer(node.right);
+            }
+        }
+
+        return true;
+    }
+
     public boolean isCompleteTree(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);

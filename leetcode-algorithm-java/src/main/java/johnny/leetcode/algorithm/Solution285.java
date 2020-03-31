@@ -13,7 +13,7 @@ import johnny.algorithm.common.TreeNode;
  */
 public class Solution285 {
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        if (root == null) {
+        if (root == null || p == null) {
             return null;
         }
 
