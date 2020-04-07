@@ -25,8 +25,32 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution503 {
-    // input:  [1,3, 4, 2], output: [3,4,-1,3]
     public int[] nextGreaterElements(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return nums;
+        }
+
+        int n = nums.length;
+
+        Stack<Integer> stack = new Stack<>();
+
+        int[] ans = new int[nums.length];
+        Arrays.fill(ans, -1);
+        for (int i = 2*n - 1; i >= 0; i--) {
+            int num = nums[i % n];
+            while (!stack.isEmpty() && num >= stack.peek()) {
+                stack.pop();
+            }
+            if (!stack.isEmpty()) {
+                ans[i % n] = stack.peek();
+            }
+            stack.push(num);
+        }
+
+        return ans;
+    }
+    // input:  [1,3, 4, 2], output: [3,4,-1,3]
+    public int[] nextGreaterElements3(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
 
