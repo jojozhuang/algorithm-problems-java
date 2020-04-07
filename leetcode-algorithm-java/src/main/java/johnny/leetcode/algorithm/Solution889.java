@@ -21,8 +21,7 @@ public class Solution889 {
             return null;
         }
 
-        int rootvalue = pre[prestart];
-        TreeNode root = new TreeNode(rootvalue);
+        TreeNode root = new TreeNode(pre[prestart]);
 
         if (prestart + 1 > preend) {
             return root;

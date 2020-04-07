@@ -13,5 +13,6 @@ public class Solution666Test extends JunitBase {
 
         assertEquals(12, instance.pathSum(new int[] {113, 215, 221}));
         assertEquals(4, instance.pathSum(new int[] {113, 221}));
+        assertEquals(13, instance.pathSum(new int[] {119,213,321,430}));
     }
 }

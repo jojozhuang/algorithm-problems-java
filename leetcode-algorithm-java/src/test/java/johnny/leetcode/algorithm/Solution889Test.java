@@ -9,8 +9,8 @@ import static org.junit.Assert.assertTrue;
 public class Solution889Test extends JunitBase {
 
     @Test
-    public void testBuildTree() {
-        System.out.println("buildTree");
+    public void testConstructFromPrePost() {
+        System.out.println("constructFromPrePost");
         Solution889 instance = new Solution889();
 
         assertEquals(null, instance.constructFromPrePost(null, null));

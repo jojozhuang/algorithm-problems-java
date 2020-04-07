@@ -4,15 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- *
- * @author Johnny
- */
 public class PartitionArrayTest extends JunitBase {
 
-    /**
-     * Test of partitionArray method, of class PartitionArray.
-     */
     @Test
     public void testPartitionArray() {
         System.out.println("partitionArray");

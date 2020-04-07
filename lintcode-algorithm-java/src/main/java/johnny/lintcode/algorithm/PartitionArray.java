@@ -23,29 +23,51 @@ package johnny.lintcode.algorithm;
  * @author Johnny
  */
 public class PartitionArray {
+    // double pointers, meet
     public int partitionArray(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
 
-        int i = 0;
-        int slow = 0;
-        while (i < nums.length) {
-            if (nums[i] >= k) {
-                i++;
-            } else {
-                if (i > slow) {
-                    int temp = nums[i];
-                    nums[i] = nums[slow];
-                    nums[slow] = temp;
-                    i++;
-                    slow++;
-                } else {
-                    i++;
-                    slow++;
-                }
+        int start = 0;
+        int end = nums.length - 1;
+        while (start <= end) {
+            while (start <= end && nums[start] < k) {
+                start++;
+            }
+            while (end >= start && nums[end] >= k) {
+                end--;
+            }
+            if (start <= end) {
+                int temp = nums[start];
+                nums[start] = nums[end];
+                nums[end] = temp;
+                start++;
+                end--;
             }
         }
-        return slow;
+
+        return start;
+    }
+
+    // double pointers, same direction
+    public int partitionArray2(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int i = 0;
+        int j = -1;
+        while (i < nums.length) {
+            if (nums[i] < k) {
+                j++;
+                int temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
+            }
+            i++;
+        }
+
+        return j + 1;
     }
 }

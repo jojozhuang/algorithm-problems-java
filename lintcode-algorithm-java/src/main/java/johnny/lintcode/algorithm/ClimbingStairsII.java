@@ -12,7 +12,6 @@ package johnny.lintcode.algorithm;
  * <p>
  * return 4
  *
- * @author Johnny
  */
 public class ClimbingStairsII {
     public int climbStairs2(int n) {

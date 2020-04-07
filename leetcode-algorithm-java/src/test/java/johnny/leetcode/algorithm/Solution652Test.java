@@ -21,19 +21,19 @@ public class Solution652Test extends JunitBase {
         assertEquals(expResult, result);
 
         TreeNode root2 = TreeNode.createInstance(new String[]{"2","1","1"});
-        List<TreeNode> expect2 = new ArrayList<TreeNode>();
+        List<TreeNode> expect2 = new ArrayList<>();
         expect2.add(new TreeNode(1));
         assertTrue(TreeNode.isSame(expect2.get(0), instance.findDuplicateSubtrees(root2).get(0)));
 
         TreeNode root3 = TreeNode.createInstance(new String[]{"0","0","0","0","#","#","0","#","#","0","0"});
-        List<TreeNode> expect3 = new ArrayList<TreeNode>();
+        List<TreeNode> expect3 = new ArrayList<>();
         expect3.add(new TreeNode(0));
         List<TreeNode> result3 = instance.findDuplicateSubtrees(root3);
         assertEquals(expect3.size(), result3.size());
         assertTrue(TreeNode.isSame(expect3.get(0), result3.get(0)));
 
         TreeNode root4 = TreeNode.createInstance(new String[]{"2","2","2","3","#","3","#"});
-        List<TreeNode> expect4 = new ArrayList<TreeNode>();
+        List<TreeNode> expect4 = new ArrayList<>();
         TreeNode expect41 = TreeNode.createInstance(new String[]{"2","3","#"});
         TreeNode expect42 = TreeNode.createInstance(new String[]{"3"});
         expect4.add(expect41);

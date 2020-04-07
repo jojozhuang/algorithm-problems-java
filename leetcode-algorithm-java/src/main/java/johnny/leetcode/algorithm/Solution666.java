@@ -43,6 +43,43 @@ public class Solution666 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
+        Map<Integer, Map<Integer, Integer>> map = new HashMap<>();
+        for (int num : nums) {
+            int level = num / 100;
+            int pos = (num % 100) / 10;
+            int val = num % 10;
+            if (!map.containsKey(level)) {
+                map.put(level, new HashMap<>());
+            }
+            map.get(level).put(pos, val);
+        }
+
+        int sum = 0;
+        for (int i = 5; i >= 1; i--) {
+            if (map.containsKey(i)) {
+                for (Integer pos : map.get(i).keySet()) {
+                    if (i < 5 && map.containsKey(i + 1) && (map.get(i + 1).containsKey(pos * 2 - 1) || map.get(i + 1).containsKey(pos * 2))) {
+                        continue;
+                    }
+                    // leaf
+                    sum += map.get(i).get(pos);
+                    int k = i - 1;
+                    int pos2 = pos;
+                    while (k >= 1) { // parent
+                        pos2 = (pos2 + 1) / 2;
+                        sum += map.get(k).get(pos2);
+                        k--;
+                    }
+                }
+            }
+        }
+        return sum;
+    }
+
+    public int pathSum2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
 
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
