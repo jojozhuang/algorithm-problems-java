@@ -36,6 +36,53 @@ import java.util.Set;
  */
 public class Solution472 {
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
+        List<String> list = new ArrayList<>();
+        if (words == null || words.length == 0) {
+            return list;
+        }
+
+        Set<String> set = new HashSet<>();
+        int max = 0;
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                set.add(word);
+                max = Math.max(max, word.length());
+            }
+        }
+
+        for (String word : words) {
+            if (helper(word, max, set)) {
+                list.add(word);
+            }
+        }
+
+        return list;
+    }
+
+    private boolean helper(String str, int max, Set<String> set) {
+        if (str.isEmpty()) {
+            return false;
+        }
+        int n = str.length();
+        boolean[] dp = new boolean[n + 1];
+        dp[0] = true;
+        for (int i = 1; i <= n; i++) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (i - j > max) {
+                    break;
+                } else {
+                    String sub = str.substring(j, i);
+                    if (dp[j] && !str.equals(sub) && set.contains(sub)) {
+                        dp[i] = true;
+                    }
+                }
+            }
+        }
+
+        return dp[n];
+    }
+
+    public List<String> findAllConcatenatedWordsInADict2(String[] words) {
         List<String> result = new ArrayList<>();
         Set<String> preWords = new HashSet<>();
         Arrays.sort(words, new Comparator<String>() {
