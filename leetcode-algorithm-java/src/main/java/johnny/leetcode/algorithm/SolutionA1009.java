@@ -35,6 +35,23 @@ public class SolutionA1009 {
         if (N == 0) {
             return 1;
         }
+
+        int ans = 0;
+
+        int i = 0;
+        while (N > 0) {
+            ans += ((N & 1) ^ 1) << i;
+            N = N >> 1;
+            i++;
+        }
+
+        return ans;
+    }
+
+    public int bitwiseComplement2(int N) {
+        if (N == 0) {
+            return 1;
+        }
         int temp = N;
         int count = 0;
         while (N > 0) {

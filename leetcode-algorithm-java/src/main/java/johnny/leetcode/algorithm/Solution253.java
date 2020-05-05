@@ -17,8 +17,35 @@ import java.util.PriorityQueue;
  * @author Johnny
  */
 public class Solution253 {
-    // PriorityQueue, store the end value
     public int minMeetingRooms(int[][] intervals) {
+        if (intervals == null || intervals.length == 0) {
+            return 0;
+        }
+
+        int start = Integer.MAX_VALUE, end = Integer.MIN_VALUE;
+        for (int[] interval : intervals) {
+            start = Math.min(start, interval[0]);
+            end = Math.max(end, interval[1]);
+        }
+
+        int[] meetings = new int[end - start + 1];
+        for (int i = 0; i < intervals.length; i++) {
+            meetings[intervals[i][0] - start]++;
+            meetings[intervals[i][1] - start]--;
+        }
+
+        // go through and find the maximum
+        int max = 0;
+        int count = 0;
+        for (int i = 0; i < meetings.length; i++) {
+            count += meetings[i];
+            max = Math.max(max, count);
+        }
+
+        return max;
+    }
+    // PriorityQueue, store the end value
+    public int minMeetingRooms3(int[][] intervals) {
         if (intervals == null || intervals.length == 0) {
             return 0;
         }

@@ -26,7 +26,32 @@ import java.util.Stack;
  * @author Johnny
  */
 public class Solution678 {
-    public boolean checkValidString2(String s) {
+    public boolean checkValidString(String s) {
+        int min_op = 0;
+        int max_op = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                min_op++;
+            } else {
+                if (min_op > 0) {
+                    min_op--;
+                }
+            }
+
+            if (c != ')') {
+                max_op++;
+            } else {
+                max_op--;
+            }
+
+            if (max_op < 0) {
+                return false;
+            }
+        }
+
+        return min_op == 0;
+    }
+    public boolean checkValidString3(String s) {
         int low = 0;
         int high = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -52,7 +77,7 @@ public class Solution678 {
     }
 
     // two stacks, store the index of left parenthesis and star
-    public boolean checkValidString(String s) {
+    public boolean checkValidString2(String s) {
         Stack<Integer> leftID = new Stack<>();
         Stack<Integer> starID = new Stack<>();
         for (int i = 0; i < s.length(); i++) {

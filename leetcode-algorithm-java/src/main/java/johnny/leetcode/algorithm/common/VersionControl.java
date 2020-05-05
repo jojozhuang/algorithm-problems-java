@@ -5,7 +5,7 @@ import java.util.HashMap;
  * @author Johnny
  */
 public class VersionControl {
-    public HashMap<Integer, Boolean> map = new HashMap<Integer, Boolean>();
+    public HashMap<Integer, Boolean> map = new HashMap<>();
     public void setMap(HashMap<Integer, Boolean> map) {
         this.map = map;
     }
