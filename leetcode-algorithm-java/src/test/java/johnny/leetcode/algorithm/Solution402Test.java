@@ -11,6 +11,7 @@ public class Solution402Test extends JunitBase {
         System.out.println("removeKdigits");
         Solution402 instance = new Solution402();
 
+        assertEquals("11", instance.removeKdigits("112", 1));
         assertEquals("0", instance.removeKdigits("", 0));
         assertEquals("1", instance.removeKdigits("54321", 4));
         assertEquals("4321", instance.removeKdigits("54321", 1));

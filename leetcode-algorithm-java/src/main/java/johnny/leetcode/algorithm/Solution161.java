@@ -9,6 +9,26 @@ package johnny.leetcode.algorithm;
  */
 public class Solution161 {
     public boolean isOneEditDistance(String s, String t) {
+        if (s.equals(t) || Math.abs(s.length() - t.length()) > 1) {
+            return false;
+        }
+
+        for (int i = 0; i < Math.min(s.length(), t.length()); i++) {
+            if (s.charAt(i) != t.charAt(i)) {
+                if (s.substring(i).equals(t.substring(i+1)) ||   // delete current char in t
+                    s.substring(i+1).equals(t.substring(i+1)) || // update current char in s or t
+                    s.substring(i+1).equals(t.substring(i))) {   // delete current char in s
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isOneEditDistance2(String s, String t) {
         for (int i = 0; i < Math.min(s.length(), t.length()); i++) {
             if (s.charAt(i) != t.charAt(i)) {
                 if (s.length() == t.length()) // s has the same length as t, so the only possibility is replacing one char in s and t

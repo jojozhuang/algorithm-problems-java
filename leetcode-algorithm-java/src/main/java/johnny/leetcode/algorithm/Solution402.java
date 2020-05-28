@@ -34,6 +34,79 @@ import java.util.Stack;
  */
 public class Solution402 {
     public String removeKdigits(String num, int k) {
+        if (num == null || num.length() == 0 || num.length() <= k) {
+            return "0";
+        }
+
+        Stack<Character> stack = new Stack<>();
+        int i = 0;
+        int j = 0;
+        for (; i < num.length(); i++) {
+            char c = num.charAt(i);
+            if (stack.isEmpty() || c >= stack.peek()) {
+                stack.push(c);
+                continue;
+            }
+
+            while (j < k && !stack.isEmpty() && c < stack.peek()) {
+                stack.pop();
+                j++;
+            }
+            stack.push(c);
+            if (j == k) {
+                break;
+            }
+        }
+
+        if (j < k) {
+            while (j < k && !stack.isEmpty()) {
+                stack.pop();
+                j++;
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+        }
+
+        String res = sb.reverse().toString();
+        if (i < num.length()) {
+            res = res + num.substring(i+1);
+        }
+
+        res = leadingZero(res);
+        if (res == "") {
+            res = "0";
+        }
+
+        return res;
+    }
+
+    private String leadingZero(String str) {
+        if (str.isEmpty()) {
+            return "";
+        }
+
+        if (str.charAt(0) != '0') {
+            return str;
+        }
+
+        int i = 0;
+        for (; i < str.length(); i++) {
+            if (str.charAt(i) != '0') {
+                break;
+            }
+        }
+
+        if (i == str.length()) {
+            return "";
+        }
+
+        return str.substring(i);
+    }
+
+    public String removeKdigits3(String num, int k) {
         if (num == null || num.isEmpty() || k < 0 || k >= num.length()) {
             return "0";
         }

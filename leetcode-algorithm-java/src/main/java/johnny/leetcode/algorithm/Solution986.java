@@ -1,7 +1,5 @@
 package johnny.leetcode.algorithm;
 
-import johnny.algorithm.common.Interval;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,26 +26,89 @@ import java.util.List;
  * @author Johnny
  */
 public class Solution986 {
-    public Interval[] intervalIntersection(Interval[] A, Interval[] B) {
-        List<Interval> ans = new ArrayList<Interval>();
+    public int[][] intervalIntersection(int[][] A, int[][] B) {
+        if (A.length == 0 || B.length == 0) {
+            return new int[][]{};
+        }
+
+        List<int[]> list = new ArrayList<>();
+        int i = 0;
+        int j = 0;
+        while (i < A.length && j < B.length) {
+            if (A[i][0] == B[j][0]) {
+                list.add(new int[]{A[i][0], Math.min(A[i][1], B[j][1])});
+                if (A[i][1] < B[j][1]) {
+                    i++;
+                } else if (A[i][1] > B[j][1]) {
+                    j++;
+                } else {
+                    i++;
+                    j++;
+                }
+            } else if (A[i][0] < B[j][0]) {
+                if (A[i][1] < B[j][0]) {
+                    i++;
+                } else {
+                    list.add(new int[]{B[j][0], Math.min(A[i][1], B[j][1])});
+                    if (A[i][1] < B[j][1]) {
+                        i++;
+                    } else if (A[i][1] > B[j][1]) {
+                        j++;
+                    } else {
+                        i++;
+                        j++;
+                    }
+                }
+            } else {
+                if (A[i][0] > B[j][1]) {
+                    j++;
+                } else {
+                    list.add(new int[]{A[i][0], Math.min(A[i][1], B[j][1])});
+                    if (A[i][1] < B[j][1]) {
+                        i++;
+                    } else if (A[i][1] > B[j][1]) {
+                        j++;
+                    } else {
+                        i++;
+                        j++;
+                    }
+                }
+            }
+        }
+        int[][] ans = new int[list.size()][2];
+        for (i = 0; i < list.size(); i++) {
+            ans[i] = list.get(i);
+        }
+
+        return ans;
+    }
+
+    public int[][] intervalIntersection2(int[][] A, int[][] B) {
+        List<int[]> list = new ArrayList<>();
         int i = 0, j = 0;
 
         while (i < A.length && j < B.length) {
             // Let's check if A[i] intersects B[j].
             // lo - the startpoint of the intersection
             // hi - the endpoint of the intersection
-            int lo = Math.max(A[i].start, B[j].start);
-            int hi = Math.min(A[i].end, B[j].end);
-            if (lo <= hi)
-                ans.add(new Interval(lo, hi));
+            int lo = Math.max(A[i][0], B[j][0]);
+            int hi = Math.min(A[i][1], B[j][1]);
+            if (lo <= hi) {
+                list.add(new int[]{lo, hi});
+            }
 
             // Remove the interval with the smallest endpoint
-            if (A[i].end < B[j].end)
+            if (A[i][1] < B[j][1])
                 i++;
             else
                 j++;
         }
 
-        return ans.toArray(new Interval[ans.size()]);
+        int[][] ans = new int[list.size()][2];
+        for (i = 0; i < list.size(); i++) {
+            ans[i] = list.get(i);
+        }
+
+        return ans;
     }
 }

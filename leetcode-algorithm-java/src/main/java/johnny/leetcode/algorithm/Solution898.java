@@ -41,11 +41,33 @@ import java.util.Set;
  */
 public class Solution898 {
     public int subarrayBitwiseORs(int[] A) {
-        Set<Integer> ans = new HashSet<Integer>();
-        Set<Integer> cur = new HashSet<Integer>();
+        int n = A.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+
+            }
+        }
+        Set<Integer> ans = new HashSet<>();
+        Set<Integer> cur = new HashSet<>();
         cur.add(0);
         for (int x : A) {
-            Set<Integer> cur2 = new HashSet<Integer>();
+            Set<Integer> cur2 = new HashSet<>();
+            for (int y : cur)
+                cur2.add(x | y);
+            cur2.add(x);
+            cur = cur2;
+            ans.addAll(cur);
+        }
+
+        return ans.size();
+    }
+
+    public int subarrayBitwiseORs2(int[] A) {
+        Set<Integer> ans = new HashSet<>();
+        Set<Integer> cur = new HashSet<>();
+        cur.add(0);
+        for (int x : A) {
+            Set<Integer> cur2 = new HashSet<>();
             for (int y : cur)
                 cur2.add(x | y);
             cur2.add(x);

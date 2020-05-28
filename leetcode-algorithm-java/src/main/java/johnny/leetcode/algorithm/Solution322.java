@@ -28,6 +28,30 @@ public class Solution322 {
         if (coins == null || coins.length == 0 || amount <= 0) {
             return 0;
         }
+        int[][] dp = new int[coins.length + 1][amount + 1];
+        for (int i = 0; i <= coins.length; i++) {
+            for (int j = 0; j <= amount; j++) {
+                dp[i][j] = Integer.MAX_VALUE;
+            }
+        }
+        dp[0][0] = 0;
+        for (int i = 1; i <= coins.length; i++) {
+            for (int j = 0; j <= amount; j++) {
+                dp[i][j] = dp[i - 1][j];
+                if (j - coins[i - 1] >= 0 && (dp[i][j - coins[i - 1]] != Integer.MAX_VALUE)) {
+                    dp[i][j] = Math.min(dp[i][j - coins[i - 1]] + 1, dp[i][j]);
+                }
+            }
+            System.out.println(Arrays.toString(dp[i]));
+        }
+
+        return dp[coins.length][amount] == Integer.MAX_VALUE ? -1 : dp[coins.length][amount];
+    }
+
+    public int coinChange3(int[] coins, int amount) {
+        if (coins == null || coins.length == 0 || amount <= 0) {
+            return 0;
+        }
 
         // dp[i] = min coins to make up to amount i
         int[] dp = new int[amount + 1];

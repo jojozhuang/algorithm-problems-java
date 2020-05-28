@@ -19,6 +19,38 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution673 {
+    public int findNumberOfLIS2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int max = 0;
+        int count = 0;
+        int[] dp = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            dp[i] = 1;
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                    if (dp[i] > max) {
+                        max = dp[i];
+                        count = 1;
+                    } else if (dp[i] == max) {
+                        count++;
+                    }
+                }
+            }
+
+            if (max == 0) {
+                max = dp[i];
+                count = 1;
+            } else if (dp[i] == 1 && max == 1) {
+                count++;
+            }
+        }
+
+        return count;
+    }
     public int findNumberOfLIS(int[] nums) {
         int n = nums.length, res = 0, max_len = 0;
         int[] len = new int[n], cnt = new int[n];

@@ -11,6 +11,8 @@ public class Solution686Test extends JunitBase {
         System.out.println("repeatedStringMatch");
         Solution686 instance = new Solution686();
 
+        assertEquals(-1, instance.repeatedStringMatch("", "a"));
         assertEquals(3, instance.repeatedStringMatch("abcd", "cdabcdab"));
+        assertEquals(-1, instance.repeatedStringMatch("ac", "cc"));
     }
 }
