@@ -12,7 +12,6 @@ public class LeetCode {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         ArrayList<String> strings = new ArrayList<String>();
         strings.add("Hello, World!");
         strings.add("Welcome to CoderPad.");
@@ -21,14 +20,14 @@ public class LeetCode {
         for (String string : strings) {
           System.out.println(string);
         }
-        
+
         //reverse string
         System.out.println(reverse(""));
         System.out.println(reverse("W"));
         System.out.println(reverse("Welcome to coderpad!"));
-        
+
     }
-    
+
     public static String reverse(String str) {
         if (str == null || str.length() == 0) {
           return "";
@@ -46,5 +45,5 @@ public class LeetCode {
         }
 
         return new String(chs);
-    }  
+    }
 }
