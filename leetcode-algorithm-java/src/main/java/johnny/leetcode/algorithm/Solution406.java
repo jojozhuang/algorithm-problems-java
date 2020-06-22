@@ -25,6 +25,36 @@ import java.util.Comparator;
  */
 public class Solution406 {
     public int[][] reconstructQueue(int[][] people) {
+        if (people == null || people.length == 0 || people[0].length == 0) {
+            return new int[0][0];
+        }
+
+        Arrays.sort(people, (a,b) -> {
+            if (b[0] == a[0]) {
+                return a[1] - b[1];
+            } else {
+                return b[0] - a[0];
+            }
+        });
+
+        int n = people.length;
+        ArrayList<int[]> tmp = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            tmp.add(people[i][1], new int[]{people[i][0], people[i][1]});
+        }
+
+        int[][] ans = new int[people.length][2];
+        int i = 0;
+        for (int[] k : tmp) {
+            ans[i][0] = k[0];
+            ans[i][1] = k[1];
+            i++;
+        }
+
+        return ans;
+    }
+
+    public int[][] reconstructQueue2(int[][] people) {
         if (people == null || people.length == 0 || people[0].length == 0)
             return new int[0][0];
 

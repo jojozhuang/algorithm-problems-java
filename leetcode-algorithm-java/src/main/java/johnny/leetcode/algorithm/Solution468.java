@@ -55,6 +55,83 @@ package johnny.leetcode.algorithm;
  */
 public class Solution468 {
     public String validIPAddress(String IP) {
+        if (IP == null || IP.isEmpty()) {
+            return "Neither";
+        }
+
+        if (isIPv4(IP)) {
+            return "IPv4";
+        }
+
+        if (isIPv6(IP)) {
+            return "IPv6";
+        }
+
+        return "Neither";
+    }
+
+    private boolean isIPv4(String IP) {
+        if (IP.charAt(0) == '.') return false;
+        if (IP.charAt(IP.length() - 1) == '.') return false;
+        String[] arr = IP.split("\\.");
+        if (arr.length != 4) {
+            return false;
+        }
+        for (String section : arr) {
+            if (section.isEmpty()) {
+                return false;
+            }
+            if (section.charAt(0) == '0' && section.length() > 1) {
+                return false;
+            }
+            if (section.length() > 3) {
+                return false;
+            }
+            for (int i = 0; i < section.length(); i++) {
+                char c = section.charAt(i);
+                if (c < '0' || c > '9') {
+                    return false;
+                }
+            }
+
+            Integer address = Integer.parseInt(section);
+            if (address < 0 || address > 255) {
+                return false;
+            }
+            if (address != 0 && section.charAt(0) == '0') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isIPv6(String IP) {
+        if (IP.charAt(0) == ':') return false;
+        if (IP.charAt(IP.length() - 1) == ':') return false;
+        String[] arr = IP.split("\\:");
+        if (arr.length != 8) {
+            return false;
+        }
+        for (String section : arr) {
+            if (section.isEmpty()) {
+                return false;
+            }
+            if (section.length() > 4) {
+                return false;
+            }
+            for (int i = 0; i < section.length(); i++) {
+                char c = section.charAt(i);
+                if (c >= '0' && c <= '9' || c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F') {
+
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public String validIPAddress2(String IP) {
         if (isValidIPv4(IP)) return "IPv4";
         else if (isValidIPv6(IP)) return "IPv6";
         else return "Neither";
