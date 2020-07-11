@@ -36,7 +36,7 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution441 {
-    public int arrangeCoins(int n) {
+    public int arrangeCoins2(int n) {
         if (n == 0) {
             return 0;
         }
@@ -57,5 +57,32 @@ public class Solution441 {
         }
 
         return start - 1;
+    }
+
+    public int arrangeCoins(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+
+        int start = 1;
+        int end = n;
+        while (start + 1 < end) {
+            int mid = (end - start) / 2 + start;
+            long sum = (long)mid*(mid+1)/2;
+            if (sum == n) {
+                return mid;
+            } else if (sum < n) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+
+        long sum = (long)end*(end+1)/2;
+        if (sum <= n) {
+            return end;
+        } else {
+            return start;
+        }
     }
 }
