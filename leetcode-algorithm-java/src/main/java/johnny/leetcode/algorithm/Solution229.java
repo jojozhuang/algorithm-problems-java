@@ -13,6 +13,60 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution229 {
+    public List<Integer> majorityElement(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return list;
+        }
+
+        Integer a = null;
+        Integer b = null;
+        int count1 = 0;
+        int count2 = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (a == null || nums[i] == a) {
+                a = nums[i];
+                count1++;
+            } else {
+                if (b == null || nums[i] == b) {
+                    b = nums[i];
+                    count2++;
+                } else {
+                    count1--;
+                    count2--;
+                    if (count2 == 0) {
+                        b = null;
+                    }
+                    if (count1 == 0) {
+                        a = b;
+                        count1 = count2;
+                        b = null;
+                        count2 = 0;
+                    }
+                }
+            }
+        }
+
+        count1 = 0;
+        count2 = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (a != null && nums[i] == a) {
+                count1++;
+            }
+            if (b != null && nums[i] == b) {
+                count2++;
+            }
+        }
+
+        if (count1 > nums.length / 3) {
+            list.add(a);
+        }
+        if (count2 > nums.length / 3) {
+            list.add(b);
+        }
+        return list;
+    }
+
     public List<Integer> majorityElement2(int[] nums) {
         List<Integer> res = new ArrayList<Integer>();
         if (nums == null || nums.length == 0) {
@@ -62,7 +116,7 @@ public class Solution229 {
         return res;
     }
 
-    public List<Integer> majorityElement(int[] nums) {
+    public List<Integer> majorityElement3(int[] nums) {
         List<Integer> res = new ArrayList<Integer>();
         if (nums == null || nums.length == 0) {
             return res;

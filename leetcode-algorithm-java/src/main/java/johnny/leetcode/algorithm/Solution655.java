@@ -57,6 +57,38 @@ import java.util.List;
 public class Solution655 {
     public List<List<String>> printTree(TreeNode root) {
         List<List<String>> res = new LinkedList<>();
+        int height = height(root);
+        int rows = height;
+        int columns = (int)(Math.pow(2, height) - 1);
+        List<String> row = new ArrayList<>();
+        for (int i = 0; i < columns; i++) {
+            row.add("");
+        }
+        for (int i = 0; i < rows; i++) {
+            res.add(new ArrayList<>(row));
+        }
+        helper(root, res, 0, rows, 0, columns - 1);
+        return res;
+    }
+
+    private void helper(TreeNode root, List<List<String>> res, int row, int totalRows, int start, int end) {
+        if (row == totalRows || root == null) {
+            return;
+        }
+        res.get(row).set((start + end) / 2, Integer.toString(root.val));
+        helper(root.left, res, row + 1, totalRows, start, (start + end) / 2 - 1);
+        helper(root.right, res, row + 1, totalRows, (start + end) / 2 + 1, end);
+    }
+
+    private int height(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(height(root.left), height(root.right));
+    }
+
+    public List<List<String>> printTree2(TreeNode root) {
+        List<List<String>> res = new LinkedList<>();
         int height = root == null ? 1 : getHeight(root);
         int rows = height, columns = (int) (Math.pow(2, height) - 1);
         List<String> row = new ArrayList<>();

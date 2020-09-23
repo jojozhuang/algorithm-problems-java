@@ -1,7 +1,6 @@
 package johnny.leetcode.algorithm;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 874. Walking Robot Simulation
@@ -41,6 +40,88 @@ import java.util.Set;
  */
 public class Solution874 {
     public int robotSim(int[] commands, int[][] obstacles) {
+        Map<Integer, TreeSet<Integer>> mapx = new HashMap<>();
+        Map<Integer, TreeSet<Integer>> mapy = new HashMap<>();
+        for (int[] obst : obstacles) {
+            if (!mapx.containsKey(obst[0])) {
+                mapx.put(obst[0], new TreeSet<>());
+            }
+            mapx.get(obst[0]).add(obst[1]);
+            if (!mapy.containsKey(obst[1])) {
+                mapy.put(obst[1], new TreeSet<>());
+            }
+            mapy.get(obst[1]).add(obst[0]);
+        }
+
+        int max = 0;
+        int[] loc = new int[]{0,0};
+        int direction = 1; // 1-north,2-east,3-south,4-west
+        for (int cmd : commands) {
+            if (cmd == -2) {
+                direction--;
+                if (direction == 0) {
+                    direction = 4;
+                }
+            } else if (cmd == -1) {
+                direction++;
+                if (direction == 5) {
+                    direction = 1;
+                }
+            } else {
+                if (direction == 1) {
+                    if (mapx.containsKey(loc[0])) {
+                        Integer higher = mapx.get(loc[0]).higher(loc[1]);
+                        if (higher != null && loc[0] + cmd >= higher - 1) {
+                            loc[1] = higher - 1;
+                        } else {
+                            loc[1] += cmd;
+                        }
+                    } else {
+                        loc[1] += cmd;
+                    }
+                } else if (direction == 3) {
+                    if (mapx.containsKey(loc[0])) {
+                        Integer lower = mapx.get(loc[0]).lower(loc[1]);
+                        if (lower != null && loc[0] - cmd <= lower + 1) {
+                            loc[1] = lower + 1;
+                        } else {
+                            loc[1] -= cmd;
+                        }
+                    } else {
+                        loc[1] -= cmd;
+                    }
+                } else if (direction == 2) {
+                    if (mapy.containsKey(loc[1])) {
+                        Integer higher = mapy.get(loc[1]).higher(loc[0]);
+                        if (higher != null && loc[1] + cmd >= higher - 1) {
+                            loc[0] = higher - 1;
+                        } else {
+                            loc[0] += cmd;
+                        }
+                    } else {
+                        loc[0] += cmd;
+                    }
+                } else {
+                    if (mapy.containsKey(loc[1])) {
+                        Integer lower = mapy.get(loc[1]).lower(loc[0]);
+                        if (lower != null && loc[1] - cmd <= lower + 1) {
+                            loc[0] = lower + 1;
+                        } else {
+                            loc[0] -= cmd;
+                        }
+                    } else {
+                        loc[0] -= cmd;
+                    }
+                }
+            }
+
+            max = Math.max(max, loc[0] * loc[0] + loc[1] * loc[1]);
+        }
+
+        return max;
+    }
+
+    public int robotSim2(int[] commands, int[][] obstacles) {
         int[] dx = new int[]{0, 1, 0, -1};
         int[] dy = new int[]{1, 0, -1, 0};
         int x = 0, y = 0, di = 0;

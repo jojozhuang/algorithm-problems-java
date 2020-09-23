@@ -18,7 +18,7 @@ public class Solution890Test extends JunitBase {
         String pattern1 = "abb";
         List<String> result1 = instance.findAndReplacePattern(words1, pattern1);
         List<String> expected1 = ListUtil.buildList(new String[] {"mee","aqq"});
-        assertTrue(ListUtil.equalsIgnoreOrder(result1, expected1));
+        assertTrue(ListUtil.equalsIgnoreOrder(expected1, result1));
 
     }
 }

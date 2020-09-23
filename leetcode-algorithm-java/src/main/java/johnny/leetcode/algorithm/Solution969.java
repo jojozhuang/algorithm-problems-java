@@ -36,6 +36,50 @@ import java.util.List;
  */
 public class Solution969 {
     public List<Integer> pancakeSort(int[] A) {
+        int n = A.length;
+        List<Integer> list = new ArrayList<>();
+
+        while (n > 0) {
+            int i = n - 1;
+            for (; i >= 0; i--) {
+                if (A[i] != i + 1) {
+                    break;
+                }
+            }
+            n = i + 1;
+
+            int max = A[0];
+            int index = 0;
+            for (i = 1; i < n; i++) {
+                if (A[i] > max) {
+                    max = A[i];
+                    index = i;
+                }
+            }
+
+            if (index >= n) {
+                break;
+            }
+            swap(A, 0, index);
+            list.add(index + 1);
+            swap(A, 0, n - 1);
+            list.add(n--);
+        }
+
+        return list;
+    }
+
+    public void swap(int A[], int start, int end) {
+        while (start < end) {
+            int temp = A[start];
+            A[start] = A[end];
+            A[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public List<Integer> pancakeSort2(int[] A) {
         List<Integer> ans = new ArrayList<>();
         int i = A.length - 1;
         while (i >= 0) {
@@ -45,10 +89,10 @@ public class Solution969 {
                 continue;
             } else if (index > 0) {
                 ans.add(index + 1);
-                reverse(A, 0, index);
+                swap(A, 0, index);
             } else {
                 ans.add(i + 1);
-                reverse(A, 0, i);
+                swap(A, 0, i);
                 i--;
             }
         }
@@ -66,15 +110,5 @@ public class Solution969 {
             }
         }
         return index;
-    }
-
-    private void reverse(int[] A, int i, int j) {
-        while (i < j) {
-            int temp = A[i];
-            A[i] = A[j];
-            A[j] = temp;
-            i++;
-            j--;
-        }
     }
 }

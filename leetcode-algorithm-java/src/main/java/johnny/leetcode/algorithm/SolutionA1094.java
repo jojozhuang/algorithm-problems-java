@@ -37,6 +37,60 @@ package johnny.leetcode.algorithm;
  */
 public class SolutionA1094 {
     public boolean carPooling(int[][] trips, int capacity) {
-        return false;
+        if (trips == null || trips.length == 0) {
+            return true;
+        }
+
+        int[] locations = new int[1001];
+
+        // increment if pick up, decrement if drop off
+        for (int i = 0; i < trips.length; i++) {
+            locations[trips[i][1]] += trips[i][0];
+            locations[trips[i][2]] -= trips[i][0];
+        }
+
+        // go through and count the passengers on board
+        int count = 0;
+        for (int i = 0; i < locations.length; i++) {
+            count += locations[i];
+            if (count > capacity) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean carPooling2(int[][] trips, int capacity) {
+        if (trips == null || trips.length == 0) {
+            return true;
+        }
+
+        // find the minimum and maximum locations
+        int start = Integer.MIN_VALUE, end = Integer.MAX_VALUE;
+        for (int[] trip : trips) {
+            start = Math.min(start, trip[1]);
+            end = Math.max(end, trip[2]);
+        }
+
+        // create an array with the length of available locations
+        int[] locations = new int[end - start + 1];
+
+        // increment if pick up, decrement if drop off
+        for (int i = 0; i < trips.length; i++) {
+            locations[trips[i][1] - start] += trips[i][0];
+            locations[trips[i][2] - start] -= trips[i][0];
+        }
+
+        // go through and count the passengers on board
+        int count = 0;
+        for (int i = 0; i < locations.length; i++) {
+            count += locations[i];
+            if (count > capacity) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

@@ -2,6 +2,9 @@ package johnny.leetcode.algorithm;
 
 import johnny.algorithm.common.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 1022. Sum of Root To Leaf Binary Numbers
  * {@code Given a binary tree, each node has value 0 or 1.  Each root-to-leaf path represents a binary number starting with the most significant bit.  For example, if the path is 0 -> 1 -> 1 -> 0 -> 1, then this could represent 01101 in binary, which is 13.}
@@ -24,6 +27,37 @@ import johnny.algorithm.common.TreeNode;
  * @author Johnny
  */
 public class SolutionA1022 {
+    public int sumRootToLeaf2(TreeNode root) {
+        List<String> list = new ArrayList<>();
+        helper(root, "", list);
+
+        int sum = 0;
+        for (String str : list) {
+            int val = 0;
+            for (int i = str.length() - 1; i >= 0; i--) {
+                val += (str.charAt(i) - '0') << (str.length() - i - 1);
+            }
+            sum += val;
+        }
+
+        return sum;
+    }
+
+    private void helper(TreeNode root, String str, List<String> list) {
+        if (root == null) {
+            return;
+        }
+
+        str = str + root.val;
+        if (root.left == null && root.right == null) {
+            list.add(str);
+            return;
+        }
+
+        helper(root.left, str, list);
+        helper(root.right, str, list);
+    }
+
     public int sumRootToLeaf(TreeNode root) {
         if (root == null) {
             return 0;

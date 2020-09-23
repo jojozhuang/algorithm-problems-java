@@ -1,5 +1,8 @@
 package johnny.leetcode.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Repeated Substring Pattern
  * <p>
@@ -32,6 +35,46 @@ package johnny.leetcode.algorithm;
  */
 public class Solution459 {
     public boolean repeatedSubstringPattern(String s) {
+        if (s.length() == 0) {
+            return true;
+        }
+
+        List<Integer> divs = divider(s.length());
+        if (divs.size() == 0) {
+            return false;
+        }
+
+        for (int i = 0; i < divs.size(); i++) {
+            boolean allsame = true;
+            int len = divs.get(i);
+            String p = s.substring(0, len);
+            for (int j = 0; j <= s.length() - len; j += len) {
+                if (!p.equals(s.substring(j, j+len))) {
+                    allsame = false;
+                    break;
+                }
+            }
+
+            if (allsame) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<Integer> divider(int num)
+    {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                list.add(i);
+            }
+        }
+        return list;
+    }
+
+    public boolean repeatedSubstringPattern2(String s) {
         if (s == null || s.length() == 0) {
             return true;
         }

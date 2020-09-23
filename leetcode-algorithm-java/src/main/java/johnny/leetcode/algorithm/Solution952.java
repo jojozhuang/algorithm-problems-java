@@ -37,6 +37,96 @@ import java.util.Set;
  */
 public class Solution952 {
     public int largestComponentSize(int[] A) {
+        DSU dsu = new DSU(100000);
+        for (int i = 0; i < A.length - 1; i++) {
+            for (int j = i + 1; j < A.length; j++) {
+                if (gcd(A[i], A[j]) > 1) {
+                    dsu.union(A[i], A[j]);
+                }
+            }
+        }
+
+        dsu.compression();
+
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] parents = dsu.parents;
+        for (int i = 0; i < parents.length; i++) {
+            if (parents[i] != i) {
+                if (!map.containsKey(parents[i])) {
+                    map.put(parents[i], 0);
+                }
+                map.put(parents[i], map.get(parents[i]) + 1);
+            }
+        }
+
+        int max = 0;
+        for (Integer key: map.keySet()) {
+            if (map.get(key) > max) {
+                max = map.get(key);
+            }
+        }
+        return max + 1;
+    }
+
+    private int gcd(int x, int y) {
+        return y == 0 ? x : gcd(y, x % y);
+    }
+
+    public class DSU { // Disjoint Set Union with Rank
+        public int[] parents;
+        public int[] rank;
+
+        public DSU(int size) {
+            parents = new int[size];
+            for (int i = 0; i < parents.length; i++) {
+                // Initially, all elements are in their own set.
+                parents[i] = i;
+            }
+            rank = new int[size];
+        }
+
+        // Path Compression
+        public int find(int i) {
+            while (parents[i] != i) {
+                parents[i] = parents[parents[i]];
+                i = parents[i];
+            }
+            return parents[i];
+        }
+
+        public void compression() {
+            for (int i = 0; i < parents.length; i++) {
+                find(i);
+            }
+        }
+
+        // Union by rank
+        public void union(int i, int j) {
+            int p1 = find(i);
+            int p2 = find(j);
+            if (p1 == p2) {
+                return;
+            }
+
+            // If root1’s rank is less than root2’s rank
+            if (rank[p1] < rank[p2]) {
+                // Then move root1 under root2
+                parents[p1] = p2;
+                // If root1’s rank is larger than root2’s rank
+            } else if (rank[p1] > rank[p2]) {
+                // Then move root2 under root1
+                parents[p2] = p1;
+                // if ranks are the same
+            } else {
+                // Then move root1 under root2 (doesn't matter which one goes where)
+                parents[p1] = p2;
+                rank[p2]++;
+            }
+        }
+    }
+
+
+    public int largestComponentSize2(int[] A) {
         int N = A.length;
 
         // factored[i] = a list of unique prime factors of A[i]
@@ -90,6 +180,7 @@ public class Solution952 {
         return ans;
     }
 
+    /*
     class DSU {
         int[] parent;
 
@@ -107,5 +198,5 @@ public class Solution952 {
         public void union(int x, int y) {
             parent[find(x)] = find(y);
         }
-    }
+    }*/
 }

@@ -15,12 +15,12 @@ public class Solution229Test extends JunitBase {
         System.out.println("majorityElement");
         Solution229 instance = new Solution229();
 
-        List<Integer> expect1 = new ArrayList<Integer>();
+        List<Integer> expect1 = new ArrayList<>();
         assertEquals(expect1, instance.majorityElement(null));
 
         List<Integer> expect2 = ListUtil.buildList(new Integer[]{2,3});
         List<Integer> result2 = instance.majorityElement(new int[]{1,2,2,3,3,2,3});
-        assertEquals(expect2, result2);
+        ListUtil.equalsIgnoreOrder(expect2, result2);
 
         List<Integer> expect3 = ListUtil.buildList(new Integer[]{1});
         List<Integer> result3 = instance.majorityElement(new int[]{1, 2, 1, 2, 1, 3, 3});
@@ -28,10 +28,14 @@ public class Solution229Test extends JunitBase {
 
         List<Integer> expect4 = ListUtil.buildList(new Integer[]{1,2});
         List<Integer> result4 = instance.majorityElement(new int[]{1,2,2,3,2,1,1,3});
-        assertEquals(expect4, result4);
+        ListUtil.equalsIgnoreOrder(expect4, result4);
 
         List<Integer> expect5 = ListUtil.buildList(new Integer[]{1,2});
         List<Integer> result5 = instance.majorityElement(new int[]{1, 2});
-        assertEquals(expect5, result5);
+        ListUtil.equalsIgnoreOrder(expect5, result5);
+
+        List<Integer> expect6 = ListUtil.buildList(new Integer[]{3});
+        List<Integer> result6 = instance.majorityElement(new int[]{1, 3,3,4});
+        assertEquals(expect6, result6);
     }
 }

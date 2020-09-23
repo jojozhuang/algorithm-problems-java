@@ -21,6 +21,49 @@ package johnny.leetcode.algorithm;
  */
 public class Solution165 {
     public int compareVersion(String version1, String version2) {
+        String[] str1 = version1.split("\\.");
+        String[] str2 = version2.split("\\.");
+        for (int i = 0; i < Math.min(str1.length, str2.length); i++) {
+            int result = compare(str1[i], str2[i]);
+            if (result != 0) {
+                return result;
+            }
+        }
+
+        if (str1.length < str2.length) {
+            for (int i = str1.length; i < str2.length; i++) {
+                if (!allzero(str2[i])) {
+                    return -1;
+                }
+            }
+        } else if (str1.length > str2.length) {
+            for (int i = str2.length; i < str1.length; i++) {
+                if (!allzero(str1[i])) {
+                    return 1;
+                }
+            }
+        }
+
+        return 0;
+    }
+
+    private int compare(String v1, String v2) {
+        Integer num1 = Integer.parseInt(v1);
+        Integer num2 = Integer.parseInt(v2);
+        return num1.compareTo(num2);
+    }
+
+    private boolean allzero(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != '0') {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public int compareVersion3(String version1, String version2) {
         if (version1 == null || version2 == null || version1.isEmpty() || version2.isEmpty()) {
             return 0;
         }

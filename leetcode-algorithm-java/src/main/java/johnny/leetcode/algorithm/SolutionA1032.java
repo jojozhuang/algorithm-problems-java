@@ -1,5 +1,9 @@
 package johnny.leetcode.algorithm;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
+
 /**
  * 1032. Stream of Characters
  * Implement the StreamChecker class as follows:
@@ -34,11 +38,46 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class SolutionA1032 {
+    // TLC
+    Set<String> set;
+    int max_len;
+    Stack<Character> stack;
     public SolutionA1032(String[] words) {
-
+        set = new HashSet<>();
+        for (String word : words) {
+            set.add(word);
+            if (word.length() > max_len) {
+                max_len = word.length();
+            }
+        }
+        stack = new Stack<>();
     }
 
     public boolean query(char letter) {
-        return false;
+        if (set.contains(String.valueOf(letter))) {
+            return true;
+        }
+
+        boolean found = false;
+        if (stack.size() > 0) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(letter);
+            int i = max_len - 1;
+            while (!stack.isEmpty() && i > 0) {
+                sb.insert(0, stack.pop());
+                if (set.contains(sb.toString())) {
+                    found = true;
+                    break;
+                }
+                i--;
+            }
+            for (Character c : sb.toString().toCharArray()) {
+                stack.push(c);
+            }
+        } else {
+            stack.push(letter);
+        }
+
+        return found;
     }
 }

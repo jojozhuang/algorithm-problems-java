@@ -1,6 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,7 +32,25 @@ import java.util.List;
  * @author Johnny
  */
 public class SolutionA1029 {
+    // Suppose we have [a, b], [c, d], if we select 'a' to make the cost minimal, then a + d < b + c. a - b < c - d
     public int twoCitySchedCost(int[][] costs) {
+        Arrays.sort(costs, (a, b) -> {
+           return (a[0]-a[1]) - (b[0]-b[1]);
+        });
+
+        int cost = 0;
+        for (int i = 0; i < costs.length; i++) {
+            if (i < costs.length / 2) {
+                cost += costs[i][0];
+            } else {
+                cost += costs[i][1];
+            }
+        }
+
+        return cost;
+    }
+
+    public int twoCitySchedCost2(int[][] costs) {
         int n = costs.length;
         List<int[]> list1 = new ArrayList<>();
         List<int[]> list2 = new ArrayList<>();
