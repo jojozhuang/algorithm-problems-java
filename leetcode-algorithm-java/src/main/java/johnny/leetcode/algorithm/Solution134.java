@@ -18,6 +18,102 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution134 {
+    // 1. If sum of gas is more than sum of cost, then there must be a solution.
+    // 2. The tank should never be negative, so restart whenever there is a negative number.
+
+    // One pass
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        if (gas == null || gas.length == 0 || cost == null || cost.length == 0) {
+            return -1;
+        }
+
+        int total = 0;
+        int tank = 0;
+        int start = 0;
+        for (int i = 0; i < gas.length; i++) {
+            total += gas[i] - cost[i];
+            tank += gas[i] - cost[i];
+            if (tank < 0) {
+                start = i + 1;
+                tank = 0;
+            }
+        }
+        if (total < 0) {
+            return -1;
+        } else {
+            return start;
+        }
+    }
+
+    // Two passes
+    public int canCompleteCircuit3(int[] gas, int[] cost) {
+        if (gas == null || gas.length == 0 || cost == null || cost.length == 0) {
+            return -1;
+        }
+        //determine if we have a solution
+        int total = 0;
+        for (int i = 0; i < gas.length; i++) {
+            total += gas[i] - cost[i];
+        }
+        if (total < 0) {
+            return -1;
+        }
+
+        // find out where to start
+        int tank = 0;
+        int start = 0;
+        for (int i = 0; i < gas.length;i++) {
+            tank += gas[i] - cost[i];
+            if (tank < 0) {
+                start = i + 1;
+                tank = 0;
+            }
+        }
+        return start;
+    }
+
+    // brute force, O(n^2)
+    public int canCompleteCircuit4(int[] gas, int[] cost) {
+        if (gas == null || gas.length == 0 || cost == null || cost.length == 0) {
+            return -1;
+        }
+        for (int i = 0; i < gas.length; i++) {
+            if (gas[i] >= cost[i] && helper(gas, cost, i)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private boolean helper(int[] gas, int[] cost, int start) {
+        int i = start;
+        int tank = gas[start];
+        for (; i < gas.length; i++) {
+            tank = tank - cost[i];
+            if (tank < 0) {
+                return false;
+            }
+            if (i + 1 < gas.length) {
+                tank += gas[i+1];
+            } else {
+                tank += gas[0];
+            }
+        }
+
+        for (i = 0; i < start; i++) {
+            tank = tank - cost[i];
+            if (tank < 0) {
+                return false;
+            }
+            if (i < start - 1) {
+                tank += gas[i+1];
+            }
+        }
+
+        return true;
+    }
+
     //http://www.programcreek.com/2014/03/leetcode-gas-station-java/
     public int canCompleteCircuit2(int[] gas, int[] cost) {
         if (gas == null || gas.length == 0 || cost == null || cost.length == 0) {
@@ -36,34 +132,5 @@ public class Solution134 {
             }
         }
         return sum >= 0 ? start : -1;
-    }
-
-    public int canCompleteCircuit(int[] gas, int[] cost) {
-        if (gas == null || gas.length == 0 || cost == null || cost.length == 0) {
-            return -1;
-        }
-        int sumRemaining = 0; // track current remaining
-        int total = 0; // track total remaining
-        int start = 0;
-
-        for (int i = 0; i < gas.length; i++) {
-            int remaining = gas[i] - cost[i];
-
-            //if sum remaining of (i-1) >= 0, continue 
-            if (sumRemaining >= 0) {
-                sumRemaining += remaining;
-                //otherwise, reset start index to be current
-            } else {
-                sumRemaining = remaining;
-                start = i;
-            }
-            total += remaining;
-        }
-
-        if (total >= 0) {
-            return start;
-        } else {
-            return -1;
-        }
     }
 }

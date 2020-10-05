@@ -1,5 +1,7 @@
 package johnny.leetcode.algorithm;
 
+import java.util.Arrays;
+
 /**
  * ZigZag Conversion.
  * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number
@@ -20,6 +22,33 @@ package johnny.leetcode.algorithm;
  * @author Johnny
  */
 public class Solution006 {
+    // https://www.geekxh.com/1.0.%E6%95%B0%E7%BB%84%E7%B3%BB%E5%88%97/009.html#_02%E3%80%81%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90
+    public String convert(String s, int numRows) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        if (numRows <= 1) {
+            return s;
+        }
+
+        int size = numRows * 2 - 2;
+        String[] arr = new String[numRows];
+        Arrays.fill(arr, "");
+        for (int i = 0; i < s.length(); i++) {
+            int row = i % size;
+            if (row < numRows) {
+                arr[row] += s.charAt(i);
+            } else {
+                arr[size - row] += s.charAt(i);
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (String str : arr) {
+            sb.append(str);
+        }
+        return sb.toString();
+    }
+
     public String convert2(String s, int nRows) {
         if (s == null || s.length() == 0) {
             return "";
@@ -45,7 +74,7 @@ public class Solution006 {
     }
 
     //http://www.cnblogs.com/springfor/p/3889414.html
-    public String convert(String s, int numRows) {
+    public String convert3(String s, int numRows) {
         if (s == null || s.length() == 0) {
             return "";
         }

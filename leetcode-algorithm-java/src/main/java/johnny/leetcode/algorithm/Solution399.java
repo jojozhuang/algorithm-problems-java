@@ -3,6 +3,7 @@ package johnny.leetcode.algorithm;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Evaluate Division
@@ -31,29 +32,29 @@ import java.util.HashSet;
  * @author Johnny
  */
 public class Solution399 {
-    public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
-        HashMap<String, ArrayList<String>> pairs = new HashMap<String, ArrayList<String>>();
-        HashMap<String, ArrayList<Double>> valuesPair = new HashMap<String, ArrayList<Double>>();
-        for (int i = 0; i < equations.length; i++) {
-            String[] equation = equations[i];
-            if (!pairs.containsKey(equation[0])) {
-                pairs.put(equation[0], new ArrayList<String>());
-                valuesPair.put(equation[0], new ArrayList<Double>());
+    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        HashMap<String, ArrayList<String>> pairs = new HashMap<>();
+        HashMap<String, ArrayList<Double>> valuesPair = new HashMap<>();
+        for (int i = 0; i < equations.size(); i++) {
+            List<String> equation = equations.get(i);
+            if (!pairs.containsKey(equation.get(0))) {
+                pairs.put(equation.get(0), new ArrayList<>());
+                valuesPair.put(equation.get(0), new ArrayList<>());
             }
-            if (!pairs.containsKey(equation[1])) {
-                pairs.put(equation[1], new ArrayList<String>());
-                valuesPair.put(equation[1], new ArrayList<Double>());
+            if (!pairs.containsKey(equation.get(1))) {
+                pairs.put(equation.get(1), new ArrayList<>());
+                valuesPair.put(equation.get(1), new ArrayList<>());
             }
-            pairs.get(equation[0]).add(equation[1]);
-            pairs.get(equation[1]).add(equation[0]);
-            valuesPair.get(equation[0]).add(values[i]);
-            valuesPair.get(equation[1]).add(1 / values[i]);
+            pairs.get(equation.get(0)).add(equation.get(1));
+            pairs.get(equation.get(1)).add(equation.get(0));
+            valuesPair.get(equation.get(0)).add(values[i]);
+            valuesPair.get(equation.get(1)).add(1 / values[i]);
         }
 
-        double[] result = new double[queries.length];
-        for (int i = 0; i < queries.length; i++) {
-            String[] query = queries[i];
-            result[i] = dfs(query[0], query[1], pairs, valuesPair, new HashSet<String>(), 1.0);
+        double[] result = new double[queries.size()];
+        for (int i = 0; i < queries.size(); i++) {
+            List<String> query = queries.get(i);
+            result[i] = dfs(query.get(0), query.get(1), pairs, valuesPair, new HashSet<>(), 1.0);
             if (result[i] == 0.0) result[i] = -1.0;
         }
         return result;

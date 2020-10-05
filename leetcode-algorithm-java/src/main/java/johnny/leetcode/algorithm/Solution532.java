@@ -37,6 +37,31 @@ import java.util.Map;
  * @author Johnny
  */
 public class Solution532 {
+    public int findPairs(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        Arrays.sort(nums);
+        int n = nums.length;
+        int count = 0;
+        int diff = 0;
+        for (int i = 0; i < n - 1; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            for (int j = i + 1; j < n; j++) {
+                diff = nums[j] - nums[i];
+                if (diff >= k) {
+                    if (diff == k) {
+                        count++;
+                    }
+                    break;
+                }
+            }
+        }
+
+        return count;
+    }
     // Two pointers, time: nlog(n), space: O(1)
     public int findPairs2(int[] nums, int k) {
         if (nums == null || nums.length <= 1) {
@@ -77,7 +102,7 @@ public class Solution532 {
     }
 
     // Hashmap, time: O(n), space: O(n)
-    public int findPairs(int[] nums, int k) {
+    public int findPairs3(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k < 0) {
             return 0;
         }
