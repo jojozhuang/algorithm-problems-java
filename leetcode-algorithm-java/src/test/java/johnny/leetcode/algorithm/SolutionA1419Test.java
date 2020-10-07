@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionA3001Test extends JunitBase {
+public class SolutionA1419Test extends JunitBase {
 
     @Test
     public void test() {
         System.out.println("minNumberOfFrogs");
-        SolutionA3001 instance = new SolutionA3001();
+        SolutionA1419 instance = new SolutionA1419();
 
         assertEquals(1, instance.minNumberOfFrogs("croakcroak"));
         assertEquals(2, instance.minNumberOfFrogs("crcoakroak"));

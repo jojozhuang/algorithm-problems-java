@@ -33,6 +33,37 @@ import java.util.List;
  */
 public class Solution989 {
     public List<Integer> addToArrayForm(int[] A, int K) {
+        List<Integer> list = new ArrayList<>();
+        for (int num : A) {
+            list.add(num);
+        }
+        int carry = 0;
+        int sum = 0;
+        for (int i = list.size() - 1; i >= 0; i--) {
+            if (K > 0) {
+                sum = carry + list.get(i) + K % 10;
+                K /= 10;
+            } else {
+                sum = carry + list.get(i) ;
+            }
+            list.set(i, sum % 10);
+            carry = sum/10;
+            if (carry == 0 && K == 0) {
+                break;
+            }
+        }
+
+        while (K > 0 || carry == 1) {
+            sum = carry + K % 10;
+            list.add(0, sum % 10);
+            carry = sum/10;
+            K /= 10;
+        }
+
+        return list;
+    }
+
+    public List<Integer> addToArrayForm2(int[] A, int K) {
         List<Integer> ans = new ArrayList<>();
         int carry = 0;
         for (int i = A.length - 1; i >= 0; i--) {

@@ -43,6 +43,20 @@ public class Solution701 {
             return new TreeNode(val);
         }
 
+        if (val < root.val) {
+            root.left = insertIntoBST(root.left, val);
+        } else {
+            root.right = insertIntoBST(root.right, val);
+        }
+
+        return root;
+    }
+
+    public TreeNode insertIntoBST2(TreeNode root, int val) {
+        if (root == null) {
+            return new TreeNode(val);
+        }
+
         if (val > root.val) {
             if (root.right == null) {
                 root.right = new TreeNode(val);

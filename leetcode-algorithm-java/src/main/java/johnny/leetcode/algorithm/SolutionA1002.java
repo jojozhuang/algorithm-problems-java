@@ -30,6 +30,38 @@ public class SolutionA1002 {
     public List<String> commonChars(String[] A) {
         int[][] count = new int[A.length][26];
         for (int i = 0; i < A.length; i++) {
+            String s = A[i];
+            for (int j = 0; j < s.length(); j++) {
+                count[i][s.charAt(j)-'a']++;
+            }
+        }
+
+        List<String> list = new ArrayList<>();
+        for (int k = 0; k < 26; k++) {
+            int min = 101;
+            boolean skip = false;
+            for (int i = 0; i < A.length; i++) {
+                if (count[i][k] == 0) {
+                    skip = true;
+                    break;
+                } else {
+                    min = Math.min(min, count[i][k]);
+                }
+            }
+            if (!skip) {
+                for (int j = 0; j < min; j++) {
+                    list.add(String.valueOf((char)(k+'a')));
+                }
+            }
+
+        }
+
+        return list;
+    }
+
+    public List<String> commonChars2(String[] A) {
+        int[][] count = new int[A.length][26];
+        for (int i = 0; i < A.length; i++) {
             for (char c : A[i].toCharArray()) {
                 count[i][c - 'a']++;
             }

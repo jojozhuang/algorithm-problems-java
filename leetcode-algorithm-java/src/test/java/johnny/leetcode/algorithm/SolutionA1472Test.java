@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionA3006Test extends JunitBase {
+public class SolutionA1472Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("minNumberOfFrogs");
-        SolutionA3006 browserHistory = new SolutionA3006("leetcode.com");
+        System.out.println("browserHistory");
+        SolutionA1472 browserHistory = new SolutionA1472("leetcode.com");
 
         browserHistory.visit("google.com");       // You are in "leetcode.com". Visit "google.com"
         browserHistory.visit("facebook.com");     // You are in "google.com". Visit "facebook.com"

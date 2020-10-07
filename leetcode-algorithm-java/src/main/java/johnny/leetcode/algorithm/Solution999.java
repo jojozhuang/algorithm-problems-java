@@ -38,54 +38,52 @@ public class Solution999 {
     public int numRookCaptures(char[][] board) {
         int m = board.length;
         int n = board[0].length;
-        int ans = 0;
+
+        int count = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == 'R') {
-                    //left
-                    for (int k = j - 1; k >= 0; k--) {
-                        if (board[i][k] == 'B') {
-                            break;
-                        }
-                        if (board[i][k] == 'p') {
-                            ans++;
-                            break;
-                        }
-                    }
-                    //right
-                    for (int k = j + 1; k < n; k++) {
-                        if (board[i][k] == 'B') {
-                            break;
-                        }
-                        if (board[i][k] == 'p') {
-                            ans++;
-                            break;
-                        }
-                    }
-                    //up
+                    // north
                     for (int k = i - 1; k >= 0; k--) {
                         if (board[k][j] == 'B') {
                             break;
-                        }
-                        if (board[k][j] == 'p') {
-                            ans++;
+                        } else if (board[k][j] == 'p') {
+                            count++;
                             break;
                         }
                     }
-                    //down
+                    // south
                     for (int k = i + 1; k < m; k++) {
                         if (board[k][j] == 'B') {
                             break;
-                        }
-                        if (board[k][j] == 'p') {
-                            ans++;
+                        } else if (board[k][j] == 'p') {
+                            count++;
                             break;
                         }
                     }
+                    // west
+                    for (int k = j - 1; k >= 0; k--) {
+                        if (board[i][k] == 'B') {
+                            break;
+                        } else if (board[i][k] == 'p') {
+                            count++;
+                            break;
+                        }
+                    }
+                    // east
+                    for (int k = j + 1; k < n; k++) {
+                        if (board[i][k] == 'B') {
+                            break;
+                        } else if (board[i][k] == 'p') {
+                            count++;
+                            break;
+                        }
+                    }
+                    break;
                 }
             }
         }
 
-        return ans;
+        return count;
     }
 }

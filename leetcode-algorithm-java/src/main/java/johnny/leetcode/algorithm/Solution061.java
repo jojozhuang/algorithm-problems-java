@@ -14,6 +14,37 @@ import johnny.algorithm.common.ListNode;
  */
 public class Solution061 {
     public ListNode rotateRight(ListNode head, int k) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        int count = 0;
+        ListNode curr = head;
+        ListNode last = head;
+        while (curr != null) {
+            last = curr;
+            count++;
+            curr = curr.next;
+        }
+
+        k = k % count;
+        if (k == 0) {
+            return head;
+        }
+
+        ListNode left = head;
+        ListNode right = head;
+        int i = 1;
+        while (i < count - k) {
+            right = right.next;
+            i++;
+        }
+        ListNode newHead = right.next;
+        right.next = null;
+        last.next = left;
+        return newHead;
+    }
+    public ListNode rotateRight3(ListNode head, int k) {
         if (head == null || head.next == null || k == 0) {
             return head;
         }

@@ -1,6 +1,7 @@
 package johnny.leetcode.algorithm;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * 1005. Maximize Sum Of Array After K Negations
@@ -34,71 +35,70 @@ import java.util.Arrays;
  */
 public class SolutionA1005 {
     public int largestSumAfterKNegations(int[] A, int K) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        for (int num: A) {
+            pq.add(num);
+        }
+
+        for (int i = 0; i < K; i++) {
+            pq.add(-pq.poll());
+        }
+
+        int sum  = 0;
+        while (!pq.isEmpty()) {
+            sum += pq.poll();
+        }
+
+        return sum;
+    }
+
+    public int largestSumAfterKNegations2(int[] A, int K) {
         Arrays.sort(A);
-        int neg = 0;
-        int zero = 0;
-        int biggestNeg = Integer.MIN_VALUE;
-        int smallestPos = Integer.MAX_VALUE;
-        int index1 = -1;
-        int index2 = -1;
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] < 0) {
-                neg++;
-            } else if (A[i] == 0) {
-                zero++;
-            }
+        int sum = 0;
 
-            if (A[i] < 0) {
-                if (A[i] > biggestNeg) {
-                    biggestNeg = A[i];
-                    index1 = i;
-                }
-            }
-            if (A[i] > 0) {
-                if (A[i] < smallestPos) {
-                    smallestPos = A[i];
-                    index2 = i;
-                }
-            }
-        }
-
-        int i = 0;
-        if (K > 0 && neg > 0) {
-            int steps = Math.min(K, neg);
-            for (i = 0; i < A.length; i++) {
-                if (steps > 0) {
-                    A[i] = -A[i];
-                    steps--;
-                    K--;
-                } else {
-                    break;
-                }
-            }
-        }
-
-        if (K > 0) {
-            if (zero > 0 || K % 2 == 0) {
-
+        boolean zero = false;
+        int min_positive = 101;
+        int max_negtive = -101;
+        for (int num : A) {
+            sum += num;
+            if (num == 0) {
+                zero = true;
+            } else if (num > 0) {
+                min_positive = Math.min(min_positive, num);
             } else {
-                if (biggestNeg == Integer.MIN_VALUE) {
-                    A[index2] = -A[index2];
-                } else if (smallestPos == Integer.MAX_VALUE) {
-                    A[index1] = -A[index1];
+                max_negtive = Math.max(max_negtive, num);
+            }
+        }
+
+        int count = 0;
+        for (int i = 0; i < Math.min(K, A.length); i++) {
+            if (A[i] < 0) {
+                sum += 2 * (-A[i]);
+                count++;
+            } else {
+                break;
+            }
+        }
+
+        if (count < K) {
+            if (zero) {
+                return sum;
+            } else {
+                if ((K - count) % 2 == 0) {
+                    return sum;
                 } else {
-                    if (-biggestNeg >= smallestPos) {
-                        A[index2] = -A[index2];
+                    if (min_positive == 101) {
+                        sum -= 2 * (-max_negtive);
+                    } else if (max_negtive == -101) {
+                        sum -= 2 * min_positive;
                     } else {
-                        A[index1] = -A[index1];
+                        sum -= 2 * Math.min(min_positive, -max_negtive);
                     }
                 }
             }
         }
 
-        int ans = 0;
-        for (int num : A) {
-            ans += num;
-        }
-
-        return ans;
+        return sum;
     }
 }

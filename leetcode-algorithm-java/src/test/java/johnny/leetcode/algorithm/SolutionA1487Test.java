@@ -5,12 +5,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-public class SolutionA3020Test extends JunitBase {
+public class SolutionA1487Test extends JunitBase {
 
     @Test
     public void test() {
         System.out.println("findLeastNumOfUniqueInts");
-        SolutionA3020 instance = new SolutionA3020();
+        SolutionA1487 instance = new SolutionA1487();
 
         assertArrayEquals(new String[]{"kaido","kaido(1)","kaido(2)","kaido(1)(1)","kaido(2)(1)"}, instance.getFolderNames(new String[]{"kaido","kaido(1)","kaido","kaido(1)","kaido(2)"}));
         assertArrayEquals(new String[]{"pes","fifa","gta","pes(2019)"}, instance.getFolderNames(new String[]{"pes","fifa","gta","pes(2019)"}));

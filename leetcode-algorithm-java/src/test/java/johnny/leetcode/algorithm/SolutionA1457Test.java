@@ -5,12 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionA3003Test extends JunitBase {
+public class SolutionA1457Test extends JunitBase {
 
     @Test
     public void test() {
         System.out.println("pseudoPalindromicPaths");
-        SolutionA3003 instance = new SolutionA3003();
+        SolutionA1457 instance = new SolutionA1457();
 
         TreeNode root1 = TreeNode.createInstance("2,3,1,3,1,null,1");
         assertEquals(2, instance.pseudoPalindromicPaths(root1));
