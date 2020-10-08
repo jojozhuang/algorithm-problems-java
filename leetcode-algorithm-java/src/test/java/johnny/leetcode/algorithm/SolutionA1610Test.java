@@ -11,7 +11,7 @@ public class SolutionA1610Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("minimumOneBitOperations");
+        System.out.println("visiblePoints");
         SolutionA1610 instance = new SolutionA1610();
 
         List<List<Integer>> points1 = ListUtil.buildList2(new Integer[][]{{2,1},{2,2},{3,3}});

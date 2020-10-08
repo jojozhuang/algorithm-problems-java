@@ -9,7 +9,7 @@ public class SolutionA1609Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("minimumOneBitOperations");
+        System.out.println("isEvenOddTree");
         SolutionA1609 instance = new SolutionA1609();
 
         TreeNode root1 = TreeNode.createInstance("1,10,4,3,null,7,9,12,8,6,null,null,2");

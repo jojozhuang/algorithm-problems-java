@@ -9,7 +9,7 @@ public class SolutionA1487Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("findLeastNumOfUniqueInts");
+        System.out.println("getFolderNames");
         SolutionA1487 instance = new SolutionA1487();
 
         assertArrayEquals(new String[]{"kaido","kaido(1)","kaido(2)","kaido(1)(1)","kaido(2)(1)"}, instance.getFolderNames(new String[]{"kaido","kaido(1)","kaido","kaido(1)","kaido(2)"}));

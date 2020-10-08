@@ -8,7 +8,7 @@ public class SolutionA1608Test extends JunitBase {
 
     @Test
     public void test() {
-        System.out.println("minimumOneBitOperations");
+        System.out.println("specialArray");
         SolutionA1608 instance = new SolutionA1608();
 
         assertEquals(2, instance.specialArray(new int[]{3,5}));
