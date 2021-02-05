@@ -34,12 +34,32 @@ import java.util.Arrays;
  */
 public class Solution452 {
     public int findMinArrowShots(int[][] points) {
+        // edge cases
+        if (points == null) return 0;
+        if (points.length <= 1) return points.length;
+        // proper sort by diameter end
+        Arrays.sort(points, (int[] a, int[] b) -> a[1] > b[1] ? 1 : -1);
+        // 1 arrow for first baloon
+        int arrows = 1;
+        int shotDiameter = points[0][1];
+        for (int i = 1; i < points.length; i++) {
+            int[] baloon = points[i];
+            // if balloon diameter start is in bounds of shot - just move to next
+            if (baloon[0] <= shotDiameter) continue;
+            // else add one more arrow and change shot diameter to end at current baloon end
+            arrows++;
+            shotDiameter = baloon[1];
+        }
+        return arrows;
+    }
+
+    public int findMinArrowShots2(int[][] points) {
         if (points.length == 0) {
             return 0;
         }
         Arrays.sort(points, (a, b) -> a[1] - b[1]);
-        int arrowPos = points[0][1];
-        int arrowCnt = 1;
+        long arrowPos = points[0][1];
+        long arrowCnt = 1;
         for (int i = 1; i < points.length; i++) {
             if (arrowPos >= points[i][0]) {
                 continue;
@@ -47,6 +67,6 @@ public class Solution452 {
             arrowCnt++;
             arrowPos = points[i][1];
         }
-        return arrowCnt;
+        return (int)arrowCnt;
     }
 }

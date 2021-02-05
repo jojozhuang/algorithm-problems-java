@@ -1,6 +1,6 @@
 package johnny.leetcode.algorithm;
 
-import johnny.algorithm.common.ListNode;
+import johnny.algorithm.common.*;
 
 /**
  * Add Two Numbers.
